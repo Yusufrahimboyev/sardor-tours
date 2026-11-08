@@ -28,11 +28,12 @@ export default function VideoPage() {
       <main id="main-content" tabIndex={-1} className={styles.main}>
         <h1>Sharm El Sheikh Excursion Videos</h1>
         <div className={styles.notice} role="status">
-          <b>🎬 Videos are coming soon.</b> In the meantime, browse the photo galleries on each tour page or ask us on
-          Instagram — we post new clips every week.
-          <a href={site.instagram} target="_blank" rel="noopener noreferrer">
-            <InstagramIcon size={15} /> Watch on Instagram
-          </a>
+          <b>🎬 Videos are coming soon.</b> In the meantime, browse the photo galleries on each tour page.
+          {site.instagram && (
+            <a href={site.instagram} target="_blank" rel="noopener noreferrer">
+              <InstagramIcon size={15} /> Watch on Instagram
+            </a>
+          )}
         </div>
         {CATEGORIES.map((c) => (
           <section key={c.key} className={styles.cat} aria-labelledby={`v-${c.key}`}>
@@ -59,9 +60,11 @@ export default function VideoPage() {
             <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className="btn-wa">
               <WhatsAppIcon /> Message us on WhatsApp
             </a>
-            <a href={site.telegram} target="_blank" rel="noopener noreferrer" className={styles.tg}>
-              <TelegramIcon /> Telegram
-            </a>
+            {site.telegram && (
+              <a href={site.telegram} target="_blank" rel="noopener noreferrer" className={styles.tg}>
+                <TelegramIcon /> Telegram
+              </a>
+            )}
           </div>
         </section>
       </main>

@@ -29,10 +29,6 @@ export function TourCard({ tour, priority }: { tour: TourSummary; priority?: boo
             <CalendarIcon />
             {tour.schedule}
           </span>
-          <span className={styles.rating}>
-            <i aria-hidden>★</i>
-            {tour.rating.toFixed(1)}
-          </span>
         </div>
         <div className={styles.foot}>
           <div>

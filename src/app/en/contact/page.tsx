@@ -8,7 +8,7 @@ import styles from './contact.module.css';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: `Contact ${site.name}: WhatsApp 24/7, Telegram, Instagram, email or the contact form. Offices in Sharm El Sheikh and Cairo.`,
+  description: `Contact ${site.name}: WhatsApp, email or the contact form — we reply fast.`,
   alternates: { canonical: '/en/contact/' },
 };
 
@@ -34,15 +34,6 @@ export default function ContactPage() {
           <aside className={styles.side}>
             <div className={styles.card}>
               <ContactOptions />
-            </div>
-            <div className={styles.card}>
-              <h2 className={styles.cardTitle}>Our offices</h2>
-              {site.offices.map((o) => (
-                <div key={o.name} className={styles.office}>
-                  <b>{o.name}</b>
-                  <p>{o.address}</p>
-                </div>
-              ))}
             </div>
           </aside>
         </div>

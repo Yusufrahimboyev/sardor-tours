@@ -69,14 +69,6 @@
   align-items: center;
   gap: 4px;
 }
-.rating {
-  font-weight: 700;
-  color: var(--ink);
-}
-.rating i {
-  color: #f59e0b;
-  font-style: normal;
-}
 .foot {
   margin-top: auto;
   padding-top: 14px;

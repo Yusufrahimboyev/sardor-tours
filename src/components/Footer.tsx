@@ -6,7 +6,7 @@ import { InstagramIcon, TelegramIcon, WhatsAppIcon } from './icons';
 import styles from './Footer.module.css';
 
 interface Props {
-  /** home = destinations + languages columns; destination = categories column + stats. */
+  /** home = company links column; destination = categories column. */
   variant?: 'home' | 'destination';
   tone?: 'dark' | 'light';
 }
@@ -19,19 +19,23 @@ export function Footer({ variant = 'destination', tone = 'dark' }: Props) {
           <div className={styles.brandCol}>
             <Brand tone={tone === 'light' ? 'dark' : 'light'} />
             <p>
-              Egypt&apos;s most trusted local tour operator. Excursions across Sharm El Sheikh, Hurghada, Cairo and Marsa
-              Alam.
+              Excursions and day trips from Sharm El Sheikh — sea, desert and history. No prepayment, hotel transfer
+              included.
             </p>
             <div className={styles.soc}>
               <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <WhatsAppIcon />
               </a>
-              <a href={site.telegram} target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-                <TelegramIcon />
-              </a>
-              <a href={site.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <InstagramIcon />
-              </a>
+              {site.telegram && (
+                <a href={site.telegram} target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                  <TelegramIcon />
+                </a>
+              )}
+              {site.instagram && (
+                <a href={site.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <InstagramIcon />
+                </a>
+              )}
             </div>
           </div>
           <div className={styles.col}>
@@ -62,37 +66,16 @@ export function Footer({ variant = 'destination', tone = 'dark' }: Props) {
           <div className={styles.col}>
             <h2>Get in touch</h2>
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-              {site.phoneDisplay}
+              {site.phoneDisplay || 'WhatsApp'}
             </a>
-            <a href={`mailto:${site.email}`}>{site.email}</a>
+            {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
             <Link href="/en/contact/">Send us a message</Link>
-            <p>Old Market &amp; Dahab Mall, Sharm El Sheikh</p>
-            <p>Dokki, Giza — Cairo</p>
           </div>
         </div>
-        {variant === 'destination' && (
-          <div className={styles.stats}>
-            <div>
-              <b>150K+</b>
-              <span>travellers</span>
-            </div>
-            <i />
-            <div>
-              <b>{site.stats.rating}★</b>
-              <span>rating</span>
-            </div>
-            <i />
-            <div>
-              <b>{site.stats.founded}</b>
-              <span>since</span>
-            </div>
-          </div>
-        )}
         <div className={styles.bot}>
           <span>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </span>
-          <span>Family-run in Egypt since 2009 · Licensed tour operator</span>
           <Link href="/en/terms-and-conditions/" className={styles.terms}>
             Terms &amp; Conditions
           </Link>

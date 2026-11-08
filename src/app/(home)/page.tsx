@@ -5,9 +5,8 @@ import { CtaBand } from '@/components/CtaBand';
 import { Footer } from '@/components/Footer';
 import { ArrowDown, ArrowRight, WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
-import { ReviewsCarousel } from '@/components/ReviewsCarousel';
 import { destinations, generalFaq, PLAN_TRIP_MSG, site, whatsappLink } from '@/data/site';
-import { collectReviews, tours } from '@/data/tours';
+import { MIN_PRICE, tours } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
 import { HomeHeader } from './HomeHeader';
 import styles from './home.module.css';
@@ -15,12 +14,12 @@ import styles from './home.module.css';
 export const metadata: Metadata = {
   title: { absolute: `${site.name} — Egypt Excursions in Sharm El Sheikh, Hurghada, Cairo & Marsa Alam` },
   description:
-    'Sardor Tours — a family-run Egyptian tour operator since 2009. Excursions across Sharm El Sheikh, Hurghada, Cairo and Marsa Alam. 150,000+ happy travellers, no prepayment, hotel transfer included.',
+    'Sardor Tours — excursions and day trips from Sharm El Sheikh: Red Sea boat trips, desert safaris, Cairo, Luxor and Petra. No prepayment, hotel transfer included.',
   alternates: { canonical: '/' },
   openGraph: {
     url: '/',
     title: `${site.name} — Egypt Excursions`,
-    description: 'Family-run Egyptian tour operator since 2009. No prepayment · hotel transfer included.',
+    description: 'Excursions from Sharm El Sheikh. No prepayment · hotel transfer included.',
     images: [{ url: imageSrc('/images/hero1.webp', 1200, 630), width: 1200, height: 630 }],
   },
 };
@@ -43,8 +42,8 @@ const WHY = [
     ),
   },
   {
-    title: 'Licensed & insured',
-    text: "Fully certified by Egypt's tourism authority. Every guest insured for the whole trip.",
+    title: 'Free cancellation',
+    text: 'Plans changed? Cancel free of charge up to 24 hours before your tour starts.',
     icon: (
       <>
         <path d="M12 2 4 5v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z" />
@@ -54,14 +53,13 @@ const WHY = [
   },
   {
     title: '24/7 support',
-    text: 'A real person answers on WhatsApp around the clock — in English, Russian, Italian & Turkish.',
+    text: 'A real person answers on WhatsApp — before your trip and on the day itself.',
     icon: <path d="M21 11.5a8.38 8.38 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 20l1.3-3.8A8.38 8.38 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z" />,
   },
 ];
 
 export default function HomePage() {
   const wa = whatsappLink(PLAN_TRIP_MSG);
-  const reviews = collectReviews(1, 12);
   const liveCount = tours.length;
 
   return (
@@ -73,19 +71,11 @@ export default function HomePage() {
           name: site.name,
           url: site.url,
           description: site.description,
-          telephone: `+${site.whatsappNumber}`,
-          email: site.email,
+          ...(site.whatsappNumber && { telephone: `+${site.whatsappNumber}` }),
+          ...(site.email && { email: site.email }),
           priceRange: '£',
-          foundingDate: '2009',
-          areaServed: ['Sharm El Sheikh', 'Hurghada', 'Cairo', 'Marsa Alam'],
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'Old Market, Dahab Mall',
-            addressLocality: 'Sharm El Sheikh',
-            addressRegion: 'South Sinai',
-            addressCountry: 'EG',
-          },
-          sameAs: [site.instagram, site.telegram],
+          areaServed: ['Sharm El Sheikh'],
+          sameAs: [site.instagram, site.telegram].filter(Boolean),
         }}
       />
       <JsonLd data={faqJsonLd(generalFaq)} />
@@ -98,15 +88,14 @@ export default function HomePage() {
           </div>
           <div className={`wrap ${styles.heroIn}`}>
             <div className={styles.heroTag}>
-              <span className={styles.dot} /> Local Egyptian Travel Experts Since 2009 · Trusted by 150,000+ Travellers
+              <span className={styles.dot} /> Excursions in Egypt · No prepayment · Hotel transfer included
             </div>
             <h1>
               Egypt&apos;s Red Sea &amp; ancient wonders, by the people who <em>live here</em>.
             </h1>
             <p className={styles.sub}>
-              Since 2009 we&apos;ve shown travellers the real Egypt — diving, deserts, the Nile and the pyramids — across
-              four unforgettable destinations. No prepayment, hotel transfer included, and a real person on WhatsApp
-              24/7.
+              Discover the real Egypt — diving, deserts, the Nile and the pyramids. No prepayment, hotel transfer
+              included, and a real person on WhatsApp to help you plan.
             </p>
             <div className={styles.heroActions}>
               <a href="#destinations" className={styles.btnGhost}>
@@ -118,19 +107,16 @@ export default function HomePage() {
             </div>
             <div className={styles.heroTrust}>
               <div className={styles.ht}>
-                <b>
-                  {site.stats.rating}
-                  <span className={styles.stars}> ★</span>
-                </b>
-                <span>{site.stats.reviews}+ reviews</span>
+                <b>{liveCount}+</b>
+                <span>Excursions</span>
               </div>
               <div className={styles.ht}>
-                <b>{site.stats.travellers}</b>
-                <span>Happy travellers</span>
+                <b>£{MIN_PRICE}</b>
+                <span>Prices from</span>
               </div>
               <div className={styles.ht}>
-                <b>{site.stats.years} years</b>
-                <span>Local expertise</span>
+                <b>£0</b>
+                <span>Prepayment</span>
               </div>
               <div className={styles.ht}>
                 <b>4</b>
@@ -147,7 +133,7 @@ export default function HomePage() {
           <div className="wrap">
             <div className={`${styles.secHead} reveal`}>
               <div className="eyebrow">Choose your Egypt</div>
-              <h2 id="dest-title">Four destinations, one trusted local team</h2>
+              <h2 id="dest-title">Choose where your adventure begins</h2>
               <p>From the coral reefs of the Red Sea to the pyramids of Giza — pick where your adventure begins.</p>
             </div>
             <div className={styles.destGrid}>
@@ -195,24 +181,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className={styles.reviewsSec} aria-labelledby="reviews-title">
-          <div className="wrap">
-            <div className={`${styles.secHead} ${styles.center} reveal`}>
-              <div className="eyebrow">Reviews</div>
-              <h2 id="reviews-title">What our guests say</h2>
-            </div>
-            <ReviewsCarousel reviews={reviews} tone="dark" />
-          </div>
-        </section>
-
         <section id="why" className={styles.sec} aria-labelledby="why-title">
           <div className="wrap">
             <div className={`${styles.secHead} reveal`}>
               <div className="eyebrow">Why Sardor Tours</div>
-              <h2 id="why-title">Not a booking app — a local family team</h2>
+              <h2 id="why-title">Simple, honest and local</h2>
               <p>
-                We run our own offices in Old Market, Dahab Mall Sharm El Sheikh and Cairo. No middlemen, no hotel
-                commissions — just honest prices and real people.
+                Clear prices with no hidden fees, an easy online booking and a real person to answer your
+                questions.
               </p>
             </div>
             <div className={styles.whyGrid}>
@@ -227,13 +203,6 @@ export default function HomePage() {
                   <p>{w.text}</p>
                 </div>
               ))}
-            </div>
-            <div className={`${styles.langs} reveal`}>
-              <span className={styles.langsLbl}>We speak your language:</span>
-              <span className={styles.langChip}>🇬🇧 English</span>
-              <span className={styles.langChip}>🇷🇺 Русский</span>
-              <span className={styles.langChip}>🇮🇹 Italiano</span>
-              <span className={styles.langChip}>🇹🇷 Türkçe</span>
             </div>
           </div>
         </section>

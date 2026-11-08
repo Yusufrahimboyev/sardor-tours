@@ -41,7 +41,6 @@ export interface Tour {
   timeSlots: string[];
   priceFrom: number;
   priceUnit: string | null;
-  rating: number;
   badge: string | null;
   featured: boolean;
   excerpt: string;
@@ -50,7 +49,6 @@ export interface Tour {
   metaDescription: string;
   heroPrices: HeroPrice[];
   highlights: string[];
-  reviews: { text: string; author: string }[];
   itinerary: { title: string; text: string }[];
   included: string[];
   notIncluded: string[];
@@ -114,7 +112,6 @@ export interface TourSummary {
   schedule: string;
   priceFrom: number;
   priceUnit: string | null;
-  rating: number;
   badge: string | null;
   excerpt: string;
   cardImage: string;
@@ -130,7 +127,6 @@ export function toSummary(t: Tour): TourSummary {
     schedule: t.schedule,
     priceFrom: t.priceFrom,
     priceUnit: t.priceUnit,
-    rating: t.rating,
     badge: t.badge,
     excerpt: t.excerpt,
     cardImage: t.cardImage,
@@ -139,16 +135,3 @@ export function toSummary(t: Tour): TourSummary {
 
 export const MIN_PRICE = Math.min(...tours.map((t) => t.priceFrom));
 
-/** Guest reviews across tours, de-duplicated (several tours share the same quotes). */
-export function collectReviews(perTour: number, limit: number) {
-  const seen = new Set<string>();
-  const out: { text: string; author: string; tour: string }[] = [];
-  for (const t of tours) {
-    for (const r of t.reviews.slice(0, perTour)) {
-      if (seen.has(r.text)) continue;
-      seen.add(r.text);
-      out.push({ ...r, tour: t.name });
-    }
-  }
-  return out.slice(0, limit);
-}

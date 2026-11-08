@@ -22,7 +22,7 @@ export default function TermsPage() {
           <h1>Terms &amp; Conditions</h1>
           <p>
             Welcome to {site.name}. These Terms &amp; Conditions apply to all bookings, services and activities provided by{' '}
-            {site.name}, a licensed travel agency and tour operator based in Egypt. By confirming a booking, you agree to the
+            {site.name}, a tour operator in Egypt. By confirming a booking, you agree to the
             following terms and policies.
           </p>
           <div className={styles.updated}>Last updated: 1 July 2025</div>
@@ -120,11 +120,13 @@ export default function TermsPage() {
           <p>Our team is available 24/7 on WhatsApp.</p>
           <div className={styles.askBtns}>
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className={styles.btn}>
-              <WhatsAppIcon size={16} /> {site.phoneDisplay}
+              <WhatsAppIcon size={16} /> {site.phoneDisplay || 'WhatsApp'}
             </a>
-            <a href={`mailto:${site.email}`} className={`${styles.btn} ${styles.ghost}`}>
-              <MailIcon size={16} /> {site.email}
-            </a>
+            {site.email && (
+              <a href={`mailto:${site.email}`} className={`${styles.btn} ${styles.ghost}`}>
+                <MailIcon size={16} /> {site.email}
+              </a>
+            )}
           </div>
         </section>
       </main>

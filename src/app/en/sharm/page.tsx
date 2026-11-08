@@ -9,11 +9,9 @@ import { FaqList } from '@/components/FaqList';
 import { Footer } from '@/components/Footer';
 import { WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
-import { ReviewsCarousel } from '@/components/ReviewsCarousel';
 import { SupportWidget } from '@/components/SupportWidget';
-import { TrustMarquee } from '@/components/TrustMarquee';
 import { BOOK_TOUR_MSG, generalFaq, site, whatsappLink } from '@/data/site';
-import { BESTSELLERS, collectReviews, getTour, MIN_PRICE, toSummary, tourHref, tours } from '@/data/tours';
+import { BESTSELLERS, getTour, MIN_PRICE, toSummary, tourHref, tours } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
 import { Bestsellers } from './Bestsellers';
 import { HeroSearch } from './HeroSearch';
@@ -48,10 +46,9 @@ const PROMISE = [
   ['No prepayment', 'Pay on the day of your tour — in cash, in any currency'],
   ['No hidden fees', 'The final price includes everything — no surprises'],
   ['Hotel transfer', 'Free pickup and drop-off from any hotel'],
-  ['24/7 support', 'A real person on WhatsApp, in English'],
+  ['Fast replies', 'A real person on WhatsApp, in English'],
   ['English-speaking guides', 'Professionals who love every route they lead'],
-  ['17 years of experience', 'Since 2009. Over 150,000 happy travellers.'],
-  ['Real offices', 'In Sharm El Sheikh and Cairo — real people'],
+  ['Free cancellation', 'Cancel free of charge up to 24 hours before the tour'],
 ];
 
 const STEPS = [
@@ -68,7 +65,6 @@ export default function SharmPage() {
     tag: b.tag,
     image: b.image,
   }));
-  const reviews = collectReviews(2, 14);
 
   return (
     <div className={styles.page}>
@@ -120,18 +116,9 @@ export default function SharmPage() {
           <HeroSearch tours={summaries} />
           <div className={styles.heroStats}>
             <div className={styles.heroStat}>
-              <div className={styles.heroAvs} aria-hidden>
-                {['#ff9f5a', '#4f8cff', '#22c55e', '#f59e0b', '#a855f7'].map((c, i) => (
-                  <span key={c} style={{ background: c }}>
-                    {'JMSAL'[i]}
-                  </span>
-                ))}
-              </div>
               <div>
-                <div className={styles.heroStatNum}>
-                  <span className={styles.star}>★</span> {site.stats.rating}/5
-                </div>
-                <div className={styles.heroStatLbl}>{site.stats.travellers} happy travellers</div>
+                <div className={styles.heroStatNum}>{count}+ excursions</div>
+                <div className={styles.heroStatLbl}>sea · desert · history</div>
               </div>
             </div>
             <div className={styles.heroStat}>
@@ -142,8 +129,8 @@ export default function SharmPage() {
             </div>
             <div className={styles.heroStat}>
               <div>
-                <div className={styles.heroStatNum}>{site.stats.years}+ years</div>
-                <div className={styles.heroStatLbl}>of experience</div>
+                <div className={styles.heroStatNum}>£0 upfront</div>
+                <div className={styles.heroStatLbl}>pay on the day</div>
               </div>
             </div>
           </div>
@@ -162,22 +149,6 @@ export default function SharmPage() {
                 <p className={styles.benefitDesc}>{b.text}</p>
               </div>
             ))}
-          </section>
-
-          <section className={styles.bmSec} aria-labelledby="reviews-h">
-            <div className={styles.bmHeadRow}>
-              <div>
-                <span className={styles.bmEyebrow}>reviews</span>
-                <h2 id="reviews-h" className={styles.bmH}>
-                  What they <span>say</span>
-                </h2>
-              </div>
-              <div className={styles.ghostText} aria-hidden>
-                +150k
-              </div>
-            </div>
-            <TrustMarquee />
-            <ReviewsCarousel reviews={reviews} />
           </section>
 
           <section className={styles.bsSec} aria-labelledby="bs-h">
@@ -205,41 +176,6 @@ export default function SharmPage() {
             <ToursCatalog tours={summaries} />
           </section>
 
-          <section className={styles.rtSec} aria-label="Ratings">
-            <div className={styles.rtBrand}>
-              <span className={styles.rtBrandName}>SARDOR TOURS</span>
-              <div className={styles.rtBrandDiv}>
-                <span />
-                SINCE 2009
-                <span />
-              </div>
-            </div>
-            <div className={styles.rtCard}>
-              <div className={styles.rtScore}>
-                <div className={styles.rtScoreNum}>{site.stats.rating}</div>
-                <div>
-                  <div className={styles.rtTag}>Excellent</div>
-                  <div className={styles.rtStars} aria-hidden>
-                    ★★★★★
-                  </div>
-                  <div className={styles.rtSub}>
-                    Trusted by <b>{site.stats.travellers}</b> travellers
-                  </div>
-                </div>
-              </div>
-              <div className={styles.rtPlatforms}>
-                {['Google', 'Tripadvisor', 'GetYourGuide'].map((p) => (
-                  <div key={p} className={styles.rtPlat}>
-                    <div className={styles.rtPlatName}>{p}</div>
-                    <div className={styles.rtStars} aria-hidden>
-                      ★★★★★
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
           <section className={styles.bmSec} id="faq" aria-labelledby="faq-h">
             <span className={styles.bmEyebrow}>FAQ</span>
             <h2 id="faq-h" className={styles.faqH}>
@@ -259,7 +195,7 @@ export default function SharmPage() {
                 </h2>
               </div>
               <div className={`${styles.ghostText} ${styles.ghostFaint}`} aria-hidden>
-                Since 2009
+                Promise
               </div>
             </div>
             <ol className={styles.whyList}>
@@ -303,23 +239,23 @@ export default function SharmPage() {
           <section className={styles.statsBanner} aria-label="Key figures">
             <div className={styles.stat}>
               <div className={styles.statN}>
-                <CountUp value={17} suffix="+" />
-              </div>
-              <div className={styles.statL}>years</div>
-            </div>
-            <i />
-            <div className={styles.stat}>
-              <div className={styles.statN}>
-                <CountUp value={150} suffix="k+" />
-              </div>
-              <div className={styles.statL}>travellers</div>
-            </div>
-            <i />
-            <div className={styles.stat}>
-              <div className={styles.statN}>
                 <CountUp value={count} suffix="+" />
               </div>
               <div className={styles.statL}>tours</div>
+            </div>
+            <i />
+            <div className={styles.stat}>
+              <div className={styles.statN}>
+                <CountUp value={4} />
+              </div>
+              <div className={styles.statL}>categories</div>
+            </div>
+            <i />
+            <div className={styles.stat}>
+              <div className={styles.statN}>
+                £<CountUp value={MIN_PRICE} />
+              </div>
+              <div className={styles.statL}>from</div>
             </div>
           </section>
 
@@ -330,20 +266,6 @@ export default function SharmPage() {
               <br />
               flies to <span>us</span>
             </h2>
-            <div className={styles.faces}>
-              <div className={styles.heroAvs} aria-hidden>
-                {['#ff9f5a', '#4f8cff', '#22c55e', '#f59e0b', '#a855f7'].map((c, i) => (
-                  <span key={c} style={{ background: c }}>
-                    {'EMSLR'[i]}
-                  </span>
-                ))}
-              </div>
-              <div className={styles.facesText}>
-                +150,000
-                <br />
-                <span>travellers with us</span>
-              </div>
-            </div>
             <WorldMap />
           </section>
         </main>

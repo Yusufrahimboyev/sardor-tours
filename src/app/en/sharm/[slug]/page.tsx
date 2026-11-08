@@ -9,9 +9,7 @@ import { FaqList } from '@/components/FaqList';
 import { Footer } from '@/components/Footer';
 import { CalendarIcon, CheckIcon, ClockIcon, ShieldIcon, WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
-import { ReviewsCarousel } from '@/components/ReviewsCarousel';
 import { SupportWidget } from '@/components/SupportWidget';
-import { TrustMarquee } from '@/components/TrustMarquee';
 import { site, whatsappLink } from '@/data/site';
 import { getTour, toSummary, tourHref, tours } from '@/data/tours';
 import { imageSrc, usingPlaceholders } from '@/lib/images';
@@ -142,20 +140,6 @@ export default async function TourPage({ params }: Params) {
             ))}
           </ul>
 
-          <section className={styles.block} aria-labelledby="rev-h">
-            <div className={styles.revHead}>
-              <div>
-                <h2 id="rev-h" className={styles.kicker}>
-                  Traveller reviews
-                </h2>
-                <div className={styles.revScore}>
-                  <span aria-hidden>★★★★★</span> <b>{tour.rating.toFixed(1)}</b>
-                </div>
-              </div>
-            </div>
-            <ReviewsCarousel reviews={tour.reviews} />
-          </section>
-
           <section className={styles.block} aria-labelledby="itin-h">
             <div className={styles.kicker}>What you get</div>
             <h2 id="itin-h" className={styles.h2}>
@@ -172,14 +156,6 @@ export default async function TourPage({ params }: Params) {
               </ol>
               <IncludedTabs included={tour.included} notIncluded={tour.notIncluded} bring={tour.bring} />
             </div>
-          </section>
-
-          <section className={styles.block} aria-labelledby="treviews-h">
-            <span className={styles.bmEyebrow}>reviews</span>
-            <h2 id="treviews-h" className={styles.bmH}>
-              What they <span>say</span>
-            </h2>
-            <TrustMarquee />
           </section>
 
           {tour.faq.length > 0 && (
@@ -255,14 +231,14 @@ export default async function TourPage({ params }: Params) {
                 )}
               </div>
               <div className={`${styles.bc} ${styles.bcC}`}>
-                <div className={styles.bcKicker}>Reliability</div>
+                <div className={styles.bcKicker}>Pay on the day</div>
                 <div className={styles.bcBig}>
-                  17+
+                  £0
                   <br />
-                  years
+                  upfront
                 </div>
                 <p className={styles.bcDesc}>
-                  Operating since <b>2009</b>. More than <b>150,000+ travellers</b> across Egypt.
+                  Reserve online in 3 minutes. <b>Hotel transfer included</b>, free cancellation up to 24 hours before.
                 </p>
               </div>
             </div>

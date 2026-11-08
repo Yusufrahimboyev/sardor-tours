@@ -5,25 +5,16 @@
  */
 export const site = {
   name: 'Sardor Tours',
-  tagline: 'Egypt · Since 2009',
+  tagline: 'Egypt Excursions',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
   description:
-    'Family-run Egyptian tour operator since 2009. Excursions across Sharm El Sheikh, Hurghada, Cairo and Marsa Alam. No prepayment, hotel transfer included.',
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '201227100446',
-  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY ?? '+20 122 710 0446',
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'info@sharmtours.org',
-  telegram: 'https://t.me/sharmtoursaibot',
-  instagram: 'https://www.instagram.com/sharm.tours/',
-  offices: [
-    {
-      name: 'Old Market Office',
-      address:
-        'Opposite the main entrance of Al Khima Beach, next to The Wave diving centre, Old Market district, Sharm El Sheikh.',
-    },
-    { name: 'Dahab Mall Office', address: 'Near the Aqua Blu hotel, Dahab Mall, No. 1018, ground floor, Sharm El Sheikh.' },
-    { name: 'Cairo Office', address: '40 Kambiz St, Nadi Al-Said, Dokki, Giza Governorate, Cairo.' },
-  ],
-  stats: { rating: '4.9', reviews: '2,131', travellers: '150,000+', years: 17, founded: 2009 },
+    'Day trips and excursions from Sharm El Sheikh — boat trips, desert safaris, Cairo, Luxor and Petra. No prepayment, hotel transfer included.',
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '998932129905',
+  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || '+998 93 212 99 05',
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'rahimboyevyusuf13@gmail.com',
+  /** Social links — set the env var to an empty string to hide one. */
+  telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/androidcoder',
+  instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://www.instagram.com/rv_yusuff/',
 } as const;
 
 export function whatsappLink(text?: string): string {
@@ -73,30 +64,26 @@ export const destinations = [
 export const generalFaq = [
   {
     q: 'Where do you operate?',
-    a: "We're based in Sharm El Sheikh and Cairo, with Hurghada coming soon, and offer more than 100 carefully selected tours and experiences across Egypt.",
-  },
-  {
-    q: 'What makes Sardor Tours different?',
-    a: "We're more than a booking website. Many of our experiences are operated directly by our own team, including our boats, diving services, watersports, desert safaris and Cairo tours. By managing the experience ourselves, we maintain high standards of safety, quality and customer service from start to finish.",
-  },
-  {
-    q: 'Why choose Sardor Tours?',
-    a: "Since 2009, we've helped more than 150,000 travellers discover Egypt. With 17+ years of experience, local expertise, transparent pricing and friendly service, we're dedicated to creating unforgettable experiences for every guest.",
+    a: 'We run excursions from Sharm El Sheikh — Red Sea boat trips, desert safaris and day trips to Dahab, Cairo, Luxor and Petra. Hurghada, Cairo and Marsa Alam are coming soon.',
   },
   {
     q: 'Do I have to pay in advance?',
     a: 'For most excursions, no. Reserve your place in just a few minutes and pay on the day of your tour. Selected experiences such as flights, private tours and large groups may require a deposit.',
   },
   {
-    q: 'Are you licensed and insured?',
-    a: 'Yes. We hold all licences required to operate in Egypt. Every excursion is issued a daily tourist police permit, available only to licensed operators, ensuring your trip meets official safety and tourism regulations.',
+    q: 'Is hotel transfer included?',
+    a: "Yes, return transfer from your hotel's main entrance is included in the price of every excursion.",
   },
   {
     q: 'How do I book?',
     a: "Open any excursion, choose a date, your hotel and the number of guests, and send the booking request. You'll get a booking reference straight away and our team confirms everything with you on WhatsApp.",
   },
   {
+    q: 'Can I cancel?',
+    a: 'Yes — standard bookings can be cancelled free of charge more than 24 hours before the start. See our Terms & Conditions for the exceptions.',
+  },
+  {
     q: 'How can I contact you?',
-    a: `Our team is available on WhatsApp 24/7 at ${site.phoneDisplay}. You can also reach us on Telegram and Instagram, use the contact form, or visit our offices in Old Market and Dahab Mall (Sharm El Sheikh) or Dokki (Cairo).`,
+    a: 'Message us on WhatsApp, use the contact form, or send us an email — we usually reply within minutes.',
   },
 ];
