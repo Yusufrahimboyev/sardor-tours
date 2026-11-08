@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sharm Tours — clone
 
-## Getting Started
+A full re-implementation of [sharmtours.org](https://www.sharmtours.org/) (English version) in
+Next.js 15 + TypeScript: home page, Sharm El Sheikh destination page with a searchable / filterable
+catalogue, 23 tour pages, about, terms, contact and video pages — plus a **real booking backend**
+(the reference only opens WhatsApp).
 
-First, run the development server:
+## Quick start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev            # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build && npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+| Command | What it does |
+|---|---|
+| `npm run dev` | Dev server (Turbopack) |
+| `npm run build` / `npm start` | Production build / server |
+| `npm run lint` · `npm run typecheck` | ESLint · TypeScript |
+| `npm run test:e2e` | Builds, starts on :3200 and runs Playwright (desktop + mobile) |
 
-To learn more about Next.js, take a look at the following resources:
+Playwright uses the locally installed Google Chrome. Without Chrome run `npx playwright install chromium`
+and `PW_CHANNEL= npm run test:e2e`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Copy `.env.example` to `.env.local`. All variables are optional — see
+[ARCHITECTURE.md](ARCHITECTURE.md#configuration-env). Important ones:
 
-## Deploy on Vercel
+* `NEXT_PUBLIC_IMAGE_BASE` — the reference photos are **not** included (copyright). By default
+  licensed placeholder photos are used. If you own/are licensed to use the original photos, point
+  this at where they are hosted and every image switches over.
+* `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_PHONE_DISPLAY`, `NEXT_PUBLIC_CONTACT_EMAIL` — contact details.
+* `ADMIN_TOKEN` — enables `GET /api/bookings/` and `GET /api/contact/` (send `Authorization: Bearer <token>`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Bookings and contact messages are stored as JSON in `.data/` (configurable with `DATA_DIR`).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Documentation
+
+* [AUDIT.md](AUDIT.md) — reference site analysis
+* [ARCHITECTURE.md](ARCHITECTURE.md) — stack, structure, decisions
+* [FEATURES.md](FEATURES.md) — feature list and status
+* [IMPLEMENTATION.md](IMPLEMENTATION.md) — what was built, phase by phase
+* [TESTING.md](TESTING.md) — test results
+* [TODO.md](TODO.md) — remaining work

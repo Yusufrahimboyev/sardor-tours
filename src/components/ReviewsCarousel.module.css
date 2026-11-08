@@ -1,0 +1,79 @@
+.root {
+  --rc-card: #fff;
+  --rc-line: #e4eaf5;
+  --rc-ink: #0a1628;
+  --rc-mid: #5a6a85;
+  position: relative;
+}
+.dark {
+  --rc-card: #0f1830;
+  --rc-line: rgba(255, 255, 255, 0.1);
+  --rc-ink: #fff;
+  --rc-mid: rgba(255, 255, 255, 0.66);
+}
+.track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 2px 18px;
+  scrollbar-width: none;
+}
+.track::-webkit-scrollbar {
+  display: none;
+}
+.card {
+  flex: 0 0 min(320px, 82vw);
+  scroll-snap-align: start;
+  background: var(--rc-card);
+  border: 1px solid var(--rc-line);
+  border-radius: 20px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--rc-ink);
+}
+.stars {
+  color: #f59e0b;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+.card blockquote {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--rc-ink);
+  flex: 1;
+}
+.card figcaption b {
+  display: block;
+  font-size: 14px;
+}
+.card figcaption span {
+  font-size: 12px;
+  color: var(--rc-mid);
+  font-weight: 600;
+}
+.ctrls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+.ctrls button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--rc-line);
+  background: var(--rc-card);
+  color: var(--rc-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.ctrls button:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}

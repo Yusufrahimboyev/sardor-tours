@@ -1,0 +1,84 @@
+.dialog {
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: none;
+  max-height: none;
+  color: var(--ink);
+}
+.dialog::backdrop {
+  background: rgba(10, 22, 40, 0.6);
+  backdrop-filter: blur(6px);
+}
+.dialog[open] {
+  animation: fade 0.25s ease;
+}
+.box {
+  position: relative;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 20, 80, 0.35);
+  overflow: auto;
+}
+.card {
+  margin: auto;
+  width: min(420px, calc(100vw - 32px));
+}
+.card .box {
+  padding: 26px 22px 22px;
+  max-height: calc(100svh - 32px);
+}
+.sheet {
+  margin: auto auto 0;
+  width: 100vw;
+}
+.sheet .box {
+  border-radius: 24px 24px 0 0;
+  max-height: 92svh;
+  animation: up 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (min-width: 640px) {
+  .sheet {
+    margin: auto;
+    width: min(520px, calc(100vw - 32px));
+  }
+  .sheet .box {
+    border-radius: 24px;
+  }
+}
+.panel {
+  margin: 0;
+  width: 100vw;
+  height: 100svh;
+}
+.panel .box {
+  border-radius: 0;
+  height: 100%;
+}
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+}
+.close:hover {
+  background: #e7edfb;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes up {
+  from {
+    transform: translateY(40px);
+  }
+}

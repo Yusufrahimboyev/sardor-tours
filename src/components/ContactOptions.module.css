@@ -1,0 +1,91 @@
+.title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.sub {
+  font-size: 14px;
+  color: var(--mid);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  border: 1.5px solid;
+  transition: transform 0.15s;
+}
+.link:hover {
+  transform: translateY(-2px);
+}
+.icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex: none;
+}
+.txt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.txt b {
+  font-size: 15px;
+}
+.txt small {
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.wa {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #14532d;
+}
+.wa .icon {
+  background: #25d366;
+}
+.wa small {
+  color: #16a34a;
+}
+.ig {
+  background: #fff0f9;
+  border-color: #fbcfe8;
+  color: #831843;
+}
+.ig .icon {
+  background: linear-gradient(135deg, #f09433, #dc2743, #bc1888);
+}
+.ig small {
+  color: #db2777;
+}
+.tg {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1e3a5f;
+}
+.tg .icon {
+  background: #229ed9;
+}
+.tg small {
+  color: #2563eb;
+}
+.form {
+  background: #fff7f0;
+  border-color: #fed7aa;
+  color: #7c2d12;
+}
+.form .icon {
+  background: var(--orange);
+}
+.form small {
+  color: var(--orange-d);
+}
