@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import type { Tour } from '@/data/tours';
-import { parseISODate, tomorrowISO, weekdayNames, weekdayOf } from './dates';
+import { parseISODate, tomorrowISO, weekdayOf } from './dates';
+import { weekdayNames } from '../i18n/format';
 import { quote } from './pricing';
 
 const phoneRe = /^\+?[0-9 ()-]{7,20}$/;
@@ -35,7 +36,7 @@ export function bookingIssues(tour: Tour, v: Pick<BookingInput, 'date' | 'time' 
   } else if (v.date < tomorrowISO(today)) {
     issues.push({ path: 'date', message: 'Please choose a date from tomorrow onwards' });
   } else if (tour.scheduleDays && !tour.scheduleDays.includes(weekdayOf(v.date)!)) {
-    issues.push({ path: 'date', message: `This tour runs on ${weekdayNames(tour.scheduleDays)} only` });
+    issues.push({ path: 'date', message: `This tour runs on ${weekdayNames(tour.scheduleDays, 'en')} only` });
   }
   if (tour.timeSlots.length > 0 && !tour.timeSlots.includes(v.time)) {
     issues.push({ path: 'time', message: 'Please choose a departure time' });

@@ -39,10 +39,6 @@ export function quote(tour: Tour, qty: Quantities): Quote {
   return { lines, total: lines.reduce((s, l) => s + l.subtotal, 0), guestUnits };
 }
 
-export function formatGBP(n: number): string {
-  return `£${n.toLocaleString('en-GB')}`;
-}
-
 export function optionPriceLabel(o: TourOption): string {
   if (o.free || o.price === 0) return o.unit === 'included' ? 'Included' : 'Free';
   return `£${o.price}${o.unit ? ` / ${o.unit}` : ''}`;

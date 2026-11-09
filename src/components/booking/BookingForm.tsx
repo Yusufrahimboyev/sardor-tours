@@ -4,8 +4,9 @@ import { useRouter } from 'next/navigation';
 import { useId, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import type { Tour } from '@/data/tours';
-import { formatLongDate, tomorrowISO, weekdayNames } from '@/lib/dates';
-import { formatGBP, optionMax, optionPriceLabel, quote, type Quantities } from '@/lib/pricing';
+import { tomorrowISO } from '@/lib/dates';
+import { formatDate, formatPrice, weekdayNames } from '@/i18n/format';
+import { optionMax, optionPriceLabel, quote, type Quantities } from '@/lib/pricing';
 import { bookingIssues, contactDetailsSchema } from '@/lib/validation';
 import { useToast } from '@/components/Toast';
 import { CheckIcon } from '@/components/icons';
@@ -158,7 +159,7 @@ export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }
           {...register('date', { validate: () => issueFor('date') })}
         />
         <p id={fid('date-hint')} className={errors.date ? styles.err : styles.hint}>
-          {errors.date?.message ?? (tour.scheduleDays ? `Runs on ${weekdayNames(tour.scheduleDays)}` : `Schedule: ${tour.schedule}`)}
+          {errors.date?.message ?? (tour.scheduleDays ? `Runs on ${weekdayNames(tour.scheduleDays, 'en')}` : `Schedule: ${tour.schedule}`)}
         </p>
 
         {tour.timeSlots.length > 0 && (
@@ -209,7 +210,7 @@ export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }
           <div>
             <small>Date</small>
             <b>
-              {date ? formatLongDate(date) : '—'}
+              {date ? formatDate(date, 'en') : '—'}
               {time ? ` · ${time}` : ''}
             </b>
           </div>
@@ -232,7 +233,7 @@ export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }
         )}
         <div className={styles.total}>
           <span>Total</span>
-          <b data-testid="booking-total">{formatGBP(q.total)}</b>
+          <b data-testid="booking-total">{formatPrice(q.total, 'en')}</b>
         </div>
         <button type="button" className={styles.primary} onClick={next}>
           Next
@@ -293,12 +294,12 @@ export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }
               <span>
                 {l.label} × {l.qty}
               </span>
-              <span>{formatGBP(l.subtotal)}</span>
+              <span>{formatPrice(l.subtotal, 'en')}</span>
             </div>
           ))}
           <div className={styles.total}>
             <span>Total — pay on the day</span>
-            <b>{formatGBP(q.total)}</b>
+            <b>{formatPrice(q.total, 'en')}</b>
           </div>
         </div>
         {tour.requiresDeposit && (

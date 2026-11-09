@@ -6,8 +6,7 @@ import { CheckIcon, WhatsAppIcon } from '@/components/icons';
 import { SiteHeader } from '@/components/SiteHeader';
 import { whatsappLink } from '@/data/site';
 import { tourHref } from '@/data/tours';
-import { formatLongDate } from '@/lib/dates';
-import { formatGBP } from '@/lib/pricing';
+import { formatDate, formatPrice } from '@/i18n/format';
 import { bookings, type Booking } from '@/lib/server/store';
 import styles from './booking.module.css';
 
@@ -23,7 +22,7 @@ function whatsappMessage(b: Booking): string {
     `Hello! I've just sent booking request ${b.id}.`,
     '',
     `Tour: ${b.tourName}`,
-    `Date: ${formatLongDate(b.date)}${b.time ? ` at ${b.time}` : ''}`,
+    `Date: ${formatDate(b.date, 'en')}${b.time ? ` at ${b.time}` : ''}`,
     `Hotel: ${b.hotel}`,
     ...b.lines.map((l) => `${l.label}: ${l.qty} × £${l.unitPrice} = £${l.subtotal}`),
     `Total: £${b.total}`,
@@ -65,7 +64,7 @@ export default async function BookingPage({ params }: { params: Promise<{ ref: s
             <div>
               <dt>Date</dt>
               <dd>
-                {formatLongDate(b.date)}
+                {formatDate(b.date, 'en')}
                 {b.time ? ` · ${b.time}` : ''}
               </dd>
             </div>
@@ -78,12 +77,12 @@ export default async function BookingPage({ params }: { params: Promise<{ ref: s
                 <dt>
                   {l.label} × {l.qty}
                 </dt>
-                <dd>{formatGBP(l.subtotal)}</dd>
+                <dd>{formatPrice(l.subtotal, 'en')}</dd>
               </div>
             ))}
             <div className={styles.total}>
               <dt>Total — pay on the day</dt>
-              <dd>{formatGBP(b.total)}</dd>
+              <dd>{formatPrice(b.total, 'en')}</dd>
             </div>
           </dl>
 

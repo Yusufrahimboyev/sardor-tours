@@ -1,5 +1,3 @@
-const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
 /** YYYY-MM-DD for a local date. */
 export function isoDate(d: Date): string {
   const m = String(d.getMonth() + 1).padStart(2, '0');
@@ -41,14 +39,4 @@ function isoFromUTC(d: Date): string {
 export function weekdayOf(s: string): number | null {
   const d = parseISODate(s);
   return d ? d.getUTCDay() : null;
-}
-
-export function weekdayNames(days: number[]): string {
-  return days.map((d) => WEEKDAYS[d]).join(', ');
-}
-
-export function formatLongDate(s: string): string {
-  const d = parseISODate(s);
-  if (!d) return s;
-  return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 }
