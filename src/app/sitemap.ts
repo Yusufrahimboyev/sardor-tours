@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { site } from '@/data/site';
-import { tourHref, tours } from '@/data/tours';
+import { tourHref } from '@/data/categories';
+import { allTours } from '@/data/tours';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -12,8 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: p === '/' ? 1 : p === '/en/sharm/' ? 0.9 : 0.5,
     })),
-    ...tours.map((t) => ({
-      url: `${site.url}${tourHref(t.slug)}`,
+    ...allTours('en').map((t) => ({
+      url: `${site.url}${tourHref('en', t.slug)}`,
       lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.8,

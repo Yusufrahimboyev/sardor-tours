@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
-import tours from '../../src/data/tours.json' with { type: 'json' };
+import { allTours } from '../../src/data/tours';
 import { expectNoHorizontalScroll, trackErrors } from './helpers';
+
+const tours = allTours('en');
 
 const STATIC_PAGES = [
   { path: '/', h1: /Red Sea/ },

@@ -6,7 +6,9 @@ import { Footer } from '@/components/Footer';
 import { InstagramIcon, TelegramIcon, WhatsAppIcon } from '@/components/icons';
 import { SiteHeader } from '@/components/SiteHeader';
 import { BOOK_TOUR_MSG, site, whatsappLink } from '@/data/site';
-import { CATEGORIES, toSummary, tourHref, tours } from '@/data/tours';
+import { CATEGORIES_EN as CATEGORIES } from '@/data/categories';
+import { tourHref } from '@/data/categories';
+import { allTours, toSummary } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
 import styles from './video.module.css';
 
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
  * honest "coming soon" state that still routes visitors to every tour.
  */
 export default function VideoPage() {
+  const tours = allTours('en');
   return (
     <div className={styles.page}>
       <SiteHeader />
@@ -42,7 +45,7 @@ export default function VideoPage() {
               {tours
                 .filter((t) => t.category === c.key)
                 .map((t) => (
-                  <Link key={t.slug} href={tourHref(t.slug)} className={styles.card}>
+                  <Link key={t.slug} href={tourHref('en', t.slug)} className={styles.card}>
                     <Image src={imageSrc(t.cardImage, 500, 880)} alt="" fill sizes="(max-width: 600px) 50vw, 220px" />
                     <span className={styles.grad} />
                     <span className={styles.name}>{t.name}</span>

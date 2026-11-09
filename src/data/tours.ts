@@ -1,13 +1,17 @@
-import raw from './tours.json';
+import type { Locale } from '../i18n/config';
+import baseRaw from './tours.json';
+import enText from './tours.en.json';
+import uzText from './tours.uz.json';
+import ruText from './tours.ru.json';
 
-export type Category = 'sea' | 'safari' | 'historical' | 'family';
+import type { Category } from './categories';
 
-export interface TourOption {
+export { CATEGORY_KEYS, CATEGORY_TEXT_EN, CATEGORIES_EN, tourHref, type Category } from './categories';
+
+export interface TourOptionBase {
   key: string;
-  label: string;
   /** Price in GBP per unit (0 = free / included). */
   price: number;
-  unit: string;
   free: boolean;
   /** counter = quantity stepper; toggle = flat add-on (on/off). */
   kind: 'counter' | 'toggle';
@@ -15,6 +19,11 @@ export interface TourOption {
   group: 'guests' | 'extras';
   max?: number;
 }
+export interface TourOptionText {
+  label: string;
+  unit: string;
+}
+export type TourOption = TourOptionBase & TourOptionText;
 
 export interface HeroPrice {
   price: number;
@@ -24,30 +33,41 @@ export interface HeroPrice {
   discount: string | null;
 }
 
-export interface Tour {
+/** Language-independent fields (prices, schedule, media). */
+export interface TourBase {
   id: number;
   slug: string;
+  category: Category;
+  /** Allowed weekdays (0 = Sunday). null = any day. */
+  scheduleDays: number[] | null;
+  timeSlots: string[];
+  priceFrom: number;
+  featured: boolean;
+  cardImage: string;
+  heroPrices: { price: number; oldPrice: number | null }[];
+  related: { slug: string }[];
+  gallery: { src: string; w: number; h: number }[];
+  options: TourOptionBase[];
+  bento: { oldPrice: number | null };
+  requiresDeposit: boolean;
+}
+
+/** Translatable fields, one record per language and slug. */
+export interface TourText {
   name: string;
   title: string;
-  category: Category;
   categoryLabel: string;
   duration: string;
   /** Duration as stated on the tour page (can differ from the listing card). */
   detailDuration: string;
   schedule: string;
-  /** Allowed weekdays (0 = Sunday). null = any day. */
-  scheduleDays: number[] | null;
   timeText: string | null;
-  timeSlots: string[];
-  priceFrom: number;
   priceUnit: string | null;
   badge: string | null;
-  featured: boolean;
   excerpt: string;
-  cardImage: string;
   metaTitle: string;
   metaDescription: string;
-  heroPrices: HeroPrice[];
+  heroPrices: { label: string; unit: string | null; discount: string | null }[];
   highlights: string[];
   itinerary: { title: string; text: string }[];
   included: string[];
@@ -59,7 +79,6 @@ export interface Tour {
   goodToKnow: { title: string; text: string; tone: string | null }[];
   bento: {
     priceKicker: string | null;
-    oldPrice: number | null;
     badge: string | null;
     priceText: string | null;
     programKicker: string | null;
@@ -69,37 +88,64 @@ export interface Tour {
     ringLabel: string | null;
   };
   cta: { heading: string | null; line1: string; line2: string; chips: string[] };
-  related: { slug: string; tag: string; name: string }[];
-  gallery: { src: string; w: number; h: number }[];
-  options: TourOption[];
-  requiresDeposit: boolean;
+  related: { tag: string; name: string }[];
+  options: TourOptionText[];
 }
 
-export const CATEGORIES: { key: Category; label: string; tag: string }[] = [
-  { key: 'sea', label: 'Sea & Diving', tag: 'Discover the Red Sea' },
-  { key: 'safari', label: 'Safari', tag: 'Breathe in the desert' },
-  { key: 'historical', label: 'Historical', tag: 'Where history began' },
-  { key: 'family', label: 'Entertainment', tag: 'Dive into the adventure' },
-];
+export type Tour = Omit<TourBase, 'heroPrices' | 'related' | 'options' | 'bento'> &
+  Omit<TourText, 'heroPrices' | 'related' | 'options' | 'bento'> & {
+    heroPrices: HeroPrice[];
+    related: { slug: string; tag: string; name: string }[];
+    options: TourOption[];
+    bento: TourBase['bento'] & TourText['bento'];
+  };
 
-export const tours: Tour[] = raw as Tour[];
+const baseTours = baseRaw as unknown as TourBase[];
+const textByLang = { en: enText, uz: uzText, ru: ruText } as unknown as Record<Locale, Record<string, TourText>>;
 
-const bySlug = new Map(tours.map((t) => [t.slug, t]));
+const baseBySlug = new Map(baseTours.map((t) => [t.slug, t]));
 
-export function getTour(slug: string): Tour | undefined {
-  return bySlug.get(slug);
+export const tourSlugs: string[] = baseTours.map((t) => t.slug);
+
+export function getTourBase(slug: string): TourBase | undefined {
+  return baseBySlug.get(slug);
 }
 
-export function tourHref(slug: string): string {
-  return `/en/sharm/${slug}/`;
+function merge(b: TourBase, x: TourText): Tour {
+  return {
+    ...b,
+    ...x,
+    heroPrices: b.heroPrices.map((h, i) => ({ ...h, ...x.heroPrices[i] })),
+    related: b.related.map((r, i) => ({ ...r, ...x.related[i] })),
+    options: b.options.map((o, i) => ({ ...o, ...x.options[i] })),
+    bento: { ...b.bento, ...x.bento },
+  };
 }
 
-export const BESTSELLERS: { slug: string; tag: string; image: string }[] = [
-  { slug: 'white-island-ras-mohamed', tag: 'Sea', image: '/images/white-island02.webp' },
-  { slug: 'quad-safari-sharm', tag: 'Safari', image: '/images/quad01.webp' },
-  { slug: 'vip-boat-white-island-ras-mohamed', tag: 'Sea', image: '/images/Vip-boat01.webp' },
-  { slug: 'cairo-pyramids-by-bus', tag: 'History', image: '/images/cairo-bus08.webp' },
-  { slug: 'red-canyon-jeep-dahab', tag: 'Safari', image: '/images/slama01.webp' },
+const cache = new Map<string, Tour>();
+
+export function getTour(slug: string, lang: Locale): Tour | undefined {
+  const key = `${lang}/${slug}`;
+  const hit = cache.get(key);
+  if (hit) return hit;
+  const b = baseBySlug.get(slug);
+  const x = textByLang[lang]?.[slug];
+  if (!b || !x) return undefined;
+  const t = merge(b, x);
+  cache.set(key, t);
+  return t;
+}
+
+export function allTours(lang: Locale): Tour[] {
+  return tourSlugs.map((s) => getTour(s, lang)!);
+}
+
+export const BESTSELLERS: { slug: string; category: Category; image: string }[] = [
+  { slug: 'white-island-ras-mohamed', category: 'sea', image: '/images/white-island02.webp' },
+  { slug: 'quad-safari-sharm', category: 'safari', image: '/images/quad01.webp' },
+  { slug: 'vip-boat-white-island-ras-mohamed', category: 'sea', image: '/images/Vip-boat01.webp' },
+  { slug: 'cairo-pyramids-by-bus', category: 'historical', image: '/images/cairo-bus08.webp' },
+  { slug: 'red-canyon-jeep-dahab', category: 'safari', image: '/images/slama01.webp' },
 ];
 
 /** Lightweight shape sent to client components (search, listing). */
@@ -133,5 +179,5 @@ export function toSummary(t: Tour): TourSummary {
   };
 }
 
-export const MIN_PRICE = Math.min(...tours.map((t) => t.priceFrom));
+export const MIN_PRICE = Math.min(...baseTours.map((t) => t.priceFrom));
 

@@ -1,13 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { tourHref, type TourSummary } from '@/data/tours';
+import { tourHref } from '@/data/categories';
+import type { TourSummary } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
 import { ArrowRight, CalendarIcon, ClockIcon } from './icons';
 import styles from './TourCard.module.css';
 
 export function TourCard({ tour, priority }: { tour: TourSummary; priority?: boolean }) {
   return (
-    <Link href={tourHref(tour.slug)} className={styles.tc} data-testid="tour-card">
+    <Link href={tourHref('en', tour.slug)} className={styles.tc} data-testid="tour-card">
       <div className={styles.img}>
         <Image
           src={imageSrc(tour.cardImage, 800, 520)}

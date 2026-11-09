@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { SearchIcon } from '@/components/icons';
-import { tourHref, type TourSummary } from '@/data/tours';
+import { tourHref } from '@/data/categories';
+import type { TourSummary } from '@/data/tours';
 import { matchesQuery } from '@/lib/catalog';
 import { imageSrc } from '@/lib/images';
 import { CATALOG_QUERY } from './ToursCatalog';
@@ -62,7 +63,7 @@ export function HeroSearch({ tours }: { tours: TourSummary[] }) {
       <div id={listId} className={`${styles.heroResults} ${open && q.trim() ? styles.heroResultsOpen : ''}`}>
         {found.length ? (
           found.map((t) => (
-            <Link key={t.slug} href={tourHref(t.slug)} className={styles.heroResult}>
+            <Link key={t.slug} href={tourHref('en', t.slug)} className={styles.heroResult}>
               <span className={styles.heroResultImg}>
                 <Image src={imageSrc(t.cardImage, 160, 120)} alt="" width={44} height={38} />
               </span>

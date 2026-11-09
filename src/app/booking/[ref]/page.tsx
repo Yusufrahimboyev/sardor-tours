@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer';
 import { CheckIcon, WhatsAppIcon } from '@/components/icons';
 import { SiteHeader } from '@/components/SiteHeader';
 import { whatsappLink } from '@/data/site';
-import { tourHref } from '@/data/tours';
+import { tourHref } from '@/data/categories';
 import { formatDate, formatPrice } from '@/i18n/format';
 import { bookings, type Booking } from '@/lib/server/store';
 import styles from './booking.module.css';
@@ -58,7 +58,7 @@ export default async function BookingPage({ params }: { params: Promise<{ ref: s
             <div>
               <dt>Tour</dt>
               <dd>
-                <Link href={tourHref(b.tourSlug)}>{b.tourName}</Link>
+                <Link href={tourHref('en', b.tourSlug)}>{b.tourName}</Link>
               </dd>
             </div>
             <div>

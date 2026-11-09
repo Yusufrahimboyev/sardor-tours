@@ -7,7 +7,8 @@ import { CheckIcon, ClockIcon, InfoIcon, InstagramIcon, PinIcon, TelegramIcon, W
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { SiteHeader } from '@/components/SiteHeader';
 import { BOOK_TOUR_MSG, generalFaq, site, whatsappLink } from '@/data/site';
-import { CATEGORIES, MIN_PRICE, tours } from '@/data/tours';
+import { CATEGORIES_EN as CATEGORIES } from '@/data/categories';
+import { MIN_PRICE, tourSlugs } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
 import styles from './about.module.css';
 
@@ -67,7 +68,7 @@ export default function AboutPage() {
             <div className={styles.cards}>
               {[
                 ['Destination', 'Sharm El Sheikh', <PinIcon key="p" />],
-                ['Excursions', `${tours.length}+ tours`, <InfoIcon key="i" size={18} />],
+                ['Excursions', `${tourSlugs.length}+ tours`, <InfoIcon key="i" size={18} />],
                 ['Prices', `from £${MIN_PRICE}`, <ClockIcon key="c" size={18} />],
                 ['Prepayment', '£0 — pay on the day', <CheckIcon key="l" size={18} />],
               ].map(([l, v, ic]) => (
@@ -86,7 +87,7 @@ export default function AboutPage() {
         <div className={styles.statsWrap}>
           <div className={styles.stats}>
             {[
-              [`${tours.length}+`, 'Excursions'],
+              [`${tourSlugs.length}+`, 'Excursions'],
               [String(CATEGORIES.length), 'Categories'],
               [`£${MIN_PRICE}`, 'Prices from'],
               ['£0', 'Prepayment'],

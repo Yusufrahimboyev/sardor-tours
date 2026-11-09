@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer';
 import { ArrowDown, ArrowRight, WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { destinations, generalFaq, PLAN_TRIP_MSG, site, whatsappLink } from '@/data/site';
-import { MIN_PRICE, tours } from '@/data/tours';
+import { MIN_PRICE, tourSlugs } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
 import { HomeHeader } from './HomeHeader';
 import styles from './home.module.css';
@@ -60,7 +60,7 @@ const WHY = [
 
 export default function HomePage() {
   const wa = whatsappLink(PLAN_TRIP_MSG);
-  const liveCount = tours.length;
+  const liveCount = tourSlugs.length;
 
   return (
     <div className={styles.page}>

@@ -11,7 +11,8 @@ import { WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { SupportWidget } from '@/components/SupportWidget';
 import { BOOK_TOUR_MSG, generalFaq, site, whatsappLink } from '@/data/site';
-import { BESTSELLERS, getTour, MIN_PRICE, toSummary, tourHref, tours } from '@/data/tours';
+import { CATEGORY_TEXT_EN, tourHref } from '@/data/categories';
+import { allTours, BESTSELLERS, getTour, MIN_PRICE, toSummary } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
 import { Bestsellers } from './Bestsellers';
 import { HeroSearch } from './HeroSearch';
@@ -19,6 +20,7 @@ import { ToursCatalog } from './ToursCatalog';
 import { WorldMap } from './WorldMap';
 import styles from './sharm.module.css';
 
+const tours = allTours('en');
 const count = tours.length;
 
 export const metadata: Metadata = {
@@ -60,9 +62,9 @@ const STEPS = [
 export default function SharmPage() {
   const summaries = tours.map(toSummary);
   const bestsellers = BESTSELLERS.map((b) => ({
-    href: tourHref(b.slug),
-    name: getTour(b.slug)!.name,
-    tag: b.tag,
+    href: tourHref('en', b.slug),
+    name: getTour(b.slug, 'en')!.name,
+    tag: CATEGORY_TEXT_EN[b.category].short,
     image: b.image,
   }));
 
@@ -79,7 +81,7 @@ export default function SharmPage() {
             item: {
               '@type': 'TouristTrip',
               name: t.name,
-              url: `${site.url}${tourHref(t.slug)}`,
+              url: `${site.url}${tourHref('en', t.slug)}`,
               touristType: t.categoryLabel,
               offers: { '@type': 'Offer', price: String(t.priceFrom), priceCurrency: 'GBP', availability: 'https://schema.org/InStock' },
             },

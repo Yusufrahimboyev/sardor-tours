@@ -1,4 +1,4 @@
-import type { Tour, TourOption } from '@/data/tours';
+import type { TourOption, TourOptionBase } from '@/data/tours';
 
 export type Quantities = Record<string, number>;
 
@@ -18,7 +18,7 @@ export interface Quote {
 
 export const MAX_QTY = 30;
 
-export function optionMax(o: TourOption): number {
+export function optionMax(o: TourOptionBase): number {
   return o.kind === 'toggle' ? 1 : (o.max ?? MAX_QTY);
 }
 
@@ -27,14 +27,14 @@ export function optionMax(o: TourOption): number {
  * The server always recomputes the quote from its own tour data, so a
  * tampered client total can never be persisted.
  */
-export function quote(tour: Tour, qty: Quantities): Quote {
+export function quote(tour: { options: (TourOptionBase & { label?: string })[] }, qty: Quantities): Quote {
   const lines: PriceLine[] = [];
   let guestUnits = 0;
   for (const o of tour.options) {
     const n = Math.min(Math.max(0, Math.floor(qty[o.key] ?? 0)), optionMax(o));
     if (n === 0) continue;
     if (o.group === 'guests') guestUnits += n;
-    lines.push({ key: o.key, label: o.label, qty: n, unitPrice: o.price, subtotal: n * o.price });
+    lines.push({ key: o.key, label: o.label ?? o.key, qty: n, unitPrice: o.price, subtotal: n * o.price });
   }
   return { lines, total: lines.reduce((s, l) => s + l.subtotal, 0), guestUnits };
 }

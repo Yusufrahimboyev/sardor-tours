@@ -3,7 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useId, useMemo, useState } from 'react';
-import { tourHref, type TourSummary } from '@/data/tours';
+import { tourHref } from '@/data/categories';
+import type { TourSummary } from '@/data/tours';
 import { matchesQuery } from '@/lib/catalog';
 import { imageSrc } from '@/lib/images';
 import styles from './TourSearch.module.css';
@@ -34,7 +35,7 @@ export function TourSearch({ tours, onNavigate }: { tours: TourSummary[]; onNavi
           <p className={styles.empty}>No tours found for &ldquo;{q}&rdquo;</p>
         ) : (
           found.map((t) => (
-            <Link key={t.slug} href={tourHref(t.slug)} className={styles.item} onClick={onNavigate}>
+            <Link key={t.slug} href={tourHref('en', t.slug)} className={styles.item} onClick={onNavigate}>
               <span className={styles.thumb}>
                 <Image src={imageSrc(t.cardImage, 160, 120)} alt="" width={64} height={48} />
               </span>

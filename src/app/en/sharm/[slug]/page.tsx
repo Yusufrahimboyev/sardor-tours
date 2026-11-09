@@ -11,7 +11,8 @@ import { CalendarIcon, CheckIcon, ClockIcon, ShieldIcon, WhatsAppIcon } from '@/
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { SupportWidget } from '@/components/SupportWidget';
 import { site, whatsappLink } from '@/data/site';
-import { getTour, toSummary, tourHref, tours } from '@/data/tours';
+import { tourHref } from '@/data/categories';
+import { allTours, getTour, toSummary, tourSlugs } from '@/data/tours';
 import { imageSrc, usingPlaceholders } from '@/lib/images';
 import { Gallery } from './Gallery';
 import { IncludedTabs } from './IncludedTabs';
@@ -20,22 +21,22 @@ import styles from './tour.module.css';
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return tours.map((t) => ({ slug: t.slug }));
+  return tourSlugs.map((slug) => ({ slug }));
 }
 
 type Params = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const tour = getTour((await params).slug);
+  const tour = getTour((await params).slug, 'en');
   if (!tour) return {};
   const title = tour.metaTitle.replace(/\s*\|\s*Sardor Tours$/, '');
   return {
     title,
     description: tour.metaDescription,
-    alternates: { canonical: tourHref(tour.slug) },
+    alternates: { canonical: tourHref('en', tour.slug) },
     openGraph: {
       type: 'article',
-      url: tourHref(tour.slug),
+      url: tourHref('en', tour.slug),
       title,
       description: tour.metaDescription,
       images: [{ url: imageSrc(tour.cardImage, 1200, 630), width: 1200, height: 630, alt: tour.name }],
@@ -44,13 +45,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 
 export default async function TourPage({ params }: Params) {
-  const tour = getTour((await params).slug);
+  const tour = getTour((await params).slug, 'en');
   if (!tour) notFound();
 
   const gallery = usingPlaceholders ? tour.gallery.slice(0, 8) : tour.gallery;
   const oldPrice = tour.heroPrices[0]?.oldPrice ?? tour.bento.oldPrice;
   const discount = tour.heroPrices[0]?.discount ?? null;
-  const related = tour.related.map((r) => ({ ...r, tour: getTour(r.slug)! }));
+  const related = tour.related.map((r) => ({ ...r, tour: getTour(r.slug, 'en')! }));
   const meta = [tour.schedule, tour.detailDuration, tour.timeText].filter(Boolean) as string[];
 
   return (
@@ -61,7 +62,7 @@ export default async function TourPage({ params }: Params) {
           '@type': 'TouristTrip',
           name: tour.title,
           description: tour.metaDescription,
-          url: `${site.url}${tourHref(tour.slug)}`,
+          url: `${site.url}${tourHref('en', tour.slug)}`,
           image: imageSrc(tour.cardImage, 1200, 800),
           touristType: tour.categoryLabel,
           itinerary: {
@@ -73,7 +74,7 @@ export default async function TourPage({ params }: Params) {
             price: String(tour.priceFrom),
             priceCurrency: 'GBP',
             availability: 'https://schema.org/InStock',
-            url: `${site.url}${tourHref(tour.slug)}`,
+            url: `${site.url}${tourHref('en', tour.slug)}`,
           },
           provider: { '@type': 'TravelAgency', name: site.name, url: site.url },
         }}
@@ -85,13 +86,13 @@ export default async function TourPage({ params }: Params) {
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
             { '@type': 'ListItem', position: 2, name: 'Sharm El Sheikh', item: `${site.url}/en/sharm/` },
-            { '@type': 'ListItem', position: 3, name: tour.name, item: `${site.url}${tourHref(tour.slug)}` },
+            { '@type': 'ListItem', position: 3, name: tour.name, item: `${site.url}${tourHref('en', tour.slug)}` },
           ],
         }}
       />
       {tour.faq.length > 0 && <JsonLd data={faqJsonLd(tour.faq)} />}
 
-      <BottomNav tours={tours.map(toSummary)} withBack placement="top" />
+      <BottomNav tours={allTours('en').map(toSummary)} withBack placement="top" />
 
       <div className={styles.shell}>
         <main id="main-content" tabIndex={-1} className={styles.main}>
@@ -270,7 +271,7 @@ export default async function TourPage({ params }: Params) {
             </h2>
             <div className={styles.relTrack}>
               {related.map((r) => (
-                <Link key={r.slug} href={tourHref(r.slug)} className={styles.relCard}>
+                <Link key={r.slug} href={tourHref('en', r.slug)} className={styles.relCard}>
                   <Image src={imageSrc(r.tour.cardImage, 700, 900)} alt="" fill sizes="(max-width: 700px) 70vw, 260px" />
                   <span className={styles.relGrad} />
                   <span className={styles.relBody}>

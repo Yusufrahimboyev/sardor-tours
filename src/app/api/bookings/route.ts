@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getTour } from '@/data/tours';
+import { getTour, getTourBase } from '@/data/tours';
 import { quote } from '@/lib/pricing';
 import { bookingBaseSchema, bookingIssues } from '@/lib/validation';
 import { bookings, newReference, type Booking } from '@/lib/server/store';
@@ -12,8 +12,9 @@ export async function POST(req: Request) {
   if (!parsed.success) return jsonError(400, 'Please check the highlighted fields.', zodFieldErrors(parsed.error));
   const input = parsed.data;
 
-  const tour = getTour(input.tourSlug);
-  if (!tour) return jsonError(404, 'This tour no longer exists.');
+  const tour = getTourBase(input.tourSlug);
+  const tourEn = getTour(input.tourSlug, 'en');
+  if (!tour || !tourEn) return jsonError(404, 'This tour no longer exists.');
 
   const issues = bookingIssues(tour, input);
   if (issues.length) {
@@ -21,16 +22,17 @@ export async function POST(req: Request) {
   }
 
   const q = quote(tour, input.qty);
+  const labels = new Map(tourEn.options.map((o) => [o.key, o.label]));
   const booking: Booking = {
     id: newReference(),
     createdAt: new Date().toISOString(),
     status: 'pending',
     tourSlug: tour.slug,
-    tourName: tour.name,
+    tourName: tourEn.name,
     date: input.date,
     time: input.time,
     hotel: input.hotel,
-    lines: q.lines,
+    lines: q.lines.map((l) => ({ ...l, label: labels.get(l.key) ?? l.label })),
     total: q.total,
     currency: 'GBP',
     name: input.name,

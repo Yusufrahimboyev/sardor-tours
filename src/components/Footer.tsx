@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { site, whatsappLink } from '@/data/site';
-import { CATEGORIES } from '@/data/tours';
+import { CATEGORIES_EN as CATEGORIES } from '@/data/categories';
 import { Brand } from './Brand';
 import { InstagramIcon, TelegramIcon, WhatsAppIcon } from './icons';
 import styles from './Footer.module.css';

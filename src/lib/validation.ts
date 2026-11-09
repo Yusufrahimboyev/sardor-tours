@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Tour } from '@/data/tours';
+import type { TourBase } from '@/data/tours';
 import { parseISODate, tomorrowISO, weekdayOf } from './dates';
 import { weekdayNames } from '../i18n/format';
 import { quote } from './pricing';
@@ -28,7 +28,7 @@ export const bookingBaseSchema = z
 export type BookingInput = z.infer<typeof bookingBaseSchema>;
 
 /** Tour-specific rules shared by the client form and the API. */
-export function bookingIssues(tour: Tour, v: Pick<BookingInput, 'date' | 'time' | 'qty'>, today = new Date()) {
+export function bookingIssues(tour: TourBase, v: Pick<BookingInput, 'date' | 'time' | 'qty'>, today = new Date()) {
   const issues: { path: string; message: string }[] = [];
   const d = parseISODate(v.date);
   if (!d) {

@@ -3,7 +3,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { TourCard } from '@/components/TourCard';
 import { XIcon } from '@/components/icons';
-import { CATEGORIES, type Category, type TourSummary } from '@/data/tours';
+import { CATEGORIES_EN as CATEGORIES, type Category } from '@/data/categories';
+import type { TourSummary } from '@/data/tours';
 import { filterTours, PRICE_BANDS, type PriceBand } from '@/lib/catalog';
 import styles from './sharm.module.css';
 
