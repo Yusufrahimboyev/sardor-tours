@@ -7,6 +7,8 @@ import { SiteHeader } from '@/components/SiteHeader';
 import { whatsappLink } from '@/data/site';
 import { tourHref } from '@/data/categories';
 import { formatDate, formatPrice } from '@/i18n/format';
+import { langFrom } from '@/i18n/params';
+import { localeHref } from '@/i18n/routing';
 import { bookings, type Booking } from '@/lib/server/store';
 import styles from './booking.module.css';
 
@@ -33,7 +35,8 @@ function whatsappMessage(b: Booking): string {
   return lines.join('\n');
 }
 
-export default async function BookingPage({ params }: { params: Promise<{ ref: string }> }) {
+export default async function BookingPage({ params }: { params: Promise<{ lang: string; ref: string }> }) {
+  const lang = await langFrom(params);
   const { ref } = await params;
   if (!/^ST-[A-Z0-9]{6}$/.test(ref)) notFound();
   const b = await bookings.get(ref);
@@ -41,7 +44,7 @@ export default async function BookingPage({ params }: { params: Promise<{ ref: s
 
   return (
     <div className={styles.page}>
-      <SiteHeader />
+      <SiteHeader lang={lang} />
       <main id="main-content" tabIndex={-1} className={styles.main}>
         <div className={styles.card}>
           <span className={styles.ic}>
@@ -58,7 +61,7 @@ export default async function BookingPage({ params }: { params: Promise<{ ref: s
             <div>
               <dt>Tour</dt>
               <dd>
-                <Link href={tourHref('en', b.tourSlug)}>{b.tourName}</Link>
+                <Link href={tourHref(lang, b.tourSlug)}>{b.tourName}</Link>
               </dd>
             </div>
             <div>
@@ -90,17 +93,17 @@ export default async function BookingPage({ params }: { params: Promise<{ ref: s
             <a href={whatsappLink(whatsappMessage(b))} target="_blank" rel="noopener noreferrer" className="btn-wa">
               <WhatsAppIcon /> Confirm faster on WhatsApp
             </a>
-            <Link href="/en/sharm/" className={styles.secondary}>
+            <Link href={localeHref(lang, '/sharm/')} className={styles.secondary}>
               Browse more tours
             </Link>
           </div>
           <p className={styles.small}>
             Need to change something? Reply on WhatsApp with your reference. Free cancellation up to 24 hours before the tour —
-            see our <Link href="/en/terms-and-conditions/">Terms &amp; Conditions</Link>.
+            see our <Link href={localeHref(lang, '/terms-and-conditions/')}>Terms &amp; Conditions</Link>.
           </p>
         </div>
       </main>
-      <Footer tone="light" />
+      <Footer lang={lang} tone="light" />
     </div>
   );
 }

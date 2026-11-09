@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { site } from '@/data/site';
+import type { Locale } from '@/i18n/config';
+import { localeHref } from '@/i18n/routing';
 import styles from './Brand.module.css';
 
 /** Logo mark + wordmark. The original logo artwork is not reused; this is a neutral SVG mark. */
@@ -21,9 +23,9 @@ export function LogoMark({ size = 40 }: { size?: number }) {
   );
 }
 
-export function Brand({ tone = 'light' }: { tone?: 'light' | 'dark' }) {
+export function Brand({ lang, tone = 'light' }: { lang: Locale; tone?: 'light' | 'dark' }) {
   return (
-    <Link href="/" className={`${styles.brand} ${tone === 'dark' ? styles.dark : ''}`} aria-label={`${site.name} — home`}>
+    <Link href={localeHref(lang, '/')} className={`${styles.brand} ${tone === 'dark' ? styles.dark : ''}`} aria-label={`${site.name} — home`}>
       <LogoMark />
       <span>
         <span className={styles.bt}>{site.name}</span>

@@ -10,14 +10,19 @@ import { BOOK_TOUR_MSG, generalFaq, site, whatsappLink } from '@/data/site';
 import { CATEGORIES_EN as CATEGORIES } from '@/data/categories';
 import { MIN_PRICE, tourSlugs } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
+import { langFrom } from '@/i18n/params';
+import { localeHref } from '@/i18n/routing';
 import styles from './about.module.css';
 
-export const metadata: Metadata = {
-  title: 'About Us — Excursions in Sharm El Sheikh',
-  description: `${site.name} — excursions and day trips from Sharm El Sheikh. No prepayment, hotel transfer included, easy online booking.`,
-  alternates: { canonical: '/en/about-us/' },
-  openGraph: { url: '/en/about-us/', title: `About ${site.name}`, images: [imageSrc('/images/about-hero.webp', 1200, 630)] },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const lang = await langFrom(params);
+  return {
+    title: 'About Us — Excursions in Sharm El Sheikh',
+    description: `${site.name} — excursions and day trips from Sharm El Sheikh. No prepayment, hotel transfer included, easy online booking.`,
+    alternates: { canonical: localeHref(lang, '/about-us/') },
+    openGraph: { url: localeHref(lang, '/about-us/'), title: `About ${site.name}`, images: [imageSrc('/images/about-hero.webp', 1200, 630)] },
+  };
+}
 
 const REASONS = [
   ['Clear prices', 'The price you see is the price you pay — transfer included, no hidden extras.'],
@@ -28,11 +33,12 @@ const REASONS = [
   ['Real people', 'Questions before or during your trip? Message us on WhatsApp and a real person answers.'],
 ];
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
+  const lang = await langFrom(params);
   return (
     <div className={styles.page}>
       <JsonLd data={faqJsonLd(generalFaq)} />
-      <SiteHeader overlay />
+      <SiteHeader lang={lang} overlay />
 
       <main id="main-content" tabIndex={-1}>
         <section className={styles.hero}>
@@ -52,7 +58,7 @@ export default function AboutPage() {
               </p>
               <p>No prepayment for most tours, hotel transfer included and a real person to help you on WhatsApp.</p>
               <div className={styles.actions}>
-                <Link href="/en/sharm/" className={styles.btnWhite}>
+                <Link href={localeHref(lang, '/sharm/')} className={styles.btnWhite}>
                   <InfoIcon size={16} /> All excursions
                 </Link>
                 <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={styles.btnGlass}>
@@ -134,7 +140,7 @@ export default function AboutPage() {
           <h2 id="cta-h">Ready to discover Sharm El Sheikh?</h2>
           <p>Browse our excursions or message us — we&apos;ll help you find the perfect trip for your group, budget and interests.</p>
           <div className={styles.ctaBtns}>
-            <Link href="/en/sharm/" className={styles.btnWhite}>
+            <Link href={localeHref(lang, '/sharm/')} className={styles.btnWhite}>
               All excursions
             </Link>
             <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={styles.btnGlass}>
@@ -148,7 +154,7 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 }

@@ -1,23 +1,26 @@
 import Link from 'next/link';
 import { site, whatsappLink } from '@/data/site';
 import { CATEGORIES_EN as CATEGORIES } from '@/data/categories';
+import type { Locale } from '@/i18n/config';
+import { localeHref } from '@/i18n/routing';
 import { Brand } from './Brand';
 import { InstagramIcon, TelegramIcon, WhatsAppIcon } from './icons';
 import styles from './Footer.module.css';
 
 interface Props {
+  lang: Locale;
   /** home = company links column; destination = categories column. */
   variant?: 'home' | 'destination';
   tone?: 'dark' | 'light';
 }
 
-export function Footer({ variant = 'destination', tone = 'dark' }: Props) {
+export function Footer({ lang, variant = 'destination', tone = 'dark' }: Props) {
   return (
     <footer id="contact" className={`${styles.footer} ${tone === 'light' ? styles.light : ''}`}>
       <div className="wrap">
         <div className={styles.top}>
           <div className={styles.brandCol}>
-            <Brand tone={tone === 'light' ? 'dark' : 'light'} />
+            <Brand lang={lang} tone={tone === 'light' ? 'dark' : 'light'} />
             <p>
               Excursions and day trips from Sharm El Sheikh — sea, desert and history. No prepayment, hotel transfer
               included.
@@ -40,7 +43,7 @@ export function Footer({ variant = 'destination', tone = 'dark' }: Props) {
           </div>
           <div className={styles.col}>
             <h2>Destinations</h2>
-            <Link href="/en/sharm/">Sharm El Sheikh</Link>
+            <Link href={localeHref(lang, '/sharm/')}>Sharm El Sheikh</Link>
             <p className={styles.dim}>Hurghada — soon</p>
             <p className={styles.dim}>Cairo — soon</p>
             <p className={styles.dim}>Marsa Alam — soon</p>
@@ -48,16 +51,16 @@ export function Footer({ variant = 'destination', tone = 'dark' }: Props) {
           {variant === 'home' ? (
             <div className={styles.col}>
               <h2>Company</h2>
-              <Link href="/en/about-us/">About us</Link>
-              <Link href="/en/contact/">Contact form</Link>
-              <Link href="/en/sharm/video/">Videos</Link>
-              <Link href="/en/terms-and-conditions/">Terms &amp; Conditions</Link>
+              <Link href={localeHref(lang, '/about-us/')}>About us</Link>
+              <Link href={localeHref(lang, '/contact/')}>Contact form</Link>
+              <Link href={localeHref(lang, '/sharm/video/')}>Videos</Link>
+              <Link href={localeHref(lang, '/terms-and-conditions/')}>Terms &amp; Conditions</Link>
             </div>
           ) : (
             <div className={styles.col}>
               <h2>Categories</h2>
               {CATEGORIES.map((c) => (
-                <Link key={c.key} href={`/en/sharm/?cat=${c.key}#tours`}>
+                <Link key={c.key} href={localeHref(lang, `/sharm/?cat=${c.key}#tours`)}>
                   {c.label}
                 </Link>
               ))}
@@ -69,14 +72,14 @@ export function Footer({ variant = 'destination', tone = 'dark' }: Props) {
               {site.phoneDisplay || 'WhatsApp'}
             </a>
             {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
-            <Link href="/en/contact/">Send us a message</Link>
+            <Link href={localeHref(lang, '/contact/')}>Send us a message</Link>
           </div>
         </div>
         <div className={styles.bot}>
           <span>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </span>
-          <Link href="/en/terms-and-conditions/" className={styles.terms}>
+          <Link href={localeHref(lang, '/terms-and-conditions/')} className={styles.terms}>
             Terms &amp; Conditions
           </Link>
         </div>

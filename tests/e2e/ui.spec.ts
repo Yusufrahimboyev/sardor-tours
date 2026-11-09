@@ -20,7 +20,7 @@ test('contact form validates and submits', async ({ page, request }) => {
 });
 
 test('home: destinations, FAQ accordion and mobile menu', async ({ page, isMobile }) => {
-  await page.goto('/');
+  await page.goto('/en/');
   await expect(page.getByRole('link', { name: /Sharm El Sheikh/ }).first()).toBeVisible();
   await expect(page.getByLabel('Hurghada — coming soon')).toBeVisible();
 

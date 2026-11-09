@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import type { Tour } from '@/data/tours';
+import type { Locale } from '@/i18n/config';
 import { Modal } from '@/components/Modal';
 import { BookingForm } from './BookingForm';
 import styles from './BookingLauncher.module.css';
@@ -22,7 +23,7 @@ export function BookButton({ className, children }: { className?: string; childr
 }
 
 /** Sticky mobile booking bar + the booking modal (sheet on mobile, card on desktop). */
-export function BookingLauncher({ tour, oldPrice }: { tour: Tour; oldPrice: number | null }) {
+export function BookingLauncher({ lang, tour, oldPrice }: { lang: Locale; tour: Tour; oldPrice: number | null }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -55,7 +56,7 @@ export function BookingLauncher({ tour, oldPrice }: { tour: Tour; oldPrice: numb
           <div className={styles.headSub}>{tour.name}</div>
         </div>
         <div className={styles.body}>
-          <BookingForm tour={tour} compact />
+          <BookingForm lang={lang} tour={tour} compact />
         </div>
       </Modal>
     </>

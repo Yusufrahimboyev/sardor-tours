@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import { BOOK_TOUR_MSG, site, whatsappLink } from '@/data/site';
+import type { Locale } from '@/i18n/config';
+import { localeHref } from '@/i18n/routing';
 import { ArrowRight, InstagramIcon, MailIcon, TelegramIcon, WhatsAppIcon } from './icons';
 import styles from './ContactOptions.module.css';
 
 /** "Get in touch" messenger list used inside the contact lightbox. */
-export function ContactOptions({ onNavigate }: { onNavigate?: () => void }) {
+export function ContactOptions({ lang, onNavigate }: { lang: Locale; onNavigate?: () => void }) {
   return (
     <div>
       <h2 className={styles.title}>Get in touch</h2>
@@ -43,7 +45,7 @@ export function ContactOptions({ onNavigate }: { onNavigate?: () => void }) {
           <ArrowRight />
         </a>
       )}
-      <Link href="/en/contact/" onClick={onNavigate} className={`${styles.link} ${styles.form}`}>
+      <Link href={localeHref(lang, '/contact/')} onClick={onNavigate} className={`${styles.link} ${styles.form}`}>
         <span className={styles.icon}>
           <MailIcon size={20} />
         </span>

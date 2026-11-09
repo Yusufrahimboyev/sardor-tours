@@ -5,6 +5,7 @@ import { TourCard } from '@/components/TourCard';
 import { XIcon } from '@/components/icons';
 import { CATEGORIES_EN as CATEGORIES, type Category } from '@/data/categories';
 import type { TourSummary } from '@/data/tours';
+import type { Locale } from '@/i18n/config';
 import { filterTours, PRICE_BANDS, type PriceBand } from '@/lib/catalog';
 import styles from './sharm.module.css';
 
@@ -23,7 +24,7 @@ function readUrl(): { cat: CatFilter; price: PriceBand; q: string } {
   };
 }
 
-export function ToursCatalog({ tours }: { tours: TourSummary[] }) {
+export function ToursCatalog({ lang, tours }: { lang: Locale; tours: TourSummary[] }) {
   const [cat, setCat] = useState<CatFilter>('all');
   const [price, setPrice] = useState<PriceBand>('all');
   const [query, setQuery] = useState('');
@@ -123,7 +124,7 @@ export function ToursCatalog({ tours }: { tours: TourSummary[] }) {
             </div>
             <div className={styles.grid}>
               {s.items.map((t) => (
-                <TourCard key={t.slug} tour={t} />
+                <TourCard key={t.slug} lang={lang} tour={t} />
               ))}
             </div>
           </div>

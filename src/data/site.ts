@@ -29,7 +29,7 @@ export const destinations = [
   {
     num: '01',
     name: 'Sharm El Sheikh',
-    href: '/en/sharm/',
+    path: '/sharm/',
     live: true,
     image: '/images/Sharm.webp',
     text: "The Red Sea's crown — world-class diving, desert safaris, island cruises and Mount Moses.",

@@ -10,24 +10,30 @@ import { CATEGORIES_EN as CATEGORIES } from '@/data/categories';
 import { tourHref } from '@/data/categories';
 import { allTours, toSummary } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
+import { langFrom } from '@/i18n/params';
+import { localeHref } from '@/i18n/routing';
 import styles from './video.module.css';
 
-export const metadata: Metadata = {
-  title: 'Sharm El Sheikh Tour Videos',
-  description: 'Excursion videos from Sharm El Sheikh — sea trips, desert safaris and historical tours.',
-  alternates: { canonical: '/en/sharm/video/' },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const lang = await langFrom(params);
+  return {
+    title: 'Sharm El Sheikh Tour Videos',
+    description: 'Excursion videos from Sharm El Sheikh — sea trips, desert safaris and historical tours.',
+    alternates: { canonical: localeHref(lang, '/sharm/video/') },
+  };
+}
 
 /**
  * The reference page embeds the operator's own excursion videos, which are not
  * available to this project. Until real video files are provided this page is an
  * honest "coming soon" state that still routes visitors to every tour.
  */
-export default function VideoPage() {
-  const tours = allTours('en');
+export default async function VideoPage({ params }: { params: Promise<{ lang: string }> }) {
+  const lang = await langFrom(params);
+  const tours = allTours(lang);
   return (
     <div className={styles.page}>
-      <SiteHeader />
+      <SiteHeader lang={lang} />
       <main id="main-content" tabIndex={-1} className={styles.main}>
         <h1>Sharm El Sheikh Excursion Videos</h1>
         <div className={styles.notice} role="status">
@@ -45,7 +51,7 @@ export default function VideoPage() {
               {tours
                 .filter((t) => t.category === c.key)
                 .map((t) => (
-                  <Link key={t.slug} href={tourHref('en', t.slug)} className={styles.card}>
+                  <Link key={t.slug} href={tourHref(lang, t.slug)} className={styles.card}>
                     <Image src={imageSrc(t.cardImage, 500, 880)} alt="" fill sizes="(max-width: 600px) 50vw, 220px" />
                     <span className={styles.grad} />
                     <span className={styles.name}>{t.name}</span>
@@ -71,8 +77,8 @@ export default function VideoPage() {
           </div>
         </section>
       </main>
-      <Footer />
-      <BottomNav tours={tours.map(toSummary)} />
+      <Footer lang={lang} />
+      <BottomNav lang={lang} tours={tours.map(toSummary)} />
     </div>
   );
 }

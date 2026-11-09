@@ -5,12 +5,13 @@ import Link from 'next/link';
 import { useId, useMemo, useState } from 'react';
 import { tourHref } from '@/data/categories';
 import type { TourSummary } from '@/data/tours';
+import type { Locale } from '@/i18n/config';
 import { matchesQuery } from '@/lib/catalog';
 import { imageSrc } from '@/lib/images';
 import styles from './TourSearch.module.css';
 
 /** Full-list search used by the mobile bottom-nav search panel. */
-export function TourSearch({ tours, onNavigate }: { tours: TourSummary[]; onNavigate?: () => void }) {
+export function TourSearch({ lang, tours, onNavigate }: { lang: Locale; tours: TourSummary[]; onNavigate?: () => void }) {
   const [q, setQ] = useState('');
   const id = useId();
   const found = useMemo(() => tours.filter((t) => matchesQuery(t, q)), [tours, q]);
@@ -35,7 +36,7 @@ export function TourSearch({ tours, onNavigate }: { tours: TourSummary[]; onNavi
           <p className={styles.empty}>No tours found for &ldquo;{q}&rdquo;</p>
         ) : (
           found.map((t) => (
-            <Link key={t.slug} href={tourHref('en', t.slug)} className={styles.item} onClick={onNavigate}>
+            <Link key={t.slug} href={tourHref(lang, t.slug)} className={styles.item} onClick={onNavigate}>
               <span className={styles.thumb}>
                 <Image src={imageSrc(t.cardImage, 160, 120)} alt="" width={64} height={48} />
               </span>

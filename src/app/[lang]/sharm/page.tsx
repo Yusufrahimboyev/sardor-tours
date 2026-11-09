@@ -12,28 +12,32 @@ import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { SupportWidget } from '@/components/SupportWidget';
 import { BOOK_TOUR_MSG, generalFaq, site, whatsappLink } from '@/data/site';
 import { CATEGORY_TEXT_EN, tourHref } from '@/data/categories';
-import { allTours, BESTSELLERS, getTour, MIN_PRICE, toSummary } from '@/data/tours';
+import { allTours, BESTSELLERS, getTour, MIN_PRICE, toSummary, tourSlugs } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
+import { langFrom } from '@/i18n/params';
+import { localeHref } from '@/i18n/routing';
 import { Bestsellers } from './Bestsellers';
 import { HeroSearch } from './HeroSearch';
 import { ToursCatalog } from './ToursCatalog';
 import { WorldMap } from './WorldMap';
 import styles from './sharm.module.css';
 
-const tours = allTours('en');
-const count = tours.length;
+const count = tourSlugs.length;
 
-export const metadata: Metadata = {
-  title: `${count}+ Best Sharm El Sheikh Excursions & Tours (Pay on Arrival)`,
-  description: `Tours in Sharm El Sheikh from £${MIN_PRICE}. No prepayment. Book in 3 minutes. Hotel transfer included. English-speaking guides. Insurance included.`,
-  alternates: { canonical: '/en/sharm/' },
-  openGraph: {
-    url: '/en/sharm/',
-    title: 'Sharm El Sheikh Excursions & Day Trips',
-    description: 'Boat trips, desert safaris, Cairo & Petra day trips. No prepayment, hotel transfer included.',
-    images: [{ url: imageSrc('/images/hero1.webp', 1200, 630), width: 1200, height: 630 }],
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const lang = await langFrom(params);
+  return {
+    title: `${count}+ Best Sharm El Sheikh Excursions & Tours (Pay on Arrival)`,
+    description: `Tours in Sharm El Sheikh from £${MIN_PRICE}. No prepayment. Book in 3 minutes. Hotel transfer included. English-speaking guides. Insurance included.`,
+    alternates: { canonical: localeHref(lang, '/sharm/') },
+    openGraph: {
+      url: localeHref(lang, '/sharm/'),
+      title: 'Sharm El Sheikh Excursions & Day Trips',
+      description: 'Boat trips, desert safaris, Cairo & Petra day trips. No prepayment, hotel transfer included.',
+      images: [{ url: imageSrc('/images/hero1.webp', 1200, 630), width: 1200, height: 630 }],
+    },
+  };
+}
 
 const BENEFITS = [
   { icon: '💰', title: 'Affordable Prices', text: `Amazing experiences from £${MIN_PRICE} per person with no hidden fees.` },
@@ -59,11 +63,13 @@ const STEPS = [
   ['We pick you up from your hotel', 'Guide, transfer and an unforgettable day — all included.'],
 ];
 
-export default function SharmPage() {
+export default async function SharmPage({ params }: { params: Promise<{ lang: string }> }) {
+  const lang = await langFrom(params);
+  const tours = allTours(lang);
   const summaries = tours.map(toSummary);
   const bestsellers = BESTSELLERS.map((b) => ({
-    href: tourHref('en', b.slug),
-    name: getTour(b.slug, 'en')!.name,
+    href: tourHref(lang, b.slug),
+    name: getTour(b.slug, lang)!.name,
     tag: CATEGORY_TEXT_EN[b.category].short,
     image: b.image,
   }));
@@ -81,7 +87,7 @@ export default function SharmPage() {
             item: {
               '@type': 'TouristTrip',
               name: t.name,
-              url: `${site.url}${tourHref('en', t.slug)}`,
+              url: `${site.url}${tourHref(lang, t.slug)}`,
               touristType: t.categoryLabel,
               offers: { '@type': 'Offer', price: String(t.priceFrom), priceCurrency: 'GBP', availability: 'https://schema.org/InStock' },
             },
@@ -96,10 +102,10 @@ export default function SharmPage() {
         </div>
         <div className={styles.heroScrim} />
         <nav className={styles.heroNav} aria-label="Main">
-          <Brand />
+          <Brand lang={lang} />
           <div className={styles.heroNavLinks}>
-            <Link href="/">Destinations</Link>
-            <Link href="/en/about-us/">About</Link>
+            <Link href={localeHref(lang, '/')}>Destinations</Link>
+            <Link href={localeHref(lang, '/about-us/')}>About</Link>
             <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={styles.heroNavWa}>
               <WhatsAppIcon size={16} />
               <span>WhatsApp</span>
@@ -115,7 +121,7 @@ export default function SharmPage() {
             <span className={styles.liveDot} aria-hidden />
             Experience the Best of Egypt with Us
           </p>
-          <HeroSearch tours={summaries} />
+          <HeroSearch lang={lang} tours={summaries} />
           <div className={styles.heroStats}>
             <div className={styles.heroStat}>
               <div>
@@ -175,7 +181,7 @@ export default function SharmPage() {
               <br />
               <span>Day Trips &amp; Excursions</span>
             </h2>
-            <ToursCatalog tours={summaries} />
+            <ToursCatalog lang={lang} tours={summaries} />
           </section>
 
           <section className={styles.bmSec} id="faq" aria-labelledby="faq-h">
@@ -300,8 +306,8 @@ export default function SharmPage() {
       </div>
 
       <CtaBand />
-      <Footer />
-      <BottomNav tours={summaries} revealAfter={500} />
+      <Footer lang={lang} />
+      <BottomNav lang={lang} tours={summaries} revealAfter={500} />
       <SupportWidget />
     </div>
   );

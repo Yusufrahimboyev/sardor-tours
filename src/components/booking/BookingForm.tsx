@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import { useId, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import type { Tour } from '@/data/tours';
+import type { Locale } from '@/i18n/config';
+import { localeHref } from '@/i18n/routing';
 import { tomorrowISO } from '@/lib/dates';
 import { formatDate, formatPrice, weekdayNames } from '@/i18n/format';
 import { optionMax, optionPriceLabel, quote, type Quantities } from '@/lib/pricing';
@@ -33,7 +35,7 @@ function zField<K extends keyof typeof contactDetailsSchema.shape>(key: K) {
   };
 }
 
-export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }) {
+export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour; compact?: boolean }) {
   const router = useRouter();
   const toast = useToast();
   const uid = useId();
@@ -121,7 +123,7 @@ export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }
         return;
       }
       toast('Booking request sent!', 'success');
-      router.push(`/booking/${data.reference}/`);
+      router.push(localeHref(lang, '/booking/' + data.reference + '/'));
     } catch {
       toast('Network error — please check your connection and try again.', 'error');
     } finally {

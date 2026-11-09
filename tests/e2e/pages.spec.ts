@@ -5,7 +5,7 @@ import { expectNoHorizontalScroll, trackErrors } from './helpers';
 const tours = allTours('en');
 
 const STATIC_PAGES = [
-  { path: '/', h1: /Red Sea/ },
+  { path: '/en/', h1: /Red Sea/ },
   { path: '/en/sharm/', h1: /Sharm El Sheikh/ },
   { path: '/en/about-us/', h1: /know every wave/ },
   { path: '/en/terms-and-conditions/', h1: /Terms/ },
@@ -44,7 +44,7 @@ test('unknown routes return 404 page', async ({ page }) => {
   const res = await page.goto('/en/sharm/does-not-exist/');
   expect(res?.status()).toBe(404);
   await expect(page.getByRole('heading', { name: /sailed away/ })).toBeVisible();
-  const res2 = await page.goto('/booking/ST-ZZZZZZ/');
+  const res2 = await page.goto('/en/booking/ST-ZZZZZZ/');
   expect(res2?.status()).toBe(404);
 });
 
@@ -61,7 +61,7 @@ test('SEO files are served', async ({ request }) => {
 test('all internal links resolve', async ({ page, request }) => {
   test.slow();
   const seen = new Set<string>();
-  for (const start of ['/', '/en/sharm/', '/en/sharm/quad-safari-sharm/', '/en/about-us/', '/en/contact/']) {
+  for (const start of ['/en/', '/en/sharm/', '/en/sharm/quad-safari-sharm/', '/en/about-us/', '/en/contact/']) {
     await page.goto(start);
     const hrefs = await page.$$eval('a[href^="/"]', (as) => as.map((a) => (a as HTMLAnchorElement).getAttribute('href')!));
     for (const h of hrefs) seen.add(h.split('#')[0] || '/');

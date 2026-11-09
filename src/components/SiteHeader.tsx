@@ -3,19 +3,21 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { BOOK_TOUR_MSG, whatsappLink } from '@/data/site';
+import type { Locale } from '@/i18n/config';
+import { localeHref } from '@/i18n/routing';
 import { Brand } from './Brand';
 import { WhatsAppIcon, XIcon } from './icons';
 import styles from './SiteHeader.module.css';
 
 const LINKS = [
-  { href: '/en/sharm/', label: 'Excursions' },
-  { href: '/en/sharm/video/', label: 'Videos' },
-  { href: '/en/about-us/', label: 'About us' },
-  { href: '/en/contact/', label: 'Contact' },
+  { path: '/sharm/', label: 'Excursions' },
+  { path: '/sharm/video/', label: 'Videos' },
+  { path: '/about-us/', label: 'About us' },
+  { path: '/contact/', label: 'Contact' },
 ];
 
 /** Header for secondary pages. `overlay` = transparent over a dark hero until scrolled. */
-export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
+export function SiteHeader({ lang, overlay = false }: { lang: Locale; overlay?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -40,10 +42,10 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     <>
       <header className={`${styles.hdr} ${dark ? styles.dark : styles.solid}`}>
         <div className={styles.in}>
-          <Brand tone={dark ? 'light' : 'dark'} />
+          <Brand lang={lang} tone={dark ? 'light' : 'dark'} />
           <nav className={styles.nav} aria-label="Main">
             {LINKS.map((l) => (
-              <Link key={l.href} href={l.href} className={styles.lnk}>
+              <Link key={l.path} href={localeHref(lang, l.path)} className={styles.lnk}>
                 {l.label}
               </Link>
             ))}
@@ -81,11 +83,11 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
         >
           <XIcon size={26} />
         </button>
-        <Link href="/" onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
+        <Link href={localeHref(lang, '/')} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
           Home
         </Link>
         {LINKS.map((l) => (
-          <Link key={l.href} href={l.href} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
+          <Link key={l.path} href={localeHref(lang, l.path)} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
             {l.label}
           </Link>
         ))}

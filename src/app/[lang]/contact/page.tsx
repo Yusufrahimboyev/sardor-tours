@@ -3,19 +3,25 @@ import { ContactOptions } from '@/components/ContactOptions';
 import { Footer } from '@/components/Footer';
 import { SiteHeader } from '@/components/SiteHeader';
 import { site } from '@/data/site';
+import { langFrom } from '@/i18n/params';
+import { localeHref } from '@/i18n/routing';
 import { ContactForm } from './ContactForm';
 import styles from './contact.module.css';
 
-export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: `Contact ${site.name}: WhatsApp, email or the contact form — we reply fast.`,
-  alternates: { canonical: '/en/contact/' },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const lang = await langFrom(params);
+  return {
+    title: 'Contact Us',
+    description: `Contact ${site.name}: WhatsApp, email or the contact form — we reply fast.`,
+    alternates: { canonical: localeHref(lang, '/contact/') },
+  };
+}
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
+  const lang = await langFrom(params);
   return (
     <div className={styles.page}>
-      <SiteHeader />
+      <SiteHeader lang={lang} />
       <main id="main-content" tabIndex={-1} className={styles.main}>
         <header className={styles.intro}>
           <span className={styles.tag}>Contact</span>
@@ -33,12 +39,12 @@ export default function ContactPage() {
           </section>
           <aside className={styles.side}>
             <div className={styles.card}>
-              <ContactOptions />
+              <ContactOptions lang={lang} />
             </div>
           </aside>
         </div>
       </main>
-      <Footer tone="light" />
+      <Footer lang={lang} tone="light" />
     </div>
   );
 }

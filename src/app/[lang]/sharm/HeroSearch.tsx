@@ -6,12 +6,13 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { SearchIcon } from '@/components/icons';
 import { tourHref } from '@/data/categories';
 import type { TourSummary } from '@/data/tours';
+import type { Locale } from '@/i18n/config';
 import { matchesQuery } from '@/lib/catalog';
 import { imageSrc } from '@/lib/images';
 import { CATALOG_QUERY } from './ToursCatalog';
 import styles from './sharm.module.css';
 
-export function HeroSearch({ tours }: { tours: TourSummary[] }) {
+export function HeroSearch({ lang, tours }: { lang: Locale; tours: TourSummary[] }) {
   const [q, setQ] = useState('');
   const [open, setOpen] = useState(false);
   const root = useRef<HTMLFormElement>(null);
@@ -63,7 +64,7 @@ export function HeroSearch({ tours }: { tours: TourSummary[] }) {
       <div id={listId} className={`${styles.heroResults} ${open && q.trim() ? styles.heroResultsOpen : ''}`}>
         {found.length ? (
           found.map((t) => (
-            <Link key={t.slug} href={tourHref('en', t.slug)} className={styles.heroResult}>
+            <Link key={t.slug} href={tourHref(lang, t.slug)} className={styles.heroResult}>
               <span className={styles.heroResultImg}>
                 <Image src={imageSrc(t.cardImage, 160, 120)} alt="" width={44} height={38} />
               </span>

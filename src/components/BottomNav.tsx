@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import type { TourSummary } from '@/data/tours';
+import type { Locale } from '@/i18n/config';
+import { localeHref } from '@/i18n/routing';
 import { ContactOptions } from './ContactOptions';
 import { ChatIcon, ChevronLeft, HomeIcon, InfoIcon, SearchIcon, VideoIcon } from './icons';
 import { Modal } from './Modal';
@@ -18,6 +20,7 @@ export function openContact() {
 }
 
 interface Props {
+  lang: Locale;
   tours: TourSummary[];
   /** Show a "Back" item (tour detail pages). */
   withBack?: boolean;
@@ -28,7 +31,7 @@ interface Props {
 }
 
 /** Floating pill navigation used on the destination & tour pages (all widths, like the reference). */
-export function BottomNav({ tours, withBack, revealAfter = 0, placement = 'bottom' }: Props) {
+export function BottomNav({ lang, tours, withBack, revealAfter = 0, placement = 'bottom' }: Props) {
   const pathname = usePathname();
   const router = useRouter();
   const [visible, setVisible] = useState(revealAfter === 0);
@@ -53,10 +56,11 @@ export function BottomNav({ tours, withBack, revealAfter = 0, placement = 'botto
     };
   }, []);
 
+  const home = localeHref(lang, '/sharm/');
   const close = () => setPanel('none');
   const back = () => {
     if (window.history.length > 1 && document.referrer.startsWith(window.location.origin)) router.back();
-    else router.push('/en/sharm/');
+    else router.push(home);
   };
 
   return (
@@ -68,7 +72,7 @@ export function BottomNav({ tours, withBack, revealAfter = 0, placement = 'botto
             Back
           </button>
         )}
-        <Link href="/en/sharm/" className={`${styles.item} ${pathname.replace(/\/$/, '') === '/en/sharm' ? styles.active : ''}`}>
+        <Link href={home} className={`${styles.item} ${pathname.replace(/\/$/, '') === home.replace(/\/$/, '') ? styles.active : ''}`}>
           <HomeIcon />
           Home
         </Link>
@@ -81,22 +85,22 @@ export function BottomNav({ tours, withBack, revealAfter = 0, placement = 'botto
           Contact
         </button>
         {!withBack && (
-          <Link href="/en/sharm/video/" className={styles.item}>
+          <Link href={localeHref(lang, '/sharm/video/')} className={styles.item}>
             <VideoIcon />
             Videos
           </Link>
         )}
-        <Link href="/en/about-us/" className={styles.item}>
+        <Link href={localeHref(lang, '/about-us/')} className={styles.item}>
           <InfoIcon />
           About
         </Link>
       </nav>
 
       <Modal open={panel === 'search'} onClose={close} label="Search tours" variant="panel">
-        <TourSearch tours={tours} onNavigate={close} />
+        <TourSearch lang={lang} tours={tours} onNavigate={close} />
       </Modal>
       <Modal open={panel === 'contact'} onClose={close} label="Get in touch">
-        <ContactOptions onNavigate={close} />
+        <ContactOptions lang={lang} onNavigate={close} />
       </Modal>
     </>
   );

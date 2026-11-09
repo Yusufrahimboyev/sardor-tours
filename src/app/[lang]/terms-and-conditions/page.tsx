@@ -3,20 +3,26 @@ import { Footer } from '@/components/Footer';
 import { MailIcon, WhatsAppIcon } from '@/components/icons';
 import { SiteHeader } from '@/components/SiteHeader';
 import { site, whatsappLink } from '@/data/site';
+import { langFrom } from '@/i18n/params';
+import { localeHref } from '@/i18n/routing';
 import styles from '../legal.module.css';
 
-export const metadata: Metadata = {
-  title: 'Terms & Conditions',
-  description: 'Booking, payment, cancellation and refund terms for Sardor Tours excursions in Egypt.',
-  alternates: { canonical: '/en/terms-and-conditions/' },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const lang = await langFrom(params);
+  return {
+    title: 'Terms & Conditions',
+    description: 'Booking, payment, cancellation and refund terms for Sardor Tours excursions in Egypt.',
+    alternates: { canonical: localeHref(lang, '/terms-and-conditions/') },
+  };
+}
 
 const PREPAID = ['Large group bookings', 'Cairo trips', 'Luxor by Plane', 'Petra — Jordan', 'VIP Boat to White Island', 'Private tours'];
 
-export default function TermsPage() {
+export default async function TermsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const lang = await langFrom(params);
   return (
     <div className={styles.page}>
-      <SiteHeader />
+      <SiteHeader lang={lang} />
       <main id="main-content" tabIndex={-1} className={styles.main}>
         <header className={styles.intro}>
           <h1>Terms &amp; Conditions</h1>
@@ -130,7 +136,7 @@ export default function TermsPage() {
           </div>
         </section>
       </main>
-      <Footer tone="light" />
+      <Footer lang={lang} tone="light" />
     </div>
   );
 }

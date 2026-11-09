@@ -13,30 +13,35 @@ import { SupportWidget } from '@/components/SupportWidget';
 import { site, whatsappLink } from '@/data/site';
 import { tourHref } from '@/data/categories';
 import { allTours, getTour, toSummary, tourSlugs } from '@/data/tours';
+import { langFrom } from '@/i18n/params';
+import { localeHref } from '@/i18n/routing';
 import { imageSrc, usingPlaceholders } from '@/lib/images';
 import { Gallery } from './Gallery';
 import { IncludedTabs } from './IncludedTabs';
 import styles from './tour.module.css';
 
-export const dynamicParams = false;
+// Unknown slugs must reach the page so its notFound() renders `[lang]/not-found.tsx`
+// (with false they 404 before the [lang] layout, showing Next's bare error page).
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return tourSlugs.map((slug) => ({ slug }));
 }
 
-type Params = { params: Promise<{ slug: string }> };
+type Params = { params: Promise<{ lang: string; slug: string }> };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const tour = getTour((await params).slug, 'en');
+  const lang = await langFrom(params);
+  const tour = getTour((await params).slug, lang);
   if (!tour) return {};
   const title = tour.metaTitle.replace(/\s*\|\s*Sardor Tours$/, '');
   return {
     title,
     description: tour.metaDescription,
-    alternates: { canonical: tourHref('en', tour.slug) },
+    alternates: { canonical: tourHref(lang, tour.slug) },
     openGraph: {
       type: 'article',
-      url: tourHref('en', tour.slug),
+      url: tourHref(lang, tour.slug),
       title,
       description: tour.metaDescription,
       images: [{ url: imageSrc(tour.cardImage, 1200, 630), width: 1200, height: 630, alt: tour.name }],
@@ -45,13 +50,14 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 
 export default async function TourPage({ params }: Params) {
-  const tour = getTour((await params).slug, 'en');
+  const lang = await langFrom(params);
+  const tour = getTour((await params).slug, lang);
   if (!tour) notFound();
 
   const gallery = usingPlaceholders ? tour.gallery.slice(0, 8) : tour.gallery;
   const oldPrice = tour.heroPrices[0]?.oldPrice ?? tour.bento.oldPrice;
   const discount = tour.heroPrices[0]?.discount ?? null;
-  const related = tour.related.map((r) => ({ ...r, tour: getTour(r.slug, 'en')! }));
+  const related = tour.related.map((r) => ({ ...r, tour: getTour(r.slug, lang)! }));
   const meta = [tour.schedule, tour.detailDuration, tour.timeText].filter(Boolean) as string[];
 
   return (
@@ -62,7 +68,7 @@ export default async function TourPage({ params }: Params) {
           '@type': 'TouristTrip',
           name: tour.title,
           description: tour.metaDescription,
-          url: `${site.url}${tourHref('en', tour.slug)}`,
+          url: `${site.url}${tourHref(lang, tour.slug)}`,
           image: imageSrc(tour.cardImage, 1200, 800),
           touristType: tour.categoryLabel,
           itinerary: {
@@ -74,7 +80,7 @@ export default async function TourPage({ params }: Params) {
             price: String(tour.priceFrom),
             priceCurrency: 'GBP',
             availability: 'https://schema.org/InStock',
-            url: `${site.url}${tourHref('en', tour.slug)}`,
+            url: `${site.url}${tourHref(lang, tour.slug)}`,
           },
           provider: { '@type': 'TravelAgency', name: site.name, url: site.url },
         }}
@@ -85,19 +91,19 @@ export default async function TourPage({ params }: Params) {
           '@type': 'BreadcrumbList',
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
-            { '@type': 'ListItem', position: 2, name: 'Sharm El Sheikh', item: `${site.url}/en/sharm/` },
-            { '@type': 'ListItem', position: 3, name: tour.name, item: `${site.url}${tourHref('en', tour.slug)}` },
+            { '@type': 'ListItem', position: 2, name: 'Sharm El Sheikh', item: `${site.url}${localeHref(lang, '/sharm/')}` },
+            { '@type': 'ListItem', position: 3, name: tour.name, item: `${site.url}${tourHref(lang, tour.slug)}` },
           ],
         }}
       />
       {tour.faq.length > 0 && <JsonLd data={faqJsonLd(tour.faq)} />}
 
-      <BottomNav tours={allTours('en').map(toSummary)} withBack placement="top" />
+      <BottomNav lang={lang} tours={allTours(lang).map(toSummary)} withBack placement="top" />
 
       <div className={styles.shell}>
         <main id="main-content" tabIndex={-1} className={styles.main}>
           <nav aria-label="Breadcrumb" className={styles.crumbs}>
-            <Link href="/">Home</Link> <span aria-hidden>/</span> <Link href="/en/sharm/">Sharm El Sheikh</Link>{' '}
+            <Link href={localeHref(lang, '/')}>Home</Link> <span aria-hidden>/</span> <Link href={localeHref(lang, '/sharm/')}>Sharm El Sheikh</Link>{' '}
             <span aria-hidden>/</span> <span aria-current="page">{tour.name}</span>
           </nav>
 
@@ -271,7 +277,7 @@ export default async function TourPage({ params }: Params) {
             </h2>
             <div className={styles.relTrack}>
               {related.map((r) => (
-                <Link key={r.slug} href={tourHref('en', r.slug)} className={styles.relCard}>
+                <Link key={r.slug} href={tourHref(lang, r.slug)} className={styles.relCard}>
                   <Image src={imageSrc(r.tour.cardImage, 700, 900)} alt="" fill sizes="(max-width: 700px) 70vw, 260px" />
                   <span className={styles.relGrad} />
                   <span className={styles.relBody}>
@@ -304,14 +310,14 @@ export default async function TourPage({ params }: Params) {
               </a>
             </div>
             <div className={styles.sideBody}>
-              <BookingForm tour={tour} />
+              <BookingForm lang={lang} tour={tour} />
             </div>
           </div>
         </aside>
       </div>
 
-      <Footer tone="light" />
-      <BookingLauncher tour={tour} oldPrice={oldPrice} />
+      <Footer lang={lang} tone="light" />
+      <BookingLauncher lang={lang} tour={tour} oldPrice={oldPrice} />
       <SupportWidget />
     </div>
   );

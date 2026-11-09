@@ -53,7 +53,7 @@ test.describe('booking flow', () => {
     await form.getByRole('button', { name: 'Send booking request' }).click();
 
     // Confirmation
-    await expect(page).toHaveURL(/\/booking\/ST-[A-Z0-9]{6}\/$/);
+    await expect(page).toHaveURL(/\/en\/booking\/ST-[A-Z0-9]{6}\/$/);
     await expect(page.getByRole('heading', { name: 'Booking request received' })).toBeVisible();
     const ref = (await page.getByTestId('booking-ref').textContent())!;
     await expect(page.getByText('£40').last()).toBeVisible();

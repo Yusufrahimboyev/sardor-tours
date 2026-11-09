@@ -7,22 +7,28 @@ import { ArrowDown, ArrowRight, WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { destinations, generalFaq, PLAN_TRIP_MSG, site, whatsappLink } from '@/data/site';
 import { MIN_PRICE, tourSlugs } from '@/data/tours';
+import { langFrom } from '@/i18n/params';
+import { localeHref } from '@/i18n/routing';
 import { imageSrc } from '@/lib/images';
 import { HomeHeader } from './HomeHeader';
 import styles from './home.module.css';
 
-export const metadata: Metadata = {
-  title: { absolute: `${site.name} — Egypt Excursions in Sharm El Sheikh, Hurghada, Cairo & Marsa Alam` },
-  description:
-    'Sardor Tours — excursions and day trips from Sharm El Sheikh: Red Sea boat trips, desert safaris, Cairo, Luxor and Petra. No prepayment, hotel transfer included.',
-  alternates: { canonical: '/' },
-  openGraph: {
-    url: '/',
-    title: `${site.name} — Egypt Excursions`,
-    description: 'Excursions from Sharm El Sheikh. No prepayment · hotel transfer included.',
-    images: [{ url: imageSrc('/images/hero1.webp', 1200, 630), width: 1200, height: 630 }],
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const lang = await langFrom(params);
+  const url = localeHref(lang, '/');
+  return {
+    title: { absolute: `${site.name} — Egypt Excursions in Sharm El Sheikh, Hurghada, Cairo & Marsa Alam` },
+    description:
+      'Sardor Tours — excursions and day trips from Sharm El Sheikh: Red Sea boat trips, desert safaris, Cairo, Luxor and Petra. No prepayment, hotel transfer included.',
+    alternates: { canonical: url },
+    openGraph: {
+      url,
+      title: `${site.name} — Egypt Excursions`,
+      description: 'Excursions from Sharm El Sheikh. No prepayment · hotel transfer included.',
+      images: [{ url: imageSrc('/images/hero1.webp', 1200, 630), width: 1200, height: 630 }],
+    },
+  };
+}
 
 const WHY = [
   {
@@ -58,7 +64,8 @@ const WHY = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
+  const lang = await langFrom(params);
   const wa = whatsappLink(PLAN_TRIP_MSG);
   const liveCount = tourSlugs.length;
 
@@ -79,7 +86,7 @@ export default function HomePage() {
         }}
       />
       <JsonLd data={faqJsonLd(generalFaq)} />
-      <HomeHeader />
+      <HomeHeader lang={lang} />
 
       <main id="main-content" tabIndex={-1}>
         <section className={styles.hero}>
@@ -167,8 +174,8 @@ export default function HomePage() {
                     </div>
                   </>
                 );
-                return 'href' in d ? (
-                  <Link key={d.name} href={d.href} className={`${styles.dest} ${styles.isLive} reveal`}>
+                return 'path' in d ? (
+                  <Link key={d.name} href={localeHref(lang, d.path)} className={`${styles.dest} ${styles.isLive} reveal`}>
                     {body}
                   </Link>
                 ) : (
@@ -230,7 +237,7 @@ export default function HomePage() {
         <CtaBand />
       </main>
 
-      <Footer variant="home" />
+      <Footer lang={lang} variant="home" />
 
       <a href={wa} target="_blank" rel="noopener noreferrer" className={styles.floatChat} aria-label="Chat with us on WhatsApp">
         <WhatsAppIcon size={28} />
