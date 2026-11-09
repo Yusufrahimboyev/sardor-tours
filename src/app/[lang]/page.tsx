@@ -5,8 +5,9 @@ import { CtaBand } from '@/components/CtaBand';
 import { Footer } from '@/components/Footer';
 import { ArrowDown, ArrowRight, WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
-import { destinations, generalFaq, PLAN_TRIP_MSG, site, whatsappLink } from '@/data/site';
+import { destinations, generalFaq, site, whatsappLink } from '@/data/site';
 import { MIN_PRICE, tourSlugs } from '@/data/tours';
+import { getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
 import { localeHref } from '@/i18n/routing';
 import { imageSrc } from '@/lib/images';
@@ -66,7 +67,7 @@ const WHY = [
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const lang = await langFrom(params);
-  const wa = whatsappLink(PLAN_TRIP_MSG);
+  const wa = whatsappLink(getT(lang)('client.whatsapp.planTrip'));
   const liveCount = tourSlugs.length;
 
   return (
@@ -86,7 +87,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         }}
       />
       <JsonLd data={faqJsonLd(generalFaq)} />
-      <HomeHeader lang={lang} />
+      <HomeHeader />
 
       <main id="main-content" tabIndex={-1}>
         <section className={styles.hero}>
@@ -234,7 +235,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </div>
         </section>
 
-        <CtaBand />
+        <CtaBand lang={lang} />
       </main>
 
       <Footer lang={lang} variant="home" />

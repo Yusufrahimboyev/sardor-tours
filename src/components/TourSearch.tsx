@@ -5,27 +5,30 @@ import Link from 'next/link';
 import { useId, useMemo, useState } from 'react';
 import { tourHref } from '@/data/categories';
 import type { TourSummary } from '@/data/tours';
-import type { Locale } from '@/i18n/config';
+import { useLang, useT } from '@/i18n/client';
+import { formatPrice } from '@/i18n/format';
 import { matchesQuery } from '@/lib/catalog';
 import { imageSrc } from '@/lib/images';
 import styles from './TourSearch.module.css';
 
 /** Full-list search used by the mobile bottom-nav search panel. */
-export function TourSearch({ lang, tours, onNavigate }: { lang: Locale; tours: TourSummary[]; onNavigate?: () => void }) {
+export function TourSearch({ tours, onNavigate }: { tours: TourSummary[]; onNavigate?: () => void }) {
+  const lang = useLang();
+  const t = useT();
   const [q, setQ] = useState('');
   const id = useId();
-  const found = useMemo(() => tours.filter((t) => matchesQuery(t, q)), [tours, q]);
+  const found = useMemo(() => tours.filter((x) => matchesQuery(x, q)), [tours, q]);
 
   return (
     <div className={styles.panel}>
       <label htmlFor={id} className="sr-only">
-        Search tours
+        {t('search.title')}
       </label>
       <input
         id={id}
         className={styles.input}
         type="search"
-        placeholder="Search tours…"
+        placeholder={t('search.placeholder')}
         value={q}
         onChange={(e) => setQ(e.target.value)}
         autoFocus
@@ -33,17 +36,17 @@ export function TourSearch({ lang, tours, onNavigate }: { lang: Locale; tours: T
       />
       <div className={styles.results} aria-live="polite">
         {found.length === 0 ? (
-          <p className={styles.empty}>No tours found for &ldquo;{q}&rdquo;</p>
+          <p className={styles.empty}>{t('search.empty', { q })}</p>
         ) : (
-          found.map((t) => (
-            <Link key={t.slug} href={tourHref(lang, t.slug)} className={styles.item} onClick={onNavigate}>
+          found.map((tour) => (
+            <Link key={tour.slug} href={tourHref(lang, tour.slug)} className={styles.item} onClick={onNavigate}>
               <span className={styles.thumb}>
-                <Image src={imageSrc(t.cardImage, 160, 120)} alt="" width={64} height={48} />
+                <Image src={imageSrc(tour.cardImage, 160, 120)} alt="" width={64} height={48} />
               </span>
               <span>
-                <b>{t.name}</b>
+                <b>{tour.name}</b>
                 <small>
-                  {t.categoryLabel} · {t.duration} · from £{t.priceFrom}
+                  {t('search.meta', { category: tour.categoryLabel, duration: tour.duration, price: formatPrice(tour.priceFrom, lang) })}
                 </small>
               </span>
             </Link>

@@ -97,7 +97,7 @@ export default async function TourPage({ params }: Params) {
       />
       {tour.faq.length > 0 && <JsonLd data={faqJsonLd(tour.faq)} />}
 
-      <BottomNav lang={lang} tours={allTours(lang).map(toSummary)} withBack placement="top" />
+      <BottomNav tours={allTours(lang).map(toSummary)} withBack placement="top" />
 
       <div className={styles.shell}>
         <main id="main-content" tabIndex={-1} className={styles.main}>

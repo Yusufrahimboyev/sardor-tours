@@ -6,10 +6,11 @@ import { Footer } from '@/components/Footer';
 import { CheckIcon, ClockIcon, InfoIcon, InstagramIcon, PinIcon, TelegramIcon, WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { SiteHeader } from '@/components/SiteHeader';
-import { BOOK_TOUR_MSG, generalFaq, site, whatsappLink } from '@/data/site';
-import { CATEGORIES_EN as CATEGORIES } from '@/data/categories';
+import { generalFaq, site, whatsappLink } from '@/data/site';
+import { CATEGORY_KEYS } from '@/data/categories';
 import { MIN_PRICE, tourSlugs } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
+import { getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
 import { localeHref } from '@/i18n/routing';
 import styles from './about.module.css';
@@ -35,10 +36,11 @@ const REASONS = [
 
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
   const lang = await langFrom(params);
+  const t = getT(lang);
   return (
     <div className={styles.page}>
       <JsonLd data={faqJsonLd(generalFaq)} />
-      <SiteHeader lang={lang} overlay />
+      <SiteHeader overlay />
 
       <main id="main-content" tabIndex={-1}>
         <section className={styles.hero}>
@@ -61,7 +63,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 <Link href={localeHref(lang, '/sharm/')} className={styles.btnWhite}>
                   <InfoIcon size={16} /> All excursions
                 </Link>
-                <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={styles.btnGlass}>
+                <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.btnGlass}>
                   <WhatsAppIcon size={16} /> Message us on WhatsApp
                 </a>
                 {site.instagram && (
@@ -94,7 +96,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <div className={styles.stats}>
             {[
               [`${tourSlugs.length}+`, 'Excursions'],
-              [String(CATEGORIES.length), 'Categories'],
+              [String(CATEGORY_KEYS.length), 'Categories'],
               [`£${MIN_PRICE}`, 'Prices from'],
               ['£0', 'Prepayment'],
             ].map(([n, l]) => (
@@ -143,7 +145,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <Link href={localeHref(lang, '/sharm/')} className={styles.btnWhite}>
               All excursions
             </Link>
-            <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={styles.btnGlass}>
+            <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.btnGlass}>
               <WhatsAppIcon size={16} /> WhatsApp
             </a>
             {site.telegram && (

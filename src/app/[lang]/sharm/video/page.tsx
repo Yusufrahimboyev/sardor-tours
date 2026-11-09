@@ -5,11 +5,12 @@ import { BottomNav } from '@/components/BottomNav';
 import { Footer } from '@/components/Footer';
 import { InstagramIcon, TelegramIcon, WhatsAppIcon } from '@/components/icons';
 import { SiteHeader } from '@/components/SiteHeader';
-import { BOOK_TOUR_MSG, site, whatsappLink } from '@/data/site';
-import { CATEGORIES_EN as CATEGORIES } from '@/data/categories';
+import { site, whatsappLink } from '@/data/site';
+import { categoryList } from '@/data/categories';
 import { tourHref } from '@/data/categories';
 import { allTours, toSummary } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
+import { getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
 import { localeHref } from '@/i18n/routing';
 import styles from './video.module.css';
@@ -30,10 +31,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
  */
 export default async function VideoPage({ params }: { params: Promise<{ lang: string }> }) {
   const lang = await langFrom(params);
+  const t = getT(lang);
   const tours = allTours(lang);
   return (
     <div className={styles.page}>
-      <SiteHeader lang={lang} />
+      <SiteHeader />
       <main id="main-content" tabIndex={-1} className={styles.main}>
         <h1>Sharm El Sheikh Excursion Videos</h1>
         <div className={styles.notice} role="status">
@@ -44,7 +46,7 @@ export default async function VideoPage({ params }: { params: Promise<{ lang: st
             </a>
           )}
         </div>
-        {CATEGORIES.map((c) => (
+        {categoryList(t).map((c) => (
           <section key={c.key} className={styles.cat} aria-labelledby={`v-${c.key}`}>
             <h2 id={`v-${c.key}`}>{c.label}</h2>
             <div className={styles.grid}>
@@ -66,7 +68,7 @@ export default async function VideoPage({ params }: { params: Promise<{ lang: st
           <h2 id="v-cta">Message us — we reply in minutes</h2>
           <p>We&apos;ll find the best tour for your budget. No prepayment, transfer included.</p>
           <div className={styles.ctaBtns}>
-            <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className="btn-wa">
+            <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className="btn-wa">
               <WhatsAppIcon /> Message us on WhatsApp
             </a>
             {site.telegram && (
@@ -78,7 +80,7 @@ export default async function VideoPage({ params }: { params: Promise<{ lang: st
         </section>
       </main>
       <Footer lang={lang} />
-      <BottomNav lang={lang} tours={tours.map(toSummary)} />
+      <BottomNav tours={tours.map(toSummary)} />
     </div>
   );
 }

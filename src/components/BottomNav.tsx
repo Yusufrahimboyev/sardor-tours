@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import type { TourSummary } from '@/data/tours';
-import type { Locale } from '@/i18n/config';
+import { useLang, useT } from '@/i18n/client';
+import { LanguageSwitcher } from '@/i18n/LanguageSwitcher';
 import { localeHref } from '@/i18n/routing';
 import { ContactOptions } from './ContactOptions';
 import { ChatIcon, ChevronLeft, HomeIcon, InfoIcon, SearchIcon, VideoIcon } from './icons';
@@ -20,7 +21,6 @@ export function openContact() {
 }
 
 interface Props {
-  lang: Locale;
   tours: TourSummary[];
   /** Show a "Back" item (tour detail pages). */
   withBack?: boolean;
@@ -31,7 +31,9 @@ interface Props {
 }
 
 /** Floating pill navigation used on the destination & tour pages (all widths, like the reference). */
-export function BottomNav({ lang, tours, withBack, revealAfter = 0, placement = 'bottom' }: Props) {
+export function BottomNav({ tours, withBack, revealAfter = 0, placement = 'bottom' }: Props) {
+  const lang = useLang();
+  const t = useT();
   const pathname = usePathname();
   const router = useRouter();
   const [visible, setVisible] = useState(revealAfter === 0);
@@ -65,42 +67,43 @@ export function BottomNav({ lang, tours, withBack, revealAfter = 0, placement = 
 
   return (
     <>
-      <nav className={`${styles.nav} ${placement === 'top' ? styles.top : ''} ${visible ? styles.visible : ''}`} aria-label="Quick navigation">
+      <nav className={`${styles.nav} ${placement === 'top' ? styles.top : ''} ${visible ? styles.visible : ''}`} aria-label={t('nav.quick')}>
         {withBack && (
           <button type="button" className={styles.item} onClick={back}>
             <ChevronLeft />
-            Back
+            {t('nav.back')}
           </button>
         )}
         <Link href={home} className={`${styles.item} ${pathname.replace(/\/$/, '') === home.replace(/\/$/, '') ? styles.active : ''}`}>
           <HomeIcon />
-          Home
+          {t('nav.home')}
         </Link>
         <button type="button" className={styles.item} onClick={() => setPanel('search')}>
           <SearchIcon size={20} />
-          Search
+          {t('nav.search')}
         </button>
         <button type="button" className={styles.item} onClick={() => setPanel('contact')}>
           <ChatIcon />
-          Contact
+          {t('nav.contact')}
         </button>
         {!withBack && (
           <Link href={localeHref(lang, '/sharm/video/')} className={styles.item}>
             <VideoIcon />
-            Videos
+            {t('nav.videos')}
           </Link>
         )}
         <Link href={localeHref(lang, '/about-us/')} className={styles.item}>
           <InfoIcon />
-          About
+          {t('nav.about')}
         </Link>
+        <LanguageSwitcher tone="dark" />
       </nav>
 
-      <Modal open={panel === 'search'} onClose={close} label="Search tours" variant="panel">
-        <TourSearch lang={lang} tours={tours} onNavigate={close} />
+      <Modal open={panel === 'search'} onClose={close} label={t('search.title')} variant="panel">
+        <TourSearch tours={tours} onNavigate={close} />
       </Modal>
-      <Modal open={panel === 'contact'} onClose={close} label="Get in touch">
-        <ContactOptions lang={lang} onNavigate={close} />
+      <Modal open={panel === 'contact'} onClose={close} label={t('contactOptions.title')}>
+        <ContactOptions onNavigate={close} />
       </Modal>
     </>
   );

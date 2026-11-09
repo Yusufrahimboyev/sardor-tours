@@ -44,7 +44,7 @@ export default async function BookingPage({ params }: { params: Promise<{ lang: 
 
   return (
     <div className={styles.page}>
-      <SiteHeader lang={lang} />
+      <SiteHeader />
       <main id="main-content" tabIndex={-1} className={styles.main}>
         <div className={styles.card}>
           <span className={styles.ic}>

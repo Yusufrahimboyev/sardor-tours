@@ -1,13 +1,18 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { tourHref } from '@/data/categories';
 import type { TourSummary } from '@/data/tours';
-import type { Locale } from '@/i18n/config';
+import { useLang, useT } from '@/i18n/client';
+import { formatPrice } from '@/i18n/format';
 import { imageSrc } from '@/lib/images';
 import { ArrowRight, CalendarIcon, ClockIcon } from './icons';
 import styles from './TourCard.module.css';
 
-export function TourCard({ lang, tour, priority }: { lang: Locale; tour: TourSummary; priority?: boolean }) {
+export function TourCard({ tour, priority }: { tour: TourSummary; priority?: boolean }) {
+  const lang = useLang();
+  const t = useT();
   return (
     <Link href={tourHref(lang, tour.slug)} className={styles.tc} data-testid="tour-card">
       <div className={styles.img}>
@@ -34,14 +39,14 @@ export function TourCard({ lang, tour, priority }: { lang: Locale; tour: TourSum
         </div>
         <div className={styles.foot}>
           <div>
-            <div className={styles.from}>from</div>
+            <div className={styles.from}>{t('catalog.from')}</div>
             <div className={styles.price}>
-              £{tour.priceFrom}
-              <sub>{tour.priceUnit ? ` ${tour.priceUnit}` : '/pp'}</sub>
+              {formatPrice(tour.priceFrom, lang)}
+              <sub>{tour.priceUnit ? ` ${tour.priceUnit}` : t('catalog.perPerson')}</sub>
             </div>
           </div>
           <span className={styles.more}>
-            View Details <ArrowRight size={14} />
+            {t('catalog.viewDetails')} <ArrowRight size={14} />
           </span>
         </div>
       </div>

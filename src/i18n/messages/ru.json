@@ -1,0 +1,130 @@
+{
+  "common": {
+    "skipToContent": "Skip to content",
+    "footer": {
+      "blurb": "Excursions and day trips from Sharm El Sheikh — sea, desert and history. No prepayment, hotel transfer included.",
+      "destinations": "Destinations",
+      "sharm": "Sharm El Sheikh",
+      "hurghadaSoon": "Hurghada — soon",
+      "cairoSoon": "Cairo — soon",
+      "marsaAlamSoon": "Marsa Alam — soon",
+      "company": "Company",
+      "categories": "Categories",
+      "getInTouch": "Get in touch",
+      "whatsapp": "WhatsApp",
+      "sendMessage": "Send us a message",
+      "rights": "© {year} {name}. All rights reserved."
+    },
+    "cta": {
+      "title": "Ready to discover Egypt?",
+      "text": "Tell us your dates and what you love — we'll build the perfect trip for your group and budget. Reply in minutes, no prepayment.",
+      "button": "Plan my trip on WhatsApp"
+    }
+  },
+  "nav": {
+    "aboutUs": "About us",
+    "contactForm": "Contact form",
+    "videos": "Videos",
+    "terms": "Terms & Conditions"
+  },
+  "home": {},
+  "sharm": {
+    "categories": {
+      "sea": {
+        "label": "Sea & Diving",
+        "tag": "Discover the Red Sea",
+        "short": "Sea"
+      },
+      "safari": {
+        "label": "Safari",
+        "tag": "Breathe in the desert",
+        "short": "Safari"
+      },
+      "historical": {
+        "label": "Historical",
+        "tag": "Where history began",
+        "short": "History"
+      },
+      "family": {
+        "label": "Entertainment",
+        "tag": "Dive into the adventure",
+        "short": "Entertainment"
+      }
+    }
+  },
+  "tour": {},
+  "booking": {},
+  "contact": {},
+  "about": {},
+  "terms": {},
+  "video": {},
+  "notFound": {},
+  "meta": {},
+  "client": {
+    "nav": {
+      "main": "Main",
+      "quick": "Quick navigation",
+      "menu": "Menu",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "home": "Home",
+      "excursions": "Excursions",
+      "videos": "Videos",
+      "aboutUs": "About us",
+      "about": "About",
+      "contact": "Contact",
+      "back": "Back",
+      "search": "Search",
+      "destinations": "Destinations",
+      "whyUs": "Why us",
+      "sharmTours": "Sharm El Sheikh tours",
+      "whatsapp": "WhatsApp",
+      "messageWhatsapp": "Message us on WhatsApp"
+    },
+    "search": {
+      "title": "Search tours",
+      "placeholder": "Search tours…",
+      "empty": "No tours found for “{q}”",
+      "meta": "{category} · {duration} · from {price}"
+    },
+    "catalog": {
+      "from": "from",
+      "viewDetails": "View Details",
+      "perPerson": "/pp"
+    },
+    "booking": {},
+    "contactForm": {},
+    "errors": {},
+    "toast": {},
+    "contactOptions": {
+      "title": "Get in touch",
+      "sub": "Reach us on your favourite messenger — we're available 24/7.",
+      "quickReply": "Quick reply",
+      "instagramSub": "Follow & DM us",
+      "telegramSub": "Message us on Telegram",
+      "formTitle": "Contact form",
+      "formSub": "We reply by email"
+    },
+    "support": {
+      "chatAria": "Chat with us on WhatsApp",
+      "help": {
+        "title": "Need help?",
+        "sub": "We're online"
+      },
+      "reply": {
+        "title": "We reply fast",
+        "sub": "Message us on WhatsApp"
+      }
+    },
+    "whatsapp": {
+      "bookTour": "Hello! I'd like to book a tour.",
+      "planTrip": "Hello! I'd like to plan an Egypt trip"
+    },
+    "common": {
+      "close": "Close",
+      "language": "Language",
+      "tagline": "Egypt Excursions",
+      "homeAria": "{name} — home"
+    }
+  }
+}

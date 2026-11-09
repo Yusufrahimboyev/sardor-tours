@@ -3,9 +3,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { TourCard } from '@/components/TourCard';
 import { XIcon } from '@/components/icons';
-import { CATEGORIES_EN as CATEGORIES, type Category } from '@/data/categories';
+import type { Category } from '@/data/categories';
 import type { TourSummary } from '@/data/tours';
-import type { Locale } from '@/i18n/config';
 import { filterTours, PRICE_BANDS, type PriceBand } from '@/lib/catalog';
 import styles from './sharm.module.css';
 
@@ -13,32 +12,34 @@ export const CATALOG_QUERY = 'st:catalog-query';
 
 type CatFilter = Category | 'all';
 
-function readUrl(): { cat: CatFilter; price: PriceBand; q: string } {
+type CategoryItem = { key: Category; label: string; tag: string };
+
+function readUrl(categories: CategoryItem[]): { cat: CatFilter; price: PriceBand; q: string } {
   const sp = new URLSearchParams(window.location.search);
   const cat = sp.get('cat');
   const price = sp.get('price');
   return {
-    cat: CATEGORIES.some((c) => c.key === cat) ? (cat as Category) : 'all',
+    cat: categories.some((c) => c.key === cat) ? (cat as Category) : 'all',
     price: PRICE_BANDS.some((b) => b.key === price) ? (price as PriceBand) : 'all',
     q: sp.get('q') ?? '',
   };
 }
 
-export function ToursCatalog({ lang, tours }: { lang: Locale; tours: TourSummary[] }) {
+export function ToursCatalog({ categories, tours }: { categories: CategoryItem[]; tours: TourSummary[] }) {
   const [cat, setCat] = useState<CatFilter>('all');
   const [price, setPrice] = useState<PriceBand>('all');
   const [query, setQuery] = useState('');
 
   // Initial state from the URL (?cat=sea&price=under30&q=boat) so filters are shareable.
   useEffect(() => {
-    const s = readUrl();
+    const s = readUrl(categories);
     setCat(s.cat);
     setPrice(s.price);
     setQuery(s.q);
     const onQuery = (e: Event) => setQuery((e as CustomEvent<string>).detail);
     window.addEventListener(CATALOG_QUERY, onQuery);
     return () => window.removeEventListener(CATALOG_QUERY, onQuery);
-  }, []);
+  }, [categories]);
 
   useEffect(() => {
     const url = new URL(window.location.href);
@@ -50,7 +51,7 @@ export function ToursCatalog({ lang, tours }: { lang: Locale; tours: TourSummary
   }, [cat, price, query]);
 
   const filtered = useMemo(() => filterTours(tours, { category: cat, price, query }), [tours, cat, price, query]);
-  const sections = CATEGORIES.map((c) => ({ ...c, items: filtered.filter((t) => t.category === c.key) })).filter(
+  const sections = categories.map((c) => ({ ...c, items: filtered.filter((t) => t.category === c.key) })).filter(
     (s) => s.items.length > 0,
   );
   const isFiltered = cat !== 'all' || price !== 'all' || query.trim() !== '';
@@ -64,7 +65,7 @@ export function ToursCatalog({ lang, tours }: { lang: Locale; tours: TourSummary
     <>
       <div className={styles.filters}>
         <div className={styles.filterRow} role="group" aria-label="Filter by category">
-          {[{ key: 'all' as const, label: 'All Tours' }, ...CATEGORIES].map((c) => (
+          {[{ key: 'all' as const, label: 'All Tours' }, ...categories].map((c) => (
             <button
               key={c.key}
               type="button"
@@ -124,7 +125,7 @@ export function ToursCatalog({ lang, tours }: { lang: Locale; tours: TourSummary
             </div>
             <div className={styles.grid}>
               {s.items.map((t) => (
-                <TourCard key={t.slug} lang={lang} tour={t} />
+                <TourCard key={t.slug} tour={t} />
               ))}
             </div>
           </div>

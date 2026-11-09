@@ -47,3 +47,10 @@ test.describe('locale routing', () => {
     const r = await page.goto('/de/'); expect(r!.status()).toBe(404);
   });
 });
+
+test('switcher keeps path + query and sets cookie', async ({ page, context }) => {
+  await page.goto('/ru/sharm/?cat=safari');
+  await page.getByRole('link', { name: 'UZ' }).filter({ visible: true }).first().click();
+  await expect(page).toHaveURL(/\/uz\/sharm\/\?cat=safari$/);
+  expect((await context.cookies()).find((c) => c.name === 'lang')?.value).toBe('uz');
+});

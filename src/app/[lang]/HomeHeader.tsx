@@ -3,18 +3,21 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Brand } from '@/components/Brand';
-import { PLAN_TRIP_MSG, whatsappLink } from '@/data/site';
+import { whatsappLink } from '@/data/site';
 import { XIcon } from '@/components/icons';
-import type { Locale } from '@/i18n/config';
+import { useLang, useT } from '@/i18n/client';
+import { LanguageSwitcher } from '@/i18n/LanguageSwitcher';
 import { localeHref } from '@/i18n/routing';
 import styles from './home.module.css';
 
-export function HomeHeader({ lang }: { lang: Locale }) {
+export function HomeHeader() {
+  const lang = useLang();
+  const t = useT();
   const links = [
-    { href: '#destinations', label: 'Destinations' },
-    { href: '#why', label: 'Why us' },
-    { href: '#contact', label: 'Contact' },
-    { href: localeHref(lang, '/about-us/'), label: 'About us' },
+    { href: '#destinations', label: t('nav.destinations') },
+    { href: '#why', label: t('nav.whyUs') },
+    { href: '#contact', label: t('nav.contact') },
+    { href: localeHref(lang, '/about-us/'), label: t('nav.aboutUs') },
   ];
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
@@ -34,26 +37,27 @@ export function HomeHeader({ lang }: { lang: Locale }) {
     return () => window.removeEventListener('keydown', onKey);
   }, [open]);
 
-  const wa = whatsappLink(PLAN_TRIP_MSG);
+  const wa = whatsappLink(t('whatsapp.planTrip'));
 
   return (
     <>
       <header className={`${styles.hdr} ${solid ? styles.solid : ''}`}>
         <div className={`wrap ${styles.hdrIn}`}>
-          <Brand lang={lang} />
-          <nav className={styles.nav} aria-label="Main">
+          <Brand />
+          <nav className={styles.nav} aria-label={t('nav.main')}>
             {links.map((l) => (
               <Link key={l.href} href={l.href} className={styles.lnk}>
                 {l.label}
               </Link>
             ))}
+            <LanguageSwitcher />
             <a href={wa} target="_blank" rel="noopener noreferrer" className={`btn-wa ${styles.hdrCta}`}>
-              WhatsApp
+              {t('nav.whatsapp')}
             </a>
             <button
               type="button"
               className={styles.burger}
-              aria-label="Open menu"
+              aria-label={t('nav.openMenu')}
               aria-expanded={open}
               aria-controls="mmenu"
               onClick={() => setOpen(true)}
@@ -66,8 +70,8 @@ export function HomeHeader({ lang }: { lang: Locale }) {
         </div>
       </header>
 
-      <div id="mmenu" className={`${styles.mmenu} ${open ? styles.open : ''}`} aria-hidden={!open} role="dialog" aria-label="Menu">
-        <button type="button" className={styles.close} onClick={() => setOpen(false)} aria-label="Close menu" tabIndex={open ? 0 : -1}>
+      <div id="mmenu" className={`${styles.mmenu} ${open ? styles.open : ''}`} aria-hidden={!open} role="dialog" aria-label={t('nav.menu')}>
+        <button type="button" className={styles.close} onClick={() => setOpen(false)} aria-label={t('nav.closeMenu')} tabIndex={open ? 0 : -1}>
           <XIcon size={28} />
         </button>
         {links.map((l) => (
@@ -76,10 +80,11 @@ export function HomeHeader({ lang }: { lang: Locale }) {
           </Link>
         ))}
         <Link href={localeHref(lang, '/sharm/')} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
-          Sharm El Sheikh tours
+          {t('nav.sharmTours')}
         </Link>
+        <LanguageSwitcher />
         <a href={wa} target="_blank" rel="noopener noreferrer" className="btn-wa" tabIndex={open ? 0 : -1}>
-          Message us on WhatsApp
+          {t('nav.messageWhatsapp')}
         </a>
       </div>
     </>

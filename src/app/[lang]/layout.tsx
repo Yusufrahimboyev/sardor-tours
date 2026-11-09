@@ -2,7 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import { site } from '@/data/site';
 import { RevealObserver } from '@/components/RevealObserver';
 import { ToastProvider } from '@/components/Toast';
+import { I18nProvider } from '@/i18n/client';
 import { LOCALES, OG_LOCALE } from '@/i18n/config';
+import { getMessages, getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
 import { fontVariables } from '../fonts';
 import '../globals.css';
@@ -43,17 +45,20 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }) {
   const lang = await langFrom(params);
+  const t = getT(lang);
 
   return (
     <html lang={lang} className={fontVariables}>
       <body>
         <a href="#main-content" className="skip-link">
-          Skip to content
+          {t('common.skipToContent')}
         </a>
         <noscript>
           <style>{'.reveal{opacity:1!important;transform:none!important}'}</style>
         </noscript>
-        <ToastProvider>{children}</ToastProvider>
+        <I18nProvider lang={lang} messages={getMessages(lang).client}>
+          <ToastProvider>{children}</ToastProvider>
+        </I18nProvider>
         <RevealObserver />
       </body>
     </html>

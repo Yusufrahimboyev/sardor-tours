@@ -22,9 +22,6 @@ export function whatsappLink(text?: string): string {
   return text ? `${base}?text=${encodeURIComponent(text)}` : base;
 }
 
-export const PLAN_TRIP_MSG = "Hello! I'd like to plan an Egypt trip";
-export const BOOK_TOUR_MSG = "Hello! I'd like to book a tour.";
-
 export const destinations = [
   {
     num: '01',

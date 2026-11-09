@@ -8,7 +8,7 @@ import styles from '@/app/[lang]/legal.module.css';
 export function NotFoundContent({ lang }: { lang: Locale }) {
   return (
     <div className={styles.page}>
-      <SiteHeader lang={lang} />
+      <SiteHeader />
       <main id="main-content" className={styles.main} style={{ textAlign: 'center', minHeight: '70vh' }}>
         <div className={styles.intro}>
           <div className={styles.updated}>404</div>

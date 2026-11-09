@@ -1,6 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { site } from '@/data/site';
-import type { Locale } from '@/i18n/config';
+import { useLang, useT } from '@/i18n/client';
 import { localeHref } from '@/i18n/routing';
 import styles from './Brand.module.css';
 
@@ -23,13 +25,15 @@ export function LogoMark({ size = 40 }: { size?: number }) {
   );
 }
 
-export function Brand({ lang, tone = 'light' }: { lang: Locale; tone?: 'light' | 'dark' }) {
+export function Brand({ tone = 'light' }: { tone?: 'light' | 'dark' }) {
+  const lang = useLang();
+  const t = useT();
   return (
-    <Link href={localeHref(lang, '/')} className={`${styles.brand} ${tone === 'dark' ? styles.dark : ''}`} aria-label={`${site.name} — home`}>
+    <Link href={localeHref(lang, '/')} className={`${styles.brand} ${tone === 'dark' ? styles.dark : ''}`} aria-label={t('common.homeAria', { name: site.name })}>
       <LogoMark />
       <span>
         <span className={styles.bt}>{site.name}</span>
-        <span className={styles.bs}>{site.tagline}</span>
+        <span className={styles.bs}>{t('common.tagline')}</span>
       </span>
     </Link>
   );

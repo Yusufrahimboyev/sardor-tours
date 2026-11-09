@@ -21,7 +21,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
   const lang = await langFrom(params);
   return (
     <div className={styles.page}>
-      <SiteHeader lang={lang} />
+      <SiteHeader />
       <main id="main-content" tabIndex={-1} className={styles.main}>
         <header className={styles.intro}>
           <span className={styles.tag}>Contact</span>
@@ -39,7 +39,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
           </section>
           <aside className={styles.side}>
             <div className={styles.card}>
-              <ContactOptions lang={lang} />
+              <ContactOptions />
             </div>
           </aside>
         </div>

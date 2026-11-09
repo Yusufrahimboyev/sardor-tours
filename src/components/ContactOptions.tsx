@@ -1,23 +1,27 @@
+'use client';
+
 import Link from 'next/link';
-import { BOOK_TOUR_MSG, site, whatsappLink } from '@/data/site';
-import type { Locale } from '@/i18n/config';
+import { site, whatsappLink } from '@/data/site';
+import { useLang, useT } from '@/i18n/client';
 import { localeHref } from '@/i18n/routing';
 import { ArrowRight, InstagramIcon, MailIcon, TelegramIcon, WhatsAppIcon } from './icons';
 import styles from './ContactOptions.module.css';
 
 /** "Get in touch" messenger list used inside the contact lightbox. */
-export function ContactOptions({ lang, onNavigate }: { lang: Locale; onNavigate?: () => void }) {
+export function ContactOptions({ onNavigate }: { onNavigate?: () => void }) {
+  const lang = useLang();
+  const t = useT();
   return (
     <div>
-      <h2 className={styles.title}>Get in touch</h2>
-      <p className={styles.sub}>Reach us on your favourite messenger — we&apos;re available 24/7.</p>
-      <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={`${styles.link} ${styles.wa}`}>
+      <h2 className={styles.title}>{t('contactOptions.title')}</h2>
+      <p className={styles.sub}>{t('contactOptions.sub')}</p>
+      <a href={whatsappLink(t('whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={`${styles.link} ${styles.wa}`}>
         <span className={styles.icon}>
           <WhatsAppIcon size={20} />
         </span>
         <span className={styles.txt}>
           <b>WhatsApp</b>
-          <small>{site.phoneDisplay ? `${site.phoneDisplay} · ` : ''}Quick reply</small>
+          <small>{site.phoneDisplay ? `${site.phoneDisplay} · ` : ''}{t('contactOptions.quickReply')}</small>
         </span>
         <ArrowRight />
       </a>
@@ -28,7 +32,7 @@ export function ContactOptions({ lang, onNavigate }: { lang: Locale; onNavigate?
           </span>
           <span className={styles.txt}>
             <b>Instagram</b>
-            <small>Follow &amp; DM us</small>
+            <small>{t('contactOptions.instagramSub')}</small>
           </span>
           <ArrowRight />
         </a>
@@ -40,7 +44,7 @@ export function ContactOptions({ lang, onNavigate }: { lang: Locale; onNavigate?
           </span>
           <span className={styles.txt}>
             <b>Telegram</b>
-            <small>Message us on Telegram</small>
+            <small>{t('contactOptions.telegramSub')}</small>
           </span>
           <ArrowRight />
         </a>
@@ -50,8 +54,8 @@ export function ContactOptions({ lang, onNavigate }: { lang: Locale; onNavigate?
           <MailIcon size={20} />
         </span>
         <span className={styles.txt}>
-          <b>Contact form</b>
-          <small>We reply by email</small>
+          <b>{t('contactOptions.formTitle')}</b>
+          <small>{t('contactOptions.formSub')}</small>
         </span>
         <ArrowRight />
       </Link>

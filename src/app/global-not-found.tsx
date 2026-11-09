@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { NotFoundContent } from '@/components/NotFoundContent';
 import { site } from '@/data/site';
+import { I18nProvider } from '@/i18n/client';
 import { DEFAULT_LOCALE, isLocale } from '@/i18n/config';
+import { getMessages } from '@/i18n/messages';
 import { LOCALE_HEADER } from '@/i18n/routing';
 import { fontVariables } from './fonts';
 import './globals.css';
@@ -23,7 +25,9 @@ export default async function GlobalNotFound() {
   return (
     <html lang={lang} className={fontVariables}>
       <body>
-        <NotFoundContent lang={lang} />
+        <I18nProvider lang={lang} messages={getMessages(lang).client}>
+          <NotFoundContent lang={lang} />
+        </I18nProvider>
       </body>
     </html>
   );

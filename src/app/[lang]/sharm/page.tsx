@@ -10,11 +10,13 @@ import { Footer } from '@/components/Footer';
 import { WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { SupportWidget } from '@/components/SupportWidget';
-import { BOOK_TOUR_MSG, generalFaq, site, whatsappLink } from '@/data/site';
-import { CATEGORY_TEXT_EN, tourHref } from '@/data/categories';
+import { generalFaq, site, whatsappLink } from '@/data/site';
+import { categoryList, categoryShort, tourHref } from '@/data/categories';
 import { allTours, BESTSELLERS, getTour, MIN_PRICE, toSummary, tourSlugs } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
+import { getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
+import { LanguageSwitcher } from '@/i18n/LanguageSwitcher';
 import { localeHref } from '@/i18n/routing';
 import { Bestsellers } from './Bestsellers';
 import { HeroSearch } from './HeroSearch';
@@ -65,12 +67,13 @@ const STEPS = [
 
 export default async function SharmPage({ params }: { params: Promise<{ lang: string }> }) {
   const lang = await langFrom(params);
+  const t = getT(lang);
   const tours = allTours(lang);
   const summaries = tours.map(toSummary);
   const bestsellers = BESTSELLERS.map((b) => ({
     href: tourHref(lang, b.slug),
     name: getTour(b.slug, lang)!.name,
-    tag: CATEGORY_TEXT_EN[b.category].short,
+    tag: categoryShort(t, b.category),
     image: b.image,
   }));
 
@@ -102,11 +105,12 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
         </div>
         <div className={styles.heroScrim} />
         <nav className={styles.heroNav} aria-label="Main">
-          <Brand lang={lang} />
+          <Brand />
           <div className={styles.heroNavLinks}>
+            <LanguageSwitcher />
             <Link href={localeHref(lang, '/')}>Destinations</Link>
             <Link href={localeHref(lang, '/about-us/')}>About</Link>
-            <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={styles.heroNavWa}>
+            <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.heroNavWa}>
               <WhatsAppIcon size={16} />
               <span>WhatsApp</span>
             </a>
@@ -181,7 +185,7 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
               <br />
               <span>Day Trips &amp; Excursions</span>
             </h2>
-            <ToursCatalog lang={lang} tours={summaries} />
+            <ToursCatalog categories={categoryList(t)} tours={summaries} />
           </section>
 
           <section className={styles.bmSec} id="faq" aria-labelledby="faq-h">
@@ -297,7 +301,7 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
             <a href="#tours" className={styles.bookPanelCta}>
               Choose your tour
             </a>
-            <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={styles.bookPanelWa}>
+            <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.bookPanelWa}>
               <WhatsAppIcon /> Message us on WhatsApp
             </a>
             <div className={styles.bookPanelNote}>Instant booking reference. We reply fast.</div>
@@ -305,9 +309,9 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
         </aside>
       </div>
 
-      <CtaBand />
+      <CtaBand lang={lang} />
       <Footer lang={lang} />
-      <BottomNav lang={lang} tours={summaries} revealAfter={500} />
+      <BottomNav tours={summaries} revealAfter={500} />
       <SupportWidget />
     </div>
   );

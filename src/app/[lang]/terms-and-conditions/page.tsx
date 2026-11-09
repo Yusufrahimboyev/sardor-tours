@@ -22,7 +22,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
   const lang = await langFrom(params);
   return (
     <div className={styles.page}>
-      <SiteHeader lang={lang} />
+      <SiteHeader />
       <main id="main-content" tabIndex={-1} className={styles.main}>
         <header className={styles.intro}>
           <h1>Terms &amp; Conditions</h1>

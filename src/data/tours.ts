@@ -6,7 +6,7 @@ import ruText from './tours.ru.json';
 
 import type { Category } from './categories';
 
-export { CATEGORY_KEYS, CATEGORY_TEXT_EN, CATEGORIES_EN, tourHref, type Category } from './categories';
+export { CATEGORY_KEYS, categoryList, categoryShort, tourHref, type Category } from './categories';
 
 export interface TourOptionBase {
   key: string;

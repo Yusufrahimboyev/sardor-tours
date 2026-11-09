@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { site, whatsappLink } from '@/data/site';
-import { CATEGORIES_EN as CATEGORIES } from '@/data/categories';
+import { categoryList } from '@/data/categories';
 import type { Locale } from '@/i18n/config';
+import { getT } from '@/i18n/messages';
 import { localeHref } from '@/i18n/routing';
 import { Brand } from './Brand';
 import { InstagramIcon, TelegramIcon, WhatsAppIcon } from './icons';
@@ -15,18 +16,16 @@ interface Props {
 }
 
 export function Footer({ lang, variant = 'destination', tone = 'dark' }: Props) {
+  const t = getT(lang);
   return (
     <footer id="contact" className={`${styles.footer} ${tone === 'light' ? styles.light : ''}`}>
       <div className="wrap">
         <div className={styles.top}>
           <div className={styles.brandCol}>
-            <Brand lang={lang} tone={tone === 'light' ? 'dark' : 'light'} />
-            <p>
-              Excursions and day trips from Sharm El Sheikh — sea, desert and history. No prepayment, hotel transfer
-              included.
-            </p>
+            <Brand tone={tone === 'light' ? 'dark' : 'light'} />
+            <p>{t('common.footer.blurb')}</p>
             <div className={styles.soc}>
-              <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" aria-label={t('common.footer.whatsapp')}>
                 <WhatsAppIcon />
               </a>
               {site.telegram && (
@@ -42,24 +41,24 @@ export function Footer({ lang, variant = 'destination', tone = 'dark' }: Props) 
             </div>
           </div>
           <div className={styles.col}>
-            <h2>Destinations</h2>
-            <Link href={localeHref(lang, '/sharm/')}>Sharm El Sheikh</Link>
-            <p className={styles.dim}>Hurghada — soon</p>
-            <p className={styles.dim}>Cairo — soon</p>
-            <p className={styles.dim}>Marsa Alam — soon</p>
+            <h2>{t('common.footer.destinations')}</h2>
+            <Link href={localeHref(lang, '/sharm/')}>{t('common.footer.sharm')}</Link>
+            <p className={styles.dim}>{t('common.footer.hurghadaSoon')}</p>
+            <p className={styles.dim}>{t('common.footer.cairoSoon')}</p>
+            <p className={styles.dim}>{t('common.footer.marsaAlamSoon')}</p>
           </div>
           {variant === 'home' ? (
             <div className={styles.col}>
-              <h2>Company</h2>
-              <Link href={localeHref(lang, '/about-us/')}>About us</Link>
-              <Link href={localeHref(lang, '/contact/')}>Contact form</Link>
-              <Link href={localeHref(lang, '/sharm/video/')}>Videos</Link>
-              <Link href={localeHref(lang, '/terms-and-conditions/')}>Terms &amp; Conditions</Link>
+              <h2>{t('common.footer.company')}</h2>
+              <Link href={localeHref(lang, '/about-us/')}>{t('nav.aboutUs')}</Link>
+              <Link href={localeHref(lang, '/contact/')}>{t('nav.contactForm')}</Link>
+              <Link href={localeHref(lang, '/sharm/video/')}>{t('nav.videos')}</Link>
+              <Link href={localeHref(lang, '/terms-and-conditions/')}>{t('nav.terms')}</Link>
             </div>
           ) : (
             <div className={styles.col}>
-              <h2>Categories</h2>
-              {CATEGORIES.map((c) => (
+              <h2>{t('common.footer.categories')}</h2>
+              {categoryList(t).map((c) => (
                 <Link key={c.key} href={localeHref(lang, `/sharm/?cat=${c.key}#tours`)}>
                   {c.label}
                 </Link>
@@ -67,20 +66,18 @@ export function Footer({ lang, variant = 'destination', tone = 'dark' }: Props) 
             </div>
           )}
           <div className={styles.col}>
-            <h2>Get in touch</h2>
+            <h2>{t('common.footer.getInTouch')}</h2>
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-              {site.phoneDisplay || 'WhatsApp'}
+              {site.phoneDisplay || t('common.footer.whatsapp')}
             </a>
             {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
-            <Link href={localeHref(lang, '/contact/')}>Send us a message</Link>
+            <Link href={localeHref(lang, '/contact/')}>{t('common.footer.sendMessage')}</Link>
           </div>
         </div>
         <div className={styles.bot}>
-          <span>
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
-          </span>
+          <span>{t('common.footer.rights', { year: new Date().getFullYear(), name: site.name })}</span>
           <Link href={localeHref(lang, '/terms-and-conditions/')} className={styles.terms}>
-            Terms &amp; Conditions
+            {t('nav.terms')}
           </Link>
         </div>
       </div>

@@ -2,22 +2,25 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { BOOK_TOUR_MSG, whatsappLink } from '@/data/site';
-import type { Locale } from '@/i18n/config';
+import { whatsappLink } from '@/data/site';
+import { useLang, useT } from '@/i18n/client';
+import { LanguageSwitcher } from '@/i18n/LanguageSwitcher';
 import { localeHref } from '@/i18n/routing';
 import { Brand } from './Brand';
 import { WhatsAppIcon, XIcon } from './icons';
 import styles from './SiteHeader.module.css';
 
 const LINKS = [
-  { path: '/sharm/', label: 'Excursions' },
-  { path: '/sharm/video/', label: 'Videos' },
-  { path: '/about-us/', label: 'About us' },
-  { path: '/contact/', label: 'Contact' },
+  { path: '/sharm/', key: 'nav.excursions' },
+  { path: '/sharm/video/', key: 'nav.videos' },
+  { path: '/about-us/', key: 'nav.aboutUs' },
+  { path: '/contact/', key: 'nav.contact' },
 ];
 
 /** Header for secondary pages. `overlay` = transparent over a dark hero until scrolled. */
-export function SiteHeader({ lang, overlay = false }: { lang: Locale; overlay?: boolean }) {
+export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
+  const lang = useLang();
+  const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -42,20 +45,21 @@ export function SiteHeader({ lang, overlay = false }: { lang: Locale; overlay?: 
     <>
       <header className={`${styles.hdr} ${dark ? styles.dark : styles.solid}`}>
         <div className={styles.in}>
-          <Brand lang={lang} tone={dark ? 'light' : 'dark'} />
-          <nav className={styles.nav} aria-label="Main">
+          <Brand tone={dark ? 'light' : 'dark'} />
+          <nav className={styles.nav} aria-label={t('nav.main')}>
             {LINKS.map((l) => (
               <Link key={l.path} href={localeHref(lang, l.path)} className={styles.lnk}>
-                {l.label}
+                {t(l.key)}
               </Link>
             ))}
-            <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={styles.cta}>
-              <WhatsAppIcon size={16} /> WhatsApp
+            <LanguageSwitcher tone={dark ? 'light' : 'dark'} />
+            <a href={whatsappLink(t('whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.cta}>
+              <WhatsAppIcon size={16} /> {t('nav.whatsapp')}
             </a>
             <button
               type="button"
               className={styles.burger}
-              aria-label="Open menu"
+              aria-label={t('nav.openMenu')}
               aria-expanded={open}
               aria-controls="site-menu"
               onClick={() => setOpen(true)}
@@ -71,34 +75,35 @@ export function SiteHeader({ lang, overlay = false }: { lang: Locale; overlay?: 
         id="site-menu"
         className={`${styles.menu} ${open ? styles.open : ''}`}
         role="dialog"
-        aria-label="Menu"
+        aria-label={t('nav.menu')}
         aria-hidden={!open}
       >
         <button
           type="button"
           className={styles.close}
           onClick={() => setOpen(false)}
-          aria-label="Close menu"
+          aria-label={t('nav.closeMenu')}
           tabIndex={open ? 0 : -1}
         >
           <XIcon size={26} />
         </button>
         <Link href={localeHref(lang, '/')} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
-          Home
+          {t('nav.home')}
         </Link>
         {LINKS.map((l) => (
           <Link key={l.path} href={localeHref(lang, l.path)} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
-            {l.label}
+            {t(l.key)}
           </Link>
         ))}
+        <LanguageSwitcher tone="dark" />
         <a
-          href={whatsappLink(BOOK_TOUR_MSG)}
+          href={whatsappLink(t('whatsapp.bookTour'))}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-wa"
           tabIndex={open ? 0 : -1}
         >
-          Message us on WhatsApp
+          {t('nav.messageWhatsapp')}
         </a>
       </div>
     </>

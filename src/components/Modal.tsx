@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useT } from '@/i18n/client';
 import { XIcon } from './icons';
 import styles from './Modal.module.css';
 
@@ -17,6 +18,7 @@ interface Props {
 
 /** Accessible modal built on the native <dialog> (focus trap + Esc for free). */
 export function Modal({ open, onClose, label, children, variant = 'card', hideClose, className }: Props) {
+  const t = useT();
   const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -49,7 +51,7 @@ export function Modal({ open, onClose, label, children, variant = 'card', hideCl
     >
       <div className={styles.box}>
         {!hideClose && (
-          <button type="button" className={styles.close} onClick={onClose} aria-label="Close">
+          <button type="button" className={styles.close} onClick={onClose} aria-label={t('common.close')}>
             <XIcon size={18} />
           </button>
         )}
