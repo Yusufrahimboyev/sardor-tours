@@ -11,6 +11,10 @@ export function rateLimited(req: Request, bucket: string, limit = 10): boolean {
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('x-real-ip') || 'local';
   const key = `${bucket}:${ip}`;
   const now = Date.now();
+  // Evict idle clients so the map can't grow without bound on a long-lived server.
+  if (hits.size > 5_000) {
+    for (const [k, ts] of hits) if (now - ts[ts.length - 1] >= WINDOW_MS) hits.delete(k);
+  }
   const recent = (hits.get(key) ?? []).filter((t) => now - t < WINDOW_MS);
   recent.push(now);
   hits.set(key, recent);

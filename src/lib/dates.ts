@@ -7,10 +7,24 @@ export function isoDate(d: Date): string {
   return `${d.getFullYear()}-${m}-${day}`;
 }
 
+/** All tours run in Egypt, so "today" is always measured on Cairo's calendar. */
+export const TOUR_TIME_ZONE = 'Africa/Cairo';
+
+/** YYYY-MM-DD of `now` on the calendar of `timeZone`. */
+export function todayISO(now = new Date(), timeZone = TOUR_TIME_ZONE): string {
+  // en-CA formats as YYYY-MM-DD.
+  return new Intl.DateTimeFormat('en-CA', { timeZone, year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+}
+
+/**
+ * Tomorrow in the tours' time zone. Must not depend on the runtime's local
+ * zone: the browser (form `min`), the server render and the API all have to
+ * agree, otherwise a valid client-side date is rejected by the API.
+ */
 export function tomorrowISO(now = new Date()): string {
-  const d = new Date(now);
-  d.setDate(d.getDate() + 1);
-  return isoDate(d);
+  const d = new Date(`${todayISO(now)}T12:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + 1);
+  return d.toISOString().slice(0, 10);
 }
 
 /** Parse YYYY-MM-DD as a UTC-noon date so weekday checks are timezone-stable. */
