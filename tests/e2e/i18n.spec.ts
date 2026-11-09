@@ -27,6 +27,22 @@ test.describe('locale routing', () => {
       const r = await request.get(u, { maxRedirects: 0 }); expect(r.status(), u).toBe(200);
     }
   });
+  test('404 pages are server-rendered in the URL locale', async ({ request }) => {
+    // request.get returns the raw server HTML; no JavaScript runs.
+    for (const [u, l] of [
+      ['/ru/sharm/no-such-tour/', 'ru'],
+      ['/ru/no-such-page/', 'ru'],
+      ['/uz/sharm/no-such-tour/', 'uz'],
+      ['/en/no-such-page/', 'en'],
+    ]) {
+      const r = await request.get(u, { maxRedirects: 0 });
+      expect(r.status(), u).toBe(404);
+      const html = await r.text();
+      expect(html, u).toContain(`<html lang="${l}"`);
+      expect(html, u).toContain('This page sailed away');
+      expect(html, u).toContain(`href="/${l}/sharm/"`);
+    }
+  });
   test('unsupported locale ends in a 404', async ({ page }) => {
     const r = await page.goto('/de/'); expect(r!.status()).toBe(404);
   });

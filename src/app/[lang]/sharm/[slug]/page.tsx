@@ -20,9 +20,8 @@ import { Gallery } from './Gallery';
 import { IncludedTabs } from './IncludedTabs';
 import styles from './tour.module.css';
 
-// Unknown slugs must reach the page so its notFound() renders `[lang]/not-found.tsx`
-// (with false they 404 before the [lang] layout, showing Next's bare error page).
-export const dynamicParams = true;
+// Unknown slugs never reach the page: they 404 through app/global-not-found.tsx (server-rendered).
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return tourSlugs.map((slug) => ({ slug }));

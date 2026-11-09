@@ -40,3 +40,6 @@ export function alternatesFor(path: string): { languages: Record<Locale | 'x-def
   for (const l of LOCALES) languages[l] = localeHref(l, path);
   return { languages };
 }
+
+/** Request header the middleware sets on locale-prefixed paths (read by global-not-found). */
+export const LOCALE_HEADER = 'x-locale';

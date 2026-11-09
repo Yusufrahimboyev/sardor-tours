@@ -1,20 +1,11 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Plus_Jakarta_Sans, Poppins } from 'next/font/google';
 import { site } from '@/data/site';
 import { RevealObserver } from '@/components/RevealObserver';
 import { ToastProvider } from '@/components/Toast';
 import { LOCALES, OG_LOCALE } from '@/i18n/config';
 import { langFrom } from '@/i18n/params';
+import { fontVariables } from '../fonts';
 import '../globals.css';
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-jakarta',
-  display: 'swap',
-});
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
-const poppins = Poppins({ subsets: ['latin'], weight: ['600', '700', '800'], variable: '--font-poppins', display: 'swap' });
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const lang = await langFrom(params);
@@ -54,7 +45,7 @@ export default async function RootLayout({
   const lang = await langFrom(params);
 
   return (
-    <html lang={lang} className={`${jakarta.variable} ${inter.variable} ${poppins.variable}`}>
+    <html lang={lang} className={fontVariables}>
       <body>
         <a href="#main-content" className="skip-link">
           Skip to content
