@@ -51,11 +51,16 @@ test('unknown routes return 404 page', async ({ page }) => {
 test('SEO files are served', async ({ request }) => {
   const robots = await request.get('/robots.txt');
   expect(robots.ok()).toBe(true);
-  expect(await robots.text()).toContain('Sitemap:');
+  const robotsTxt = await robots.text();
+  expect(robotsTxt).toContain('Sitemap:');
+  expect(robotsTxt).toContain('Disallow: /*/booking/');
   const sitemap = await request.get('/sitemap.xml');
   expect(sitemap.ok()).toBe(true);
   const xml = await sitemap.text();
   for (const t of tours) expect(xml).toContain(`/en/sharm/${t.slug}/`);
+  expect(xml.match(/<url>/g)).toHaveLength(87);
+  expect(xml).toContain('hreflang="ru"');
+  expect(xml).toContain('hreflang="x-default"');
 });
 
 test('all internal links resolve', async ({ page, request }) => {
