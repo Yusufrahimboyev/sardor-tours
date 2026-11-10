@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from '@/components/icons';
 import { Modal } from '@/components/Modal';
+import { useT } from '@/i18n/client';
 import { imageSrc } from '@/lib/images';
 import styles from './tour.module.css';
 
@@ -35,6 +36,7 @@ function useSlider(count: number) {
 
 /** Swipeable photo gallery with arrows, dots, counter and a fullscreen viewer. */
 export function Gallery({ images, alt }: Props) {
+  const t = useT();
   const main = useSlider(images.length);
   const full = useSlider(images.length);
   const [fullOpen, setFullOpen] = useState(false);
@@ -57,7 +59,7 @@ export function Gallery({ images, alt }: Props) {
         className={styles.gScroll}
         role="region"
         aria-roledescription="carousel"
-        aria-label="Tour photo gallery"
+        aria-label={t('gallery.region')}
         tabIndex={0}
         onKeyDown={(e) => onKey(e, main)}
       >
@@ -67,11 +69,11 @@ export function Gallery({ images, alt }: Props) {
             type="button"
             className={styles.gSlide}
             onClick={() => setFullOpen(true)}
-            aria-label={`Open photo ${i + 1} of ${images.length} fullscreen`}
+            aria-label={t('gallery.open', { i: i + 1, n: images.length })}
           >
             <Image
               src={imageSrc(im.src, 1200, 800)}
-              alt={`${alt} — photo ${i + 1}`}
+              alt={t('gallery.alt', { alt, i: i + 1 })}
               fill
               sizes="(max-width: 1100px) 100vw, 760px"
               priority={i === 0}
@@ -79,10 +81,10 @@ export function Gallery({ images, alt }: Props) {
           </button>
         ))}
       </div>
-      <button type="button" className={`${styles.gBtn} ${styles.gL}`} onClick={() => main.goTo(main.idx - 1)} aria-label="Previous photo">
+      <button type="button" className={`${styles.gBtn} ${styles.gL}`} onClick={() => main.goTo(main.idx - 1)} aria-label={t('gallery.prev')}>
         <ChevronLeft />
       </button>
-      <button type="button" className={`${styles.gBtn} ${styles.gR}`} onClick={() => main.goTo(main.idx + 1)} aria-label="Next photo">
+      <button type="button" className={`${styles.gBtn} ${styles.gR}`} onClick={() => main.goTo(main.idx + 1)} aria-label={t('gallery.next')}>
         <ChevronRight />
       </button>
       <div className={styles.gCounter} aria-live="polite">
@@ -95,24 +97,24 @@ export function Gallery({ images, alt }: Props) {
             type="button"
             className={i === Math.min(main.idx, 9) ? styles.gDotOn : ''}
             onClick={() => main.goTo(i)}
-            aria-label={`Photo ${i + 1}`}
+            aria-label={t('gallery.photo', { i: i + 1 })}
             aria-current={i === main.idx}
           />
         ))}
       </div>
 
-      <Modal open={fullOpen} onClose={() => setFullOpen(false)} label="Photo viewer" variant="panel" className={styles.viewer}>
+      <Modal open={fullOpen} onClose={() => setFullOpen(false)} label={t('gallery.viewer')} variant="panel" className={styles.viewer}>
         <div ref={full.ref} onScroll={full.onScroll} className={styles.vScroll} tabIndex={0} onKeyDown={(e) => onKey(e, full)}>
           {images.map((im, i) => (
             <div key={im.src + i} className={styles.vSlide}>
-              <Image src={imageSrc(im.src, 1600, 1066)} alt={`${alt} — photo ${i + 1}`} fill sizes="100vw" />
+              <Image src={imageSrc(im.src, 1600, 1066)} alt={t('gallery.alt', { alt, i: i + 1 })} fill sizes="100vw" />
             </div>
           ))}
         </div>
-        <button type="button" className={`${styles.gBtn} ${styles.gL}`} onClick={() => full.goTo(full.idx - 1)} aria-label="Previous photo">
+        <button type="button" className={`${styles.gBtn} ${styles.gL}`} onClick={() => full.goTo(full.idx - 1)} aria-label={t('gallery.prev')}>
           <ChevronLeft />
         </button>
-        <button type="button" className={`${styles.gBtn} ${styles.gR}`} onClick={() => full.goTo(full.idx + 1)} aria-label="Next photo">
+        <button type="button" className={`${styles.gBtn} ${styles.gR}`} onClick={() => full.goTo(full.idx + 1)} aria-label={t('gallery.next')}>
           <ChevronRight />
         </button>
         <div className={styles.gCounter}>

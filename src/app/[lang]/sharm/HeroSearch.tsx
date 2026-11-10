@@ -6,18 +6,21 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { SearchIcon } from '@/components/icons';
 import { tourHref } from '@/data/categories';
 import type { TourSummary } from '@/data/tours';
+import { useT } from '@/i18n/client';
 import type { Locale } from '@/i18n/config';
+import { formatPrice } from '@/i18n/format';
 import { matchesQuery } from '@/lib/catalog';
 import { imageSrc } from '@/lib/images';
 import { CATALOG_QUERY } from './ToursCatalog';
 import styles from './sharm.module.css';
 
 export function HeroSearch({ lang, tours }: { lang: Locale; tours: TourSummary[] }) {
+  const t = useT();
   const [q, setQ] = useState('');
   const [open, setOpen] = useState(false);
   const root = useRef<HTMLFormElement>(null);
   const listId = useId();
-  const found = useMemo(() => (q.trim() ? tours.filter((t) => matchesQuery(t, q)).slice(0, 6) : []), [tours, q]);
+  const found = useMemo(() => (q.trim() ? tours.filter((x) => matchesQuery(x, q)).slice(0, 6) : []), [tours, q]);
 
   useEffect(() => {
     const onDoc = (e: MouseEvent) => {
@@ -44,8 +47,8 @@ export function HeroSearch({ lang, tours }: { lang: Locale; tours: TourSummary[]
         className={styles.heroSearchInp}
         type="search"
         autoComplete="off"
-        placeholder="Search tours…"
-        aria-label="Search tours"
+        placeholder={t('search.placeholder')}
+        aria-label={t('search.title')}
         role="combobox"
         aria-autocomplete="list"
         aria-controls={listId}
@@ -59,25 +62,25 @@ export function HeroSearch({ lang, tours }: { lang: Locale; tours: TourSummary[]
         onKeyDown={(e) => e.key === 'Escape' && setOpen(false)}
       />
       <button type="submit" className={styles.heroSearchBtn}>
-        Search
+        {t('search.button')}
       </button>
       <div id={listId} className={`${styles.heroResults} ${open && q.trim() ? styles.heroResultsOpen : ''}`}>
         {found.length ? (
-          found.map((t) => (
-            <Link key={t.slug} href={tourHref(lang, t.slug)} className={styles.heroResult}>
+          found.map((tour) => (
+            <Link key={tour.slug} href={tourHref(lang, tour.slug)} className={styles.heroResult}>
               <span className={styles.heroResultImg}>
-                <Image src={imageSrc(t.cardImage, 160, 120)} alt="" width={44} height={38} />
+                <Image src={imageSrc(tour.cardImage, 160, 120)} alt="" width={44} height={38} />
               </span>
               <span>
-                <b>{t.name}</b>
+                <b>{tour.name}</b>
                 <small>
-                  {t.categoryLabel} · {t.duration} · from £{t.priceFrom}
+                  {t('search.meta', { category: tour.categoryLabel, duration: tour.duration, price: formatPrice(tour.priceFrom, lang) })}
                 </small>
               </span>
             </Link>
           ))
         ) : (
-          <div className={styles.heroNoResult}>No tours found for &ldquo;{q}&rdquo;</div>
+          <div className={styles.heroNoResult}>{t('search.empty', { q })}</div>
         )}
       </div>
     </form>

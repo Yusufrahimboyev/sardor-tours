@@ -10,17 +10,20 @@ import { categoryList } from '@/data/categories';
 import { tourHref } from '@/data/categories';
 import { allTours, toSummary } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
+import { formatPrice } from '@/i18n/format';
+import { pageAlternates, pageOpenGraph } from '@/i18n/metadata';
 import { getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
-import { localeHref } from '@/i18n/routing';
 import styles from './video.module.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const lang = await langFrom(params);
+  const t = getT(lang);
   return {
-    title: 'Sharm El Sheikh Tour Videos',
-    description: 'Excursion videos from Sharm El Sheikh — sea trips, desert safaris and historical tours.',
-    alternates: { canonical: localeHref(lang, '/sharm/video/') },
+    title: t('meta.video.title'),
+    description: t('meta.video.description'),
+    alternates: pageAlternates(lang, '/sharm/video/'),
+    openGraph: pageOpenGraph(lang, '/sharm/video/', { title: t('meta.video.title'), description: t('meta.video.description') }),
   };
 }
 
@@ -37,12 +40,12 @@ export default async function VideoPage({ params }: { params: Promise<{ lang: st
     <div className={styles.page}>
       <SiteHeader />
       <main id="main-content" tabIndex={-1} className={styles.main}>
-        <h1>Sharm El Sheikh Excursion Videos</h1>
+        <h1>{t('video.h1')}</h1>
         <div className={styles.notice} role="status">
-          <b>🎬 Videos are coming soon.</b> In the meantime, browse the photo galleries on each tour page.
+          <b>{t('video.noticeBold')}</b>{t('video.noticeText')}
           {site.instagram && (
             <a href={site.instagram} target="_blank" rel="noopener noreferrer">
-              <InstagramIcon size={15} /> Watch on Instagram
+              <InstagramIcon size={15} /> {t('video.instagram')}
             </a>
           )}
         </div>
@@ -51,29 +54,29 @@ export default async function VideoPage({ params }: { params: Promise<{ lang: st
             <h2 id={`v-${c.key}`}>{c.label}</h2>
             <div className={styles.grid}>
               {tours
-                .filter((t) => t.category === c.key)
-                .map((t) => (
-                  <Link key={t.slug} href={tourHref(lang, t.slug)} className={styles.card}>
-                    <Image src={imageSrc(t.cardImage, 500, 880)} alt="" fill sizes="(max-width: 600px) 50vw, 220px" />
+                .filter((x) => x.category === c.key)
+                .map((x) => (
+                  <Link key={x.slug} href={tourHref(lang, x.slug)} className={styles.card}>
+                    <Image src={imageSrc(x.cardImage, 500, 880)} alt="" fill sizes="(max-width: 600px) 50vw, 220px" />
                     <span className={styles.grad} />
-                    <span className={styles.name}>{t.name}</span>
-                    <span className={styles.price}>from £{t.priceFrom}</span>
+                    <span className={styles.name}>{x.name}</span>
+                    <span className={styles.price}>{t('video.from', { price: formatPrice(x.priceFrom, lang) })}</span>
                   </Link>
                 ))}
             </div>
           </section>
         ))}
         <section className={styles.cta} aria-labelledby="v-cta">
-          <div className={styles.ctaKicker}>Ready for an adventure?</div>
-          <h2 id="v-cta">Message us — we reply in minutes</h2>
-          <p>We&apos;ll find the best tour for your budget. No prepayment, transfer included.</p>
+          <div className={styles.ctaKicker}>{t('video.cta.kicker')}</div>
+          <h2 id="v-cta">{t('video.cta.title')}</h2>
+          <p>{t('video.cta.text')}</p>
           <div className={styles.ctaBtns}>
             <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className="btn-wa">
-              <WhatsAppIcon /> Message us on WhatsApp
+              <WhatsAppIcon /> {t('client.nav.messageWhatsapp')}
             </a>
             {site.telegram && (
               <a href={site.telegram} target="_blank" rel="noopener noreferrer" className={styles.tg}>
-                <TelegramIcon /> Telegram
+                <TelegramIcon /> {t('video.cta.telegram')}
               </a>
             )}
           </div>

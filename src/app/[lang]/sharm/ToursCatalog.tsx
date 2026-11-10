@@ -5,6 +5,7 @@ import { TourCard } from '@/components/TourCard';
 import { XIcon } from '@/components/icons';
 import type { Category } from '@/data/categories';
 import type { TourSummary } from '@/data/tours';
+import { useT } from '@/i18n/client';
 import { filterTours, PRICE_BANDS, type PriceBand } from '@/lib/catalog';
 import styles from './sharm.module.css';
 
@@ -26,6 +27,7 @@ function readUrl(categories: CategoryItem[]): { cat: CatFilter; price: PriceBand
 }
 
 export function ToursCatalog({ categories, tours }: { categories: CategoryItem[]; tours: TourSummary[] }) {
+  const t = useT();
   const [cat, setCat] = useState<CatFilter>('all');
   const [price, setPrice] = useState<PriceBand>('all');
   const [query, setQuery] = useState('');
@@ -64,8 +66,8 @@ export function ToursCatalog({ categories, tours }: { categories: CategoryItem[]
   return (
     <>
       <div className={styles.filters}>
-        <div className={styles.filterRow} role="group" aria-label="Filter by category">
-          {[{ key: 'all' as const, label: 'All Tours' }, ...categories].map((c) => (
+        <div className={styles.filterRow} role="group" aria-label={t('catalog.filterCategory')}>
+          {[{ key: 'all' as const, label: t('catalog.all') }, ...categories].map((c) => (
             <button
               key={c.key}
               type="button"
@@ -77,7 +79,7 @@ export function ToursCatalog({ categories, tours }: { categories: CategoryItem[]
             </button>
           ))}
         </div>
-        <div className={styles.filterRow} role="group" aria-label="Filter by price">
+        <div className={styles.filterRow} role="group" aria-label={t('catalog.filterPrice')}>
           {PRICE_BANDS.map((b) => (
             <button
               key={b.key}
@@ -86,18 +88,18 @@ export function ToursCatalog({ categories, tours }: { categories: CategoryItem[]
               aria-pressed={price === b.key}
               onClick={() => setPrice(b.key)}
             >
-              {b.label}
+              {t(`catalog.price.${b.key}`)}
             </button>
           ))}
         </div>
         {isFiltered && (
           <p className={styles.resultLine} aria-live="polite">
             <span data-testid="result-count">
-              {filtered.length} {filtered.length === 1 ? 'tour' : 'tours'} found
+              {t('catalog.found', { n: filtered.length })}
             </span>
-            {query.trim() && <> for &ldquo;{query.trim()}&rdquo;</>}
+            {query.trim() && <> {t('catalog.forQuery', { q: query.trim() })}</>}
             <button type="button" onClick={reset} className={styles.clear}>
-              <XIcon size={13} /> Clear filters
+              <XIcon size={13} /> {t('catalog.clear')}
             </button>
           </p>
         )}
@@ -105,9 +107,9 @@ export function ToursCatalog({ categories, tours }: { categories: CategoryItem[]
 
       {sections.length === 0 ? (
         <div className={styles.empty}>
-          <p>No tours match these filters.</p>
+          <p>{t('catalog.noMatch')}</p>
           <button type="button" className={styles.pill} onClick={reset}>
-            Show all tours
+            {t('catalog.showAll')}
           </button>
         </div>
       ) : (
@@ -120,7 +122,7 @@ export function ToursCatalog({ categories, tours }: { categories: CategoryItem[]
               </div>
               <div className={styles.catCount} aria-hidden>
                 {s.items.length}
-                <span> tours</span>
+                <span> {t('catalog.toursLabel')}</span>
               </div>
             </div>
             <div className={styles.grid}>

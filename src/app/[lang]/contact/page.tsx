@@ -3,37 +3,42 @@ import { ContactOptions } from '@/components/ContactOptions';
 import { Footer } from '@/components/Footer';
 import { SiteHeader } from '@/components/SiteHeader';
 import { site } from '@/data/site';
+import { pageAlternates, pageOpenGraph } from '@/i18n/metadata';
+import { getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
-import { localeHref } from '@/i18n/routing';
 import { ContactForm } from './ContactForm';
 import styles from './contact.module.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const lang = await langFrom(params);
+  const t = getT(lang);
+  const description = t('meta.contact.description', { name: site.name });
   return {
-    title: 'Contact Us',
-    description: `Contact ${site.name}: WhatsApp, email or the contact form — we reply fast.`,
-    alternates: { canonical: localeHref(lang, '/contact/') },
+    title: t('meta.contact.title'),
+    description,
+    alternates: pageAlternates(lang, '/contact/'),
+    openGraph: pageOpenGraph(lang, '/contact/', { title: t('meta.contact.title'), description }),
   };
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
   const lang = await langFrom(params);
+  const t = getT(lang);
   return (
     <div className={styles.page}>
       <SiteHeader />
       <main id="main-content" tabIndex={-1} className={styles.main}>
         <header className={styles.intro}>
-          <span className={styles.tag}>Contact</span>
+          <span className={styles.tag}>{t('contact.tag')}</span>
           <h1>
-            We&apos;re here <span>24/7</span>
+            {t('contact.h1.before')}<span>{t('contact.h1.em')}</span>
           </h1>
-          <p>Message us on your favourite messenger for the fastest reply, or send us a note below and we&apos;ll answer by email.</p>
+          <p>{t('contact.text')}</p>
         </header>
         <div className={styles.grid}>
           <section className={styles.card} aria-labelledby="form-h">
             <h2 id="form-h" className={styles.cardTitle}>
-              Send us a message
+              {t('contact.formTitle')}
             </h2>
             <ContactForm />
           </section>

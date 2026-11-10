@@ -5,41 +5,40 @@ import { CtaBand } from '@/components/CtaBand';
 import { Footer } from '@/components/Footer';
 import { ArrowDown, ArrowRight, WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
-import { destinations, generalFaq, site, whatsappLink } from '@/data/site';
+import { destinations, site, whatsappLink } from '@/data/site';
 import { MIN_PRICE, tourSlugs } from '@/data/tours';
-import { getT } from '@/i18n/messages';
+import { pageAlternates, pageOpenGraph } from '@/i18n/metadata';
+import { getGeneralFaq, getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
 import { localeHref } from '@/i18n/routing';
+import { formatPrice } from '@/i18n/format';
 import { imageSrc } from '@/lib/images';
 import { HomeHeader } from './HomeHeader';
 import styles from './home.module.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const lang = await langFrom(params);
-  const url = localeHref(lang, '/');
+  const t = getT(lang);
+  const p = { name: site.name };
   return {
-    title: { absolute: `${site.name} — Egypt Excursions in Sharm El Sheikh, Hurghada, Cairo & Marsa Alam` },
-    description:
-      'Sardor Tours — excursions and day trips from Sharm El Sheikh: Red Sea boat trips, desert safaris, Cairo, Luxor and Petra. No prepayment, hotel transfer included.',
-    alternates: { canonical: url },
-    openGraph: {
-      url,
-      title: `${site.name} — Egypt Excursions`,
-      description: 'Excursions from Sharm El Sheikh. No prepayment · hotel transfer included.',
+    title: { absolute: t('meta.default.title', p) },
+    description: t('meta.home.description', p),
+    alternates: pageAlternates(lang, '/'),
+    openGraph: pageOpenGraph(lang, '/', {
+      title: t('meta.home.ogTitle', p),
+      description: t('meta.home.ogDescription'),
       images: [{ url: imageSrc('/images/hero1.webp', 1200, 630), width: 1200, height: 630 }],
-    },
+    }),
   };
 }
 
 const WHY = [
   {
-    title: 'No prepayment',
-    text: 'Reserve in 3 minutes — no prepayment required. Pay on the day of your tour.',
+    key: 'noPrepay',
     icon: <path d="M20 6 9 17l-5-5" />,
   },
   {
-    title: 'Hotel transfer included',
-    text: "We collect you from your hotel's main gate and bring you back — free, air-conditioned.",
+    key: 'transfer',
     icon: (
       <>
         <path d="M5 11l2-7h10l2 7M5 11h14M5 11v6h14v-6M7 17v2M17 17v2" />
@@ -49,8 +48,7 @@ const WHY = [
     ),
   },
   {
-    title: 'Free cancellation',
-    text: 'Plans changed? Cancel free of charge up to 24 hours before your tour starts.',
+    key: 'cancel',
     icon: (
       <>
         <path d="M12 2 4 5v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z" />
@@ -59,15 +57,16 @@ const WHY = [
     ),
   },
   {
-    title: '24/7 support',
-    text: 'A real person answers on WhatsApp — before your trip and on the day itself.',
+    key: 'support',
     icon: <path d="M21 11.5a8.38 8.38 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 20l1.3-3.8A8.38 8.38 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z" />,
   },
 ];
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const lang = await langFrom(params);
-  const wa = whatsappLink(getT(lang)('client.whatsapp.planTrip'));
+  const t = getT(lang);
+  const faq = getGeneralFaq(lang);
+  const wa = whatsappLink(t('client.whatsapp.planTrip'));
   const liveCount = tourSlugs.length;
 
   return (
@@ -78,7 +77,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           '@type': 'TravelAgency',
           name: site.name,
           url: site.url,
-          description: site.description,
+          description: t('meta.default.description'),
           ...(site.whatsappNumber && { telephone: `+${site.whatsappNumber}` }),
           ...(site.email && { email: site.email }),
           priceRange: '£',
@@ -86,7 +85,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           sameAs: [site.instagram, site.telegram].filter(Boolean),
         }}
       />
-      <JsonLd data={faqJsonLd(generalFaq)} />
+      <JsonLd data={faqJsonLd(faq, lang)} />
       <HomeHeader />
 
       <main id="main-content" tabIndex={-1}>
@@ -96,42 +95,43 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </div>
           <div className={`wrap ${styles.heroIn}`}>
             <div className={styles.heroTag}>
-              <span className={styles.dot} /> Excursions in Egypt · No prepayment · Hotel transfer included
+              <span className={styles.dot} /> {t('home.heroTag')}
             </div>
             <h1>
-              Egypt&apos;s Red Sea &amp; ancient wonders, by the people who <em>live here</em>.
+              {t('home.h1.before')}
+              <em>{t('home.h1.em')}</em>
+              {t('home.h1.after')}
             </h1>
             <p className={styles.sub}>
-              Discover the real Egypt — diving, deserts, the Nile and the pyramids. No prepayment, hotel transfer
-              included, and a real person on WhatsApp to help you plan.
+              {t('home.sub')}
             </p>
             <div className={styles.heroActions}>
               <a href="#destinations" className={styles.btnGhost}>
-                Explore destinations <ArrowDown />
+                {t('home.explore')} <ArrowDown />
               </a>
               <a href={wa} target="_blank" rel="noopener noreferrer" className="btn-wa">
-                <WhatsAppIcon /> Plan my trip
+                <WhatsAppIcon /> {t('home.plan')}
               </a>
             </div>
             <div className={styles.heroTrust}>
               <div className={styles.ht}>
                 <b>{liveCount}+</b>
-                <span>Excursions</span>
+                <span>{t('home.trust.excursions')}</span>
               </div>
               <div className={styles.ht}>
-                <b>£{MIN_PRICE}</b>
-                <span>Prices from</span>
+                <b>{formatPrice(MIN_PRICE, lang)}</b>
+                <span>{t('home.trust.pricesFrom')}</span>
               </div>
               <div className={styles.ht}>
-                <b>£0</b>
-                <span>Prepayment</span>
+                <b>{formatPrice(0, lang)}</b>
+                <span>{t('home.trust.prepayment')}</span>
               </div>
               <div className={styles.ht}>
                 <b>4</b>
-                <span>Destinations</span>
+                <span>{t('home.trust.destinations')}</span>
               </div>
               <div className={styles.scrollCue} aria-hidden>
-                Scroll
+                {t('home.trust.scroll')}
               </div>
             </div>
           </div>
@@ -140,47 +140,48 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <section id="destinations" className={`${styles.sec} ${styles.destSec}`} aria-labelledby="dest-title">
           <div className="wrap">
             <div className={`${styles.secHead} reveal`}>
-              <div className="eyebrow">Choose your Egypt</div>
-              <h2 id="dest-title">Choose where your adventure begins</h2>
-              <p>From the coral reefs of the Red Sea to the pyramids of Giza — pick where your adventure begins.</p>
+              <div className="eyebrow">{t('home.destSection.eyebrow')}</div>
+              <h2 id="dest-title">{t('home.destSection.title')}</h2>
+              <p>{t('home.destSection.text')}</p>
             </div>
             <div className={styles.destGrid}>
               {destinations.map((d) => {
+                const name = t(`home.destinations.${d.num}.name`);
                 const body = (
                   <>
                     <Image
                       src={imageSrc(d.image, 1000, 750)}
-                      alt={d.name}
+                      alt={name}
                       fill
                       sizes="(max-width: 880px) 100vw, 50vw"
                       className={styles.destImg}
                     />
                     <div className={styles.destNum}>{d.num}</div>
                     <div className={`${styles.destBadge} ${d.live ? styles.badgeLive : styles.badgeSoon}`}>
-                      {d.live ? `${liveCount}+ tours · Live` : 'Coming soon'}
+                      {d.live ? t('home.destSection.live', { n: liveCount }) : t('home.destSection.soon')}
                     </div>
                     <div className={styles.destBody}>
-                      <h3>{d.name}</h3>
-                      <p className={styles.dSub}>{d.text}</p>
+                      <h3>{name}</h3>
+                      <p className={styles.dSub}>{t(`home.destinations.${d.num}.text`)}</p>
                       <div className={styles.dFoot}>
-                        <span className={styles.dMeta}>{d.meta}</span>
+                        <span className={styles.dMeta}>{t(`home.destinations.${d.num}.meta`)}</span>
                         {d.live ? (
                           <span className={styles.dGo}>
-                            Explore <ArrowRight />
+                            {t('home.destSection.explore')} <ArrowRight />
                           </span>
                         ) : (
-                          <span className={`${styles.dGo} ${styles.soon}`}>Coming soon</span>
+                          <span className={`${styles.dGo} ${styles.soon}`}>{t('home.destSection.soon')}</span>
                         )}
                       </div>
                     </div>
                   </>
                 );
                 return 'path' in d ? (
-                  <Link key={d.name} href={localeHref(lang, d.path)} className={`${styles.dest} ${styles.isLive} reveal`}>
+                  <Link key={d.num} href={localeHref(lang, d.path)} className={`${styles.dest} ${styles.isLive} reveal`}>
                     {body}
                   </Link>
                 ) : (
-                  <div key={d.name} className={`${styles.dest} reveal`} aria-label={`${d.name} — coming soon`}>
+                  <div key={d.num} className={`${styles.dest} reveal`} aria-label={t('home.destSection.soonAria', { name })}>
                     {body}
                   </div>
                 );
@@ -192,23 +193,20 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <section id="why" className={styles.sec} aria-labelledby="why-title">
           <div className="wrap">
             <div className={`${styles.secHead} reveal`}>
-              <div className="eyebrow">Why Sardor Tours</div>
-              <h2 id="why-title">Simple, honest and local</h2>
-              <p>
-                Clear prices with no hidden fees, an easy online booking and a real person to answer your
-                questions.
-              </p>
+              <div className="eyebrow">{t('home.why.eyebrow', { name: site.name })}</div>
+              <h2 id="why-title">{t('home.why.title')}</h2>
+              <p>{t('home.why.text')}</p>
             </div>
             <div className={styles.whyGrid}>
               {WHY.map((w) => (
-                <div key={w.title} className={`${styles.whyCard} reveal`}>
+                <div key={w.key} className={`${styles.whyCard} reveal`}>
                   <div className={styles.whyIc}>
                     <svg viewBox="0 0 24 24" aria-hidden>
                       {w.icon}
                     </svg>
                   </div>
-                  <h3>{w.title}</h3>
-                  <p>{w.text}</p>
+                  <h3>{t(`home.why.${w.key}.title`)}</h3>
+                  <p>{t(`home.why.${w.key}.text`)}</p>
                 </div>
               ))}
             </div>
@@ -218,11 +216,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <section id="faq" className={styles.sec} aria-labelledby="faq-title">
           <div className="wrap">
             <div className={`${styles.secHead} reveal`}>
-              <div className="eyebrow">FAQ</div>
-              <h2 id="faq-title">Frequently asked questions</h2>
+              <div className="eyebrow">{t('home.faq.eyebrow')}</div>
+              <h2 id="faq-title">{t('home.faq.title')}</h2>
             </div>
             <div className={`${styles.faq} reveal`}>
-              {generalFaq.map((f) => (
+              {faq.map((f) => (
                 <details key={f.q} className={styles.hfItem}>
                   <summary>
                     {f.q}
@@ -240,7 +238,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       <Footer lang={lang} variant="home" />
 
-      <a href={wa} target="_blank" rel="noopener noreferrer" className={styles.floatChat} aria-label="Chat with us on WhatsApp">
+      <a href={wa} target="_blank" rel="noopener noreferrer" className={styles.floatChat} aria-label={t('client.support.chatAria')}>
         <WhatsAppIcon size={28} />
       </a>
     </div>

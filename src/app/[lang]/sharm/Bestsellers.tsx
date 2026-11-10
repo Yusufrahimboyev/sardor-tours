@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useT } from '@/i18n/client';
 import { imageSrc } from '@/lib/images';
 import styles from './sharm.module.css';
 
@@ -15,6 +16,7 @@ interface Item {
 
 /** Bestseller slider: scroll-snap track, dots, autoplay that pauses on interaction. */
 export function Bestsellers({ items }: { items: Item[] }) {
+  const t = useT();
   const track = useRef<HTMLDivElement>(null);
   const [idx, setIdx] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -46,7 +48,7 @@ export function Bestsellers({ items }: { items: Item[] }) {
     <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)}>
       <div ref={track} className={styles.bsTrack} onPointerDown={() => setPaused(true)}>
         {items.map((it, i) => (
-          <Link key={it.href} href={it.href} className={styles.bsCard} aria-label={`${it.name} (${i + 1} of ${items.length})`}>
+          <Link key={it.href} href={it.href} className={styles.bsCard} aria-label={t('bestsellers.item', { name: it.name, i: i + 1, n: items.length })}>
             <Image src={imageSrc(it.image, 1100, 680)} alt="" fill sizes="(max-width: 700px) 88vw, 600px" />
             <div className={styles.bsGrad} />
             <div className={styles.bsBody}>
@@ -62,7 +64,7 @@ export function Bestsellers({ items }: { items: Item[] }) {
             key={it.href}
             type="button"
             className={i === idx ? styles.dotOn : ''}
-            aria-label={`Show slide ${i + 1}`}
+            aria-label={t('bestsellers.slide', { i: i + 1 })}
             aria-current={i === idx}
             onClick={() => {
               setPaused(true);

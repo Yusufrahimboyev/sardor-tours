@@ -1,6 +1,7 @@
 'use client';
 
 import { useId, useState } from 'react';
+import { useT } from '@/i18n/client';
 import { CheckIcon, XIcon } from '@/components/icons';
 import styles from './tour.module.css';
 
@@ -10,47 +11,44 @@ interface Props {
   bring: string[];
 }
 
-const TABS = [
-  { key: 'included', label: 'Included in the Price' },
-  { key: 'excluded', label: 'Not Included' },
-  { key: 'bring', label: 'What to Bring' },
-] as const;
+const TABS = [{ key: 'included' }, { key: 'excluded' }, { key: 'bring' }] as const;
 
 export function IncludedTabs({ included, notIncluded, bring }: Props) {
+  const t = useT();
   const [tab, setTab] = useState<(typeof TABS)[number]['key']>('included');
   const id = useId();
   const lists = { included, excluded: notIncluded, bring };
 
   return (
     <div className={styles.inc}>
-      <div role="tablist" aria-label="What's included" className={styles.incTabs}>
-        {TABS.map((t) => (
+      <div role="tablist" aria-label={t('included.aria')} className={styles.incTabs}>
+        {TABS.map((tb) => (
           <button
-            key={t.key}
+            key={tb.key}
             role="tab"
             type="button"
-            id={`${id}-${t.key}-tab`}
-            aria-selected={tab === t.key}
-            aria-controls={`${id}-${t.key}`}
-            className={`${styles.incTab} ${styles[`tab_${t.key}`]} ${tab === t.key ? styles.incTabOn : ''}`}
-            onClick={() => setTab(t.key)}
+            id={`${id}-${tb.key}-tab`}
+            aria-selected={tab === tb.key}
+            aria-controls={`${id}-${tb.key}`}
+            className={`${styles.incTab} ${styles[`tab_${tb.key}`]} ${tab === tb.key ? styles.incTabOn : ''}`}
+            onClick={() => setTab(tb.key)}
           >
-            {t.label}
+            {t(`included.${tb.key}`)}
           </button>
         ))}
       </div>
-      {TABS.map((t) => (
+      {TABS.map((tb) => (
         <ul
-          key={t.key}
+          key={tb.key}
           role="tabpanel"
-          id={`${id}-${t.key}`}
-          aria-labelledby={`${id}-${t.key}-tab`}
-          hidden={tab !== t.key}
-          className={`${styles.incList} ${styles[`list_${t.key}`]}`}
+          id={`${id}-${tb.key}`}
+          aria-labelledby={`${id}-${tb.key}-tab`}
+          hidden={tab !== tb.key}
+          className={`${styles.incList} ${styles[`list_${tb.key}`]}`}
         >
-          {lists[t.key].map((item) => (
+          {lists[tb.key].map((item) => (
             <li key={item}>
-              {t.key === 'included' ? <CheckIcon size={15} /> : t.key === 'excluded' ? <XIcon size={15} /> : <i aria-hidden />}
+              {tb.key === 'included' ? <CheckIcon size={15} /> : tb.key === 'excluded' ? <XIcon size={15} /> : <i aria-hidden />}
               <span>{item}</span>
             </li>
           ))}

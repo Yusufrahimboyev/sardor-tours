@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { trackErrors } from './helpers';
 
 // Playwright Test defaults every context to locale en-US, and that emulation overrides an
 // Accept-Language set through extraHTTPHeaders, so the contexts below set `locale` as well.
@@ -53,4 +54,17 @@ test('switcher keeps path + query and sets cookie', async ({ page, context }) =>
   await page.getByRole('link', { name: 'UZ' }).filter({ visible: true }).first().click();
   await expect(page).toHaveURL(/\/uz\/sharm\/\?cat=safari$/);
   expect((await context.cookies()).find((c) => c.name === 'lang')?.value).toBe('uz');
+});
+
+const PAGES = ['/', '/sharm/', '/sharm/quad-safari-sharm/', '/sharm/video/', '/about-us/', '/contact/', '/terms-and-conditions/'];
+test('every page renders in every locale with localized title and hreflang', async ({ page }) => {
+  const errors = trackErrors(page);
+  for (const p of PAGES) for (const l of ['uz', 'en', 'ru']) {
+    const r = await page.goto(`/${l}${p}`); expect(r!.status(), `${l}${p}`).toBe(200);
+    await expect(page.locator('html')).toHaveAttribute('lang', l);
+    await expect(page.locator(`link[rel="canonical"]`)).toHaveAttribute('href', new RegExp(`/${l}${p}$`));
+    for (const h of ['uz', 'en', 'ru', 'x-default'])
+      await expect(page.locator(`link[rel="alternate"][hreflang="${h}"]`), `${l}${p} ${h}`).toHaveCount(1);
+  }
+  expect(errors).toEqual([]);
 });

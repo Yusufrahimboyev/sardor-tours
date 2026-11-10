@@ -2,12 +2,7 @@ import type { Category, TourSummary } from '@/data/tours';
 
 export type PriceBand = 'all' | 'under30' | '30to100' | 'over100';
 
-export const PRICE_BANDS: { key: PriceBand; label: string }[] = [
-  { key: 'all', label: 'Any price' },
-  { key: 'under30', label: 'Under £30' },
-  { key: '30to100', label: '£30 – £100' },
-  { key: 'over100', label: '£100+' },
-];
+export const PRICE_BANDS: { key: PriceBand }[] = [{ key: 'all' }, { key: 'under30' }, { key: '30to100' }, { key: 'over100' }];
 
 export function inPriceBand(price: number, band: PriceBand): boolean {
   switch (band) {

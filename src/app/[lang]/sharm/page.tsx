@@ -10,11 +10,13 @@ import { Footer } from '@/components/Footer';
 import { WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { SupportWidget } from '@/components/SupportWidget';
-import { generalFaq, site, whatsappLink } from '@/data/site';
+import { site, whatsappLink } from '@/data/site';
 import { categoryList, categoryShort, tourHref } from '@/data/categories';
 import { allTours, BESTSELLERS, getTour, MIN_PRICE, toSummary, tourSlugs } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
-import { getT } from '@/i18n/messages';
+import { formatPrice } from '@/i18n/format';
+import { pageAlternates, pageOpenGraph } from '@/i18n/metadata';
+import { getGeneralFaq, getList, getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
 import { LanguageSwitcher } from '@/i18n/LanguageSwitcher';
 import { localeHref } from '@/i18n/routing';
@@ -28,46 +30,36 @@ const count = tourSlugs.length;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const lang = await langFrom(params);
+  const t = getT(lang);
   return {
-    title: `${count}+ Best Sharm El Sheikh Excursions & Tours (Pay on Arrival)`,
-    description: `Tours in Sharm El Sheikh from £${MIN_PRICE}. No prepayment. Book in 3 minutes. Hotel transfer included. English-speaking guides. Insurance included.`,
-    alternates: { canonical: localeHref(lang, '/sharm/') },
-    openGraph: {
-      url: localeHref(lang, '/sharm/'),
-      title: 'Sharm El Sheikh Excursions & Day Trips',
-      description: 'Boat trips, desert safaris, Cairo & Petra day trips. No prepayment, hotel transfer included.',
+    title: t('meta.sharm.title', { count }),
+    description: t('meta.sharm.description', { price: formatPrice(MIN_PRICE, lang) }),
+    alternates: pageAlternates(lang, '/sharm/'),
+    openGraph: pageOpenGraph(lang, '/sharm/', {
+      title: t('meta.sharm.ogTitle'),
+      description: t('meta.sharm.ogDescription'),
       images: [{ url: imageSrc('/images/hero1.webp', 1200, 630), width: 1200, height: 630 }],
-    },
+    }),
   };
 }
 
 const BENEFITS = [
-  { icon: '💰', title: 'Affordable Prices', text: `Amazing experiences from £${MIN_PRICE} per person with no hidden fees.` },
-  { icon: '🤝', title: 'No Prepayment', text: 'Reserve today and pay on the day in GBP, USD, EUR or EGP.' },
-  { icon: '⚡', title: 'Instant Booking', text: 'Book online in 3 minutes and get a booking reference straight away.' },
-  { icon: '🚌', title: 'Free Hotel Transfer', text: 'Comfortable transfers included with every tour.' },
-  { icon: '🗣️', title: 'Expert Guides', text: 'Every tour is led by an experienced English-speaking guide.' },
-  { icon: '🛡️', title: 'Insurance Included', text: 'Every traveller is insured for the entire duration of the tour.' },
-];
+  { key: 'prices', icon: '💰' },
+  { key: 'noPrepay', icon: '🤝' },
+  { key: 'instant', icon: '⚡' },
+  { key: 'transfer', icon: '🚌' },
+  { key: 'guides', icon: '🗣️' },
+  { key: 'insurance', icon: '🛡️' },
+] as const;
 
-const PROMISE = [
-  ['No prepayment', 'Pay on the day of your tour — in cash, in any currency'],
-  ['No hidden fees', 'The final price includes everything — no surprises'],
-  ['Hotel transfer', 'Free pickup and drop-off from any hotel'],
-  ['Fast replies', 'A real person on WhatsApp, in English'],
-  ['English-speaking guides', 'Professionals who love every route they lead'],
-  ['Free cancellation', 'Cancel free of charge up to 24 hours before the tour'],
-];
-
-const STEPS = [
-  ['Choose a tour', `${count}+ routes — sea, desert, history. Prices from £${MIN_PRICE}.`],
-  ['Send a booking request', 'Pick a date and guests — we confirm on WhatsApp in minutes. No prepayment.'],
-  ['We pick you up from your hotel', 'Guide, transfer and an unforgettable day — all included.'],
-];
+const STEP_KEYS = ['choose', 'request', 'pickup'] as const;
 
 export default async function SharmPage({ params }: { params: Promise<{ lang: string }> }) {
   const lang = await langFrom(params);
   const t = getT(lang);
+  const faq = getGeneralFaq(lang);
+  const price = formatPrice(MIN_PRICE, lang);
+  const promise = getList<{ title: string; text: string }[]>(lang, 'sharm.promise.items');
   const tours = allTours(lang);
   const summaries = tours.map(toSummary);
   const bestsellers = BESTSELLERS.map((b) => ({
@@ -83,66 +75,67 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
         data={{
           '@context': 'https://schema.org',
           '@type': 'ItemList',
-          name: 'Sharm El Sheikh excursions',
-          itemListElement: tours.map((t, i) => ({
+          name: t('sharm.jsonLdName'),
+          inLanguage: lang,
+          itemListElement: tours.map((tr, i) => ({
             '@type': 'ListItem',
             position: i + 1,
             item: {
               '@type': 'TouristTrip',
-              name: t.name,
-              url: `${site.url}${tourHref(lang, t.slug)}`,
-              touristType: t.categoryLabel,
-              offers: { '@type': 'Offer', price: String(t.priceFrom), priceCurrency: 'GBP', availability: 'https://schema.org/InStock' },
+              name: tr.name,
+              url: `${site.url}${tourHref(lang, tr.slug)}`,
+              touristType: tr.categoryLabel,
+              offers: { '@type': 'Offer', price: String(tr.priceFrom), priceCurrency: 'GBP', availability: 'https://schema.org/InStock' },
             },
           })),
         }}
       />
-      <JsonLd data={faqJsonLd(generalFaq)} />
+      <JsonLd data={faqJsonLd(faq, lang)} />
 
       <section className={styles.hero}>
         <div className={styles.heroMedia}>
           <Image src={imageSrc('/images/hero1.webp', 1920, 1080)} alt="" fill priority sizes="100vw" />
         </div>
         <div className={styles.heroScrim} />
-        <nav className={styles.heroNav} aria-label="Main">
+        <nav className={styles.heroNav} aria-label={t('client.nav.main')}>
           <Brand />
           <div className={styles.heroNavLinks}>
             <LanguageSwitcher />
-            <Link href={localeHref(lang, '/')}>Destinations</Link>
-            <Link href={localeHref(lang, '/about-us/')}>About</Link>
+            <Link href={localeHref(lang, '/')}>{t('client.nav.destinations')}</Link>
+            <Link href={localeHref(lang, '/about-us/')}>{t('client.nav.about')}</Link>
             <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.heroNavWa}>
               <WhatsAppIcon size={16} />
-              <span>WhatsApp</span>
+              <span>{t('client.nav.whatsapp')}</span>
             </a>
           </div>
         </nav>
         <div className={styles.heroBody} id="main-content" tabIndex={-1}>
           <h1 className={styles.heroH1}>
-            <span>Sharm El Sheikh</span>
-            <span className={styles.heroAccent}>Excursions</span>
+            <span>{t('sharm.hero.title')}</span>
+            <span className={styles.heroAccent}>{t('sharm.hero.accent')}</span>
           </h1>
           <p className={styles.heroLede}>
             <span className={styles.liveDot} aria-hidden />
-            Experience the Best of Egypt with Us
+            {t('sharm.hero.lede')}
           </p>
           <HeroSearch lang={lang} tours={summaries} />
           <div className={styles.heroStats}>
             <div className={styles.heroStat}>
               <div>
-                <div className={styles.heroStatNum}>{count}+ excursions</div>
-                <div className={styles.heroStatLbl}>sea · desert · history</div>
+                <div className={styles.heroStatNum}>{t('sharm.hero.excursions', { n: count })}</div>
+                <div className={styles.heroStatLbl}>{t('sharm.hero.excursionsSub')}</div>
               </div>
             </div>
             <div className={styles.heroStat}>
               <div>
-                <div className={styles.heroStatNum}>from £{MIN_PRICE}</div>
-                <div className={styles.heroStatLbl}>per person</div>
+                <div className={styles.heroStatNum}>{t('sharm.hero.from', { price })}</div>
+                <div className={styles.heroStatLbl}>{t('sharm.hero.fromSub')}</div>
               </div>
             </div>
             <div className={styles.heroStat}>
               <div>
-                <div className={styles.heroStatNum}>£0 upfront</div>
-                <div className={styles.heroStatLbl}>pay on the day</div>
+                <div className={styles.heroStatNum}>{t('sharm.hero.upfront')}</div>
+                <div className={styles.heroStatLbl}>{t('sharm.hero.upfrontSub')}</div>
               </div>
             </div>
           </div>
@@ -151,14 +144,14 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
 
       <div className={styles.layout}>
         <main className={styles.left}>
-          <section className={styles.benefits} aria-label="Benefits">
+          <section className={styles.benefits} aria-label={t('sharm.benefitsAria')}>
             {BENEFITS.map((b) => (
-              <div key={b.title} className={styles.benefit}>
+              <div key={b.key} className={styles.benefit}>
                 <div className={styles.benefitIcon} aria-hidden>
                   {b.icon}
                 </div>
-                <h2 className={styles.benefitTitle}>{b.title}</h2>
-                <p className={styles.benefitDesc}>{b.text}</p>
+                <h2 className={styles.benefitTitle}>{t(`sharm.benefits.${b.key}.title`)}</h2>
+                <p className={styles.benefitDesc}>{t(`sharm.benefits.${b.key}.text`, { price })}</p>
               </div>
             ))}
           </section>
@@ -166,57 +159,57 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
           <section className={styles.bsSec} aria-labelledby="bs-h">
             <div className={styles.bsHead}>
               <div>
-                <div className={styles.secEyebrow}>Bestsellers</div>
+                <div className={styles.secEyebrow}>{t('sharm.bestsellers.eyebrow')}</div>
                 <h2 id="bs-h" className={styles.bsTitle}>
-                  Bestselling Sharm El Sheikh Excursions
+                  {t('sharm.bestsellers.title')}
                 </h2>
               </div>
               <a href="#tours" className={styles.allLink}>
-                All tours →
+                {t('sharm.bestsellers.all')}
               </a>
             </div>
             <Bestsellers items={bestsellers} />
           </section>
 
           <section className={styles.toursSec} id="tours" aria-labelledby="tours-h">
-            <div className={styles.secEyebrow}>Our tours</div>
+            <div className={styles.secEyebrow}>{t('sharm.tours.eyebrow')}</div>
             <h2 id="tours-h" className={styles.secTitle}>
-              Full List of Available Sharm El Sheikh
+              {t('sharm.tours.titleLine1')}
               <br />
-              <span>Day Trips &amp; Excursions</span>
+              <span>{t('sharm.tours.titleLine2')}</span>
             </h2>
             <ToursCatalog categories={categoryList(t)} tours={summaries} />
           </section>
 
           <section className={styles.bmSec} id="faq" aria-labelledby="faq-h">
-            <span className={styles.bmEyebrow}>FAQ</span>
+            <span className={styles.bmEyebrow}>{t('sharm.faq.eyebrow')}</span>
             <h2 id="faq-h" className={styles.faqH}>
-              Frequently asked <span>questions</span>
+              {t('sharm.faq.before')}<span>{t('sharm.faq.em')}</span>
             </h2>
-            <FaqList items={generalFaq} />
+            <FaqList items={faq} />
           </section>
 
           <section className={`${styles.bmSec} ${styles.bmAlt}`} aria-labelledby="promise-h">
             <div className={styles.bmHeadRow}>
               <div>
-                <span className={styles.bmEyebrow}>our promise</span>
+                <span className={styles.bmEyebrow}>{t('sharm.promise.eyebrow')}</span>
                 <h2 id="promise-h" className={styles.bmH}>
-                  No
+                  {t('sharm.promise.line1')}
                   <br />
-                  <span>compromises</span>
+                  <span>{t('sharm.promise.line2')}</span>
                 </h2>
               </div>
               <div className={`${styles.ghostText} ${styles.ghostFaint}`} aria-hidden>
-                Promise
+                {t('sharm.promise.ghost')}
               </div>
             </div>
             <ol className={styles.whyList}>
-              {PROMISE.map(([t, d], i) => (
-                <li key={t} className={`${styles.whyRow} reveal`} style={{ transitionDelay: `${i * 60}ms` }}>
+              {promise.map((p, i) => (
+                <li key={p.title} className={`${styles.whyRow} reveal`} style={{ transitionDelay: `${i * 60}ms` }}>
                   <span className={styles.whyN}>{String(i + 1).padStart(2, '0')}</span>
                   <span>
-                    <b>{t}</b>
-                    <small>{d}</small>
+                    <b>{p.title}</b>
+                    <small>{p.text}</small>
                   </span>
                 </li>
               ))}
@@ -224,73 +217,73 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
           </section>
 
           <section className={styles.bmSec} aria-labelledby="steps-h">
-            <span className={styles.bmEyebrow}>how to book</span>
+            <span className={styles.bmEyebrow}>{t('sharm.steps.eyebrow')}</span>
             <div className={styles.bmHeadRow}>
               <h2 id="steps-h" className={styles.bmH}>
-                Three
+                {t('sharm.steps.line1')}
                 <br />
-                <span>steps</span>
+                <span>{t('sharm.steps.line2')}</span>
               </h2>
               <div className={`${styles.ghostText} ${styles.ghostSm}`} aria-hidden>
-                fast and easy
+                {t('sharm.steps.ghost')}
               </div>
             </div>
             <ol className={styles.steps}>
-              {STEPS.map(([t, d], i) => (
-                <li key={t} className={`${styles.step} reveal`}>
+              {STEP_KEYS.map((k, i) => (
+                <li key={k} className={`${styles.step} reveal`}>
                   <span className={styles.stepN}>{i + 1}</span>
                   <span>
-                    <b>{t}</b>
-                    <small>{d}</small>
+                    <b>{t(`sharm.steps.${k}.title`)}</b>
+                    <small>{t(`sharm.steps.${k}.text`, { n: count, price })}</small>
                   </span>
                 </li>
               ))}
             </ol>
           </section>
 
-          <section className={styles.statsBanner} aria-label="Key figures">
+          <section className={styles.statsBanner} aria-label={t('sharm.stats.aria')}>
             <div className={styles.stat}>
               <div className={styles.statN}>
                 <CountUp value={count} suffix="+" />
               </div>
-              <div className={styles.statL}>tours</div>
+              <div className={styles.statL}>{t('sharm.stats.tours')}</div>
             </div>
             <i />
             <div className={styles.stat}>
               <div className={styles.statN}>
                 <CountUp value={4} />
               </div>
-              <div className={styles.statL}>categories</div>
+              <div className={styles.statL}>{t('sharm.stats.categories')}</div>
             </div>
             <i />
             <div className={styles.stat}>
               <div className={styles.statN}>
                 £<CountUp value={MIN_PRICE} />
               </div>
-              <div className={styles.statL}>from</div>
+              <div className={styles.statL}>{t('sharm.stats.from')}</div>
             </div>
           </section>
 
           <section className={styles.mapSec} aria-labelledby="map-h">
-            <span className={styles.bmEyebrow}>geography</span>
+            <span className={styles.bmEyebrow}>{t('sharm.map.eyebrow')}</span>
             <h2 id="map-h" className={`${styles.bmH} ${styles.onDark}`}>
-              The world
+              {t('sharm.map.line1')}
               <br />
-              flies to <span>us</span>
+              {t('sharm.map.line2before')}<span>{t('sharm.map.line2em')}</span>
             </h2>
-            <WorldMap />
+            <WorldMap lang={lang} />
           </section>
         </main>
 
-        <aside className={styles.right} aria-label="Book a tour">
+        <aside className={styles.right} aria-label={t('sharm.book.aria')}>
           <div className={styles.bookPanel}>
-            <div className={styles.bookPanelTitle}>Book a Tour</div>
-            <div className={styles.bookPanelSub}>We reply in 3 minutes</div>
+            <div className={styles.bookPanelTitle}>{t('sharm.book.title')}</div>
+            <div className={styles.bookPanelSub}>{t('sharm.book.sub')}</div>
             <div className={styles.bookPanelPrice}>
-              from <span>£{MIN_PRICE}</span> / person
+              {t('sharm.book.from')} <span>{price}</span> {t('sharm.book.perPerson')}
             </div>
             <ul className={styles.bookPanelBenefits}>
-              {['No prepayment', 'Hotel transfer included', 'Book in 3 minutes', 'English-speaking guides', 'Insurance included'].map(
+              {getList<string[]>(lang, 'sharm.book.benefits').map(
                 (b) => (
                   <li key={b}>
                     <span aria-hidden>✓</span> {b}
@@ -299,12 +292,12 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
               )}
             </ul>
             <a href="#tours" className={styles.bookPanelCta}>
-              Choose your tour
+              {t('sharm.book.cta')}
             </a>
             <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.bookPanelWa}>
-              <WhatsAppIcon /> Message us on WhatsApp
+              <WhatsAppIcon /> {t('client.nav.messageWhatsapp')}
             </a>
-            <div className={styles.bookPanelNote}>Instant booking reference. We reply fast.</div>
+            <div className={styles.bookPanelNote}>{t('sharm.book.note')}</div>
           </div>
         </aside>
       </div>

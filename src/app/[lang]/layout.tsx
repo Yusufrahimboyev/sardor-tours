@@ -11,13 +11,14 @@ import '../globals.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const lang = await langFrom(params);
+  const t = getT(lang);
   return {
     metadataBase: new URL(site.url),
     title: {
-      default: `${site.name} — Egypt Excursions in Sharm El Sheikh, Hurghada, Cairo & Marsa Alam`,
+      default: t('meta.default.title', { name: site.name }),
       template: `%s | ${site.name}`,
     },
-    description: site.description,
+    description: t('meta.default.description'),
     applicationName: site.name,
     openGraph: { type: 'website', siteName: site.name, locale: OG_LOCALE[lang] },
     twitter: { card: 'summary_large_image' },

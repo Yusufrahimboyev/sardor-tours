@@ -6,40 +6,42 @@ import { Footer } from '@/components/Footer';
 import { CheckIcon, ClockIcon, InfoIcon, InstagramIcon, PinIcon, TelegramIcon, WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { SiteHeader } from '@/components/SiteHeader';
-import { generalFaq, site, whatsappLink } from '@/data/site';
+import { site, whatsappLink } from '@/data/site';
 import { CATEGORY_KEYS } from '@/data/categories';
 import { MIN_PRICE, tourSlugs } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
-import { getT } from '@/i18n/messages';
+import { formatPrice } from '@/i18n/format';
+import { pageAlternates, pageOpenGraph } from '@/i18n/metadata';
+import { getGeneralFaq, getList, getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
 import { localeHref } from '@/i18n/routing';
 import styles from './about.module.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const lang = await langFrom(params);
+  const t = getT(lang);
+  const p = { name: site.name };
   return {
-    title: 'About Us — Excursions in Sharm El Sheikh',
-    description: `${site.name} — excursions and day trips from Sharm El Sheikh. No prepayment, hotel transfer included, easy online booking.`,
-    alternates: { canonical: localeHref(lang, '/about-us/') },
-    openGraph: { url: localeHref(lang, '/about-us/'), title: `About ${site.name}`, images: [imageSrc('/images/about-hero.webp', 1200, 630)] },
+    title: t('meta.about.title'),
+    description: t('meta.about.description', p),
+    alternates: pageAlternates(lang, '/about-us/'),
+    openGraph: pageOpenGraph(lang, '/about-us/', {
+      title: t('meta.about.ogTitle', p),
+      description: t('meta.about.description', p),
+      images: [imageSrc('/images/about-hero.webp', 1200, 630)],
+    }),
   };
 }
-
-const REASONS = [
-  ['Clear prices', 'The price you see is the price you pay — transfer included, no hidden extras.'],
-  ['No prepayment', 'Book online in minutes and pay on the day of your excursion for most tours.'],
-  ['Hotel transfer included', "We pick you up from your hotel's main entrance and bring you back after the tour."],
-  ['Free cancellation', 'Plans changed? Cancel free of charge up to 24 hours before the start.'],
-  ['Easy booking', 'Choose a date and guests online and get a booking reference straight away.'],
-  ['Real people', 'Questions before or during your trip? Message us on WhatsApp and a real person answers.'],
-];
 
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
   const lang = await langFrom(params);
   const t = getT(lang);
+  const faq = getGeneralFaq(lang);
+  const reasons = getList<{ title: string; text: string }[]>(lang, 'about.reasons');
+  const price = formatPrice(MIN_PRICE, lang);
   return (
     <div className={styles.page}>
-      <JsonLd data={faqJsonLd(generalFaq)} />
+      <JsonLd data={faqJsonLd(faq, lang)} />
       <SiteHeader overlay />
 
       <main id="main-content" tabIndex={-1}>
@@ -49,42 +51,41 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <div className={styles.heroIn}>
             <div>
               <div className={styles.tag}>
-                <i aria-hidden /> Excursions in Sharm El Sheikh
+                <i aria-hidden /> {t('about.tag')}
               </div>
               <h1>
-                We <span>know every wave</span> and every dune
+                {t('about.h1.before')}<span>{t('about.h1.em')}</span>{t('about.h1.after')}
               </h1>
               <p>
-                {site.name} brings together the best day trips from Sharm El Sheikh — Red Sea boat trips, desert safaris and
-                journeys to Dahab, Cairo, Luxor and Petra — in one place, with simple online booking.
+                {t('about.p1', { name: site.name })}
               </p>
-              <p>No prepayment for most tours, hotel transfer included and a real person to help you on WhatsApp.</p>
+              <p>{t('about.p2')}</p>
               <div className={styles.actions}>
                 <Link href={localeHref(lang, '/sharm/')} className={styles.btnWhite}>
-                  <InfoIcon size={16} /> All excursions
+                  <InfoIcon size={16} /> {t('about.allExcursions')}
                 </Link>
                 <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.btnGlass}>
-                  <WhatsAppIcon size={16} /> Message us on WhatsApp
+                  <WhatsAppIcon size={16} /> {t('client.nav.messageWhatsapp')}
                 </a>
                 {site.instagram && (
                   <a href={site.instagram} target="_blank" rel="noopener noreferrer" className={styles.btnIg}>
-                    <InstagramIcon size={16} /> Instagram
+                    <InstagramIcon size={16} /> {t('about.instagram')}
                   </a>
                 )}
               </div>
             </div>
             <div className={styles.cards}>
               {[
-                ['Destination', 'Sharm El Sheikh', <PinIcon key="p" />],
-                ['Excursions', `${tourSlugs.length}+ tours`, <InfoIcon key="i" size={18} />],
-                ['Prices', `from £${MIN_PRICE}`, <ClockIcon key="c" size={18} />],
-                ['Prepayment', '£0 — pay on the day', <CheckIcon key="l" size={18} />],
-              ].map(([l, v, ic]) => (
-                <div key={l as string} className={styles.hc}>
+                ['destination', <PinIcon key="p" />],
+                ['excursions', <InfoIcon key="i" size={18} />],
+                ['prices', <ClockIcon key="c" size={18} />],
+                ['prepayment', <CheckIcon key="l" size={18} />],
+              ].map(([k, ic]) => (
+                <div key={k as string} className={styles.hc}>
                   <span className={styles.hcIc}>{ic}</span>
                   <span>
-                    <small>{l}</small>
-                    <b>{v}</b>
+                    <small>{t(`about.cards.${k as string}.label`)}</small>
+                    <b>{t(`about.cards.${k as string}.value`, { n: tourSlugs.length, price })}</b>
                   </span>
                 </div>
               ))}
@@ -95,14 +96,14 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         <div className={styles.statsWrap}>
           <div className={styles.stats}>
             {[
-              [`${tourSlugs.length}+`, 'Excursions'],
-              [String(CATEGORY_KEYS.length), 'Categories'],
-              [`£${MIN_PRICE}`, 'Prices from'],
-              ['£0', 'Prepayment'],
-            ].map(([n, l]) => (
-              <div key={l}>
+              ['excursions', `${tourSlugs.length}+`],
+              ['categories', String(CATEGORY_KEYS.length)],
+              ['pricesFrom', price],
+              ['prepayment', formatPrice(0, lang)],
+            ].map(([k, n]) => (
+              <div key={k}>
                 <b>{n}</b>
-                <span>{l}</span>
+                <span>{t(`about.stats.${k}`)}</span>
               </div>
             ))}
           </div>
@@ -110,17 +111,17 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
         <section className={styles.sec} aria-labelledby="why-h">
           <div className={styles.head}>
-            <span className={styles.secTag}>Why us</span>
+            <span className={styles.secTag}>{t('about.why.tag')}</span>
             <h2 id="why-h">
-              Six reasons to <span>book with us</span>
+              {t('about.why.before')}<span>{t('about.why.em')}</span>
             </h2>
           </div>
           <div className={styles.reasons}>
-            {REASONS.map(([t, d], i) => (
-              <div key={t} className={`${styles.reason} reveal`}>
+            {reasons.map((r, i) => (
+              <div key={r.title} className={`${styles.reason} reveal`}>
                 <span className={styles.reasonN}>{String(i + 1).padStart(2, '0')}</span>
-                <h3>{t}</h3>
-                <p>{d}</p>
+                <h3>{r.title}</h3>
+                <p>{r.text}</p>
               </div>
             ))}
           </div>
@@ -128,29 +129,29 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
         <section className={`${styles.sec} ${styles.alt}`} aria-labelledby="faq-h">
           <div className={styles.head}>
-            <span className={styles.secTag}>FAQ</span>
+            <span className={styles.secTag}>{t('about.faq.tag')}</span>
             <h2 id="faq-h">
-              Questions we <span>hear every day</span>
+              {t('about.faq.before')}<span>{t('about.faq.em')}</span>
             </h2>
           </div>
           <div className={styles.narrow}>
-            <FaqList items={generalFaq} />
+            <FaqList items={faq} />
           </div>
         </section>
 
         <section className={styles.cta} aria-labelledby="cta-h">
-          <h2 id="cta-h">Ready to discover Sharm El Sheikh?</h2>
-          <p>Browse our excursions or message us — we&apos;ll help you find the perfect trip for your group, budget and interests.</p>
+          <h2 id="cta-h">{t('about.cta.title')}</h2>
+          <p>{t('about.cta.text')}</p>
           <div className={styles.ctaBtns}>
             <Link href={localeHref(lang, '/sharm/')} className={styles.btnWhite}>
-              All excursions
+              {t('about.allExcursions')}
             </Link>
             <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.btnGlass}>
-              <WhatsAppIcon size={16} /> WhatsApp
+              <WhatsAppIcon size={16} /> {t('client.nav.whatsapp')}
             </a>
             {site.telegram && (
               <a href={site.telegram} target="_blank" rel="noopener noreferrer" className={styles.btnGlass}>
-                <TelegramIcon size={16} /> Telegram
+                <TelegramIcon size={16} /> {t('about.cta.telegram')}
               </a>
             )}
           </div>
