@@ -18,6 +18,8 @@ export interface TourOptionBase {
   /** guests = main tickets (at least one required); extras = add-ons. */
   group: 'guests' | 'extras';
   max?: number;
+  /** Priced into the tour: shown as "Included" rather than "Free". Language-neutral. */
+  included?: boolean;
 }
 export interface TourOptionText {
   label: string;

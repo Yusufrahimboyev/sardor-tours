@@ -44,6 +44,6 @@ export function quote(tour: { options: (TourOptionBase & { label?: string })[] }
 
 /** `t` is the client translator (keys relative to `client`). */
 export function optionPriceLabel(o: TourOption, t: T, lang: Locale): string {
-  if (o.free || o.price === 0) return o.unit === 'included' ? t('booking.included') : t('booking.free');
+  if (o.free || o.price === 0) return o.included ? t('booking.included') : t('booking.free');
   return `${formatPrice(o.price, lang)}${o.unit ? ` / ${o.unit}` : ''}`;
 }

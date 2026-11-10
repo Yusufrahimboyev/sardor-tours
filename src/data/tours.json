@@ -1369,7 +1369,8 @@
         "price": 0,
         "free": true,
         "kind": "counter",
-        "group": "extras"
+        "group": "extras",
+        "included": true
       },
       {
         "key": "diving",

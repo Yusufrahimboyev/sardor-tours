@@ -6,7 +6,13 @@ import { getTour, getTourBase, tourSlugs, tourHref } from '../../src/data/tours'
 const original = JSON.parse(execSync('git show 9545625:src/data/tours.json', { encoding: 'utf8' }));
 
 test('en merge reproduces the original records exactly', () => {
-  for (const o of original) assert.deepEqual(getTour(o.slug, 'en'), o, o.slug);
+  // `included` is a derived, language-neutral flag added to the base data after the original
+  // commit (from `unit === 'included'`); compare with that one field omitted.
+  const withoutIncluded = (t: ReturnType<typeof getTour>) => ({
+    ...t!,
+    options: t!.options.map((o) => Object.fromEntries(Object.entries(o).filter(([k]) => k !== 'included'))),
+  });
+  for (const o of original) assert.deepEqual(withoutIncluded(getTour(o.slug, 'en')), o, o.slug);
 });
 test('every slug exists in every language', () => {
   assert.equal(tourSlugs.length, 23);

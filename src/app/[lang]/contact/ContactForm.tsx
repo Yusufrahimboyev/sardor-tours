@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 import { useToast } from '@/components/Toast';
 import { CheckIcon } from '@/components/icons';
 import { useLang, useT } from '@/i18n/client';
-import { contactSchema, type ErrorKey } from '@/lib/validation';
+import { contactSchema, isErrorKey } from '@/lib/validation';
 import styles from './contact.module.css';
 
 const formSchema = contactSchema.omit({ lang: true });
@@ -17,8 +17,8 @@ export function ContactForm() {
   const t = useT();
   const lang = useLang();
   const toast = useToast();
-  /** Schema messages are `ErrorKey`s (single word); server messages arrive already translated. */
-  const fieldMsg = (m?: string) => (m ? (/^[a-zA-Z]+$/.test(m) ? t('errors.' + (m as ErrorKey)) : m) : undefined);
+  /** Schema messages are `ErrorKey`s; server messages arrive already translated. */
+  const fieldMsg = (m?: string) => (m ? (isErrorKey(m) ? t('errors.' + m) : m) : undefined);
   const [sent, setSent] = useState(false);
   const {
     register,

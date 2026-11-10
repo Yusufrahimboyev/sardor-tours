@@ -9,7 +9,7 @@ import { localeHref } from '@/i18n/routing';
 import { tomorrowISO } from '@/lib/dates';
 import { formatDate, formatPrice, weekdayNames } from '@/i18n/format';
 import { optionMax, optionPriceLabel, quote, type Quantities } from '@/lib/pricing';
-import { bookingIssues, contactDetailsSchema, type ErrorKey } from '@/lib/validation';
+import { bookingIssues, contactDetailsSchema, isErrorKey, type ErrorKey } from '@/lib/validation';
 import { useToast } from '@/components/Toast';
 import { CheckIcon } from '@/components/icons';
 import styles from './BookingForm.module.css';
@@ -36,7 +36,9 @@ export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }
   /** zod field validator (messages are error keys) → react-hook-form `validate` function. */
   const zField = <K extends keyof typeof contactDetailsSchema.shape>(key: K) => (v: string) => {
     const r = contactDetailsSchema.shape[key].safeParse(v);
-    return r.success || err(r.error.issues[0].message as ErrorKey);
+    if (r.success) return true;
+    const m = r.error.issues[0].message;
+    return isErrorKey(m) ? err(m) : err('generic');
   };
   const toast = useToast();
   const uid = useId();

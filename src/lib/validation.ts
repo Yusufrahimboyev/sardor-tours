@@ -8,6 +8,20 @@ import { quote } from './pricing';
 /** Keys under `client.errors` in the message dictionaries. */
 export type ErrorKey = keyof Messages['client']['errors'];
 
+/** Every `ErrorKey`; the type check below fails if one is missing, a unit test checks it against en.json. */
+export const ERROR_KEYS = [
+  'nameMin', 'contactNameMin', 'phoneInvalid', 'emailInvalid', 'dateRequired', 'dateTooEarly', 'tourRunsOn',
+  'timeRequired', 'hotelRequired', 'unknownOption', 'guestsRequired', 'messageMin', 'checkFields',
+  'tooManyRequests', 'tourGone', 'saveFailed', 'sendFailed', 'network', 'generic',
+] as const satisfies readonly ErrorKey[];
+type _AllKeysListed = ErrorKey extends (typeof ERROR_KEYS)[number] ? true : never;
+export const _allKeysListed: _AllKeysListed = true;
+
+/** True when `k` is a key of `client.errors` (as opposed to an already-translated message). */
+export function isErrorKey(k: unknown): k is ErrorKey {
+  return typeof k === 'string' && (ERROR_KEYS as readonly string[]).includes(k);
+}
+
 const phoneRe = /^\+?[0-9 ()-]{7,20}$/;
 
 /** Unknown or missing languages fall back to English. */
