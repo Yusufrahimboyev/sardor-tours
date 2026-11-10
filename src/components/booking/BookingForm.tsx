@@ -4,12 +4,12 @@ import { useRouter } from 'next/navigation';
 import { useId, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import type { Tour } from '@/data/tours';
-import type { Locale } from '@/i18n/config';
+import { useLang, useT } from '@/i18n/client';
 import { localeHref } from '@/i18n/routing';
 import { tomorrowISO } from '@/lib/dates';
 import { formatDate, formatPrice, weekdayNames } from '@/i18n/format';
 import { optionMax, optionPriceLabel, quote, type Quantities } from '@/lib/pricing';
-import { bookingIssues, contactDetailsSchema } from '@/lib/validation';
+import { bookingIssues, contactDetailsSchema, type ErrorKey } from '@/lib/validation';
 import { useToast } from '@/components/Toast';
 import { CheckIcon } from '@/components/icons';
 import styles from './BookingForm.module.css';
@@ -25,18 +25,19 @@ interface Values {
   company: string;
 }
 
-const STEPS = ['Date', 'Guests', 'Details'] as const;
+const STEPS = ['date', 'guests', 'details'] as const;
 
-/** zod field validator → react-hook-form `validate` function. */
-function zField<K extends keyof typeof contactDetailsSchema.shape>(key: K) {
-  return (v: string) => {
-    const r = contactDetailsSchema.shape[key].safeParse(v);
-    return r.success || r.error.issues[0].message;
-  };
-}
-
-export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour; compact?: boolean }) {
+export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }) {
+  const t = useT();
+  const lang = useLang();
   const router = useRouter();
+  const err = (key: ErrorKey, params?: { days: number[] }) =>
+    t('errors.' + key, params ? { days: weekdayNames(params.days, lang) } : undefined);
+  /** zod field validator (messages are error keys) → react-hook-form `validate` function. */
+  const zField = <K extends keyof typeof contactDetailsSchema.shape>(key: K) => (v: string) => {
+    const r = contactDetailsSchema.shape[key].safeParse(v);
+    return r.success || err(r.error.issues[0].message as ErrorKey);
+  };
   const toast = useToast();
   const uid = useId();
   const [step, setStep] = useState(0);
@@ -65,7 +66,7 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
 
   const issueFor = (path: 'date' | 'time') => {
     const issue = bookingIssues(tour, { date: watch('date'), time: watch('time'), qty: { _: 0 } }).find((i) => i.path === path);
-    return issue ? issue.message : true;
+    return issue ? err(issue.key, issue.params) : true;
   };
 
   const change = (key: string, delta: number) => {
@@ -83,7 +84,7 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
       if (ok) setStep(1);
     } else if (step === 1) {
       if (q.guestUnits === 0) {
-        setQtyError('Please add at least one guest');
+        setQtyError(err('guestsRequired'));
         return;
       }
       setStep(2);
@@ -93,7 +94,7 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
   const onSubmit = async (v: Values) => {
     if (q.guestUnits === 0) {
       setStep(1);
-      setQtyError('Please add at least one guest');
+      setQtyError(err('guestsRequired'));
       return;
     }
     setSubmitting(true);
@@ -101,7 +102,7 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
       const res = await fetch('/api/bookings/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...v, tourSlug: tour.slug, qty }),
+        body: JSON.stringify({ ...v, tourSlug: tour.slug, qty, lang }),
       });
       const data = (await res.json().catch(() => ({}))) as {
         ok?: boolean;
@@ -119,13 +120,13 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
           setStep(1);
           setQtyError(fe.qty);
         }
-        toast(data.error ?? 'Something went wrong. Please try again.', 'error');
+        toast(data.error ?? err('generic'), 'error');
         return;
       }
-      toast('Booking request sent!', 'success');
+      toast(t('toast.bookingSent'), 'success');
       router.push(localeHref(lang, '/booking/' + data.reference + '/'));
     } catch {
-      toast('Network error — please check your connection and try again.', 'error');
+      toast(err('network'), 'error');
     } finally {
       setSubmitting(false);
     }
@@ -135,11 +136,11 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
 
   return (
     <form className={`${styles.form} ${compact ? styles.compact : ''}`} onSubmit={handleSubmit(onSubmit)} noValidate>
-      <ol className={styles.steps} aria-label="Booking steps">
+      <ol className={styles.steps} aria-label={t('booking.stepsAria')}>
         {STEPS.map((s, i) => (
           <li key={s} className={i === step ? styles.stepOn : i < step ? styles.stepDone : ''} aria-current={i === step ? 'step' : undefined}>
             <span>{i < step ? <CheckIcon size={13} /> : i + 1}</span>
-            {s}
+            {t('booking.steps.' + s)}
           </li>
         ))}
       </ol>
@@ -149,7 +150,7 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
 
       <div hidden={step !== 0} className={styles.pane}>
         <label className={styles.label} htmlFor={fid('date')}>
-          Select a date
+          {t('booking.selectDate')}
         </label>
         <input
           id={fid('date')}
@@ -161,12 +162,15 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
           {...register('date', { validate: () => issueFor('date') })}
         />
         <p id={fid('date-hint')} className={errors.date ? styles.err : styles.hint}>
-          {errors.date?.message ?? (tour.scheduleDays ? `Runs on ${weekdayNames(tour.scheduleDays, 'en')}` : `Schedule: ${tour.schedule}`)}
+          {errors.date?.message ??
+            (tour.scheduleDays
+              ? t('booking.runsOn', { days: weekdayNames(tour.scheduleDays, lang) })
+              : t('booking.schedule', { schedule: tour.schedule }))}
         </p>
 
         {tour.timeSlots.length > 0 && (
           <fieldset className={styles.fieldset}>
-            <legend className={styles.label}>Departure time</legend>
+            <legend className={styles.label}>{t('booking.departureTime')}</legend>
             <input type="hidden" {...register('time', { validate: () => issueFor('time') })} />
             <div className={styles.slots}>
               {tour.timeSlots.map((t) => (
@@ -186,47 +190,47 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
         )}
 
         <label className={styles.label} htmlFor={fid('hotel')}>
-          Hotel name
+          {t('booking.hotelName')}
         </label>
         <input
           id={fid('hotel')}
           type="text"
-          placeholder="Your hotel name"
+          placeholder={t('booking.hotelPlaceholder')}
           autoComplete="off"
           className={`${styles.input} ${errors.hotel ? styles.invalid : ''}`}
           aria-invalid={!!errors.hotel}
           {...register('hotel', {
-            validate: (v) => v.trim().length >= 2 || 'Please enter your hotel name',
+            validate: (v) => v.trim().length >= 2 || err('hotelRequired'),
           })}
         />
         {errors.hotel && <p className={styles.err}>{errors.hotel.message}</p>}
 
         <button type="button" className={styles.primary} onClick={next}>
-          Next
+          {t('booking.next')}
         </button>
-        <p className={styles.note}>Book now — no prepayment</p>
+        <p className={styles.note}>{t('booking.noPrepayNote')}</p>
       </div>
 
       <div hidden={step !== 1} className={styles.pane}>
         <div className={styles.summary}>
           <div>
-            <small>Date</small>
+            <small>{t('booking.summaryDate')}</small>
             <b>
-              {date ? formatDate(date, 'en') : '—'}
+              {date ? formatDate(date, lang) : '—'}
               {time ? ` · ${time}` : ''}
             </b>
           </div>
           <button type="button" onClick={() => setStep(0)}>
-            Change
+            {t('booking.change')}
           </button>
         </div>
-        <div className={styles.label}>Guests</div>
+        <div className={styles.label}>{t('booking.guests')}</div>
         {guests.map((o) => (
-          <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o)} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
+          <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o, t, lang)} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
         ))}
-        {extras.length > 0 && <div className={styles.extras}>Extras</div>}
+        {extras.length > 0 && <div className={styles.extras}>{t('booking.extras')}</div>}
         {extras.map((o) => (
-          <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o)} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
+          <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o, t, lang)} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
         ))}
         {qtyError && (
           <p className={styles.err} role="alert">
@@ -234,20 +238,20 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
           </p>
         )}
         <div className={styles.total}>
-          <span>Total</span>
-          <b data-testid="booking-total">{formatPrice(q.total, 'en')}</b>
+          <span>{t('booking.total')}</span>
+          <b data-testid="booking-total">{formatPrice(q.total, lang)}</b>
         </div>
         <button type="button" className={styles.primary} onClick={next}>
-          Next
+          {t('booking.next')}
         </button>
         <button type="button" className={styles.back} onClick={() => setStep(0)}>
-          Back
+          {t('booking.back')}
         </button>
       </div>
 
       <div hidden={step !== 2} className={styles.pane}>
         <label className={styles.label} htmlFor={fid('name')}>
-          Full name
+          {t('booking.fullName')}
         </label>
         <input
           id={fid('name')}
@@ -259,12 +263,12 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
         {errors.name && <p className={styles.err}>{errors.name.message}</p>}
 
         <label className={styles.label} htmlFor={fid('phone')}>
-          Phone / WhatsApp
+          {t('booking.phone')}
         </label>
         <input
           id={fid('phone')}
           type="tel"
-          placeholder="+44 7700 900123"
+          placeholder={t('booking.phonePlaceholder')}
           className={`${styles.input} ${errors.phone ? styles.invalid : ''}`}
           autoComplete="tel"
           aria-invalid={!!errors.phone}
@@ -273,7 +277,7 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
         {errors.phone && <p className={styles.err}>{errors.phone.message}</p>}
 
         <label className={styles.label} htmlFor={fid('email')}>
-          Email <span className={styles.opt}>(optional)</span>
+          {t('booking.email')} <span className={styles.opt}>{t('booking.optional')}</span>
         </label>
         <input
           id={fid('email')}
@@ -286,9 +290,9 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
         {errors.email && <p className={styles.err}>{errors.email.message}</p>}
 
         <label className={styles.label} htmlFor={fid('notes')}>
-          Notes <span className={styles.opt}>(optional)</span>
+          {t('booking.notes')} <span className={styles.opt}>{t('booking.optional')}</span>
         </label>
-        <textarea id={fid('notes')} rows={2} className={styles.input} placeholder="Room number, special requests…" {...register('notes')} />
+        <textarea id={fid('notes')} rows={2} className={styles.input} placeholder={t('booking.notesPlaceholder')} {...register('notes')} />
 
         <div className={styles.lines}>
           {q.lines.map((l) => (
@@ -296,22 +300,22 @@ export function BookingForm({ lang, tour, compact }: { lang: Locale; tour: Tour;
               <span>
                 {l.label} × {l.qty}
               </span>
-              <span>{formatPrice(l.subtotal, 'en')}</span>
+              <span>{formatPrice(l.subtotal, lang)}</span>
             </div>
           ))}
           <div className={styles.total}>
-            <span>Total — pay on the day</span>
-            <b>{formatPrice(q.total, 'en')}</b>
+            <span>{t('booking.totalPayDay')}</span>
+            <b>{formatPrice(q.total, lang)}</b>
           </div>
         </div>
         {tour.requiresDeposit && (
-          <p className={styles.deposit}>This experience requires a deposit — our team will send you the payment details.</p>
+          <p className={styles.deposit}>{t('booking.deposit')}</p>
         )}
         <button type="submit" className={styles.primary} disabled={submitting} aria-busy={submitting}>
-          {submitting ? 'Sending…' : 'Send booking request'}
+          {submitting ? t('booking.sending') : t('booking.submit')}
         </button>
         <button type="button" className={styles.back} onClick={() => setStep(1)}>
-          Back
+          {t('booking.back')}
         </button>
       </div>
     </form>
@@ -327,6 +331,7 @@ function OptionRow(props: {
   onChange: (delta: number) => void;
 }) {
   const { label, sub, kind, value, max, onChange } = props;
+  const t = useT();
   return (
     <div className={styles.row}>
       <div>
@@ -338,20 +343,20 @@ function OptionRow(props: {
           type="button"
           className={`${styles.toggle} ${value ? styles.toggleOn : ''}`}
           aria-pressed={value > 0}
-          aria-label={`${value ? 'Remove' : 'Add'} ${label}`}
+          aria-label={t(value ? 'booking.removeAria' : 'booking.addAria', { label })}
           onClick={() => onChange(value ? -1 : 1)}
         >
-          {value ? 'Remove' : 'Add'}
+          {t(value ? 'booking.remove' : 'booking.add')}
         </button>
       ) : (
         <div className={styles.counter}>
-          <button type="button" onClick={() => onChange(-1)} disabled={value === 0} aria-label={`Decrease ${label}`}>
+          <button type="button" onClick={() => onChange(-1)} disabled={value === 0} aria-label={t('booking.decrease', { label })}>
             −
           </button>
-          <output aria-live="polite" aria-label={`${label} count`}>
+          <output aria-live="polite" aria-label={t('booking.count', { label })}>
             {value}
           </output>
-          <button type="button" onClick={() => onChange(1)} disabled={value >= max} aria-label={`Increase ${label}`}>
+          <button type="button" onClick={() => onChange(1)} disabled={value >= max} aria-label={t('booking.increase', { label })}>
             +
           </button>
         </div>

@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test';
-import { trackErrors } from './helpers';
+import { futureDate, trackErrors } from './helpers';
+import en from '../../src/i18n/messages/en.json';
+import ru from '../../src/i18n/messages/ru.json';
 
 // Playwright Test defaults every context to locale en-US, and that emulation overrides an
 // Accept-Language set through extraHTTPHeaders, so the contexts below set `locale` as well.
@@ -67,4 +69,35 @@ test('every page renders in every locale with localized title and hreflang', asy
       await expect(page.locator(`link[rel="alternate"][hreflang="${h}"]`), `${l}${p} ${h}`).toHaveCount(1);
   }
   expect(errors).toEqual([]);
+});
+
+test('full booking in Russian', async ({ page, isMobile }) => {
+  const errors = trackErrors(page);
+  await page.goto('/ru/sharm/quad-safari-sharm/');
+  const form = isMobile
+    ? (await page.getByRole('button', { name: ru.client.booking.book, exact: true }).click(), page.getByRole('dialog'))
+    : page.getByRole('complementary', { name: ru.tour.side.aria });
+  const b = ru.client.booking;
+  await form.getByRole('button', { name: b.next }).first().click();
+  await expect(form.getByText(ru.client.errors.dateRequired)).toBeVisible();
+  await form.getByLabel(b.selectDate).fill(futureDate());
+  await form.getByRole('button', { name: '10:00 AM' }).click();
+  await form.getByLabel(b.hotelName).fill('Rixos Premium Seagate');
+  await form.getByRole('button', { name: b.next }).first().click();
+  await form.getByRole('button', { name: b.increase.replace('{label}', 'Single quad') }).click();
+  await form.getByRole('button', { name: b.increase.replace('{label}', 'Single quad') }).click();
+  await form.getByRole('button', { name: b.next }).click();
+  await form.getByLabel(b.fullName).fill('Ali Valiyev');
+  await form.getByLabel(b.phone).fill('+998 93 212 99 05');
+  await form.getByRole('button', { name: b.submit }).click();
+  await expect(page).toHaveURL(/\/ru\/booking\/ST-[A-Z0-9]{6}\/$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'ru');
+  const wa = await page.getByRole('link', { name: ru.booking.confirm.whatsappCta }).getAttribute('href');
+  expect(decodeURIComponent(wa!)).toContain(ru.client.whatsapp.bookingIntro.split('{')[0].trim());
+  expect(errors).toEqual([]);
+});
+test('API accepts unknown lang as en', async ({ request }) => {
+  const r = await request.post('/api/bookings/', { data: { lang: 'de', tourSlug: 'quad-safari-sharm' } });
+  expect(r.status()).toBe(400);
+  expect((await r.json()).error).toBe(en.client.errors.checkFields);
 });

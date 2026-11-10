@@ -349,7 +349,23 @@
       "sharm": "Sharm El Sheikh"
     }
   },
-  "booking": {},
+  "booking": {
+    "confirm": {
+      "metaTitle": "Booking request received",
+      "title": "Booking request received",
+      "thanks": "Thank you, {name}! Your reference is",
+      "lead": "Our team will confirm availability on WhatsApp ({phone}) shortly. No prepayment is needed.",
+      "leadDeposit": "Our team will confirm availability on WhatsApp ({phone}) shortly. No prepayment is needed — except the deposit required for this experience, which we will send you details for.",
+      "tour": "Tour",
+      "date": "Date",
+      "hotel": "Hotel",
+      "totalPayDay": "Total — pay on the day",
+      "whatsappCta": "Confirm faster on WhatsApp",
+      "browse": "Browse more tours",
+      "changeNote": "Need to change something? Reply on WhatsApp with your reference. Free cancellation up to 24 hours before the tour — see our",
+      "terms": "Terms & Conditions"
+    }
+  },
   "contact": {
     "tag": "Contact",
     "h1": {
@@ -594,10 +610,95 @@
       "showAll": "Show all tours",
       "toursLabel": "tours"
     },
-    "booking": {},
-    "contactForm": {},
-    "errors": {},
-    "toast": {},
+    "booking": {
+      "steps": {
+        "date": "Date",
+        "guests": "Guests",
+        "details": "Details"
+      },
+      "stepsAria": "Booking steps",
+      "selectDate": "Select a date",
+      "runsOn": "Runs on {days}",
+      "schedule": "Schedule: {schedule}",
+      "departureTime": "Departure time",
+      "hotelName": "Hotel name",
+      "hotelPlaceholder": "Your hotel name",
+      "next": "Next",
+      "back": "Back",
+      "noPrepayNote": "Book now — no prepayment",
+      "summaryDate": "Date",
+      "change": "Change",
+      "guests": "Guests",
+      "extras": "Extras",
+      "total": "Total",
+      "fullName": "Full name",
+      "phone": "Phone / WhatsApp",
+      "phonePlaceholder": "+44 7700 900123",
+      "email": "Email",
+      "optional": "(optional)",
+      "notes": "Notes",
+      "notesPlaceholder": "Room number, special requests…",
+      "totalPayDay": "Total — pay on the day",
+      "deposit": "This experience requires a deposit — our team will send you the payment details.",
+      "submit": "Send booking request",
+      "sending": "Sending…",
+      "add": "Add",
+      "remove": "Remove",
+      "addAria": "Add {label}",
+      "removeAria": "Remove {label}",
+      "increase": "Increase {label}",
+      "decrease": "Decrease {label}",
+      "count": "{label} count",
+      "included": "Included",
+      "free": "Free",
+      "noPrepay": "No prepayment",
+      "book": "Book",
+      "dialogLabel": "Book: {name}",
+      "sheetTitle": "Book in 3 minutes"
+    },
+    "contactForm": {
+      "name": "Your name",
+      "email": "Email",
+      "phone": "Phone / WhatsApp (optional)",
+      "topic": "Topic",
+      "message": "Message",
+      "send": "Send message",
+      "sending": "Sending…",
+      "thanks": "Thank you!",
+      "received": "Your message has been received. Our team usually replies within a few hours.",
+      "another": "Send another message",
+      "topics": {
+        "booking": "Question about a booking",
+        "private": "Private tour",
+        "group": "Group booking",
+        "other": "Something else"
+      }
+    },
+    "errors": {
+      "nameMin": "Please enter your full name",
+      "contactNameMin": "Please enter your name",
+      "phoneInvalid": "Please enter a valid phone / WhatsApp number",
+      "emailInvalid": "Please enter a valid email address",
+      "dateRequired": "Select a date to continue",
+      "dateTooEarly": "Please choose a date from tomorrow onwards",
+      "tourRunsOn": "This tour runs on {days} only",
+      "timeRequired": "Please choose a departure time",
+      "hotelRequired": "Please enter your hotel name",
+      "unknownOption": "Unknown booking option",
+      "guestsRequired": "Please add at least one guest",
+      "messageMin": "Please write at least 10 characters",
+      "checkFields": "Please check the highlighted fields.",
+      "tooManyRequests": "Too many requests. Please try again in a minute.",
+      "tourGone": "This tour no longer exists.",
+      "saveFailed": "We could not save your booking. Please try again or message us on WhatsApp.",
+      "sendFailed": "We could not send your message. Please try again or message us on WhatsApp.",
+      "network": "Network error — please check your connection and try again.",
+      "generic": "Something went wrong. Please try again."
+    },
+    "toast": {
+      "bookingSent": "Booking request sent!",
+      "messageSent": "Message sent — we'll reply soon!"
+    },
     "contactOptions": {
       "title": "Get in touch",
       "sub": "Reach us on your favourite messenger — we're available 24/7.",
@@ -621,7 +722,16 @@
     "whatsapp": {
       "bookTour": "Hello! I'd like to book a tour.",
       "planTrip": "Hello! I'd like to plan an Egypt trip",
-      "tourQuestion": "Hello! I have a question about: {name}"
+      "tourQuestion": "Hello! I have a question about: {name}",
+      "bookingIntro": "Hello! I've just sent booking request {ref}.",
+      "bookingTour": "Tour: {name} ({en})",
+      "bookingDate": "Date: {date}",
+      "bookingDateTime": "Date: {date} at {time}",
+      "bookingHotel": "Hotel: {hotel}",
+      "bookingLine": "{label}: {qty} × {unit} = {subtotal}",
+      "bookingTotal": "Total: {total}",
+      "bookingName": "Name: {name}",
+      "bookingConfirm": "Please confirm availability."
     },
     "common": {
       "close": "Close",

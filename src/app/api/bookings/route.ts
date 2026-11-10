@@ -1,24 +1,37 @@
 import { NextResponse } from 'next/server';
 import { getTour, getTourBase } from '@/data/tours';
 import { quote } from '@/lib/pricing';
-import { bookingBaseSchema, bookingIssues } from '@/lib/validation';
+import { weekdayNames } from '@/i18n/format';
+import { getT } from '@/i18n/messages';
+import { bookingBaseSchema, bookingIssues, langSchema, type ErrorKey } from '@/lib/validation';
 import { bookings, newReference, type Booking } from '@/lib/server/store';
 import { isAdmin, jsonError, rateLimited, readJson, zodFieldErrors } from '@/lib/server/http';
 
 export async function POST(req: Request) {
-  if (rateLimited(req, 'bookings', 8)) return jsonError(429, 'Too many requests. Please try again in a minute.');
+  const en = getT('en');
+  if (rateLimited(req, 'bookings', 8)) return jsonError(429, en('client.errors.tooManyRequests' satisfies `client.errors.${ErrorKey}`));
 
-  const parsed = bookingBaseSchema.safeParse(await readJson(req));
-  if (!parsed.success) return jsonError(400, 'Please check the highlighted fields.', zodFieldErrors(parsed.error));
+  const body = await readJson(req);
+  // Read the language first so a request that fails validation is still answered in it.
+  const lang = langSchema.parse((body as { lang?: unknown } | undefined)?.lang);
+  const t = getT(lang);
+  const err = (key: ErrorKey, params?: Parameters<typeof t>[1]) => t(`client.errors.${key}`, params);
+
+  const parsed = bookingBaseSchema.safeParse(body);
+  if (!parsed.success) return jsonError(400, err('checkFields'), zodFieldErrors(parsed.error, lang));
   const input = parsed.data;
 
   const tour = getTourBase(input.tourSlug);
   const tourEn = getTour(input.tourSlug, 'en');
-  if (!tour || !tourEn) return jsonError(404, 'This tour no longer exists.');
+  if (!tour || !tourEn) return jsonError(404, err('tourGone'));
 
   const issues = bookingIssues(tour, input);
   if (issues.length) {
-    return jsonError(400, issues[0].message, Object.fromEntries(issues.map((i) => [i.path, i.message])));
+    const msgs = issues.map((i) => ({
+      path: i.path,
+      message: err(i.key, i.params ? { days: weekdayNames(i.params.days, lang) } : undefined),
+    }));
+    return jsonError(400, msgs[0].message, Object.fromEntries(msgs.map((m) => [m.path, m.message])));
   }
 
   const q = quote(tour, input.qty);
@@ -40,13 +53,14 @@ export async function POST(req: Request) {
     email: input.email,
     notes: input.notes,
     requiresDeposit: tour.requiresDeposit,
+    lang,
   };
 
   try {
     await bookings.insert(booking);
   } catch (e) {
     console.error('Failed to save booking', e);
-    return jsonError(500, 'We could not save your booking. Please try again or message us on WhatsApp.');
+    return jsonError(500, err('saveFailed'));
   }
 
   return NextResponse.json({ ok: true, reference: booking.id, total: booking.total }, { status: 201 });

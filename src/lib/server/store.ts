@@ -2,6 +2,7 @@ import 'server-only';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { randomBytes } from 'node:crypto';
+import type { Locale } from '@/i18n/config';
 import type { PriceLine } from '@/lib/pricing';
 
 /**
@@ -75,6 +76,8 @@ export interface Booking {
   email: string;
   notes: string;
   requiresDeposit: boolean;
+  /** Customer's language; records written before localisation have none (treat as 'en'). */
+  lang?: Locale;
 }
 
 export interface ContactMessage {
@@ -85,6 +88,8 @@ export interface ContactMessage {
   phone: string;
   topic: string;
   message: string;
+  /** Customer's language; records written before localisation have none (treat as 'en'). */
+  lang?: Locale;
 }
 
 export const bookings = createJsonCollection<Booking>('bookings');

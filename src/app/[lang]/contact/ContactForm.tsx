@@ -2,14 +2,23 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
+import type { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { useToast } from '@/components/Toast';
 import { CheckIcon } from '@/components/icons';
-import { contactSchema, type ContactInput } from '@/lib/validation';
+import { useLang, useT } from '@/i18n/client';
+import { contactSchema, type ErrorKey } from '@/lib/validation';
 import styles from './contact.module.css';
 
+const formSchema = contactSchema.omit({ lang: true });
+type ContactInput = z.infer<typeof formSchema>;
+
 export function ContactForm() {
+  const t = useT();
+  const lang = useLang();
   const toast = useToast();
+  /** Schema messages are `ErrorKey`s (single word); server messages arrive already translated. */
+  const fieldMsg = (m?: string) => (m ? (/^[a-zA-Z]+$/.test(m) ? t('errors.' + (m as ErrorKey)) : m) : undefined);
   const [sent, setSent] = useState(false);
   const {
     register,
@@ -18,7 +27,7 @@ export function ContactForm() {
     setError,
     formState: { errors, isSubmitting },
   } = useForm<ContactInput>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(formSchema),
     mode: 'onTouched',
     defaultValues: { name: '', email: '', phone: '', topic: 'booking', message: '', company: '' },
   });
@@ -28,19 +37,19 @@ export function ContactForm() {
       const res = await fetch('/api/contact/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(v),
+        body: JSON.stringify({ ...v, lang }),
       });
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string; fieldErrors?: Record<string, string> };
       if (!res.ok || !data.ok) {
         for (const [k, m] of Object.entries(data.fieldErrors ?? {})) setError(k as keyof ContactInput, { message: m });
-        toast(data.error ?? 'Something went wrong. Please try again.', 'error');
+        toast(data.error ?? t('errors.generic'), 'error');
         return;
       }
       reset();
       setSent(true);
-      toast("Message sent — we'll reply soon!", 'success');
+      toast(t('toast.messageSent'), 'success');
     } catch {
-      toast('Network error — please check your connection and try again.', 'error');
+      toast(t('errors.network'), 'error');
     }
   };
 
@@ -50,10 +59,10 @@ export function ContactForm() {
         <span className={styles.successIc}>
           <CheckIcon size={26} />
         </span>
-        <h2>Thank you!</h2>
-        <p>Your message has been received. Our team usually replies within a few hours.</p>
+        <h2>{t('contactForm.thanks')}</h2>
+        <p>{t('contactForm.received')}</p>
         <button type="button" className={styles.secondary} onClick={() => setSent(false)}>
-          Send another message
+          {t('contactForm.another')}
         </button>
       </div>
     );
@@ -63,31 +72,31 @@ export function ContactForm() {
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
       <input type="text" tabIndex={-1} autoComplete="off" className={styles.hp} aria-hidden {...register('company')} />
       <div className={styles.row}>
-        <Field label="Your name" error={errors.name?.message} id="c-name">
+        <Field label={t('contactForm.name')} error={fieldMsg(errors.name?.message)} id="c-name">
           <input id="c-name" autoComplete="name" aria-invalid={!!errors.name} {...register('name')} />
         </Field>
-        <Field label="Email" error={errors.email?.message} id="c-email">
+        <Field label={t('contactForm.email')} error={fieldMsg(errors.email?.message)} id="c-email">
           <input id="c-email" type="email" autoComplete="email" aria-invalid={!!errors.email} {...register('email')} />
         </Field>
       </div>
       <div className={styles.row}>
-        <Field label="Phone / WhatsApp (optional)" error={errors.phone?.message} id="c-phone">
+        <Field label={t('contactForm.phone')} error={fieldMsg(errors.phone?.message)} id="c-phone">
           <input id="c-phone" type="tel" autoComplete="tel" aria-invalid={!!errors.phone} {...register('phone')} />
         </Field>
-        <Field label="Topic" id="c-topic">
+        <Field label={t('contactForm.topic')} id="c-topic">
           <select id="c-topic" {...register('topic')}>
-            <option value="booking">Question about a booking</option>
-            <option value="private">Private tour</option>
-            <option value="group">Group booking</option>
-            <option value="other">Something else</option>
+            <option value="booking">{t('contactForm.topics.booking')}</option>
+            <option value="private">{t('contactForm.topics.private')}</option>
+            <option value="group">{t('contactForm.topics.group')}</option>
+            <option value="other">{t('contactForm.topics.other')}</option>
           </select>
         </Field>
       </div>
-      <Field label="Message" error={errors.message?.message} id="c-msg">
+      <Field label={t('contactForm.message')} error={fieldMsg(errors.message?.message)} id="c-msg">
         <textarea id="c-msg" rows={5} aria-invalid={!!errors.message} {...register('message')} />
       </Field>
       <button type="submit" className={styles.submit} disabled={isSubmitting} aria-busy={isSubmitting}>
-        {isSubmitting ? 'Sending…' : 'Send message'}
+        {isSubmitting ? t('contactForm.sending') : t('contactForm.send')}
       </button>
     </form>
   );

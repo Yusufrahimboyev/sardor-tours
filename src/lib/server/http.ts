@@ -1,6 +1,8 @@
 import 'server-only';
 import { NextResponse } from 'next/server';
 import type { ZodError } from 'zod';
+import type { Locale } from '@/i18n/config';
+import { getMessages, getT } from '@/i18n/messages';
 
 const WINDOW_MS = 60_000;
 const hits = new Map<string, number[]>();
@@ -25,11 +27,17 @@ export function jsonError(status: number, error: string, fieldErrors?: Record<st
   return NextResponse.json({ ok: false, error, fieldErrors }, { status });
 }
 
-export function zodFieldErrors(err: ZodError): Record<string, string> {
+/**
+ * Field → message. Schema messages are `ErrorKey`s, translated into `lang`;
+ * anything else (zod's built-in messages) becomes the generic error.
+ */
+export function zodFieldErrors(err: ZodError, lang: Locale): Record<string, string> {
+  const t = getT(lang);
+  const known = getMessages(lang).client.errors as Record<string, string>;
   const out: Record<string, string> = {};
   for (const issue of err.issues) {
     const key = issue.path.join('.') || 'form';
-    out[key] ??= issue.message;
+    out[key] ??= t(`client.errors.${issue.message in known ? issue.message : 'generic'}`);
   }
   return out;
 }

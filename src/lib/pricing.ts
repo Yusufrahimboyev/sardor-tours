@@ -1,4 +1,7 @@
 import type { TourOption, TourOptionBase } from '@/data/tours';
+import type { Locale } from '@/i18n/config';
+import { formatPrice } from '@/i18n/format';
+import type { T } from '@/i18n/translate';
 
 export type Quantities = Record<string, number>;
 
@@ -39,7 +42,8 @@ export function quote(tour: { options: (TourOptionBase & { label?: string })[] }
   return { lines, total: lines.reduce((s, l) => s + l.subtotal, 0), guestUnits };
 }
 
-export function optionPriceLabel(o: TourOption): string {
-  if (o.free || o.price === 0) return o.unit === 'included' ? 'Included' : 'Free';
-  return `£${o.price}${o.unit ? ` / ${o.unit}` : ''}`;
+/** `t` is the client translator (keys relative to `client`). */
+export function optionPriceLabel(o: TourOption, t: T, lang: Locale): string {
+  if (o.free || o.price === 0) return o.unit === 'included' ? t('booking.included') : t('booking.free');
+  return `${formatPrice(o.price, lang)}${o.unit ? ` / ${o.unit}` : ''}`;
 }

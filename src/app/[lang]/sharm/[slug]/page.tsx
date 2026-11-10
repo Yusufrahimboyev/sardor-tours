@@ -314,14 +314,14 @@ export default async function TourPage({ params }: Params) {
               </a>
             </div>
             <div className={styles.sideBody}>
-              <BookingForm lang={lang} tour={tour} />
+              <BookingForm tour={tour} />
             </div>
           </div>
         </aside>
       </div>
 
       <Footer lang={lang} tone="light" />
-      <BookingLauncher lang={lang} tour={tour} oldPrice={oldPrice} />
+      <BookingLauncher tour={tour} oldPrice={oldPrice} />
       <SupportWidget />
     </div>
   );
