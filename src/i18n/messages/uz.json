@@ -115,7 +115,7 @@
       },
       "cancel": {
         "title": "Bepul bekor qilish",
-        "text": "Rejalar oʻzgardimi? Tur boshlanishidan 24 soat oldingacha bepul bekor qiling."
+        "text": "Rejalar oʻzgardimi? Tur boshlanishidan 24 soatdan koʻproq vaqt oldin bepul bekor qiling."
       },
       "support": {
         "title": "24/7 yordam",
@@ -232,7 +232,7 @@
         },
         {
           "title": "Bepul bekor qilish",
-          "text": "Turdan 24 soat oldingacha bepul bekor qilish"
+          "text": "Turdan 24 soatdan koʻproq vaqt oldin bepul bekor qilish"
         }
       ]
     },
@@ -322,7 +322,7 @@
       "big2": "oldindan",
       "before": "3 daqiqada onlayn bron qiling. ",
       "bold": "Mehmonxonadan transfer kiritilgan",
-      "after": ", 24 soat oldingacha bepul bekor qilish."
+      "after": ", boshlanishidan 24 soatdan koʻproq vaqt oldin bepul bekor qilish."
     },
     "cta": {
       "heading": "Unutilmas kunga tayyormisiz?",
@@ -362,7 +362,7 @@
       "totalPayDay": "Jami — tur kuni toʻlanadi",
       "whatsappCta": "WhatsApp orqali tezroq tasdiqlash",
       "browse": "Boshqa turlarni koʻrish",
-      "changeNote": "Biror narsani oʻzgartirish kerakmi? Bron raqamingizni WhatsApp orqali yuboring. Turdan 24 soat oldingacha bepul bekor qilish mumkin — batafsil:",
+      "changeNote": "Biror narsani oʻzgartirish kerakmi? Bron raqamingizni WhatsApp orqali yuboring. Turdan 24 soatdan koʻproq vaqt oldin bepul bekor qilish mumkin — batafsil:",
       "terms": "Shartlar va qoidalar"
     }
   },
@@ -430,7 +430,7 @@
       },
       {
         "title": "Bepul bekor qilish",
-        "text": "Rejalar oʻzgardimi? Boshlanishidan 24 soat oldingacha bepul bekor qiling."
+        "text": "Rejalar oʻzgardimi? Boshlanishidan 24 soatdan koʻproq vaqt oldin bepul bekor qiling."
       },
       {
         "title": "Oson bron",
