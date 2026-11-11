@@ -2667,878 +2667,878 @@
     }
   },
   "cairo-pyramids-by-bus": {
-    "name": "Cairo & Pyramids Day Trip by Coach",
-    "title": "Cairo & Pyramids Day Trip from Sharm El Sheikh by Bus",
-    "categoryLabel": "Historical",
-    "duration": "26 hours",
-    "detailDuration": "26 hours",
-    "schedule": "Daily",
-    "timeText": "12:00 AM (overnight departure)",
+    "name": "Однодневная экскурсия в Каир и к пирамидам на автобусе",
+    "title": "Каир и пирамиды: однодневная экскурсия из Шарм-эль-Шейха на автобусе",
+    "categoryLabel": "Исторические",
+    "duration": "26 часов",
+    "detailDuration": "26 часов",
+    "schedule": "Ежедневно",
+    "timeText": "00:00 (ночное отправление)",
     "priceUnit": null,
-    "badge": "Best Tour",
-    "excerpt": "A trip to Egypt's capital. On the itinerary: the National Museum, the Pyramids of Giza, the Sphinx and much more…",
-    "metaTitle": "Cairo & Pyramids by Bus from Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Cairo by bus: the Egyptian Museum, Pyramids of Giza, the Sphinx, lunch and a Nile cruise. Transfer and guide included. From £50. No prepayment.",
+    "badge": "Лучший тур",
+    "excerpt": "Поездка в столицу Египта. В программе: Национальный музей, пирамиды Гизы, Сфинкс и многое другое…",
+    "metaTitle": "Каир и пирамиды на автобусе из Шарм-эль-Шейха | Sardor Tours",
+    "metaDescription": "Каир на автобусе: Египетский музей, пирамиды Гизы, Сфинкс, обед и прогулка по Нилу. Трансфер и гид включены. От £50. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up — Journey to Cairo",
-        "text": "We pick you up from your hotel at the agreed time and travel by comfortable air-conditioned coach to Cairo. Departure time depends on your hotel location."
+        "title": "Заберём из отеля — поездка в Каир",
+        "text": "Мы заберём вас из отеля в согласованное время и отправимся в Каир на комфортабельном автобусе с кондиционером. Время отправления зависит от расположения вашего отеля."
       },
       {
-        "title": "The Egyptian Museum (Old Cairo Museum)",
-        "text": "Visit the Egyptian Museum, home to one of the world's largest collections of Ancient Egyptian artefacts. The exhibits cover thousands of years of history, from early dynasties to the Greco-Roman period."
+        "title": "Египетский музей (старый Каирский музей)",
+        "text": "Посетите Египетский музей с одной из крупнейших в мире коллекций древнеегипетских артефактов. Экспозиция охватывает тысячелетия истории: от ранних династий до греко-римского периода."
       },
       {
-        "title": "Pyramids of Giza & the Sphinx",
-        "text": "Explore one of the Seven Wonders of the Ancient World — the Pyramids of Giza and the Great Sphinx. Your guide will share insights about Ancient Egyptian civilisation during the visit. Entry inside the pyramids is not included but can be purchased on site."
+        "title": "Пирамиды Гизы и Сфинкс",
+        "text": "Откройте для себя одно из семи чудес Древнего мира — пирамиды Гизы и Большого Сфинкса. Во время посещения гид расскажет о цивилизации Древнего Египта. Вход внутрь пирамид не включён, но билет можно купить на месте."
       },
       {
-        "title": "Lunch at a Local Restaurant",
-        "text": "Enjoy a buffet lunch featuring traditional Egyptian dishes at a local restaurant."
+        "title": "Обед в местном ресторане",
+        "text": "Вас ждёт обед «шведский стол» с традиционными блюдами египетской кухни в местном ресторане."
       },
       {
-        "title": "Nile River Cruise (Optional)",
-        "text": "Enjoy a short cruise on the Nile, the world's longest river. The cruise is optional and costs approximately £10 per person. Guests who do not join can relax near the coach."
+        "title": "Прогулка по Нилу (по желанию)",
+        "text": "Совершите короткую прогулку по Нилу — самой длинной реке в мире. Прогулка предлагается по желанию и стоит около £10 за человека. Гости, которые не участвуют, могут отдохнуть рядом с автобусом."
       },
       {
-        "title": "Shopping Stops",
-        "text": "Visit a papyrus workshop and a perfume oil factory with optional shopping opportunities."
+        "title": "Остановки для покупок",
+        "text": "Посетите мастерскую папируса и фабрику парфюмерных масел. При желании вы сможете сделать покупки."
       },
       {
-        "title": "Return to Sharm El Sheikh",
-        "text": "After the tour, we travel back to Sharm El Sheikh by coach. The journey takes approximately 8 hours, with arrival at your hotel after midnight."
+        "title": "Возвращение в Шарм-эль-Шейх",
+        "text": "После экскурсии мы вернёмся в Шарм-эль-Шейх на автобусе. Дорога занимает около 8 часов, прибытие в отель — после полуночи."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "Professional English-speaking guide",
-      "Entrance fees to the Egyptian Museum",
-      "Entry to the Pyramids & Sphinx area",
-      "Lunch"
+      "Трансфер из отеля и обратно",
+      "Профессиональный англоговорящий гид",
+      "Входные билеты в Египетский музей",
+      "Вход на территорию пирамид и Сфинкса",
+      "Обед"
     ],
     "notIncluded": [
-      "Nile cruise (£10 per person)",
-      "Drinks during lunch",
-      "Entry inside the Great Pyramid (approx. 1500 EGP)",
-      "Camel ride at the pyramids"
+      "Прогулка по Нилу (£10 за человека)",
+      "Напитки во время обеда",
+      "Вход внутрь Великой пирамиды (около 1500 EGP)",
+      "Прогулка на верблюде у пирамид"
     ],
     "bring": [
-      "Passport",
-      "Breakfast box from your hotel",
-      "Water",
-      "Comfortable shoes and clothing"
+      "Паспорт",
+      "Завтрак с собой из отеля",
+      "Вода",
+      "Удобная обувь и одежда"
     ],
     "faq": [
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "Yes, a valid Egyptian visa is required to visit Cairo. If you did not arrange it on arrival, we can help you obtain it before the tour for £35 per passport. This service is not available for citizens of Kazakhstan and Uzbekistan."
+        "q": "Нужна ли египетская виза?",
+        "a": "Да, для поездки в Каир нужна действующая египетская виза. Если вы не оформили её по прибытии, мы можем помочь получить её до экскурсии за £35 за паспорт. Эта услуга недоступна гражданам Казахстана и Узбекистана."
       },
       {
-        "q": "How long is the drive to Cairo?",
-        "a": "The journey takes approximately 8 hours (around 500 km) via the new highway. Travel is by air-conditioned coach with toilet facilities, and the group travels in a convoy. Rest stops are included along the way."
+        "q": "Сколько длится поездка в Каир?",
+        "a": "Дорога по новой автомагистрали занимает около 8 часов (примерно 500 км). Поездка проходит на автобусе с кондиционером и туалетом, группа следует в составе колонны. По пути предусмотрены остановки для отдыха."
       },
       {
-        "q": "Is entry inside the pyramids included?",
-        "a": "No, entry inside the Great Pyramid is not included. Tickets cost approximately 1,500 EGP and can be purchased on site if you wish."
+        "q": "Вход внутрь пирамид включён?",
+        "a": "Нет, вход внутрь Великой пирамиды не включён. Билеты стоят около 1,500 EGP, при желании их можно купить на месте."
       },
       {
-        "q": "Can I book a private Cairo tour?",
-        "a": "Yes, private tours are available. You will travel in a private car or minibus with a specialist guide. The itinerary can be customised. Please contact us via WhatsApp for details."
+        "q": "Можно ли забронировать индивидуальную экскурсию в Каир?",
+        "a": "Да, доступны индивидуальные экскурсии. Вы поедете на отдельном автомобиле или микроавтобусе с профильным гидом. Программу можно адаптировать под ваши пожелания. Свяжитесь с нами в WhatsApp, чтобы узнать подробности."
       },
       {
-        "q": "What should I bring?",
-        "a": "Please bring your passport, a breakfast box from your hotel, water, comfortable clothing and shoes, and cash for personal expenses such as the Nile cruise, camel ride, or souvenirs."
+        "q": "Что взять с собой?",
+        "a": "Возьмите паспорт, завтрак с собой из отеля, воду, удобную одежду и обувь, а также наличные на личные расходы: прогулку по Нилу, катание на верблюде или сувениры."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "Yes, children can join the Cairo tour. However, please note it is a long travel day (around 16 hours total including return)."
+        "q": "Подходит ли экскурсия для детей?",
+        "a": "Да, дети могут поехать на экскурсию в Каир. Учтите, что дорога будет долгой: около 16 часов в общей сложности, включая обратный путь."
       },
       {
-        "q": "What time do we return to Sharm El Sheikh?",
-        "a": "Return is usually after midnight, depending on traffic and group timing."
+        "q": "Во сколько мы вернёмся в Шарм-эль-Шейх?",
+        "a": "Обычно возвращение происходит после полуночи. Время зависит от дорожной ситуации и расписания группы."
       },
       {
-        "q": "Is the Nile cruise included?",
-        "a": "No, the Nile cruise is optional and costs approximately £10 per person."
+        "q": "Прогулка по Нилу включена?",
+        "a": "Нет, прогулка по Нилу предлагается по желанию и стоит около £10 за человека."
       },
       {
-        "q": "Is food included during the trip?",
-        "a": "Yes, a buffet lunch is included. We also recommend bringing snacks or a breakfast box for the early departure."
+        "q": "Включено ли питание в поездке?",
+        "a": "Да, обед «шведский стол» включён. Для раннего отправления также рекомендуем взять перекус или завтрак с собой."
       },
       {
-        "q": "Is the tour tiring?",
-        "a": "This is a long but rewarding day trip. We recommend it for guests comfortable with long-distance travel."
+        "q": "Утомительна ли экскурсия?",
+        "a": "Это долгая, но насыщенная однодневная поездка. Рекомендуем её гостям, которые хорошо переносят дальние путешествия."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "О месте",
     "destinationCards": [
       {
-        "tag": "Cairo · Egypt",
-        "title": "Pyramids of Giza & the Sphinx",
-        "text": "Visit one of the Seven Wonders of the Ancient World — the Pyramids of Giza and the Great Sphinx. These iconic monuments were built over 4,500 years ago and remain the most famous symbols of Ancient Egypt.",
+        "tag": "Каир · Египет",
+        "title": "Пирамиды Гизы и Сфинкс",
+        "text": "Посетите одно из семи чудес Древнего мира — пирамиды Гизы и Большого Сфинкса. Эти знаменитые памятники построены более 4,500 лет назад и остаются самыми узнаваемыми символами Древнего Египта.",
         "tone": "sand"
       },
       {
-        "tag": "Cairo",
-        "title": "The Egyptian Museum (Tahrir Square)",
-        "text": "Discover one of the world's largest collections of Ancient Egyptian artefacts. The museum displays thousands of items from pharaonic history, including royal mummies, statues, jewellery, and everyday objects from Ancient Egypt.",
+        "tag": "Каир",
+        "title": "Египетский музей (площадь Тахрир)",
+        "text": "Откройте для себя одну из крупнейших в мире коллекций древнеегипетских артефактов. В музее представлены тысячи предметов эпохи фараонов: царские мумии, статуи, украшения и предметы повседневного быта Древнего Египта.",
         "tone": "blue"
       },
       {
-        "tag": "500 km from Sharm El Sheikh",
-        "title": "Journey to Cairo",
-        "text": "Travel by comfortable air-conditioned coach with toilet facilities. The journey takes approximately 8 hours via the new highway. Departure is overnight, and the group travels in a convoy with rest stops along the way.",
+        "tag": "В 500 км от Шарм-эль-Шейха",
+        "title": "Поездка в Каир",
+        "text": "Отправляйтесь в поездку на комфортабельном автобусе с кондиционером и туалетом. Дорога по новой автомагистрали занимает около 8 часов. Отправление — ночью, группа следует в составе колонны с остановками для отдыха.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Egyptian Visa",
-        "text": "A valid Egyptian visa is required to enter Cairo. If needed, we can arrange it before the tour for £35 per passport .",
+        "title": "Египетская виза",
+        "text": "Для въезда в Каир нужна действующая египетская виза. При необходимости мы оформим её до экскурсии за £35 за паспорт.",
         "tone": "green"
       },
       {
-        "title": "Entry inside the Pyramids",
-        "text": "Entry inside the Great Pyramid is not included in the tour price. Tickets cost approximately 1,500 EGP and can be purchased on site if you wish.",
+        "title": "Вход внутрь пирамид",
+        "text": "Вход внутрь Великой пирамиды не включён в стоимость экскурсии. Билеты стоят около 1,500 EGP, при желании их можно купить на месте.",
         "tone": "orange"
       },
       {
-        "title": "Private Tour",
-        "text": "A minibus or a car with a specialist historian guide. The programme can be tailored to your wishes — message us on WhatsApp.",
+        "title": "Индивидуальная экскурсия",
+        "text": "Микроавтобус или автомобиль с профессиональным гидом-историком. Программу можно адаптировать под ваши пожелания — напишите нам в WhatsApp.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Pyramids · the Sphinx · the Cairo Museum · a Nile cruise",
-      "line2": "Lunch, guide and transfer included — from £50",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Пирамиды · Сфинкс · Каирский музей · Прогулка по Нилу",
+      "line2": "Обед, гид и трансфер включены — от £50",
       "chips": [
-        "£0 upfront",
-        "Free cancellation",
-        "We reply fast"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "per person",
+        "label": "Ребёнок 5–9 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Cairo VIP",
-        "name": "Cairo & Pyramids by Plane"
+        "tag": "Каир VIP",
+        "name": "Каир и пирамиды на самолёте"
       },
       {
-        "tag": "Luxor",
-        "name": "Luxor — day trip"
+        "tag": "Луксор",
+        "name": "Луксор — однодневная экскурсия"
       },
       {
-        "tag": "Museum",
-        "name": "Grand Egyptian Museum"
+        "tag": "Музей",
+        "name": "Большой Египетский музей"
       },
       {
-        "tag": "Evening yacht",
-        "name": "Evening yacht cruise"
+        "tag": "Вечерняя яхта",
+        "name": "Вечерняя прогулка на яхте"
       },
       {
-        "tag": "Safari",
-        "name": "Salama Red Canyon, Dahab"
+        "tag": "Сафари",
+        "name": "Красный каньон Салама, Дахаб"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "person"
+        "label": "Ребёнок 5–9 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants 0–4 years",
+        "label": "Младенцы 0–4 лет",
         "unit": ""
       },
       {
-        "label": "Visa with service",
-        "unit": "passport"
+        "label": "Виза с оформлением",
+        "unit": "паспорт"
       },
       {
-        "label": "Coach seats",
-        "unit": "seat"
+        "label": "Места в автобусе",
+        "unit": "место"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−9%",
-      "priceText": "Transfer, lunch and entrance tickets already included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "5 activities",
-      "programText": "Pyramids, the Sphinx, the Cairo Museum, a Nile cruise and shopping. The best of Egypt in a single day.",
+      "priceText": "Трансфер, обед и входные билеты уже включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "5 активностей",
+      "programText": "Пирамиды, Сфинкс, Каирский музей, прогулка по Нилу и покупки. Всё лучшее в Египте за один день.",
       "ring": "5/5",
-      "ringLabel": "activities"
+      "ringLabel": "активности"
     }
   },
   "new-egyptian-museum": {
-    "name": "Cairo Grand Egyptian Museum & Pyramids Day Trip by Coach",
-    "title": "Grand Egyptian Museum & Pyramids Day Trip from Sharm El Sheikh",
-    "categoryLabel": "Historical",
-    "duration": "17 hours",
-    "detailDuration": "26 hours",
-    "schedule": "On request",
-    "timeText": "12:00 AM (overnight departure)",
+    "name": "Большой Египетский музей в Каире и пирамиды: однодневная экскурсия на автобусе",
+    "title": "Большой Египетский музей и пирамиды: экскурсия из Шарм-эль-Шейха",
+    "categoryLabel": "Исторические",
+    "duration": "17 часов",
+    "detailDuration": "26 часов",
+    "schedule": "По запросу",
+    "timeText": "00:00 (ночное отправление)",
     "priceUnit": null,
-    "badge": "New",
-    "excerpt": "Cairo — the Grand Egyptian Museum, the largest museum in the world. The Pyramids of Giza, the Sphinx and much more…",
-    "metaTitle": "Grand Egyptian Museum & Pyramids Day Trip from Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "New Cairo museum: the Grand Egyptian Museum, the Giza Pyramids, the Sphinx, lunch and a Nile cruise. Transfer and guide included. From £90. No prepayment.",
+    "badge": "Новинка",
+    "excerpt": "Каир — Большой Египетский музей, крупнейший музей в мире. Пирамиды Гизы, Сфинкс и многое другое…",
+    "metaTitle": "Большой Египетский музей и пирамиды из Шарм-эль-Шейха | Sardor Tours",
+    "metaDescription": "Новый музей Каира: Большой Египетский музей, пирамиды Гизы, Сфинкс, обед и прогулка по Нилу. Трансфер и гид включены. От £90. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We'll collect you from your hotel in the evening and travel to Cairo in a comfortable air-conditioned coach. Departure time depends on your hotel location."
+        "title": "Заберём из отеля",
+        "text": "Мы заберём вас из отеля вечером и отправимся в Каир на комфортабельном автобусе с кондиционером. Время отправления зависит от расположения вашего отеля."
       },
       {
-        "title": "Grand Egyptian Museum",
-        "text": "Explore Egypt's newest and largest museum, home to more than 100,000 ancient artefacts. Discover the complete Tutankhamun collection, the impressive statue of Ramses II and modern interactive exhibitions overlooking the Giza Pyramids."
+        "title": "Большой Египетский музей",
+        "text": "Откройте для себя новейший и крупнейший музей Египта, где хранится более 100,000 древних артефактов. Вас ждут полная коллекция Тутанхамона, величественная статуя Рамсеса II и современные интерактивные экспозиции с видом на пирамиды Гизы."
       },
       {
-        "title": "Giza Pyramids & the Great Sphinx",
-        "text": "Visit one of the world's most iconic archaeological sites. Learn about Ancient Egypt while exploring the Pyramids of Giza and the Great Sphinx. Entry inside the pyramids is optional and available for an additional fee."
+        "title": "Пирамиды Гизы и Большой Сфинкс",
+        "text": "Посетите один из самых известных археологических памятников мира. Познакомьтесь с Древним Египтом, осматривая пирамиды Гизы и Большого Сфинкса. Вход внутрь пирамид — по желанию, за дополнительную плату."
       },
       {
-        "title": "Buffet Lunch",
-        "text": "Enjoy a buffet lunch at a local restaurant featuring a selection of Egyptian dishes."
+        "title": "Обед «шведский стол»",
+        "text": "Вас ждёт обед «шведский стол» с блюдами египетской кухни в местном ресторане."
       },
       {
-        "title": "Optional Nile Cruise",
-        "text": "Relax on an optional cruise along the Nile. Guests who prefer not to join can wait comfortably until the group returns."
+        "title": "Прогулка по Нилу по желанию",
+        "text": "Отдохните на прогулке по Нилу, которая предлагается по желанию. Гости, которые не участвуют, могут с комфортом подождать возвращения группы."
       },
       {
-        "title": "Shopping Stops",
-        "text": "Visit a traditional papyrus workshop and an essential oils factory, where you'll learn about local crafts and products."
+        "title": "Остановки для покупок",
+        "text": "Посетите традиционную мастерскую папируса и фабрику эфирных масел, где вы познакомитесь с местными ремёслами и продукцией."
       },
       {
-        "title": "Return to Sharm El Sheikh",
-        "text": "After the tour, return to Sharm El Sheikh by coach. The journey takes approximately eight hours, depending on road conditions and checkpoints."
+        "title": "Возвращение в Шарм-эль-Шейх",
+        "text": "После экскурсии вы вернётесь в Шарм-эль-Шейх на автобусе. Дорога занимает около восьми часов в зависимости от дорожных условий и прохождения контрольных пунктов."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "Professional English-speaking guide",
-      "Entrance tickets to the Grand Egyptian Museum",
-      "Entrance tickets to the Giza Pyramids & Sphinx site",
-      "Buffet lunch"
+      "Трансфер из отеля и обратно",
+      "Профессиональный англоговорящий гид",
+      "Входные билеты в Большой Египетский музей",
+      "Входные билеты на территорию пирамид Гизы и Сфинкса",
+      "Обед «шведский стол»"
     ],
     "notIncluded": [
-      "Optional Nile cruise (approximately £10)",
-      "Drinks during lunch",
-      "Entry inside the Giza Pyramids (1,500 EGP)",
-      "Camel ride"
+      "Прогулка по Нилу по желанию (около £10)",
+      "Напитки во время обеда",
+      "Вход внутрь пирамид Гизы (1,500 EGP)",
+      "Прогулка на верблюде"
     ],
     "bring": [
-      "Passport",
-      "Breakfast box from your hotel",
-      "Drinking water",
-      "Comfortable shoes and clothing"
+      "Паспорт",
+      "Завтрак с собой из отеля",
+      "Питьевая вода",
+      "Удобная обувь и одежда"
     ],
     "faq": [
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "Yes. A valid Egyptian visa is required to travel to Cairo. If you don't already have one, we can arrange it before the tour for £35 per passport."
+        "q": "Нужна ли египетская виза?",
+        "a": "Да. Для поездки в Каир нужна действующая египетская виза. Если у вас её ещё нет, мы оформим её до экскурсии за £35 за паспорт."
       },
       {
-        "q": "How long is the journey?",
-        "a": "The drive takes approximately eight hours (500 km), depending on checkpoints and traffic. The coach is air-conditioned and includes scheduled rest stops."
+        "q": "Сколько времени занимает дорога?",
+        "a": "Дорога занимает около восьми часов (500 км) в зависимости от прохождения контрольных пунктов и дорожной ситуации. В автобусе есть кондиционер, по пути предусмотрены остановки для отдыха."
       },
       {
-        "q": "Is entry inside the pyramids included?",
-        "a": "No. Entry inside the Giza Pyramids is optional and costs 1,500 EGP. Tickets can be purchased on site."
+        "q": "Вход внутрь пирамид включён?",
+        "a": "Нет. Вход внутрь пирамид Гизы — по желанию, стоимость составляет 1,500 EGP. Билеты можно купить на месте."
       },
       {
-        "q": "Is the Nile cruise included?",
-        "a": "No. The Nile cruise is an optional activity available for approximately £10 per person."
+        "q": "Прогулка по Нилу включена?",
+        "a": "Нет. Прогулка по Нилу предлагается по желанию и стоит около £10 за человека."
       },
       {
-        "q": "Can I book a private tour?",
-        "a": "Yes. Private tours with a dedicated guide and private vehicle are available. Contact us on WhatsApp for details."
+        "q": "Можно ли забронировать индивидуальную экскурсию?",
+        "a": "Да. Доступны индивидуальные экскурсии с личным гидом и отдельным автомобилем. Свяжитесь с нами в WhatsApp, чтобы узнать подробности."
       },
       {
-        "q": "What should I bring?",
-        "a": "Bring your passport, a breakfast box from your hotel, comfortable shoes, drinking water and cash for optional activities or personal expenses."
+        "q": "Что взять с собой?",
+        "a": "Возьмите паспорт, завтрак с собой из отеля, удобную обувь, питьевую воду и наличные на дополнительные развлечения или личные расходы."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "Cairo · Egypt",
-        "title": "Grand Egyptian Museum",
-        "text": "Explore Egypt's newest museum, featuring more than 100,000 artefacts, the complete Tutankhamun collection and spectacular views of the Giza Pyramids.",
+        "tag": "Каир · Египет",
+        "title": "Большой Египетский музей",
+        "text": "Откройте для себя новейший музей Египта: более 100,000 артефактов, полная коллекция Тутанхамона и захватывающий вид на пирамиды Гизы.",
         "tone": "blue"
       },
       {
-        "tag": "Giza",
-        "title": "Pyramids & the Great Sphinx",
-        "text": "Visit one of the world's most famous archaeological sites and discover monuments that have stood for more than 4,500 years.",
+        "tag": "Гиза",
+        "title": "Пирамиды и Большой Сфинкс",
+        "text": "Посетите один из самых известных археологических памятников мира и откройте для себя сооружения, которые стоят уже более 4,500 лет.",
         "tone": "sand"
       },
       {
-        "tag": "500 km from Sharm El Sheikh",
-        "title": "Comfortable Coach Journey",
-        "text": "Travel in an air-conditioned coach with scheduled rest stops and enjoy a full day exploring Cairo's most iconic landmarks.",
+        "tag": "В 500 км от Шарм-эль-Шейха",
+        "title": "Комфортная поездка на автобусе",
+        "text": "Отправляйтесь в поездку на автобусе с кондиционером и остановками для отдыха. Впереди целый день знакомства с самыми известными достопримечательностями Каира.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Egyptian Visa Required",
-        "text": "A valid Egyptian visa is necessary for this tour. We can arrange one before departure if needed.",
+        "title": "Требуется египетская виза",
+        "text": "Для этой экскурсии нужна действующая египетская виза. При необходимости мы оформим её до отправления.",
         "tone": "green"
       },
       {
-        "title": "Entry Inside the Pyramids",
-        "text": "Tickets are available on site for guests who wish to explore the interior.",
+        "title": "Вход внутрь пирамид",
+        "text": "Гости, которые хотят осмотреть пирамиды изнутри, могут купить билеты на месте.",
         "tone": "orange"
       },
       {
-        "title": "Optional Nile Cruise",
-        "text": "Add a relaxing cruise on the Nile to complete your Cairo experience.",
+        "title": "Прогулка по Нилу по желанию",
+        "text": "Дополните знакомство с Каиром спокойной прогулкой по Нилу.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "The New Grand Museum · the Pyramids · the Sphinx · a Nile cruise",
-      "line2": "Lunch, guide and transfer included — from £90",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Новый Большой Египетский музей · Пирамиды · Сфинкс · Прогулка по Нилу",
+      "line2": "Обед, гид и трансфер включены — от £90",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children ages 5–9",
-        "unit": "per person",
+        "label": "Ребёнок 5–9 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids (by Coach)"
+        "tag": "Каир",
+        "name": "Каир и пирамиды на автобусе"
       },
       {
-        "tag": "Cairo VIP",
-        "name": "Cairo & Pyramids (by Plane)"
+        "tag": "Каир VIP",
+        "name": "Каир и пирамиды на самолёте"
       },
       {
-        "tag": "Luxor",
-        "name": "Luxor — Day Trip"
+        "tag": "Луксор",
+        "name": "Луксор — однодневная экскурсия"
       },
       {
-        "tag": "Glass Bottom",
-        "name": "Glass-Bottom Boat Trip"
+        "tag": "Лодка с прозрачным дном",
+        "name": "Прогулка на лодке с прозрачным дном"
       },
       {
-        "tag": "Safari",
-        "name": "Salama Red Canyon"
+        "tag": "Сафари",
+        "name": "Красный каньон Салама"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children ages 5–9",
-        "unit": "person"
+        "label": "Ребёнок 5–9 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants ages 0–4",
+        "label": "Младенцы 0–4 лет",
         "unit": ""
       },
       {
-        "label": "Visa handling service",
-        "unit": "passport"
+        "label": "Услуга оформления визы",
+        "unit": "паспорт"
       },
       {
-        "label": "Coach seats",
-        "unit": "seat"
+        "label": "Места в автобусе",
+        "unit": "место"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−10%",
-      "priceText": "Transfer, lunch and entry tickets are already included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "5 stops",
-      "programText": "The New Grand Museum, the Pyramids, the Sphinx, the Nile and shopping. The best of Egypt in a single day.",
+      "priceText": "Трансфер, обед и входные билеты уже включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "5 остановок",
+      "programText": "Новый Большой Египетский музей, пирамиды, Сфинкс, Нил и покупки. Всё лучшее в Египте за один день.",
       "ring": "5/5",
-      "ringLabel": "stops"
+      "ringLabel": "остановки"
     }
   },
   "cairo-pyramids-by-plane": {
-    "name": "Cairo & Pyramids Day Trip by Plane",
-    "title": "Cairo & Pyramids Day Trip from Sharm El Sheikh by Plane",
-    "categoryLabel": "Historical",
-    "duration": "17 hours",
-    "detailDuration": "17 hours",
-    "schedule": "On request",
-    "timeText": "4:00 AM – 9:00 PM",
+    "name": "Однодневная экскурсия в Каир и к пирамидам на самолёте",
+    "title": "Каир и пирамиды: однодневная экскурсия из Шарм-эль-Шейха на самолёте",
+    "categoryLabel": "Исторические",
+    "duration": "17 часов",
+    "detailDuration": "17 часов",
+    "schedule": "По запросу",
+    "timeText": "4:00 – 21:00",
     "priceUnit": null,
-    "badge": "Premium",
-    "excerpt": "A trip to Egypt's capital. On the itinerary: the Grand Egyptian Museum, the Pyramids of Giza, the Sphinx and much more…",
-    "metaTitle": "Cairo & Pyramids by Plane from Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Cairo by plane: the Grand Egyptian Museum, Giza Pyramids, the Sphinx, lunch and a Nile cruise. Flight and guide included. From £260. No prepayment.",
+    "badge": "Премиум",
+    "excerpt": "Поездка в столицу Египта. В программе: Большой Египетский музей, пирамиды Гизы, Сфинкс и многое другое…",
+    "metaTitle": "Каир и пирамиды на самолёте из Шарм-эль-Шейха | Sardor Tours",
+    "metaDescription": "Каир на самолёте: Большой Египетский музей, пирамиды Гизы, Сфинкс, обед и прогулка по Нилу. Перелёт и гид включены. От £260. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "Early in the morning, we'll pick you up from your hotel and transfer you to Sharm El Sheikh Airport. Pick-up time depends on your hotel location."
+        "title": "Заберём из отеля",
+        "text": "Рано утром мы заберём вас из отеля и отвезём в аэропорт Шарм-эль-Шейха. Время трансфера зависит от расположения вашего отеля."
       },
       {
-        "title": "Flight to Cairo",
-        "text": "Enjoy a short flight from Sharm El Sheikh to Cairo, with a flight time of approximately 1 hour."
+        "title": "Перелёт в Каир",
+        "text": "Вас ждёт короткий перелёт из Шарм-эль-Шейха в Каир продолжительностью около 1 часа."
       },
       {
-        "title": "The Grand Egyptian Museum",
-        "text": "Explore Egypt's newest museum and the world's largest archaeological museum, featuring modern galleries, interactive exhibits, and the complete Tutankhamun collection, with views of the Pyramids of Giza."
+        "title": "Большой Египетский музей",
+        "text": "Откройте для себя новейший музей Египта и крупнейший археологический музей мира. Вас ждут современные галереи, интерактивные экспонаты, полная коллекция Тутанхамона и вид на пирамиды Гизы."
       },
       {
-        "title": "Pyramids of Giza & the Great Sphinx",
-        "text": "Visit Egypt's most iconic landmarks — the Pyramids of Giza and the Great Sphinx. Your guide will share fascinating insights into Ancient Egyptian history and civilisation. Entry inside the pyramids is optional and can be purchased on site."
+        "title": "Пирамиды Гизы и Большой Сфинкс",
+        "text": "Посетите самые узнаваемые достопримечательности Египта — пирамиды Гизы и Большого Сфинкса. Гид расскажет увлекательные факты об истории и цивилизации Древнего Египта. Вход внутрь пирамид — по желанию, билеты можно купить на месте."
       },
       {
-        "title": "Lunch at a Local Restaurant",
-        "text": "Enjoy a buffet lunch featuring a selection of Egyptian dishes."
+        "title": "Обед в местном ресторане",
+        "text": "Вас ждёт обед «шведский стол» с блюдами египетской кухни."
       },
       {
-        "title": "Optional Nile River Cruise",
-        "text": "Take an optional cruise on the Nile River for approximately £10–£20 per person. Guests who prefer not to join can relax nearby until the group returns."
+        "title": "Прогулка по Нилу по желанию",
+        "text": "При желании отправляйтесь на прогулку по Нилу примерно за £10–£20 за человека. Гости, которые не участвуют, могут отдохнуть поблизости до возвращения группы."
       },
       {
-        "title": "Shopping Stops",
-        "text": "Visit a papyrus workshop and a perfume oil factory, with time for optional shopping."
+        "title": "Остановки для покупок",
+        "text": "Посетите мастерскую папируса и фабрику парфюмерных масел. При желании у вас будет время для покупок."
       },
       {
-        "title": "Return to Sharm El Sheikh",
-        "text": "After the tour, transfer to Cairo Airport for your return flight to Sharm El Sheikh. Upon arrival, you'll be transferred back to your hotel."
+        "title": "Возвращение в Шарм-эль-Шейх",
+        "text": "После экскурсии вас отвезут в аэропорт Каира для обратного перелёта в Шарм-эль-Шейх. По прибытии вас ждёт трансфер в отель."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "Flight tickets",
-      "Professional English-speaking guide",
-      "Entrance fee to the Grand Egyptian Museum (GEM)",
-      "Entrance fee to the Giza Pyramids & Sphinx Area",
-      "Lunch"
+      "Трансфер из отеля и обратно",
+      "Авиабилеты",
+      "Профессиональный англоговорящий гид",
+      "Входной билет в Большой Египетский музей (БЕМ)",
+      "Входной билет на территорию пирамид Гизы и Сфинкса",
+      "Обед"
     ],
     "notIncluded": [
-      "Optional Nile River cruise",
-      "Drinks during lunch",
-      "Entry inside the Giza Pyramids (approximately 1,500 EGP)",
-      "Camel ride at the pyramids"
+      "Прогулка по Нилу по желанию",
+      "Напитки во время обеда",
+      "Вход внутрь пирамид Гизы (около 1,500 EGP)",
+      "Прогулка на верблюде у пирамид"
     ],
     "bring": [
-      "Passport",
-      "Breakfast box from your hotel",
-      "Comfortable shoes and clothing",
-      "Cash for optional activities and personal expenses"
+      "Паспорт",
+      "Завтрак с собой из отеля",
+      "Удобная обувь и одежда",
+      "Наличные на дополнительные развлечения и личные расходы"
     ],
     "faq": [
       {
-        "q": "Why should I book 3–4 days in advance?",
-        "a": "Flight tickets must be purchased in advance and issued in your name. Full payment is required to confirm the booking. You can visit our office or arrange payment through our representative, who can meet you at your hotel."
+        "q": "Почему нужно бронировать за 3–4 дня?",
+        "a": "Авиабилеты нужно заранее купить и оформить на ваше имя. Для подтверждения бронирования требуется полная оплата. Вы можете посетить наш офис или договориться об оплате через нашего представителя, который встретится с вами в отеле."
       },
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "Yes, a valid Egyptian visa is required to visit Cairo. If you did not obtain one on arrival, we can arrange it before the tour for £35 per passport. This service is not available for citizens of Kazakhstan and Uzbekistan."
+        "q": "Нужна ли египетская виза?",
+        "a": "Да, для поездки в Каир нужна действующая египетская виза. Если вы не получили её по прибытии, мы оформим её до экскурсии за £35 за паспорт. Эта услуга недоступна гражданам Казахстана и Узбекистана."
       },
       {
-        "q": "Which museum will I visit?",
-        "a": "This tour visits the Grand Egyptian Museum (GEM) – Egypt's newest museum, featuring the complete Tutankhamun collection, interactive exhibits, and views of the Pyramids of Giza."
+        "q": "Какой музей я посещу?",
+        "a": "В этой экскурсии вы посетите Большой Египетский музей (БЕМ) — новейший музей Египта с полной коллекцией Тутанхамона, интерактивными экспонатами и видом на пирамиды Гизы."
       },
       {
-        "q": "How long is the flight to Cairo?",
-        "a": "The flight from Sharm El Sheikh to Cairo takes approximately 1 hour each way, making it the fastest and most comfortable way to visit Cairo."
+        "q": "Сколько длится перелёт в Каир?",
+        "a": "Перелёт из Шарм-эль-Шейха в Каир занимает около 1 часа в каждую сторону. Это самый быстрый и комфортный способ посетить Каир."
       },
       {
-        "q": "Is entry inside the pyramids included?",
-        "a": "No, entry inside the Giza Pyramids is not included in the tour price. Tickets can be purchased on site and currently cost approximately 1,500 EGP."
+        "q": "Вход внутрь пирамид включён?",
+        "a": "Нет, вход внутрь пирамид Гизы не включён в стоимость экскурсии. Билеты можно купить на месте, сейчас они стоят около 1,500 EGP."
       },
       {
-        "q": "Is the Nile cruise included?",
-        "a": "No, the Nile River cruise is optional and available for an additional fee of approximately £10–£20 per person."
+        "q": "Прогулка по Нилу включена?",
+        "a": "Нет, прогулка по Нилу предлагается по желанию за дополнительную плату около £10–£20 за человека."
       },
       {
-        "q": "Can children join the tour?",
-        "a": "Yes, the tour is suitable for families. Children aged 2–10 years benefit from a reduced child rate. Infants under 2 years old travel free of charge without a separate airline seat."
+        "q": "Можно ли поехать с детьми?",
+        "a": "Да, экскурсия подходит для семей. Для детей 2–10 лет действует льготный детский тариф. Младенцы до 2 лет путешествуют бесплатно без отдельного места в самолёте."
       },
       {
-        "q": "What should I bring?",
-        "a": "Please bring your passport, a breakfast box from your hotel, comfortable shoes and clothing, and cash for optional activities and personal expenses."
+        "q": "Что взять с собой?",
+        "a": "Возьмите паспорт, завтрак с собой из отеля, удобную обувь и одежду, а также наличные на дополнительные развлечения и личные расходы."
       },
       {
-        "q": "Do I need to pay in advance?",
-        "a": "Yes. Because flight tickets are purchased and issued in your name, full payment is required to confirm the booking."
+        "q": "Нужно ли платить заранее?",
+        "a": "Да. Поскольку авиабилеты покупаются и оформляются на ваше имя, для подтверждения бронирования требуется полная оплата."
       },
       {
-        "q": "What time will I return to Sharm El Sheikh?",
-        "a": "Return times vary depending on the flight schedule, but most guests arrive back at their hotel in the evening."
+        "q": "Во сколько я вернусь в Шарм-эль-Шейх?",
+        "a": "Время возвращения зависит от расписания рейсов, но большинство гостей прибывают в отель вечером."
       },
       {
-        "q": "Is this tour better than travelling by coach?",
-        "a": "If you prefer to spend more time sightseeing and less time travelling, the flight option is the most comfortable choice. The journey takes around one hour each way, compared with approximately eight hours by coach."
+        "q": "Этот вариант лучше поездки на автобусе?",
+        "a": "Если вы хотите больше времени посвятить достопримечательностям и меньше — дороге, перелёт станет самым комфортным выбором. Путь занимает около одного часа в каждую сторону, тогда как поездка на автобусе — примерно восемь часов."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "О месте",
     "destinationCards": [
       {
-        "tag": "Cairo · Egypt",
-        "title": "Giza Pyramids & the Great Sphinx",
-        "text": "Visit one of the Seven Wonders of the Ancient World — the Pyramids of Giza and the Great Sphinx. Built over 4,500 years ago, they remain the most iconic symbols of Ancient Egypt.",
+        "tag": "Каир · Египет",
+        "title": "Пирамиды Гизы и Большой Сфинкс",
+        "text": "Посетите одно из семи чудес Древнего мира — пирамиды Гизы и Большого Сфинкса. Построенные более 4,500 лет назад, они остаются самыми узнаваемыми символами Древнего Египта.",
         "tone": "sand"
       },
       {
-        "tag": "Cairo — Grand Egyptian Museum",
-        "title": "The Grand Egyptian Museum",
-        "text": "Egypt's newest museum and the world's largest archaeological museum, home to the complete Tutankhamun collection, modern galleries, interactive exhibits, and views of the Pyramids of Giza.",
+        "tag": "Каир — Большой Египетский музей",
+        "title": "Большой Египетский музей",
+        "text": "Новейший музей Египта и крупнейший археологический музей мира: полная коллекция Тутанхамона, современные галереи, интерактивные экспонаты и вид на пирамиды Гизы.",
         "tone": "blue"
       },
       {
-        "tag": "By plane",
-        "title": "Just 1 hour from Sharm El Sheikh",
-        "text": "Travel to Cairo by plane in approximately 1 hour. Flight tickets are included, allowing you to spend more time exploring and less time travelling.",
+        "tag": "На самолёте",
+        "title": "Всего 1 час от Шарм-эль-Шейха",
+        "text": "Доберитесь до Каира на самолёте примерно за 1 час. Авиабилеты включены, поэтому вы сможете больше времени посвятить достопримечательностям и меньше — дороге.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Book 3–4 Days in Advance",
-        "text": "Flight tickets are purchased and issued in your name before the tour. Full payment is required to confirm your booking.",
+        "title": "Бронируйте за 3–4 дня",
+        "text": "Авиабилеты покупаются и оформляются на ваше имя до экскурсии. Для подтверждения бронирования требуется полная оплата.",
         "tone": "green"
       },
       {
-        "title": "Egyptian Visa",
-        "text": "A valid Egyptian visa is required to visit Cairo. If needed, we can arrange it before the tour for £35 per passport .",
+        "title": "Египетская виза",
+        "text": "Для поездки в Каир нужна действующая египетская виза. При необходимости мы оформим её до экскурсии за £35 за паспорт.",
         "tone": "orange"
       },
       {
-        "title": "Entry Inside the Pyramids",
-        "text": "Entry inside the Giza Pyramids is optional and not included in the tour price. Tickets can be purchased on site (approximately 1,500 EGP).",
+        "title": "Вход внутрь пирамид",
+        "text": "Вход внутрь пирамид Гизы — по желанию, он не включён в стоимость экскурсии. Билеты можно купить на месте (около 1,500 EGP).",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Pyramids · Sphinx · Museum · Nile · Flight",
-      "line2": "Flight tickets, guide and lunch included — from £260",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Пирамиды · Сфинкс · Музей · Нил · Перелёт",
+      "line2": "Авиабилеты, гид и обед включены — от £260",
       "chips": [
-        "We reply fast"
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children ages 2–10",
-        "unit": "per person",
+        "label": "Ребёнок 2–10 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Каир",
+        "name": "Каир и пирамиды на автобусе"
       },
       {
-        "tag": "Luxor",
-        "name": "Luxor by Plane"
+        "tag": "Луксор",
+        "name": "Луксор на самолёте"
       },
       {
-        "tag": "Sinai",
-        "name": "Mount Moses & St. Catherine Monastery"
+        "tag": "Синай",
+        "name": "Гора Моисея и монастырь Святой Екатерины"
       },
       {
-        "tag": "Parasailing",
-        "name": "Parasailing"
+        "tag": "Парасейлинг",
+        "name": "Парасейлинг"
       },
       {
-        "tag": "Buggy",
-        "name": "Buggy Safari & Camel Ride"
+        "tag": "Багги",
+        "name": "Сафари на багги и прогулка на верблюде"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children ages 2–10",
-        "unit": "person"
+        "label": "Ребёнок 2–10 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants under 2 years",
+        "label": "Младенцы до 2 лет",
         "unit": ""
       },
       {
-        "label": "Visa with service",
-        "unit": "passport"
+        "label": "Виза с оформлением",
+        "unit": "паспорт"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−9%",
-      "priceText": "Transfer, lunch and entry tickets already included. Best price.",
-      "programKicker": "Day programme",
-      "programNum": "6 stops",
-      "programText": "Flight, Pyramids, Sphinx, your the Grand Egyptian Museum, the Nile and shopping. All of Cairo in 17 hours.",
+      "priceText": "Трансфер, обед и входные билеты уже включены. Лучшая цена.",
+      "programKicker": "Программа дня",
+      "programNum": "6 остановок",
+      "programText": "Перелёт, пирамиды, Сфинкс, Большой Египетский музей, Нил и покупки. Весь Каир за 17 часов.",
       "ring": "6/6",
-      "ringLabel": "stops"
+      "ringLabel": "остановки"
     }
   },
   "luxor-day-trip": {
-    "name": "Luxor Day Trip by Plane",
-    "title": "Luxor Day Trip from Sharm El Sheikh by Plane",
-    "categoryLabel": "Historical",
-    "duration": "17 hours",
-    "detailDuration": "17 hours",
-    "schedule": "On request",
-    "timeText": "4:00 AM – 9:00 PM",
+    "name": "Однодневная экскурсия в Луксор на самолёте",
+    "title": "Однодневная экскурсия в Луксор из Шарм-эль-Шейха на самолёте",
+    "categoryLabel": "Исторические",
+    "duration": "17 часов",
+    "detailDuration": "17 часов",
+    "schedule": "По запросу",
+    "timeText": "4:00 – 21:00",
     "priceUnit": null,
-    "badge": "Highly Rated",
-    "excerpt": "The ideal choice for those who want to save time and energy. On the itinerary: the Egyptian Museum (new or old), the Giza complex — pyramids, the Sphinx and much more…",
-    "metaTitle": "Luxor Day Trip from Sharm El Sheikh by Plane | Sardor Tours",
-    "metaDescription": "Luxor by plane: Valley of the Kings, Karnak, lunch, Nile cruise. Flight and guide included. From £230. No prepayment.",
+    "badge": "Высокий рейтинг",
+    "excerpt": "Идеальный выбор для тех, кто хочет сэкономить время и силы. В программе: Египетский музей (новый или старый), комплекс Гизы — пирамиды, Сфинкс и многое другое…",
+    "metaTitle": "Луксор на самолёте из Шарм-эль-Шейха: экскурсия на день | Sardor Tours",
+    "metaDescription": "Луксор на самолёте: Долина царей, Карнак, обед, прогулка по Нилу. Перелёт и гид включены. От £230. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "Early in the morning, we'll pick you up from your hotel and transfer you to Sharm El Sheikh Airport in a comfortable air-conditioned vehicle."
+        "title": "Заберём из отеля",
+        "text": "Рано утром мы заберём вас из отеля и отвезём в аэропорт Шарм-эль-Шейха на комфортабельном автомобиле с кондиционером."
       },
       {
-        "title": "Flight to Luxor",
-        "text": "Enjoy a one-hour flight to Luxor, the ancient capital of Egypt and home to some of the world's most impressive archaeological sites."
+        "title": "Перелёт в Луксор",
+        "text": "Вас ждёт часовой перелёт в Луксор — древнюю столицу Египта, где находятся одни из самых впечатляющих археологических памятников мира."
       },
       {
-        "title": "Valley of the Kings & Hatshepsut Temple",
-        "text": "Explore the Valley of the Kings and visit three royal tombs with beautifully preserved hieroglyphs. Continue to the Temple of Queen Hatshepsut and stop at the Colossi of Memnon."
+        "title": "Долина царей и храм Хатшепсут",
+        "text": "Исследуйте Долину царей и посетите три царские гробницы с прекрасно сохранившимися иероглифами. Затем отправляйтесь в храм царицы Хатшепсут и остановитесь у колоссов Мемнона."
       },
       {
-        "title": "Karnak Temple",
-        "text": "Visit the largest temple complex in Ancient Egypt, famous for its towering columns, sacred lake and remarkable history spanning more than 2,000 years."
+        "title": "Карнакский храм",
+        "text": "Посетите крупнейший храмовый комплекс Древнего Египта, знаменитый высокими колоннами, священным озером и богатой историей, которая насчитывает более 2,000 лет."
       },
       {
-        "title": "Buffet Lunch",
-        "text": "Enjoy a buffet lunch at a local restaurant featuring a selection of Egyptian dishes."
+        "title": "Обед «шведский стол»",
+        "text": "Вас ждёт обед «шведский стол» с блюдами египетской кухни в местном ресторане."
       },
       {
-        "title": "Alabaster Workshop",
-        "text": "Visit a traditional alabaster workshop and discover how local craftsmen create decorative pieces from natural stone."
+        "title": "Алебастровая мастерская",
+        "text": "Посетите традиционную алебастровую мастерскую и узнайте, как местные мастера создают декоративные изделия из натурального камня."
       },
       {
-        "title": "Optional Nile Cruise",
-        "text": "Take an optional boat trip on the Nile with a visit to Banana Island. Guests who prefer not to join can relax while the group returns."
+        "title": "Прогулка по Нилу по желанию",
+        "text": "При желании отправляйтесь на прогулку по Нилу с посещением Бананового острова. Гости, которые не участвуют, могут отдохнуть до возвращения группы."
       },
       {
-        "title": "Return Flight & Hotel Drop-off",
-        "text": "After your tour, you'll fly back to Sharm El Sheikh and be transferred to your hotel."
+        "title": "Обратный перелёт и трансфер в отель",
+        "text": "После экскурсии вы вернётесь на самолёте в Шарм-эль-Шейх, где вас ждёт трансфер в отель."
       },
       {
-        "title": "Transfer from Luxor back to Sharm El Sheikh",
-        "text": "Departure from Luxor, a 1-hour flight. Arrival at Sharm El Sheikh airport, then a comfortable transfer back to your hotel."
+        "title": "Возвращение из Луксора в Шарм-эль-Шейх",
+        "text": "Вылет из Луксора, перелёт продолжительностью 1 час. Прибытие в аэропорт Шарм-эль-Шейха, затем комфортный трансфер в отель."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "Flight tickets",
-      "Professional English-speaking guide",
-      "Entrance tickets to all attractions",
-      "Buffet lunch"
+      "Трансфер из отеля и обратно",
+      "Авиабилеты",
+      "Профессиональный англоговорящий гид",
+      "Входные билеты на все достопримечательности",
+      "Обед «шведский стол»"
     ],
     "notIncluded": [
-      "Optional Nile cruise & Banana Island (£20–25)",
-      "Drinks during lunch"
+      "Прогулка по Нилу и Банановый остров по желанию (£20–25)",
+      "Напитки во время обеда"
     ],
     "bring": [
-      "Passport",
-      "Breakfast box from your hotel",
-      "Comfortable shoes",
-      "Weather-appropriate clothing"
+      "Паспорт",
+      "Завтрак с собой из отеля",
+      "Удобная обувь",
+      "Одежда по погоде"
     ],
     "faq": [
       {
-        "q": "Why should I book 3–4 days in advance?",
-        "a": "Flight tickets are purchased in your name, so advance booking and full prepayment are required. A payment receipt is provided."
+        "q": "Почему нужно бронировать за 3–4 дня?",
+        "a": "Авиабилеты покупаются на ваше имя, поэтому необходимы предварительное бронирование и полная предоплата. Вы получите квитанцию об оплате."
       },
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "Yes. A valid Egyptian visa is required to travel to Luxor. If you didn't obtain one on arrival, we can arrange it before the tour for £35 per passport."
+        "q": "Нужна ли египетская виза?",
+        "a": "Да. Для поездки в Луксор нужна действующая египетская виза. Если вы не получили её по прибытии, мы оформим её до экскурсии за £35 за паспорт."
       },
       {
-        "q": "How long is the flight?",
-        "a": "The flight from Sharm El Sheikh to Luxor takes approximately one hour each way."
+        "q": "Сколько длится перелёт?",
+        "a": "Перелёт из Шарм-эль-Шейха в Луксор занимает около одного часа в каждую сторону."
       },
       {
-        "q": "What will I see in the Valley of the Kings?",
-        "a": "You'll visit three royal tombs decorated with ancient paintings and hieroglyphs that have survived for thousands of years."
+        "q": "Что я увижу в Долине царей?",
+        "a": "Вы посетите три царские гробницы с древними росписями и иероглифами, которые сохранились на протяжении тысячелетий."
       },
       {
-        "q": "Is the Nile cruise included?",
-        "a": "No. The cruise and Banana Island visit are optional and cost approximately £20–25 per person."
+        "q": "Прогулка по Нилу включена?",
+        "a": "Нет. Прогулка по реке и посещение Бананового острова предлагаются по желанию и стоят около £20–25 за человека."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "Yes. Children aged 2–10 receive a reduced price, while infants under 2 travel free without their own seat."
+        "q": "Подходит ли экскурсия для детей?",
+        "a": "Да. Для детей 2–10 лет действует льготная цена, а младенцы до 2 лет путешествуют бесплатно без отдельного места."
       },
       {
-        "q": "What should I bring?",
-        "a": "Bring your passport, a breakfast box from your hotel, comfortable shoes and cash for optional activities and souvenirs."
+        "q": "Что взять с собой?",
+        "a": "Возьмите паспорт, завтрак с собой из отеля, удобную обувь и наличные на дополнительные развлечения и сувениры."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "Luxor · Egypt",
-        "title": "Valley of the Kings",
-        "text": "Explore the ancient burial place of Egypt's pharaohs and discover beautifully preserved royal tombs carved into the desert mountains.",
+        "tag": "Луксор · Египет",
+        "title": "Долина царей",
+        "text": "Исследуйте древнее место захоронения египетских фараонов и откройте для себя прекрасно сохранившиеся царские гробницы, вырубленные в горах пустыни.",
         "tone": "sand"
       },
       {
-        "tag": "Luxor",
-        "title": "Karnak Temple",
-        "text": "Walk through one of the largest temple complexes ever built, featuring towering columns, sacred statues and remarkable ancient architecture.",
+        "tag": "Луксор",
+        "title": "Карнакский храм",
+        "text": "Пройдитесь по одному из крупнейших храмовых комплексов в истории: высокие колонны, священные статуи и удивительная древняя архитектура.",
         "tone": "blue"
       },
       {
-        "tag": "1-Hour Flight",
-        "title": "Fast & Comfortable Travel",
-        "text": "Reach Luxor in just one hour by plane, giving you more time to explore Egypt's most famous historical sites.",
+        "tag": "Перелёт за 1 час",
+        "title": "Быстрая и комфортная поездка",
+        "text": "Доберитесь до Луксора на самолёте всего за один час и посвятите больше времени самым известным историческим памятникам Египта.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Flight Included",
-        "text": "Return flights between Sharm El Sheikh and Luxor are included in the tour price.",
+        "title": "Перелёт включён",
+        "text": "Перелёты из Шарм-эль-Шейха в Луксор и обратно включены в стоимость экскурсии.",
         "tone": "green"
       },
       {
-        "title": "Egyptian Visa Required",
-        "text": "A valid Egyptian visa is necessary for this tour. We can arrange one before departure if needed.",
+        "title": "Требуется египетская виза",
+        "text": "Для этой экскурсии нужна действующая египетская виза. При необходимости мы оформим её до отправления.",
         "tone": "orange"
       },
       {
-        "title": "Optional Nile Cruise",
-        "text": "Add a relaxing cruise on the Nile with a visit to Banana Island for an additional fee.",
+        "title": "Прогулка по Нилу по желанию",
+        "text": "За дополнительную плату дополните поездку спокойной прогулкой по Нилу с посещением Бананового острова.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Valley of the Kings · Karnak Temple · the Nile · Alabaster",
-      "line2": "Flights, guide and lunch included — from £230",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Долина царей · Карнакский храм · Нил · Алебастр",
+      "line2": "Перелёты, гид и обед включены — от £230",
       "chips": [
-        "We reply quickly"
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "per person",
+        "label": "Ребёнок 5–9 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Каир",
+        "name": "Каир и пирамиды на автобусе"
       },
       {
-        "tag": "Cairo VIP",
-        "name": "Cairo & Pyramids by Plane"
+        "tag": "Каир VIP",
+        "name": "Каир и пирамиды на самолёте"
       },
       {
-        "tag": "Petra",
-        "name": "Petra — Jordan"
+        "tag": "Петра",
+        "name": "Петра — Иордания"
       },
       {
-        "tag": "Yacht",
-        "name": "Tiran Island Boat Trip"
+        "tag": "Яхта",
+        "name": "Морская прогулка на остров Тиран"
       },
       {
-        "tag": "Safari",
-        "name": "Super Safari"
+        "tag": "Сафари",
+        "name": "Супер-сафари"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "person"
+        "label": "Ребёнок 5–9 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants under 2 years",
+        "label": "Младенцы до 2 лет",
         "unit": ""
       },
       {
-        "label": "Visa with service",
-        "unit": "passport"
+        "label": "Виза с оформлением",
+        "unit": "паспорт"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−23%",
-      "priceText": "Transfer, lunch and entrance tickets already included. Best price.",
-      "programKicker": "Day programme",
-      "programNum": "4 stops",
-      "programText": "Valley of the Kings, Karnak Temple, the Nile, the alabaster factory. Ancient Luxor in a single day.",
+      "priceText": "Трансфер, обед и входные билеты уже включены. Лучшая цена.",
+      "programKicker": "Программа дня",
+      "programNum": "4 остановки",
+      "programText": "Долина царей, Карнакский храм, Нил, алебастровая фабрика. Древний Луксор за один день.",
       "ring": "4/4",
-      "ringLabel": "stops"
+      "ringLabel": "остановки"
     }
   },
   "petra-jordan-trip": {

@@ -2667,878 +2667,878 @@
     }
   },
   "cairo-pyramids-by-bus": {
-    "name": "Cairo & Pyramids Day Trip by Coach",
-    "title": "Cairo & Pyramids Day Trip from Sharm El Sheikh by Bus",
-    "categoryLabel": "Historical",
-    "duration": "26 hours",
-    "detailDuration": "26 hours",
-    "schedule": "Daily",
-    "timeText": "12:00 AM (overnight departure)",
+    "name": "Avtobusda Qohira va piramidalarga bir kunlik tur",
+    "title": "Sharm-ash-Shayxdan avtobusda Qohira va piramidalarga bir kunlik tur",
+    "categoryLabel": "Tarixiy",
+    "duration": "26 soat",
+    "detailDuration": "26 soat",
+    "schedule": "Har kuni",
+    "timeText": "00:00 (tunda joʻnash)",
     "priceUnit": null,
-    "badge": "Best Tour",
-    "excerpt": "A trip to Egypt's capital. On the itinerary: the National Museum, the Pyramids of Giza, the Sphinx and much more…",
-    "metaTitle": "Cairo & Pyramids by Bus from Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Cairo by bus: the Egyptian Museum, Pyramids of Giza, the Sphinx, lunch and a Nile cruise. Transfer and guide included. From £50. No prepayment.",
+    "badge": "Eng yaxshi tur",
+    "excerpt": "Misr poytaxtiga sayohat. Dasturda: Milliy muzey, Giza piramidalari, Sfinks va yana koʻp narsalar…",
+    "metaTitle": "Sharm-ash-Shayxdan avtobusda Qohira va piramidalar | Sardor Tours",
+    "metaDescription": "Avtobusda Qohira: Misr muzeyi, Giza piramidalari, Sfinks, tushlik va Nil boʻylab qayiq sayohati. Transfer va gid kiritilgan. £50 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta kiritilgan",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up — Journey to Cairo",
-        "text": "We pick you up from your hotel at the agreed time and travel by comfortable air-conditioned coach to Cairo. Departure time depends on your hotel location."
+        "title": "Mehmonxonadan olib ketamiz — Qohiraga yoʻl",
+        "text": "Sizni kelishilgan vaqtda mehmonxonangizdan olib ketamiz va konditsionerli qulay avtobusda Qohiraga boramiz. Joʻnash vaqti mehmonxonangiz joylashuviga bogʻliq."
       },
       {
-        "title": "The Egyptian Museum (Old Cairo Museum)",
-        "text": "Visit the Egyptian Museum, home to one of the world's largest collections of Ancient Egyptian artefacts. The exhibits cover thousands of years of history, from early dynasties to the Greco-Roman period."
+        "title": "Misr muzeyi (Qohiradagi eski muzey)",
+        "text": "Qadimgi Misr osori atiqalarining dunyodagi eng yirik toʻplamlaridan biri saqlanadigan Misr muzeyiga tashrif buyuring. Eksponatlar ilk sulolalardan yunon-rim davrigacha boʻlgan minglab yillik tarixni qamrab oladi."
       },
       {
-        "title": "Pyramids of Giza & the Sphinx",
-        "text": "Explore one of the Seven Wonders of the Ancient World — the Pyramids of Giza and the Great Sphinx. Your guide will share insights about Ancient Egyptian civilisation during the visit. Entry inside the pyramids is not included but can be purchased on site."
+        "title": "Giza piramidalari va Sfinks",
+        "text": "Qadimgi dunyoning yetti moʻjizasidan biri — Giza piramidalari va Buyuk Sfinksni kashf eting. Tashrif davomida gidingiz Qadimgi Misr sivilizatsiyasi haqida qiziqarli maʼlumotlar beradi. Piramidalar ichiga kirish narxga kiritilmagan, ammo chiptani joyida sotib olishingiz mumkin."
       },
       {
-        "title": "Lunch at a Local Restaurant",
-        "text": "Enjoy a buffet lunch featuring traditional Egyptian dishes at a local restaurant."
+        "title": "Mahalliy restoranda tushlik",
+        "text": "Mahalliy restoranda anʼanaviy Misr taomlaridan iborat shved stoli tushligidan bahramand boʻling."
       },
       {
-        "title": "Nile River Cruise (Optional)",
-        "text": "Enjoy a short cruise on the Nile, the world's longest river. The cruise is optional and costs approximately £10 per person. Guests who do not join can relax near the coach."
+        "title": "Nil boʻylab qayiq sayohati (ixtiyoriy)",
+        "text": "Dunyodagi eng uzun daryo — Nil boʻylab qisqa qayiq sayohatidan bahramand boʻling. Sayohat ixtiyoriy boʻlib, bir kishi uchun taxminan £10 turadi. Qatnashmaydigan mehmonlar avtobus yaqinida dam olishi mumkin."
       },
       {
-        "title": "Shopping Stops",
-        "text": "Visit a papyrus workshop and a perfume oil factory with optional shopping opportunities."
+        "title": "Xaridlar uchun toʻxtash",
+        "text": "Papirus ustaxonasi va atir moylari fabrikasiga tashrif buyuring. Xohlasangiz, xarid qilishingiz mumkin."
       },
       {
-        "title": "Return to Sharm El Sheikh",
-        "text": "After the tour, we travel back to Sharm El Sheikh by coach. The journey takes approximately 8 hours, with arrival at your hotel after midnight."
+        "title": "Sharm-ash-Shayxga qaytish",
+        "text": "Turdan keyin avtobusda Sharm-ash-Shayxga qaytamiz. Yoʻl taxminan 8 soat davom etadi, mehmonxonangizga yarim tundan keyin yetib kelasiz."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "Professional English-speaking guide",
-      "Entrance fees to the Egyptian Museum",
-      "Entry to the Pyramids & Sphinx area",
-      "Lunch"
+      "Mehmonxonadan olib ketish va qaytarib kelish",
+      "Ingliz tilida soʻzlashuvchi professional gid",
+      "Misr muzeyiga kirish chiptalari",
+      "Piramidalar va Sfinks hududiga kirish",
+      "Tushlik"
     ],
     "notIncluded": [
-      "Nile cruise (£10 per person)",
-      "Drinks during lunch",
-      "Entry inside the Great Pyramid (approx. 1500 EGP)",
-      "Camel ride at the pyramids"
+      "Nil boʻylab qayiq sayohati (bir kishi uchun £10)",
+      "Tushlik paytidagi ichimliklar",
+      "Buyuk piramida ichiga kirish (taxminan 1500 EGP)",
+      "Piramidalar yonida tuya sayri"
     ],
     "bring": [
-      "Passport",
-      "Breakfast box from your hotel",
-      "Water",
-      "Comfortable shoes and clothing"
+      "Pasport",
+      "Mehmonxonangizdan olingan nonushta toʻplami",
+      "Suv",
+      "Qulay poyabzal va kiyim"
     ],
     "faq": [
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "Yes, a valid Egyptian visa is required to visit Cairo. If you did not arrange it on arrival, we can help you obtain it before the tour for £35 per passport. This service is not available for citizens of Kazakhstan and Uzbekistan."
+        "q": "Misr vizasi kerakmi?",
+        "a": "Ha, Qohiraga borish uchun amaldagi Misr vizasi kerak. Agar uni kelganingizda rasmiylashtirmagan boʻlsangiz, turdan oldin har bir pasport uchun £35 evaziga olishga yordam bera olamiz. Bu xizmat Qozogʻiston va Oʻzbekiston fuqarolari uchun mavjud emas."
       },
       {
-        "q": "How long is the drive to Cairo?",
-        "a": "The journey takes approximately 8 hours (around 500 km) via the new highway. Travel is by air-conditioned coach with toilet facilities, and the group travels in a convoy. Rest stops are included along the way."
+        "q": "Qohiraga yoʻl qancha vaqt oladi?",
+        "a": "Yangi avtomagistral boʻylab yoʻl taxminan 8 soat (qariyb 500 km) davom etadi. Konditsioner va hojatxonasi bor avtobusda borasiz, guruh esa karvon tarkibida harakatlanadi. Yoʻlda dam olish uchun toʻxtashlar bor."
       },
       {
-        "q": "Is entry inside the pyramids included?",
-        "a": "No, entry inside the Great Pyramid is not included. Tickets cost approximately 1,500 EGP and can be purchased on site if you wish."
+        "q": "Piramidalar ichiga kirish kiritilganmi?",
+        "a": "Yoʻq, Buyuk piramida ichiga kirish kiritilmagan. Chiptalar taxminan 1,500 EGP turadi va xohlasangiz, ularni joyida sotib olishingiz mumkin."
       },
       {
-        "q": "Can I book a private Cairo tour?",
-        "a": "Yes, private tours are available. You will travel in a private car or minibus with a specialist guide. The itinerary can be customised. Please contact us via WhatsApp for details."
+        "q": "Qohiraga shaxsiy tur bron qilsam boʻladimi?",
+        "a": "Ha, shaxsiy turlar mavjud. Alohida avtomobil yoki mikroavtobusda mutaxassis gid bilan sayohat qilasiz. Dastur istaklaringizga moslashtirilishi mumkin. Tafsilotlar uchun WhatsApp orqali biz bilan bogʻlaning."
       },
       {
-        "q": "What should I bring?",
-        "a": "Please bring your passport, a breakfast box from your hotel, water, comfortable clothing and shoes, and cash for personal expenses such as the Nile cruise, camel ride, or souvenirs."
+        "q": "Oʻzim bilan nima olishim kerak?",
+        "a": "Pasportingiz, mehmonxonangizdan olingan nonushta toʻplami, suv, qulay kiyim va poyabzal hamda Nil boʻylab qayiq sayohati, tuya sayri yoki suvenirlar kabi shaxsiy xarajatlar uchun naqd pul oling."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "Yes, children can join the Cairo tour. However, please note it is a long travel day (around 16 hours total including return)."
+        "q": "Tur bolalar uchun mosmi?",
+        "a": "Ha, bolalar Qohira turida qatnashishi mumkin. Ammo yoʻlda uzoq vaqt oʻtishini hisobga oling (borish-qaytish jami taxminan 16 soat)."
       },
       {
-        "q": "What time do we return to Sharm El Sheikh?",
-        "a": "Return is usually after midnight, depending on traffic and group timing."
+        "q": "Sharm-ash-Shayxga soat nechada qaytamiz?",
+        "a": "Odatda yarim tundan keyin qaytiladi. Vaqt yoʻldagi tirbandlik va guruh jadvaliga bogʻliq."
       },
       {
-        "q": "Is the Nile cruise included?",
-        "a": "No, the Nile cruise is optional and costs approximately £10 per person."
+        "q": "Nil boʻylab qayiq sayohati kiritilganmi?",
+        "a": "Yoʻq, Nil boʻylab qayiq sayohati ixtiyoriy boʻlib, bir kishi uchun taxminan £10 turadi."
       },
       {
-        "q": "Is food included during the trip?",
-        "a": "Yes, a buffet lunch is included. We also recommend bringing snacks or a breakfast box for the early departure."
+        "q": "Sayohat davomida ovqatlanish kiritilganmi?",
+        "a": "Ha, shved stoli tushligi kiritilgan. Erta joʻnash uchun yengil yegulik yoki nonushta toʻplamini ham olishni tavsiya qilamiz."
       },
       {
-        "q": "Is the tour tiring?",
-        "a": "This is a long but rewarding day trip. We recommend it for guests comfortable with long-distance travel."
+        "q": "Tur charchatadimi?",
+        "a": "Bu uzoq davom etadigan, ammo taassurotlarga boy bir kunlik tur. Uzoq masofaga safar qilishda qiynalmaydigan mehmonlarga tavsiya qilamiz."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "Manzil haqida",
     "destinationCards": [
       {
-        "tag": "Cairo · Egypt",
-        "title": "Pyramids of Giza & the Sphinx",
-        "text": "Visit one of the Seven Wonders of the Ancient World — the Pyramids of Giza and the Great Sphinx. These iconic monuments were built over 4,500 years ago and remain the most famous symbols of Ancient Egypt.",
+        "tag": "Qohira · Misr",
+        "title": "Giza piramidalari va Sfinks",
+        "text": "Qadimgi dunyoning yetti moʻjizasidan biri — Giza piramidalari va Buyuk Sfinksga tashrif buyuring. 4,500 yildan koʻproq vaqt oldin bunyod etilgan bu mashhur yodgorliklar Qadimgi Misrning eng taniqli ramzlari boʻlib qolmoqda.",
         "tone": "sand"
       },
       {
-        "tag": "Cairo",
-        "title": "The Egyptian Museum (Tahrir Square)",
-        "text": "Discover one of the world's largest collections of Ancient Egyptian artefacts. The museum displays thousands of items from pharaonic history, including royal mummies, statues, jewellery, and everyday objects from Ancient Egypt.",
+        "tag": "Qohira",
+        "title": "Misr muzeyi (Tahrir maydoni)",
+        "text": "Qadimgi Misr osori atiqalarining dunyodagi eng yirik toʻplamlaridan birini kashf eting. Muzeyda firʼavnlar tarixiga oid minglab buyumlar, jumladan hukmdorlar mumiyolari, haykallar, zargarlik buyumlari va Qadimgi Misrning kundalik turmush ashyolari namoyish etiladi.",
         "tone": "blue"
       },
       {
-        "tag": "500 km from Sharm El Sheikh",
-        "title": "Journey to Cairo",
-        "text": "Travel by comfortable air-conditioned coach with toilet facilities. The journey takes approximately 8 hours via the new highway. Departure is overnight, and the group travels in a convoy with rest stops along the way.",
+        "tag": "Sharm-ash-Shayxdan 500 km",
+        "title": "Qohiraga yoʻl",
+        "text": "Konditsioner va hojatxonasi bor qulay avtobusda sayohat qiling. Yangi avtomagistral boʻylab yoʻl taxminan 8 soat davom etadi. Tunda joʻnaysiz, guruh karvon tarkibida harakatlanadi va yoʻlda dam olish uchun toʻxtaydi.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Egyptian Visa",
-        "text": "A valid Egyptian visa is required to enter Cairo. If needed, we can arrange it before the tour for £35 per passport .",
+        "title": "Misr vizasi",
+        "text": "Qohiraga kirish uchun amaldagi Misr vizasi kerak. Zarur boʻlsa, uni turdan oldin har bir pasport uchun £35 evaziga rasmiylashtirib beramiz.",
         "tone": "green"
       },
       {
-        "title": "Entry inside the Pyramids",
-        "text": "Entry inside the Great Pyramid is not included in the tour price. Tickets cost approximately 1,500 EGP and can be purchased on site if you wish.",
+        "title": "Piramidalar ichiga kirish",
+        "text": "Buyuk piramida ichiga kirish tur narxiga kiritilmagan. Chiptalar taxminan 1,500 EGP turadi va xohlasangiz, ularni joyida sotib olishingiz mumkin.",
         "tone": "orange"
       },
       {
-        "title": "Private Tour",
-        "text": "A minibus or a car with a specialist historian guide. The programme can be tailored to your wishes — message us on WhatsApp.",
+        "title": "Shaxsiy tur",
+        "text": "Mutaxassis tarixchi gid bilan mikroavtobus yoki avtomobilda sayohat. Dastur istaklaringizga moslashtirilishi mumkin — bizga WhatsApp orqali yozing.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Pyramids · the Sphinx · the Cairo Museum · a Nile cruise",
-      "line2": "Lunch, guide and transfer included — from £50",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Piramidalar · Sfinks · Qohira muzeyi · Nil boʻylab qayiq sayohati",
+      "line2": "Tushlik, gid va transfer kiritilgan — £50 dan",
       "chips": [
-        "£0 upfront",
-        "Free cancellation",
-        "We reply fast"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Kattalar",
+        "unit": "bir kishi uchun",
         "discount": null
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "per person",
+        "label": "Bola 5–9 yosh",
+        "unit": "bir kishi uchun",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Cairo VIP",
-        "name": "Cairo & Pyramids by Plane"
+        "tag": "Qohira VIP",
+        "name": "Samolyotda Qohira va piramidalar"
       },
       {
-        "tag": "Luxor",
-        "name": "Luxor — day trip"
+        "tag": "Luksor",
+        "name": "Luksorga bir kunlik tur"
       },
       {
-        "tag": "Museum",
-        "name": "Grand Egyptian Museum"
+        "tag": "Muzey",
+        "name": "Buyuk Misr muzeyi"
       },
       {
-        "tag": "Evening yacht",
-        "name": "Evening yacht cruise"
+        "tag": "Kechki yaxta",
+        "name": "Kechki yaxta sayohati"
       },
       {
         "tag": "Safari",
-        "name": "Salama Red Canyon, Dahab"
+        "name": "Salama Qizil kanyoni, Dahab"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Kattalar",
+        "unit": "kishi"
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "person"
+        "label": "Bola 5–9 yosh",
+        "unit": "kishi"
       },
       {
-        "label": "Infants 0–4 years",
+        "label": "Chaqaloqlar 0–4 yosh",
         "unit": ""
       },
       {
-        "label": "Visa with service",
-        "unit": "passport"
+        "label": "Rasmiylashtirish xizmati bilan viza",
+        "unit": "pasport"
       },
       {
-        "label": "Coach seats",
-        "unit": "seat"
+        "label": "Avtobusdagi oʻrinlar",
+        "unit": "oʻrin"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−9%",
-      "priceText": "Transfer, lunch and entrance tickets already included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "5 activities",
-      "programText": "Pyramids, the Sphinx, the Cairo Museum, a Nile cruise and shopping. The best of Egypt in a single day.",
+      "priceText": "Transfer, tushlik va kirish chiptalari kiritilgan. Oldindan toʻlovsiz.",
+      "programKicker": "Kun dasturi",
+      "programNum": "5 ta mashgʻulot",
+      "programText": "Piramidalar, Sfinks, Qohira muzeyi, Nil boʻylab qayiq sayohati va xaridlar. Misrning eng ajoyib maskanlari bir kunda.",
       "ring": "5/5",
-      "ringLabel": "activities"
+      "ringLabel": "mashgʻulot"
     }
   },
   "new-egyptian-museum": {
-    "name": "Cairo Grand Egyptian Museum & Pyramids Day Trip by Coach",
-    "title": "Grand Egyptian Museum & Pyramids Day Trip from Sharm El Sheikh",
-    "categoryLabel": "Historical",
-    "duration": "17 hours",
-    "detailDuration": "26 hours",
-    "schedule": "On request",
-    "timeText": "12:00 AM (overnight departure)",
+    "name": "Avtobusda Qohiradagi Buyuk Misr muzeyi va piramidalarga bir kunlik tur",
+    "title": "Sharm-ash-Shayxdan Buyuk Misr muzeyi va piramidalarga bir kunlik tur",
+    "categoryLabel": "Tarixiy",
+    "duration": "17 soat",
+    "detailDuration": "26 soat",
+    "schedule": "Soʻrov boʻyicha",
+    "timeText": "00:00 (tunda joʻnash)",
     "priceUnit": null,
-    "badge": "New",
-    "excerpt": "Cairo — the Grand Egyptian Museum, the largest museum in the world. The Pyramids of Giza, the Sphinx and much more…",
-    "metaTitle": "Grand Egyptian Museum & Pyramids Day Trip from Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "New Cairo museum: the Grand Egyptian Museum, the Giza Pyramids, the Sphinx, lunch and a Nile cruise. Transfer and guide included. From £90. No prepayment.",
+    "badge": "Yangi",
+    "excerpt": "Qohira — dunyodagi eng katta muzey boʻlgan Buyuk Misr muzeyi. Giza piramidalari, Sfinks va yana koʻp narsalar…",
+    "metaTitle": "Sharm-ash-Shayxdan Buyuk Misr muzeyi va piramidalarga tur | Sardor Tours",
+    "metaDescription": "Qohiraning yangi Buyuk Misr muzeyi, Giza piramidalari, Sfinks, tushlik va Nil boʻylab qayiq sayohati. Transfer va gid kiritilgan. £90 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta kiritilgan",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We'll collect you from your hotel in the evening and travel to Cairo in a comfortable air-conditioned coach. Departure time depends on your hotel location."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Sizni kechqurun mehmonxonangizdan olib ketamiz va konditsionerli qulay avtobusda Qohiraga boramiz. Joʻnash vaqti mehmonxonangiz joylashuviga bogʻliq."
       },
       {
-        "title": "Grand Egyptian Museum",
-        "text": "Explore Egypt's newest and largest museum, home to more than 100,000 ancient artefacts. Discover the complete Tutankhamun collection, the impressive statue of Ramses II and modern interactive exhibitions overlooking the Giza Pyramids."
+        "title": "Buyuk Misr muzeyi",
+        "text": "Misrning 100,000 dan ortiq qadimiy osori atiqalari saqlanadigan eng yangi va eng katta muzeyini kashf eting. Tutanxamonning toʻliq toʻplami, Ramzes II ning ulugʻvor haykali hamda Giza piramidalari manzarasi ochiladigan zamonaviy interaktiv koʻrgazmalar bilan tanishing."
       },
       {
-        "title": "Giza Pyramids & the Great Sphinx",
-        "text": "Visit one of the world's most iconic archaeological sites. Learn about Ancient Egypt while exploring the Pyramids of Giza and the Great Sphinx. Entry inside the pyramids is optional and available for an additional fee."
+        "title": "Giza piramidalari va Buyuk Sfinks",
+        "text": "Dunyodagi eng mashhur arxeologik maskanlardan biriga tashrif buyuring. Giza piramidalari va Buyuk Sfinksni tomosha qilib, Qadimgi Misr haqida bilib oling. Piramidalar ichiga kirish ixtiyoriy boʻlib, qoʻshimcha toʻlov evaziga amalga oshiriladi."
       },
       {
-        "title": "Buffet Lunch",
-        "text": "Enjoy a buffet lunch at a local restaurant featuring a selection of Egyptian dishes."
+        "title": "Shved stoli tushligi",
+        "text": "Mahalliy restoranda Misr taomlaridan iborat shved stoli tushligidan bahramand boʻling."
       },
       {
-        "title": "Optional Nile Cruise",
-        "text": "Relax on an optional cruise along the Nile. Guests who prefer not to join can wait comfortably until the group returns."
+        "title": "Ixtiyoriy Nil boʻylab qayiq sayohati",
+        "text": "Xohlasangiz, Nil boʻylab qayiq sayohatida dam oling. Qatnashmaslikni afzal koʻrgan mehmonlar guruh qaytguncha qulay joyda kutishi mumkin."
       },
       {
-        "title": "Shopping Stops",
-        "text": "Visit a traditional papyrus workshop and an essential oils factory, where you'll learn about local crafts and products."
+        "title": "Xaridlar uchun toʻxtash",
+        "text": "Anʼanaviy papirus ustaxonasi va efir moylari fabrikasiga tashrif buyurib, mahalliy hunarmandchilik hamda mahsulotlar bilan tanishing."
       },
       {
-        "title": "Return to Sharm El Sheikh",
-        "text": "After the tour, return to Sharm El Sheikh by coach. The journey takes approximately eight hours, depending on road conditions and checkpoints."
+        "title": "Sharm-ash-Shayxga qaytish",
+        "text": "Turdan keyin avtobusda Sharm-ash-Shayxga qaytasiz. Yoʻl sharoiti va nazorat punktlariga qarab, safar taxminan sakkiz soat davom etadi."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "Professional English-speaking guide",
-      "Entrance tickets to the Grand Egyptian Museum",
-      "Entrance tickets to the Giza Pyramids & Sphinx site",
-      "Buffet lunch"
+      "Mehmonxonadan olib ketish va qaytarib kelish",
+      "Ingliz tilida soʻzlashuvchi professional gid",
+      "Buyuk Misr muzeyiga kirish chiptalari",
+      "Giza piramidalari va Sfinks hududiga kirish chiptalari",
+      "Shved stoli tushligi"
     ],
     "notIncluded": [
-      "Optional Nile cruise (approximately £10)",
-      "Drinks during lunch",
-      "Entry inside the Giza Pyramids (1,500 EGP)",
-      "Camel ride"
+      "Ixtiyoriy Nil boʻylab qayiq sayohati (taxminan £10)",
+      "Tushlik paytidagi ichimliklar",
+      "Giza piramidalari ichiga kirish (1,500 EGP)",
+      "Tuya sayri"
     ],
     "bring": [
-      "Passport",
-      "Breakfast box from your hotel",
-      "Drinking water",
-      "Comfortable shoes and clothing"
+      "Pasport",
+      "Mehmonxonangizdan olingan nonushta toʻplami",
+      "Ichimlik suvi",
+      "Qulay poyabzal va kiyim"
     ],
     "faq": [
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "Yes. A valid Egyptian visa is required to travel to Cairo. If you don't already have one, we can arrange it before the tour for £35 per passport."
+        "q": "Misr vizasi kerakmi?",
+        "a": "Ha. Qohiraga borish uchun amaldagi Misr vizasi kerak. Agar sizda viza boʻlmasa, uni turdan oldin har bir pasport uchun £35 evaziga rasmiylashtirib beramiz."
       },
       {
-        "q": "How long is the journey?",
-        "a": "The drive takes approximately eight hours (500 km), depending on checkpoints and traffic. The coach is air-conditioned and includes scheduled rest stops."
+        "q": "Yoʻl qancha vaqt oladi?",
+        "a": "Nazorat punktlari va tirbandlikka qarab, yoʻl taxminan sakkiz soat (500 km) davom etadi. Avtobusda konditsioner bor va yoʻlda dam olish uchun rejalashtirilgan toʻxtashlar mavjud."
       },
       {
-        "q": "Is entry inside the pyramids included?",
-        "a": "No. Entry inside the Giza Pyramids is optional and costs 1,500 EGP. Tickets can be purchased on site."
+        "q": "Piramidalar ichiga kirish kiritilganmi?",
+        "a": "Yoʻq. Giza piramidalari ichiga kirish ixtiyoriy boʻlib, 1,500 EGP turadi. Chiptalarni joyida sotib olish mumkin."
       },
       {
-        "q": "Is the Nile cruise included?",
-        "a": "No. The Nile cruise is an optional activity available for approximately £10 per person."
+        "q": "Nil boʻylab qayiq sayohati kiritilganmi?",
+        "a": "Yoʻq. Nil boʻylab qayiq sayohati ixtiyoriy boʻlib, bir kishi uchun taxminan £10 turadi."
       },
       {
-        "q": "Can I book a private tour?",
-        "a": "Yes. Private tours with a dedicated guide and private vehicle are available. Contact us on WhatsApp for details."
+        "q": "Shaxsiy tur bron qilsam boʻladimi?",
+        "a": "Ha. Alohida gid va avtomobil bilan shaxsiy turlar mavjud. Tafsilotlar uchun WhatsApp orqali biz bilan bogʻlaning."
       },
       {
-        "q": "What should I bring?",
-        "a": "Bring your passport, a breakfast box from your hotel, comfortable shoes, drinking water and cash for optional activities or personal expenses."
+        "q": "Oʻzim bilan nima olishim kerak?",
+        "a": "Pasportingiz, mehmonxonangizdan olingan nonushta toʻplami, qulay poyabzal, ichimlik suvi hamda ixtiyoriy mashgʻulotlar yoki shaxsiy xarajatlar uchun naqd pul oling."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Sayohat haqida",
     "destinationCards": [
       {
-        "tag": "Cairo · Egypt",
-        "title": "Grand Egyptian Museum",
-        "text": "Explore Egypt's newest museum, featuring more than 100,000 artefacts, the complete Tutankhamun collection and spectacular views of the Giza Pyramids.",
+        "tag": "Qohira · Misr",
+        "title": "Buyuk Misr muzeyi",
+        "text": "100,000 dan ortiq osori atiqa va Tutanxamonning toʻliq toʻplami namoyish etilgan, Giza piramidalarining ajoyib manzaralari ochiladigan Misrning eng yangi muzeyini kashf eting.",
         "tone": "blue"
       },
       {
-        "tag": "Giza",
-        "title": "Pyramids & the Great Sphinx",
-        "text": "Visit one of the world's most famous archaeological sites and discover monuments that have stood for more than 4,500 years.",
+        "tag": "Giza hududi",
+        "title": "Piramidalar va Buyuk Sfinks",
+        "text": "Dunyodagi eng mashhur arxeologik maskanlardan biriga tashrif buyuring va 4,500 yildan ortiq vaqtdan beri qad rostlab turgan yodgorliklarni kashf eting.",
         "tone": "sand"
       },
       {
-        "tag": "500 km from Sharm El Sheikh",
-        "title": "Comfortable Coach Journey",
-        "text": "Travel in an air-conditioned coach with scheduled rest stops and enjoy a full day exploring Cairo's most iconic landmarks.",
+        "tag": "Sharm-ash-Shayxdan 500 km",
+        "title": "Avtobusda qulay sayohat",
+        "text": "Yoʻlda dam olish uchun toʻxtashlar bilan konditsionerli avtobusda sayohat qiling va butun kun davomida Qohiraning eng mashhur diqqatga sazovor joylarini kashf eting.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Egyptian Visa Required",
-        "text": "A valid Egyptian visa is necessary for this tour. We can arrange one before departure if needed.",
+        "title": "Misr vizasi talab qilinadi",
+        "text": "Bu tur uchun amaldagi Misr vizasi kerak. Zarur boʻlsa, uni joʻnashdan oldin rasmiylashtirib beramiz.",
         "tone": "green"
       },
       {
-        "title": "Entry Inside the Pyramids",
-        "text": "Tickets are available on site for guests who wish to explore the interior.",
+        "title": "Piramidalar ichiga kirish",
+        "text": "Ichki qismini koʻrishni istagan mehmonlar chiptalarni joyida sotib olishi mumkin.",
         "tone": "orange"
       },
       {
-        "title": "Optional Nile Cruise",
-        "text": "Add a relaxing cruise on the Nile to complete your Cairo experience.",
+        "title": "Ixtiyoriy Nil boʻylab qayiq sayohati",
+        "text": "Qohira sayohatingizni Nil boʻylab orombaxsh qayiq sayohati bilan toʻldiring.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "The New Grand Museum · the Pyramids · the Sphinx · a Nile cruise",
-      "line2": "Lunch, guide and transfer included — from £90",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Yangi Buyuk Misr muzeyi · Piramidalar · Sfinks · Nil boʻylab qayiq sayohati",
+      "line2": "Tushlik, gid va transfer kiritilgan — £90 dan",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Kattalar",
+        "unit": "bir kishi uchun",
         "discount": null
       },
       {
-        "label": "Children ages 5–9",
-        "unit": "per person",
+        "label": "Bola 5–9 yosh",
+        "unit": "bir kishi uchun",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids (by Coach)"
+        "tag": "Qohira",
+        "name": "Avtobusda Qohira va piramidalar"
       },
       {
-        "tag": "Cairo VIP",
-        "name": "Cairo & Pyramids (by Plane)"
+        "tag": "Qohira VIP",
+        "name": "Samolyotda Qohira va piramidalar"
       },
       {
-        "tag": "Luxor",
-        "name": "Luxor — Day Trip"
+        "tag": "Luksor",
+        "name": "Luksorga bir kunlik tur"
       },
       {
-        "tag": "Glass Bottom",
-        "name": "Glass-Bottom Boat Trip"
+        "tag": "Shisha tubli qayiq",
+        "name": "Shisha tubli qayiqda sayohat"
       },
       {
         "tag": "Safari",
-        "name": "Salama Red Canyon"
+        "name": "Salama Qizil kanyoni"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Kattalar",
+        "unit": "kishi"
       },
       {
-        "label": "Children ages 5–9",
-        "unit": "person"
+        "label": "Bola 5–9 yosh",
+        "unit": "kishi"
       },
       {
-        "label": "Infants ages 0–4",
+        "label": "Chaqaloqlar 0–4 yosh",
         "unit": ""
       },
       {
-        "label": "Visa handling service",
-        "unit": "passport"
+        "label": "Viza rasmiylashtirish xizmati",
+        "unit": "pasport"
       },
       {
-        "label": "Coach seats",
-        "unit": "seat"
+        "label": "Avtobusdagi oʻrinlar",
+        "unit": "oʻrin"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−10%",
-      "priceText": "Transfer, lunch and entry tickets are already included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "5 stops",
-      "programText": "The New Grand Museum, the Pyramids, the Sphinx, the Nile and shopping. The best of Egypt in a single day.",
+      "priceText": "Transfer, tushlik va kirish chiptalari kiritilgan. Oldindan toʻlovsiz.",
+      "programKicker": "Kun dasturi",
+      "programNum": "5 ta toʻxtash",
+      "programText": "Yangi Buyuk Misr muzeyi, piramidalar, Sfinks, Nil va xaridlar. Misrning eng ajoyib maskanlari bir kunda.",
       "ring": "5/5",
-      "ringLabel": "stops"
+      "ringLabel": "toʻxtash"
     }
   },
   "cairo-pyramids-by-plane": {
-    "name": "Cairo & Pyramids Day Trip by Plane",
-    "title": "Cairo & Pyramids Day Trip from Sharm El Sheikh by Plane",
-    "categoryLabel": "Historical",
-    "duration": "17 hours",
-    "detailDuration": "17 hours",
-    "schedule": "On request",
-    "timeText": "4:00 AM – 9:00 PM",
+    "name": "Samolyotda Qohira va piramidalarga bir kunlik tur",
+    "title": "Sharm-ash-Shayxdan samolyotda Qohira va piramidalarga bir kunlik tur",
+    "categoryLabel": "Tarixiy",
+    "duration": "17 soat",
+    "detailDuration": "17 soat",
+    "schedule": "Soʻrov boʻyicha",
+    "timeText": "4:00 – 21:00",
     "priceUnit": null,
-    "badge": "Premium",
-    "excerpt": "A trip to Egypt's capital. On the itinerary: the Grand Egyptian Museum, the Pyramids of Giza, the Sphinx and much more…",
-    "metaTitle": "Cairo & Pyramids by Plane from Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Cairo by plane: the Grand Egyptian Museum, Giza Pyramids, the Sphinx, lunch and a Nile cruise. Flight and guide included. From £260. No prepayment.",
+    "badge": "Yuqori toifali",
+    "excerpt": "Misr poytaxtiga sayohat. Dasturda: Buyuk Misr muzeyi, Giza piramidalari, Sfinks va yana koʻp narsalar…",
+    "metaTitle": "Sharm-ash-Shayxdan samolyotda Qohira va piramidalar | Sardor Tours",
+    "metaDescription": "Samolyotda Qohira: Buyuk Misr muzeyi, Giza piramidalari, Sfinks, tushlik va Nil boʻylab qayiq sayohati. Parvoz va gid kiritilgan. £260 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta kiritilgan",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "Early in the morning, we'll pick you up from your hotel and transfer you to Sharm El Sheikh Airport. Pick-up time depends on your hotel location."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Erta tongda sizni mehmonxonangizdan olib ketamiz va Sharm-ash-Shayx aeroportiga olib boramiz. Olib ketish vaqti mehmonxonangiz joylashuviga bogʻliq."
       },
       {
-        "title": "Flight to Cairo",
-        "text": "Enjoy a short flight from Sharm El Sheikh to Cairo, with a flight time of approximately 1 hour."
+        "title": "Qohiraga parvoz",
+        "text": "Sharm-ash-Shayxdan Qohiraga taxminan 1 soatlik qisqa parvozdan bahramand boʻling."
       },
       {
-        "title": "The Grand Egyptian Museum",
-        "text": "Explore Egypt's newest museum and the world's largest archaeological museum, featuring modern galleries, interactive exhibits, and the complete Tutankhamun collection, with views of the Pyramids of Giza."
+        "title": "Buyuk Misr muzeyi",
+        "text": "Misrning eng yangi va dunyodagi eng katta arxeologiya muzeyini kashf eting. Zamonaviy galereyalar, interaktiv eksponatlar va Tutanxamonning toʻliq toʻplami bilan tanishing, Giza piramidalari manzarasidan bahramand boʻling."
       },
       {
-        "title": "Pyramids of Giza & the Great Sphinx",
-        "text": "Visit Egypt's most iconic landmarks — the Pyramids of Giza and the Great Sphinx. Your guide will share fascinating insights into Ancient Egyptian history and civilisation. Entry inside the pyramids is optional and can be purchased on site."
+        "title": "Giza piramidalari va Buyuk Sfinks",
+        "text": "Misrning eng mashhur diqqatga sazovor joylari — Giza piramidalari va Buyuk Sfinksga tashrif buyuring. Gidingiz Qadimgi Misr tarixi va sivilizatsiyasi haqida qiziqarli maʼlumotlar beradi. Piramidalar ichiga kirish ixtiyoriy boʻlib, chiptalarni joyida sotib olish mumkin."
       },
       {
-        "title": "Lunch at a Local Restaurant",
-        "text": "Enjoy a buffet lunch featuring a selection of Egyptian dishes."
+        "title": "Mahalliy restoranda tushlik",
+        "text": "Misr taomlaridan iborat shved stoli tushligidan bahramand boʻling."
       },
       {
-        "title": "Optional Nile River Cruise",
-        "text": "Take an optional cruise on the Nile River for approximately £10–£20 per person. Guests who prefer not to join can relax nearby until the group returns."
+        "title": "Ixtiyoriy Nil boʻylab qayiq sayohati",
+        "text": "Xohlasangiz, bir kishi uchun taxminan £10–£20 evaziga Nil boʻylab qayiq sayohatiga chiqing. Qatnashmaslikni afzal koʻrgan mehmonlar guruh qaytguncha yaqin atrofda dam olishi mumkin."
       },
       {
-        "title": "Shopping Stops",
-        "text": "Visit a papyrus workshop and a perfume oil factory, with time for optional shopping."
+        "title": "Xaridlar uchun toʻxtash",
+        "text": "Papirus ustaxonasi va atir moylari fabrikasiga tashrif buyuring. Xohlasangiz, xarid qilishga ham vaqt ajratiladi."
       },
       {
-        "title": "Return to Sharm El Sheikh",
-        "text": "After the tour, transfer to Cairo Airport for your return flight to Sharm El Sheikh. Upon arrival, you'll be transferred back to your hotel."
+        "title": "Sharm-ash-Shayxga qaytish",
+        "text": "Turdan keyin Sharm-ash-Shayxga qaytish parvozi uchun Qohira aeroportiga borasiz. Yetib kelganingizdan soʻng, sizni mehmonxonangizga olib boramiz."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "Flight tickets",
-      "Professional English-speaking guide",
-      "Entrance fee to the Grand Egyptian Museum (GEM)",
-      "Entrance fee to the Giza Pyramids & Sphinx Area",
-      "Lunch"
+      "Mehmonxonadan olib ketish va qaytarib kelish",
+      "Aviachiptalar",
+      "Ingliz tilida soʻzlashuvchi professional gid",
+      "Buyuk Misr muzeyiga (GEM) kirish chiptasi",
+      "Giza piramidalari va Sfinks hududiga kirish chiptasi",
+      "Tushlik"
     ],
     "notIncluded": [
-      "Optional Nile River cruise",
-      "Drinks during lunch",
-      "Entry inside the Giza Pyramids (approximately 1,500 EGP)",
-      "Camel ride at the pyramids"
+      "Ixtiyoriy Nil boʻylab qayiq sayohati",
+      "Tushlik paytidagi ichimliklar",
+      "Giza piramidalari ichiga kirish (taxminan 1,500 EGP)",
+      "Piramidalar yonida tuya sayri"
     ],
     "bring": [
-      "Passport",
-      "Breakfast box from your hotel",
-      "Comfortable shoes and clothing",
-      "Cash for optional activities and personal expenses"
+      "Pasport",
+      "Mehmonxonangizdan olingan nonushta toʻplami",
+      "Qulay poyabzal va kiyim",
+      "Ixtiyoriy mashgʻulotlar va shaxsiy xarajatlar uchun naqd pul"
     ],
     "faq": [
       {
-        "q": "Why should I book 3–4 days in advance?",
-        "a": "Flight tickets must be purchased in advance and issued in your name. Full payment is required to confirm the booking. You can visit our office or arrange payment through our representative, who can meet you at your hotel."
+        "q": "Nega 3–4 kun oldin bron qilishim kerak?",
+        "a": "Aviachiptalar oldindan sotib olinishi va sizning nomingizga rasmiylashtirilishi kerak. Bronni tasdiqlash uchun toʻliq toʻlov talab qilinadi. Ofisimizga kelishingiz yoki mehmonxonangizda siz bilan uchrasha oladigan vakilimiz orqali toʻlovni kelishishingiz mumkin."
       },
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "Yes, a valid Egyptian visa is required to visit Cairo. If you did not obtain one on arrival, we can arrange it before the tour for £35 per passport. This service is not available for citizens of Kazakhstan and Uzbekistan."
+        "q": "Misr vizasi kerakmi?",
+        "a": "Ha, Qohiraga borish uchun amaldagi Misr vizasi kerak. Agar uni kelganingizda olmagan boʻlsangiz, turdan oldin har bir pasport uchun £35 evaziga rasmiylashtirib beramiz. Bu xizmat Qozogʻiston va Oʻzbekiston fuqarolari uchun mavjud emas."
       },
       {
-        "q": "Which museum will I visit?",
-        "a": "This tour visits the Grand Egyptian Museum (GEM) – Egypt's newest museum, featuring the complete Tutankhamun collection, interactive exhibits, and views of the Pyramids of Giza."
+        "q": "Qaysi muzeyga tashrif buyuraman?",
+        "a": "Bu turda Misrning eng yangi muzeyi — Buyuk Misr muzeyiga (GEM) tashrif buyurasiz. Unda Tutanxamonning toʻliq toʻplami, interaktiv eksponatlar va Giza piramidalari manzarasi sizni kutadi."
       },
       {
-        "q": "How long is the flight to Cairo?",
-        "a": "The flight from Sharm El Sheikh to Cairo takes approximately 1 hour each way, making it the fastest and most comfortable way to visit Cairo."
+        "q": "Qohiraga parvoz qancha davom etadi?",
+        "a": "Sharm-ash-Shayxdan Qohiraga parvoz har bir yoʻnalishda taxminan 1 soat davom etadi. Shu bois bu Qohiraga borishning eng tez va qulay usuli."
       },
       {
-        "q": "Is entry inside the pyramids included?",
-        "a": "No, entry inside the Giza Pyramids is not included in the tour price. Tickets can be purchased on site and currently cost approximately 1,500 EGP."
+        "q": "Piramidalar ichiga kirish kiritilganmi?",
+        "a": "Yoʻq, Giza piramidalari ichiga kirish tur narxiga kiritilmagan. Chiptalarni joyida sotib olish mumkin, hozirgi narxi taxminan 1,500 EGP."
       },
       {
-        "q": "Is the Nile cruise included?",
-        "a": "No, the Nile River cruise is optional and available for an additional fee of approximately £10–£20 per person."
+        "q": "Nil boʻylab qayiq sayohati kiritilganmi?",
+        "a": "Yoʻq, Nil boʻylab qayiq sayohati ixtiyoriy boʻlib, bir kishi uchun taxminan £10–£20 qoʻshimcha toʻlov evaziga taklif etiladi."
       },
       {
-        "q": "Can children join the tour?",
-        "a": "Yes, the tour is suitable for families. Children aged 2–10 years benefit from a reduced child rate. Infants under 2 years old travel free of charge without a separate airline seat."
+        "q": "Bolalar turda qatnasha oladimi?",
+        "a": "Ha, tur oilalar uchun mos. 2–10 yoshdagi bolalar uchun chegirmali bolalar tarifi amal qiladi. 2 yoshgacha chaqaloqlar samolyotda alohida oʻrinsiz bepul sayohat qiladi."
       },
       {
-        "q": "What should I bring?",
-        "a": "Please bring your passport, a breakfast box from your hotel, comfortable shoes and clothing, and cash for optional activities and personal expenses."
+        "q": "Oʻzim bilan nima olishim kerak?",
+        "a": "Pasportingiz, mehmonxonangizdan olingan nonushta toʻplami, qulay poyabzal va kiyim hamda ixtiyoriy mashgʻulotlar va shaxsiy xarajatlar uchun naqd pul oling."
       },
       {
-        "q": "Do I need to pay in advance?",
-        "a": "Yes. Because flight tickets are purchased and issued in your name, full payment is required to confirm the booking."
+        "q": "Oldindan toʻlashim kerakmi?",
+        "a": "Ha. Aviachiptalar sizning nomingizga sotib olinadi va rasmiylashtiriladi. Shu sabab bronni tasdiqlash uchun toʻliq toʻlov talab qilinadi."
       },
       {
-        "q": "What time will I return to Sharm El Sheikh?",
-        "a": "Return times vary depending on the flight schedule, but most guests arrive back at their hotel in the evening."
+        "q": "Sharm-ash-Shayxga soat nechada qaytaman?",
+        "a": "Qaytish vaqti parvoz jadvaliga qarab oʻzgaradi, lekin aksariyat mehmonlar mehmonxonalariga kechqurun yetib keladi."
       },
       {
-        "q": "Is this tour better than travelling by coach?",
-        "a": "If you prefer to spend more time sightseeing and less time travelling, the flight option is the most comfortable choice. The journey takes around one hour each way, compared with approximately eight hours by coach."
+        "q": "Bu tur avtobusda borishdan yaxshiroqmi?",
+        "a": "Diqqatga sazovor joylarni tomosha qilishga koʻproq, yoʻlga esa kamroq vaqt sarflashni istasangiz, samolyotli tur eng qulay tanlov. Parvoz har bir yoʻnalishda taxminan bir soat, avtobusdagi yoʻl esa qariyb sakkiz soat davom etadi."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "Manzil haqida",
     "destinationCards": [
       {
-        "tag": "Cairo · Egypt",
-        "title": "Giza Pyramids & the Great Sphinx",
-        "text": "Visit one of the Seven Wonders of the Ancient World — the Pyramids of Giza and the Great Sphinx. Built over 4,500 years ago, they remain the most iconic symbols of Ancient Egypt.",
+        "tag": "Qohira · Misr",
+        "title": "Giza piramidalari va Buyuk Sfinks",
+        "text": "Qadimgi dunyoning yetti moʻjizasidan biri — Giza piramidalari va Buyuk Sfinksga tashrif buyuring. 4,500 yildan koʻproq vaqt oldin bunyod etilgan bu yodgorliklar Qadimgi Misrning eng mashhur ramzlari boʻlib qolmoqda.",
         "tone": "sand"
       },
       {
-        "tag": "Cairo — Grand Egyptian Museum",
-        "title": "The Grand Egyptian Museum",
-        "text": "Egypt's newest museum and the world's largest archaeological museum, home to the complete Tutankhamun collection, modern galleries, interactive exhibits, and views of the Pyramids of Giza.",
+        "tag": "Qohira — Buyuk Misr muzeyi",
+        "title": "Buyuk Misr muzeyi",
+        "text": "Misrning eng yangi va dunyodagi eng katta arxeologiya muzeyi. Tutanxamonning toʻliq toʻplami, zamonaviy galereyalar, interaktiv eksponatlar va Giza piramidalari manzarasi sizni kutadi.",
         "tone": "blue"
       },
       {
-        "tag": "By plane",
-        "title": "Just 1 hour from Sharm El Sheikh",
-        "text": "Travel to Cairo by plane in approximately 1 hour. Flight tickets are included, allowing you to spend more time exploring and less time travelling.",
+        "tag": "Samolyotda",
+        "title": "Sharm-ash-Shayxdan atigi 1 soat",
+        "text": "Qohiraga samolyotda taxminan 1 soatda yetib boring. Aviachiptalar kiritilgan, shuning uchun diqqatga sazovor joylarga koʻproq, yoʻlga esa kamroq vaqt sarflaysiz.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Book 3–4 Days in Advance",
-        "text": "Flight tickets are purchased and issued in your name before the tour. Full payment is required to confirm your booking.",
+        "title": "3–4 kun oldin bron qiling",
+        "text": "Aviachiptalar turdan oldin sizning nomingizga sotib olinadi va rasmiylashtiriladi. Broningizni tasdiqlash uchun toʻliq toʻlov talab qilinadi.",
         "tone": "green"
       },
       {
-        "title": "Egyptian Visa",
-        "text": "A valid Egyptian visa is required to visit Cairo. If needed, we can arrange it before the tour for £35 per passport .",
+        "title": "Misr vizasi",
+        "text": "Qohiraga borish uchun amaldagi Misr vizasi kerak. Zarur boʻlsa, uni turdan oldin har bir pasport uchun £35 evaziga rasmiylashtirib beramiz.",
         "tone": "orange"
       },
       {
-        "title": "Entry Inside the Pyramids",
-        "text": "Entry inside the Giza Pyramids is optional and not included in the tour price. Tickets can be purchased on site (approximately 1,500 EGP).",
+        "title": "Piramidalar ichiga kirish",
+        "text": "Giza piramidalari ichiga kirish ixtiyoriy va tur narxiga kiritilmagan. Chiptalarni joyida sotib olish mumkin (taxminan 1,500 EGP).",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Pyramids · Sphinx · Museum · Nile · Flight",
-      "line2": "Flight tickets, guide and lunch included — from £260",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Piramidalar · Sfinks · Muzey · Nil · Parvoz",
+      "line2": "Aviachiptalar, gid va tushlik kiritilgan — £260 dan",
       "chips": [
-        "We reply fast"
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Kattalar",
+        "unit": "bir kishi uchun",
         "discount": null
       },
       {
-        "label": "Children ages 2–10",
-        "unit": "per person",
+        "label": "Bola 2–10 yosh",
+        "unit": "bir kishi uchun",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Qohira",
+        "name": "Avtobusda Qohira va piramidalar"
       },
       {
-        "tag": "Luxor",
-        "name": "Luxor by Plane"
+        "tag": "Luksor",
+        "name": "Samolyotda Luksorga"
       },
       {
-        "tag": "Sinai",
-        "name": "Mount Moses & St. Catherine Monastery"
+        "tag": "Sinay",
+        "name": "Muso togʻi va Avliyo Yekaterina monastiri"
       },
       {
-        "tag": "Parasailing",
-        "name": "Parasailing"
+        "tag": "Parashyutda uchish (parasailing)",
+        "name": "Parashyutda uchish (parasailing)"
       },
       {
-        "tag": "Buggy",
-        "name": "Buggy Safari & Camel Ride"
+        "tag": "Bagi",
+        "name": "Bagida safari va tuya sayri"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Kattalar",
+        "unit": "kishi"
       },
       {
-        "label": "Children ages 2–10",
-        "unit": "person"
+        "label": "Bola 2–10 yosh",
+        "unit": "kishi"
       },
       {
-        "label": "Infants under 2 years",
+        "label": "2 yoshgacha chaqaloqlar",
         "unit": ""
       },
       {
-        "label": "Visa with service",
-        "unit": "passport"
+        "label": "Rasmiylashtirish xizmati bilan viza",
+        "unit": "pasport"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−9%",
-      "priceText": "Transfer, lunch and entry tickets already included. Best price.",
-      "programKicker": "Day programme",
-      "programNum": "6 stops",
-      "programText": "Flight, Pyramids, Sphinx, your the Grand Egyptian Museum, the Nile and shopping. All of Cairo in 17 hours.",
+      "priceText": "Transfer, tushlik va kirish chiptalari kiritilgan. Eng yaxshi narx.",
+      "programKicker": "Kun dasturi",
+      "programNum": "6 ta toʻxtash",
+      "programText": "Parvoz, piramidalar, Sfinks, Buyuk Misr muzeyi, Nil va xaridlar. Butun Qohira 17 soatda.",
       "ring": "6/6",
-      "ringLabel": "stops"
+      "ringLabel": "toʻxtash"
     }
   },
   "luxor-day-trip": {
-    "name": "Luxor Day Trip by Plane",
-    "title": "Luxor Day Trip from Sharm El Sheikh by Plane",
-    "categoryLabel": "Historical",
-    "duration": "17 hours",
-    "detailDuration": "17 hours",
-    "schedule": "On request",
-    "timeText": "4:00 AM – 9:00 PM",
+    "name": "Samolyotda Luksorga bir kunlik tur",
+    "title": "Sharm-ash-Shayxdan samolyotda Luksorga bir kunlik tur",
+    "categoryLabel": "Tarixiy",
+    "duration": "17 soat",
+    "detailDuration": "17 soat",
+    "schedule": "Soʻrov boʻyicha",
+    "timeText": "4:00 – 21:00",
     "priceUnit": null,
-    "badge": "Highly Rated",
-    "excerpt": "The ideal choice for those who want to save time and energy. On the itinerary: the Egyptian Museum (new or old), the Giza complex — pyramids, the Sphinx and much more…",
-    "metaTitle": "Luxor Day Trip from Sharm El Sheikh by Plane | Sardor Tours",
-    "metaDescription": "Luxor by plane: Valley of the Kings, Karnak, lunch, Nile cruise. Flight and guide included. From £230. No prepayment.",
+    "badge": "Yuqori baholangan",
+    "excerpt": "Vaqt va kuchini tejashni istaganlar uchun eng yaxshi tanlov. Dasturda: Misr muzeyi (yangi yoki eski), Giza majmuasi — piramidalar, Sfinks va yana koʻp narsalar…",
+    "metaTitle": "Sharm-ash-Shayxdan samolyotda Luksorga bir kunlik tur | Sardor Tours",
+    "metaDescription": "Samolyotda Luksorga: Shohlar vodiysi, Karnak, tushlik, Nil boʻylab qayiq sayohati. Parvoz va gid kiritilgan. £230 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta kiritilgan",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "Early in the morning, we'll pick you up from your hotel and transfer you to Sharm El Sheikh Airport in a comfortable air-conditioned vehicle."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Erta tongda sizni mehmonxonangizdan olib ketamiz va konditsionerli qulay avtomobilda Sharm-ash-Shayx aeroportiga olib boramiz."
       },
       {
-        "title": "Flight to Luxor",
-        "text": "Enjoy a one-hour flight to Luxor, the ancient capital of Egypt and home to some of the world's most impressive archaeological sites."
+        "title": "Luksorga parvoz",
+        "text": "Misrning qadimiy poytaxti, dunyodagi eng ajoyib arxeologik maskanlar joylashgan Luksorga bir soatlik parvozdan bahramand boʻling."
       },
       {
-        "title": "Valley of the Kings & Hatshepsut Temple",
-        "text": "Explore the Valley of the Kings and visit three royal tombs with beautifully preserved hieroglyphs. Continue to the Temple of Queen Hatshepsut and stop at the Colossi of Memnon."
+        "title": "Shohlar vodiysi va Xatshepsut ibodatxonasi",
+        "text": "Shohlar vodiysini kashf eting va iyerogliflari juda yaxshi saqlangan uchta hukmdor maqbarasiga tashrif buyuring. Soʻng qirolicha Xatshepsut ibodatxonasiga boring va Memnon kolosslari yonida toʻxtang."
       },
       {
-        "title": "Karnak Temple",
-        "text": "Visit the largest temple complex in Ancient Egypt, famous for its towering columns, sacred lake and remarkable history spanning more than 2,000 years."
+        "title": "Karnak ibodatxonasi",
+        "text": "Ulkan ustunlari, muqaddas koʻli va 2,000 yildan ortiq boy tarixi bilan mashhur boʻlgan Qadimgi Misrning eng katta ibodatxonalar majmuasiga tashrif buyuring."
       },
       {
-        "title": "Buffet Lunch",
-        "text": "Enjoy a buffet lunch at a local restaurant featuring a selection of Egyptian dishes."
+        "title": "Shved stoli tushligi",
+        "text": "Mahalliy restoranda Misr taomlaridan iborat shved stoli tushligidan bahramand boʻling."
       },
       {
-        "title": "Alabaster Workshop",
-        "text": "Visit a traditional alabaster workshop and discover how local craftsmen create decorative pieces from natural stone."
+        "title": "Alabastr ustaxonasi",
+        "text": "Anʼanaviy alabastr ustaxonasiga tashrif buyuring va mahalliy ustalar tabiiy toshdan bezak buyumlarini qanday yasashini bilib oling."
       },
       {
-        "title": "Optional Nile Cruise",
-        "text": "Take an optional boat trip on the Nile with a visit to Banana Island. Guests who prefer not to join can relax while the group returns."
+        "title": "Ixtiyoriy Nil boʻylab qayiq sayohati",
+        "text": "Xohlasangiz, Banan oroliga tashrif bilan Nil boʻylab qayiq sayohatiga chiqing. Qatnashmaslikni afzal koʻrgan mehmonlar guruh qaytguncha dam olishi mumkin."
       },
       {
-        "title": "Return Flight & Hotel Drop-off",
-        "text": "After your tour, you'll fly back to Sharm El Sheikh and be transferred to your hotel."
+        "title": "Qaytish parvozi va mehmonxonaga transfer",
+        "text": "Turdan keyin samolyotda Sharm-ash-Shayxga qaytasiz va sizni mehmonxonangizga olib boramiz."
       },
       {
-        "title": "Transfer from Luxor back to Sharm El Sheikh",
-        "text": "Departure from Luxor, a 1-hour flight. Arrival at Sharm El Sheikh airport, then a comfortable transfer back to your hotel."
+        "title": "Luksordan Sharm-ash-Shayxga qaytish",
+        "text": "Luksordan joʻnash va 1 soatlik parvoz. Sharm-ash-Shayx aeroportiga yetib kelgach, mehmonxonangizga qulay transfer."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "Flight tickets",
-      "Professional English-speaking guide",
-      "Entrance tickets to all attractions",
-      "Buffet lunch"
+      "Mehmonxonadan olib ketish va qaytarib kelish",
+      "Aviachiptalar",
+      "Ingliz tilida soʻzlashuvchi professional gid",
+      "Barcha diqqatga sazovor joylarga kirish chiptalari",
+      "Shved stoli tushligi"
     ],
     "notIncluded": [
-      "Optional Nile cruise & Banana Island (£20–25)",
-      "Drinks during lunch"
+      "Ixtiyoriy Nil boʻylab qayiq sayohati va Banan oroli (£20–25)",
+      "Tushlik paytidagi ichimliklar"
     ],
     "bring": [
-      "Passport",
-      "Breakfast box from your hotel",
-      "Comfortable shoes",
-      "Weather-appropriate clothing"
+      "Pasport",
+      "Mehmonxonangizdan olingan nonushta toʻplami",
+      "Qulay poyabzal",
+      "Ob-havoga mos kiyim"
     ],
     "faq": [
       {
-        "q": "Why should I book 3–4 days in advance?",
-        "a": "Flight tickets are purchased in your name, so advance booking and full prepayment are required. A payment receipt is provided."
+        "q": "Nega 3–4 kun oldin bron qilishim kerak?",
+        "a": "Aviachiptalar sizning nomingizga sotib olinadi, shu sabab oldindan bron qilish va tur haqini oldindan toʻliq toʻlash talab qilinadi. Toʻlov cheki beriladi."
       },
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "Yes. A valid Egyptian visa is required to travel to Luxor. If you didn't obtain one on arrival, we can arrange it before the tour for £35 per passport."
+        "q": "Misr vizasi kerakmi?",
+        "a": "Ha. Luksorga borish uchun amaldagi Misr vizasi kerak. Agar uni kelganingizda olmagan boʻlsangiz, turdan oldin har bir pasport uchun £35 evaziga rasmiylashtirib beramiz."
       },
       {
-        "q": "How long is the flight?",
-        "a": "The flight from Sharm El Sheikh to Luxor takes approximately one hour each way."
+        "q": "Parvoz qancha davom etadi?",
+        "a": "Sharm-ash-Shayxdan Luksorga parvoz har bir yoʻnalishda taxminan bir soat davom etadi."
       },
       {
-        "q": "What will I see in the Valley of the Kings?",
-        "a": "You'll visit three royal tombs decorated with ancient paintings and hieroglyphs that have survived for thousands of years."
+        "q": "Shohlar vodiysida nimalarni koʻraman?",
+        "a": "Minglab yillar davomida saqlanib qolgan qadimiy rasmlar va iyerogliflar bilan bezatilgan uchta hukmdor maqbarasiga tashrif buyurasiz."
       },
       {
-        "q": "Is the Nile cruise included?",
-        "a": "No. The cruise and Banana Island visit are optional and cost approximately £20–25 per person."
+        "q": "Nil boʻylab qayiq sayohati kiritilganmi?",
+        "a": "Yoʻq. Qayiq sayohati va Banan oroliga tashrif ixtiyoriy boʻlib, bir kishi uchun taxminan £20–25 turadi."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "Yes. Children aged 2–10 receive a reduced price, while infants under 2 travel free without their own seat."
+        "q": "Tur bolalar uchun mosmi?",
+        "a": "Ha. 2–10 yoshdagi bolalar uchun chegirmali narx amal qiladi, 2 yoshgacha chaqaloqlar esa alohida oʻrinsiz bepul sayohat qiladi."
       },
       {
-        "q": "What should I bring?",
-        "a": "Bring your passport, a breakfast box from your hotel, comfortable shoes and cash for optional activities and souvenirs."
+        "q": "Oʻzim bilan nima olishim kerak?",
+        "a": "Pasportingiz, mehmonxonangizdan olingan nonushta toʻplami, qulay poyabzal hamda ixtiyoriy mashgʻulotlar va suvenirlar uchun naqd pul oling."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Sayohat haqida",
     "destinationCards": [
       {
-        "tag": "Luxor · Egypt",
-        "title": "Valley of the Kings",
-        "text": "Explore the ancient burial place of Egypt's pharaohs and discover beautifully preserved royal tombs carved into the desert mountains.",
+        "tag": "Luksor · Misr",
+        "title": "Shohlar vodiysi",
+        "text": "Misr firʼavnlarining qadimiy dafn maskanini kashf eting va choʻl togʻlari qoyalariga oʻyib qurilgan, juda yaxshi saqlangan hukmdor maqbaralari bilan tanishing.",
         "tone": "sand"
       },
       {
-        "tag": "Luxor",
-        "title": "Karnak Temple",
-        "text": "Walk through one of the largest temple complexes ever built, featuring towering columns, sacred statues and remarkable ancient architecture.",
+        "tag": "Luksor",
+        "title": "Karnak ibodatxonasi",
+        "text": "Bunyod etilgan eng katta ibodatxonalar majmualaridan birini aylanib chiqing. Ulkan ustunlar, muqaddas haykallar va ajoyib qadimiy meʼmorchilik sizni kutadi.",
         "tone": "blue"
       },
       {
-        "tag": "1-Hour Flight",
-        "title": "Fast & Comfortable Travel",
-        "text": "Reach Luxor in just one hour by plane, giving you more time to explore Egypt's most famous historical sites.",
+        "tag": "1 soatlik parvoz",
+        "title": "Tez va qulay sayohat",
+        "text": "Samolyotda Luksorga atigi bir soatda yetib boring va Misrning eng mashhur tarixiy maskanlarini kashf etishga koʻproq vaqt ajrating.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Flight Included",
-        "text": "Return flights between Sharm El Sheikh and Luxor are included in the tour price.",
+        "title": "Parvoz kiritilgan",
+        "text": "Sharm-ash-Shayx va Luksor oʻrtasidagi borish-qaytish parvozlari tur narxiga kiritilgan.",
         "tone": "green"
       },
       {
-        "title": "Egyptian Visa Required",
-        "text": "A valid Egyptian visa is necessary for this tour. We can arrange one before departure if needed.",
+        "title": "Misr vizasi talab qilinadi",
+        "text": "Bu tur uchun amaldagi Misr vizasi kerak. Zarur boʻlsa, uni joʻnashdan oldin rasmiylashtirib beramiz.",
         "tone": "orange"
       },
       {
-        "title": "Optional Nile Cruise",
-        "text": "Add a relaxing cruise on the Nile with a visit to Banana Island for an additional fee.",
+        "title": "Ixtiyoriy Nil boʻylab qayiq sayohati",
+        "text": "Qoʻshimcha toʻlov evaziga Banan oroliga tashrif bilan Nil boʻylab orombaxsh qayiq sayohatini qoʻshing.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Valley of the Kings · Karnak Temple · the Nile · Alabaster",
-      "line2": "Flights, guide and lunch included — from £230",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Shohlar vodiysi · Karnak ibodatxonasi · Nil · Alabastr",
+      "line2": "Parvozlar, gid va tushlik kiritilgan — £230 dan",
       "chips": [
-        "We reply quickly"
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Kattalar",
+        "unit": "bir kishi uchun",
         "discount": null
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "per person",
+        "label": "Bola 5–9 yosh",
+        "unit": "bir kishi uchun",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Qohira",
+        "name": "Avtobusda Qohira va piramidalar"
       },
       {
-        "tag": "Cairo VIP",
-        "name": "Cairo & Pyramids by Plane"
+        "tag": "Qohira VIP",
+        "name": "Samolyotda Qohira va piramidalar"
       },
       {
-        "tag": "Petra",
-        "name": "Petra — Jordan"
+        "tag": "Petra shahri",
+        "name": "Petra — Iordaniya"
       },
       {
-        "tag": "Yacht",
-        "name": "Tiran Island Boat Trip"
+        "tag": "Yaxta",
+        "name": "Tiran oroliga qayiq sayohati"
       },
       {
         "tag": "Safari",
-        "name": "Super Safari"
+        "name": "Super safari"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Kattalar",
+        "unit": "kishi"
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "person"
+        "label": "Bola 5–9 yosh",
+        "unit": "kishi"
       },
       {
-        "label": "Infants under 2 years",
+        "label": "2 yoshgacha chaqaloqlar",
         "unit": ""
       },
       {
-        "label": "Visa with service",
-        "unit": "passport"
+        "label": "Rasmiylashtirish xizmati bilan viza",
+        "unit": "pasport"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−23%",
-      "priceText": "Transfer, lunch and entrance tickets already included. Best price.",
-      "programKicker": "Day programme",
-      "programNum": "4 stops",
-      "programText": "Valley of the Kings, Karnak Temple, the Nile, the alabaster factory. Ancient Luxor in a single day.",
+      "priceText": "Transfer, tushlik va kirish chiptalari kiritilgan. Eng yaxshi narx.",
+      "programKicker": "Kun dasturi",
+      "programNum": "4 ta toʻxtash",
+      "programText": "Shohlar vodiysi, Karnak ibodatxonasi, Nil, alabastr fabrikasi. Qadimiy Luksor bir kunda.",
       "ring": "4/4",
-      "ringLabel": "stops"
+      "ringLabel": "toʻxtash"
     }
   },
   "petra-jordan-trip": {
