@@ -1592,1078 +1592,1078 @@
     }
   },
   "quad-safari-sharm": {
-    "name": "Quad Bike Safari & Camel Ride",
-    "title": "Quad Bike Safari & Camel Ride in the Sharm El Sheikh Desert",
+    "name": "Kvadrotsiklda safari va tuya sayri",
+    "title": "Sharm-ash-Shayx choʻlida kvadrotsiklda safari va tuya sayri",
     "categoryLabel": "Safari",
-    "duration": "3 hours",
-    "detailDuration": "2.5 hours",
-    "schedule": "Daily",
-    "timeText": "4:00 AM · 8:00 AM · 10:00 AM · 2:00 PM",
+    "duration": "3 soat",
+    "detailDuration": "2.5 soat",
+    "schedule": "Har kuni",
+    "timeText": "4:00 · 8:00 · 10:00 · 14:00",
     "priceUnit": null,
-    "badge": "Signature",
-    "excerpt": "A thrilling desert adventure. Quad bikes, camel riding, a Bedouin dinner and an incredible show…",
-    "metaTitle": "Quad Bike Safari and camel ride in the Sharm El Sheikh Desert | Sardor Tours",
-    "metaDescription": "Quad bikes in Sharm: safari centre, riding through the Sinai desert, camels, Bedouin tea. Transfer included. Daily. From £15. No prepayment.",
+    "badge": "Maxsus tur",
+    "excerpt": "Choʻldagi hayajonli sarguzasht. Kvadrotsikllar, tuya sayri, badaviylar kechki ovqati va ajoyib shou…",
+    "metaTitle": "Sharm-ash-Shayx choʻlida kvadrotsiklda safari va tuya sayri | Sardor Tours",
+    "metaDescription": "Sharmda kvadrotsikllar: safari markazi, Sinay choʻli boʻylab sayr, tuyalar, badaviylar choyi. Transfer kiritilgan. Har kuni. £15 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta kiritilgan",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We'll pick you up from your hotel in a comfortable air-conditioned vehicle and transfer you to the safari centre, located on the edge of the Sinai Desert. The journey takes approximately 30 minutes."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Sizni mehmonxonangizdan konditsionerli qulay avtomobilda olib ketamiz va Sinay choʻli chekkasidagi safari markaziga olib boramiz. Yoʻl taxminan 30 daqiqa davom etadi."
       },
       {
-        "title": "Safety Briefing",
-        "text": "Before setting off, you'll receive a short introduction to the quad bike and a safety briefing from your guide. You can also purchase a traditional scarf to protect yourself from sand and dust during the ride."
+        "title": "Xavfsizlik boʻyicha yoʻriqnoma",
+        "text": "Yoʻlga chiqishdan oldin gidingiz kvadrotsiklni boshqarish va xavfsizlik qoidalarini qisqacha tushuntiradi. Sayr paytida qum va changdan himoyalanish uchun anʼanaviy roʻmolni ham sotib olishingiz mumkin."
       },
       {
-        "title": "Quad Bike Adventure",
-        "text": "Drive across the open Sinai Desert, following your guide along scenic desert tracks. Along the way, you'll stop at Echo Mountain, enjoy panoramic viewpoints, and visit a traditional Bedouin village for tea. You'll spend approximately 1.5 hours exploring the breathtaking desert landscape"
+        "title": "Kvadrotsikldagi sarguzasht",
+        "text": "Gidingiz ortidan manzarali yoʻllar orqali bepoyon Sinay choʻli boʻylab kvadrotsiklda yuring. Yoʻlda Aks-sado togʻida toʻxtaysiz, keng manzaralarni tomosha qilasiz va anʼanaviy badaviylar qishlogʻida choy ichasiz. Choʻlning betakror manzaralari boʻylab sayr taxminan 1.5 soat davom etadi."
       },
       {
-        "title": "Optional Camel Ride",
-        "text": "Add a short camel ride and experience one of the most traditional ways to explore the desert while enjoying the surrounding mountain scenery."
+        "title": "Ixtiyoriy tuya sayri",
+        "text": "Qisqa tuya sayrini qoʻshing: atrofdagi togʻ manzaralarini tomosha qilib, choʻlda sayohat qilishning eng qadimiy usullaridan birini sinab koʻrasiz."
       },
       {
-        "title": "Return to Your Hotel",
-        "text": "After the safari, relax on the transfer back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Mehmonxonaga qaytish",
+        "text": "Safaridan keyin konditsionerli qulay avtomobilda mehmonxonangizga qaytayotib dam oling."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and drop-off",
-      "Bedouin tea"
+      "Ingliz tilida soʻzlashuvchi gid",
+      "Mehmonxonadan olib ketish va qaytarib kelish",
+      "Badaviylar choyi"
     ],
     "notIncluded": [
-      "Drinks",
-      "Shisha",
-      "Souvenirs and personal expenses"
+      "Ichimliklar",
+      "Kalyan",
+      "Suvenirlar va shaxsiy xarajatlar"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Sunglasses",
-      "Comfortable closed shoes",
-      "Scarf (available to purchase on site)",
-      "Drinking water"
+      "Telefoningizda pasportingiz surati",
+      "Quyoshdan himoya koʻzoynagi",
+      "Qulay yopiq poyabzal",
+      "Roʻmol (joyida sotib olish mumkin)",
+      "Ichimlik suvi"
     ],
     "faq": [
       {
-        "q": "Do I need a driving licence?",
-        "a": "No. Quad bikes are easy to operate and a full safety briefing is provided before the ride."
+        "q": "Haydovchilik guvohnomasi kerakmi?",
+        "a": "Yoʻq. Kvadrotsiklni boshqarish oson, sayrdan oldin esa xavfsizlik qoidalari toʻliq tushuntiriladi."
       },
       {
-        "q": "Can children join the tour?",
-        "a": "Yes. Children aged 2 and above can ride as passengers. Children aged 12 and over may drive under adult supervision."
+        "q": "Bolalar turda qatnasha oladimi?",
+        "a": "Ha. 2 yosh va undan katta bolalar yoʻlovchi sifatida qatnashishi mumkin. 12 yosh va undan katta bolalar kattalar nazoratida kvadrotsikl boshqarishi mumkin."
       },
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes. Hotel pick-up and drop-off from any hotel in Sharm El Sheikh are included."
+        "q": "Mehmonxonadan transfer kiritilganmi?",
+        "a": "Ha. Sharm-ash-Shayxdagi istalgan mehmonxonadan olib ketish va qaytarib kelish kiritilgan."
       },
       {
-        "q": "Can two people ride one quad bike?",
-        "a": "Yes. Two people can share one quad bike at no extra charge. The maximum combined weight is 160 kg."
+        "q": "Bitta kvadrotsiklda ikki kishi minishi mumkinmi?",
+        "a": "Ha. Ikki kishi bitta kvadrotsiklda qoʻshimcha toʻlovsiz minishi mumkin. Umumiy vazn 160 kg dan oshmasligi kerak."
       },
       {
-        "q": "What should I wear?",
-        "a": "We recommend comfortable clothing, closed shoes, sunglasses and a scarf to protect against sand and dust."
+        "q": "Qanday kiyinish kerak?",
+        "a": "Qulay kiyim, yopiq poyabzal, quyoshdan himoya koʻzoynagi va qum hamda changdan himoyalanish uchun roʻmol tavsiya qilamiz."
       },
       {
-        "q": "What departure times are available?",
-        "a": "Daily departures are available at 4:00 AM, 8:00 AM, 10:00 AM and 2:00 PM."
+        "q": "Qaysi vaqtlarda joʻnash mumkin?",
+        "a": "Har kuni soat 4:00, 8:00, 10:00 va 14:00 da joʻnash mumkin."
       },
       {
-        "q": "Is the camel ride included?",
-        "a": "The camel ride is optional and can be added during your visit to the Bedouin village."
+        "q": "Tuya sayri kiritilganmi?",
+        "a": "Tuya sayri ixtiyoriy boʻlib, uni badaviylar qishlogʻiga tashrif paytida qoʻshishingiz mumkin."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Sayohat haqida",
     "destinationCards": [
       {
-        "tag": "Sinai Desert",
-        "title": "Quad Bike Adventure",
-        "text": "Drive across wide-open desert landscapes, stop at Echo Mountain and discover some of the Sinai Peninsula's most beautiful scenery.",
+        "tag": "Sinay choʻli",
+        "title": "Kvadrotsikldagi sarguzasht",
+        "text": "Bepoyon choʻl boʻylab yuring, Aks-sado togʻida toʻxtang va Sinay yarimorolining eng goʻzal manzaralarini kashf eting.",
         "tone": "sand"
       },
       {
-        "tag": "Bedouin Village",
-        "title": "Tea with the Bedouins",
-        "text": "Visit a traditional Bedouin camp, enjoy local tea and experience the hospitality of the Sinai Desert.",
+        "tag": "Badaviylar qishlogʻi",
+        "title": "Badaviylar bilan choy",
+        "text": "Anʼanaviy badaviylar lageriga tashrif buyuring, mahalliy choydan iching va Sinay choʻlining mehmondoʻstligini his eting.",
         "tone": "coral"
       },
       {
-        "tag": "Sinai Desert",
-        "title": "Optional Camel Ride",
-        "text": "Complete your desert adventure with a short camel ride and enjoy fantastic photo opportunities among the dunes and mountains.",
+        "tag": "Sinay choʻli",
+        "title": "Ixtiyoriy tuya sayri",
+        "text": "Choʻldagi sarguzashtingizni qisqa tuya sayri bilan toʻldiring va qumtepalar hamda togʻlar orasida ajoyib suratlar oling.",
         "tone": "blue"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Four Daily Departures",
-        "text": "Choose from 4:00 AM, 8:00 AM, 10:00 AM or 2:00 PM.",
+        "title": "Kuniga toʻrt marta joʻnash",
+        "text": "Soat 4:00, 8:00, 10:00 yoki 14:00 ni tanlang.",
         "tone": "green"
       },
       {
-        "title": "No Driving Licence Required",
-        "text": "Your guide will explain everything before the ride, making the experience suitable for beginners.",
+        "title": "Haydovchilik guvohnomasi talab qilinmaydi",
+        "text": "Gidingiz sayrdan oldin hamma narsani tushuntiradi, shuning uchun bu sayohat yangi boshlovchilar uchun ham mos.",
         "tone": "orange"
       },
       {
-        "title": "Dress for the Desert",
-        "text": "Closed shoes, sunglasses and a scarf will make your ride more comfortable.",
+        "title": "Choʻlga mos kiyining",
+        "text": "Yopiq poyabzal, quyoshdan himoya koʻzoynagi va roʻmol sayringizni yanada qulay qiladi.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Quad bikes · Camels · Bedouins · Sinai Desert",
-      "line2": "Transfer and tea included — from £15",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Kvadrotsikllar · Tuyalar · Badaviylar · Sinay choʻli",
+      "line2": "Transfer va choy kiritilgan — £15 dan",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Single quad",
-        "unit": "per person",
+        "label": "Bir kishilik kvadrotsikl",
+        "unit": "bir kishi uchun",
         "discount": "−25%"
       },
       {
-        "label": "Double quad",
-        "unit": "for 2 people",
+        "label": "Ikki kishilik kvadrotsikl",
+        "unit": "2 kishi uchun",
         "discount": "−20%"
       }
     ],
     "related": [
       {
         "tag": "Safari",
-        "name": "Salama Red Canyon"
+        "name": "Salama Qizil kanyoni"
       },
       {
-        "tag": "Buggy",
-        "name": "Buggy Safari"
+        "tag": "Bagi",
+        "name": "Bagida safari"
       },
       {
         "tag": "Safari",
-        "name": "Super Safari"
+        "name": "Super safari"
       },
       {
-        "tag": "Private yacht",
-        "name": "Private Yacht"
+        "tag": "Shaxsiy yaxta",
+        "name": "Shaxsiy yaxta"
       },
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Qohira",
+        "name": "Avtobusda Qohira va piramidalar"
       }
     ],
     "options": [
       {
-        "label": "Single quad",
-        "unit": "person"
+        "label": "Bir kishilik kvadrotsikl",
+        "unit": "kishi"
       },
       {
-        "label": "Double quad",
-        "unit": "2 people"
+        "label": "Ikki kishilik kvadrotsikl",
+        "unit": "2 kishi"
       },
       {
-        "label": "Camel ride",
-        "unit": "person"
+        "label": "Tuya sayri",
+        "unit": "kishi"
       },
       {
-        "label": "Private ride",
-        "unit": "group"
+        "label": "Shaxsiy sayr",
+        "unit": "guruh"
       },
       {
-        "label": "Private transfer",
-        "unit": "group"
+        "label": "Shaxsiy transfer",
+        "unit": "guruh"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−25%",
-      "priceText": "Transfer and Bedouin tea included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "5 activities",
-      "programText": "Quad bikes, camels, Bedouins, the Sinai desert and tea by the fire. An unforgettable adventure!",
+      "priceText": "Transfer va badaviylar choyi kiritilgan. Oldindan toʻlovsiz.",
+      "programKicker": "Kun dasturi",
+      "programNum": "5 ta mashgʻulot",
+      "programText": "Kvadrotsikllar, tuyalar, badaviylar, Sinay choʻli va gulxan yonida choy. Unutilmas sarguzasht!",
       "ring": "5/5",
-      "ringLabel": "activities"
+      "ringLabel": "mashgʻulot"
     }
   },
   "buggy-safari-sharm": {
-    "name": "Buggy Safari & Camel Ride",
-    "title": "Buggy Safari & Camel Ride in the Sharm El Sheikh Desert",
+    "name": "Bagida safari va tuya sayri",
+    "title": "Sharm-ash-Shayx choʻlida bagida safari va tuya sayri",
     "categoryLabel": "Safari",
-    "duration": "3 hours",
-    "detailDuration": "2.5 hours",
-    "schedule": "Daily",
-    "timeText": "4:00 AM · 8:00 AM · 10:00 AM · 2:00 PM",
-    "priceUnit": "per buggy",
+    "duration": "3 soat",
+    "detailDuration": "2.5 soat",
+    "schedule": "Har kuni",
+    "timeText": "4:00 · 8:00 · 10:00 · 14:00",
+    "priceUnit": "bagi uchun",
     "badge": null,
-    "excerpt": "A thrilling buggy ride through the desert to a Bedouin village, with photo stops and camel riding along the way…",
-    "metaTitle": "Buggy Safari & Camel Ride in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Buggy ride across the Sinai Desert: time at the safari centre, driving a buggy, camel ride. Transfer included. Daily. From £30. No prepayment.",
+    "excerpt": "Choʻl boʻylab badaviylar qishlogʻiga bagida hayajonli sayr, yoʻlda suratga tushish uchun toʻxtashlar va tuya sayri…",
+    "metaTitle": "Sharm-ash-Shayxda bagida safari va tuya sayri | Sardor Tours",
+    "metaDescription": "Sinay choʻlida bagi sayri: safari markazi, bagi boshqarish, tuya sayri. Transfer kiritilgan. Har kuni. £30 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta kiritilgan",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "At the agreed time, we pick you up from your hotel in a comfortable air-conditioned vehicle. The safari centre is located in the desert on the outskirts of Sharm El Sheikh, and the drive takes around 30 minutes depending on your hotel location."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Kelishilgan vaqtda sizni mehmonxonangizdan konditsionerli qulay avtomobilda olib ketamiz. Safari markazi Sharm-ash-Shayx chekkasidagi choʻlda joylashgan. Yoʻl mehmonxonangiz joylashuviga qarab taxminan 30 daqiqa davom etadi."
       },
       {
-        "title": "Arrival at the Safari Centre",
-        "text": "Upon arrival, you'll receive a short briefing on how to drive the buggy safely. You can also get a traditional scarf (optional), which helps protect your face and hair from sand and dust."
+        "title": "Safari markaziga yetib kelish",
+        "text": "Yetib kelgach, bagini xavfsiz boshqarish boʻyicha qisqa yoʻriqnoma olasiz. Xohlasangiz, yuz va sochingizni qum hamda changdan himoya qiladigan anʼanaviy roʻmol ham olishingiz mumkin."
       },
       {
-        "title": "Buggy Ride in the Desert",
-        "text": "Take control of your buggy and follow your guide into the vast Sinai Desert. The desert tour lasts approximately 1.5 hours and includes a stop at Echo Mountain, a scenic photo break, and a visit to a Bedouin village where you'll enjoy traditional tea and learn about desert life."
+        "title": "Choʻlda bagi sayri",
+        "text": "Bagi ruliga oʻtiring va gidingiz ortidan bepoyon Sinay choʻliga yoʻl oling. Choʻl sayri taxminan 1.5 soat davom etadi. Dasturda Aks-sado togʻida toʻxtash, goʻzal manzaralar fonida suratga tushish va badaviylar qishlogʻiga tashrif bor. U yerda anʼanaviy choy ichib, choʻl hayoti bilan tanishasiz."
       },
       {
-        "title": "Optional Camel Ride",
-        "text": "Enjoy a short camel ride across the desert for a unique and peaceful experience, with beautiful mountain views all around."
+        "title": "Ixtiyoriy tuya sayri",
+        "text": "Atrofdagi goʻzal togʻ manzaralaridan bahramand boʻlib, choʻl boʻylab qisqa va osoyishta tuya sayriga chiqing."
       },
       {
-        "title": "Return Transfer",
-        "text": "After the tour, we take you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Qaytish transferi",
+        "text": "Turdan keyin sizni konditsionerli qulay avtomobilda mehmonxonangizga qaytarib olib boramiz."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and drop-off",
-      "Bedouin tea"
+      "Ingliz tilida soʻzlashuvchi gid",
+      "Mehmonxonadan olib ketish va qaytarib kelish",
+      "Badaviylar choyi"
     ],
     "notIncluded": [
-      "Drinks",
-      "Shisha",
-      "Souvenirs and personal expenses"
+      "Ichimliklar",
+      "Kalyan",
+      "Suvenirlar va shaxsiy xarajatlar"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Sunglasses",
-      "Scarf (can be purchased on site if needed)",
-      "Drinking water"
+      "Telefoningizda pasportingiz surati",
+      "Quyoshdan himoya koʻzoynagi",
+      "Roʻmol (zarur boʻlsa, joyida sotib olish mumkin)",
+      "Ichimlik suvi"
     ],
     "faq": [
       {
-        "q": "What is a buggy?",
-        "a": "A buggy is a small off-road vehicle designed for driving in the desert. It is automatic and easy to control, making it suitable even for beginners. This is one of the most popular desert activities in Sharm El Sheikh for guests looking for fun and adventure."
+        "q": "Bagi nima?",
+        "a": "Bagi — choʻlda yurishga moʻljallangan kichik yoʻltanlamas avtomobil. Avtomatik uzatmalar qutisi va oson boshqaruvi tufayli yangi boshlovchilar uchun ham mos. Bu Sharm-ash-Shayxda maroqli hordiq va sarguzasht izlayotgan mehmonlar orasida eng mashhur choʻl mashgʻulotlaridan biridir."
       },
       {
-        "q": "Do I need a driving licence?",
-        "a": "No driving licence is required. The buggies are automatic and easy to use. Before the ride, you will receive a short safety briefing from your guide."
+        "q": "Haydovchilik guvohnomasi kerakmi?",
+        "a": "Haydovchilik guvohnomasi talab qilinmaydi. Bagilar avtomatik boʻlib, boshqarish oson. Sayrdan oldin gidingiz xavfsizlik qoidalarini qisqacha tushuntiradi."
       },
       {
-        "q": "What is the minimum age to drive?",
-        "a": "The minimum age to drive is 16 years old. Children under 16 can join as passengers with an adult. Children aged 3 and above can also join and sit with a parent."
+        "q": "Necha yoshdan boshqarish mumkin?",
+        "a": "Bagini 16 yoshdan boshqarish mumkin. 16 yoshgacha boʻlgan bolalar kattalar bilan yoʻlovchi sifatida qatnashishi mumkin. 3 yosh va undan katta bolalar ham ota-onasi bilan oʻtirib sayrga qoʻshilishi mumkin."
       },
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes, hotel pick-up and drop-off from Sharm El Sheikh are included in the price. We pick you up from your hotel entrance."
+        "q": "Mehmonxonadan transfer kiritilganmi?",
+        "a": "Ha, Sharm-ash-Shayxda mehmonxonadan olib ketish va qaytarib kelish narxga kiritilgan. Sizni mehmonxonangizning kirish joyidan olib ketamiz."
       },
       {
-        "q": "What should I bring?",
-        "a": "We recommend comfortable clothes, closed shoes, sunglasses, and water. A scarf (keffiyeh) can be purchased on site if needed."
+        "q": "Oʻzim bilan nima olishim kerak?",
+        "a": "Qulay kiyim, yopiq poyabzal, quyoshdan himoya koʻzoynagi va suv tavsiya qilamiz. Zarur boʻlsa, roʻmolni (kufiyani) joyida sotib olishingiz mumkin."
       },
       {
-        "q": "What time do tours run?",
-        "a": "There are four daily departures: 4:00 AM, 8:00 AM, 10:00 AM, and 2:00 PM. You can choose the most convenient time when booking."
+        "q": "Turlar qaysi vaqtda boʻladi?",
+        "a": "Har kuni toʻrt marta joʻnaymiz: soat 4:00, 8:00, 10:00 va 14:00 da. Bron qilishda oʻzingizga qulay vaqtni tanlashingiz mumkin."
       },
       {
-        "q": "What should I wear?",
-        "a": "We recommend comfortable clothes, closed shoes, sunglasses, and a scarf to protect against sand."
+        "q": "Qanday kiyinish kerak?",
+        "a": "Qulay kiyim, yopiq poyabzal, quyoshdan himoya koʻzoynagi va qumdan himoyalanish uchun roʻmol tavsiya qilamiz."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "Manzil haqida",
     "destinationCards": [
       {
-        "tag": "Sinai Desert",
-        "title": "Desert Buggy Ride",
-        "text": "Take the wheel and race across the open Sinai Desert. It's pure freedom, plenty of adrenaline, and some of the best off-road fun you'll have in Sharm.",
+        "tag": "Sinay choʻli",
+        "title": "Choʻlda bagi sayri",
+        "text": "Rulga oʻtiring va bepoyon Sinay choʻli boʻylab yelib boring. Erkinlik hissi, adrenalin va Sharmdagi eng maroqli choʻl sarguzashtlaridan biri sizni kutmoqda.",
         "tone": "sand"
       },
       {
-        "tag": "Bedouin village",
-        "title": "Bedouin Tea Stop",
-        "text": "Stop at a real Bedouin village for a glass of traditional tea and a taste of local desert life — a relaxed, authentic break from the ride.",
+        "tag": "Badaviylar qishlogʻi",
+        "title": "Badaviylar choyi uchun toʻxtash",
+        "text": "Haqiqiy badaviylar qishlogʻida toʻxtab, anʼanaviy choy iching va mahalliy choʻl hayoti bilan tanishing. Bu sayr orasidagi sokin va oʻzgacha tanaffus boʻladi.",
         "tone": "coral"
       },
       {
-        "tag": "Sinai Desert",
-        "title": "Camel Ride",
-        "text": "Hop on an Egyptian camel for a short ride over the dunes. Easy, fun, and perfect for some memorable holiday photos.",
+        "tag": "Sinay choʻli",
+        "title": "Tuya sayri",
+        "text": "Misr tuyasiga minib, qumtepalar boʻylab qisqa sayrga chiqing. Yengil va maroqli sayr taʼtilning esda qolarli suratlari uchun ayni muddao.",
         "tone": "blue"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Four departures a day",
-        "text": "Choose from 4:00 AM , 8:00 AM , 10:00 AM or 2:00 PM . The sunrise ride is cooler and quieter; the later slots suit a relaxed start to the day.",
+        "title": "Kuniga toʻrt marta joʻnash",
+        "text": "Soat 4:00, 8:00, 10:00 yoki 14:00 ni tanlang. Quyosh chiqishidagi sayr salqinroq va sokinroq boʻladi, kechroq vaqtlar esa kunni shoshilmay boshlashni istaganlar uchun mos.",
         "tone": "green"
       },
       {
-        "title": "No licence needed",
-        "text": "You don't need a driving licence. The buggies are automatic, and your guide gives a quick briefing before you set off.",
+        "title": "Haydovchilik guvohnomasi kerak emas",
+        "text": "Haydovchilik guvohnomasi kerak emas. Bagilar avtomatik, gidingiz esa yoʻlga chiqishdan oldin qisqa yoʻriqnoma beradi.",
         "tone": "orange"
       },
       {
-        "title": "Bring a scarf",
-        "text": "A scarf keeps off the dust and sun while you ride, and you can buy one on site. Closed shoes and sunglasses are a good idea too.",
+        "title": "Roʻmol oling",
+        "text": "Roʻmol sayr paytida chang va quyoshdan himoya qiladi, uni joyida sotib olishingiz mumkin. Yopiq poyabzal va quyoshdan himoya koʻzoynagini ham tavsiya qilamiz.",
         "tone": "blue"
       },
       {
-        "title": "Two buggy types",
-        "text": "Choose a 2-seater or a 4-seater buggy to suit your group — ideal whether you're riding as a couple or with the family.",
+        "title": "Bagining ikki turi",
+        "text": "Guruhingizga mos 2 oʻrinli yoki 4 oʻrinli bagini tanlang. Juftlikda ham, oila bilan ham sayr qilish uchun qulay.",
         "tone": "orange"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Buggy · Camels · Bedouins · Sinai Desert",
-      "line2": "Transfer and tea included — from £30",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Bagi · Tuyalar · Badaviylar · Sinay choʻli",
+      "line2": "Transfer va choy kiritilgan — £30 dan",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Two-seater",
-        "unit": "per buggy",
+        "label": "Ikki oʻrinli",
+        "unit": "bagi uchun",
         "discount": "−33%"
       },
       {
-        "label": "Four-seater",
-        "unit": "per buggy",
+        "label": "Toʻrt oʻrinli",
+        "unit": "bagi uchun",
         "discount": "−17%"
       }
     ],
     "related": [
       {
         "tag": "Safari",
-        "name": "Red Canyon Dahab"
+        "name": "Dahabdagi Qizil kanyon"
       },
       {
-        "tag": "Quad bikes",
-        "name": "Quad Bike Safari"
+        "tag": "Kvadrotsikllar",
+        "name": "Kvadrotsiklda safari"
       },
       {
         "tag": "Safari",
-        "name": "Super Safari"
+        "name": "Super safari"
       },
       {
-        "tag": "Yacht",
-        "name": "Tiran Island Boat Trip"
+        "tag": "Yaxta",
+        "name": "Tiran oroliga qayiq sayohati"
       },
       {
-        "tag": "Sinai",
-        "name": "Mount Moses — Sinai"
+        "tag": "Sinay",
+        "name": "Muso togʻi — Sinay"
       }
     ],
     "options": [
       {
-        "label": "Two-seater",
-        "unit": "buggy"
+        "label": "Ikki oʻrinli",
+        "unit": "bagi"
       },
       {
-        "label": "Four-seater",
-        "unit": "buggy"
+        "label": "Toʻrt oʻrinli",
+        "unit": "bagi"
       },
       {
-        "label": "Camel ride",
-        "unit": "person"
+        "label": "Tuya sayri",
+        "unit": "kishi"
       },
       {
-        "label": "Private ride",
-        "unit": "group"
+        "label": "Shaxsiy sayr",
+        "unit": "guruh"
       },
       {
-        "label": "Private transfer",
-        "unit": "group"
+        "label": "Shaxsiy transfer",
+        "unit": "guruh"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−33%",
-      "priceText": "Transfer and tea with the Bedouins included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "5 activities",
-      "programText": "Buggy across the desert, camels, Bedouins, the Sinai Desert and tea by the fire. An unforgettable adventure!",
+      "priceText": "Transfer va badaviylar bilan choy kiritilgan. Oldindan toʻlovsiz.",
+      "programKicker": "Kun dasturi",
+      "programNum": "5 ta mashgʻulot",
+      "programText": "Choʻlda bagi sayri, tuyalar, badaviylar, Sinay choʻli va gulxan yonida choy. Unutilmas sarguzasht!",
       "ring": "5/5",
-      "ringLabel": "activities"
+      "ringLabel": "mashgʻulot"
     }
   },
   "super-safari-sharm": {
-    "name": "Super Safari Stargazing 5-in-1: Quad, Camel, Dinner, Show & Telescope",
-    "title": "Super Safari 5 in 1 quad, camel, dinner, show and telescope",
+    "name": "Yulduzlar kuzatuvi bilan super safari 5 tasi 1 da: kvadrotsikl, tuya, kechki ovqat, shou va teleskop",
+    "title": "Super safari 5 tasi 1 da: kvadrotsikl, tuya, kechki ovqat, shou va teleskop",
     "categoryLabel": "Safari",
-    "duration": "5 hours",
-    "detailDuration": "5 hours",
-    "schedule": "Daily",
-    "timeText": "3:00 PM – 8:00 PM",
+    "duration": "5 soat",
+    "detailDuration": "5 soat",
+    "schedule": "Har kuni",
+    "timeText": "15:00 – 20:00",
     "priceUnit": null,
-    "badge": "Exclusive",
-    "excerpt": "The ultimate desert experience: quad safari, camel riding, a Bedouin dinner, stargazing and an incredible show.",
-    "metaTitle": "Super Safari 5 in 1 quad, camel, dinner, show and telescope. | Sardor Tours",
-    "metaDescription": "Super Safari 5 in 1: quad bikes across the desert, camel ride, show and dinner with the Bedouins. Transfer included. Daily. From £30. No prepayment.",
+    "badge": "Eksklyuziv",
+    "excerpt": "Choʻldagi unutilmas taassurotlar: kvadrotsiklda safari, tuya sayri, badaviylar kechki ovqati, yulduzlar kuzatuvi va ajoyib shou.",
+    "metaTitle": "Super safari 5 tasi 1 da: kvadrotsikl, tuya, kechki ovqat, shou va teleskop | Sardor Tours",
+    "metaDescription": "Super safari 5 tasi 1 da: choʻlda kvadrotsikllar, tuya sayri, badaviylar bilan shou va kechki ovqat. Transfer kiritilgan. Har kuni. £30 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta amal qiladi",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel pick-up",
-        "text": "At the agreed time, we pick you up from your hotel in a comfortable air-conditioned vehicle. The quad bike centre is located in the desert on the edge of the city. The drive takes around 30 minutes, depending on your hotel's location."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Kelishilgan vaqtda sizni mehmonxonangizdan konditsionerli qulay avtomobilda olib ketamiz. Kvadrotsikl markazi shahar chekkasidagi choʻlda joylashgan. Yoʻl mehmonxonangiz joylashuviga qarab taxminan 30 daqiqa davom etadi."
       },
       {
-        "title": "Time at the quad bike centre",
-        "text": "You'll spend around 4 hours in the desert. On arrival, you'll receive a short briefing on how to operate your vehicle."
+        "title": "Kvadrotsikl markazida",
+        "text": "Choʻlda taxminan 4 soat boʻlasiz. Yetib kelgach, transportingizni boshqarish boʻyicha qisqa yoʻriqnoma olasiz."
       },
       {
-        "title": "Riding through the desert",
-        "text": "Drive your quad bike or buggy across the Sinai Desert, following an experienced guide. The route includes a stop at Echo Mountain, a scenic viewpoint for photos and tea in a traditional Bedouin village."
+        "title": "Choʻl boʻylab sayr",
+        "text": "Tajribali gid ortidan Sinay choʻli boʻylab kvadrotsikl yoki bagida yuring. Yoʻnalishda Aks-sado togʻida toʻxtash, manzarali joyda suratga tushish va anʼanaviy badaviylar qishlogʻida choy ichish bor."
       },
       {
-        "title": "Camel ride",
-        "text": "Enjoy a ride on an Egyptian camel and take in the peaceful desert landscape and mountain views."
+        "title": "Tuya sayri",
+        "text": "Misr tuyasida sayr qilib, osoyishta choʻl va togʻ manzaralaridan bahramand boʻling."
       },
       {
-        "title": "Show and dinner in the desert",
-        "text": "Continue to a Bedouin theatre surrounded by the mountains, where you'll enjoy local folklore, belly dancing, a fire show and modern Egyptian music. Dinner is served in the open air and includes meat or chicken, rice and a selection of fresh salads."
+        "title": "Choʻlda shou va kechki ovqat",
+        "text": "Togʻlar orasidagi badaviylar teatriga yoʻl olasiz. U yerda mahalliy folklor, qorin raqsi, olovli shou va zamonaviy Misr musiqasidan bahramand boʻlasiz. Ochiq havoda tortiladigan kechki ovqatga goʻsht yoki tovuq, guruch va turli yangi salatlar kiradi."
       },
       {
-        "title": "Stargazing experience",
-        "text": "Observe the breathtaking night sky and take turns viewing stars and planets through a telescope while your guide shares fascinating insights about the universe."
+        "title": "Yulduzlarni kuzatish",
+        "text": "Hayratlanarli tungi osmonni tomosha qiling va teleskop orqali navbat bilan yulduzlar hamda sayyoralarni kuzating. Gidingiz esa koinot haqida qiziqarli maʼlumotlar ulashadi."
       },
       {
-        "title": "Hotel drop-off",
-        "text": "We'll take you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Mehmonxonaga qaytarib olib boramiz",
+        "text": "Sizni konditsionerli qulay avtomobilda mehmonxonangizga qaytarib olib boramiz."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel transfer",
-      "Quad bike or buggy ride",
-      "Camel ride",
-      "Dinner",
-      "Stargazing experience"
+      "Ingliz tilida soʻzlashuvchi gid",
+      "Mehmonxonadan transfer",
+      "Kvadrotsikl yoki bagi sayri",
+      "Tuya sayri",
+      "Kechki ovqat",
+      "Yulduzlarni kuzatish"
     ],
     "notIncluded": [
-      "Drinks",
-      "Shisha",
-      "Souvenirs and personal expenses"
+      "Ichimliklar",
+      "Kalyan",
+      "Suvenirlar va shaxsiy xarajatlar"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Sunglasses",
-      "Scarf (available to buy on site)",
-      "Drinking water"
+      "Telefoningizda pasportingiz surati",
+      "Quyoshdan himoya koʻzoynagi",
+      "Roʻmol (joyida sotib olish mumkin)",
+      "Ichimlik suvi"
     ],
     "faq": [
       {
-        "q": "Do I need a driving licence?",
-        "a": "No. A driving licence is not required. Your instructor will explain everything before the ride."
+        "q": "Haydovchilik guvohnomasi kerakmi?",
+        "a": "Yoʻq. Haydovchilik guvohnomasi talab qilinmaydi. Instruktoringiz sayrdan oldin hamma narsani tushuntiradi."
       },
       {
-        "q": "Can I bring children?",
-        "a": "Yes. Children aged 2 and over can join as passengers. Children over 12 can drive a quad bike when accompanied by an adult."
+        "q": "Bolalarni olib kelsam boʻladimi?",
+        "a": "Ha. 2 yosh va undan katta bolalar yoʻlovchi sifatida qatnashishi mumkin. 12 yoshdan katta bolalar kattalar hamrohligida kvadrotsikl boshqarishi mumkin."
       },
       {
-        "q": "Which should I choose: a quad bike or a buggy?",
-        "a": "A quad bike is ideal if you want to drive yourself. A buggy offers a more comfortable ride and is a great choice for couples or families."
+        "q": "Qaysi birini tanlagan maʼqul: kvadrotsiklmi yoki bagimi?",
+        "a": "Oʻzingiz boshqarishni istasangiz, kvadrotsikl juda mos. Bagi esa qulayroq sayrni taʼminlaydi va juftliklar yoki oilalar uchun ajoyib tanlov."
       },
       {
-        "q": "What's included in the desert show and dinner?",
-        "a": "The programme includes local folklore, belly dancing, a fire show and modern Egyptian music. Dinner is served outdoors and includes meat or chicken, rice and fresh salads."
+        "q": "Choʻldagi shou va kechki ovqatga nimalar kiradi?",
+        "a": "Dasturga mahalliy folklor, qorin raqsi, olovli shou va zamonaviy Misr musiqasi kiradi. Kechki ovqat ochiq havoda tortiladi: goʻsht yoki tovuq, guruch va yangi salatlar."
       }
     ],
-    "infoHeading": "About the Experience",
+    "infoHeading": "Sayohat haqida",
     "destinationCards": [
       {
-        "tag": "Sinai Desert",
-        "title": "The Ride",
-        "text": "Drive across the open Sinai Desert with stops at Echo Mountain and a traditional Bedouin village.",
+        "tag": "Sinay choʻli",
+        "title": "Choʻl sayri",
+        "text": "Bepoyon Sinay choʻli boʻylab sayr qiling, Aks-sado togʻi va anʼanaviy badaviylar qishlogʻida toʻxtang.",
         "tone": "sand"
       },
       {
-        "tag": "Bedouin Camp",
-        "title": "Show & Dinner",
-        "text": "Enjoy an evening of local entertainment, open-air dining and the unique atmosphere of the Sinai Desert.",
+        "tag": "Badaviylar lageri",
+        "title": "Shou va kechki ovqat",
+        "text": "Kechani mahalliy tomoshalar, ochiq havodagi kechki ovqat va Sinay choʻlining oʻziga xos muhitida oʻtkazing.",
         "tone": "coral"
       },
       {
-        "tag": "Sinai Desert",
-        "title": "Stargazing",
-        "text": "End the evening by exploring the night sky through a telescope in one of the region's best locations for stargazing.",
+        "tag": "Sinay choʻli",
+        "title": "Yulduzlarni kuzatish",
+        "text": "Kechani mintaqadagi yulduzlarni kuzatish uchun eng qulay joylardan birida teleskop orqali tungi osmonni tomosha qilish bilan yakunlang.",
         "tone": "blue"
       },
       {
-        "tag": "Sinai Desert",
-        "title": "Camel Ride",
-        "text": "Take a short camel ride and enjoy the quiet beauty of the desert at sunset.",
+        "tag": "Sinay choʻli",
+        "title": "Tuya sayri",
+        "text": "Qisqa tuya sayriga chiqing va quyosh botishida choʻlning sokin goʻzalligidan bahramand boʻling.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Afternoon departure",
-        "text": "The tour runs daily from 3:00 PM to 8:00 PM .",
+        "title": "Tushdan keyin joʻnash",
+        "text": "Tur har kuni soat 15:00 dan 20:00 gacha boʻladi.",
         "tone": "green"
       },
       {
-        "title": "No driving licence required",
-        "text": "Full instructions are provided before the ride.",
+        "title": "Haydovchilik guvohnomasi talab qilinmaydi",
+        "text": "Sayrdan oldin barcha koʻrsatmalar toʻliq beriladi.",
         "tone": "orange"
       },
       {
-        "title": "VIP Dinner available",
-        "text": "Upgrade to a private VIP area with your own BBQ grill serving freshly prepared meat and chicken for a more comfortable dining experience.",
+        "title": "VIP kechki ovqat mavjud",
+        "text": "Yanada qulay kechki ovqat uchun alohida VIP hududni tanlang. Oʻzingizga ajratilgan grilda yangi tayyorlangan goʻsht va tovuqdan bahramand boʻlasiz.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Quad bikes · Camels · Bedouins · Sinai Desert",
-      "line2": "Transfer and tea included — from £30",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Kvadrotsikllar · Tuyalar · Badaviylar · Sinay choʻli",
+      "line2": "Transfer va choy kiritilgan — £30 dan",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Single quad",
-        "unit": "per person",
+        "label": "Bir kishilik kvadrotsikl",
+        "unit": "bir kishi uchun",
         "discount": "−14%"
       },
       {
-        "label": "Double quad",
-        "unit": "for 2 people",
+        "label": "Ikki kishilik kvadrotsikl",
+        "unit": "2 kishi uchun",
         "discount": "−18%"
       }
     ],
     "related": [
       {
         "tag": "Safari",
-        "name": "Salama Red Canyon"
+        "name": "Salama Qizil kanyoni"
       },
       {
-        "tag": "Quad Bikes",
-        "name": "Quad Bike Safari"
+        "tag": "Kvadrotsikllar",
+        "name": "Kvadrotsiklda safari"
       },
       {
-        "tag": "Buggies",
-        "name": "Buggy Safari"
+        "tag": "Bagi",
+        "name": "Bagida safari"
       },
       {
-        "tag": "Dolphinarium",
-        "name": "Dolphin Show"
+        "tag": "Delfinariy",
+        "name": "Delfinlar shousi"
       },
       {
         "tag": "Petra",
-        "name": "Petra — Jordan"
+        "name": "Petra — Iordaniya"
       }
     ],
     "options": [
       {
-        "label": "Single quad",
-        "unit": "person"
+        "label": "Bir kishilik kvadrotsikl",
+        "unit": "kishi"
       },
       {
-        "label": "Double quad",
-        "unit": "2 people"
+        "label": "Ikki kishilik kvadrotsikl",
+        "unit": "2 kishi"
       },
       {
-        "label": "Two-seater buggy",
-        "unit": "2 people"
+        "label": "Ikki oʻrinli bagi",
+        "unit": "2 kishi"
       },
       {
-        "label": "Four-seater buggy",
-        "unit": "4 people"
+        "label": "Toʻrt oʻrinli bagi",
+        "unit": "4 kishi"
       },
       {
-        "label": "Private ride",
-        "unit": "group"
+        "label": "Shaxsiy sayr",
+        "unit": "guruh"
       },
       {
-        "label": "Private transfer",
-        "unit": "group"
+        "label": "Shaxsiy transfer",
+        "unit": "guruh"
       },
       {
-        "label": "VIP dinner",
-        "unit": "person"
+        "label": "VIP kechki ovqat",
+        "unit": "kishi"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−14%",
-      "priceText": "Transfer and Bedouin tea included. No prepayment.",
-      "programKicker": "Programme · 5 in 1",
-      "programNum": "4 activities",
-      "programText": "Quad bikes, camels, Bedouins and a show with dinner in the desert. An unforgettable adventure!",
+      "priceText": "Transfer va badaviylar choyi kiritilgan. Oldindan toʻlovsiz.",
+      "programKicker": "Dastur · 5 tasi 1 da",
+      "programNum": "4 ta mashgʻulot",
+      "programText": "Kvadrotsikllar, tuyalar, badaviylar hamda choʻlda shou va kechki ovqat. Unutilmas sarguzasht!",
       "ring": "4/4",
-      "ringLabel": "activities"
+      "ringLabel": "mashgʻulot"
     }
   },
   "blue-hole-dahab": {
-    "name": "Blue Hole & Canyon Dahab",
-    "title": "Blue Hole & Canyon in Dahab",
+    "name": "Dahab: Moviy tuynuk (Blue Hole) va kanyon",
+    "title": "Dahabdagi Moviy tuynuk (Blue Hole) va kanyon",
     "categoryLabel": "Safari",
-    "duration": "10 hours",
-    "detailDuration": "10 hours",
-    "schedule": "Daily",
-    "timeText": "7:30 AM – 5:30 PM",
+    "duration": "10 soat",
+    "detailDuration": "10 soat",
+    "schedule": "Har kuni",
+    "timeText": "7:30 – 17:30",
     "priceUnit": null,
     "badge": null,
-    "excerpt": "A full-day trip to the town of Dahab. Snorkelling at the Blue Hole, a camel ride and a walk through the canyon…",
-    "metaTitle": "Blue Hole & Canyon in Dahab | Sardor Tours",
-    "metaDescription": "Dahab from Sharm El Sheikh: camels, snorkelling in the Blue Hole, quad bikes, canyon and Bedouin tea. Lunch and transfer included. From £30.",
+    "excerpt": "Dahab shahriga bir kunlik sayohat. Moviy tuynuk (Blue Hole)da snorkeling, tuya sayri va kanyon boʻylab piyoda sayr…",
+    "metaTitle": "Dahabdagi Moviy tuynuk (Blue Hole) va kanyon | Sardor Tours",
+    "metaDescription": "Sharm-ash-Shayxdan Dahabga: tuyalar, Moviy tuynuk (Blue Hole)da snorkeling, kvadrotsikllar, kanyon, badaviylar choyi. Tushlik va transfer kiritilgan. £30 dan.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta amal qiladi",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "At the scheduled time, we'll collect you from your hotel in a comfortable, air-conditioned vehicle and head to Dahab, located around 90 km from Sharm El Sheikh."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Belgilangan vaqtda sizni mehmonxonangizdan konditsionerli qulay avtomobilda olib ketamiz va Sharm-ash-Shayxdan taxminan 90 km uzoqlikdagi Dahabga yoʻl olamiz."
       },
       {
-        "title": "Camel Ride",
-        "text": "Enjoy a relaxing camel ride along the coastline and experience the timeless charm of the Sinai desert's most iconic animal."
+        "title": "Tuya sayri",
+        "text": "Sohil boʻylab osoyishta tuya sayridan bahramand boʻling va Sinay choʻlining eng taniqli jonivori bilan sayohat qilishning oʻzgacha zavqini his eting."
       },
       {
-        "title": "Snorkelling at the Blue Hole",
-        "text": "Discover the famous Blue Hole, located within a protected national reserve (entry fee included). Explore crystal-clear waters and some of the most beautiful coral reefs in Egypt."
+        "title": "Moviy tuynuk (Blue Hole)da snorkeling",
+        "text": "Muhofaza qilinadigan milliy qoʻriqxonadagi mashhur Moviy tuynuk (Blue Hole)ni kashf eting (kirish toʻlovi kiritilgan). Billurdek tiniq suvlar va Misrning eng goʻzal marjon riflarini tomosha qiling."
       },
       {
-        "title": "Lunch by the Sea",
-        "text": "Enjoy a freshly prepared lunch by the sea, including chicken, side dishes, and a selection of fresh salads."
+        "title": "Dengiz boʻyida tushlik",
+        "text": "Dengiz boʻyida yangi tayyorlangan tushlikdan bahramand boʻling: tovuq, garnirlar va turli yangi salatlar."
       },
       {
-        "title": "Quad Bike Ride +£10 · optional",
-        "text": "Add an exciting quad bike adventure through the desert trails surrounding Dahab. Perfect for those looking for an extra dose of adrenaline."
+        "title": "Kvadrotsikl sayri +£10 · ixtiyoriy",
+        "text": "Dahab atrofidagi choʻl yoʻllari boʻylab hayajonli kvadrotsikl sayrini qoʻshing. Yanada koʻproq adrenalin izlayotganlar uchun ayni muddao."
       },
       {
-        "title": "Canyon Walk",
-        "text": "Take a scenic walk through the stunning canyon, one of the Sinai Peninsula's most impressive natural wonders. The walk lasts approximately 1 hour."
+        "title": "Kanyon boʻylab piyoda sayr",
+        "text": "Sinay yarimorolining eng ajoyib tabiiy moʻjizalaridan biri boʻlgan goʻzal kanyon boʻylab piyoda sayr qiling. Sayr taxminan 1 soat davom etadi."
       },
       {
-        "title": "Bedouin Tea Experience",
-        "text": "Relax in a traditional Bedouin camp and enjoy a cup of authentic Bedouin tea while learning about the local desert culture."
+        "title": "Badaviylar choyidan bahramand boʻling",
+        "text": "Anʼanaviy badaviylar lagerida dam oling, haqiqiy badaviylar choyidan iching va mahalliy choʻl madaniyati bilan tanishing."
       },
       {
-        "title": "Dahab Bazaar Stop",
-        "text": "Browse local shops and souvenir stalls, offering a variety of handmade crafts, gifts, and local products."
+        "title": "Dahab bozorida toʻxtash",
+        "text": "Mahalliy doʻkonlar va suvenir rastalarini aylaning: turli hunarmandchilik buyumlari, sovgʻalar va mahalliy mahsulotlarni topasiz."
       },
       {
-        "title": "Return Transfer to Sharm El Sheikh",
-        "text": "After a memorable day, relax on the comfortable, air-conditioned transfer back to your hotel in Sharm El Sheikh."
+        "title": "Sharm-ash-Shayxga qaytish transferi",
+        "text": "Esda qolarli kundan soʻng Sharm-ash-Shayxdagi mehmonxonangizga konditsionerli qulay avtomobilda qaytayotib dam oling."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and return transfer",
-      "National Park entry fee",
-      "Camel ride",
-      "Lunch",
-      "Traditional Bedouin tea"
+      "Ingliz tilida soʻzlashuvchi gid",
+      "Mehmonxonadan olib ketish va qaytish transferi",
+      "Milliy bogʻga kirish chiptasi",
+      "Tuya sayri",
+      "Tushlik",
+      "Anʼanaviy badaviylar choyi"
     ],
     "notIncluded": [
-      "Snorkelling equipment (mask, fins, and life jacket)",
-      "Drinks during lunch",
-      "Professional photos and videos"
+      "Snorkeling jihozlari (niqob, lastlar va qutqaruv jileti)",
+      "Tushlik paytidagi ichimliklar",
+      "Professional foto va videolar"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Swimsuit or swim shorts",
-      "Towel",
-      "Reef shoes (recommended)",
-      "Snorkelling equipment (mask and fins), if you have your own"
+      "Telefoningizda pasportingiz surati",
+      "Suzish kiyimi",
+      "Sochiq",
+      "Rif poyabzali (tavsiya etiladi)",
+      "Oʻzingizniki boʻlsa, snorkeling jihozlari (niqob va lastlar)"
     ],
     "faq": [
       {
-        "q": "Is hotel pick-up and drop-off included?",
-        "a": "Yes, return hotel transfers from Sharm El Sheikh are included in the tour price."
+        "q": "Mehmonxonadan olib ketish va qaytarib kelish kiritilganmi?",
+        "a": "Ha, Sharm-ash-Shayxdagi mehmonxonadan borish-qaytish transferi tur narxiga kiritilgan."
       },
       {
-        "q": "Is the National Park entry fee included?",
-        "a": "Yes, all National Park entry fees are included."
+        "q": "Milliy bogʻga kirish chiptasi kiritilganmi?",
+        "a": "Ha, milliy bogʻga kirish uchun barcha toʻlovlar kiritilgan."
       },
       {
-        "q": "Do I need to be a strong swimmer?",
-        "a": "No. Basic swimming skills are helpful, but many guests snorkel comfortably with a life jacket, which can be rented on site."
+        "q": "Yaxshi suza olishim shartmi?",
+        "a": "Yoʻq. Suzishning asosiy koʻnikmalari foydali, ammo koʻplab mehmonlar qutqaruv jiletida bemalol snorkeling qiladi. Jiletni joyida ijaraga olish mumkin."
       },
       {
-        "q": "Is snorkelling equipment included?",
-        "a": "No, snorkelling equipment is not included. Masks, snorkels, fins, and life jackets can be rented on site."
+        "q": "Snorkeling jihozlari kiritilganmi?",
+        "a": "Yoʻq, snorkeling jihozlari kiritilmagan. Niqob, trubka, lastlar va qutqaruv jiletlarini joyida ijaraga olish mumkin."
       },
       {
-        "q": "Is lunch included?",
-        "a": "Yes, lunch by the sea is included. Drinks are available at an additional cost."
+        "q": "Tushlik kiritilganmi?",
+        "a": "Ha, dengiz boʻyidagi tushlik kiritilgan. Ichimliklar uchun qoʻshimcha toʻlov olinadi."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "Yes, this tour is family-friendly and suitable for children. The camel ride, Blue Hole visit, and canyon walk are popular with families."
+        "q": "Tur bolalar uchun mosmi?",
+        "a": "Ha, tur oilalar va bolalar uchun mos. Tuya sayri, Moviy tuynuk (Blue Hole)ga tashrif va kanyon boʻylab piyoda sayr oilalar orasida mashhur."
       },
       {
-        "q": "How difficult is the canyon walk?",
-        "a": "The walk is considered easy to moderate and takes approximately 1 hour. Comfortable walking shoes are recommended."
+        "q": "Kanyon boʻylab piyoda sayr qanchalik qiyin?",
+        "a": "Sayrning qiyinligi yengildan oʻrtachagacha boʻlib, taxminan 1 soat davom etadi. Piyoda yurishga qulay poyabzal tavsiya etiladi."
       },
       {
-        "q": "What should I bring?",
-        "a": "Please bring a photo of your passport on your phone, swimwear, a towel, reef shoes, sunscreen, and cash for optional extras."
+        "q": "Oʻzim bilan nima olishim kerak?",
+        "a": "Telefoningizda pasportingiz surati, suzish kiyimi, sochiq, rif poyabzali, quyoshdan himoya kremi va qoʻshimcha xizmatlar uchun naqd pul oling."
       },
       {
-        "q": "Can I add the quad bike ride later?",
-        "a": "Yes, you can add the optional quad bike experience for £10 per person when booking or contact us before your tour date."
+        "q": "Kvadrotsikl sayrini keyinroq qoʻshsam boʻladimi?",
+        "a": "Ha, bron qilishda bir kishi uchun £10 evaziga ixtiyoriy kvadrotsikl sayrini qoʻshishingiz yoki tur sanasidan oldin biz bilan bogʻlanishingiz mumkin."
       },
       {
-        "q": "Will I visit the Blue Hole?",
-        "a": "Yes, the tour includes a stop at the famous Blue Hole, one of Dahab's most popular snorkelling locations."
+        "q": "Moviy tuynuk (Blue Hole)ga tashrif buyuramanmi?",
+        "a": "Ha, turga Dahabdagi eng mashhur snorkeling joylaridan biri boʻlgan Moviy tuynuk (Blue Hole)da toʻxtash kiritilgan."
       },
       {
-        "q": "What is the total duration of the tour?",
-        "a": "The tour lasts approximately a full day, including transfers, activities, lunch, and sightseeing."
+        "q": "Tur jami qancha davom etadi?",
+        "a": "Tur transferlar, mashgʻulotlar, tushlik va diqqatga sazovor joylarni tomosha qilish bilan deyarli butun kun davom etadi."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "Manzil haqida",
     "destinationCards": [
       {
-        "tag": "Dahab · South Sinai",
-        "title": "Blue Hole",
-        "text": "One of Egypt's most famous snorkelling and diving sites. Known for its crystal-clear water and vibrant coral reefs, the Blue Hole is a must-visit destination for anyone exploring Dahab.",
+        "tag": "Dahab · Janubiy Sinay",
+        "title": "Moviy tuynuk (Blue Hole)",
+        "text": "Misrning snorkeling va dayving uchun eng mashhur joylaridan biri. Billurdek tiniq suvi va rang-barang marjon riflari bilan tanilgan Moviy tuynuk (Blue Hole) Dahabni kashf etayotgan har bir sayyoh tashrif buyurishi kerak boʻlgan manzildir.",
         "tone": "blue"
       },
       {
-        "tag": "Sinai Desert",
-        "title": "Canyon",
-        "text": "A stunning natural canyon shaped by wind and water over thousands of years. Its bright white rock formations and narrow passages create one of the most unique landscapes in South Sinai.",
+        "tag": "Sinay choʻli",
+        "title": "Kanyon",
+        "text": "Minglab yillar davomida shamol va suv taʼsirida shakllangan goʻzal tabiiy kanyon. Oppoq qoyalari va tor yoʻlaklari Janubiy Sinayning eng oʻziga xos manzaralaridan birini yaratadi.",
         "tone": "sand"
       },
       {
-        "tag": "90 km from Sharm El Sheikh",
+        "tag": "Sharm-ash-Shayxdan 90 km",
         "title": "Dahab",
-        "text": "Located just 90 km from Sharm El Sheikh, Dahab is a laid-back coastal town famous for its diving, snorkelling, kitesurfing, and relaxed atmosphere. Its beautiful coastline and desert scenery make it one of the Sinai Peninsula's most popular destinations.",
+        "text": "Sharm-ash-Shayxdan atigi 90 km uzoqlikdagi Dahab — dayving, snorkeling, kaytsyorfing va osoyishta muhiti bilan mashhur sohil shahri. Goʻzal qirgʻoqlari va choʻl manzaralari uni Sinay yarimorolining eng ommabop manzillaridan biriga aylantiradi.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Sinai Visa",
-        "text": "No additional Egyptian visa is required for most visitors staying within the Sinai region. The tour is fully accessible with a standard Sinai-only entry stamp.",
+        "title": "Sinay vizasi",
+        "text": "Sinay hududida qoladigan koʻpchilik sayyohlarga qoʻshimcha Misr vizasi kerak emas. Turda qatnashish uchun faqat Sinay hududida amal qiladigan odatiy kirish shtampi yetarli.",
         "tone": "green"
       },
       {
-        "title": "Optional Quad Bike Ride",
-        "text": "Add an exciting quad bike adventure through the desert for £10 per person when booking online.",
+        "title": "Ixtiyoriy kvadrotsikl sayri",
+        "text": "Onlayn bron qilishda bir kishi uchun £10 evaziga choʻldagi hayajonli kvadrotsikl sayrini qoʻshing.",
         "tone": "orange"
       },
       {
-        "title": "Private Tour Available",
-        "text": "Enjoy private transport, a dedicated guide, and a flexible itinerary tailored to your preferences. Contact us for pricing and availability.",
+        "title": "Shaxsiy tur mavjud",
+        "text": "Shaxsiy transport, alohida gid va xohishingizga moslashuvchan yoʻnalishdan bahramand boʻling. Narx va mavjud sanalar uchun biz bilan bogʻlaning.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Blue Hole · Canyon · Camels · Snorkelling",
-      "line2": "Transfer and lunch included — from £30",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Moviy tuynuk (Blue Hole) · Kanyon · Tuyalar · Snorkeling",
+      "line2": "Transfer va tushlik kiritilgan — £30 dan",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Kattalar",
+        "unit": "bir kishi uchun",
         "discount": null
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "per person",
+        "label": "Bola 5–10 yosh",
+        "unit": "bir kishi uchun",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Diving",
-        "name": "PADI Diving Courses"
+        "tag": "Dayving",
+        "name": "PADI dayving kurslari"
       },
       {
-        "tag": "Underwater world",
-        "name": "Semi-Submarine (Sea Scope)"
+        "tag": "Suvosti dunyosi",
+        "name": "Yarim suvosti kemasi (Sea Scope)"
       },
       {
-        "tag": "Snorkelling",
-        "name": "Ras Mohamed"
+        "tag": "Snorkeling",
+        "name": "Ras-Muhammad"
       },
       {
         "tag": "Safari",
-        "name": "Super Safari"
+        "name": "Super safari"
       },
       {
         "tag": "Petra",
-        "name": "Petra — Jordan"
+        "name": "Petra — Iordaniya"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Kattalar",
+        "unit": "kishi"
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "person"
+        "label": "Bola 5–10 yosh",
+        "unit": "kishi"
       },
       {
-        "label": "Infants 0–4 years",
+        "label": "Chaqaloqlar 0–4 yosh",
         "unit": ""
       },
       {
-        "label": "Quad bikes",
-        "unit": "person"
+        "label": "Kvadrotsikllar",
+        "unit": "kishi"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−33%",
-      "priceText": "Transfer, lunch and entry tickets already included. No prepayment.",
-      "programKicker": "Day's programme",
-      "programNum": "5 activities",
-      "programText": "Blue Hole, Canyon, snorkelling, camels, quad bikes. All in one unforgettable day.",
+      "priceText": "Transfer, tushlik va kirish chiptalari allaqachon kiritilgan. Oldindan toʻlovsiz.",
+      "programKicker": "Kun dasturi",
+      "programNum": "5 ta mashgʻulot",
+      "programText": "Moviy tuynuk (Blue Hole), kanyon, snorkeling, tuyalar, kvadrotsikllar. Barchasi bir unutilmas kunda.",
       "ring": "5/5",
-      "ringLabel": "activities"
+      "ringLabel": "mashgʻulot"
     }
   },
   "red-canyon-jeep-dahab": {
-    "name": "Salama Red Canyon & Snorkelling in Dahab",
-    "title": "Salama Red Canyon & Snorkelling in Dahab",
+    "name": "Salama Qizil kanyoni va Dahabda snorkeling",
+    "title": "Salama Qizil kanyoni va Dahabda snorkeling",
     "categoryLabel": "Safari",
-    "duration": "5 hours",
-    "detailDuration": "10 hours",
-    "schedule": "Daily",
-    "timeText": "7:30 AM – 5:30 PM",
+    "duration": "5 soat",
+    "detailDuration": "10 soat",
+    "schedule": "Har kuni",
+    "timeText": "7:30 – 17:30",
     "priceUnit": null,
-    "badge": "New",
-    "excerpt": "A walk through one of the most beautiful canyons on the Sinai Peninsula — the Salama Red Canyon; with snorkelling and a camel ride…",
-    "metaTitle": "Salama Red Canyon & Snorkelling in Dahab | Sardor Tours",
-    "metaDescription": "Red Canyon in Dahab: canyon, camels, Bedouins, snorkelling, quad bikes, lunch. Jeep and transfer included. From £25. No prepayment.",
+    "badge": "Yangi",
+    "excerpt": "Sinay yarimorolining eng goʻzal kanyonlaridan biri — Salama Qizil kanyoni boʻylab piyoda sayr, snorkeling va tuya sayri…",
+    "metaTitle": "Salama Qizil kanyoni va Dahabda snorkeling | Sardor Tours",
+    "metaDescription": "Dahabdagi Qizil kanyon: kanyon, tuyalar, badaviylar, snorkeling, kvadrotsikllar, tushlik. Jeep va transfer kiritilgan. £25 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer included",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta amal qiladi",
+      "Mehmonxonadan transfer narxga kiritilgan",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel pick-up",
-        "text": "At the agreed time, we pick you up from your hotel in a comfortable air-conditioned vehicle."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Kelishilgan vaqtda sizni mehmonxonangizdan konditsionerli qulay avtomobilda olib ketamiz."
       },
       {
-        "title": "Canyon walk",
-        "text": "A walk lasting around 1.5–2 hours through one of the most beautiful canyons on the Sinai Peninsula — the Salama Red Canyon, near the town of Dahab. The canyon was formed by an earthquake in the sandstone cliffs, while rainwater carved its winding passages over hundreds of years."
+        "title": "Kanyon boʻylab piyoda sayr",
+        "text": "Dahab shahri yaqinidagi Salama Qizil kanyoni — Sinay yarimorolining eng goʻzal kanyonlaridan biri boʻylab taxminan 1.5–2 soatlik piyoda sayr. Kanyon qumtosh qoyalaridagi zilzila natijasida paydo boʻlgan, yomgʻir suvlari esa yuzlab yillar davomida uning egri-bugri yoʻlaklarini shakllantirgan."
       },
       {
-        "title": "Tea in a Bedouin village",
-        "text": "Enjoy traditional Bedouin tea in the tent of the desert's nomadic people."
+        "title": "Badaviylar qishlogʻida choy",
+        "text": "Choʻl koʻchmanchilarining chodirida anʼanaviy badaviylar choyidan bahramand boʻling."
       },
       {
-        "title": "Camel ride",
-        "text": "A relaxing camel ride along the seashore, with plenty of opportunities for memorable photos and beautiful views."
+        "title": "Tuya sayri",
+        "text": "Dengiz qirgʻogʻi boʻylab osoyishta tuya sayri: goʻzal manzaralar va esda qolarli suratlar uchun koʻplab imkoniyatlar."
       },
       {
-        "title": "Snorkelling",
-        "text": "Snorkelling at Three Pools or Dive Canyon, both known for their colourful coral reefs. If you prefer, you can upgrade to the Blue Lagoon for an additional £10."
+        "title": "Snorkeling",
+        "text": "Rang-barang marjon riflari bilan mashhur Uch hovuz yoki Dayving kanyonida snorkeling. Xohlasangiz, qoʻshimcha £10 evaziga Moviy lagunani tanlashingiz mumkin."
       },
       {
-        "title": "Quad bikes +£10 · optional",
-        "text": "An exciting quad bike ride along Bedouin desert trails. Available as an optional extra when booking."
+        "title": "Kvadrotsikllar +£10 · ixtiyoriy",
+        "text": "Badaviylarning choʻl yoʻllari boʻylab hayajonli kvadrotsikl sayri. Bron qilishda qoʻshimcha xizmat sifatida tanlash mumkin."
       },
       {
-        "title": "Lunch",
-        "text": "Lunch by the sea, including side dishes, chicken, rice and fresh vegetable salads."
+        "title": "Tushlik",
+        "text": "Dengiz boʻyida tushlik: garnirlar, tovuq, guruch va yangi sabzavotli salatlar."
       },
       {
-        "title": "Shopping in Dahab",
-        "text": "Free time to browse the local souvenir market."
+        "title": "Dahabda xaridlar",
+        "text": "Mahalliy suvenir bozorini aylanish uchun boʻsh vaqt."
       },
       {
-        "title": "Return transfer to Sharm El Sheikh",
-        "text": "Comfortable transfer back to your hotel in an air-conditioned minibus."
+        "title": "Sharm-ash-Shayxga qaytish transferi",
+        "text": "Konditsionerli qulay mikroavtobusda mehmonxonangizga qaytish transferi."
       }
     ],
     "included": [
-      "English-speaking guide-instructor",
-      "Hotel transfer",
-      "Camel ride",
-      "Lunch",
-      "Bedouin tea"
+      "Ingliz tilida soʻzlashuvchi gid-instruktor",
+      "Mehmonxonadan transfer",
+      "Tuya sayri",
+      "Tushlik",
+      "Badaviylar choyi"
     ],
     "notIncluded": [
-      "Mask, snorkel, fins and life jacket",
-      "Photos taken by the photographer"
+      "Niqob, trubka, lastlar va qutqaruv jileti",
+      "Fotograf olgan suratlar"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Swimsuit or swimming trunks",
-      "Reef shoes (recommended)",
-      "Mask, snorkel, fins and life jacket (available to hire)",
-      "Towel"
+      "Telefoningizda pasportingiz surati",
+      "Suzish kiyimi",
+      "Rif poyabzali (tavsiya etiladi)",
+      "Niqob, trubka, lastlar va qutqaruv jileti (ijaraga olish mumkin)",
+      "Sochiq"
     ],
     "faq": [
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes, return hotel transfer from your hotel in Sharm El Sheikh is included in the price."
+        "q": "Mehmonxonadan transfer kiritilganmi?",
+        "a": "Ha, Sharm-ash-Shayxdagi mehmonxonangizdan borish-qaytish transferi narxga kiritilgan."
       },
       {
-        "q": "Do I need an Egyptian visa to visit Dahab?",
-        "a": "No. Dahab is located within the Sinai visa-free zone, so an Egyptian visa is not required."
+        "q": "Dahabga borish uchun Misr vizasi kerakmi?",
+        "a": "Yoʻq. Dahab Sinayning vizasiz hududida joylashgan, shuning uchun Misr vizasi talab qilinmaydi."
       },
       {
-        "q": "Do I need to know how to swim?",
-        "a": "Basic swimming skills are recommended for snorkelling. Your guide stays nearby throughout the activity, and life jackets are available if needed."
+        "q": "Suzishni bilishim kerakmi?",
+        "a": "Snorkeling uchun suzishning asosiy koʻnikmalari tavsiya etiladi. Gidingiz butun mashgʻulot davomida yoningizda boʻladi, zarur boʻlsa, qutqaruv jiletlaridan foydalanishingiz mumkin."
       },
       {
-        "q": "Is snorkelling equipment included?",
-        "a": "No. Mask, snorkel, fins and life jackets are available to hire on site. We also recommend bringing reef shoes."
+        "q": "Snorkeling jihozlari kiritilganmi?",
+        "a": "Yoʻq. Niqob, trubka, lastlar va qutqaruv jiletlarini joyida ijaraga olish mumkin. Rif poyabzalini olib kelishni ham tavsiya qilamiz."
       },
       {
-        "q": "Can I add a quad bike ride?",
-        "a": "Yes. A quad bike ride can be added for £10 when booking through the website."
+        "q": "Kvadrotsikl sayrini qoʻshsam boʻladimi?",
+        "a": "Ha. Sayt orqali bron qilishda £10 evaziga kvadrotsikl sayrini qoʻshishingiz mumkin."
       },
       {
-        "q": "Can I choose the Blue Lagoon instead?",
-        "a": "Yes. You can replace the standard snorkelling location with the Blue Lagoon for an additional £10."
+        "q": "Oʻrniga Moviy lagunani tanlasam boʻladimi?",
+        "a": "Ha. Qoʻshimcha £10 evaziga odatiy snorkeling joyi oʻrniga Moviy lagunani tanlashingiz mumkin."
       },
       {
-        "q": "Can I book a private tour?",
-        "a": "Yes. Private transport, a personal guide and a customised itinerary are available on request."
+        "q": "Shaxsiy tur bron qilsam boʻladimi?",
+        "a": "Ha. Soʻrov boʻyicha shaxsiy transport, alohida gid va xohishingizga mos yoʻnalish tashkil qilinadi."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "Manzil haqida",
     "destinationCards": [
       {
-        "tag": "Dahab · Sinai",
-        "title": "Salama Red Canyon",
-        "text": "The largest and most beautiful canyon open to visitors, with colourful sandstone walls shaped by nature over thousands of years.",
+        "tag": "Dahab · Sinay",
+        "title": "Salama Qizil kanyoni",
+        "text": "Sayyohlar uchun ochiq eng katta va eng goʻzal kanyon. Uning rang-barang qumtosh devorlarini tabiat minglab yillar davomida shakllantirgan.",
         "tone": "coral"
       },
       {
-        "tag": "Red Sea",
-        "title": "Snorkelling in Dahab",
-        "text": "Explore Three Pools or Dive Canyon, both famous for their coral reefs and crystal-clear water. You can also upgrade to the Blue Lagoon.",
+        "tag": "Qizil dengiz",
+        "title": "Dahabda snorkeling",
+        "text": "Marjon riflari va billurdek tiniq suvi bilan mashhur Uch hovuz yoki Dayving kanyonini kashf eting. Qoʻshimcha toʻlov bilan Moviy lagunani ham tanlashingiz mumkin.",
         "tone": "blue"
       },
       {
-        "tag": "90 km from Sharm El Sheikh",
+        "tag": "Sharm-ash-Shayxdan 90 km",
         "title": "Dahab",
-        "text": "A relaxed Red Sea town known worldwide for diving, kitesurfing and its unique atmosphere.",
+        "text": "Dayving, kaytsyorfing va oʻziga xos muhiti bilan dunyoga tanilgan Qizil dengiz boʻyidagi osoyishta shahar.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "No Egyptian visa required",
-        "text": "Dahab is located within the Sinai visa-free zone.",
+        "title": "Misr vizasi talab qilinmaydi",
+        "text": "Dahab Sinayning vizasiz hududida joylashgan.",
         "tone": "green"
       },
       {
-        "title": "Optional quad bike ride",
-        "text": "Add a desert quad bike experience for £10 when booking online.",
+        "title": "Ixtiyoriy kvadrotsikl sayri",
+        "text": "Onlayn bron qilishda £10 evaziga choʻlda kvadrotsikl sayrini qoʻshing.",
         "tone": "orange"
       },
       {
-        "title": "Private tours available",
-        "text": "Personal transport, your own guide and a customised programme can be arranged on request.",
+        "title": "Shaxsiy turlar mavjud",
+        "text": "Soʻrov boʻyicha shaxsiy transport, alohida gid va xohishingizga mos dastur tashkil qilinadi.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Red Canyon · Jeeps · Camels · Snorkelling",
-      "line2": "Transfer and lunch included — from £25",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Qizil kanyon · Jiplar · Tuyalar · Snorkeling",
+      "line2": "Transfer va tushlik kiritilgan — £25 dan",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Kattalar",
+        "unit": "bir kishi uchun",
         "discount": null
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "per person",
+        "label": "Bola 5–10 yosh",
+        "unit": "bir kishi uchun",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Quad bikes",
-        "name": "Quad Bike Safari"
+        "tag": "Kvadrotsikllar",
+        "name": "Kvadrotsiklda safari"
       },
       {
-        "tag": "Buggy",
-        "name": "Buggy Safari"
+        "tag": "Bagi",
+        "name": "Bagida safari"
       },
       {
         "tag": "Safari",
-        "name": "Super Safari"
+        "name": "Super safari"
       },
       {
-        "tag": "Evening yacht",
-        "name": "Evening Yacht Cruise"
+        "tag": "Kechki yaxta",
+        "name": "Kechki yaxta sayohati"
       },
       {
-        "tag": "Luxor",
-        "name": "Luxor — Day Trip"
+        "tag": "Luksor",
+        "name": "Luksor — bir kunlik sayohat"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Kattalar",
+        "unit": "kishi"
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "person"
+        "label": "Bola 5–10 yosh",
+        "unit": "kishi"
       },
       {
-        "label": "Infants 0–4 years",
+        "label": "Chaqaloqlar 0–4 yosh",
         "unit": ""
       },
       {
-        "label": "Quad bikes",
-        "unit": "person"
+        "label": "Kvadrotsikllar",
+        "unit": "kishi"
       }
     ],
     "bento": {
-      "priceKicker": "Saving · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−29%",
-      "priceText": "Transfer, lunch and entrance tickets already included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "5 activities",
-      "programText": "Red Canyon, snorkelling, camels, Bedouin tea, quad bikes. All in one unforgettable day.",
+      "priceText": "Transfer, tushlik va kirish chiptalari allaqachon kiritilgan. Oldindan toʻlovsiz.",
+      "programKicker": "Kun dasturi",
+      "programNum": "5 ta mashgʻulot",
+      "programText": "Qizil kanyon, snorkeling, tuyalar, badaviylar choyi, kvadrotsikllar. Barchasi bir unutilmas kunda.",
       "ring": "5/5",
-      "ringLabel": "activities"
+      "ringLabel": "mashgʻulot"
     }
   },
   "cairo-pyramids-by-bus": {

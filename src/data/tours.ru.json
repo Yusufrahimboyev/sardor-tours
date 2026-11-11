@@ -1592,1078 +1592,1078 @@
     }
   },
   "quad-safari-sharm": {
-    "name": "Quad Bike Safari & Camel Ride",
-    "title": "Quad Bike Safari & Camel Ride in the Sharm El Sheikh Desert",
-    "categoryLabel": "Safari",
-    "duration": "3 hours",
-    "detailDuration": "2.5 hours",
-    "schedule": "Daily",
-    "timeText": "4:00 AM · 8:00 AM · 10:00 AM · 2:00 PM",
+    "name": "Сафари на квадроциклах и прогулка на верблюде",
+    "title": "Сафари на квадроциклах и прогулка на верблюде в пустыне Шарм-эль-Шейха",
+    "categoryLabel": "Сафари",
+    "duration": "3 часа",
+    "detailDuration": "2.5 часа",
+    "schedule": "Ежедневно",
+    "timeText": "4:00 · 8:00 · 10:00 · 14:00",
     "priceUnit": null,
-    "badge": "Signature",
-    "excerpt": "A thrilling desert adventure. Quad bikes, camel riding, a Bedouin dinner and an incredible show…",
-    "metaTitle": "Quad Bike Safari and camel ride in the Sharm El Sheikh Desert | Sardor Tours",
-    "metaDescription": "Quad bikes in Sharm: safari centre, riding through the Sinai desert, camels, Bedouin tea. Transfer included. Daily. From £15. No prepayment.",
+    "badge": "Фирменный тур",
+    "excerpt": "Захватывающее приключение в пустыне. Квадроциклы, прогулка на верблюде, бедуинский ужин и яркое шоу…",
+    "metaTitle": "Сафари на квадроциклах и верблюдах в Шарм-эль-Шейхе | Sardor Tours",
+    "metaDescription": "Квадроциклы в Шарме: сафари-центр, Синайская пустыня, верблюды, бедуинский чай. Трансфер включён. Ежедневно. От £15. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We'll pick you up from your hotel in a comfortable air-conditioned vehicle and transfer you to the safari centre, located on the edge of the Sinai Desert. The journey takes approximately 30 minutes."
+        "title": "Заберём из отеля",
+        "text": "Мы заберём вас из отеля на комфортабельном автомобиле с кондиционером и отвезём в сафари-центр на краю Синайской пустыни. Дорога занимает около 30 минут."
       },
       {
-        "title": "Safety Briefing",
-        "text": "Before setting off, you'll receive a short introduction to the quad bike and a safety briefing from your guide. You can also purchase a traditional scarf to protect yourself from sand and dust during the ride."
+        "title": "Инструктаж по безопасности",
+        "text": "Перед поездкой гид кратко объяснит, как управлять квадроциклом, и проведёт инструктаж по безопасности. Вы также сможете купить традиционный платок для защиты от песка и пыли во время прогулки."
       },
       {
-        "title": "Quad Bike Adventure",
-        "text": "Drive across the open Sinai Desert, following your guide along scenic desert tracks. Along the way, you'll stop at Echo Mountain, enjoy panoramic viewpoints, and visit a traditional Bedouin village for tea. You'll spend approximately 1.5 hours exploring the breathtaking desert landscape"
+        "title": "Приключение на квадроцикле",
+        "text": "Отправляйтесь вслед за гидом по живописным тропам бескрайней Синайской пустыни. По пути вас ждут остановка у горы Эхо, панорамные виды и чай в традиционной бедуинской деревне. Вы проведёте около 1.5 часа, знакомясь с удивительными пейзажами пустыни."
       },
       {
-        "title": "Optional Camel Ride",
-        "text": "Add a short camel ride and experience one of the most traditional ways to explore the desert while enjoying the surrounding mountain scenery."
+        "title": "Прогулка на верблюде по желанию",
+        "text": "Дополните поездку короткой прогулкой на верблюде: полюбуйтесь окружающими горами и познакомьтесь с одним из самых традиционных способов путешествия по пустыне."
       },
       {
-        "title": "Return to Your Hotel",
-        "text": "After the safari, relax on the transfer back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Возвращение в отель",
+        "text": "После сафари отдохните по дороге в отель в комфортабельном автомобиле с кондиционером."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and drop-off",
-      "Bedouin tea"
+      "Англоговорящий гид",
+      "Трансфер из отеля и обратно",
+      "Бедуинский чай"
     ],
     "notIncluded": [
-      "Drinks",
-      "Shisha",
-      "Souvenirs and personal expenses"
+      "Напитки",
+      "Кальян",
+      "Сувениры и личные расходы"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Sunglasses",
-      "Comfortable closed shoes",
-      "Scarf (available to purchase on site)",
-      "Drinking water"
+      "Фото паспорта в телефоне",
+      "Солнцезащитные очки",
+      "Удобная закрытая обувь",
+      "Платок (можно купить на месте)",
+      "Питьевая вода"
     ],
     "faq": [
       {
-        "q": "Do I need a driving licence?",
-        "a": "No. Quad bikes are easy to operate and a full safety briefing is provided before the ride."
+        "q": "Нужны ли водительские права?",
+        "a": "Нет. Квадроциклом легко управлять, а перед поездкой проводится полный инструктаж по безопасности."
       },
       {
-        "q": "Can children join the tour?",
-        "a": "Yes. Children aged 2 and above can ride as passengers. Children aged 12 and over may drive under adult supervision."
+        "q": "Можно ли поехать с детьми?",
+        "a": "Да. Дети от 2 лет могут ехать пассажирами. Дети от 12 лет могут управлять квадроциклом под присмотром взрослых."
       },
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes. Hotel pick-up and drop-off from any hotel in Sharm El Sheikh are included."
+        "q": "Трансфер из отеля включён?",
+        "a": "Да. Трансфер из любого отеля Шарм-эль-Шейха и обратно включён."
       },
       {
-        "q": "Can two people ride one quad bike?",
-        "a": "Yes. Two people can share one quad bike at no extra charge. The maximum combined weight is 160 kg."
+        "q": "Можно ли ехать вдвоём на одном квадроцикле?",
+        "a": "Да. Два человека могут ехать на одном квадроцикле без доплаты. Максимальный общий вес — 160 кг."
       },
       {
-        "q": "What should I wear?",
-        "a": "We recommend comfortable clothing, closed shoes, sunglasses and a scarf to protect against sand and dust."
+        "q": "Как одеться?",
+        "a": "Рекомендуем удобную одежду, закрытую обувь, солнцезащитные очки и платок для защиты от песка и пыли."
       },
       {
-        "q": "What departure times are available?",
-        "a": "Daily departures are available at 4:00 AM, 8:00 AM, 10:00 AM and 2:00 PM."
+        "q": "В какое время можно отправиться?",
+        "a": "Ежедневные отправления в 4:00, 8:00, 10:00 и 14:00."
       },
       {
-        "q": "Is the camel ride included?",
-        "a": "The camel ride is optional and can be added during your visit to the Bedouin village."
+        "q": "Прогулка на верблюде включена?",
+        "a": "Прогулка на верблюде предлагается по желанию. Её можно добавить во время посещения бедуинской деревни."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "Sinai Desert",
-        "title": "Quad Bike Adventure",
-        "text": "Drive across wide-open desert landscapes, stop at Echo Mountain and discover some of the Sinai Peninsula's most beautiful scenery.",
+        "tag": "Синайская пустыня",
+        "title": "Приключение на квадроцикле",
+        "text": "Отправляйтесь по бескрайним просторам пустыни, остановитесь у горы Эхо и откройте для себя одни из самых красивых пейзажей Синайского полуострова.",
         "tone": "sand"
       },
       {
-        "tag": "Bedouin Village",
-        "title": "Tea with the Bedouins",
-        "text": "Visit a traditional Bedouin camp, enjoy local tea and experience the hospitality of the Sinai Desert.",
+        "tag": "Бедуинская деревня",
+        "title": "Чай с бедуинами",
+        "text": "Посетите традиционный бедуинский лагерь, попробуйте местный чай и ощутите гостеприимство жителей Синайской пустыни.",
         "tone": "coral"
       },
       {
-        "tag": "Sinai Desert",
-        "title": "Optional Camel Ride",
-        "text": "Complete your desert adventure with a short camel ride and enjoy fantastic photo opportunities among the dunes and mountains.",
+        "tag": "Синайская пустыня",
+        "title": "Прогулка на верблюде по желанию",
+        "text": "Дополните приключение в пустыне короткой прогулкой на верблюде и сделайте яркие фотографии среди дюн и гор.",
         "tone": "blue"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Four Daily Departures",
-        "text": "Choose from 4:00 AM, 8:00 AM, 10:00 AM or 2:00 PM.",
+        "title": "Четыре отправления в день",
+        "text": "Выберите отправление в 4:00, 8:00, 10:00 или 14:00.",
         "tone": "green"
       },
       {
-        "title": "No Driving Licence Required",
-        "text": "Your guide will explain everything before the ride, making the experience suitable for beginners.",
+        "title": "Водительские права не нужны",
+        "text": "Перед поездкой гид всё объяснит, поэтому прогулка подойдёт и новичкам.",
         "tone": "orange"
       },
       {
-        "title": "Dress for the Desert",
-        "text": "Closed shoes, sunglasses and a scarf will make your ride more comfortable.",
+        "title": "Оденьтесь для поездки в пустыню",
+        "text": "Закрытая обувь, солнцезащитные очки и платок сделают поездку комфортнее.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Quad bikes · Camels · Bedouins · Sinai Desert",
-      "line2": "Transfer and tea included — from £15",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Квадроциклы · Верблюды · Бедуины · Синайская пустыня",
+      "line2": "Трансфер и чай включены — от £15",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Single quad",
-        "unit": "per person",
+        "label": "Одноместный квадроцикл",
+        "unit": "за человека",
         "discount": "−25%"
       },
       {
-        "label": "Double quad",
-        "unit": "for 2 people",
+        "label": "Двухместный квадроцикл",
+        "unit": "за 2 человек",
         "discount": "−20%"
       }
     ],
     "related": [
       {
-        "tag": "Safari",
-        "name": "Salama Red Canyon"
+        "tag": "Сафари",
+        "name": "Красный каньон Салама"
       },
       {
-        "tag": "Buggy",
-        "name": "Buggy Safari"
+        "tag": "Багги",
+        "name": "Сафари на багги"
       },
       {
-        "tag": "Safari",
-        "name": "Super Safari"
+        "tag": "Сафари",
+        "name": "Супер-сафари"
       },
       {
-        "tag": "Private yacht",
-        "name": "Private Yacht"
+        "tag": "Частная яхта",
+        "name": "Частная яхта"
       },
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Каир",
+        "name": "Каир и пирамиды на автобусе"
       }
     ],
     "options": [
       {
-        "label": "Single quad",
-        "unit": "person"
+        "label": "Одноместный квадроцикл",
+        "unit": "чел."
       },
       {
-        "label": "Double quad",
-        "unit": "2 people"
+        "label": "Двухместный квадроцикл",
+        "unit": "2 чел."
       },
       {
-        "label": "Camel ride",
-        "unit": "person"
+        "label": "Прогулка на верблюде",
+        "unit": "чел."
       },
       {
-        "label": "Private ride",
-        "unit": "group"
+        "label": "Индивидуальная прогулка",
+        "unit": "группа"
       },
       {
-        "label": "Private transfer",
-        "unit": "group"
+        "label": "Индивидуальный трансфер",
+        "unit": "группа"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−25%",
-      "priceText": "Transfer and Bedouin tea included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "5 activities",
-      "programText": "Quad bikes, camels, Bedouins, the Sinai desert and tea by the fire. An unforgettable adventure!",
+      "priceText": "Трансфер и бедуинский чай включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "5 активностей",
+      "programText": "Квадроциклы, верблюды, бедуины, Синайская пустыня и чай у костра. Незабываемое приключение!",
       "ring": "5/5",
-      "ringLabel": "activities"
+      "ringLabel": "активности"
     }
   },
   "buggy-safari-sharm": {
-    "name": "Buggy Safari & Camel Ride",
-    "title": "Buggy Safari & Camel Ride in the Sharm El Sheikh Desert",
-    "categoryLabel": "Safari",
-    "duration": "3 hours",
-    "detailDuration": "2.5 hours",
-    "schedule": "Daily",
-    "timeText": "4:00 AM · 8:00 AM · 10:00 AM · 2:00 PM",
-    "priceUnit": "per buggy",
+    "name": "Сафари на багги и прогулка на верблюде",
+    "title": "Сафари на багги и прогулка на верблюде в пустыне Шарм-эль-Шейха",
+    "categoryLabel": "Сафари",
+    "duration": "3 часа",
+    "detailDuration": "2.5 часа",
+    "schedule": "Ежедневно",
+    "timeText": "4:00 · 8:00 · 10:00 · 14:00",
+    "priceUnit": "за багги",
     "badge": null,
-    "excerpt": "A thrilling buggy ride through the desert to a Bedouin village, with photo stops and camel riding along the way…",
-    "metaTitle": "Buggy Safari & Camel Ride in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Buggy ride across the Sinai Desert: time at the safari centre, driving a buggy, camel ride. Transfer included. Daily. From £30. No prepayment.",
+    "excerpt": "Захватывающая поездка на багги через пустыню в бедуинскую деревню с остановками для фото и прогулкой на верблюде…",
+    "metaTitle": "Сафари на багги и верблюдах в Шарм-эль-Шейхе | Sardor Tours",
+    "metaDescription": "Поездка на багги по Синайской пустыне: сафари-центр, управление багги, прогулка на верблюде. Трансфер включён. Ежедневно. От £30. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "At the agreed time, we pick you up from your hotel in a comfortable air-conditioned vehicle. The safari centre is located in the desert on the outskirts of Sharm El Sheikh, and the drive takes around 30 minutes depending on your hotel location."
+        "title": "Заберём из отеля",
+        "text": "В согласованное время мы заберём вас из отеля на комфортабельном автомобиле с кондиционером. Сафари-центр находится в пустыне на окраине Шарм-эль-Шейха. Дорога занимает около 30 минут в зависимости от расположения вашего отеля."
       },
       {
-        "title": "Arrival at the Safari Centre",
-        "text": "Upon arrival, you'll receive a short briefing on how to drive the buggy safely. You can also get a traditional scarf (optional), which helps protect your face and hair from sand and dust."
+        "title": "Прибытие в сафари-центр",
+        "text": "По прибытии вы пройдёте краткий инструктаж по безопасному управлению багги. По желанию можно приобрести традиционный платок для защиты лица и волос от песка и пыли."
       },
       {
-        "title": "Buggy Ride in the Desert",
-        "text": "Take control of your buggy and follow your guide into the vast Sinai Desert. The desert tour lasts approximately 1.5 hours and includes a stop at Echo Mountain, a scenic photo break, and a visit to a Bedouin village where you'll enjoy traditional tea and learn about desert life."
+        "title": "Прогулка на багги по пустыне",
+        "text": "Садитесь за руль багги и следуйте за гидом в бескрайнюю Синайскую пустыню. Прогулка длится около 1.5 часа и включает остановку у горы Эхо, время для фотографий на фоне красивых пейзажей и посещение бедуинской деревни, где вы попробуете традиционный чай и узнаете о жизни в пустыне."
       },
       {
-        "title": "Optional Camel Ride",
-        "text": "Enjoy a short camel ride across the desert for a unique and peaceful experience, with beautiful mountain views all around."
+        "title": "Прогулка на верблюде по желанию",
+        "text": "Насладитесь короткой прогулкой на верблюде по пустыне: спокойная атмосфера и красивые виды на горы подарят особые впечатления."
       },
       {
-        "title": "Return Transfer",
-        "text": "After the tour, we take you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Обратный трансфер",
+        "text": "После экскурсии мы отвезём вас обратно в отель на комфортабельном автомобиле с кондиционером."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and drop-off",
-      "Bedouin tea"
+      "Англоговорящий гид",
+      "Трансфер из отеля и обратно",
+      "Бедуинский чай"
     ],
     "notIncluded": [
-      "Drinks",
-      "Shisha",
-      "Souvenirs and personal expenses"
+      "Напитки",
+      "Кальян",
+      "Сувениры и личные расходы"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Sunglasses",
-      "Scarf (can be purchased on site if needed)",
-      "Drinking water"
+      "Фото паспорта в телефоне",
+      "Солнцезащитные очки",
+      "Платок (при необходимости можно купить на месте)",
+      "Питьевая вода"
     ],
     "faq": [
       {
-        "q": "What is a buggy?",
-        "a": "A buggy is a small off-road vehicle designed for driving in the desert. It is automatic and easy to control, making it suitable even for beginners. This is one of the most popular desert activities in Sharm El Sheikh for guests looking for fun and adventure."
+        "q": "Что такое багги?",
+        "a": "Багги — небольшой внедорожный автомобиль для поездок по пустыне. Автоматическая коробка передач и простое управление делают его подходящим даже для новичков. Это одно из самых популярных развлечений в пустыне Шарм-эль-Шейха для тех, кто ищет яркие впечатления и приключения."
       },
       {
-        "q": "Do I need a driving licence?",
-        "a": "No driving licence is required. The buggies are automatic and easy to use. Before the ride, you will receive a short safety briefing from your guide."
+        "q": "Нужны ли водительские права?",
+        "a": "Водительские права не требуются. Багги оснащены автоматической коробкой передач и просты в управлении. Перед поездкой гид проведёт краткий инструктаж по безопасности."
       },
       {
-        "q": "What is the minimum age to drive?",
-        "a": "The minimum age to drive is 16 years old. Children under 16 can join as passengers with an adult. Children aged 3 and above can also join and sit with a parent."
+        "q": "С какого возраста можно управлять багги?",
+        "a": "Управлять багги можно с 16 лет. Дети младше 16 лет могут ехать пассажирами со взрослым. Дети от 3 лет также могут участвовать, сидя с родителем."
       },
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes, hotel pick-up and drop-off from Sharm El Sheikh are included in the price. We pick you up from your hotel entrance."
+        "q": "Трансфер из отеля включён?",
+        "a": "Да, трансфер из отеля в Шарм-эль-Шейхе и обратно включён в стоимость. Мы заберём вас у входа в отель."
       },
       {
-        "q": "What should I bring?",
-        "a": "We recommend comfortable clothes, closed shoes, sunglasses, and water. A scarf (keffiyeh) can be purchased on site if needed."
+        "q": "Что взять с собой?",
+        "a": "Рекомендуем удобную одежду, закрытую обувь, солнцезащитные очки и воду. При необходимости платок (куфию) можно купить на месте."
       },
       {
-        "q": "What time do tours run?",
-        "a": "There are four daily departures: 4:00 AM, 8:00 AM, 10:00 AM, and 2:00 PM. You can choose the most convenient time when booking."
+        "q": "В какое время проходят экскурсии?",
+        "a": "Каждый день есть четыре отправления: в 4:00, 8:00, 10:00 и 14:00. При бронировании вы можете выбрать удобное время."
       },
       {
-        "q": "What should I wear?",
-        "a": "We recommend comfortable clothes, closed shoes, sunglasses, and a scarf to protect against sand."
+        "q": "Как одеться?",
+        "a": "Рекомендуем удобную одежду, закрытую обувь, солнцезащитные очки и платок для защиты от песка."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "О месте",
     "destinationCards": [
       {
-        "tag": "Sinai Desert",
-        "title": "Desert Buggy Ride",
-        "text": "Take the wheel and race across the open Sinai Desert. It's pure freedom, plenty of adrenaline, and some of the best off-road fun you'll have in Sharm.",
+        "tag": "Синайская пустыня",
+        "title": "Прогулка на багги по пустыне",
+        "text": "Садитесь за руль и отправляйтесь по бескрайней Синайской пустыне. Вас ждут свобода, адреналин и одно из самых ярких внедорожных приключений в Шарме.",
         "tone": "sand"
       },
       {
-        "tag": "Bedouin village",
-        "title": "Bedouin Tea Stop",
-        "text": "Stop at a real Bedouin village for a glass of traditional tea and a taste of local desert life — a relaxed, authentic break from the ride.",
+        "tag": "Бедуинская деревня",
+        "title": "Остановка на бедуинский чай",
+        "text": "Остановитесь в настоящей бедуинской деревне, выпейте традиционного чая и познакомьтесь с местной жизнью в пустыне — это спокойная и самобытная передышка во время поездки.",
         "tone": "coral"
       },
       {
-        "tag": "Sinai Desert",
-        "title": "Camel Ride",
-        "text": "Hop on an Egyptian camel for a short ride over the dunes. Easy, fun, and perfect for some memorable holiday photos.",
+        "tag": "Синайская пустыня",
+        "title": "Прогулка на верблюде",
+        "text": "Прокатитесь на египетском верблюде по дюнам. Лёгкая и увлекательная прогулка отлично подойдёт для памятных отпускных фотографий.",
         "tone": "blue"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Four departures a day",
-        "text": "Choose from 4:00 AM , 8:00 AM , 10:00 AM or 2:00 PM . The sunrise ride is cooler and quieter; the later slots suit a relaxed start to the day.",
+        "title": "Четыре отправления в день",
+        "text": "Выберите отправление в 4:00, 8:00, 10:00 или 14:00. На рассвете прохладнее и тише, а более позднее время подойдёт тем, кто хочет начать день без спешки.",
         "tone": "green"
       },
       {
-        "title": "No licence needed",
-        "text": "You don't need a driving licence. The buggies are automatic, and your guide gives a quick briefing before you set off.",
+        "title": "Водительские права не нужны",
+        "text": "Водительские права не нужны. У багги автоматическая коробка передач, а перед выездом гид проведёт краткий инструктаж.",
         "tone": "orange"
       },
       {
-        "title": "Bring a scarf",
-        "text": "A scarf keeps off the dust and sun while you ride, and you can buy one on site. Closed shoes and sunglasses are a good idea too.",
+        "title": "Возьмите платок",
+        "text": "Платок защитит от пыли и солнца во время поездки, его можно купить на месте. Также пригодятся закрытая обувь и солнцезащитные очки.",
         "tone": "blue"
       },
       {
-        "title": "Two buggy types",
-        "text": "Choose a 2-seater or a 4-seater buggy to suit your group — ideal whether you're riding as a couple or with the family.",
+        "title": "Два типа багги",
+        "text": "Выберите 2-местный или 4-местный багги для вашей компании — отличный вариант для поездки вдвоём или всей семьёй.",
         "tone": "orange"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Buggy · Camels · Bedouins · Sinai Desert",
-      "line2": "Transfer and tea included — from £30",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Багги · Верблюды · Бедуины · Синайская пустыня",
+      "line2": "Трансфер и чай включены — от £30",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Two-seater",
-        "unit": "per buggy",
+        "label": "Двухместный",
+        "unit": "за багги",
         "discount": "−33%"
       },
       {
-        "label": "Four-seater",
-        "unit": "per buggy",
+        "label": "Четырёхместный",
+        "unit": "за багги",
         "discount": "−17%"
       }
     ],
     "related": [
       {
-        "tag": "Safari",
-        "name": "Red Canyon Dahab"
+        "tag": "Сафари",
+        "name": "Красный каньон в Дахабе"
       },
       {
-        "tag": "Quad bikes",
-        "name": "Quad Bike Safari"
+        "tag": "Квадроциклы",
+        "name": "Сафари на квадроциклах"
       },
       {
-        "tag": "Safari",
-        "name": "Super Safari"
+        "tag": "Сафари",
+        "name": "Супер-сафари"
       },
       {
-        "tag": "Yacht",
-        "name": "Tiran Island Boat Trip"
+        "tag": "Яхта",
+        "name": "Морская прогулка на остров Тиран"
       },
       {
-        "tag": "Sinai",
-        "name": "Mount Moses — Sinai"
+        "tag": "Синай",
+        "name": "Гора Моисея — Синай"
       }
     ],
     "options": [
       {
-        "label": "Two-seater",
-        "unit": "buggy"
+        "label": "Двухместный",
+        "unit": "багги"
       },
       {
-        "label": "Four-seater",
-        "unit": "buggy"
+        "label": "Четырёхместный",
+        "unit": "багги"
       },
       {
-        "label": "Camel ride",
-        "unit": "person"
+        "label": "Прогулка на верблюде",
+        "unit": "чел."
       },
       {
-        "label": "Private ride",
-        "unit": "group"
+        "label": "Индивидуальная прогулка",
+        "unit": "группа"
       },
       {
-        "label": "Private transfer",
-        "unit": "group"
+        "label": "Индивидуальный трансфер",
+        "unit": "группа"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−33%",
-      "priceText": "Transfer and tea with the Bedouins included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "5 activities",
-      "programText": "Buggy across the desert, camels, Bedouins, the Sinai Desert and tea by the fire. An unforgettable adventure!",
+      "priceText": "Трансфер и чай с бедуинами включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "5 активностей",
+      "programText": "Багги по пустыне, верблюды, бедуины, Синайская пустыня и чай у костра. Незабываемое приключение!",
       "ring": "5/5",
-      "ringLabel": "activities"
+      "ringLabel": "активности"
     }
   },
   "super-safari-sharm": {
-    "name": "Super Safari Stargazing 5-in-1: Quad, Camel, Dinner, Show & Telescope",
-    "title": "Super Safari 5 in 1 quad, camel, dinner, show and telescope",
-    "categoryLabel": "Safari",
-    "duration": "5 hours",
-    "detailDuration": "5 hours",
-    "schedule": "Daily",
-    "timeText": "3:00 PM – 8:00 PM",
+    "name": "Супер-сафари с наблюдением за звёздами 5-в-1: квадроцикл, верблюд, ужин, шоу и телескоп",
+    "title": "Супер-сафари 5 в 1: квадроцикл, верблюд, ужин, шоу и телескоп",
+    "categoryLabel": "Сафари",
+    "duration": "5 часов",
+    "detailDuration": "5 часов",
+    "schedule": "Ежедневно",
+    "timeText": "15:00 – 20:00",
     "priceUnit": null,
-    "badge": "Exclusive",
-    "excerpt": "The ultimate desert experience: quad safari, camel riding, a Bedouin dinner, stargazing and an incredible show.",
-    "metaTitle": "Super Safari 5 in 1 quad, camel, dinner, show and telescope. | Sardor Tours",
-    "metaDescription": "Super Safari 5 in 1: quad bikes across the desert, camel ride, show and dinner with the Bedouins. Transfer included. Daily. From £30. No prepayment.",
+    "badge": "Эксклюзив",
+    "excerpt": "Незабываемый отдых в пустыне: сафари на квадроциклах, прогулка на верблюде, бедуинский ужин, наблюдение за звёздами и яркое шоу.",
+    "metaTitle": "Супер-сафари 5 в 1: квадроцикл, верблюд, ужин, шоу, телескоп | Sardor Tours",
+    "metaDescription": "Супер-сафари 5 в 1: квадроциклы по пустыне, верблюды, шоу и ужин у бедуинов. Трансфер включён. Ежедневно. От £30. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка действует",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel pick-up",
-        "text": "At the agreed time, we pick you up from your hotel in a comfortable air-conditioned vehicle. The quad bike centre is located in the desert on the edge of the city. The drive takes around 30 minutes, depending on your hotel's location."
+        "title": "Заберём из отеля",
+        "text": "В согласованное время мы заберём вас из отеля на комфортабельном автомобиле с кондиционером. Центр квадроциклов расположен в пустыне на окраине города. Дорога занимает около 30 минут в зависимости от расположения вашего отеля."
       },
       {
-        "title": "Time at the quad bike centre",
-        "text": "You'll spend around 4 hours in the desert. On arrival, you'll receive a short briefing on how to operate your vehicle."
+        "title": "В центре квадроциклов",
+        "text": "Вы проведёте в пустыне около 4 часов. По прибытии вам кратко объяснят, как управлять выбранным транспортом."
       },
       {
-        "title": "Riding through the desert",
-        "text": "Drive your quad bike or buggy across the Sinai Desert, following an experienced guide. The route includes a stop at Echo Mountain, a scenic viewpoint for photos and tea in a traditional Bedouin village."
+        "title": "Поездка по пустыне",
+        "text": "Отправляйтесь на квадроцикле или багги по Синайской пустыне вслед за опытным гидом. Маршрут включает остановку у горы Эхо, фотографии на фоне живописных видов и чай в традиционной бедуинской деревне."
       },
       {
-        "title": "Camel ride",
-        "text": "Enjoy a ride on an Egyptian camel and take in the peaceful desert landscape and mountain views."
+        "title": "Прогулка на верблюде",
+        "text": "Прокатитесь на египетском верблюде и насладитесь спокойными пейзажами пустыни и видами на горы."
       },
       {
-        "title": "Show and dinner in the desert",
-        "text": "Continue to a Bedouin theatre surrounded by the mountains, where you'll enjoy local folklore, belly dancing, a fire show and modern Egyptian music. Dinner is served in the open air and includes meat or chicken, rice and a selection of fresh salads."
+        "title": "Шоу и ужин в пустыне",
+        "text": "Затем вы отправитесь в бедуинский театр среди гор, где вас ждут местный фольклор, танец живота, огненное шоу и современная египетская музыка. Ужин подают на открытом воздухе: мясо или курица, рис и свежие салаты."
       },
       {
-        "title": "Stargazing experience",
-        "text": "Observe the breathtaking night sky and take turns viewing stars and planets through a telescope while your guide shares fascinating insights about the universe."
+        "title": "Наблюдение за звёздами",
+        "text": "Полюбуйтесь удивительным ночным небом и по очереди рассмотрите звёзды и планеты в телескоп, пока гид рассказывает интересные факты о Вселенной."
       },
       {
-        "title": "Hotel drop-off",
-        "text": "We'll take you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Возвращение в отель",
+        "text": "Мы отвезём вас обратно в отель на комфортабельном автомобиле с кондиционером."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel transfer",
-      "Quad bike or buggy ride",
-      "Camel ride",
-      "Dinner",
-      "Stargazing experience"
+      "Англоговорящий гид",
+      "Трансфер из отеля",
+      "Поездка на квадроцикле или багги",
+      "Прогулка на верблюде",
+      "Ужин",
+      "Наблюдение за звёздами"
     ],
     "notIncluded": [
-      "Drinks",
-      "Shisha",
-      "Souvenirs and personal expenses"
+      "Напитки",
+      "Кальян",
+      "Сувениры и личные расходы"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Sunglasses",
-      "Scarf (available to buy on site)",
-      "Drinking water"
+      "Фото паспорта в телефоне",
+      "Солнцезащитные очки",
+      "Платок (можно купить на месте)",
+      "Питьевая вода"
     ],
     "faq": [
       {
-        "q": "Do I need a driving licence?",
-        "a": "No. A driving licence is not required. Your instructor will explain everything before the ride."
+        "q": "Нужны ли водительские права?",
+        "a": "Нет. Водительские права не требуются. Перед поездкой инструктор всё объяснит."
       },
       {
-        "q": "Can I bring children?",
-        "a": "Yes. Children aged 2 and over can join as passengers. Children over 12 can drive a quad bike when accompanied by an adult."
+        "q": "Можно ли взять с собой детей?",
+        "a": "Да. Дети от 2 лет могут ехать пассажирами. Дети старше 12 лет могут управлять квадроциклом в сопровождении взрослого."
       },
       {
-        "q": "Which should I choose: a quad bike or a buggy?",
-        "a": "A quad bike is ideal if you want to drive yourself. A buggy offers a more comfortable ride and is a great choice for couples or families."
+        "q": "Что выбрать: квадроцикл или багги?",
+        "a": "Квадроцикл отлично подойдёт, если вы хотите управлять сами. Багги предлагает более комфортную поездку и станет хорошим выбором для пары или семьи."
       },
       {
-        "q": "What's included in the desert show and dinner?",
-        "a": "The programme includes local folklore, belly dancing, a fire show and modern Egyptian music. Dinner is served outdoors and includes meat or chicken, rice and fresh salads."
+        "q": "Что входит в программу шоу и ужина в пустыне?",
+        "a": "В программе — местный фольклор, танец живота, огненное шоу и современная египетская музыка. Ужин подают на открытом воздухе: мясо или курица, рис и свежие салаты."
       }
     ],
-    "infoHeading": "About the Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "Sinai Desert",
-        "title": "The Ride",
-        "text": "Drive across the open Sinai Desert with stops at Echo Mountain and a traditional Bedouin village.",
+        "tag": "Синайская пустыня",
+        "title": "Поездка по пустыне",
+        "text": "Отправляйтесь по просторам Синайской пустыни с остановками у горы Эхо и в традиционной бедуинской деревне.",
         "tone": "sand"
       },
       {
-        "tag": "Bedouin Camp",
-        "title": "Show & Dinner",
-        "text": "Enjoy an evening of local entertainment, open-air dining and the unique atmosphere of the Sinai Desert.",
+        "tag": "Бедуинский лагерь",
+        "title": "Шоу и ужин",
+        "text": "Проведите вечер с местными представлениями, ужином под открытым небом и неповторимой атмосферой Синайской пустыни.",
         "tone": "coral"
       },
       {
-        "tag": "Sinai Desert",
-        "title": "Stargazing",
-        "text": "End the evening by exploring the night sky through a telescope in one of the region's best locations for stargazing.",
+        "tag": "Синайская пустыня",
+        "title": "Наблюдение за звёздами",
+        "text": "Завершите вечер наблюдением за ночным небом через телескоп в одном из лучших мест региона для знакомства со звёздами.",
         "tone": "blue"
       },
       {
-        "tag": "Sinai Desert",
-        "title": "Camel Ride",
-        "text": "Take a short camel ride and enjoy the quiet beauty of the desert at sunset.",
+        "tag": "Синайская пустыня",
+        "title": "Прогулка на верблюде",
+        "text": "Совершите короткую прогулку на верблюде и полюбуйтесь спокойной красотой пустыни на закате.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Afternoon departure",
-        "text": "The tour runs daily from 3:00 PM to 8:00 PM .",
+        "title": "Отправление после обеда",
+        "text": "Экскурсия проходит ежедневно с 15:00 до 20:00.",
         "tone": "green"
       },
       {
-        "title": "No driving licence required",
-        "text": "Full instructions are provided before the ride.",
+        "title": "Водительские права не нужны",
+        "text": "Перед поездкой проводится подробный инструктаж.",
         "tone": "orange"
       },
       {
-        "title": "VIP Dinner available",
-        "text": "Upgrade to a private VIP area with your own BBQ grill serving freshly prepared meat and chicken for a more comfortable dining experience.",
+        "title": "Доступен VIP-ужин",
+        "text": "Для более комфортного ужина выберите отдельную VIP-зону с собственным грилем, где для вас приготовят свежее мясо и курицу.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Quad bikes · Camels · Bedouins · Sinai Desert",
-      "line2": "Transfer and tea included — from £30",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Квадроциклы · Верблюды · Бедуины · Синайская пустыня",
+      "line2": "Трансфер и чай включены — от £30",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Single quad",
-        "unit": "per person",
+        "label": "Одноместный квадроцикл",
+        "unit": "за человека",
         "discount": "−14%"
       },
       {
-        "label": "Double quad",
-        "unit": "for 2 people",
+        "label": "Двухместный квадроцикл",
+        "unit": "за 2 человек",
         "discount": "−18%"
       }
     ],
     "related": [
       {
-        "tag": "Safari",
-        "name": "Salama Red Canyon"
+        "tag": "Сафари",
+        "name": "Красный каньон Салама"
       },
       {
-        "tag": "Quad Bikes",
-        "name": "Quad Bike Safari"
+        "tag": "Квадроциклы",
+        "name": "Сафари на квадроциклах"
       },
       {
-        "tag": "Buggies",
-        "name": "Buggy Safari"
+        "tag": "Багги",
+        "name": "Сафари на багги"
       },
       {
-        "tag": "Dolphinarium",
-        "name": "Dolphin Show"
+        "tag": "Дельфинарий",
+        "name": "Шоу дельфинов"
       },
       {
-        "tag": "Petra",
-        "name": "Petra — Jordan"
+        "tag": "Петра",
+        "name": "Петра — Иордания"
       }
     ],
     "options": [
       {
-        "label": "Single quad",
-        "unit": "person"
+        "label": "Одноместный квадроцикл",
+        "unit": "чел."
       },
       {
-        "label": "Double quad",
-        "unit": "2 people"
+        "label": "Двухместный квадроцикл",
+        "unit": "2 чел."
       },
       {
-        "label": "Two-seater buggy",
-        "unit": "2 people"
+        "label": "Двухместный багги",
+        "unit": "2 чел."
       },
       {
-        "label": "Four-seater buggy",
-        "unit": "4 people"
+        "label": "Четырёхместный багги",
+        "unit": "4 чел."
       },
       {
-        "label": "Private ride",
-        "unit": "group"
+        "label": "Индивидуальная прогулка",
+        "unit": "группа"
       },
       {
-        "label": "Private transfer",
-        "unit": "group"
+        "label": "Индивидуальный трансфер",
+        "unit": "группа"
       },
       {
-        "label": "VIP dinner",
-        "unit": "person"
+        "label": "VIP-ужин",
+        "unit": "чел."
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−14%",
-      "priceText": "Transfer and Bedouin tea included. No prepayment.",
-      "programKicker": "Programme · 5 in 1",
-      "programNum": "4 activities",
-      "programText": "Quad bikes, camels, Bedouins and a show with dinner in the desert. An unforgettable adventure!",
+      "priceText": "Трансфер и бедуинский чай включены. Без предоплаты.",
+      "programKicker": "Программа · 5 в 1",
+      "programNum": "4 активности",
+      "programText": "Квадроциклы, верблюды, бедуины, шоу и ужин в пустыне. Незабываемое приключение!",
       "ring": "4/4",
-      "ringLabel": "activities"
+      "ringLabel": "активности"
     }
   },
   "blue-hole-dahab": {
-    "name": "Blue Hole & Canyon Dahab",
-    "title": "Blue Hole & Canyon in Dahab",
-    "categoryLabel": "Safari",
-    "duration": "10 hours",
-    "detailDuration": "10 hours",
-    "schedule": "Daily",
-    "timeText": "7:30 AM – 5:30 PM",
+    "name": "Голубая дыра и каньон в Дахабе",
+    "title": "Голубая дыра и каньон в Дахабе",
+    "categoryLabel": "Сафари",
+    "duration": "10 часов",
+    "detailDuration": "10 часов",
+    "schedule": "Ежедневно",
+    "timeText": "7:30 – 17:30",
     "priceUnit": null,
     "badge": null,
-    "excerpt": "A full-day trip to the town of Dahab. Snorkelling at the Blue Hole, a camel ride and a walk through the canyon…",
-    "metaTitle": "Blue Hole & Canyon in Dahab | Sardor Tours",
-    "metaDescription": "Dahab from Sharm El Sheikh: camels, snorkelling in the Blue Hole, quad bikes, canyon and Bedouin tea. Lunch and transfer included. From £30.",
+    "excerpt": "Поездка в Дахаб на целый день. Снорклинг у Голубой дыры, прогулка на верблюде и пешая прогулка по каньону…",
+    "metaTitle": "Голубая дыра и каньон в Дахабе | Sardor Tours",
+    "metaDescription": "Дахаб из Шарм-эль-Шейха: верблюды, снорклинг у Голубой дыры, квадроциклы, каньон и бедуинский чай. Обед и трансфер включены. От £30.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка действует",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "At the scheduled time, we'll collect you from your hotel in a comfortable, air-conditioned vehicle and head to Dahab, located around 90 km from Sharm El Sheikh."
+        "title": "Заберём из отеля",
+        "text": "В назначенное время мы заберём вас из отеля на комфортабельном автомобиле с кондиционером и отправимся в Дахаб, расположенный примерно в 90 км от Шарм-эль-Шейха."
       },
       {
-        "title": "Camel Ride",
-        "text": "Enjoy a relaxing camel ride along the coastline and experience the timeless charm of the Sinai desert's most iconic animal."
+        "title": "Прогулка на верблюде",
+        "text": "Насладитесь спокойной прогулкой на верблюде вдоль побережья и ощутите особое очарование путешествия на самом узнаваемом животном Синайской пустыни."
       },
       {
-        "title": "Snorkelling at the Blue Hole",
-        "text": "Discover the famous Blue Hole, located within a protected national reserve (entry fee included). Explore crystal-clear waters and some of the most beautiful coral reefs in Egypt."
+        "title": "Снорклинг у Голубой дыры",
+        "text": "Откройте для себя знаменитую Голубую дыру на территории охраняемого национального заповедника (вход включён). Исследуйте кристально чистые воды и одни из самых красивых коралловых рифов Египта."
       },
       {
-        "title": "Lunch by the Sea",
-        "text": "Enjoy a freshly prepared lunch by the sea, including chicken, side dishes, and a selection of fresh salads."
+        "title": "Обед у моря",
+        "text": "Насладитесь свежеприготовленным обедом у моря: курица, гарниры и свежие салаты."
       },
       {
-        "title": "Quad Bike Ride +£10 · optional",
-        "text": "Add an exciting quad bike adventure through the desert trails surrounding Dahab. Perfect for those looking for an extra dose of adrenaline."
+        "title": "Прогулка на квадроцикле +£10 · по желанию",
+        "text": "Добавьте захватывающую поездку на квадроцикле по пустынным тропам в окрестностях Дахаба. Отличный выбор для тех, кому хочется ещё больше адреналина."
       },
       {
-        "title": "Canyon Walk",
-        "text": "Take a scenic walk through the stunning canyon, one of the Sinai Peninsula's most impressive natural wonders. The walk lasts approximately 1 hour."
+        "title": "Прогулка по каньону",
+        "text": "Прогуляйтесь по живописному каньону — одному из самых впечатляющих природных чудес Синайского полуострова. Прогулка длится около 1 часа."
       },
       {
-        "title": "Bedouin Tea Experience",
-        "text": "Relax in a traditional Bedouin camp and enjoy a cup of authentic Bedouin tea while learning about the local desert culture."
+        "title": "Знакомство с бедуинским чаем",
+        "text": "Отдохните в традиционном бедуинском лагере, выпейте настоящего бедуинского чая и познакомьтесь с местной культурой пустыни."
       },
       {
-        "title": "Dahab Bazaar Stop",
-        "text": "Browse local shops and souvenir stalls, offering a variety of handmade crafts, gifts, and local products."
+        "title": "Остановка на рынке Дахаба",
+        "text": "Загляните в местные магазины и сувенирные лавки с изделиями ручной работы, подарками и местными товарами."
       },
       {
-        "title": "Return Transfer to Sharm El Sheikh",
-        "text": "After a memorable day, relax on the comfortable, air-conditioned transfer back to your hotel in Sharm El Sheikh."
+        "title": "Обратный трансфер в Шарм-эль-Шейх",
+        "text": "После насыщенного дня отдохните по дороге в ваш отель в Шарм-эль-Шейхе в комфортабельном автомобиле с кондиционером."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and return transfer",
-      "National Park entry fee",
-      "Camel ride",
-      "Lunch",
-      "Traditional Bedouin tea"
+      "Англоговорящий гид",
+      "Трансфер из отеля и обратно",
+      "Входной билет в национальный парк",
+      "Прогулка на верблюде",
+      "Обед",
+      "Традиционный бедуинский чай"
     ],
     "notIncluded": [
-      "Snorkelling equipment (mask, fins, and life jacket)",
-      "Drinks during lunch",
-      "Professional photos and videos"
+      "Снаряжение для снорклинга (маска, ласты и спасательный жилет)",
+      "Напитки во время обеда",
+      "Профессиональные фото и видео"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Swimsuit or swim shorts",
-      "Towel",
-      "Reef shoes (recommended)",
-      "Snorkelling equipment (mask and fins), if you have your own"
+      "Фото паспорта в телефоне",
+      "Купальник или плавки",
+      "Полотенце",
+      "Коралловые тапочки (рекомендуются)",
+      "Своё снаряжение для снорклинга (маска и ласты), если есть"
     ],
     "faq": [
       {
-        "q": "Is hotel pick-up and drop-off included?",
-        "a": "Yes, return hotel transfers from Sharm El Sheikh are included in the tour price."
+        "q": "Трансфер из отеля и обратно включён?",
+        "a": "Да, трансфер из отеля в Шарм-эль-Шейхе и обратно включён в стоимость тура."
       },
       {
-        "q": "Is the National Park entry fee included?",
-        "a": "Yes, all National Park entry fees are included."
+        "q": "Входной билет в национальный парк включён?",
+        "a": "Да, все входные билеты в национальный парк включены."
       },
       {
-        "q": "Do I need to be a strong swimmer?",
-        "a": "No. Basic swimming skills are helpful, but many guests snorkel comfortably with a life jacket, which can be rented on site."
+        "q": "Нужно ли хорошо плавать?",
+        "a": "Нет. Базовые навыки плавания пригодятся, но многие гости комфортно занимаются снорклингом в спасательном жилете, который можно арендовать на месте."
       },
       {
-        "q": "Is snorkelling equipment included?",
-        "a": "No, snorkelling equipment is not included. Masks, snorkels, fins, and life jackets can be rented on site."
+        "q": "Снаряжение для снорклинга включено?",
+        "a": "Нет, снаряжение для снорклинга не включено. Маски, трубки, ласты и спасательные жилеты можно арендовать на месте."
       },
       {
-        "q": "Is lunch included?",
-        "a": "Yes, lunch by the sea is included. Drinks are available at an additional cost."
+        "q": "Обед включён?",
+        "a": "Да, обед у моря включён. Напитки оплачиваются дополнительно."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "Yes, this tour is family-friendly and suitable for children. The camel ride, Blue Hole visit, and canyon walk are popular with families."
+        "q": "Подходит ли экскурсия для детей?",
+        "a": "Да, экскурсия подходит для семей с детьми. Прогулка на верблюде, посещение Голубой дыры и прогулка по каньону пользуются популярностью у семей."
       },
       {
-        "q": "How difficult is the canyon walk?",
-        "a": "The walk is considered easy to moderate and takes approximately 1 hour. Comfortable walking shoes are recommended."
+        "q": "Насколько сложна прогулка по каньону?",
+        "a": "Прогулка считается лёгкой или умеренно сложной и занимает около 1 часа. Рекомендуем удобную обувь для ходьбы."
       },
       {
-        "q": "What should I bring?",
-        "a": "Please bring a photo of your passport on your phone, swimwear, a towel, reef shoes, sunscreen, and cash for optional extras."
+        "q": "Что взять с собой?",
+        "a": "Возьмите фото паспорта в телефоне, купальник или плавки, полотенце, коралловые тапочки, солнцезащитный крем и наличные на дополнительные услуги."
       },
       {
-        "q": "Can I add the quad bike ride later?",
-        "a": "Yes, you can add the optional quad bike experience for £10 per person when booking or contact us before your tour date."
+        "q": "Можно ли добавить прогулку на квадроцикле позже?",
+        "a": "Да, вы можете добавить прогулку на квадроцикле за £10 за человека при бронировании или связаться с нами до даты экскурсии."
       },
       {
-        "q": "Will I visit the Blue Hole?",
-        "a": "Yes, the tour includes a stop at the famous Blue Hole, one of Dahab's most popular snorkelling locations."
+        "q": "Посещу ли я Голубую дыру?",
+        "a": "Да, в экскурсию включена остановка у знаменитой Голубой дыры — одного из самых популярных мест Дахаба для снорклинга."
       },
       {
-        "q": "What is the total duration of the tour?",
-        "a": "The tour lasts approximately a full day, including transfers, activities, lunch, and sightseeing."
+        "q": "Какова общая продолжительность экскурсии?",
+        "a": "Экскурсия занимает примерно целый день, включая трансферы, развлечения, обед и осмотр достопримечательностей."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "О месте",
     "destinationCards": [
       {
-        "tag": "Dahab · South Sinai",
-        "title": "Blue Hole",
-        "text": "One of Egypt's most famous snorkelling and diving sites. Known for its crystal-clear water and vibrant coral reefs, the Blue Hole is a must-visit destination for anyone exploring Dahab.",
+        "tag": "Дахаб · Южный Синай",
+        "title": "Голубая дыра",
+        "text": "Одно из самых известных мест Египта для снорклинга и дайвинга. Голубая дыра славится кристально чистой водой и яркими коралловыми рифами — сюда стоит заглянуть каждому, кто знакомится с Дахабом.",
         "tone": "blue"
       },
       {
-        "tag": "Sinai Desert",
-        "title": "Canyon",
-        "text": "A stunning natural canyon shaped by wind and water over thousands of years. Its bright white rock formations and narrow passages create one of the most unique landscapes in South Sinai.",
+        "tag": "Синайская пустыня",
+        "title": "Каньон",
+        "text": "Удивительный природный каньон, созданный ветром и водой за тысячи лет. Белоснежные скалы и узкие проходы образуют один из самых необычных пейзажей Южного Синая.",
         "tone": "sand"
       },
       {
-        "tag": "90 km from Sharm El Sheikh",
-        "title": "Dahab",
-        "text": "Located just 90 km from Sharm El Sheikh, Dahab is a laid-back coastal town famous for its diving, snorkelling, kitesurfing, and relaxed atmosphere. Its beautiful coastline and desert scenery make it one of the Sinai Peninsula's most popular destinations.",
+        "tag": "В 90 км от Шарм-эль-Шейха",
+        "title": "Дахаб",
+        "text": "Дахаб — спокойный прибрежный город всего в 90 км от Шарм-эль-Шейха, известный дайвингом, снорклингом, кайтсёрфингом и непринуждённой атмосферой. Красивое побережье и пустынные пейзажи делают его одним из самых популярных направлений Синайского полуострова.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Sinai Visa",
-        "text": "No additional Egyptian visa is required for most visitors staying within the Sinai region. The tour is fully accessible with a standard Sinai-only entry stamp.",
+        "title": "Синайская виза",
+        "text": "Большинству туристов, которые остаются в пределах Синая, дополнительная египетская виза не нужна. Для участия в экскурсии достаточно стандартного въездного штампа, действующего только на Синае.",
         "tone": "green"
       },
       {
-        "title": "Optional Quad Bike Ride",
-        "text": "Add an exciting quad bike adventure through the desert for £10 per person when booking online.",
+        "title": "Прогулка на квадроцикле по желанию",
+        "text": "Добавьте захватывающую поездку на квадроцикле по пустыне за £10 за человека при бронировании онлайн.",
         "tone": "orange"
       },
       {
-        "title": "Private Tour Available",
-        "text": "Enjoy private transport, a dedicated guide, and a flexible itinerary tailored to your preferences. Contact us for pricing and availability.",
+        "title": "Доступна индивидуальная экскурсия",
+        "text": "Воспользуйтесь индивидуальным транспортом, услугами личного гида и гибким маршрутом с учётом ваших пожеланий. Свяжитесь с нами, чтобы уточнить стоимость и доступные даты.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Blue Hole · Canyon · Camels · Snorkelling",
-      "line2": "Transfer and lunch included — from £30",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Голубая дыра · Каньон · Верблюды · Снорклинг",
+      "line2": "Трансфер и обед включены — от £30",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "per person",
+        "label": "Ребёнок 5–10 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Diving",
-        "name": "PADI Diving Courses"
+        "tag": "Дайвинг",
+        "name": "Курсы дайвинга PADI"
       },
       {
-        "tag": "Underwater world",
-        "name": "Semi-Submarine (Sea Scope)"
+        "tag": "Подводный мир",
+        "name": "Полуподводная лодка (Sea Scope)"
       },
       {
-        "tag": "Snorkelling",
-        "name": "Ras Mohamed"
+        "tag": "Снорклинг",
+        "name": "Рас-Мохаммед"
       },
       {
-        "tag": "Safari",
-        "name": "Super Safari"
+        "tag": "Сафари",
+        "name": "Супер-сафари"
       },
       {
-        "tag": "Petra",
-        "name": "Petra — Jordan"
+        "tag": "Петра",
+        "name": "Петра — Иордания"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "person"
+        "label": "Ребёнок 5–10 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants 0–4 years",
+        "label": "Младенцы 0–4 лет",
         "unit": ""
       },
       {
-        "label": "Quad bikes",
-        "unit": "person"
+        "label": "Квадроциклы",
+        "unit": "чел."
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−33%",
-      "priceText": "Transfer, lunch and entry tickets already included. No prepayment.",
-      "programKicker": "Day's programme",
-      "programNum": "5 activities",
-      "programText": "Blue Hole, Canyon, snorkelling, camels, quad bikes. All in one unforgettable day.",
+      "priceText": "Трансфер, обед и входные билеты уже включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "5 активностей",
+      "programText": "Голубая дыра, каньон, снорклинг, верблюды, квадроциклы. Всё за один незабываемый день.",
       "ring": "5/5",
-      "ringLabel": "activities"
+      "ringLabel": "активности"
     }
   },
   "red-canyon-jeep-dahab": {
-    "name": "Salama Red Canyon & Snorkelling in Dahab",
-    "title": "Salama Red Canyon & Snorkelling in Dahab",
-    "categoryLabel": "Safari",
-    "duration": "5 hours",
-    "detailDuration": "10 hours",
-    "schedule": "Daily",
-    "timeText": "7:30 AM – 5:30 PM",
+    "name": "Красный каньон Салама и снорклинг в Дахабе",
+    "title": "Красный каньон Салама и снорклинг в Дахабе",
+    "categoryLabel": "Сафари",
+    "duration": "5 часов",
+    "detailDuration": "10 часов",
+    "schedule": "Ежедневно",
+    "timeText": "7:30 – 17:30",
     "priceUnit": null,
-    "badge": "New",
-    "excerpt": "A walk through one of the most beautiful canyons on the Sinai Peninsula — the Salama Red Canyon; with snorkelling and a camel ride…",
-    "metaTitle": "Salama Red Canyon & Snorkelling in Dahab | Sardor Tours",
-    "metaDescription": "Red Canyon in Dahab: canyon, camels, Bedouins, snorkelling, quad bikes, lunch. Jeep and transfer included. From £25. No prepayment.",
+    "badge": "Новинка",
+    "excerpt": "Прогулка по одному из самых красивых каньонов Синайского полуострова — Красному каньону Салама, снорклинг и прогулка на верблюде…",
+    "metaTitle": "Красный каньон Салама и снорклинг в Дахабе | Sardor Tours",
+    "metaDescription": "Красный каньон в Дахабе: верблюды, бедуины, снорклинг, квадроциклы, обед. Поездка на Jeep и трансфер включены. От £25. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer included",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка действует",
+      "Трансфер из отеля включён",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel pick-up",
-        "text": "At the agreed time, we pick you up from your hotel in a comfortable air-conditioned vehicle."
+        "title": "Заберём из отеля",
+        "text": "В согласованное время мы заберём вас из отеля на комфортабельном автомобиле с кондиционером."
       },
       {
-        "title": "Canyon walk",
-        "text": "A walk lasting around 1.5–2 hours through one of the most beautiful canyons on the Sinai Peninsula — the Salama Red Canyon, near the town of Dahab. The canyon was formed by an earthquake in the sandstone cliffs, while rainwater carved its winding passages over hundreds of years."
+        "title": "Прогулка по каньону",
+        "text": "Прогулка продолжительностью около 1.5–2 часов по одному из самых красивых каньонов Синайского полуострова — Красному каньону Салама рядом с Дахабом. Каньон возник в результате землетрясения в песчаниковых скалах, а дождевая вода сотни лет вытачивала его извилистые проходы."
       },
       {
-        "title": "Tea in a Bedouin village",
-        "text": "Enjoy traditional Bedouin tea in the tent of the desert's nomadic people."
+        "title": "Чай в бедуинской деревне",
+        "text": "Попробуйте традиционный бедуинский чай в шатре кочевых жителей пустыни."
       },
       {
-        "title": "Camel ride",
-        "text": "A relaxing camel ride along the seashore, with plenty of opportunities for memorable photos and beautiful views."
+        "title": "Прогулка на верблюде",
+        "text": "Спокойная прогулка на верблюде вдоль берега моря с красивыми видами и множеством возможностей для памятных фотографий."
       },
       {
-        "title": "Snorkelling",
-        "text": "Snorkelling at Three Pools or Dive Canyon, both known for their colourful coral reefs. If you prefer, you can upgrade to the Blue Lagoon for an additional £10."
+        "title": "Снорклинг",
+        "text": "Снорклинг в Трёх бассейнах или Дайв-каньоне, известных красочными коралловыми рифами. По желанию можно выбрать Голубую лагуну за дополнительные £10."
       },
       {
-        "title": "Quad bikes +£10 · optional",
-        "text": "An exciting quad bike ride along Bedouin desert trails. Available as an optional extra when booking."
+        "title": "Квадроциклы +£10 · по желанию",
+        "text": "Захватывающая поездка на квадроцикле по бедуинским тропам пустыни. Доступна как дополнительная услуга при бронировании."
       },
       {
-        "title": "Lunch",
-        "text": "Lunch by the sea, including side dishes, chicken, rice and fresh vegetable salads."
+        "title": "Обед",
+        "text": "Обед у моря: гарниры, курица, рис и салаты из свежих овощей."
       },
       {
-        "title": "Shopping in Dahab",
-        "text": "Free time to browse the local souvenir market."
+        "title": "Покупки в Дахабе",
+        "text": "Свободное время для прогулки по местному сувенирному рынку."
       },
       {
-        "title": "Return transfer to Sharm El Sheikh",
-        "text": "Comfortable transfer back to your hotel in an air-conditioned minibus."
+        "title": "Обратный трансфер в Шарм-эль-Шейх",
+        "text": "Комфортный трансфер обратно в отель на микроавтобусе с кондиционером."
       }
     ],
     "included": [
-      "English-speaking guide-instructor",
-      "Hotel transfer",
-      "Camel ride",
-      "Lunch",
-      "Bedouin tea"
+      "Англоговорящий гид-инструктор",
+      "Трансфер из отеля",
+      "Прогулка на верблюде",
+      "Обед",
+      "Бедуинский чай"
     ],
     "notIncluded": [
-      "Mask, snorkel, fins and life jacket",
-      "Photos taken by the photographer"
+      "Маска, трубка, ласты и спасательный жилет",
+      "Фотографии от фотографа"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Swimsuit or swimming trunks",
-      "Reef shoes (recommended)",
-      "Mask, snorkel, fins and life jacket (available to hire)",
-      "Towel"
+      "Фото паспорта в телефоне",
+      "Купальник или плавки",
+      "Коралловые тапочки (рекомендуются)",
+      "Маска, трубка, ласты и спасательный жилет (можно арендовать)",
+      "Полотенце"
     ],
     "faq": [
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes, return hotel transfer from your hotel in Sharm El Sheikh is included in the price."
+        "q": "Трансфер из отеля включён?",
+        "a": "Да, трансфер из вашего отеля в Шарм-эль-Шейхе и обратно включён в стоимость."
       },
       {
-        "q": "Do I need an Egyptian visa to visit Dahab?",
-        "a": "No. Dahab is located within the Sinai visa-free zone, so an Egyptian visa is not required."
+        "q": "Нужна ли египетская виза для поездки в Дахаб?",
+        "a": "Нет. Дахаб находится в безвизовой зоне Синая, поэтому египетская виза не требуется."
       },
       {
-        "q": "Do I need to know how to swim?",
-        "a": "Basic swimming skills are recommended for snorkelling. Your guide stays nearby throughout the activity, and life jackets are available if needed."
+        "q": "Нужно ли уметь плавать?",
+        "a": "Для снорклинга рекомендуются базовые навыки плавания. Гид всё время находится рядом, при необходимости доступны спасательные жилеты."
       },
       {
-        "q": "Is snorkelling equipment included?",
-        "a": "No. Mask, snorkel, fins and life jackets are available to hire on site. We also recommend bringing reef shoes."
+        "q": "Снаряжение для снорклинга включено?",
+        "a": "Нет. Маску, трубку, ласты и спасательные жилеты можно арендовать на месте. Также рекомендуем взять коралловые тапочки."
       },
       {
-        "q": "Can I add a quad bike ride?",
-        "a": "Yes. A quad bike ride can be added for £10 when booking through the website."
+        "q": "Можно ли добавить прогулку на квадроцикле?",
+        "a": "Да. Прогулку на квадроцикле можно добавить за £10 при бронировании через сайт."
       },
       {
-        "q": "Can I choose the Blue Lagoon instead?",
-        "a": "Yes. You can replace the standard snorkelling location with the Blue Lagoon for an additional £10."
+        "q": "Можно ли выбрать Голубую лагуну вместо обычного места?",
+        "a": "Да. За дополнительные £10 можно заменить стандартное место для снорклинга на Голубую лагуну."
       },
       {
-        "q": "Can I book a private tour?",
-        "a": "Yes. Private transport, a personal guide and a customised itinerary are available on request."
+        "q": "Можно ли забронировать индивидуальную экскурсию?",
+        "a": "Да. По запросу доступны индивидуальный транспорт, личный гид и маршрут с учётом ваших пожеланий."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "О месте",
     "destinationCards": [
       {
-        "tag": "Dahab · Sinai",
-        "title": "Salama Red Canyon",
-        "text": "The largest and most beautiful canyon open to visitors, with colourful sandstone walls shaped by nature over thousands of years.",
+        "tag": "Дахаб · Синай",
+        "title": "Красный каньон Салама",
+        "text": "Самый большой и красивый каньон, открытый для посещения, с разноцветными стенами из песчаника, которые природа создавала тысячи лет.",
         "tone": "coral"
       },
       {
-        "tag": "Red Sea",
-        "title": "Snorkelling in Dahab",
-        "text": "Explore Three Pools or Dive Canyon, both famous for their coral reefs and crystal-clear water. You can also upgrade to the Blue Lagoon.",
+        "tag": "Красное море",
+        "title": "Снорклинг в Дахабе",
+        "text": "Исследуйте Три бассейна или Дайв-каньон, известные коралловыми рифами и кристально чистой водой. За доплату можно выбрать Голубую лагуну.",
         "tone": "blue"
       },
       {
-        "tag": "90 km from Sharm El Sheikh",
-        "title": "Dahab",
-        "text": "A relaxed Red Sea town known worldwide for diving, kitesurfing and its unique atmosphere.",
+        "tag": "В 90 км от Шарм-эль-Шейха",
+        "title": "Дахаб",
+        "text": "Спокойный город на берегу Красного моря, известный во всём мире дайвингом, кайтсёрфингом и своей неповторимой атмосферой.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "No Egyptian visa required",
-        "text": "Dahab is located within the Sinai visa-free zone.",
+        "title": "Египетская виза не нужна",
+        "text": "Дахаб находится в безвизовой зоне Синая.",
         "tone": "green"
       },
       {
-        "title": "Optional quad bike ride",
-        "text": "Add a desert quad bike experience for £10 when booking online.",
+        "title": "Прогулка на квадроцикле по желанию",
+        "text": "Добавьте поездку на квадроцикле по пустыне за £10 при бронировании онлайн.",
         "tone": "orange"
       },
       {
-        "title": "Private tours available",
-        "text": "Personal transport, your own guide and a customised programme can be arranged on request.",
+        "title": "Доступны индивидуальные экскурсии",
+        "text": "По запросу можно организовать индивидуальный транспорт, личного гида и программу с учётом ваших пожеланий.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Red Canyon · Jeeps · Camels · Snorkelling",
-      "line2": "Transfer and lunch included — from £25",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Красный каньон · Джипы · Верблюды · Снорклинг",
+      "line2": "Трансфер и обед включены — от £25",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "per person",
+        "label": "Ребёнок 5–10 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Quad bikes",
-        "name": "Quad Bike Safari"
+        "tag": "Квадроциклы",
+        "name": "Сафари на квадроциклах"
       },
       {
-        "tag": "Buggy",
-        "name": "Buggy Safari"
+        "tag": "Багги",
+        "name": "Сафари на багги"
       },
       {
-        "tag": "Safari",
-        "name": "Super Safari"
+        "tag": "Сафари",
+        "name": "Супер-сафари"
       },
       {
-        "tag": "Evening yacht",
-        "name": "Evening Yacht Cruise"
+        "tag": "Вечерняя яхта",
+        "name": "Вечерняя прогулка на яхте"
       },
       {
-        "tag": "Luxor",
-        "name": "Luxor — Day Trip"
+        "tag": "Луксор",
+        "name": "Луксор — экскурсия на целый день"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "person"
+        "label": "Ребёнок 5–10 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants 0–4 years",
+        "label": "Младенцы 0–4 лет",
         "unit": ""
       },
       {
-        "label": "Quad bikes",
-        "unit": "person"
+        "label": "Квадроциклы",
+        "unit": "чел."
       }
     ],
     "bento": {
-      "priceKicker": "Saving · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−29%",
-      "priceText": "Transfer, lunch and entrance tickets already included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "5 activities",
-      "programText": "Red Canyon, snorkelling, camels, Bedouin tea, quad bikes. All in one unforgettable day.",
+      "priceText": "Трансфер, обед и входные билеты уже включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "5 активностей",
+      "programText": "Красный каньон, снорклинг, верблюды, бедуинский чай, квадроциклы. Всё за один незабываемый день.",
       "ring": "5/5",
-      "ringLabel": "activities"
+      "ringLabel": "активности"
     }
   },
   "cairo-pyramids-by-bus": {
