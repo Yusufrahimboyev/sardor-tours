@@ -58,6 +58,48 @@ reference HTML ──scrape.py──▶ tours.json (raw) ──convert.py──�
                                                   201 { reference } → /booking/ST-XXXXXX/
 ```
 
+## Languages
+
+Pages use `/uz/` (Uzbek Latin), `/en/` (English) and `/ru/` (Russian). `src/middleware.ts`
+redirects unprefixed page URLs with **307**, preserving the query string. It chooses the language
+from the `lang` cookie → `Accept-Language` → `en`. The language switcher sets the cookie and keeps
+the current path and query.
+
+UI text lives in `src/i18n/messages/{en,uz,ru}.json`. English is the source of truth; Uzbek and
+Russian must have identical key paths (`npm run typecheck` and unit tests enforce this, with
+locale-specific plural forms). Server code uses `getT(lang)` from `src/i18n/messages.ts` with full
+keys, e.g. `t('common.footer.blurb')`. Client components use `useT()` from `src/i18n/client.tsx`
+with keys relative to `client`, e.g. `t('nav.home')`; only the `client` namespace is sent to the browser.
+
+Tour content combines `src/data/tours.json` (language-neutral prices, options, schedule and gallery)
+with `src/data/tours.{en,uz,ru}.json` (texts). **Prices only ever come from the base file**; translated
+option labels and other text cannot override them.
+
+To add a text key, add it to `en.json` first, then add the same key path and matching placeholders
+to `uz.json` and `ru.json`. Put browser text under `client`, call it with `getT(lang)` or `useT()` as
+appropriate, then run `npm test`.
+
+To add a fourth language, extend `LOCALES`, `INTL_LOCALE`, `OG_LOCALE` and `LOCALE_LABEL` (including
+its label type) in `src/i18n/config.ts`. Add one `src/i18n/messages/<lang>.json` and one
+`src/data/tours.<lang>.json`, matching the English structure, and register their imports in
+`src/i18n/messages.ts` and `src/data/tours.ts`. Add the switcher's language name in
+`src/i18n/LanguageSwitcher.tsx` and extend the locale lists in the checker and unit/E2E tests.
+
+`npm run i18n:check` checks structure and reports values identical to English; `--strict` makes
+untranslated values fail, and `--only=messages` or `--only=tours` limits the scope. `tone` style
+tokens and language-neutral values in `scripts/i18n-allowlist.json` are exempt from the untranslated
+report. `npm test` runs typecheck, lint, unit tests and the strict check for both messages and tours.
+
+For E2E, start the production server manually first: Playwright's own `webServer` build step hangs
+in this environment. In one terminal:
+
+```bash
+npm run build
+DATA_DIR=.data-test RATE_LIMIT=off ADMIN_TOKEN=test-admin-token npx next start -p 3200
+```
+
+Then, in another terminal, run `npx playwright test`; locally Playwright reuses the running server.
+
 ## Key decisions
 
 1. **Server is the source of truth for price.** The client shows a live total, but the API recomputes

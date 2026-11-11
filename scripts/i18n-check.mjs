@@ -70,6 +70,7 @@ for (const lang of only === 'messages' ? [] : ['uz', 'ru']) {
     const fe = flatten(en[s]);
     const fl = flatten(data[s]);
     for (const [p, v] of Object.entries(fl)) {
+      if (p === 'tone' || p.endsWith('.tone')) continue; // Style tokens are language-neutral.
       if (typeof v === 'string' && v === fe[p] && !isExempt(v)) untranslated.push(`${file}: ${s}.${p}: same as English`);
     }
   }
@@ -106,6 +107,7 @@ if (only !== 'tours' && fs.existsSync(msgDir) && fs.existsSync(path.join(msgDir,
     for (const k of n.keys) if (!enN.keys.has(k)) fail(f, k, 'extra key (not in en.json)');
     for (const [p, set] of n.pluralParents) if (!set.has('other')) fail(f, p, "plural object lacks 'other'");
     for (const [k, v] of Object.entries(flat)) {
+      if (k === 'tone' || k.endsWith('.tone')) continue; // Style tokens are language-neutral.
       if (typeof v === 'string' && v === enMsg[k] && !isExempt(v)) untranslated.push(`${f}: ${k}: same as English`);
     }
   }

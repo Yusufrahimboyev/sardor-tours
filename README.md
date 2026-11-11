@@ -25,10 +25,19 @@ npm run build && npm start
 | `npm run dev` | Dev server (Turbopack) |
 | `npm run build` / `npm start` | Production build / server |
 | `npm run lint` · `npm run typecheck` | ESLint · TypeScript |
-| `npm run test:e2e` | Builds, starts on :3200 and runs Playwright (desktop + mobile) |
+| `npm run test:unit` | Unit tests |
+| `npm run i18n:check` | Translation consistency checks (`--strict`, `--only=messages\|tours`) |
+| `npm test` | Typecheck, lint, unit tests and strict translation checks |
+| `npm run test:e2e` | Playwright (desktop + mobile); start the production server manually first |
 
 Playwright uses the locally installed Google Chrome. Without Chrome run `npx playwright install chromium`
 and `PW_CHANNEL= npm run test:e2e`.
+
+## Languages
+
+The site supports Uzbek (Latin), English and Russian. See
+[Languages in ARCHITECTURE.md](ARCHITECTURE.md#languages) for URLs, routing, translation files,
+adding text or a language, checks and the manual production-server setup for E2E tests.
 
 ## Configuration
 
