@@ -840,755 +840,755 @@
     }
   },
   "submarine-batiskaf": {
-    "name": "Semi-Submarine (Sea Scope)",
-    "title": "Semi-Submarine (Sea Scope) Boat Tour in Sharm El Sheikh",
-    "categoryLabel": "Sea & Diving",
-    "duration": "2.5 hours",
-    "detailDuration": "2.5 hours",
-    "schedule": "Daily",
-    "timeText": "9:00 AM · 11:00 AM · 1:30 PM",
+    "name": "Полуподводная лодка (Sea Scope)",
+    "title": "Прогулка на полуподводной лодке (Sea Scope) в Шарм-эль-Шейхе",
+    "categoryLabel": "Море и дайвинг",
+    "duration": "2,5 часа",
+    "detailDuration": "2,5 часа",
+    "schedule": "Ежедневно",
+    "timeText": "9:00 · 11:00 · 13:30",
     "priceUnit": null,
     "badge": null,
-    "excerpt": "On this tour you can take in the beauty of the Red Sea underwater world without ever touching the water…",
-    "metaTitle": "Semi-Submarine (Sea Scope) Tour in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Semi-Submarine in Sharm: transfer included, semi-submersible boat over the corals of the Red Sea. Stay completely dry. Perfect for kids. From £27. No prepayment.",
+    "excerpt": "На этой экскурсии вы увидите красоту подводного мира Красного моря, даже не касаясь воды…",
+    "metaTitle": "Полуподводная лодка (Sea Scope) в Шарм-эль-Шейхе | Sardor Tours",
+    "metaDescription": "Полуподводная лодка в Шарме: трансфер включён, прогулка над кораллами Красного моря. Вы остаётесь совершенно сухими. Отлично для детей. От £27. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer included",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля включён",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel pick-up",
-        "text": "We'll pick you up from your hotel in a comfortable air-conditioned vehicle and take you to the departure port in the Old Town area of Sharm El Sheikh."
+        "title": "Заберём из отеля",
+        "text": "Мы заберём вас из отеля на комфортабельном автомобиле с кондиционером и отвезём в порт отправления в районе Старого города Шарм-эль-Шейха."
       },
       {
-        "title": "Semi-submarine cruise",
-        "text": "Step aboard the Sea Scope and take a seat on the air-conditioned lower deck, located 4 metres below the surface. Through the large panoramic windows, you'll discover colourful coral reefs, tropical fish and other marine life — all without getting wet. Head up to the spacious upper deck to enjoy beautiful panoramic views of Sharm El Sheikh and the crystal-clear waters of the Red Sea. The cruise lasts around 1.5 hours."
+        "title": "Прогулка на полуподводной лодке",
+        "text": "Поднимитесь на борт Sea Scope и займите место на нижней палубе с кондиционером, расположенной в 4 метрах под водой. Через большие панорамные окна вы увидите разноцветные коралловые рифы, тропических рыб и других морских обитателей — и при этом не намокнете. Поднимитесь на просторную верхнюю палубу, чтобы полюбоваться панорамой Шарм-эль-Шейха и кристально чистыми водами Красного моря. Прогулка длится около 1,5 часа."
       },
       {
-        "title": "Hotel drop-off",
-        "text": "After the cruise, we'll take you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Отвезём в отель",
+        "text": "После прогулки мы отвезём вас обратно в отель на комфортабельном автомобиле с кондиционером."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel transfer",
-      "Semi-submarine ticket"
+      "Англоговорящий гид",
+      "Трансфер из отеля",
+      "Билет на полуподводную лодку"
     ],
     "notIncluded": [
-      "Professional photos",
-      "Personal expenses"
+      "Профессиональные фотографии",
+      "Личные расходы"
     ],
     "bring": [
-      "A photo of your passport on your phone"
+      "Фото паспорта в телефоне"
     ],
     "faq": [
       {
-        "q": "Do I need to know how to swim?",
-        "a": "No. You stay inside the semi-submarine for the entire trip and enjoy the underwater world through large panoramic windows."
+        "q": "Нужно ли уметь плавать?",
+        "a": "Нет. Всю прогулку вы проводите внутри полуподводной лодки и любуетесь подводным миром через большие панорамные окна."
       },
       {
-        "q": "Is the trip suitable for children and older guests?",
-        "a": "Yes. It's one of the best family activities in Sharm El Sheikh. Children, older guests and non-swimmers can all enjoy the experience in comfort."
+        "q": "Подходит ли прогулка детям и пожилым гостям?",
+        "a": "Да. Это одно из лучших семейных развлечений в Шарм-эль-Шейхе. Дети, пожилые гости и те, кто не умеет плавать, смогут с комфортом насладиться прогулкой."
       },
       {
-        "q": "Will I get wet?",
-        "a": "Not at all. You'll stay completely dry while exploring the underwater world from the air-conditioned lower deck."
+        "q": "Я намокну?",
+        "a": "Совсем нет. Вы остаётесь абсолютно сухими, наблюдая за подводным миром с нижней палубы с кондиционером."
       },
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes. We pick you up from any hotel in Sharm El Sheikh and bring you back after the trip."
+        "q": "Трансфер из отеля включён?",
+        "a": "Да. Мы заберём вас из любого отеля Шарм-эль-Шейха и привезём обратно после прогулки."
       },
       {
-        "q": "How long does the experience last?",
-        "a": "The semi-submarine cruise lasts around 1.5 hours. Including hotel transfers, the total experience takes approximately 2.5 hours."
+        "q": "Сколько длится экскурсия?",
+        "a": "Прогулка на полуподводной лодке длится около 1,5 часа. Вместе с трансфером из отеля и обратно экскурсия занимает примерно 2,5 часа."
       },
       {
-        "q": "Is there a toilet on board?",
-        "a": "Yes. The semi-submarine is equipped with a toilet, making the trip comfortable for families and guests of all ages."
+        "q": "Есть ли на борту туалет?",
+        "a": "Да. На полуподводной лодке есть туалет, поэтому прогулка комфортна для семей и гостей любого возраста."
       },
       {
-        "q": "Can I take photos?",
-        "a": "Absolutely. The large panoramic windows and the open upper deck offer fantastic opportunities to capture colourful coral reefs, tropical fish and beautiful views of Sharm El Sheikh."
+        "q": "Можно ли фотографировать?",
+        "a": "Конечно. Большие панорамные окна и открытая верхняя палуба дают отличную возможность снять разноцветные коралловые рифы, тропических рыб и красивые виды Шарм-эль-Шейха."
       }
     ],
-    "infoHeading": "About the Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "Red Sea",
-        "title": "Explore the Underwater World",
-        "text": "Discover colourful coral reefs, tropical fish and marine life through huge panoramic windows while staying completely dry.",
+        "tag": "Красное море",
+        "title": "Откройте подводный мир",
+        "text": "Разноцветные коралловые рифы, тропические рыбы и морская жизнь — через огромные панорамные окна, и вы остаётесь совершенно сухими.",
         "tone": "blue"
       },
       {
-        "tag": "Sharm El Sheikh",
-        "title": "Beautiful Views Above & Below",
-        "text": "Enjoy the underwater scenery from the air-conditioned lower deck, then head up to the spacious upper deck for panoramic views of Sharm El Sheikh and the Red Sea.",
+        "tag": "Шарм-эль-Шейх",
+        "title": "Красивые виды под водой и над ней",
+        "text": "Любуйтесь подводными пейзажами с нижней палубы с кондиционером, а затем поднимитесь на просторную верхнюю палубу, откуда открывается панорама Шарм-эль-Шейха и Красного моря.",
         "tone": "coral"
       },
       {
         "tag": "Sea Scope",
-        "title": "Perfect for the Whole Family",
-        "text": "No swimming, no special skills and no physical effort required. Just relax and enjoy one of the Red Sea's most popular family experiences.",
+        "title": "Идеально для всей семьи",
+        "text": "Не нужно ни плавать, ни иметь особых навыков, ни прилагать физических усилий. Просто отдыхайте и наслаждайтесь одним из самых популярных семейных развлечений на Красном море.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Stay completely dry",
-        "text": "No swimwear or snorkelling equipment is needed.",
+        "title": "Вы останетесь сухими",
+        "text": "Купальник и снаряжение для снорклинга не понадобятся.",
         "tone": "green"
       },
       {
-        "title": "Three daily departures",
-        "text": "Choose from 9:00 AM, 11:00 AM or 1:30 PM.",
+        "title": "Три отправления в день",
+        "text": "Выберите время: 9:00, 11:00 или 13:30.",
         "tone": "orange"
       },
       {
-        "title": "Hotel transfer included",
-        "text": "Pick-up and drop-off from any hotel in Sharm El Sheikh are included in the price.",
+        "title": "Трансфер из отеля включён",
+        "text": "Трансфер из любого отеля Шарм-эль-Шейха и обратно включён в стоимость.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Underwater world · Stay dry · For the whole family",
-      "line2": "Ticket, guide and transfer included — from £27",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Подводный мир · Без намокания · Для всей семьи",
+      "line2": "Билет, гид и трансфер включены — от £27",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children ages 4–10",
-        "unit": "per person",
+        "label": "Ребёнок 4–10 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Glass bottom",
-        "name": "Glass-Bottom Boat Trip"
+        "tag": "Стеклянное дно",
+        "name": "Прогулка на лодке со стеклянным дном"
       },
       {
-        "tag": "Diving",
-        "name": "PADI Diving Courses"
+        "tag": "Дайвинг",
+        "name": "Курсы дайвинга PADI"
       },
       {
-        "tag": "Diving",
-        "name": "Blue Hole Dahab"
+        "tag": "Дайвинг",
+        "name": "Голубая дыра, Дахаб"
       },
       {
-        "tag": "Safari",
-        "name": "Red Canyon Dahab"
+        "tag": "Сафари",
+        "name": "Красный каньон, Дахаб"
       },
       {
-        "tag": "Sinai",
-        "name": "Mount Moses — Sinai"
+        "tag": "Синай",
+        "name": "Гора Моисея — Синай"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children ages 4–10",
-        "unit": "person"
+        "label": "Ребёнок 4–10 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants ages 0–3",
+        "label": "Младенцы 0–3 лет",
         "unit": ""
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−40%",
-      "priceText": "Transfer and ticket already included. For the whole family. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "3 stages",
-      "programText": "Corals, fish, panoramic windows. For kids and older guests, no getting wet. The underwater world for the whole family.",
+      "priceText": "Трансфер и билет уже включены. Для всей семьи. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "3 этапа",
+      "programText": "Кораллы, рыбы, панорамные окна. Для детей и пожилых гостей, без намокания. Подводный мир для всей семьи.",
       "ring": "3/3",
-      "ringLabel": "stages"
+      "ringLabel": "этапа"
     }
   },
   "glass-bottom-boat": {
-    "name": "Glass-Bottom Boat Trip",
-    "title": "Glass Bottom Boat Trip in Sharm El Sheikh",
-    "categoryLabel": "Sea & Diving",
-    "duration": "2 hours",
-    "detailDuration": "2 hours",
-    "schedule": "Daily",
-    "timeText": "10:30 AM · 2:30 PM",
+    "name": "Прогулка на лодке со стеклянным дном",
+    "title": "Прогулка на лодке со стеклянным дном в Шарм-эль-Шейхе",
+    "categoryLabel": "Море и дайвинг",
+    "duration": "2 часа",
+    "detailDuration": "2 часа",
+    "schedule": "Ежедневно",
+    "timeText": "10:30 · 14:30",
     "priceUnit": null,
     "badge": null,
-    "excerpt": "Watch colourful fish and corals through the glass bottom of the boat…",
-    "metaTitle": "Glass Bottom Boat Trip in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Glass-bottom boat in Sharm: cruise over corals and fish without getting wet. Hotel transfer included. From £20. No prepayment.",
+    "excerpt": "Наблюдайте за разноцветными рыбами и кораллами через стеклянное дно лодки…",
+    "metaTitle": "Лодка со стеклянным дном в Шарм-эль-Шейхе | Sardor Tours",
+    "metaDescription": "Лодка со стеклянным дном в Шарме: прогулка над кораллами и рыбами без намокания. Трансфер из отеля включён. От £20. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We pick you up from your hotel in a comfortable air-conditioned vehicle and transfer you to the marina."
+        "title": "Заберём из отеля",
+        "text": "Мы заберём вас из отеля на комфортабельном автомобиле с кондиционером и отвезём в порт."
       },
       {
-        "title": "Glass Bottom Boat Cruise",
-        "text": "Enjoy a relaxing one-hour cruise while discovering the colourful underwater world of the Red Sea through the boat's large glass panels. Watch coral reefs, tropical fish and marine life without getting wet."
+        "title": "Прогулка на лодке со стеклянным дном",
+        "text": "Насладитесь спокойной часовой прогулкой и откройте для себя красочный подводный мир Красного моря через большие стеклянные панели лодки. Наблюдайте за коралловыми рифами, тропическими рыбами и морской жизнью, не намокая."
       },
       {
-        "title": "Hotel Drop-off",
-        "text": "After the cruise, we'll take you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Отвезём в отель",
+        "text": "После прогулки мы отвезём вас обратно в отель на комфортабельном автомобиле с кондиционером."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and drop-off"
+      "Англоговорящий гид",
+      "Трансфер из отеля и обратно"
     ],
     "notIncluded": [
-      "Professional photos",
-      "Personal expenses"
+      "Профессиональные фотографии",
+      "Личные расходы"
     ],
     "bring": [
-      "A photo of your passport on your phone"
+      "Фото паспорта в телефоне"
     ],
     "faq": [
       {
-        "q": "Will I get wet during the trip?",
-        "a": "No. The entire experience takes place on board the boat, so you can enjoy the underwater scenery while staying completely dry."
+        "q": "Я намокну во время прогулки?",
+        "a": "Нет. Вся прогулка проходит на борту лодки, поэтому вы любуетесь подводными пейзажами, оставаясь совершенно сухими."
       },
       {
-        "q": "Is the trip suitable for children and older guests?",
-        "a": "Yes. This tour is ideal for families, children, older guests and anyone who prefers not to swim."
+        "q": "Подходит ли прогулка детям и пожилым гостям?",
+        "a": "Да. Эта экскурсия идеальна для семей, детей, пожилых гостей и всех, кто предпочитает не плавать."
       },
       {
-        "q": "Do I need to know how to swim?",
-        "a": "No. You stay on board throughout the cruise and no swimming is required."
+        "q": "Нужно ли уметь плавать?",
+        "a": "Нет. Всю прогулку вы находитесь на борту, плавать не нужно."
       },
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes, hotel pick-up and drop-off from any hotel in Sharm El Sheikh are included in the price."
+        "q": "Трансфер из отеля включён?",
+        "a": "Да, трансфер из любого отеля Шарм-эль-Шейха и обратно включён в стоимость."
       },
       {
-        "q": "What should I bring?",
-        "a": "Bring a photo of your passport on your phone and cash for any personal expenses. Comfortable clothing is recommended."
+        "q": "Что взять с собой?",
+        "a": "Возьмите фото паспорта в телефоне и наличные на личные расходы. Рекомендуем удобную одежду."
       },
       {
-        "q": "Can I book a private boat?",
-        "a": "Yes. Private trips are available for couples, families and groups. Contact us on WhatsApp for pricing and availability."
+        "q": "Можно ли заказать частную лодку?",
+        "a": "Да. Частные прогулки доступны для пар, семей и групп. Напишите нам в WhatsApp, чтобы узнать цену и наличие мест."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "Red Sea · Sharm El Sheikh",
-        "title": "Glass Bottom Boat",
-        "text": "Discover colourful coral reefs and tropical fish through the boat's panoramic glass panels while staying completely dry.",
+        "tag": "Красное море · Шарм-эль-Шейх",
+        "title": "Лодка со стеклянным дном",
+        "text": "Разноцветные коралловые рифы и тропические рыбы через панорамные стеклянные панели лодки — и вы остаётесь совершенно сухими.",
         "tone": "blue"
       },
       {
-        "tag": "Red Sea",
-        "title": "Coral Reefs & Marine Life",
-        "text": "Explore one of the world's best-known marine environments, home to vibrant corals and a wide variety of tropical fish.",
+        "tag": "Красное море",
+        "title": "Коралловые рифы и морская жизнь",
+        "text": "Откройте для себя одну из самых известных морских экосистем мира — дом ярких кораллов и множества тропических рыб.",
         "tone": "coral"
       },
       {
-        "tag": "Family-Friendly",
-        "title": "Suitable for All Ages",
-        "text": "A comfortable experience for families, children, older guests and non-swimmers who want to enjoy the beauty of the Red Sea.",
+        "tag": "Для семей",
+        "title": "Для любого возраста",
+        "text": "Комфортная прогулка для семей, детей, пожилых гостей и тех, кто не умеет плавать, но хочет увидеть красоту Красного моря.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Stay Dry",
-        "text": "No swimming or special equipment is required. Simply relax and enjoy the underwater views.",
+        "title": "Вы останетесь сухими",
+        "text": "Не нужно ни плавать, ни брать специальное снаряжение. Просто отдыхайте и любуйтесь подводными видами.",
         "tone": "green"
       },
       {
-        "title": "Hotel Transfer Included",
-        "text": "Pick-up and drop-off from any hotel in Sharm El Sheikh are included.",
+        "title": "Трансфер из отеля включён",
+        "text": "Трансфер из любого отеля Шарм-эль-Шейха и обратно включён.",
         "tone": "orange"
       },
       {
-        "title": "Private Trips Available",
-        "text": "Upgrade to a private boat for a more exclusive experience with family or friends.",
+        "title": "Возможны частные прогулки",
+        "text": "Закажите частную лодку, чтобы провести время более уединённо с семьёй или друзьями.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Corals · Fish · Red Sea · Glass bottom",
-      "line2": "Transfer and guide included — from £20",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Кораллы · Рыбы · Красное море · Стеклянное дно",
+      "line2": "Трансфер и гид включены — от £20",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children 4–10 years",
-        "unit": "per person",
+        "label": "Ребёнок 4–10 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Underwater world",
-        "name": "Semi-Submarine (Sea Scope)"
+        "tag": "Подводный мир",
+        "name": "Полуподводная лодка (Sea Scope)"
       },
       {
-        "tag": "Dolphinarium",
-        "name": "Dolphin Show"
+        "tag": "Дельфинарий",
+        "name": "Шоу дельфинов"
       },
       {
-        "tag": "Diving",
-        "name": "PADI Diving Courses"
+        "tag": "Дайвинг",
+        "name": "Курсы дайвинга PADI"
       },
       {
-        "tag": "Quad bikes",
-        "name": "Quad Bike Safari"
+        "tag": "Квадроциклы",
+        "name": "Сафари на квадроциклах"
       },
       {
-        "tag": "Museum",
-        "name": "Grand Egyptian Museum"
+        "tag": "Музей",
+        "name": "Большой Египетский музей"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children 4–10 years",
-        "unit": "person"
+        "label": "Ребёнок 4–10 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants 0–3 years",
+        "label": "Младенцы 0–3 лет",
         "unit": ""
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−20%",
-      "priceText": "Transfer, lunch and entry tickets already included. No prepayment.",
-      "programKicker": "Day programme",
-      "programNum": "3 activities",
-      "programText": "Corals, fish and the underwater world of the Red Sea — staying dry. An unforgettable 2 hours on the water.",
+      "priceText": "Трансфер, обед и входные билеты уже включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "3 активности",
+      "programText": "Кораллы, рыбы и подводный мир Красного моря — без намокания. Незабываемые 2 часа на воде.",
       "ring": "3/3",
-      "ringLabel": "activities"
+      "ringLabel": "активности"
     }
   },
   "private-yacht-sharm": {
-    "name": "Private Boat Day Trip in Sharm El Sheikh",
-    "title": "Private Yacht - Boat Trip in Sharm El Sheikh",
-    "categoryLabel": "Sea & Diving",
-    "duration": "9 hours",
-    "detailDuration": "10 hours",
-    "schedule": "Daily",
-    "timeText": "8:00 AM – 6:00 PM",
-    "priceUnit": "per boat",
-    "badge": "Luxury",
-    "excerpt": "An unforgettable day aboard a comfortable private yacht — the finest way to cruise the Red Sea…",
-    "metaTitle": "Private Yacht - Boat Trip in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Private yacht charter in Sharm: choose your own route — White Island or Tiran, snorkelling, diving, lunch on board. Captain included. From £700/yacht.",
+    "name": "Частная яхта на целый день в Шарм-эль-Шейхе",
+    "title": "Частная яхта — морская прогулка в Шарм-эль-Шейхе",
+    "categoryLabel": "Море и дайвинг",
+    "duration": "9 часов",
+    "detailDuration": "10 часов",
+    "schedule": "Ежедневно",
+    "timeText": "8:00 – 18:00",
+    "priceUnit": "за яхту",
+    "badge": "Люкс",
+    "excerpt": "Незабываемый день на борту комфортабельной частной яхты — лучший способ исследовать Красное море…",
+    "metaTitle": "Частная яхта — морская прогулка в Шарм-эль-Шейхе | Sardor Tours",
+    "metaDescription": "Аренда частной яхты в Шарме: свой маршрут — Белый остров или Тиран, снорклинг, дайвинг, обед на борту. Капитан включён. От £700 за яхту.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We'll pick you up from your hotel in a comfortable air-conditioned vehicle and transfer you to the marina in Sharm El Sheikh Old Market."
+        "title": "Заберём из отеля",
+        "text": "Мы заберём вас из отеля на комфортабельном автомобиле с кондиционером и отвезём в порт у Старого рынка Шарм-эль-Шейха."
       },
       {
-        "title": "Boarding & Departure",
-        "text": "After a quick check-in and final preparations, you'll board your private yacht. The crew will welcome you and help you settle in before departure."
+        "title": "Посадка и отправление",
+        "text": "После быстрой регистрации и последних приготовлений вы подниметесь на борт своей частной яхты. Экипаж встретит вас и поможет расположиться перед отправлением."
       },
       {
-        "title": "Choose Your Route",
-        "text": "Cruise to White Island, Tiran Island, or Ras Mohamed. Your itinerary is completely private and tailored to your group."
+        "title": "Выберите маршрут",
+        "text": "Отправляйтесь к Белому острову, острову Тиран или Рас-Мохаммеду. Маршрут полностью частный и составляется под вашу группу."
       },
       {
-        "title": "Snorkelling & Swimming",
-        "text": "Stop at beautiful coral reefs to snorkel and swim in the crystal-clear waters of the Red Sea. Your instructor will be in the water to assist beginners and children."
+        "title": "Снорклинг и купание",
+        "text": "Остановки у красивых коралловых рифов для снорклинга и купания в кристально чистых водах Красного моря. Инструктор будет в воде, чтобы помочь новичкам и детям."
       },
       {
-        "title": "Optional Introductory Diving",
-        "text": "Try scuba diving with a certified instructor. Each dive lasts approximately 10–15 minutes to a maximum depth of 7 metres. No previous experience or swimming ability is required."
+        "title": "Ознакомительное погружение (по желанию)",
+        "text": "Попробуйте дайвинг с аквалангом вместе с сертифицированным инструктором. Каждое погружение длится около 10–15 минут на глубину до 7 метров. Опыт и умение плавать не требуются."
       },
       {
-        "title": "Lunch & Drinks",
-        "text": "Enjoy a freshly prepared lunch served on board, accompanied by soft drinks throughout the day. If you'd like a seafood menu or a customised meal, simply let us know when booking."
+        "title": "Обед и напитки",
+        "text": "Насладитесь свежеприготовленным обедом на борту и безалкогольными напитками в течение всего дня. Если хотите меню из морепродуктов или особое блюдо, просто сообщите об этом при бронировании."
       },
       {
-        "title": "Return to the Marina",
-        "text": "After a relaxing day at sea, your yacht returns to the marina, where your transfer will be waiting to take you back to your hotel."
+        "title": "Возвращение в порт",
+        "text": "После расслабляющего дня на море яхта возвращается в порт, где вас будет ждать трансфер до отеля."
       }
     ],
     "included": [
-      "English-speaking guide and instructor",
-      "Hotel pick-up and drop-off",
-      "National Park entry fee",
-      "Lunch",
-      "Soft drinks"
+      "Англоговорящий гид и инструктор",
+      "Трансфер из отеля и обратно",
+      "Входной билет в национальный парк",
+      "Обед",
+      "Безалкогольные напитки"
     ],
     "notIncluded": [
-      "Snorkelling equipment (available to rent at the marina)",
-      "Professional photos and videos",
-      "Optional diving for certified divers"
+      "Снаряжение для снорклинга (можно взять напрокат в порту)",
+      "Профессиональные фото и видео",
+      "Дайвинг по желанию для сертифицированных дайверов"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Swimwear",
-      "Towel",
-      "Sunscreen",
-      "Snorkelling equipment (or rent it at the marina)"
+      "Фото паспорта в телефоне",
+      "Купальник или плавки",
+      "Полотенце",
+      "Солнцезащитный крем",
+      "Снаряжение для снорклинга (или возьмите напрокат в порту)"
     ],
     "faq": [
       {
-        "q": "How many people can the yacht accommodate?",
-        "a": "We offer yachts for small and large groups, from 6 guests to more than 25 guests. We'll recommend the best option based on your group size and preferences."
+        "q": "Сколько человек вмещает яхта?",
+        "a": "У нас есть яхты для небольших и больших групп — от 6 до более чем 25 гостей. Мы подберём лучший вариант с учётом размера группы и ваших пожеланий."
       },
       {
-        "q": "Can I choose the route?",
-        "a": "Yes. Every private yacht charter is fully customised. Choose White Island, Tiran Island, Ras Mohamed or another destination."
+        "q": "Можно ли выбрать маршрут?",
+        "a": "Да. Каждая аренда частной яхты полностью настраивается под вас. Выберите Белый остров, остров Тиран, Рас-Мохаммед или другое направление."
       },
       {
-        "q": "Is lunch included?",
-        "a": "Yes. A freshly prepared lunch and soft drinks are included. Seafood menus, fruit platters and special requests can be arranged before departure."
+        "q": "Обед включён?",
+        "a": "Да. Свежеприготовленный обед и безалкогольные напитки включены. Меню из морепродуктов, фруктовые тарелки и особые пожелания можно согласовать до отправления."
       },
       {
-        "q": "Can I bring children?",
-        "a": "Absolutely. Private yachts are perfect for families, and children's life jackets are available on board."
+        "q": "Можно ли взять с собой детей?",
+        "a": "Конечно. Частные яхты отлично подходят для семей, на борту есть детские спасательные жилеты."
       },
       {
-        "q": "Is diving available?",
-        "a": "Yes. Introductory dives are available for beginners, while certified divers can request a customised diving programme."
+        "q": "Можно ли заняться дайвингом?",
+        "a": "Да. Для новичков доступны ознакомительные погружения, а сертифицированные дайверы могут заказать индивидуальную программу дайвинга."
       },
       {
-        "q": "How far in advance should I book?",
-        "a": "We recommend booking at least 2–3 days in advance, especially during peak season, as yachts are reserved exclusively for your group."
+        "q": "За сколько дней нужно бронировать?",
+        "a": "Рекомендуем бронировать минимум за 2–3 дня, особенно в высокий сезон, так как яхта резервируется только для вашей группы."
       },
       {
-        "q": "Can I bring alcoholic drinks?",
-        "a": "No. In accordance with local port regulations, alcoholic beverages are not permitted on board."
+        "q": "Можно ли взять с собой алкоголь?",
+        "a": "Нет. По местным портовым правилам алкогольные напитки на борту запрещены."
       },
       {
-        "q": "How does payment work?",
-        "a": "Private yacht charters require full payment at the time of booking to secure your reservation. A payment receipt is provided."
+        "q": "Как происходит оплата?",
+        "a": "Для подтверждения брони частной яхты требуется полная оплата при бронировании. Вы получите квитанцию об оплате."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "Private Charter",
-        "title": "Your Yacht, Your Day",
-        "text": "Enjoy a completely private experience with your own yacht, crew and itinerary, designed around your group.",
+        "tag": "Частная аренда",
+        "title": "Ваша яхта, ваш день",
+        "text": "Полностью частный отдых: своя яхта, свой экипаж и маршрут, составленный под вашу группу.",
         "tone": "blue"
       },
       {
-        "tag": "Red Sea",
-        "title": "Snorkelling & Diving",
-        "text": "Explore colourful coral reefs, crystal-clear water and some of the Red Sea's best snorkelling and diving locations.",
+        "tag": "Красное море",
+        "title": "Снорклинг и дайвинг",
+        "text": "Разноцветные коралловые рифы, кристально чистая вода и одни из лучших мест для снорклинга и дайвинга на Красном море.",
         "tone": "coral"
       },
       {
-        "tag": "On Board",
-        "title": "Lunch & Relaxation",
-        "text": "Sunbathe on spacious decks, relax in shaded seating areas and enjoy freshly prepared food and soft drinks throughout the day.",
+        "tag": "На борту",
+        "title": "Обед и отдых",
+        "text": "Загорайте на просторных палубах, отдыхайте в тени и наслаждайтесь свежеприготовленной едой и безалкогольными напитками весь день.",
         "tone": "sand"
       },
       {
         "tag": null,
-        "title": "Private Experience",
-        "text": "The yacht is reserved exclusively for your group with a flexible itinerary.",
+        "title": "Только для вас",
+        "text": "Яхта резервируется исключительно для вашей группы, маршрут гибкий.",
         "tone": "green"
       },
       {
         "tag": null,
-        "title": "Family Friendly",
-        "text": "Suitable for couples, families and groups, with life jackets available for children.",
+        "title": "Для семей",
+        "text": "Подходит для пар, семей и групп, для детей есть спасательные жилеты.",
         "tone": "blue"
       },
       {
         "tag": null,
-        "title": "Custom Catering Available",
-        "text": "Seafood menus, birthday cakes, fruit platters and special meal requests can be arranged before your trip.",
+        "title": "Индивидуальное меню",
+        "text": "Меню из морепродуктов, торт на день рождения, фруктовые тарелки и особые пожелания по еде можно согласовать до поездки.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [],
     "cta": {
-      "heading": "Ready for an unforgettable day at sea?",
-      "line1": "Your group only · Your route · Your day",
-      "line2": "The whole yacht at your disposal — from £700",
+      "heading": "Готовы к незабываемому дню на море?",
+      "line1": "Только ваша группа · Ваш маршрут · Ваш день",
+      "line2": "Вся яхта в вашем распоряжении — от £700",
       "chips": []
     },
     "heroPrices": [
       {
-        "label": "Private yacht",
-        "unit": "per boat",
+        "label": "Частная яхта",
+        "unit": "за яхту",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Evening yacht",
-        "name": "Evening Yacht Cruise with Dinner & Show"
+        "tag": "Вечерняя яхта",
+        "name": "Вечерняя яхта с ужином и шоу"
       },
       {
-        "tag": "Yacht",
-        "name": "Tiran Island Boat Trip"
+        "tag": "Яхта",
+        "name": "Морская прогулка на остров Тиран"
       },
       {
-        "tag": "Snorkelling",
-        "name": "White Island & Ras Mohamed"
+        "tag": "Снорклинг",
+        "name": "Белый остров и Рас-Мохаммед"
       },
       {
-        "tag": "Quad bikes",
-        "name": "Quad Bike Safari & Camel Ride"
+        "tag": "Квадроциклы",
+        "name": "Сафари на квадроциклах и прогулка на верблюде"
       },
       {
-        "tag": "Petra",
-        "name": "Petra — Jordan"
+        "tag": "Петра",
+        "name": "Петра — Иордания"
       }
     ],
     "options": [
       {
-        "label": "Private yacht",
-        "unit": "boat"
+        "label": "Частная яхта",
+        "unit": "яхта"
       },
       {
-        "label": "Guests on board",
-        "unit": "included"
+        "label": "Гости на борту",
+        "unit": "включено"
       },
       {
-        "label": "Dive (diving)",
-        "unit": "person"
+        "label": "Погружение (дайвинг)",
+        "unit": "чел."
       }
     ],
     "bento": {
-      "priceKicker": "Charter · Private yacht",
-      "badge": "yacht per day",
-      "priceText": "A yacht just for you — no strangers on board. Your route, your pace.",
-      "programKicker": "Flexibility · All tailored to you",
-      "programNum": "1 day",
-      "programText": "The route, catering, diving and departure time — all your choice. Perfect for any occasion!",
+      "priceKicker": "Аренда · Частная яхта",
+      "badge": "яхта на день",
+      "priceText": "Яхта только для вас — никаких посторонних на борту. Ваш маршрут, ваш темп.",
+      "programKicker": "Гибкость · Всё под вас",
+      "programNum": "1 день",
+      "programText": "Маршрут, питание, дайвинг и время отправления — всё на ваш выбор. Идеально для любого повода!",
       "ring": "★",
-      "ringLabel": "activities"
+      "ringLabel": "активности"
     }
   },
   "padi-diving-courses": {
-    "name": "PADI Diving Courses",
-    "title": "PADI Open Water & Advanced Diving Courses in Sharm El Sheikh",
-    "categoryLabel": "Sea & Diving",
-    "duration": "On request",
-    "detailDuration": "3 Days",
-    "schedule": "Daily",
-    "timeText": "On request",
+    "name": "Курсы дайвинга PADI",
+    "title": "Курсы дайвинга PADI Open Water и Advanced в Шарм-эль-Шейхе",
+    "categoryLabel": "Море и дайвинг",
+    "duration": "По запросу",
+    "detailDuration": "3 дня",
+    "schedule": "Ежедневно",
+    "timeText": "По запросу",
     "priceUnit": null,
-    "badge": "New",
-    "excerpt": "Earn your PADI certification in the crystal-clear waters of the Red Sea.",
-    "metaTitle": "PADI Diving Courses in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "PADI courses in Sharm: theory, 2 days in the open sea, international certification. From £350. English-speaking instructor. No prepayment.",
+    "badge": "Новинка",
+    "excerpt": "Получите сертификат PADI в кристально чистых водах Красного моря.",
+    "metaTitle": "Курсы дайвинга PADI в Шарм-эль-Шейхе | Sardor Tours",
+    "metaDescription": "Курсы PADI в Шарме: теория, 2 дня в открытом море, международный сертификат. От £350. Англоговорящий инструктор. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Day 1 — Theory & Shore Training",
-        "text": "Meet your instructor and begin with PADI theory sessions covering safety, equipment, underwater communication and dive planning. You'll then practise essential diving skills from the shore, including mask clearing, regulator recovery and buoyancy control."
+        "title": "День 1 — теория и тренировка на берегу",
+        "text": "Познакомьтесь с инструктором и начните с теоретических занятий PADI: безопасность, снаряжение, подводная коммуникация и планирование погружений. Затем вы отработаете основные навыки дайвинга на берегу, включая очистку маски, поиск регулятора и контроль плавучести."
       },
       {
-        "title": "Day 2 — Open Water Dives",
-        "text": "Put your new skills into practice with your first dives in the Red Sea, reaching depths of up to 12 metres. Experience colourful coral reefs and marine life while completing the required training exercises."
+        "title": "День 2 — погружения в открытой воде",
+        "text": "Примените новые навыки на первых погружениях в Красном море на глубину до 12 метров. Вы увидите разноцветные коралловые рифы и морскую жизнь, выполняя обязательные учебные упражнения."
       },
       {
-        "title": "Day 3 — Final Dives & Certification",
-        "text": "Complete two final open-water dives to a maximum depth of 18 metres and finish your PADI knowledge review. Once you successfully complete the course, you'll receive your internationally recognised PADI certification."
+        "title": "День 3 — финальные погружения и сертификат",
+        "text": "Выполните два финальных погружения в открытой воде на глубину до 18 метров и завершите теоретический обзор PADI. После успешного окончания курса вы получите международно признанный сертификат PADI."
       },
       {
-        "title": "Continue Your Diving Journey",
-        "text": "After becoming a PADI Open Water Diver, you can continue with the PADI Advanced Open Water course and expand your depth limit to 30 metres."
+        "title": "Продолжайте обучение дайвингу",
+        "text": "Став дайвером PADI Open Water, вы можете пройти курс PADI Advanced Open Water и увеличить допустимую глубину до 30 метров."
       }
     ],
     "included": [
-      "Professional English-speaking PADI instructor",
-      "Hotel pick-up and drop-off",
-      "Theory and practical training",
-      "Complete diving equipment",
-      "Digital learning materials",
-      "PADI registration and personal online account",
-      "International PADI certification"
+      "Профессиональный англоговорящий инструктор PADI",
+      "Трансфер из отеля и обратно",
+      "Теоретическое и практическое обучение",
+      "Полный комплект снаряжения для дайвинга",
+      "Электронные учебные материалы",
+      "Регистрация в PADI и личный онлайн-кабинет",
+      "Международный сертификат PADI"
     ],
     "notIncluded": [
-      "Professional photos and videos"
+      "Профессиональные фото и видео"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Swimwear",
-      "Towel"
+      "Фото паспорта в телефоне",
+      "Купальник или плавки",
+      "Полотенце"
     ],
     "faq": [
       {
-        "q": "Do I need to know how to swim?",
-        "a": "Yes. You should be able to swim 200 metres without assistance and float for 10 minutes, as required by PADI standards."
+        "q": "Нужно ли уметь плавать?",
+        "a": "Да. По стандартам PADI вы должны проплыть 200 метров без помощи и продержаться на воде 10 минут."
       },
       {
-        "q": "How long does the course take?",
-        "a": "The Open Water Diver course usually takes 2–3 days and includes theory sessions, confined-water training and four open-water dives."
+        "q": "Сколько длится курс?",
+        "a": "Курс Open Water Diver обычно занимает 2–3 дня и включает теорию, тренировки в закрытой воде и четыре погружения в открытой воде."
       },
       {
-        "q": "What is included in the course price?",
-        "a": "All equipment, hotel transfers, digital learning materials, instructor fees, certification and PADI registration are included."
+        "q": "Что входит в стоимость курса?",
+        "a": "Всё снаряжение, трансфер из отеля, электронные учебные материалы, работа инструктора, сертификат и регистрация в PADI."
       },
       {
-        "q": "What is the minimum age?",
-        "a": "The minimum age is 10 years for the PADI Junior Open Water Diver course."
+        "q": "С какого возраста можно учиться?",
+        "a": "Минимальный возраст для курса PADI Junior Open Water Diver — 10 лет."
       },
       {
-        "q": "Are there any medical requirements?",
-        "a": "Diving is not recommended for people with certain heart, lung or ear conditions. If required, we can help arrange a medical examination in Sharm El Sheikh."
+        "q": "Есть ли медицинские ограничения?",
+        "a": "Дайвинг не рекомендуется людям с некоторыми заболеваниями сердца, лёгких или ушей. При необходимости мы поможем организовать медицинский осмотр в Шарм-эль-Шейхе."
       },
       {
-        "q": "How deep can I dive after certification?",
-        "a": "The PADI Open Water Diver certification allows independent diving to 18 metres. After completing the Advanced course, the limit increases to 30 metres."
+        "q": "На какую глубину можно погружаться после сертификации?",
+        "a": "Сертификат PADI Open Water Diver позволяет самостоятельно погружаться до 18 метров. После курса Advanced допустимая глубина увеличивается до 30 метров."
       },
       {
-        "q": "Is the certificate recognised internationally?",
-        "a": "Yes. Your PADI certification is accepted by dive centres around the world and remains valid for life."
+        "q": "Признаётся ли сертификат во всём мире?",
+        "a": "Да. Сертификат PADI принимают дайв-центры по всему миру, и он действует пожизненно."
       },
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes. Hotel pick-up and drop-off are included throughout the course."
+        "q": "Трансфер из отеля включён?",
+        "a": "Да. Трансфер из отеля и обратно включён на всё время курса."
       }
     ],
-    "infoHeading": "About This Course",
+    "infoHeading": "О курсе",
     "destinationCards": [
       {
         "tag": "PADI",
-        "title": "Open Water Diver",
-        "text": "Learn to dive with the world's leading diving organisation and earn an internationally recognised certification in just a few days.",
+        "title": "Курс Open Water Diver",
+        "text": "Научитесь нырять с ведущей мировой организацией по дайвингу и получите международно признанный сертификат всего за несколько дней.",
         "tone": "blue"
       },
       {
-        "tag": "Red Sea",
-        "title": "Perfect Training Conditions",
-        "text": "Crystal-clear water, excellent visibility and vibrant coral reefs make Sharm El Sheikh one of the best places to learn scuba diving.",
+        "tag": "Красное море",
+        "title": "Идеальные условия для обучения",
+        "text": "Кристально чистая вода, отличная видимость и яркие коралловые рифы делают Шарм-эль-Шейх одним из лучших мест для обучения дайвингу с аквалангом.",
         "tone": "coral"
       },
       {
-        "tag": "Continue Learning",
-        "title": "Advanced Open Water",
-        "text": "Take the next step after certification and explore deeper dive sites while developing new underwater skills.",
+        "tag": "Продолжайте обучение",
+        "title": "Курс Advanced Open Water",
+        "text": "Сделайте следующий шаг после сертификации: исследуйте более глубокие места для погружений и осваивайте новые подводные навыки.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Minimum Age: 10 Years",
-        "text": "Junior Open Water Diver courses are available for children aged 10 and above.",
+        "title": "Минимальный возраст: 10 лет",
+        "text": "Курсы Junior Open Water Diver доступны для детей от 10 лет.",
         "tone": "green"
       },
       {
-        "title": "International Certification",
-        "text": "Your PADI certification is recognised worldwide and never expires.",
+        "title": "Международный сертификат",
+        "text": "Сертификат PADI признаётся во всём мире и не имеет срока действия.",
         "tone": "orange"
       },
       {
-        "title": "All Equipment Included",
-        "text": "We provide everything you need, including wetsuit, BCD, regulator, tank, fins and mask.",
+        "title": "Всё снаряжение включено",
+        "text": "Мы предоставляем всё необходимое: гидрокостюм, компенсатор плавучести (BCD), регулятор, баллон, ласты и маску.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "PADI OWD · Theory · Red Sea",
-      "line2": "Instructor, equipment and certificate included — from £350",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "PADI OWD · Теория · Красное море",
+      "line2": "Инструктор, снаряжение и сертификат включены — от £350",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "PADI Open Water",
-        "unit": "per course",
+        "label": "Курс PADI Open Water",
+        "unit": "за курс",
         "discount": null
       },
       {
-        "label": "PADI Advanced",
-        "unit": "per course",
+        "label": "Курс PADI Advanced",
+        "unit": "за курс",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Diving",
-        "name": "Blue Hole Dahab"
+        "tag": "Дайвинг",
+        "name": "Голубая дыра, Дахаб"
       },
       {
-        "tag": "Underwater world",
-        "name": "Semi-Submarine (Sea Scope)"
+        "tag": "Подводный мир",
+        "name": "Полуподводная лодка (Sea Scope)"
       },
       {
-        "tag": "Glass bottom",
-        "name": "Glass-Bottom Boat Trip"
+        "tag": "Стеклянное дно",
+        "name": "Прогулка на лодке со стеклянным дном"
       },
       {
-        "tag": "Safari",
-        "name": "Salama Red Canyon"
+        "tag": "Сафари",
+        "name": "Красный каньон Салама"
       },
       {
-        "tag": "Sinai",
-        "name": "Mount Moses & St. Catherine Monastery"
+        "tag": "Синай",
+        "name": "Гора Моисея и монастырь Святой Екатерины"
       }
     ],
     "options": [
       {
-        "label": "PADI Open Water",
-        "unit": "course"
+        "label": "Курс PADI Open Water",
+        "unit": "курс"
       },
       {
-        "label": "PADI Advanced",
-        "unit": "course"
+        "label": "Курс PADI Advanced",
+        "unit": "курс"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−22%",
-      "priceText": "Transfer, lunch and entry tickets are already included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "3 stages",
-      "programText": "Theory, the Red Sea and an international PADI certificate. Diving for life — in 3 days.",
+      "priceText": "Трансфер, обед и входные билеты уже включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "3 этапа",
+      "programText": "Теория, Красное море и международный сертификат PADI. Дайвинг на всю жизнь — за 3 дня.",
       "ring": "3/3",
-      "ringLabel": "stages"
+      "ringLabel": "этапа"
     }
   },
   "quad-safari-sharm": {
