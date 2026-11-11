@@ -1,7 +1,10 @@
 import { expect, test } from '@playwright/test';
-import { futureDate, trackErrors } from './helpers';
+import { expectNoHorizontalScroll, futureDate, trackErrors } from './helpers';
 import en from '../../src/i18n/messages/en.json';
+import uz from '../../src/i18n/messages/uz.json';
 import ru from '../../src/i18n/messages/ru.json';
+
+const MSG = { uz, en, ru } as const;
 
 // Playwright Test defaults every context to locale en-US, and that emulation overrides an
 // Accept-Language set through extraHTTPHeaders, so the contexts below set `locale` as well.
@@ -37,12 +40,12 @@ test.describe('locale routing', () => {
       ['/ru/no-such-page/', 'ru'],
       ['/uz/sharm/no-such-tour/', 'uz'],
       ['/en/no-such-page/', 'en'],
-    ]) {
+    ] as const) {
       const r = await request.get(u, { maxRedirects: 0 });
       expect(r.status(), u).toBe(404);
       const html = await r.text();
       expect(html, u).toContain(`<html lang="${l}"`);
-      expect(html, u).toContain('This page sailed away');
+      expect(html, u).toContain(MSG[l].client.notFound.title);
       expect(html, u).toContain(`href="/${l}/sharm/"`);
     }
   });
@@ -59,15 +62,22 @@ test('switcher keeps path + query and sets cookie', async ({ page, context }) =>
 });
 
 const PAGES = ['/', '/sharm/', '/sharm/quad-safari-sharm/', '/sharm/video/', '/about-us/', '/contact/', '/terms-and-conditions/'];
+// Tour titles come from src/data/tours.*.json, which is translated in Task 10; until then the
+// tour page keeps its English title in every locale and is left out of the titles-differ check.
+const UNTRANSLATED_TITLES = new Set(['/sharm/quad-safari-sharm/']);
 test('every page renders in every locale with localized title and hreflang', async ({ page }) => {
   const errors = trackErrors(page);
+  const titles: Record<string, Set<string>> = {};
   for (const p of PAGES) for (const l of ['uz', 'en', 'ru']) {
     const r = await page.goto(`/${l}${p}`); expect(r!.status(), `${l}${p}`).toBe(200);
     await expect(page.locator('html')).toHaveAttribute('lang', l);
+    (titles[p] ??= new Set()).add(await page.title());
+    await expectNoHorizontalScroll(page);
     await expect(page.locator(`link[rel="canonical"]`)).toHaveAttribute('href', new RegExp(`/${l}${p}$`));
     for (const h of ['uz', 'en', 'ru', 'x-default'])
       await expect(page.locator(`link[rel="alternate"][hreflang="${h}"]`), `${l}${p} ${h}`).toHaveCount(1);
   }
+  for (const p of PAGES) if (!UNTRANSLATED_TITLES.has(p)) expect(titles[p].size, p).toBe(3);
   expect(errors).toEqual([]);
 });
 

@@ -1,4 +1,4 @@
-[
-  "WhatsApp",
-  "Sardor Tours"
-]
+{
+  "*": ["WhatsApp", "Sardor Tours", "Instagram", "Telegram"],
+  "uz": ["Safari", "London", "Berlin", "Istanbul"]
+}

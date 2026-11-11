@@ -1,11 +1,29 @@
-// Consistency checks for localised content. Usage: node scripts/i18n-check.mjs [--strict]
+// Consistency checks for localised content.
+// Usage: node scripts/i18n-check.mjs [--strict] [--verbose] [--only=messages|tours]
 import fs from 'node:fs';
 import path from 'node:path';
 
 const strict = process.argv.includes('--strict');
+const onlyArg = process.argv.find((a) => a.startsWith('--only='));
+const only = onlyArg ? onlyArg.slice('--only='.length) : null;
+if (only && only !== 'messages' && only !== 'tours') {
+  console.error(`unknown --only value "${only}" (expected messages or tours)`);
+  process.exit(2);
+}
 const root = path.resolve(import.meta.dirname, '..');
 const read = (f) => JSON.parse(fs.readFileSync(path.join(root, f), 'utf8'));
-const allow = new Set(fs.existsSync(path.join(root, 'scripts/i18n-allowlist.json')) ? read('scripts/i18n-allowlist.json') : []);
+
+// Allowlist of values that may legitimately equal English: either a plain array (any language)
+// or { "*": [...], "uz": [...], "ru": [...] } for language-specific exemptions.
+const allowRaw = fs.existsSync(path.join(root, 'scripts/i18n-allowlist.json')) ? read('scripts/i18n-allowlist.json') : [];
+const allowAll = new Set(Array.isArray(allowRaw) ? allowRaw : (allowRaw['*'] ?? []));
+const allowLang = (lang) => new Set(Array.isArray(allowRaw) ? [] : (allowRaw[lang] ?? []));
+/** Values with no letters once {placeholders} are removed ('', '£0', '09:00', '3/3', '★', '+44 …'). */
+const languageNeutral = (v) => !/\p{L}/u.test(v.replace(/\{\w+\}/g, ''));
+const exempt = (lang) => {
+  const own = allowLang(lang);
+  return (v) => allowAll.has(v) || own.has(v) || languageNeutral(v);
+};
 const PLURAL = new Set(['one', 'few', 'many', 'other']);
 const failures = [];
 const fail = (file, p, reason) => failures.push(`${file}: ${p || '(root)'}: ${reason}`);
@@ -31,8 +49,9 @@ const untranslated = [];
 
 // Rules 1, 2 and (part of) 4: tour text files
 const enFile = 'src/data/tours.en.json';
-const en = read(enFile);
-for (const lang of ['uz', 'ru']) {
+const en = only === 'messages' ? {} : read(enFile);
+for (const lang of only === 'messages' ? [] : ['uz', 'ru']) {
+  const isExempt = exempt(lang);
   const file = `src/data/tours.${lang}.json`;
   const data = read(file);
   const enSlugs = Object.keys(en);
@@ -51,14 +70,14 @@ for (const lang of ['uz', 'ru']) {
     const fe = flatten(en[s]);
     const fl = flatten(data[s]);
     for (const [p, v] of Object.entries(fl)) {
-      if (typeof v === 'string' && v === fe[p] && !allow.has(v)) untranslated.push(`${file}: ${s}.${p}: same as English`);
+      if (typeof v === 'string' && v === fe[p] && !isExempt(v)) untranslated.push(`${file}: ${s}.${p}: same as English`);
     }
   }
 }
 
 // Rule 3: message dictionaries (skipped until src/i18n/messages exists)
 const msgDir = path.join(root, 'src/i18n/messages');
-if (fs.existsSync(msgDir) && fs.existsSync(path.join(msgDir, 'en.json'))) {
+if (only !== 'tours' && fs.existsSync(msgDir) && fs.existsSync(path.join(msgDir, 'en.json'))) {
   const enMsg = flatten(read('src/i18n/messages/en.json'));
   const norm = (flat) => {
     const keys = new Set();
@@ -76,16 +95,18 @@ if (fs.existsSync(msgDir) && fs.existsSync(path.join(msgDir, 'en.json'))) {
     return { keys, pluralParents };
   };
   const enN = norm(enMsg);
+  for (const [p, set] of enN.pluralParents) if (!set.has('other')) fail('src/i18n/messages/en.json', p, "plural object lacks 'other'");
   for (const lang of ['uz', 'ru']) {
     const f = `src/i18n/messages/${lang}.json`;
     if (!fs.existsSync(path.join(root, f))) continue;
+    const isExempt = exempt(lang);
     const flat = flatten(read(f));
     const n = norm(flat);
     for (const k of enN.keys) if (!n.keys.has(k)) fail(f, k, 'missing key');
     for (const k of n.keys) if (!enN.keys.has(k)) fail(f, k, 'extra key (not in en.json)');
     for (const [p, set] of n.pluralParents) if (!set.has('other')) fail(f, p, "plural object lacks 'other'");
     for (const [k, v] of Object.entries(flat)) {
-      if (typeof v === 'string' && v === enMsg[k] && !allow.has(v)) untranslated.push(`${f}: ${k}: same as English`);
+      if (typeof v === 'string' && v === enMsg[k] && !isExempt(v)) untranslated.push(`${f}: ${k}: same as English`);
     }
   }
 }
