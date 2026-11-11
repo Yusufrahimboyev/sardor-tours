@@ -63,6 +63,11 @@ export default async function BookingPage({ params }: { params: Promise<{ lang: 
   const tourName = tour?.name ?? b.tourName;
   const labels = new Map((tour?.options ?? []).map((o) => [o.key, o.label]));
   const lineLabel = (l: Booking['lines'][number]) => labels.get(l.key) ?? l.label;
+  // Split the template around {ref} first, so the guest's name is never parsed as a placeholder.
+  const firstName = b.name.split(' ')[0];
+  const [thanksBefore, thanksAfter = ''] = t('booking.confirm.thanks')
+    .split('{ref}')
+    .map((part) => part.replace('{name}', () => firstName));
 
   return (
     <div className={styles.page}>
@@ -74,7 +79,9 @@ export default async function BookingPage({ params }: { params: Promise<{ lang: 
           </span>
           <h1>{t('booking.confirm.title')}</h1>
           <p className={styles.lead}>
-            {t('booking.confirm.thanks', { name: b.name.split(' ')[0] })} <b data-testid="booking-ref">{b.id}</b>.{' '}
+            {thanksBefore}
+            <b data-testid="booking-ref">{b.id}</b>
+            {thanksAfter}{' '}
             {t(b.requiresDeposit ? 'booking.confirm.leadDeposit' : 'booking.confirm.lead', { phone: b.phone })}
           </p>
 

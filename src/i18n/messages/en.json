@@ -353,7 +353,7 @@
     "confirm": {
       "metaTitle": "Booking request received",
       "title": "Booking request received",
-      "thanks": "Thank you, {name}! Your reference is",
+      "thanks": "Thank you, {name}! Your reference is {ref}.",
       "lead": "Our team will confirm availability on WhatsApp ({phone}) shortly. No prepayment is needed.",
       "leadDeposit": "Our team will confirm availability on WhatsApp ({phone}) shortly. No prepayment is needed — except the deposit required for this experience, which we will send you details for.",
       "tour": "Tour",
@@ -608,7 +608,10 @@
       "clear": "Clear filters",
       "noMatch": "No tours match these filters.",
       "showAll": "Show all tours",
-      "toursLabel": "tours"
+      "toursLabel": {
+        "one": "tour",
+        "other": "tours"
+      }
     },
     "booking": {
       "steps": {

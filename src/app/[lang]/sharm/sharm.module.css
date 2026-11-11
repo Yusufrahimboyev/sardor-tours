@@ -940,6 +940,21 @@
   .heroNavLinks > a:not(.heroNavWa) {
     display: none;
   }
+  /* Icon-only WhatsApp pill on phones: the brand tagline + language switcher leave no room for the label. */
+  .heroNavLinks {
+    gap: 12px;
+  }
+  .heroNavWa {
+    padding: 10px;
+  }
+  .heroNavWa > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
   .heroBody {
     padding: 0 var(--pad) 40px;
     align-items: center;

@@ -1,768 +1,771 @@
 {
   "common": {
-    "skipToContent": "Skip to content",
+    "skipToContent": "Asosiy mazmunga oʻtish",
     "footer": {
-      "blurb": "Excursions and day trips from Sharm El Sheikh — sea, desert and history. No prepayment, hotel transfer included.",
-      "destinations": "Destinations",
-      "sharm": "Sharm El Sheikh",
-      "hurghadaSoon": "Hurghada — soon",
-      "cairoSoon": "Cairo — soon",
-      "marsaAlamSoon": "Marsa Alam — soon",
-      "company": "Company",
-      "categories": "Categories",
-      "getInTouch": "Get in touch",
+      "blurb": "Sharm-ash-Shayxdan ekskursiyalar va bir kunlik sayohatlar — dengiz, choʻl va tarix. Oldindan toʻlovsiz, mehmonxonadan transfer narxga kiritilgan.",
+      "destinations": "Yoʻnalishlar",
+      "sharm": "Sharm-ash-Shayx",
+      "hurghadaSoon": "Hurgada — tez orada",
+      "cairoSoon": "Qohira — tez orada",
+      "marsaAlamSoon": "Marsa-Alam — tez orada",
+      "company": "Kompaniya",
+      "categories": "Toifalar",
+      "getInTouch": "Biz bilan bogʻlaning",
       "whatsapp": "WhatsApp",
-      "sendMessage": "Send us a message",
-      "rights": "© {year} {name}. All rights reserved."
+      "sendMessage": "Bizga xabar yuboring",
+      "rights": "© {year} {name}. Barcha huquqlar himoyalangan."
     },
     "cta": {
-      "title": "Ready to discover Egypt?",
-      "text": "Tell us your dates and what you love — we'll build the perfect trip for your group and budget. Reply in minutes, no prepayment.",
-      "button": "Plan my trip on WhatsApp"
+      "title": "Misrni kashf etishga tayyormisiz?",
+      "text": "Sanalaringiz va nimani yoqtirishingizni ayting — guruhingiz va byudjetingizga mos ideal sayohatni tuzib beramiz. Bir necha daqiqada javob beramiz, oldindan toʻlovsiz.",
+      "button": "WhatsApp orqali sayohatni rejalashtirish"
     },
     "faq": [
       {
-        "q": "Where do you operate?",
-        "a": "We run excursions from Sharm El Sheikh — Red Sea boat trips, desert safaris and day trips to Dahab, Cairo, Luxor and Petra. Hurghada, Cairo and Marsa Alam are coming soon."
+        "q": "Qayerda faoliyat yuritasiz?",
+        "a": "Biz Sharm-ash-Shayxdan ekskursiyalar oʻtkazamiz — Qizil dengizda qayiq sayohatlari, choʻl safarilari hamda Dahab, Qohira, Luksor va Petraga bir kunlik sayohatlar. Hurgada, Qohira va Marsa-Alam tez orada qoʻshiladi."
       },
       {
-        "q": "Do I have to pay in advance?",
-        "a": "For most excursions, no. Reserve your place in just a few minutes and pay on the day of your tour. Selected experiences such as flights, private tours and large groups may require a deposit."
+        "q": "Oldindan toʻlash kerakmi?",
+        "a": "Aksariyat ekskursiyalar uchun — yoʻq. Bir necha daqiqada joy band qiling va tur kuni toʻlang. Parvozlar, individual turlar va katta guruhlar kabi ayrim takliflar uchun depozit talab qilinishi mumkin."
       },
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes, return transfer from your hotel's main entrance is included in the price of every excursion."
+        "q": "Mehmonxonadan transfer narxga kiritilganmi?",
+        "a": "Ha, mehmonxonangizning asosiy kirish joyidan olib ketish va qaytarib kelish har bir ekskursiya narxiga kiritilgan."
       },
       {
-        "q": "How do I book?",
-        "a": "Open any excursion, choose a date, your hotel and the number of guests, and send the booking request. You'll get a booking reference straight away and our team confirms everything with you on WhatsApp."
+        "q": "Qanday bron qilaman?",
+        "a": "Istalgan ekskursiyani oching, sana, mehmonxona va mehmonlar sonini tanlang hamda bron soʻrovini yuboring. Bron raqamini darhol olasiz, jamoamiz esa barcha tafsilotlarni WhatsApp orqali tasdiqlaydi."
       },
       {
-        "q": "Can I cancel?",
-        "a": "Yes — standard bookings can be cancelled free of charge more than 24 hours before the start. See our Terms & Conditions for the exceptions."
+        "q": "Bronni bekor qilsam boʻladimi?",
+        "a": "Ha — oddiy bronni boshlanishidan 24 soatdan koʻproq vaqt oldin bepul bekor qilish mumkin. Istisnolar bilan «Shartlar va qoidalar» sahifamizda tanishing."
       },
       {
-        "q": "How can I contact you?",
-        "a": "Message us on WhatsApp, use the contact form, or send us an email — we usually reply within minutes."
+        "q": "Siz bilan qanday bogʻlansam boʻladi?",
+        "a": "Bizga WhatsApp orqali yozing, aloqa shaklidan foydalaning yoki elektron pochta orqali xat yuboring — odatda bir necha daqiqada javob beramiz."
       }
     ]
   },
   "nav": {
-    "aboutUs": "About us",
-    "contactForm": "Contact form",
-    "videos": "Videos",
-    "terms": "Terms & Conditions"
+    "aboutUs": "Biz haqimizda",
+    "contactForm": "Aloqa shakli",
+    "videos": "Videolar",
+    "terms": "Shartlar va qoidalar"
   },
   "home": {
-    "heroTag": "Excursions in Egypt · No prepayment · Hotel transfer included",
+    "heroTag": "Misrdagi ekskursiyalar · Oldindan toʻlovsiz · Mehmonxonadan transfer kiritilgan",
     "h1": {
-      "before": "Egypt's Red Sea & ancient wonders, by the people who ",
-      "em": "live here",
+      "before": "Misrning Qizil dengizi va qadimiy moʻjizalari — shu yerda ",
+      "em": "yashaydiganlardan",
       "after": "."
     },
-    "sub": "Discover the real Egypt — diving, deserts, the Nile and the pyramids. No prepayment, hotel transfer included, and a real person on WhatsApp to help you plan.",
-    "explore": "Explore destinations",
-    "plan": "Plan my trip",
+    "sub": "Haqiqiy Misrni kashf eting — dayving, choʻllar, Nil va piramidalar. Oldindan toʻlovsiz, mehmonxonadan transfer kiritilgan, sayohatni rejalashtirishda esa WhatsApp orqali jonli inson yordam beradi.",
+    "explore": "Yoʻnalishlarni koʻrish",
+    "plan": "Sayohatni rejalashtirish",
     "trust": {
-      "excursions": "Excursions",
-      "pricesFrom": "Prices from",
-      "prepayment": "Prepayment",
-      "destinations": "Destinations",
-      "scroll": "Scroll"
+      "excursions": "Ekskursiyalar",
+      "pricesFrom": "Eng arzon narx",
+      "prepayment": "Oldindan toʻlov",
+      "destinations": "Yoʻnalishlar",
+      "scroll": "Pastga"
     },
     "destSection": {
-      "eyebrow": "Choose your Egypt",
-      "title": "Choose where your adventure begins",
-      "text": "From the coral reefs of the Red Sea to the pyramids of Giza — pick where your adventure begins.",
-      "live": "{n}+ tours · Live",
-      "soon": "Coming soon",
-      "explore": "Explore",
-      "soonAria": "{name} — coming soon"
+      "eyebrow": "Oʻz Misringizni tanlang",
+      "title": "Sarguzashtingiz qayerdan boshlanishini tanlang",
+      "text": "Qizil dengizning marjon riflaridan Giza piramidalarigacha — sarguzashtingiz qayerdan boshlanishini tanlang.",
+      "live": "{n}+ tur · Mavjud",
+      "soon": "Tez orada",
+      "explore": "Koʻrish",
+      "soonAria": "{name} — tez orada"
     },
     "destinations": {
       "01": {
-        "name": "Sharm El Sheikh",
-        "text": "The Red Sea's crown — world-class diving, desert safaris, island cruises and Mount Moses.",
-        "meta": "Sea · Safari · Family"
+        "name": "Sharm-ash-Shayx",
+        "text": "Qizil dengiz gavhari — jahon darajasidagi dayving, choʻl safarilari, orollarga sayohatlar va Muso togʻi.",
+        "meta": "Dengiz · Safari · Oila"
       },
       "02": {
-        "name": "Hurghada",
-        "text": "Endless beaches, vibrant reefs and water sports along Egypt's mainland Red Sea coast.",
-        "meta": "Beaches · Reefs"
+        "name": "Hurgada",
+        "text": "Misrning materik Qizil dengiz sohilidagi cheksiz plyajlar, rang-barang riflar va suv sporti.",
+        "meta": "Plyajlar · Riflar"
       },
       "03": {
-        "name": "Cairo",
-        "text": "The Pyramids of Giza, the Sphinx and the Grand Egyptian Museum — 5,000 years of history.",
-        "meta": "History · Culture"
+        "name": "Qohira",
+        "text": "Giza piramidalari, Sfinks va Katta Misr muzeyi — 5000 yillik tarix.",
+        "meta": "Tarix · Madaniyat"
       },
       "04": {
-        "name": "Marsa Alam",
-        "text": "Untouched reefs, dolphin houses and pure, uncrowded diving in the deep south.",
-        "meta": "Diving · Nature"
+        "name": "Marsa-Alam",
+        "text": "Uzoq janubdagi tegilmagan riflar, delfinlar makoni va gavjum boʻlmagan sokin dayving.",
+        "meta": "Dayving · Tabiat"
       }
     },
     "why": {
-      "eyebrow": "Why {name}",
-      "title": "Simple, honest and local",
-      "text": "Clear prices with no hidden fees, an easy online booking and a real person to answer your questions.",
+      "eyebrow": "Nega aynan {name}",
+      "title": "Oddiy, halol va mahalliy",
+      "text": "Yashirin toʻlovlarsiz aniq narxlar, oson onlayn bron va savollaringizga javob beradigan jonli inson.",
       "noPrepay": {
-        "title": "No prepayment",
-        "text": "Reserve in 3 minutes — no prepayment required. Pay on the day of your tour."
+        "title": "Oldindan toʻlovsiz",
+        "text": "3 daqiqada bron qiling — oldindan toʻlov talab qilinmaydi. Tur kuni toʻlaysiz."
       },
       "transfer": {
-        "title": "Hotel transfer included",
-        "text": "We collect you from your hotel's main gate and bring you back — free, air-conditioned."
+        "title": "Mehmonxonadan transfer kiritilgan",
+        "text": "Sizni mehmonxonaning asosiy darvozasidan olib ketamiz va qaytarib keltiramiz — bepul, konditsionerli transportda."
       },
       "cancel": {
-        "title": "Free cancellation",
-        "text": "Plans changed? Cancel free of charge up to 24 hours before your tour starts."
+        "title": "Bepul bekor qilish",
+        "text": "Rejalar oʻzgardimi? Tur boshlanishidan 24 soat oldingacha bepul bekor qiling."
       },
       "support": {
-        "title": "24/7 support",
-        "text": "A real person answers on WhatsApp — before your trip and on the day itself."
+        "title": "24/7 yordam",
+        "text": "WhatsApp orqali jonli inson javob beradi — sayohatdan oldin ham, tur kuni ham."
       }
     },
     "faq": {
-      "eyebrow": "FAQ",
-      "title": "Frequently asked questions"
+      "eyebrow": "Savol-javob",
+      "title": "Koʻp beriladigan savollar"
     }
   },
   "sharm": {
     "categories": {
       "sea": {
-        "label": "Sea & Diving",
-        "tag": "Discover the Red Sea",
-        "short": "Sea"
+        "label": "Dengiz va dayving",
+        "tag": "Qizil dengizni kashf eting",
+        "short": "Dengiz"
       },
       "safari": {
         "label": "Safari",
-        "tag": "Breathe in the desert",
+        "tag": "Choʻl havosidan bahramand boʻling",
         "short": "Safari"
       },
       "historical": {
-        "label": "Historical",
-        "tag": "Where history began",
-        "short": "History"
+        "label": "Tarixiy",
+        "tag": "Tarix boshlangan joy",
+        "short": "Tarix"
       },
       "family": {
-        "label": "Entertainment",
-        "tag": "Dive into the adventure",
-        "short": "Entertainment"
+        "label": "Koʻngilochar",
+        "tag": "Sarguzashtga shoʻngʻing",
+        "short": "Koʻngilochar"
       }
     },
-    "jsonLdName": "Sharm El Sheikh excursions",
+    "jsonLdName": "Sharm-ash-Shayxdagi ekskursiyalar",
     "hero": {
-      "title": "Sharm El Sheikh",
-      "accent": "Excursions",
-      "lede": "Experience the Best of Egypt with Us",
-      "excursions": "{n}+ excursions",
-      "excursionsSub": "sea · desert · history",
-      "from": "from {price}",
-      "fromSub": "per person",
-      "upfront": "£0 upfront",
-      "upfrontSub": "pay on the day"
+      "title": "Sharm-ash-Shayx",
+      "accent": "Ekskursiyalar",
+      "lede": "Misrning eng yaxshi tomonlarini biz bilan kashf eting",
+      "excursions": "{n}+ ekskursiya",
+      "excursionsSub": "dengiz · choʻl · tarix",
+      "from": "{price} dan",
+      "fromSub": "bir kishi uchun",
+      "upfront": "£0 oldindan",
+      "upfrontSub": "tur kuni toʻlov"
     },
-    "benefitsAria": "Benefits",
+    "benefitsAria": "Afzalliklar",
     "benefits": {
       "prices": {
-        "title": "Affordable Prices",
-        "text": "Amazing experiences from {price} per person with no hidden fees."
+        "title": "Hamyonbop narxlar",
+        "text": "Bir kishi uchun {price} dan boshlanadigan ajoyib taassurotlar, yashirin toʻlovlarsiz."
       },
       "noPrepay": {
-        "title": "No Prepayment",
-        "text": "Reserve today and pay on the day in GBP, USD, EUR or EGP."
+        "title": "Oldindan toʻlovsiz",
+        "text": "Bugun bron qiling, tur kuni GBP, USD, EUR yoki EGP da toʻlang."
       },
       "instant": {
-        "title": "Instant Booking",
-        "text": "Book online in 3 minutes and get a booking reference straight away."
+        "title": "Tezkor bron",
+        "text": "3 daqiqada onlayn bron qiling va bron raqamini darhol oling."
       },
       "transfer": {
-        "title": "Free Hotel Transfer",
-        "text": "Comfortable transfers included with every tour."
+        "title": "Bepul transfer",
+        "text": "Har bir turga mehmonxonadan qulay transfer kiritilgan."
       },
       "guides": {
-        "title": "Expert Guides",
-        "text": "Every tour is led by an experienced English-speaking guide."
+        "title": "Tajribali gidlar",
+        "text": "Har bir turni ingliz tilida soʻzlashuvchi tajribali gid olib boradi."
       },
       "insurance": {
-        "title": "Insurance Included",
-        "text": "Every traveller is insured for the entire duration of the tour."
+        "title": "Sugʻurta kiritilgan",
+        "text": "Har bir sayohatchi tur davomida toʻliq sugʻurtalangan."
       }
     },
     "bestsellers": {
-      "eyebrow": "Bestsellers",
-      "title": "Bestselling Sharm El Sheikh Excursions",
-      "all": "All tours →"
+      "eyebrow": "Eng ommabop",
+      "title": "Sharm-ash-Shayxning eng ommabop ekskursiyalari",
+      "all": "Barcha turlar →"
     },
     "tours": {
-      "eyebrow": "Our tours",
-      "titleLine1": "Full List of Available Sharm El Sheikh",
-      "titleLine2": "Day Trips & Excursions"
+      "eyebrow": "Turlarimiz",
+      "titleLine1": "Sharm-ash-Shayxdan barcha",
+      "titleLine2": "ekskursiya va sayohatlar"
     },
     "faq": {
-      "eyebrow": "FAQ",
-      "before": "Frequently asked ",
-      "em": "questions"
+      "eyebrow": "Savol-javob",
+      "before": "Koʻp beriladigan ",
+      "em": "savollar"
     },
     "promise": {
-      "eyebrow": "our promise",
-      "line1": "No",
-      "line2": "compromises",
-      "ghost": "Promise",
+      "eyebrow": "bizning vaʼdamiz",
+      "line1": "Hech qanday",
+      "line2": "murosasiz",
+      "ghost": "Vaʼda",
       "items": [
         {
-          "title": "No prepayment",
-          "text": "Pay on the day of your tour — in cash, in any currency"
+          "title": "Oldindan toʻlovsiz",
+          "text": "Tur kuni toʻlaysiz — naqd pulda, istalgan valyutada"
         },
         {
-          "title": "No hidden fees",
-          "text": "The final price includes everything — no surprises"
+          "title": "Yashirin toʻlovlarsiz",
+          "text": "Yakuniy narxga hammasi kiritilgan — kutilmagan xarajatlarsiz"
         },
         {
-          "title": "Hotel transfer",
-          "text": "Free pickup and drop-off from any hotel"
+          "title": "Mehmonxonadan transfer",
+          "text": "Istalgan mehmonxonadan bepul olib ketish va qaytarish"
         },
         {
-          "title": "Fast replies",
-          "text": "A real person on WhatsApp, in English"
+          "title": "Tezkor javoblar",
+          "text": "WhatsApp orqali jonli inson, ingliz tilida"
         },
         {
-          "title": "English-speaking guides",
-          "text": "Professionals who love every route they lead"
+          "title": "Ingliz tilida soʻzlashuvchi gidlar",
+          "text": "Har bir yoʻnalishini sevadigan mutaxassislar"
         },
         {
-          "title": "Free cancellation",
-          "text": "Cancel free of charge up to 24 hours before the tour"
+          "title": "Bepul bekor qilish",
+          "text": "Turdan 24 soat oldingacha bepul bekor qilish"
         }
       ]
     },
     "steps": {
-      "eyebrow": "how to book",
-      "line1": "Three",
-      "line2": "steps",
-      "ghost": "fast and easy",
+      "eyebrow": "qanday bron qilinadi",
+      "line1": "Uch",
+      "line2": "qadam",
+      "ghost": "tez va oson",
       "choose": {
-        "title": "Choose a tour",
-        "text": "{n}+ routes — sea, desert, history. Prices from {price}."
+        "title": "Turni tanlang",
+        "text": "{n}+ yoʻnalish — dengiz, choʻl, tarix. Narxlar {price} dan."
       },
       "request": {
-        "title": "Send a booking request",
-        "text": "Pick a date and guests — we confirm on WhatsApp in minutes. No prepayment."
+        "title": "Bron soʻrovini yuboring",
+        "text": "Sana va mehmonlarni tanlang — bir necha daqiqada WhatsApp orqali tasdiqlaymiz. Oldindan toʻlovsiz."
       },
       "pickup": {
-        "title": "We pick you up from your hotel",
-        "text": "Guide, transfer and an unforgettable day — all included."
+        "title": "Sizni mehmonxonadan olib ketamiz",
+        "text": "Gid, transfer va unutilmas kun — hammasi narxga kiritilgan."
       }
     },
     "stats": {
-      "aria": "Key figures",
-      "tours": "tours",
-      "categories": "categories",
-      "from": "from"
+      "aria": "Asosiy raqamlar",
+      "tours": "tur",
+      "categories": "toifa",
+      "from": "eng arzon narx"
     },
     "map": {
-      "eyebrow": "geography",
-      "line1": "The world",
-      "line2before": "flies to ",
-      "line2em": "us",
-      "aria": "Flight routes from Europe to Sharm El Sheikh",
-      "hub": "Sharm El Sheikh",
+      "eyebrow": "geografiya",
+      "line1": "Butun dunyo",
+      "line2before": "bizga ",
+      "line2em": "uchadi",
+      "aria": "Yevropadan Sharm-ash-Shayxga parvoz yoʻnalishlari",
+      "hub": "Sharm-ash-Shayx",
       "cities": {
         "london": "London",
-        "paris": "Paris",
+        "paris": "Parij",
         "berlin": "Berlin",
-        "rome": "Rome",
-        "warsaw": "Warsaw",
+        "rome": "Rim",
+        "warsaw": "Varshava",
         "istanbul": "Istanbul",
-        "moscow": "Moscow",
-        "riyadh": "Riyadh"
+        "moscow": "Moskva",
+        "riyadh": "Ar-Riyod"
       }
     },
     "book": {
-      "aria": "Book a tour",
-      "title": "Book a Tour",
-      "sub": "We reply in 3 minutes",
-      "from": "from",
-      "perPerson": "/ person",
+      "aria": "Turni bron qilish",
+      "title": "Turni bron qiling",
+      "sub": "3 daqiqada javob beramiz",
+      "from": "narxi",
+      "perPerson": "/ kishi",
       "benefits": [
-        "No prepayment",
-        "Hotel transfer included",
-        "Book in 3 minutes",
-        "English-speaking guides",
-        "Insurance included"
+        "Oldindan toʻlovsiz",
+        "Mehmonxonadan transfer kiritilgan",
+        "3 daqiqada bron",
+        "Ingliz tilida soʻzlashuvchi gidlar",
+        "Sugʻurta kiritilgan"
       ],
-      "cta": "Choose your tour",
-      "note": "Instant booking reference. We reply fast."
+      "cta": "Turni tanlang",
+      "note": "Bron raqami darhol beriladi. Tez javob beramiz."
     }
   },
   "tour": {
     "breadcrumb": {
-      "aria": "Breadcrumb",
-      "home": "Home",
-      "sharm": "Sharm El Sheikh"
+      "aria": "Navigatsiya zanjiri",
+      "home": "Bosh sahifa",
+      "sharm": "Sharm-ash-Shayx"
     },
-    "payNote": "Book now, pay on the day of the tour",
-    "highlightsAria": "Highlights",
-    "itinKicker": "What you get",
-    "itinTitle": "Tour Itinerary",
+    "payNote": "Hozir bron qiling, tur kuni toʻlang",
+    "highlightsAria": "Asosiy jihatlar",
+    "itinKicker": "Sizni nima kutmoqda",
+    "itinTitle": "Tur dasturi",
     "faq": {
-      "before": "Frequently asked ",
-      "em": "questions"
+      "before": "Koʻp beriladigan ",
+      "em": "savollar"
     },
-    "infoEyebrow": "Additional information",
-    "goodToKnow": "Good to know",
+    "infoEyebrow": "Qoʻshimcha maʼlumot",
+    "goodToKnow": "Bilish foydali",
     "wcu": {
-      "before": "Why choose ",
-      "em": "us?"
+      "before": "Nega aynan ",
+      "em": "biz?"
     },
-    "priceKicker": "Tour price",
+    "priceKicker": "Tur narxi",
     "payDay": {
-      "kicker": "Pay on the day",
+      "kicker": "Tur kuni toʻlov",
       "big1": "£0",
-      "big2": "upfront",
-      "before": "Reserve online in 3 minutes. ",
-      "bold": "Hotel transfer included",
-      "after": ", free cancellation up to 24 hours before."
+      "big2": "oldindan",
+      "before": "3 daqiqada onlayn bron qiling. ",
+      "bold": "Mehmonxonadan transfer kiritilgan",
+      "after": ", 24 soat oldingacha bepul bekor qilish."
     },
     "cta": {
-      "heading": "Ready for an unforgettable day?",
-      "book": "Book this tour",
+      "heading": "Unutilmas kunga tayyormisiz?",
+      "book": "Ushbu turni bron qilish",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "related": {
-      "kicker": "Other tours",
-      "title": "You might also like",
-      "details": "Details · from {price}"
+      "kicker": "Boshqa turlar",
+      "title": "Sizga bular ham yoqishi mumkin",
+      "details": "Batafsil · {price} dan"
     },
     "side": {
-      "aria": "Book this tour",
-      "title": "Book your spot",
-      "from": "from",
-      "ask": "Questions? Ask us on WhatsApp"
+      "aria": "Ushbu turni bron qilish",
+      "title": "Joyingizni band qiling",
+      "from": "narxi",
+      "ask": "Savollar bormi? WhatsApp orqali soʻrang"
     },
     "jsonLd": {
-      "home": "Home",
-      "sharm": "Sharm El Sheikh"
+      "home": "Bosh sahifa",
+      "sharm": "Sharm-ash-Shayx"
     }
   },
   "booking": {
     "confirm": {
-      "metaTitle": "Booking request received",
-      "title": "Booking request received",
-      "thanks": "Thank you, {name}! Your reference is",
-      "lead": "Our team will confirm availability on WhatsApp ({phone}) shortly. No prepayment is needed.",
-      "leadDeposit": "Our team will confirm availability on WhatsApp ({phone}) shortly. No prepayment is needed — except the deposit required for this experience, which we will send you details for.",
-      "tour": "Tour",
-      "date": "Date",
-      "hotel": "Hotel",
-      "totalPayDay": "Total — pay on the day",
-      "whatsappCta": "Confirm faster on WhatsApp",
-      "browse": "Browse more tours",
-      "changeNote": "Need to change something? Reply on WhatsApp with your reference. Free cancellation up to 24 hours before the tour — see our",
-      "terms": "Terms & Conditions"
+      "metaTitle": "Bron soʻrovi qabul qilindi",
+      "title": "Bron soʻrovi qabul qilindi",
+      "thanks": "Rahmat, {name}! Bron raqamingiz: {ref}.",
+      "lead": "Jamoamiz tez orada WhatsApp ({phone}) orqali joy borligini tasdiqlaydi. Oldindan toʻlov kerak emas.",
+      "leadDeposit": "Jamoamiz tez orada WhatsApp ({phone}) orqali joy borligini tasdiqlaydi. Oldindan toʻlov kerak emas — faqat ushbu taklif uchun talab qilinadigan depozit bundan mustasno, uning tafsilotlarini sizga yuboramiz.",
+      "tour": "Tur",
+      "date": "Sana",
+      "hotel": "Mehmonxona",
+      "totalPayDay": "Jami — tur kuni toʻlanadi",
+      "whatsappCta": "WhatsApp orqali tezroq tasdiqlash",
+      "browse": "Boshqa turlarni koʻrish",
+      "changeNote": "Biror narsani oʻzgartirish kerakmi? Bron raqamingizni WhatsApp orqali yuboring. Turdan 24 soat oldingacha bepul bekor qilish mumkin — batafsil:",
+      "terms": "Shartlar va qoidalar"
     }
   },
   "contact": {
-    "tag": "Contact",
+    "tag": "Aloqa",
     "h1": {
-      "before": "We're here ",
+      "before": "Biz doim aloqadamiz ",
       "em": "24/7"
     },
-    "text": "Message us on your favourite messenger for the fastest reply, or send us a note below and we'll answer by email.",
-    "formTitle": "Send us a message"
+    "text": "Eng tez javob olish uchun sevimli messenjeringizda yozing yoki quyida xabar qoldiring — elektron pochta orqali javob beramiz.",
+    "formTitle": "Bizga xabar yuboring"
   },
   "about": {
-    "tag": "Excursions in Sharm El Sheikh",
+    "tag": "Sharm-ash-Shayxdagi ekskursiyalar",
     "h1": {
-      "before": "We ",
-      "em": "know every wave",
-      "after": " and every dune"
+      "before": "Biz ",
+      "em": "har bir toʻlqinni",
+      "after": " va har bir barxanni bilamiz"
     },
-    "p1": "{name} brings together the best day trips from Sharm El Sheikh — Red Sea boat trips, desert safaris and journeys to Dahab, Cairo, Luxor and Petra — in one place, with simple online booking.",
-    "p2": "No prepayment for most tours, hotel transfer included and a real person to help you on WhatsApp.",
-    "allExcursions": "All excursions",
+    "p1": "{name} Sharm-ash-Shayxdan eng yaxshi bir kunlik sayohatlarni — Qizil dengizda qayiq sayohatlari, choʻl safarilari hamda Dahab, Qohira, Luksor va Petraga sayohatlarni — bir joyga jamlaydi va ularni onlayn oson bron qilish imkonini beradi.",
+    "p2": "Aksariyat turlar uchun oldindan toʻlov yoʻq, mehmonxonadan transfer kiritilgan, WhatsApp orqali esa sizga jonli inson yordam beradi.",
+    "allExcursions": "Barcha ekskursiyalar",
     "instagram": "Instagram",
     "cards": {
       "destination": {
-        "label": "Destination",
-        "value": "Sharm El Sheikh"
+        "label": "Yoʻnalish",
+        "value": "Sharm-ash-Shayx"
       },
       "excursions": {
-        "label": "Excursions",
-        "value": "{n}+ tours"
+        "label": "Ekskursiyalar",
+        "value": "{n}+ tur"
       },
       "prices": {
-        "label": "Prices",
-        "value": "from {price}"
+        "label": "Narxlar",
+        "value": "{price} dan"
       },
       "prepayment": {
-        "label": "Prepayment",
-        "value": "£0 — pay on the day"
+        "label": "Oldindan toʻlov",
+        "value": "£0 — tur kuni toʻlov"
       }
     },
     "stats": {
-      "excursions": "Excursions",
-      "categories": "Categories",
-      "pricesFrom": "Prices from",
-      "prepayment": "Prepayment"
+      "excursions": "Ekskursiyalar",
+      "categories": "Toifalar",
+      "pricesFrom": "Eng arzon narx",
+      "prepayment": "Oldindan toʻlov"
     },
     "why": {
-      "tag": "Why us",
-      "before": "Six reasons to ",
-      "em": "book with us"
+      "tag": "Nega biz",
+      "before": "Biz bilan bron qilishning ",
+      "em": "oltita sababi"
     },
     "reasons": [
       {
-        "title": "Clear prices",
-        "text": "The price you see is the price you pay — transfer included, no hidden extras."
+        "title": "Aniq narxlar",
+        "text": "Koʻrgan narxingizni toʻlaysiz — transfer kiritilgan, yashirin qoʻshimchalar yoʻq."
       },
       {
-        "title": "No prepayment",
-        "text": "Book online in minutes and pay on the day of your excursion for most tours."
+        "title": "Oldindan toʻlovsiz",
+        "text": "Bir necha daqiqada onlayn bron qiling, aksariyat turlar uchun ekskursiya kuni toʻlang."
       },
       {
-        "title": "Hotel transfer included",
-        "text": "We pick you up from your hotel's main entrance and bring you back after the tour."
+        "title": "Mehmonxonadan transfer kiritilgan",
+        "text": "Sizni mehmonxonaning asosiy kirish joyidan olib ketamiz va turdan keyin qaytarib keltiramiz."
       },
       {
-        "title": "Free cancellation",
-        "text": "Plans changed? Cancel free of charge up to 24 hours before the start."
+        "title": "Bepul bekor qilish",
+        "text": "Rejalar oʻzgardimi? Boshlanishidan 24 soat oldingacha bepul bekor qiling."
       },
       {
-        "title": "Easy booking",
-        "text": "Choose a date and guests online and get a booking reference straight away."
+        "title": "Oson bron",
+        "text": "Onlayn sana va mehmonlarni tanlang hamda bron raqamini darhol oling."
       },
       {
-        "title": "Real people",
-        "text": "Questions before or during your trip? Message us on WhatsApp and a real person answers."
+        "title": "Jonli insonlar",
+        "text": "Sayohatdan oldin yoki sayohat davomida savollar bormi? WhatsApp orqali yozing — jonli inson javob beradi."
       }
     ],
     "faq": {
-      "tag": "FAQ",
-      "before": "Questions we ",
-      "em": "hear every day"
+      "tag": "Savol-javob",
+      "before": "Har kuni ",
+      "em": "beriladigan savollar"
     },
     "cta": {
-      "title": "Ready to discover Sharm El Sheikh?",
-      "text": "Browse our excursions or message us — we'll help you find the perfect trip for your group, budget and interests.",
+      "title": "Sharm-ash-Shayxni kashf etishga tayyormisiz?",
+      "text": "Ekskursiyalarimizni koʻring yoki bizga yozing — guruhingiz, byudjetingiz va qiziqishlaringizga mos ideal sayohatni topishga yordam beramiz.",
       "telegram": "Telegram"
     }
   },
   "terms": {
-    "title": "Terms & Conditions",
-    "intro": "Welcome to {name}. These Terms & Conditions apply to all bookings, services and activities provided by {name}, a tour operator in Egypt. By confirming a booking, you agree to the following terms and policies.",
-    "updated": "Last updated: 1 July 2025",
+    "title": "Shartlar va qoidalar",
+    "intro": "{name} saytiga xush kelibsiz. Ushbu Shartlar va qoidalar Misrdagi turoperator {name} tomonidan taqdim etiladigan barcha bronlar, xizmatlar va tadbirlarga nisbatan qoʻllaniladi. Bronni tasdiqlash orqali siz quyidagi shartlar va qoidalarga rozilik bildirasiz.",
+    "updated": "Oxirgi yangilanish: 2025-yil 1-iyul",
     "prepaid": [
-      "Large group bookings",
-      "Cairo trips",
-      "Luxor by Plane",
-      "Petra — Jordan",
-      "VIP Boat to White Island",
-      "Private tours"
+      "Katta guruhlar uchun bronlar",
+      "Qohiraga sayohatlar",
+      "Samolyotda Luksorga",
+      "Petra — Iordaniya",
+      "Oq orolga VIP qayiq",
+      "Individual turlar"
     ],
     "booking": {
-      "title": "Booking & Payments",
+      "title": "Bron va toʻlovlar",
       "confirmation": {
-        "title": "Booking confirmation",
-        "text": "Most of our excursions require no prepayment: reserve your place online or on WhatsApp and pay on the day of your activity. We will send your booking confirmation by email or WhatsApp.",
-        "listIntro": "The following bookings require a deposit or full payment in advance and are non-refundable (see 2.2):",
-        "after": "These reservations are confirmed once your payment has been successfully processed."
+        "title": "Bronni tasdiqlash",
+        "text": "Aksariyat ekskursiyalarimiz oldindan toʻlovni talab qilmaydi: joyingizni onlayn yoki WhatsApp orqali band qiling va tadbir kuni toʻlang. Bron tasdigʻini elektron pochta yoki WhatsApp orqali yuboramiz.",
+        "listIntro": "Quyidagi bronlar depozit yoki oldindan toʻliq toʻlovni talab qiladi va qaytarilmaydi (2.2-bandga qarang):",
+        "after": "Ushbu bronlar toʻlovingiz muvaffaqiyatli amalga oshirilgach tasdiqlanadi."
       },
       "balance": {
-        "title": "Balance payment",
-        "text": "Where a deposit has been paid, the remaining balance must be paid in full at least 48 hours before the scheduled activity. Failure to complete payment by the deadline may result in your reservation being cancelled."
+        "title": "Qolgan summani toʻlash",
+        "text": "Agar depozit toʻlangan boʻlsa, qolgan summa rejalashtirilgan tadbirdan kamida 48 soat oldin toʻliq toʻlanishi kerak. Muddatida toʻlanmasa, broningiz bekor qilinishi mumkin."
       },
       "methods": {
-        "title": "Accepted payment methods",
-        "cash": "Cash",
-        "card": "Card / online",
-        "feeSuffix": "processing fee",
-        "request": "Available on request — contact us for details",
-        "note": "Note: the 3.5% processing fee is non-refundable and applies to all refunds made via card or online payment."
+        "title": "Qabul qilinadigan toʻlov usullari",
+        "cash": "Naqd pul",
+        "card": "Karta / onlayn",
+        "feeSuffix": "xizmat haqi",
+        "request": "Soʻrov boʻyicha — tafsilotlar uchun biz bilan bogʻlaning",
+        "note": "Eslatma: 3.5% xizmat haqi qaytarilmaydi va karta yoki onlayn toʻlov orqali amalga oshirilgan barcha qaytarishlarga nisbatan qoʻllaniladi."
       }
     },
     "cancel": {
-      "title": "Cancellation & Refund Policy",
+      "title": "Bekor qilish va pulni qaytarish tartibi",
       "standard": {
-        "title": "Standard cancellations",
-        "intro": "Except for the non-refundable bookings listed in 2.2:",
-        "early": "More than 24 hours before the start of the activity",
-        "earlyResult": "Full refund of the booking price",
-        "late": "24 hours or less before the start, or no-show",
-        "lateResult": "No refund"
+        "title": "Oddiy bekor qilish",
+        "intro": "2.2-bandda koʻrsatilgan qaytarilmaydigan bronlardan tashqari:",
+        "early": "Tadbir boshlanishidan 24 soatdan koʻproq vaqt oldin",
+        "earlyResult": "Bron narxi toʻliq qaytariladi",
+        "late": "Boshlanishidan 24 soat yoki undan kamroq vaqt oldin yoki kelmaslik",
+        "lateResult": "Pul qaytarilmaydi"
       },
       "nonRefundable": {
-        "title": "Non-refundable bookings",
-        "intro": "All bookings that require a deposit or full payment in advance are non-refundable:"
+        "title": "Qaytarilmaydigan bronlar",
+        "intro": "Depozit yoki oldindan toʻliq toʻlov talab qilinadigan barcha bronlar qaytarilmaydi:"
       },
       "byUs": {
-        "title": "Cancellations by {name}",
-        "text": "We reserve the right to cancel or reschedule activities due to weather or other conditions, or for operational reasons. If we cancel, we will offer you a full refund or a new date."
+        "title": "{name} tomonidan bekor qilish",
+        "text": "Biz ob-havo yoki boshqa sharoitlar sababli yoxud tashkiliy sabablarga koʻra tadbirlarni bekor qilish yoki boshqa vaqtga koʻchirish huquqini saqlab qolamiz. Agar biz bekor qilsak, sizga pulni toʻliq qaytarish yoki yangi sanani taklif qilamiz."
       }
     },
     "ask": {
-      "title": "Questions about these terms?",
-      "text": "Our team is available 24/7 on WhatsApp."
+      "title": "Shartlar boʻyicha savollar bormi?",
+      "text": "Jamoamiz WhatsApp orqali 24/7 aloqada."
     }
   },
   "video": {
-    "h1": "Sharm El Sheikh Excursion Videos",
-    "noticeBold": "🎬 Videos are coming soon.",
-    "noticeText": " In the meantime, browse the photo galleries on each tour page.",
-    "instagram": "Watch on Instagram",
-    "from": "from {price}",
+    "h1": "Sharm-ash-Shayx ekskursiyalari videolari",
+    "noticeBold": "🎬 Videolar tez orada qoʻshiladi.",
+    "noticeText": " Hozircha har bir tur sahifasidagi fotogalereyalarni koʻring.",
+    "instagram": "Instagramda koʻrish",
+    "from": "{price} dan",
     "cta": {
-      "kicker": "Ready for an adventure?",
-      "title": "Message us — we reply in minutes",
-      "text": "We'll find the best tour for your budget. No prepayment, transfer included.",
+      "kicker": "Sarguzashtga tayyormisiz?",
+      "title": "Bizga yozing — bir necha daqiqada javob beramiz",
+      "text": "Byudjetingizga mos eng yaxshi turni topamiz. Oldindan toʻlovsiz, transfer kiritilgan.",
       "telegram": "Telegram"
     }
   },
   "meta": {
     "default": {
-      "title": "{name} — Egypt Excursions in Sharm El Sheikh, Hurghada, Cairo & Marsa Alam",
-      "description": "Day trips and excursions from Sharm El Sheikh — boat trips, desert safaris, Cairo, Luxor and Petra. No prepayment, hotel transfer included."
+      "title": "{name} — Misrda ekskursiyalar: Sharm-ash-Shayx, Hurgada, Qohira va Marsa-Alam",
+      "description": "Sharm-ash-Shayxdan ekskursiyalar va bir kunlik sayohatlar — qayiq sayohatlari, choʻl safarilari, Qohira, Luksor va Petra. Oldindan toʻlovsiz, mehmonxonadan transfer kiritilgan."
     },
     "home": {
-      "description": "{name} — excursions and day trips from Sharm El Sheikh: Red Sea boat trips, desert safaris, Cairo, Luxor and Petra. No prepayment, hotel transfer included.",
-      "ogTitle": "{name} — Egypt Excursions",
-      "ogDescription": "Excursions from Sharm El Sheikh. No prepayment · hotel transfer included."
+      "description": "{name} — Sharm-ash-Shayxdan ekskursiyalar va sayohatlar: Qizil dengizda qayiq sayohatlari, choʻl safarilari, Qohira, Luksor va Petra. Oldindan toʻlovsiz, transfer kiritilgan.",
+      "ogTitle": "{name} — Misrda ekskursiyalar",
+      "ogDescription": "Sharm-ash-Shayxdan ekskursiyalar. Oldindan toʻlovsiz · mehmonxonadan transfer kiritilgan."
     },
     "sharm": {
-      "title": "{count}+ Best Sharm El Sheikh Excursions & Tours (Pay on Arrival)",
-      "description": "Tours in Sharm El Sheikh from {price}. No prepayment. Book in 3 minutes. Hotel transfer included. English-speaking guides. Insurance included.",
-      "ogTitle": "Sharm El Sheikh Excursions & Day Trips",
-      "ogDescription": "Boat trips, desert safaris, Cairo & Petra day trips. No prepayment, hotel transfer included."
+      "title": "Sharm-ash-Shayxdagi {count}+ eng yaxshi ekskursiya va turlar (joyida toʻlov)",
+      "description": "Sharm-ash-Shayxda turlar {price} dan. Oldindan toʻlovsiz. 3 daqiqada bron. Mehmonxonadan transfer va sugʻurta kiritilgan.",
+      "ogTitle": "Sharm-ash-Shayxdagi ekskursiyalar va bir kunlik sayohatlar",
+      "ogDescription": "Qayiq sayohatlari, choʻl safarilari, Qohira va Petraga sayohatlar. Oldindan toʻlovsiz, mehmonxonadan transfer kiritilgan."
     },
     "video": {
-      "title": "Sharm El Sheikh Tour Videos",
-      "description": "Excursion videos from Sharm El Sheikh — sea trips, desert safaris and historical tours."
+      "title": "Sharm-ash-Shayx turlari videolari",
+      "description": "Sharm-ash-Shayxdan ekskursiya videolari — dengiz sayohatlari, choʻl safarilari va tarixiy turlar."
     },
     "about": {
-      "title": "About Us — Excursions in Sharm El Sheikh",
-      "description": "{name} — excursions and day trips from Sharm El Sheikh. No prepayment, hotel transfer included, easy online booking.",
-      "ogTitle": "About {name}"
+      "title": "Biz haqimizda — Sharm-ash-Shayxdagi ekskursiyalar",
+      "description": "{name} — Sharm-ash-Shayxdan ekskursiyalar va bir kunlik sayohatlar. Oldindan toʻlovsiz, mehmonxonadan transfer kiritilgan, oson onlayn bron.",
+      "ogTitle": "{name} haqida"
     },
     "contact": {
-      "title": "Contact Us",
-      "description": "Contact {name}: WhatsApp, email or the contact form — we reply fast."
+      "title": "Aloqa",
+      "description": "{name} bilan bogʻlaning: WhatsApp, elektron pochta yoki aloqa shakli — tez javob beramiz."
     },
     "terms": {
-      "title": "Terms & Conditions",
-      "description": "Booking, payment, cancellation and refund terms for {name} excursions in Egypt."
+      "title": "Shartlar va qoidalar",
+      "description": "{name} kompaniyasining Misrdagi ekskursiyalari uchun bron, toʻlov, bekor qilish va pulni qaytarish shartlari."
     },
     "notFound": {
-      "title": "Page not found"
+      "title": "Sahifa topilmadi"
     }
   },
   "client": {
     "nav": {
-      "main": "Main",
-      "quick": "Quick navigation",
-      "menu": "Menu",
-      "openMenu": "Open menu",
-      "closeMenu": "Close menu",
-      "home": "Home",
-      "excursions": "Excursions",
-      "videos": "Videos",
-      "aboutUs": "About us",
-      "about": "About",
-      "contact": "Contact",
-      "back": "Back",
-      "search": "Search",
-      "destinations": "Destinations",
-      "whyUs": "Why us",
-      "sharmTours": "Sharm El Sheikh tours",
+      "main": "Asosiy menyu",
+      "quick": "Tezkor navigatsiya",
+      "menu": "Menyu",
+      "openMenu": "Menyuni ochish",
+      "closeMenu": "Menyuni yopish",
+      "home": "Asosiy",
+      "excursions": "Ekskursiyalar",
+      "videos": "Videolar",
+      "aboutUs": "Biz haqimizda",
+      "about": "Haqimizda",
+      "contact": "Aloqa",
+      "back": "Orqaga",
+      "search": "Qidiruv",
+      "destinations": "Yoʻnalishlar",
+      "whyUs": "Nega biz",
+      "sharmTours": "Sharm-ash-Shayx turlari",
       "whatsapp": "WhatsApp",
-      "messageWhatsapp": "Message us on WhatsApp"
+      "messageWhatsapp": "WhatsApp orqali yozing"
     },
     "search": {
-      "title": "Search tours",
-      "placeholder": "Search tours…",
-      "empty": "No tours found for “{q}”",
-      "meta": "{category} · {duration} · from {price}",
-      "button": "Search"
+      "title": "Turlarni qidirish",
+      "placeholder": "Turlarni qidirish…",
+      "empty": "«{q}» boʻyicha turlar topilmadi",
+      "meta": "{category} · {duration} · {price} dan",
+      "button": "Qidirish"
     },
     "catalog": {
-      "from": "from",
-      "viewDetails": "View Details",
-      "perPerson": "/pp",
-      "all": "All Tours",
-      "filterCategory": "Filter by category",
-      "filterPrice": "Filter by price",
+      "from": "narxi",
+      "viewDetails": "Batafsil",
+      "perPerson": "/kishi",
+      "all": "Barcha turlar",
+      "filterCategory": "Toifa boʻyicha saralash",
+      "filterPrice": "Narx boʻyicha saralash",
       "price": {
-        "all": "Any price",
-        "under30": "Under £30",
+        "all": "Istalgan narx",
+        "under30": "£30 gacha",
         "30to100": "£30 – £100",
         "over100": "£100+"
       },
       "found": {
-        "one": "{n} tour found",
-        "other": "{n} tours found"
+        "one": "{n} ta tur topildi",
+        "other": "{n} ta tur topildi"
       },
-      "forQuery": "for “{q}”",
-      "clear": "Clear filters",
-      "noMatch": "No tours match these filters.",
-      "showAll": "Show all tours",
-      "toursLabel": "tours"
+      "forQuery": "«{q}» boʻyicha",
+      "clear": "Filtrlarni tozalash",
+      "noMatch": "Ushbu filtrlarga mos turlar yoʻq.",
+      "showAll": "Barcha turlarni koʻrsatish",
+      "toursLabel": {
+        "one": "ta tur",
+        "other": "ta tur"
+      }
     },
     "booking": {
       "steps": {
-        "date": "Date",
-        "guests": "Guests",
-        "details": "Details"
+        "date": "Sana",
+        "guests": "Mehmonlar",
+        "details": "Maʼlumotlar"
       },
-      "stepsAria": "Booking steps",
-      "selectDate": "Select a date",
-      "runsOn": "Runs on {days}",
-      "schedule": "Schedule: {schedule}",
-      "departureTime": "Departure time",
-      "hotelName": "Hotel name",
-      "hotelPlaceholder": "Your hotel name",
-      "next": "Next",
-      "back": "Back",
-      "noPrepayNote": "Book now — no prepayment",
-      "summaryDate": "Date",
-      "change": "Change",
-      "guests": "Guests",
-      "extras": "Extras",
-      "total": "Total",
-      "fullName": "Full name",
-      "phone": "Phone / WhatsApp",
+      "stepsAria": "Bron bosqichlari",
+      "selectDate": "Sanani tanlang",
+      "runsOn": "Oʻtkaziladigan kunlar: {days}",
+      "schedule": "Jadval: {schedule}",
+      "departureTime": "Joʻnash vaqti",
+      "hotelName": "Mehmonxona nomi",
+      "hotelPlaceholder": "Mehmonxonangiz nomi",
+      "next": "Keyingisi",
+      "back": "Orqaga",
+      "noPrepayNote": "Hozir bron qiling — oldindan toʻlovsiz",
+      "summaryDate": "Sana",
+      "change": "Oʻzgartirish",
+      "guests": "Mehmonlar",
+      "extras": "Qoʻshimchalar",
+      "total": "Jami",
+      "fullName": "Ism va familiya",
+      "phone": "Telefon / WhatsApp",
       "phonePlaceholder": "+44 7700 900123",
-      "email": "Email",
-      "optional": "(optional)",
-      "notes": "Notes",
-      "notesPlaceholder": "Room number, special requests…",
-      "totalPayDay": "Total — pay on the day",
-      "deposit": "This experience requires a deposit — our team will send you the payment details.",
-      "submit": "Send booking request",
-      "sending": "Sending…",
-      "add": "Add",
-      "remove": "Remove",
-      "addAria": "Add {label}",
-      "removeAria": "Remove {label}",
-      "increase": "Increase {label}",
-      "decrease": "Decrease {label}",
-      "count": "{label} count",
-      "included": "Included",
-      "free": "Free",
-      "noPrepay": "No prepayment",
-      "book": "Book",
-      "dialogLabel": "Book: {name}",
-      "sheetTitle": "Book in 3 minutes"
+      "email": "Elektron pochta",
+      "optional": "(ixtiyoriy)",
+      "notes": "Izoh",
+      "notesPlaceholder": "Xona raqami, maxsus istaklar…",
+      "totalPayDay": "Jami — tur kuni toʻlanadi",
+      "deposit": "Ushbu taklif uchun depozit talab qilinadi — jamoamiz sizga toʻlov tafsilotlarini yuboradi.",
+      "submit": "Bron soʻrovini yuborish",
+      "sending": "Yuborilmoqda…",
+      "add": "Qoʻshish",
+      "remove": "Olib tashlash",
+      "addAria": "Qoʻshish: {label}",
+      "removeAria": "Olib tashlash: {label}",
+      "increase": "Koʻpaytirish: {label}",
+      "decrease": "Kamaytirish: {label}",
+      "count": "Soni: {label}",
+      "included": "Kiritilgan",
+      "free": "Bepul",
+      "noPrepay": "Oldindan toʻlovsiz",
+      "book": "Bron qilish",
+      "dialogLabel": "Bron qilish: {name}",
+      "sheetTitle": "3 daqiqada bron qiling"
     },
     "contactForm": {
-      "name": "Your name",
-      "email": "Email",
-      "phone": "Phone / WhatsApp (optional)",
-      "topic": "Topic",
-      "message": "Message",
-      "send": "Send message",
-      "sending": "Sending…",
-      "thanks": "Thank you!",
-      "received": "Your message has been received. Our team usually replies within a few hours.",
-      "another": "Send another message",
+      "name": "Ismingiz",
+      "email": "Elektron pochta",
+      "phone": "Telefon / WhatsApp (ixtiyoriy)",
+      "topic": "Mavzu",
+      "message": "Xabar",
+      "send": "Xabarni yuborish",
+      "sending": "Yuborilmoqda…",
+      "thanks": "Rahmat!",
+      "received": "Xabaringiz qabul qilindi. Jamoamiz odatda bir necha soat ichida javob beradi.",
+      "another": "Yana xabar yuborish",
       "topics": {
-        "booking": "Question about a booking",
-        "private": "Private tour",
-        "group": "Group booking",
-        "other": "Something else"
+        "booking": "Bron boʻyicha savol",
+        "private": "Individual tur",
+        "group": "Guruh uchun bron",
+        "other": "Boshqa mavzu"
       }
     },
     "errors": {
-      "nameMin": "Please enter your full name",
-      "contactNameMin": "Please enter your name",
-      "phoneInvalid": "Please enter a valid phone / WhatsApp number",
-      "emailInvalid": "Please enter a valid email address",
-      "dateRequired": "Select a date to continue",
-      "dateTooEarly": "Please choose a date from tomorrow onwards",
-      "tourRunsOn": "This tour runs on {days} only",
-      "timeRequired": "Please choose a departure time",
-      "hotelRequired": "Please enter your hotel name",
-      "unknownOption": "Unknown booking option",
-      "guestsRequired": "Please add at least one guest",
-      "messageMin": "Please write at least 10 characters",
-      "checkFields": "Please check the highlighted fields.",
-      "tooManyRequests": "Too many requests. Please try again in a minute.",
-      "tourGone": "This tour no longer exists.",
-      "saveFailed": "We could not save your booking. Please try again or message us on WhatsApp.",
-      "sendFailed": "We could not send your message. Please try again or message us on WhatsApp.",
-      "network": "Network error — please check your connection and try again.",
-      "generic": "Something went wrong. Please try again."
+      "nameMin": "Iltimos, ism va familiyangizni kiriting",
+      "contactNameMin": "Iltimos, ismingizni kiriting",
+      "phoneInvalid": "Iltimos, toʻgʻri telefon / WhatsApp raqamini kiriting",
+      "emailInvalid": "Iltimos, toʻgʻri elektron pochta manzilini kiriting",
+      "dateRequired": "Davom etish uchun sanani tanlang",
+      "dateTooEarly": "Iltimos, ertangi kundan boshlab sana tanlang",
+      "tourRunsOn": "Bu tur faqat shu kunlarda oʻtkaziladi: {days}",
+      "timeRequired": "Iltimos, joʻnash vaqtini tanlang",
+      "hotelRequired": "Iltimos, mehmonxona nomini kiriting",
+      "unknownOption": "Nomaʼlum bron varianti",
+      "guestsRequired": "Iltimos, kamida bitta mehmon qoʻshing",
+      "messageMin": "Iltimos, kamida 10 ta belgi yozing",
+      "checkFields": "Iltimos, belgilangan maydonlarni tekshiring.",
+      "tooManyRequests": "Soʻrovlar juda koʻp. Iltimos, bir daqiqadan soʻng qayta urinib koʻring.",
+      "tourGone": "Bu tur endi mavjud emas.",
+      "saveFailed": "Broningizni saqlab boʻlmadi. Iltimos, qayta urinib koʻring yoki bizga WhatsApp orqali yozing.",
+      "sendFailed": "Xabaringizni yuborib boʻlmadi. Iltimos, qayta urinib koʻring yoki bizga WhatsApp orqali yozing.",
+      "network": "Tarmoq xatosi — internet aloqasini tekshirib, qayta urinib koʻring.",
+      "generic": "Nimadir xato ketdi. Iltimos, qayta urinib koʻring."
     },
     "toast": {
-      "bookingSent": "Booking request sent!",
-      "messageSent": "Message sent — we'll reply soon!"
+      "bookingSent": "Bron soʻrovi yuborildi!",
+      "messageSent": "Xabar yuborildi — tez orada javob beramiz!"
     },
     "contactOptions": {
-      "title": "Get in touch",
-      "sub": "Reach us on your favourite messenger — we're available 24/7.",
-      "quickReply": "Quick reply",
-      "instagramSub": "Follow & DM us",
-      "telegramSub": "Message us on Telegram",
-      "formTitle": "Contact form",
-      "formSub": "We reply by email"
+      "title": "Biz bilan bogʻlaning",
+      "sub": "Sevimli messenjeringiz orqali yozing — biz 24/7 aloqadamiz.",
+      "quickReply": "Tezkor javob",
+      "instagramSub": "Obuna boʻling va bizga yozing",
+      "telegramSub": "Telegram orqali yozing",
+      "formTitle": "Aloqa shakli",
+      "formSub": "Elektron pochta orqali javob beramiz"
     },
     "support": {
-      "chatAria": "Chat with us on WhatsApp",
+      "chatAria": "WhatsApp orqali biz bilan yozishish",
       "help": {
-        "title": "Need help?",
-        "sub": "We're online"
+        "title": "Yordam kerakmi?",
+        "sub": "Biz onlaynmiz"
       },
       "reply": {
-        "title": "We reply fast",
-        "sub": "Message us on WhatsApp"
+        "title": "Tez javob beramiz",
+        "sub": "WhatsApp orqali yozing"
       }
     },
     "whatsapp": {
-      "bookTour": "Hello! I'd like to book a tour.",
-      "planTrip": "Hello! I'd like to plan an Egypt trip",
-      "tourQuestion": "Hello! I have a question about: {name}",
-      "bookingIntro": "Hello! I've just sent booking request {ref}.",
-      "bookingTour": "Tour: {name} ({en})",
-      "bookingDate": "Date: {date}",
-      "bookingDateTime": "Date: {date} at {time}",
-      "bookingHotel": "Hotel: {hotel}",
+      "bookTour": "Assalomu alaykum! Tur bron qilmoqchiman.",
+      "planTrip": "Assalomu alaykum! Misrga sayohatni rejalashtirmoqchiman",
+      "tourQuestion": "Assalomu alaykum! Menda savol bor: {name}",
+      "bookingIntro": "Assalomu alaykum! Hozirgina {ref} raqamli bron soʻrovini yubordim.",
+      "bookingTour": "Tur: {name} ({en})",
+      "bookingDate": "Sana: {date}",
+      "bookingDateTime": "Sana: {date}, vaqt: {time}",
+      "bookingHotel": "Mehmonxona: {hotel}",
       "bookingLine": "{label}: {qty} × {unit} = {subtotal}",
-      "bookingTotal": "Total: {total}",
-      "bookingName": "Name: {name}",
-      "bookingConfirm": "Please confirm availability."
+      "bookingTotal": "Jami: {total}",
+      "bookingName": "Ism: {name}",
+      "bookingConfirm": "Iltimos, joy borligini tasdiqlang."
     },
     "common": {
-      "close": "Close",
-      "language": "Language",
-      "tagline": "Egypt Excursions",
-      "homeAria": "{name} — home"
+      "close": "Yopish",
+      "language": "Til",
+      "tagline": "Misrda ekskursiyalar",
+      "homeAria": "{name} — bosh sahifa"
     },
     "gallery": {
-      "region": "Tour photo gallery",
-      "open": "Open photo {i} of {n} fullscreen",
-      "alt": "{alt} — photo {i}",
-      "prev": "Previous photo",
-      "next": "Next photo",
-      "photo": "Photo {i}",
-      "viewer": "Photo viewer"
+      "region": "Tur fotogalereyasi",
+      "open": "{n} tadan {i}-suratni toʻliq ekranda ochish",
+      "alt": "{alt} — {i}-surat",
+      "prev": "Oldingi surat",
+      "next": "Keyingi surat",
+      "photo": "{i}-surat",
+      "viewer": "Suratlarni koʻrish"
     },
     "included": {
-      "aria": "What's included",
-      "included": "Included in the Price",
-      "excluded": "Not Included",
-      "bring": "What to Bring"
+      "aria": "Narxga nimalar kiritilgan",
+      "included": "Narxga kiritilgan",
+      "excluded": "Kiritilmagan",
+      "bring": "Oʻzingiz bilan oling"
     },
     "notFound": {
-      "title": "This page sailed away",
-      "text": "The page you're looking for doesn't exist or has moved.",
-      "browse": "Browse excursions",
-      "home": "Home"
+      "title": "Bu sahifa suzib ketdi",
+      "text": "Siz qidirayotgan sahifa mavjud emas yoki boshqa joyga koʻchirilgan.",
+      "browse": "Ekskursiyalarni koʻrish",
+      "home": "Bosh sahifa"
     },
     "bestsellers": {
-      "item": "{name} ({i} of {n})",
-      "slide": "Show slide {i}"
+      "item": "{name} ({n} tadan {i}-si)",
+      "slide": "{i}-slaydni koʻrsatish"
     }
   }
 }

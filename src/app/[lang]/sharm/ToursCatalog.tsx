@@ -122,7 +122,7 @@ export function ToursCatalog({ categories, tours }: { categories: CategoryItem[]
               </div>
               <div className={styles.catCount} aria-hidden>
                 {s.items.length}
-                <span> {t('catalog.toursLabel')}</span>
+                <span> {t('catalog.toursLabel', { n: s.items.length })}</span>
               </div>
             </div>
             <div className={styles.grid}>
