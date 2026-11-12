@@ -1,4 +1,5 @@
 import raw from './tours.json';
+import translations from './tours.i18n.json';
 
 import type { Category } from './categories';
 export { CATEGORIES, tourHref, type Category } from './categories';
@@ -76,6 +77,71 @@ export interface Tour {
   requiresDeposit: boolean;
   /** Hidden tours 404 publicly and can't be booked. Missing = visible. */
   active?: boolean;
+  /** Russian / Uzbek texts. Missing fields fall back to the English ones above. */
+  i18n?: Partial<Record<'ru' | 'uz', TourTranslation>>;
+}
+
+/** Translatable tour texts (same shapes as the English fields). */
+export interface TourTranslation {
+  name?: string;
+  title?: string;
+  excerpt?: string;
+  duration?: string;
+  detailDuration?: string;
+  schedule?: string;
+  timeText?: string;
+  highlights?: string[];
+  included?: string[];
+  notIncluded?: string[];
+  bring?: string[];
+  itinerary?: { title: string; text: string }[];
+  faq?: { q: string; a: string }[];
+  infoHeading?: string;
+  destinationCards?: { tag: string; title: string; text: string }[];
+  goodToKnow?: { title: string; text: string }[];
+  /** option key → label */
+  options?: Record<string, string>;
+  metaTitle?: string;
+  metaDescription?: string;
+}
+
+/** Tour with texts in the requested language (English where a translation is missing). */
+export function localizeTour(t: Tour, locale: 'en' | 'ru' | 'uz'): Tour {
+  if (locale === 'en') return t;
+  const tr = t.i18n?.[locale];
+  if (!tr) return t;
+  const pick = <K extends keyof TourTranslation & keyof Tour>(k: K) => {
+    const v = tr[k];
+    return v === undefined || v === '' || (Array.isArray(v) && v.length === 0) ? t[k] : v;
+  };
+  const mergeArr = <T,>(base: T[], loc: Partial<T>[] | undefined) =>
+    loc && loc.length === base.length ? base.map((b, i) => ({ ...b, ...loc[i] })) : base;
+  return {
+    ...t,
+    name: pick('name') as string,
+    title: pick('title') as string,
+    excerpt: pick('excerpt') as string,
+    duration: pick('duration') as string,
+    detailDuration: pick('detailDuration') as string,
+    schedule: pick('schedule') as string,
+    timeText: pick('timeText') as string | null,
+    highlights: pick('highlights') as string[],
+    included: pick('included') as string[],
+    notIncluded: pick('notIncluded') as string[],
+    bring: pick('bring') as string[],
+    itinerary: pick('itinerary') as Tour['itinerary'],
+    faq: pick('faq') as Tour['faq'],
+    infoHeading: pick('infoHeading') as string,
+    destinationCards: mergeArr(t.destinationCards, tr.destinationCards),
+    goodToKnow: mergeArr(t.goodToKnow, tr.goodToKnow),
+    metaTitle: pick('metaTitle') as string,
+    metaDescription: pick('metaDescription') as string,
+    options: t.options.map((o) => ({ ...o, label: tr.options?.[o.key] || o.label })),
+    heroPrices: t.heroPrices.map((h) => {
+      const o = t.options.find((x) => x.label === h.label);
+      return o && tr.options?.[o.key] ? { ...h, label: tr.options[o.key] } : h;
+    }),
+  };
 }
 
 
@@ -84,7 +150,10 @@ export interface Tour {
  * after that the store (editable in /admin/tours) is the source of truth — read tours
  * on the server with `listTours()` / `getTour()` from `@/lib/server/tours`.
  */
-export const seedTours: Tour[] = raw as Tour[];
+export const seedTours: Tour[] = (raw as Tour[]).map((t) => {
+  const tr = (translations as Record<string, Tour['i18n']>)[t.slug];
+  return tr ? { ...t, i18n: tr } : t;
+});
 
 
 export const BESTSELLERS: { slug: string; tag: string; image: string }[] = [

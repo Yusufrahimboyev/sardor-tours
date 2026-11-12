@@ -1,0 +1,55 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0 12px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip,
+.chipOn {
+  padding: 7px 14px;
+  border-radius: 99px;
+  border: 1.5px solid #e2e7ef;
+  background: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  color: #3d4a63;
+  cursor: pointer;
+}
+.chip:hover {
+  border-color: #ff6b00;
+}
+.chipOn {
+  background: #14213d;
+  border-color: #14213d;
+  color: #fff;
+}
+.search {
+  width: 100%;
+  border: 1.5px solid #d9dfea;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 16px;
+  outline: none;
+}
+.search:focus {
+  border-color: #ff6b00;
+}
+.searchRow {
+  display: flex;
+  gap: 8px;
+}
+.searchBtn {
+  flex-shrink: 0;
+  padding: 0 18px;
+  border-radius: 10px;
+  border: none;
+  background: #14213d;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}

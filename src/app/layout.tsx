@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from 'next';
+import { headers } from 'next/headers';
+import { isLocale, LOCALE_TAG } from '@/i18n/config';
 import { Inter, Plus_Jakarta_Sans, Poppins } from 'next/font/google';
 import { site } from '@/data/site';
-import { RevealObserver } from '@/components/RevealObserver';
 import { ToastProvider } from '@/components/Toast';
 import './globals.css';
 
@@ -28,24 +29,21 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#050a1a',
+  themeColor: '#ffffff',
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // Set by middleware for /{locale}/… pages; admin and other routes fall back to English.
+  const h = await headers();
+  const loc = h.get('x-locale');
+  const lang = isLocale(loc) ? LOCALE_TAG[loc] : 'en';
   return (
-    <html lang="en" className={`${jakarta.variable} ${inter.variable} ${poppins.variable}`}>
+    <html lang={lang} className={`${jakarta.variable} ${inter.variable} ${poppins.variable}`}>
       <body>
-        <a href="#main-content" className="skip-link">
-          Skip to content
-        </a>
-        <noscript>
-          <style>{'.reveal{opacity:1!important;transform:none!important}'}</style>
-        </noscript>
         <ToastProvider>{children}</ToastProvider>
-        <RevealObserver />
       </body>
     </html>
   );

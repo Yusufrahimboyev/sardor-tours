@@ -3,7 +3,9 @@ import { NextResponse } from 'next/server';
 import type { ZodError } from 'zod';
 
 const WINDOW_MS = 60_000;
-const hits = new Map<string, number[]>();
+// Shared by every copy of this module (Next.js may load it in several bundles).
+const g = globalThis as typeof globalThis & { __stRateHits?: Map<string, number[]> };
+const hits = (g.__stRateHits ??= new Map<string, number[]>());
 
 /** Small in-memory sliding-window limiter (per server instance). */
 export function rateLimited(req: Request, bucket: string, limit = 10): boolean {

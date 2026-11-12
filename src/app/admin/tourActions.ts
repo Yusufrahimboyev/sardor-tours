@@ -12,8 +12,26 @@ export interface TourFormState {
   saved?: boolean;
 }
 
+const trSchema = z.object({
+  name: z.string().trim().max(120),
+  title: z.string().trim().max(160),
+  excerpt: z.string().trim().max(400),
+  duration: z.string().trim().max(40),
+  timeText: z.string().trim().max(60),
+  highlights: z.array(z.string().trim().max(120)).max(12),
+  included: z.array(z.string().trim().max(200)).max(40),
+  notIncluded: z.array(z.string().trim().max(200)).max(40),
+  bring: z.array(z.string().trim().max(200)).max(40),
+  itinerary: z.array(z.object({ title: z.string().trim().max(120), text: z.string().trim().max(1500) })).max(30),
+  faq: z.array(z.object({ q: z.string().trim().max(200), a: z.string().trim().max(1500) })).max(30),
+  options: z.record(z.string(), z.string().trim().max(80)),
+  metaTitle: z.string().trim().max(160),
+  metaDescription: z.string().trim().max(320),
+});
+
 /** What the tour editor sends (one JSON field). Validated here — the client is never trusted. */
 const editorSchema = z.object({
+  i18n: z.object({ ru: trSchema, uz: trSchema }),
   active: z.boolean(),
   name: z.string().trim().min(3, 'Tur nomini yozing (kamida 3 harf).').max(120),
   slug: z
@@ -95,8 +113,37 @@ function buildTour(d: TourEditorData, base: Tour, id: number): Tour {
   const cover = d.photos[0] ?? base.cardImage;
   const cat = CATEGORIES.find((c) => c.key === d.category)!;
 
+  // Translations: drop empty values so the site falls back to English; keep fields the
+  // simple editor doesn't expose (destination cards, good-to-know, …) from the stored tour.
+  const clean = (tr: TourEditorData['i18n']['ru'], prev: NonNullable<Tour['i18n']>['ru']) => {
+    const nonEmpty = <T,>(a: T[]) => (a.length ? a : undefined);
+    const lists = (a: string[]) => nonEmpty(a.filter(Boolean));
+    const sameDays = JSON.stringify(base.scheduleDays ?? []) === JSON.stringify(days);
+    return {
+      ...prev,
+      // Day-based schedules are rendered from scheduleDays per language; a stale text would contradict them.
+      schedule: sameDays ? prev?.schedule : undefined,
+      name: tr.name || undefined,
+      title: tr.title || undefined,
+      excerpt: tr.excerpt || undefined,
+      duration: tr.duration || undefined,
+      detailDuration: tr.duration || undefined,
+      timeText: tr.timeText || undefined,
+      highlights: lists(tr.highlights),
+      included: lists(tr.included),
+      notIncluded: lists(tr.notIncluded),
+      bring: lists(tr.bring),
+      itinerary: nonEmpty(tr.itinerary.filter((x) => x.title)),
+      faq: nonEmpty(tr.faq.filter((x) => x.q)),
+      options: Object.fromEntries(Object.entries(tr.options).filter(([k, v]) => v && options.some((o) => o.key === k))),
+      metaTitle: tr.metaTitle || undefined,
+      metaDescription: tr.metaDescription || undefined,
+    };
+  };
+
   return {
     ...base,
+    i18n: { ru: clean(d.i18n.ru, base.i18n?.ru), uz: clean(d.i18n.uz, base.i18n?.uz) },
     id,
     active: d.active,
     slug: d.slug,

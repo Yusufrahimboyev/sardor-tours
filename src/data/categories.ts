@@ -9,5 +9,5 @@ export const CATEGORIES: { key: Category; label: string; tag: string }[] = [
 ];
 
 export function tourHref(slug: string): string {
-  return `/en/sharm/${slug}/`;
+  return `/en/tours/${slug}/`;
 }

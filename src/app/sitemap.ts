@@ -1,24 +1,29 @@
 import type { MetadataRoute } from 'next';
 import { site } from '@/data/site';
-import { tourHref } from '@/data/tours';
+import { LOCALES, LOCALE_TAG } from '@/i18n/config';
 import { listTours } from '@/lib/server/tours';
+import { listArticles } from '@/lib/server/articles';
 
+/** Every page in every language, with hreflang alternates. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const tours = await listTours();
   const now = new Date();
-  const pages = ['/', '/en/sharm/', '/en/about-us/', '/en/contact/', '/en/sharm/video/', '/en/terms-and-conditions/'];
-  return [
-    ...pages.map((p) => ({
-      url: `${site.url}${p}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: p === '/' ? 1 : p === '/en/sharm/' ? 0.9 : 0.5,
-    })),
-    ...tours.map((t) => ({
-      url: `${site.url}${tourHref(t.slug)}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    })),
+  const [tours, articles] = await Promise.all([listTours(), listArticles()]);
+  const paths: [string, number][] = [
+    ['/', 1],
+    ['/tours/', 0.9],
+    ['/about/', 0.5],
+    ['/guide/', 0.6],
+    ['/contacts/', 0.5],
+    ['/terms/', 0.3],
+    ...tours.map((t) => [`/tours/${t.slug}/`, 0.8] as [string, number]),
+    ...articles.map((a) => [`/guide/${a.slug}/`, 0.6] as [string, number]),
   ];
+  return paths.flatMap(([p, priority]) =>
+    LOCALES.map((l) => ({
+      url: `${site.url}/${l}${p}`,
+      lastModified: now,
+      priority,
+      alternates: { languages: Object.fromEntries(LOCALES.map((x) => [LOCALE_TAG[x], `${site.url}/${x}${p}`])) },
+    })),
+  );
 }

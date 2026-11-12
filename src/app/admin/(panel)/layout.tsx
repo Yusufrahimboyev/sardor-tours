@@ -29,9 +29,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
             Bronlar {pending > 0 && <b className={styles.count}>{pending}</b>}
           </Link>
           <Link href="/admin/tours/">Turlar</Link>
+          <Link href="/admin/articles/">Maqolalar</Link>
+          <Link href="/admin/reviews/">Sharhlar</Link>
           <Link href="/admin/messages/">
             Xabarlar {unread > 0 && <b className={styles.count}>{unread}</b>}
           </Link>
+          <Link href="/admin/settings/">Sozlamalar</Link>
           <Link href="/" target="_blank">
             Saytni ochish ↗
           </Link>
