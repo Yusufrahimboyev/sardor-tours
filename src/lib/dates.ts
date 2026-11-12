@@ -40,3 +40,8 @@ export function weekdayOf(s: string): number | null {
   const d = parseISODate(s);
   return d ? d.getUTCDay() : null;
 }
+
+export function formatLongDate(value: string): string {
+  const date = parseISODate(value);
+  return date ? new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeZone: 'UTC' }).format(date) : value;
+}

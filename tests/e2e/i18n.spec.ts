@@ -3,6 +3,7 @@ import { expectNoHorizontalScroll, futureDate, trackErrors } from './helpers';
 import en from '../../src/i18n/messages/en.json';
 import uz from '../../src/i18n/messages/uz.json';
 import ru from '../../src/i18n/messages/ru.json';
+import ruTours from '../../src/data/tours.ru.json';
 
 const MSG = { uz, en, ru } as const;
 
@@ -85,18 +86,33 @@ test('full booking in Russian', async ({ page, isMobile }) => {
     ? (await page.getByRole('button', { name: ru.client.booking.book, exact: true }).click(), page.getByRole('dialog'))
     : page.getByRole('complementary', { name: ru.tour.side.aria });
   const b = ru.client.booking;
-  await form.getByRole('button', { name: b.next }).first().click();
-  await expect(form.getByText(ru.client.errors.dateRequired)).toBeVisible();
-  await form.getByLabel(b.selectDate).fill(futureDate());
-  await form.getByRole('button', { name: '10:00 AM' }).click();
-  await form.getByLabel(b.hotelName).fill('Rixos Premium Seagate');
-  await form.getByRole('button', { name: b.next }).first().click();
-  await form.getByRole('button', { name: b.increase.replace('{label}', 'Single quad') }).click();
-  await form.getByRole('button', { name: b.increase.replace('{label}', 'Single quad') }).click();
-  await form.getByRole('button', { name: b.next }).click();
-  await form.getByLabel(b.fullName).fill('Ali Valiyev');
-  await form.getByLabel(b.phone).fill('+998 93 212 99 05');
-  await form.getByRole('button', { name: b.submit }).click();
+  const inc = { name: b.increase.replace('{label}', ruTours['quad-safari-sharm'].options[0].label) };
+  if (isMobile) {
+    await form.getByRole('button', { name: b.next }).first().click();
+    await expect(form.getByText(ru.client.errors.dateRequired)).toBeVisible();
+    await form.getByLabel(b.selectDate).fill(futureDate());
+    await form.getByRole('button', { name: '10:00 AM' }).click();
+    await form.getByLabel(b.hotelName).fill('Rixos Premium Seagate');
+    await form.getByRole('button', { name: b.next }).first().click();
+    await form.getByRole('button', inc).click();
+    await form.getByRole('button', inc).click();
+    await form.getByRole('button', { name: b.next }).click();
+    await form.getByLabel(b.fullName).fill('Ali Valiyev');
+    await form.getByLabel(b.phone).fill('+998 93 212 99 05');
+    await form.getByRole('button', { name: b.submit }).click();
+  } else {
+    // Desktop sidebar: everything on one screen.
+    await form.getByRole('button', { name: b.bookNow }).click();
+    await expect(form.getByText(ru.client.errors.dateRequired)).toBeVisible();
+    await form.getByLabel(b.hotelName).fill('Rixos Premium Seagate');
+    await form.getByLabel(b.selectDate).fill(futureDate());
+    await form.getByRole('button', { name: '10:00 AM' }).click();
+    await form.getByRole('button', inc).click();
+    await form.getByRole('button', inc).click();
+    await form.getByLabel(b.fullName).fill('Ali Valiyev');
+    await form.getByLabel(b.phone).fill('+998 93 212 99 05');
+    await form.getByRole('button', { name: b.bookNow }).click();
+  }
   await expect(page).toHaveURL(/\/ru\/booking\/ST-[A-Z0-9]{6}\/$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'ru');
   const wa = await page.getByRole('link', { name: ru.booking.confirm.whatsappCta }).getAttribute('href');

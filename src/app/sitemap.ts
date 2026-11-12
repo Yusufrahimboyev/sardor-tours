@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { site } from '@/data/site';
 import { tourHref } from '@/data/categories';
-import { tourSlugs } from '@/data/tours';
+import { listTours } from '@/lib/server/tours';
 import { LOCALES } from '@/i18n/config';
 import { alternatesFor, localeHref } from '@/i18n/routing';
 
@@ -10,7 +10,8 @@ function languages(path: string) {
   return Object.fromEntries(Object.entries(langs).map(([k, v]) => [k, `${site.url}${v}`]));
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const tours = await listTours();
   const now = new Date();
   const pages = ['/', '/sharm/', '/about-us/', '/contact/', '/sharm/video/', '/terms-and-conditions/'];
   return LOCALES.flatMap((lang) => [
@@ -21,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: languages(p) },
       priority: p === '/' ? 1 : p === '/sharm/' ? 0.9 : 0.5,
     })),
-    ...tourSlugs.map((slug) => ({
+    ...tours.map(({ slug }) => ({
       url: `${site.url}${tourHref(lang, slug)}`,
       lastModified: now,
       changeFrequency: 'weekly' as const,

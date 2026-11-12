@@ -6,14 +6,19 @@ import { Footer } from '@/components/Footer';
 import { ArrowDown, ArrowRight, WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { destinations, site, whatsappLink } from '@/data/site';
-import { MIN_PRICE, tourSlugs } from '@/data/tours';
+import { minPrice } from '@/data/tours';
+import { listTours } from '@/lib/server/tours';
 import { pageAlternates, pageOpenGraph } from '@/i18n/metadata';
 import { getGeneralFaq, getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
 import { localeHref } from '@/i18n/routing';
 import { formatPrice } from '@/i18n/format';
 import { imageSrc } from '@/lib/images';
+import { BackgroundVideo } from '@/components/BackgroundVideo';
 import { HomeHeader } from './HomeHeader';
+
+/** Put your own clip at public/videos/hero.mp4, or point NEXT_PUBLIC_HERO_VIDEO at a hosted file. */
+const HERO_VIDEO = process.env.NEXT_PUBLIC_HERO_VIDEO || '/videos/hero.mp4';
 import styles from './home.module.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -67,7 +72,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const t = getT(lang);
   const faq = getGeneralFaq(lang);
   const wa = whatsappLink(t('client.whatsapp.planTrip'));
-  const liveCount = tourSlugs.length;
+  const tours = await listTours({ lang });
+  const liveCount = tours.length;
+  const MIN_PRICE = minPrice(tours);
 
   return (
     <div className={styles.page}>
@@ -92,6 +99,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <section className={styles.hero}>
           <div className={styles.heroBg}>
             <Image src={imageSrc('/images/hero1.webp', 1920, 1080)} alt="" fill priority sizes="100vw" />
+            <BackgroundVideo src={HERO_VIDEO} className={styles.heroVideo} />
           </div>
           <div className={`wrap ${styles.heroIn}`}>
             <div className={styles.heroTag}>

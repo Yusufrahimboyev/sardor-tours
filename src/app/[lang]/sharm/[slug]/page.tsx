@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -7,34 +6,45 @@ import { BookingForm } from '@/components/booking/BookingForm';
 import { BookButton, BookingLauncher } from '@/components/booking/BookingLauncher';
 import { FaqList } from '@/components/FaqList';
 import { Footer } from '@/components/Footer';
-import { CalendarIcon, CheckIcon, ClockIcon, ShieldIcon, WhatsAppIcon } from '@/components/icons';
+import { CalendarIcon, CheckIcon, ClockIcon, ShieldIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
+import { ReviewsSection } from '@/components/reviews/ReviewsSection';
 import { SupportWidget } from '@/components/SupportWidget';
 import { site, whatsappLink } from '@/data/site';
 import { tourHref } from '@/data/categories';
-import { allTours, getTour, toSummary, tourSlugs } from '@/data/tours';
+import { toSummary } from '@/data/tours';
+import { getTour, listTours } from '@/lib/server/tours';
 import { formatPrice } from '@/i18n/format';
 import { pageAlternates, pageOpenGraph } from '@/i18n/metadata';
 import { getList, getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
 import { localeHref } from '@/i18n/routing';
 import { imageSrc, usingPlaceholders } from '@/lib/images';
+import { Bestsellers } from '../Bestsellers';
 import { Gallery } from './Gallery';
-import { IncludedTabs } from './IncludedTabs';
+import { IncludedBoxes } from './IncludedBoxes';
+import { TravellerReviews } from './TravellerReviews';
 import styles from './tour.module.css';
 
-// Unknown slugs never reach the page: they 404 through app/global-not-found.tsx (server-rendered).
-export const dynamicParams = false;
+/** Tours added in the admin panel after the build render on first request. */
+export const dynamicParams = true;
 
-export function generateStaticParams() {
-  return tourSlugs.map((slug) => ({ slug }));
+/** Initials shown as the "team online" avatars in the booking panel. */
+const TEAM = [
+  { i: 'S', bg: 'linear-gradient(135deg,#ff8a3d,#e85d04)' },
+  { i: 'Y', bg: 'linear-gradient(135deg,#38bdf8,#0369a1)' },
+  { i: 'M', bg: 'linear-gradient(135deg,#f472b6,#be185d)' },
+];
+
+export async function generateStaticParams() {
+  return (await listTours()).map(({ slug }) => ({ slug }));
 }
 
 type Params = { params: Promise<{ lang: string; slug: string }> };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const lang = await langFrom(params);
-  const tour = getTour((await params).slug, lang);
+  const tour = await getTour((await params).slug, { lang });
   if (!tour) return {};
   const title = tour.metaTitle.replace(/\s*\|\s*Sardor Tours$/, '');
   return {
@@ -52,15 +62,21 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 export default async function TourPage({ params }: Params) {
   const lang = await langFrom(params);
-  const tour = getTour((await params).slug, lang);
+  const tour = await getTour((await params).slug, { lang });
   if (!tour) notFound();
   const t = getT(lang);
   const price = (n: number) => formatPrice(n, lang);
 
   const gallery = usingPlaceholders ? tour.gallery.slice(0, 8) : tour.gallery;
   const oldPrice = tour.heroPrices[0]?.oldPrice ?? tour.bento.oldPrice;
-  const discount = tour.heroPrices[0]?.discount ?? null;
-  const related = tour.related.map((r) => ({ ...r, tour: getTour(r.slug, lang)! }));
+  const discount = tour.heroPrices[0]?.discount ?? tour.bento.badge ?? null;
+  const tours = await listTours({ lang });
+  const bySlug = new Map(tours.map((x) => [x.slug, x]));
+  const related = tour.related.flatMap((r) => {
+    const match = bySlug.get(r.slug);
+    return match ? [{ ...r, tour: match }] : [];
+  });
+  const programNum = (tour.bento.programNum ?? '').split(' ');
   const meta = [tour.schedule, tour.detailDuration, tour.timeText].filter(Boolean) as string[];
 
   return (
@@ -102,11 +118,11 @@ export default async function TourPage({ params }: Params) {
       />
       {tour.faq.length > 0 && <JsonLd data={faqJsonLd(tour.faq, lang)} />}
 
-      <BottomNav tours={allTours(lang).map(toSummary)} withBack placement="top" />
+      <BottomNav tours={tours.map(toSummary)} withBack placement="top" />
 
       <div className={styles.shell}>
         <main id="main-content" tabIndex={-1} className={styles.main}>
-          <nav aria-label={t('tour.breadcrumb.aria')} className={styles.crumbs}>
+          <nav aria-label={t('tour.breadcrumb.aria')} className={`${styles.crumbs} sr-only`}>
             <Link href={localeHref(lang, '/')}>{t('tour.breadcrumb.home')}</Link> <span aria-hidden>/</span> <Link href={localeHref(lang, '/sharm/')}>{t('tour.breadcrumb.sharm')}</Link>{' '}
             <span aria-hidden>/</span> <span aria-current="page">{tour.name}</span>
           </nav>
@@ -124,21 +140,25 @@ export default async function TourPage({ params }: Params) {
               ))}
             </div>
             <div className={styles.prices}>
-              {tour.heroPrices.map((p) => (
-                <div key={p.label} className={styles.priceRow}>
-                  <div className={styles.priceVal}>{price(p.price)}</div>
-                  <div className={styles.priceLbl}>
-                    <b>{p.label}</b>
-                    {p.unit && <small>{p.unit}</small>}
-                  </div>
-                  {p.oldPrice && (
-                    <div className={styles.priceOld}>
-                      <s>{price(p.oldPrice)}</s>
-                      {p.discount && <span>{p.discount}</span>}
+              {tour.heroPrices.map((p, i) => {
+                const old = p.oldPrice ?? (i === 0 ? oldPrice : null);
+                const off = p.discount ?? (i === 0 ? discount : null);
+                return (
+                  <div key={p.label} className={styles.priceRow}>
+                    <div className={styles.priceVal}>{price(p.price)}</div>
+                    <div className={styles.priceLbl}>
+                      <b>{p.label}</b>
+                      {p.unit && <small>{p.unit}</small>}
                     </div>
-                  )}
-                </div>
-              ))}
+                    {old && (
+                      <div className={styles.priceOld}>
+                        <s>{price(old)}</s>
+                        {off && <span>{off}</span>}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
               <div className={styles.payNote}>
                 <ShieldIcon size={16} /> {t('tour.payNote')}
               </div>
@@ -150,6 +170,8 @@ export default async function TourPage({ params }: Params) {
               <li key={h}>{h}</li>
             ))}
           </ul>
+
+          <TravellerReviews lang={lang} />
 
           <section className={styles.block} aria-labelledby="itin-h">
             <div className={styles.kicker}>{t('tour.itinKicker')}</div>
@@ -165,19 +187,22 @@ export default async function TourPage({ params }: Params) {
                   </li>
                 ))}
               </ol>
-              <IncludedTabs included={tour.included} notIncluded={tour.notIncluded} bring={tour.bring} />
+              <IncludedBoxes lang={lang} included={tour.included} notIncluded={tour.notIncluded} bring={tour.bring} />
             </div>
           </section>
+
+          <ReviewsSection lang={lang} className={styles.reviewsSec} />
 
           {tour.faq.length > 0 && (
             <section className={styles.block} aria-labelledby="faq-h">
               <h2 id="faq-h" className={styles.h2}>
                 {t('tour.faq.before')}<span className={styles.accent}>{t('tour.faq.em')}</span>
               </h2>
-              <FaqList items={tour.faq} />
+              <FaqList items={tour.faq} variant="soft" />
             </section>
           )}
 
+          {(tour.destinationCards.length > 0 || tour.goodToKnow.length > 0) && (
           <section className={styles.info} aria-labelledby="info-h">
             <div className={styles.infoEyebrow}>{t('tour.infoEyebrow')}</div>
             <h2 id="info-h" className={styles.h2}>
@@ -186,7 +211,7 @@ export default async function TourPage({ params }: Params) {
             <div className={styles.dirGrid}>
               {tour.destinationCards.map((c) => (
                 <div key={c.title} className={styles.dirCard}>
-                  <span className={`${styles.chip} ${styles[`tone_${c.tone ?? 'blue'}`]}`}>{c.tag}</span>
+                  <span className={`${styles.chip} ${styles.tone_blue}`}>{c.tag}</span>
                   <h3>{c.title}</h3>
                   <p>{c.text}</p>
                 </div>
@@ -195,7 +220,7 @@ export default async function TourPage({ params }: Params) {
             {tour.goodToKnow.length > 0 && (
               <>
                 <div className={`${styles.infoEyebrow} ${styles.green}`}>{t('tour.goodToKnow')}</div>
-                <div className={styles.dirGrid}>
+                <div className={styles.knowGrid}>
                   {tour.goodToKnow.map((c) => (
                     <div key={c.title} className={styles.knowCard}>
                       <h3>{c.title}</h3>
@@ -206,6 +231,7 @@ export default async function TourPage({ params }: Params) {
               </>
             )}
           </section>
+          )}
 
           <section className={styles.wcu} aria-labelledby="wcu-h">
             <div className={styles.wcuTop}>
@@ -227,29 +253,63 @@ export default async function TourPage({ params }: Params) {
                   </div>
                 )}
                 <p className={styles.bcDesc}>{tour.bento.priceText}</p>
+                {tour.bento.oldPrice && tour.bento.oldPrice > tour.priceFrom && (
+                  <div className={styles.bcBar}>
+                    <div className={styles.bcBarHead}>
+                      <span>{t('tour.discount.label')}</span>
+                      <b>
+                        {tour.bento.badge ? `${tour.bento.badge} · ` : ''}
+                        {t('tour.discount.save', { amount: price(tour.bento.oldPrice - tour.priceFrom) })}
+                      </b>
+                    </div>
+                    <div className={styles.bcBarTrack}>
+                      <i style={{ width: `${Math.round((tour.priceFrom / tour.bento.oldPrice) * 100)}%` }} />
+                    </div>
+                    <div className={styles.bcBarEnds}>
+                      <span>{price(0)}</span>
+                      <span>{price(tour.bento.oldPrice)}</span>
+                    </div>
+                  </div>
+                )}
               </div>
+              {tour.bento.programText && (
               <div className={`${styles.bc} ${styles.bcB}`}>
                 <div>
                   <div className={`${styles.bcKicker} ${styles.teal}`}>{tour.bento.programKicker}</div>
-                  <div className={styles.bcNum}>{tour.bento.programNum}</div>
+                  <div className={styles.bcNum}>
+                    {programNum[0]} <span>{programNum.slice(1).join(' ')}</span>
+                  </div>
                   <p className={styles.bcDesc}>{tour.bento.programText}</p>
                 </div>
                 {tour.bento.ring && (
                   <div className={styles.ring} aria-hidden>
-                    <b>{tour.bento.ring}</b>
-                    <small>{tour.bento.ringLabel}</small>
+                    <svg viewBox="0 0 100 100">
+                      <circle cx="50" cy="50" r="45" className={styles.ringTrack} />
+                      <circle cx="50" cy="50" r="45" className={styles.ringFill} />
+                    </svg>
+                    <span>
+                      <b>{tour.bento.ring}</b>
+                      <small>{tour.bento.ringLabel}</small>
+                    </span>
                   </div>
                 )}
               </div>
+              )}
               <div className={`${styles.bc} ${styles.bcC}`}>
-                <div className={styles.bcKicker}>{t('tour.payDay.kicker')}</div>
+                <div className={styles.bcKicker}>{t('tour.reliability.kicker')}</div>
                 <div className={styles.bcBig}>
-                  {t('tour.payDay.big1')}
+                  {site.stats.years}
                   <br />
-                  {t('tour.payDay.big2')}
+                  {t('tour.reliability.years')}
                 </div>
                 <p className={styles.bcDesc}>
-                  {t('tour.payDay.before')}<b>{t('tour.payDay.bold')}</b>{t('tour.payDay.after')}
+                  {site.since && (
+                    <>
+                      {t('tour.reliability.since', { year: site.since })}
+                      <br />
+                    </>
+                  )}
+                  {t('tour.reliability.travellers', { n: site.stats.travellers.replace(/\+$/, '') })}
                 </p>
               </div>
             </div>
@@ -275,52 +335,74 @@ export default async function TourPage({ params }: Params) {
           </section>
 
           <section className={styles.related} aria-labelledby="rel-h">
-            <div className={styles.kicker}>{t('tour.related.kicker')}</div>
-            <h2 id="rel-h" className={styles.h2}>
+            <div className={styles.relKicker}>{t('tour.related.kicker')}</div>
+            <h2 id="rel-h" className={styles.relH}>
               {t('tour.related.title')}
             </h2>
-            <div className={styles.relTrack}>
-              {related.map((r) => (
-                <Link key={r.slug} href={tourHref(lang, r.slug)} className={styles.relCard}>
-                  <Image src={imageSrc(r.tour.cardImage, 700, 900)} alt="" fill sizes="(max-width: 700px) 70vw, 260px" />
-                  <span className={styles.relGrad} />
-                  <span className={styles.relBody}>
-                    <span className={styles.relTag}>{r.tag}</span>
-                    <span className={styles.relName}>{r.name}</span>
-                    <span className={styles.relBtn}>{t('tour.related.details', { price: price(r.tour.priceFrom) })}</span>
-                  </span>
-                </Link>
-              ))}
-            </div>
+            <Bestsellers variant="related" items={related.map((r) => ({ href: tourHref(lang, r.slug), name: r.tour.name, tag: r.tag, image: r.tour.cardImage }))} />
           </section>
         </main>
 
         <aside className={styles.sidebar} aria-label={t('tour.side.aria')}>
           <div className={styles.sideCard}>
             <div className={styles.sideHead}>
-              <div className={styles.sideTitle}>{t('tour.side.title')}</div>
-              <div className={styles.sidePrice}>
-                {t('tour.side.from')} <b>{price(tour.priceFrom)}</b>
-                {oldPrice && <s>{price(oldPrice)}</s>}
-                {discount && <span>{discount}</span>}
+              <div className={styles.sideHeadRow}>
+                <div className={styles.sideTitle}>{t('tour.side.title')}</div>
+                <a
+                  className={styles.sideTeam}
+                  href={whatsappLink(t('client.whatsapp.tourQuestion', { name: tour.name }))}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t('tour.side.askAria')}
+                >
+                  <span className={styles.sideAvs} aria-hidden>
+                    {TEAM.map((m) => (
+                      <span key={m.i} style={{ background: m.bg }}>
+                        {m.i}
+                      </span>
+                    ))}
+                  </span>
+                  <span>
+                    <b>{t('tour.side.teamOnline')}</b>
+                    <small>
+                      <i aria-hidden /> {t('tour.side.fastReplies')}
+                    </small>
+                  </span>
+                </a>
               </div>
-              <a
-                className={styles.sideWa}
-                href={whatsappLink(t('client.whatsapp.tourQuestion', { name: tour.name }))}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <WhatsAppIcon size={14} /> {t('tour.side.ask')}
-              </a>
+              <div className={styles.sidePills}>
+                <span className={styles.pillGreen}>
+                  <i aria-hidden /> {t('tour.side.noPrepay')}
+                </span>
+                <span className={styles.pillOrange}>⚡ {t('tour.side.freeCancel')}</span>
+              </div>
+            </div>
+            <div className={styles.sidePrices}>
+              <span className={styles.sidePricesBar} aria-hidden />
+              {tour.heroPrices.slice(0, 2).map((p, i) => (
+                <div key={p.label} className={styles.sidePriceCol}>
+                  {i > 0 && <span className={styles.sidePriceDiv} aria-hidden />}
+                  <div>
+                    <small>{p.label}</small>
+                    <b>{price(p.price)}</b>
+                  </div>
+                </div>
+              ))}
+              {oldPrice && (
+                <div className={styles.sidePriceOld}>
+                  <s>{price(oldPrice)}</s>
+                  {discount && <span>{discount}</span>}
+                </div>
+              )}
             </div>
             <div className={styles.sideBody}>
-              <BookingForm tour={tour} />
+              <BookingForm tour={tour} single />
             </div>
           </div>
         </aside>
       </div>
 
-      <Footer lang={lang} tone="light" />
+      <Footer lang={lang} stats />
       <BookingLauncher tour={tour} oldPrice={oldPrice} />
       <SupportWidget />
     </div>

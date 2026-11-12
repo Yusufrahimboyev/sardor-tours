@@ -21,8 +21,10 @@ test.describe('tour catalogue', () => {
     expect(page.url()).toContain('cat=safari');
   });
 
+  // The price pills were removed from the UI to match the reference design;
+  // the price filter is still reachable through the URL (?price=…).
   test('price filter narrows results', async ({ page }) => {
-    await page.getByRole('button', { name: '£100+' }).click();
+    await page.goto('/en/sharm/?price=over100');
     const expected = tours.filter((t) => t.priceFrom > 100).length;
     await expect(page.getByTestId('tour-card')).toHaveCount(expected);
     await expect(page.getByTestId('result-count')).toHaveText(`${expected} tours found`);
@@ -31,8 +33,8 @@ test.describe('tour catalogue', () => {
   });
 
   test('filters can be combined into an empty state and reset', async ({ page }) => {
+    await page.goto('/en/sharm/?price=under30');
     await page.getByRole('button', { name: 'Historical' }).click();
-    await page.getByRole('button', { name: 'Under £30' }).click();
     const expected = tours.filter((t) => t.category === 'historical' && t.priceFrom < 30).length;
     await expect(page.getByTestId('tour-card')).toHaveCount(expected);
   });

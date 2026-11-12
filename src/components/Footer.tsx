@@ -13,12 +13,22 @@ interface Props {
   /** home = company links column; destination = categories column. */
   variant?: 'home' | 'destination';
   tone?: 'dark' | 'light';
+  /** Show the small travellers / rating / since figures row (tour pages). */
+  stats?: boolean;
 }
 
-export function Footer({ lang, variant = 'destination', tone = 'dark' }: Props) {
+function shortCount(v: string) {
+  const n = parseInt(v.replace(/\D/g, ''), 10) || 0;
+  return n >= 1000 ? `${Math.round(n / 1000)}K+` : v;
+}
+
+export function Footer({ lang, variant = 'destination', tone = 'dark', stats }: Props) {
   const t = getT(lang);
   return (
-    <footer id="contact" className={`${styles.footer} ${tone === 'light' ? styles.light : ''}`}>
+    <footer
+      id="contact"
+      className={`${styles.footer} ${tone === 'light' ? styles.light : variant === 'destination' ? styles.navy : ''}`}
+    >
       <div className="wrap">
         <div className={styles.top}>
           <div className={styles.brandCol}>
@@ -43,9 +53,9 @@ export function Footer({ lang, variant = 'destination', tone = 'dark' }: Props) 
           <div className={styles.col}>
             <h2>{t('common.footer.destinations')}</h2>
             <Link href={localeHref(lang, '/sharm/')}>{t('common.footer.sharm')}</Link>
-            <p className={styles.dim}>{t('common.footer.hurghadaSoon')}</p>
-            <p className={styles.dim}>{t('common.footer.cairoSoon')}</p>
-            <p className={styles.dim}>{t('common.footer.marsaAlamSoon')}</p>
+            <p className={styles.dim}>{t('common.footer.hurghada')}</p>
+            <p className={styles.dim}>{t('common.footer.cairo')}</p>
+            <p className={styles.dim}>{t('common.footer.marsaAlam')}</p>
           </div>
           {variant === 'home' ? (
             <div className={styles.col}>
@@ -74,6 +84,26 @@ export function Footer({ lang, variant = 'destination', tone = 'dark' }: Props) 
             <Link href={localeHref(lang, '/contact/')}>{t('common.footer.sendMessage')}</Link>
           </div>
         </div>
+        {stats && (
+          <div className={styles.statsWrap}>
+            <div className={styles.stats}>
+              <div>
+                <b>{shortCount(site.stats.travellers)}</b>
+                <span>{t('common.footer.travellers')}</span>
+              </div>
+              <i aria-hidden />
+              <div>
+                <b>{site.stats.rating}★</b>
+                <span>{t('common.footer.rating')}</span>
+              </div>
+              <i aria-hidden />
+              <div>
+                <b>{site.since || site.stats.years}</b>
+                <span>{t(site.since ? 'common.footer.since' : 'common.footer.years')}</span>
+              </div>
+            </div>
+          </div>
+        )}
         <div className={styles.bot}>
           <span>{t('common.footer.rights', { year: new Date().getFullYear(), name: site.name })}</span>
           <Link href={localeHref(lang, '/terms-and-conditions/')} className={styles.terms}>

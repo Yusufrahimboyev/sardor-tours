@@ -1,4 +1,22 @@
 {
-  "*": ["WhatsApp", "Sardor Tours", "Instagram", "Telegram", "VIP", "PADI", "Sea Scope"],
-  "uz": ["Safari", "London", "Berlin", "Istanbul", "Petra", "Dahab"]
+  "*": [
+    "WhatsApp",
+    "Sardor Tours",
+    "Instagram",
+    "Telegram",
+    "VIP",
+    "PADI",
+    "Sea Scope"
+  ],
+  "uz": [
+    "Safari",
+    "London",
+    "Berlin",
+    "Istanbul",
+    "Petra",
+    "Dahab",
+    "Hurghada",
+    "Marsa Alam",
+    "Minsk"
+  ]
 }

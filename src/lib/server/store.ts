@@ -18,6 +18,8 @@ interface Collection<T extends { id: string }> {
   insert(item: T): Promise<T>;
   list(): Promise<T[]>;
   get(id: string): Promise<T | undefined>;
+  /** Shallow-merges `patch` into the item; resolves to the updated item, or undefined if not found. */
+  update(id: string, patch: Partial<Omit<T, 'id'>>): Promise<T | undefined>;
 }
 
 function createJsonCollection<T extends { id: string }>(name: string): Collection<T> {
@@ -40,17 +42,31 @@ function createJsonCollection<T extends { id: string }>(name: string): Collectio
     await fs.rename(tmp, file);
   }
 
+  /** Serialize read-modify-write cycles so concurrent requests can't clobber each other. */
+  function serial<R>(fn: () => Promise<R>): Promise<R> {
+    const run = queue.then(fn);
+    queue = run.catch(() => undefined);
+    return run;
+  }
+
   return {
     insert(item) {
-      // Serialize writes so concurrent requests can't clobber each other.
-      const run = queue.then(async () => {
+      return serial(async () => {
         const items = await read();
         items.push(item);
         await write(items);
         return item;
       });
-      queue = run.catch(() => undefined);
-      return run;
+    },
+    update(id, patch) {
+      return serial(async () => {
+        const items = await read();
+        const i = items.findIndex((x) => x.id === id);
+        if (i === -1) return undefined;
+        items[i] = { ...items[i], ...patch, id };
+        await write(items);
+        return items[i];
+      });
     },
     list: read,
     async get(id) {
@@ -59,10 +75,17 @@ function createJsonCollection<T extends { id: string }>(name: string): Collectio
   };
 }
 
+export const BOOKING_STATUSES = ['pending', 'confirmed', 'cancelled'] as const;
+export type BookingStatus = (typeof BOOKING_STATUSES)[number];
+
 export interface Booking {
   id: string;
   createdAt: string;
-  status: 'pending';
+  status: BookingStatus;
+  /** Set when an admin changes the status or note. */
+  updatedAt?: string;
+  /** Internal note, only visible in the admin panel. */
+  adminNote?: string;
   tourSlug: string;
   tourName: string;
   date: string;
@@ -88,8 +111,8 @@ export interface ContactMessage {
   phone: string;
   topic: string;
   message: string;
-  /** Customer's language; records written before localisation have none (treat as 'en'). */
   lang?: Locale;
+  read?: boolean;
 }
 
 export const bookings = createJsonCollection<Booking>('bookings');

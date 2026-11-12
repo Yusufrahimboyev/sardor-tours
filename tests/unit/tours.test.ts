@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { execSync } from 'node:child_process';
-import { getTour, getTourBase, tourSlugs, tourHref } from '../../src/data/tours';
+import { getTour, getTourBase, tourSlugs, tourHref, localizeTour } from '../../src/data/tours';
 
 const original = JSON.parse(execSync('git show 9545625:src/data/tours.json', { encoding: 'utf8' }));
 
@@ -25,3 +25,14 @@ test('prices identical across languages', () => {
   }
 });
 test('tourHref', () => assert.equal(tourHref('ru', 'quad-safari-sharm'), '/ru/sharm/quad-safari-sharm/'));
+
+
+test('localizeTour preserves edits and translates bundled and common text', () => {
+  for (const slug of tourSlugs) for (const lang of ['uz', 'ru'] as const) {
+    const originalTour = getTour(slug, 'en')!;
+    assert.deepEqual(localizeTour(originalTour, lang), getTour(slug, lang), `${lang}/${slug}`);
+    assert.equal(localizeTour({ ...originalTour, name: 'Custom name' }, lang).name, 'Custom name');
+    const newTour = { ...originalTour, slug: 'new-custom-tour', options: [{ ...originalTour.options[0], label: 'Adults' }] };
+    assert.notEqual(localizeTour(newTour, lang).options[0].label, 'Adults');
+  }
+});

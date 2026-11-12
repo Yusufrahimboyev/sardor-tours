@@ -23,8 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Server-rendered 404 for any URL no route matches, including unknown tour slugs
- * (`dynamicParams = false`). The root layout lives in [lang], so this page renders its own
+ * Server-rendered 404 for any URL no route matches. The root layout lives in [lang], so this page renders its own
  * <html>; the locale comes from the header the middleware sets on prefixed paths.
  */
 export default async function GlobalNotFound() {

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BottomNav } from '@/components/BottomNav';
 import { Brand } from '@/components/Brand';
@@ -7,30 +6,48 @@ import { CountUp } from '@/components/CountUp';
 import { CtaBand } from '@/components/CtaBand';
 import { FaqList } from '@/components/FaqList';
 import { Footer } from '@/components/Footer';
+import { BackgroundVideo } from '@/components/BackgroundVideo';
 import { WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
+import { ReviewsSection } from '@/components/reviews/ReviewsSection';
 import { SupportWidget } from '@/components/SupportWidget';
 import { site, whatsappLink } from '@/data/site';
 import { categoryList, categoryShort, tourHref } from '@/data/categories';
-import { allTours, BESTSELLERS, getTour, MIN_PRICE, toSummary, tourSlugs } from '@/data/tours';
+import { BESTSELLERS, minPrice, toSummary } from '@/data/tours';
+import { listTours } from '@/lib/server/tours';
 import { imageSrc } from '@/lib/images';
 import { formatPrice } from '@/i18n/format';
 import { pageAlternates, pageOpenGraph } from '@/i18n/metadata';
 import { getGeneralFaq, getList, getT } from '@/i18n/messages';
 import { langFrom } from '@/i18n/params';
 import { LanguageSwitcher } from '@/i18n/LanguageSwitcher';
-import { localeHref } from '@/i18n/routing';
 import { Bestsellers } from './Bestsellers';
 import { HeroSearch } from './HeroSearch';
 import { ToursCatalog } from './ToursCatalog';
 import { WorldMap } from './WorldMap';
 import styles from './sharm.module.css';
 
-const count = tourSlugs.length;
+const YEARS = parseInt(site.stats.years, 10) || 0;
+const TRAVELLERS = site.stats.travellers.replace(/\+$/, '');
+const TRAVELLERS_K = Math.round((parseInt(site.stats.travellers.replace(/\D/g, ''), 10) || 0) / 1000);
+
+const HERO_FACES = [
+  { i: 'A', bg: 'linear-gradient(135deg,#ff8a3d,#e85d04)' },
+  { i: 'M', bg: 'linear-gradient(135deg,#38bdf8,#0369a1)' },
+  { i: 'S', bg: 'linear-gradient(135deg,#f472b6,#be185d)' },
+  { i: 'L', bg: 'linear-gradient(135deg,#34d399,#047857)' },
+  { i: 'D', bg: 'linear-gradient(135deg,#a78bfa,#6d28d9)' },
+];
+
+/** Hero background clip. Defaults to the home video; override with NEXT_PUBLIC_SHARM_VIDEO. */
+const HERO_VIDEO = process.env.NEXT_PUBLIC_SHARM_VIDEO || process.env.NEXT_PUBLIC_HERO_VIDEO || '/videos/hero.mp4';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const lang = await langFrom(params);
   const t = getT(lang);
+  const tours = await listTours({ lang });
+  const count = tours.length;
+  const MIN_PRICE = minPrice(tours);
   return {
     title: t('meta.sharm.title', { count }),
     description: t('meta.sharm.description', { price: formatPrice(MIN_PRICE, lang) }),
@@ -58,13 +75,29 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
   const lang = await langFrom(params);
   const t = getT(lang);
   const faq = getGeneralFaq(lang);
+  const tours = await listTours({ lang });
+  const count = tours.length;
+  const MIN_PRICE = minPrice(tours);
   const price = formatPrice(MIN_PRICE, lang);
-  const promise = getList<{ title: string; text: string }[]>(lang, 'sharm.promise.items');
-  const tours = allTours(lang);
+  const since = site.since ? t('sharm.since', { year: site.since }) : '';
+  const fill = (v: string) => v.replace('{years}', site.stats.years).replace('{travellers}', TRAVELLERS);
+  const promise = getList<{ title: string; text: string }[]>(lang, 'sharm.promise.items').map((p) => ({
+    title: fill(p.title),
+    text: `${since && p.text.includes('{travellers}') ? `${since}. ` : ''}${fill(p.text)}`,
+  }));
+  const faces = (
+    <div className={styles.heroAvs} aria-hidden>
+      {HERO_FACES.map((f) => (
+        <span key={f.i} style={{ background: f.bg }}>
+          {f.i}
+        </span>
+      ))}
+    </div>
+  );
   const summaries = tours.map(toSummary);
-  const bestsellers = BESTSELLERS.map((b) => ({
+  const bestsellers = BESTSELLERS.filter((b) => tours.some((tour) => tour.slug === b.slug)).map((b) => ({
     href: tourHref(lang, b.slug),
-    name: getTour(b.slug, lang)!.name,
+    name: tours.find((tour) => tour.slug === b.slug)!.name,
     tag: categoryShort(t, b.category),
     image: b.image,
   }));
@@ -95,14 +128,13 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
       <section className={styles.hero}>
         <div className={styles.heroMedia}>
           <Image src={imageSrc('/images/hero1.webp', 1920, 1080)} alt="" fill priority sizes="100vw" />
+          <BackgroundVideo src={HERO_VIDEO} className={styles.heroVideo} />
         </div>
         <div className={styles.heroScrim} />
         <nav className={styles.heroNav} aria-label={t('client.nav.main')}>
           <Brand />
           <div className={styles.heroNavLinks}>
             <LanguageSwitcher />
-            <Link href={localeHref(lang, '/')}>{t('client.nav.destinations')}</Link>
-            <Link href={localeHref(lang, '/about-us/')}>{t('client.nav.about')}</Link>
             <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.heroNavWa}>
               <WhatsAppIcon size={16} />
               <span>{t('client.nav.whatsapp')}</span>
@@ -121,9 +153,13 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
           <HeroSearch lang={lang} tours={summaries} />
           <div className={styles.heroStats}>
             <div className={styles.heroStat}>
+              {faces}
               <div>
-                <div className={styles.heroStatNum}>{t('sharm.hero.excursions', { n: count })}</div>
-                <div className={styles.heroStatLbl}>{t('sharm.hero.excursionsSub')}</div>
+                <div className={styles.heroStatNum}>
+                  <span className={styles.star}>★</span>
+                  {site.stats.rating}/5
+                </div>
+                <div className={styles.heroStatLbl}>{t('sharm.hero.travellers', { n: site.stats.travellers })}</div>
               </div>
             </div>
             <div className={styles.heroStat}>
@@ -134,12 +170,13 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
             </div>
             <div className={styles.heroStat}>
               <div>
-                <div className={styles.heroStatNum}>{t('sharm.hero.upfront')}</div>
-                <div className={styles.heroStatLbl}>{t('sharm.hero.upfrontSub')}</div>
+                <div className={styles.heroStatNum}>{t('sharm.hero.years', { n: site.stats.years })}</div>
+                <div className={styles.heroStatLbl}>{t('sharm.hero.yearsSub')}</div>
               </div>
             </div>
           </div>
         </div>
+        <span className={styles.heroScroll} aria-hidden />
       </section>
 
       <div className={styles.layout}>
@@ -155,6 +192,8 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
               </div>
             ))}
           </section>
+
+          <ReviewsSection lang={lang} />
 
           <section className={styles.bsSec} aria-labelledby="bs-h">
             <div className={styles.bsHead}>
@@ -181,6 +220,39 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
             <ToursCatalog categories={categoryList(t)} tours={summaries} />
           </section>
 
+          <section className={styles.rtSec} aria-label={t('sharm.ratingsAria')}>
+            <div className={styles.rtBrand}>
+              <div className={styles.rtBrandName}>{site.name}</div>
+              <div className={styles.rtBrandDiv}>
+                <span />
+                {since || t('client.common.tagline')}
+                <span />
+              </div>
+            </div>
+            <div className={styles.rtCard}>
+              <div className={styles.rtScore}>
+                <div className={styles.rtScoreNum}>{site.stats.rating}</div>
+                <div>
+                  <div className={styles.rtTag}>{t('reviews.excellent')}</div>
+                  <div className={styles.rtStars} role="img" aria-label={t('reviews.ratedAria', { rating: site.stats.rating })}>
+                    ★★★★★
+                  </div>
+                  <div className={styles.rtSub}>{t('reviews.trusted', { n: site.stats.travellers })}</div>
+                </div>
+              </div>
+              <div className={styles.rtPlatforms}>
+                {site.reviewPlatforms.map((name) => (
+                  <div key={name} className={styles.rtPlat}>
+                    <div className={styles.rtPlatName}>{name}</div>
+                    <div className={styles.rtStars} aria-hidden>
+                      ★★★★★
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           <section className={styles.bmSec} id="faq" aria-labelledby="faq-h">
             <span className={styles.bmEyebrow}>{t('sharm.faq.eyebrow')}</span>
             <h2 id="faq-h" className={styles.faqH}>
@@ -199,13 +271,13 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
                   <span>{t('sharm.promise.line2')}</span>
                 </h2>
               </div>
-              <div className={`${styles.ghostText} ${styles.ghostFaint}`} aria-hidden>
-                {t('sharm.promise.ghost')}
+              <div className={`${styles.ghostText} ${styles.ghostFaint} ${styles.ghostCenter}`} aria-hidden>
+                {since || t('sharm.promise.ghost')}
               </div>
             </div>
             <ol className={styles.whyList}>
               {promise.map((p, i) => (
-                <li key={p.title} className={`${styles.whyRow} reveal`} style={{ transitionDelay: `${i * 60}ms` }}>
+                <li key={p.title} className={`${styles.whyRow} reveal reveal-left`} style={{ transitionDelay: `${i * 60}ms` }}>
                   <span className={styles.whyN}>{String(i + 1).padStart(2, '0')}</span>
                   <span>
                     <b>{p.title}</b>
@@ -244,33 +316,41 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
           <section className={styles.statsBanner} aria-label={t('sharm.stats.aria')}>
             <div className={styles.stat}>
               <div className={styles.statN}>
+                <CountUp value={YEARS} suffix="+" />
+              </div>
+              <div className={styles.statL}>{t('sharm.stats.years')}</div>
+            </div>
+            <i />
+            <div className={styles.stat}>
+              <div className={styles.statN}>
+                <CountUp value={TRAVELLERS_K} suffix="k+" />
+              </div>
+              <div className={styles.statL}>{t('sharm.stats.travellers')}</div>
+            </div>
+            <i />
+            <div className={styles.stat}>
+              <div className={styles.statN}>
                 <CountUp value={count} suffix="+" />
               </div>
               <div className={styles.statL}>{t('sharm.stats.tours')}</div>
             </div>
-            <i />
-            <div className={styles.stat}>
-              <div className={styles.statN}>
-                <CountUp value={4} />
-              </div>
-              <div className={styles.statL}>{t('sharm.stats.categories')}</div>
-            </div>
-            <i />
-            <div className={styles.stat}>
-              <div className={styles.statN}>
-                £<CountUp value={MIN_PRICE} />
-              </div>
-              <div className={styles.statL}>{t('sharm.stats.from')}</div>
-            </div>
           </section>
 
           <section className={styles.mapSec} aria-labelledby="map-h">
-            <span className={styles.bmEyebrow}>{t('sharm.map.eyebrow')}</span>
+            <span className={styles.mapEyebrow}>{t('sharm.map.eyebrow')}</span>
             <h2 id="map-h" className={`${styles.bmH} ${styles.onDark}`}>
               {t('sharm.map.line1')}
               <br />
               {t('sharm.map.line2before')}<span>{t('sharm.map.line2em')}</span>
             </h2>
+            <div className={styles.faces}>
+              {faces}
+              <div className={styles.facesText}>
+                +{TRAVELLERS}
+                <br />
+                <span>{t('sharm.map.faces')}</span>
+              </div>
+            </div>
             <WorldMap lang={lang} />
           </section>
         </main>
@@ -291,10 +371,7 @@ export default async function SharmPage({ params }: { params: Promise<{ lang: st
                 ),
               )}
             </ul>
-            <a href="#tours" className={styles.bookPanelCta}>
-              {t('sharm.book.cta')}
-            </a>
-            <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.bookPanelWa}>
+            <a href={whatsappLink(t('client.whatsapp.bookTour'))} target="_blank" rel="noopener noreferrer" className={styles.bookPanelCta}>
               <WhatsAppIcon /> {t('client.nav.messageWhatsapp')}
             </a>
             <div className={styles.bookPanelNote}>{t('sharm.book.note')}</div>

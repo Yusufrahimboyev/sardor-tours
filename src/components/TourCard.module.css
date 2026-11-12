@@ -43,24 +43,24 @@
   box-shadow: 0 4px 14px rgba(255, 107, 0, 0.4);
 }
 .body {
-  padding: 20px;
+  padding: 26px 26px 22px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 .name {
-  font-size: 18px;
+  font-size: clamp(18px, 1.7vw, 22px);
   font-weight: 700;
   color: var(--ink);
   line-height: 1.25;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .metas {
   display: flex;
   flex-wrap: wrap;
   gap: 6px 12px;
-  margin-bottom: 10px;
-  font-size: 12.5px;
+  margin-bottom: 12px;
+  font-size: 14px;
   color: var(--mid);
   font-weight: 500;
 }
@@ -103,4 +103,13 @@
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.rating {
+  color: var(--ink);
+  font-weight: 700;
+}
+.rating b {
+  color: #f59e0b;
+  font-weight: 400;
 }

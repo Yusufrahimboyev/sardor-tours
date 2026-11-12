@@ -5,15 +5,19 @@
       "blurb": "Excursions and day trips from Sharm El Sheikh — sea, desert and history. No prepayment, hotel transfer included.",
       "destinations": "Destinations",
       "sharm": "Sharm El Sheikh",
-      "hurghadaSoon": "Hurghada — soon",
-      "cairoSoon": "Cairo — soon",
-      "marsaAlamSoon": "Marsa Alam — soon",
       "company": "Company",
       "categories": "Categories",
       "getInTouch": "Get in touch",
       "whatsapp": "WhatsApp",
       "sendMessage": "Send us a message",
-      "rights": "© {year} {name}. All rights reserved."
+      "rights": "© {year} {name}. All rights reserved.",
+      "hurghada": "Hurghada",
+      "cairo": "Cairo",
+      "marsaAlam": "Marsa Alam",
+      "travellers": "travellers",
+      "rating": "rating",
+      "since": "since",
+      "years": "years"
     },
     "cta": {
       "title": "Ready to discover Egypt?",
@@ -155,12 +159,11 @@
       "title": "Sharm El Sheikh",
       "accent": "Excursions",
       "lede": "Experience the Best of Egypt with Us",
-      "excursions": "{n}+ excursions",
-      "excursionsSub": "sea · desert · history",
       "from": "from {price}",
       "fromSub": "per person",
-      "upfront": "£0 upfront",
-      "upfrontSub": "pay on the day"
+      "travellers": "{n} happy travellers",
+      "years": "{n} years",
+      "yearsSub": "of experience"
     },
     "benefitsAria": "Benefits",
     "benefits": {
@@ -174,7 +177,7 @@
       },
       "instant": {
         "title": "Instant Booking",
-        "text": "Book online in 3 minutes and get a booking reference straight away."
+        "text": "Fast WhatsApp confirmation in just a few minutes."
       },
       "transfer": {
         "title": "Free Hotel Transfer",
@@ -223,7 +226,7 @@
           "text": "Free pickup and drop-off from any hotel"
         },
         {
-          "title": "Fast replies",
+          "title": "24/7 support",
           "text": "A real person on WhatsApp, in English"
         },
         {
@@ -231,8 +234,12 @@
           "text": "Professionals who love every route they lead"
         },
         {
-          "title": "Free cancellation",
-          "text": "Cancel free of charge up to 24 hours before the tour"
+          "title": "{years} years of experience",
+          "text": "Over {travellers} happy travellers."
+        },
+        {
+          "title": "Real offices",
+          "text": "In Sharm El Sheikh — real people"
         }
       ]
     },
@@ -257,8 +264,8 @@
     "stats": {
       "aria": "Key figures",
       "tours": "tours",
-      "categories": "categories",
-      "from": "from"
+      "years": "years",
+      "travellers": "travellers"
     },
     "map": {
       "eyebrow": "geography",
@@ -275,8 +282,16 @@
         "warsaw": "Warsaw",
         "istanbul": "Istanbul",
         "moscow": "Moscow",
-        "riyadh": "Riyadh"
-      }
+        "almaty": "Almaty",
+        "kyiv": "Kyiv",
+        "minsk": "Minsk"
+      },
+      "destinations": {
+        "diving": "Diving",
+        "safari": "Safari",
+        "pyramids": "Pyramids"
+      },
+      "faces": "travellers with us"
     },
     "book": {
       "aria": "Book a tour",
@@ -291,9 +306,10 @@
         "English-speaking guides",
         "Insurance included"
       ],
-      "cta": "Choose your tour",
-      "note": "Instant booking reference. We reply fast."
-    }
+      "note": "Instant confirmation. We reply fast."
+    },
+    "since": "Since {year}",
+    "ratingsAria": "Ratings"
   },
   "tour": {
     "breadcrumb": {
@@ -316,14 +332,6 @@
       "em": "us?"
     },
     "priceKicker": "Tour price",
-    "payDay": {
-      "kicker": "Pay on the day",
-      "big1": "£0",
-      "big2": "upfront",
-      "before": "Reserve online in 3 minutes. ",
-      "bold": "Hotel transfer included",
-      "after": ", free cancellation up to 24 hours before."
-    },
     "cta": {
       "heading": "Ready for an unforgettable day?",
       "book": "Book this tour",
@@ -335,18 +343,30 @@
     },
     "related": {
       "kicker": "Other tours",
-      "title": "You might also like",
-      "details": "Details · from {price}"
+      "title": "You might also like"
     },
     "side": {
       "aria": "Book this tour",
       "title": "Book your spot",
-      "from": "from",
-      "ask": "Questions? Ask us on WhatsApp"
+      "teamOnline": "Team online",
+      "fastReplies": "Fast replies",
+      "askAria": "Ask our team on WhatsApp",
+      "noPrepay": "No prepayment",
+      "freeCancel": "Free cancellation 24h"
     },
     "jsonLd": {
       "home": "Home",
       "sharm": "Sharm El Sheikh"
+    },
+    "discount": {
+      "label": "Your discount",
+      "save": "save {amount}"
+    },
+    "reliability": {
+      "kicker": "Reliability",
+      "years": "years",
+      "since": "In business since {year}.",
+      "travellers": "More than {n} travellers in Egypt."
     }
   },
   "booking": {
@@ -657,7 +677,10 @@
       "noPrepay": "No prepayment",
       "book": "Book",
       "dialogLabel": "Book: {name}",
-      "sheetTitle": "Book in 3 minutes"
+      "sheetTitle": "Book in 3 minutes",
+      "yourDetails": "Your details",
+      "whatsappNumber": "WhatsApp number",
+      "bookNow": "Book now"
     },
     "contactForm": {
       "name": "Your name",
@@ -765,7 +788,31 @@
     },
     "bestsellers": {
       "item": "{name} ({i} of {n})",
-      "slide": "Show slide {i}"
+      "slide": "Show slide {i}",
+      "details": "Details"
+    },
+    "reviews": {
+      "readMore": "Read more",
+      "showLess": "Show less",
+      "prev": "Previous reviews",
+      "next": "Next reviews",
+      "starsAria": "{n} out of 5 stars",
+      "google": "Google review",
+      "tripadvisor": "Tripadvisor review"
     }
+  },
+  "reviews": {
+    "eyebrow": "Reviews",
+    "titleBefore": "What they ",
+    "titleEm": "say",
+    "trusted": "Trusted by {n} travellers",
+    "ratedOn": "Highly rated on {platforms}",
+    "average": "{rating}/5 average rating",
+    "perks": "No prepayment · Free hotel transfer",
+    "excellent": "Excellent",
+    "ratedAria": "Rated {rating} out of 5",
+    "basedOn": "Based on {n} reviews",
+    "travellerReviews": "Traveller reviews",
+    "readAll": "Read all reviews ›"
   }
 }

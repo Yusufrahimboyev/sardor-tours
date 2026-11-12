@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { tourHref } from '@/data/categories';
+import { site } from '@/data/site';
 import type { TourSummary } from '@/data/tours';
 import { useLang, useT } from '@/i18n/client';
 import { formatPrice } from '@/i18n/format';
@@ -35,6 +36,9 @@ export function TourCard({ tour, priority }: { tour: TourSummary; priority?: boo
           <span>
             <CalendarIcon />
             {tour.schedule}
+          </span>
+          <span className={styles.rating}>
+            <b aria-hidden>★</b> {site.stats.rating}
           </span>
         </div>
         <div className={styles.foot}>

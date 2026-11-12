@@ -66,3 +66,42 @@
   line-height: 1.7;
   color: var(--mid);
 }
+
+/* Tour-page look: tinted cards, grey plus that turns green when open. */
+.soft {
+  gap: 12px;
+}
+.soft .item {
+  background: #f8faff;
+  box-shadow: 0 2px 8px rgba(0, 20, 80, 0.04);
+  transition: all 0.25s;
+}
+.soft .item[open] {
+  background: #fff;
+  border-color: rgba(29, 184, 138, 0.4);
+  box-shadow: 0 4px 20px rgba(29, 184, 138, 0.08);
+}
+.soft .item summary {
+  font-size: 15px;
+}
+.soft .item[open] summary {
+  color: var(--ink);
+}
+.soft .ic::before,
+.soft .ic::after {
+  background: #c0c8d8;
+  width: 1.5px;
+}
+.soft .ic::before {
+  width: 14px;
+  height: 1.5px;
+}
+.soft .item[open] .ic::before,
+.soft .item[open] .ic::after {
+  background: #1db88a;
+}
+.soft .a {
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 500;
+}

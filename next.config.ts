@@ -6,13 +6,12 @@ const nextConfig: NextConfig = {
   // The root layout is app/[lang]/layout.tsx, so unmatched URLs need app/global-not-found.tsx.
   experimental: { globalNotFound: true },
   images: {
-    // Placeholder photos (picsum) are already sized by URL and served from a CDN, so they
+    // Placeholder photos (Unsplash) are already sized by URL and served from a CDN, so they
     // bypass the optimizer. Real photos (NEXT_PUBLIC_IMAGE_BASE set) go through it.
     unoptimized: !process.env.NEXT_PUBLIC_IMAGE_BASE,
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
-      { protocol: 'https', hostname: 'picsum.photos' },
-      { protocol: 'https', hostname: 'fastly.picsum.photos' },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'www.sharmtours.org' },
     ],
   },

@@ -5,15 +5,19 @@
       "blurb": "Sharm-ash-Shayxdan ekskursiyalar va bir kunlik sayohatlar — dengiz, choʻl va tarix. Oldindan toʻlovsiz, mehmonxonadan transfer narxga kiritilgan.",
       "destinations": "Yoʻnalishlar",
       "sharm": "Sharm-ash-Shayx",
-      "hurghadaSoon": "Hurgada — tez orada",
-      "cairoSoon": "Qohira — tez orada",
-      "marsaAlamSoon": "Marsa-Alam — tez orada",
       "company": "Kompaniya",
       "categories": "Toifalar",
       "getInTouch": "Biz bilan bogʻlaning",
       "whatsapp": "WhatsApp",
       "sendMessage": "Bizga xabar yuboring",
-      "rights": "© {year} {name}. Barcha huquqlar himoyalangan."
+      "rights": "© {year} {name}. Barcha huquqlar himoyalangan.",
+      "hurghada": "Hurghada",
+      "cairo": "Qohira",
+      "marsaAlam": "Marsa Alam",
+      "travellers": "sayohatchilar",
+      "rating": "baho",
+      "since": "yildan beri",
+      "years": "yil"
     },
     "cta": {
       "title": "Misrni kashf etishga tayyormisiz?",
@@ -155,12 +159,11 @@
       "title": "Sharm-ash-Shayx",
       "accent": "Ekskursiyalar",
       "lede": "Misrning eng yaxshi tomonlarini biz bilan kashf eting",
-      "excursions": "{n}+ ekskursiya",
-      "excursionsSub": "dengiz · choʻl · tarix",
       "from": "{price} dan",
       "fromSub": "bir kishi uchun",
-      "upfront": "£0 oldindan",
-      "upfrontSub": "tur kuni toʻlov"
+      "travellers": "{n} mamnun sayohatchi",
+      "years": "{n} yil",
+      "yearsSub": "tajriba"
     },
     "benefitsAria": "Afzalliklar",
     "benefits": {
@@ -174,7 +177,7 @@
       },
       "instant": {
         "title": "Tezkor bron",
-        "text": "3 daqiqada onlayn bron qiling va bron raqamini darhol oling."
+        "text": "WhatsApp orqali bir necha daqiqada tasdiqlaymiz."
       },
       "transfer": {
         "title": "Bepul transfer",
@@ -223,7 +226,7 @@
           "text": "Istalgan mehmonxonadan bepul olib ketish va qaytarish"
         },
         {
-          "title": "Tezkor javoblar",
+          "title": "24/7 yordam",
           "text": "WhatsApp orqali jonli inson, ingliz tilida"
         },
         {
@@ -231,8 +234,12 @@
           "text": "Har bir yoʻnalishini sevadigan mutaxassislar"
         },
         {
-          "title": "Bepul bekor qilish",
-          "text": "Turdan 24 soatdan koʻproq vaqt oldin bepul bekor qilish"
+          "title": "{years} yillik tajriba",
+          "text": "{travellers} dan ortiq mamnun sayohatchi."
+        },
+        {
+          "title": "Haqiqiy ofislar",
+          "text": "Sharm-ash-Shayxda — haqiqiy insonlar"
         }
       ]
     },
@@ -257,8 +264,8 @@
     "stats": {
       "aria": "Asosiy raqamlar",
       "tours": "tur",
-      "categories": "toifa",
-      "from": "eng arzon narx"
+      "years": "yil",
+      "travellers": "sayohatchi"
     },
     "map": {
       "eyebrow": "geografiya",
@@ -275,8 +282,16 @@
         "warsaw": "Varshava",
         "istanbul": "Istanbul",
         "moscow": "Moskva",
-        "riyadh": "Ar-Riyod"
-      }
+        "almaty": "Olmaota",
+        "kyiv": "Kiyev",
+        "minsk": "Minsk"
+      },
+      "destinations": {
+        "diving": "Dayving",
+        "safari": "Safari",
+        "pyramids": "Piramidalar"
+      },
+      "faces": "sayohatchi biz bilan"
     },
     "book": {
       "aria": "Turni bron qilish",
@@ -291,9 +306,10 @@
         "Ingliz tilida soʻzlashuvchi gidlar",
         "Sugʻurta kiritilgan"
       ],
-      "cta": "Turni tanlang",
-      "note": "Bron raqami darhol beriladi. Tez javob beramiz."
-    }
+      "note": "Darhol tasdiqlaymiz. Tez javob beramiz."
+    },
+    "since": "{year}-yildan beri",
+    "ratingsAria": "Reytinglar"
   },
   "tour": {
     "breadcrumb": {
@@ -316,14 +332,6 @@
       "em": "biz?"
     },
     "priceKicker": "Tur narxi",
-    "payDay": {
-      "kicker": "Tur kuni toʻlov",
-      "big1": "£0",
-      "big2": "oldindan",
-      "before": "3 daqiqada onlayn bron qiling. ",
-      "bold": "Mehmonxonadan transfer kiritilgan",
-      "after": ", boshlanishidan 24 soatdan koʻproq vaqt oldin bepul bekor qilish."
-    },
     "cta": {
       "heading": "Unutilmas kunga tayyormisiz?",
       "book": "Ushbu turni bron qilish",
@@ -335,18 +343,30 @@
     },
     "related": {
       "kicker": "Boshqa turlar",
-      "title": "Sizga bular ham yoqishi mumkin",
-      "details": "Batafsil · {price} dan"
+      "title": "Sizga bular ham yoqishi mumkin"
     },
     "side": {
       "aria": "Ushbu turni bron qilish",
       "title": "Joyingizni band qiling",
-      "from": "narxi",
-      "ask": "Savollar bormi? WhatsApp orqali soʻrang"
+      "teamOnline": "Jamoa onlayn",
+      "fastReplies": "Tez javob beramiz",
+      "askAria": "Jamoamizdan WhatsApp orqali soʻrang",
+      "noPrepay": "Oldindan toʻlovsiz",
+      "freeCancel": "Bepul bekor qilish · 24 soat"
     },
     "jsonLd": {
       "home": "Bosh sahifa",
       "sharm": "Sharm-ash-Shayx"
+    },
+    "discount": {
+      "label": "Sizning chegirmangiz",
+      "save": "{amount} tejaysiz"
+    },
+    "reliability": {
+      "kicker": "Ishonchlilik",
+      "years": "yil",
+      "since": "{year}-yildan beri ishlaymiz.",
+      "travellers": "Misrda {n} dan ortiq sayohatchi."
     }
   },
   "booking": {
@@ -657,7 +677,10 @@
       "noPrepay": "Oldindan toʻlovsiz",
       "book": "Bron qilish",
       "dialogLabel": "Bron qilish: {name}",
-      "sheetTitle": "3 daqiqada bron qiling"
+      "sheetTitle": "3 daqiqada bron qiling",
+      "yourDetails": "Maʼlumotlaringiz",
+      "whatsappNumber": "WhatsApp raqamingiz",
+      "bookNow": "Band qilish"
     },
     "contactForm": {
       "name": "Ismingiz",
@@ -765,7 +788,31 @@
     },
     "bestsellers": {
       "item": "{name} ({n} tadan {i}-si)",
-      "slide": "{i}-slaydni koʻrsatish"
+      "slide": "{i}-slaydni koʻrsatish",
+      "details": "Batafsil"
+    },
+    "reviews": {
+      "readMore": "Batafsil",
+      "showLess": "Yopish",
+      "prev": "Oldingi sharhlar",
+      "next": "Keyingi sharhlar",
+      "starsAria": "5 yulduzdan {n}",
+      "google": "Google sharhi",
+      "tripadvisor": "Tripadvisor sharhi"
     }
+  },
+  "reviews": {
+    "eyebrow": "Sharhlar",
+    "titleBefore": "Mijozlarimiz ",
+    "titleEm": "fikri",
+    "trusted": "Bizga {n} sayohatchi ishonadi",
+    "ratedOn": "{platforms} da yuqori baholangan",
+    "average": "Oʻrtacha baho {rating}/5",
+    "perks": "Oldindan toʻlovsiz · Mehmonxonadan bepul transfer",
+    "excellent": "Aʼlo",
+    "ratedAria": "Baho: 5 dan {rating}",
+    "basedOn": "{n} ta sharh asosida",
+    "travellerReviews": "Sayohatchilar sharhlari",
+    "readAll": "Barcha sharhlarni oʻqish ›"
   }
 }

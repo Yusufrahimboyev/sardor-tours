@@ -6,7 +6,7 @@ import { CheckIcon, WhatsAppIcon } from '@/components/icons';
 import { SiteHeader } from '@/components/SiteHeader';
 import { whatsappLink } from '@/data/site';
 import { tourHref } from '@/data/categories';
-import { getTour } from '@/data/tours';
+import { getTour } from '@/lib/server/tours';
 import type { Locale } from '@/i18n/config';
 import { formatDate, formatPrice } from '@/i18n/format';
 import { getT } from '@/i18n/messages';
@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return { title: getT(lang)('booking.confirm.metaTitle'), robots: { index: false, follow: false } };
 }
 
-function whatsappBookingMessage(b: Booking, lang: Locale, t: T): string {
-  const tour = getTour(b.tourSlug, lang);
+async function whatsappBookingMessage(b: Booking, lang: Locale, t: T): Promise<string> {
+  const tour = await getTour(b.tourSlug, { lang });
   const labels = new Map((tour?.options ?? []).map((o) => [o.key, o.label]));
   const lines = [
     t('client.whatsapp.bookingIntro', { ref: b.id }),
@@ -59,7 +59,7 @@ export default async function BookingPage({ params }: { params: Promise<{ lang: 
   if (!b) notFound();
 
   const t = getT(lang);
-  const tour = getTour(b.tourSlug, lang);
+  const tour = await getTour(b.tourSlug, { lang });
   const tourName = tour?.name ?? b.tourName;
   const labels = new Map((tour?.options ?? []).map((o) => [o.key, o.label]));
   const lineLabel = (l: Booking['lines'][number]) => labels.get(l.key) ?? l.label;
@@ -118,7 +118,7 @@ export default async function BookingPage({ params }: { params: Promise<{ lang: 
           </dl>
 
           <div className={styles.actions}>
-            <a href={whatsappLink(whatsappBookingMessage(b, lang, t))} target="_blank" rel="noopener noreferrer" className="btn-wa">
+            <a href={whatsappLink(await whatsappBookingMessage(b, lang, t))} target="_blank" rel="noopener noreferrer" className="btn-wa">
               <WhatsAppIcon /> {t('booking.confirm.whatsappCta')}
             </a>
             <Link href={localeHref(lang, '/sharm/')} className={styles.secondary}>

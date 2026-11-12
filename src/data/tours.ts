@@ -6,7 +6,7 @@ import ruText from './tours.ru.json';
 
 import type { Category } from './categories';
 
-export { CATEGORY_KEYS, categoryList, categoryShort, tourHref, type Category } from './categories';
+export { CATEGORIES, CATEGORY_KEYS, categoryList, categoryShort, tourHref, type Category } from './categories';
 
 export interface TourOptionBase {
   key: string;
@@ -52,6 +52,8 @@ export interface TourBase {
   options: TourOptionBase[];
   bento: { oldPrice: number | null };
   requiresDeposit: boolean;
+  /** Hidden tours 404 publicly and can't be booked. Missing = visible. */
+  active?: boolean;
 }
 
 /** Translatable fields, one record per language and slug. */
@@ -181,5 +183,74 @@ export function toSummary(t: Tour): TourSummary {
   };
 }
 
-export const MIN_PRICE = Math.min(...baseTours.map((t) => t.priceFrom));
+export function minPrice(list: Pick<Tour, 'priceFrom'>[]): number {
+  return list.length ? Math.min(...list.map((t) => t.priceFrom)) : 0;
+}
+
+/**
+ * The bundled catalogue in English. It seeds the tour store the first time the site runs;
+ * after that the store (editable in /admin/tours) is the source of truth: read tours on the
+ * server with `listTours()` / `getTour()` from `@/lib/server/tours`.
+ */
+export const seedTours: Tour[] = allTours('en');
+
+/** Keys whose values are identifiers or style tokens, never translated. */
+const NOT_TEXT = new Set(['slug', 'key', 'kind', 'group', 'tone', 'src']);
+/** Tour fields that hold visitor-facing text (everything in `TourText`). */
+const TEXT_FIELDS = [
+  'name', 'title', 'categoryLabel', 'duration', 'detailDuration', 'schedule', 'timeText', 'priceUnit', 'badge',
+  'excerpt', 'metaTitle', 'metaDescription', 'heroPrices', 'highlights', 'itinerary', 'included', 'notIncluded',
+  'bring', 'faq', 'infoHeading', 'destinationCards', 'goodToKnow', 'bento', 'cta', 'related', 'options',
+] as const satisfies readonly (keyof Tour)[];
+
+function collect(en: unknown, loc: unknown, into: Map<string, string>): void {
+  if (typeof en === 'string') {
+    if (typeof loc === 'string' && en && !into.has(en)) into.set(en, loc);
+  } else if (Array.isArray(en)) {
+    if (Array.isArray(loc)) en.forEach((v, i) => collect(v, loc[i], into));
+  } else if (en && typeof en === 'object' && loc && typeof loc === 'object') {
+    for (const [k, v] of Object.entries(en)) if (!NOT_TEXT.has(k)) collect(v, (loc as Record<string, unknown>)[k], into);
+  }
+}
+
+const phraseCache = new Map<string, Map<string, string>>();
+
+/** English phrase → translation, from one tour's text (or from every tour when `slug` is null). */
+function phrases(lang: Locale, slug: string | null): Map<string, string> {
+  const key = `${lang}/${slug ?? '*'}`;
+  let m = phraseCache.get(key);
+  if (!m) {
+    m = new Map();
+    for (const s of slug ? [slug] : tourSlugs) collect(textByLang.en[s], textByLang[lang]?.[s], m);
+    phraseCache.set(key, m);
+  }
+  return m;
+}
+
+function translate(v: unknown, en: unknown, loc: unknown, own: Map<string, string>, all: Map<string, string>): unknown {
+  if (typeof v === 'string') return v === en && typeof loc === 'string' ? loc : own.get(v) ?? all.get(v) ?? v;
+  if (Array.isArray(v)) return v.map((x, i) => translate(x, Array.isArray(en) ? en[i] : undefined, Array.isArray(loc) ? loc[i] : undefined, own, all));
+  if (v && typeof v === 'object') {
+    const source = en && typeof en === 'object' ? en as Record<string, unknown> : {};
+    const translated = loc && typeof loc === 'object' ? loc as Record<string, unknown> : {};
+    return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, NOT_TEXT.has(k) ? x : translate(x, source[k], translated[k], own, all)]));
+  }
+  return v;
+}
+
+/**
+ * Translates a tour from the store (kept in English, editable in the admin panel) into `lang`.
+ * Every phrase that still matches the bundled English text is swapped for its bundled
+ * translation; text an admin has rewritten or added stays as written until it is translated.
+ */
+export function localizeTour(tour: Tour, lang: Locale): Tour {
+  if (lang === 'en') return tour;
+  const own = phrases(lang, tourSlugs.includes(tour.slug) ? tour.slug : null);
+  const all = phrases(lang, null);
+  const out: Record<string, unknown> = { ...tour };
+  const english = getTour(tour.slug, 'en');
+  const translated = getTour(tour.slug, lang);
+  for (const f of TEXT_FIELDS) out[f] = translate(tour[f], english?.[f], translated?.[f], own, all);
+  return out as unknown as Tour;
+}
 

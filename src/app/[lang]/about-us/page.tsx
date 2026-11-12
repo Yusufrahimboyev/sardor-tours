@@ -8,7 +8,8 @@ import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { SiteHeader } from '@/components/SiteHeader';
 import { site, whatsappLink } from '@/data/site';
 import { CATEGORY_KEYS } from '@/data/categories';
-import { MIN_PRICE, tourSlugs } from '@/data/tours';
+import { minPrice } from '@/data/tours';
+import { listTours } from '@/lib/server/tours';
 import { imageSrc } from '@/lib/images';
 import { formatPrice } from '@/i18n/format';
 import { pageAlternates, pageOpenGraph } from '@/i18n/metadata';
@@ -38,7 +39,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   const t = getT(lang);
   const faq = getGeneralFaq(lang);
   const reasons = getList<{ title: string; text: string }[]>(lang, 'about.reasons');
-  const price = formatPrice(MIN_PRICE, lang);
+  const tours = await listTours({ lang });
+  const price = formatPrice(minPrice(tours), lang);
   return (
     <div className={styles.page}>
       <JsonLd data={faqJsonLd(faq, lang)} />
@@ -85,7 +87,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                   <span className={styles.hcIc}>{ic}</span>
                   <span>
                     <small>{t(`about.cards.${k as string}.label`)}</small>
-                    <b>{t(`about.cards.${k as string}.value`, { n: tourSlugs.length, price })}</b>
+                    <b>{t(`about.cards.${k as string}.value`, { n: tours.length, price })}</b>
                   </span>
                 </div>
               ))}
@@ -96,7 +98,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         <div className={styles.statsWrap}>
           <div className={styles.stats}>
             {[
-              ['excursions', `${tourSlugs.length}+`],
+              ['excursions', `${tours.length}+`],
               ['categories', String(CATEGORY_KEYS.length)],
               ['pricesFrom', price],
               ['prepayment', formatPrice(0, lang)],

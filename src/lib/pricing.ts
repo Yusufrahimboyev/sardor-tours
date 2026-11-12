@@ -42,6 +42,10 @@ export function quote(tour: { options: (TourOptionBase & { label?: string })[] }
   return { lines, total: lines.reduce((s, l) => s + l.subtotal, 0), guestUnits };
 }
 
+export function formatGBP(n: number): string {
+  return `£${n.toLocaleString('en-GB')}`;
+}
+
 /** `t` is the client translator (keys relative to `client`). */
 export function optionPriceLabel(o: TourOption, t: T, lang: Locale): string {
   if (o.free || o.price === 0) return o.included ? t('booking.included') : t('booking.free');

@@ -79,19 +79,6 @@ export function ToursCatalog({ categories, tours }: { categories: CategoryItem[]
             </button>
           ))}
         </div>
-        <div className={styles.filterRow} role="group" aria-label={t('catalog.filterPrice')}>
-          {PRICE_BANDS.map((b) => (
-            <button
-              key={b.key}
-              type="button"
-              className={`${styles.pill} ${styles.pillSm} ${price === b.key ? styles.onInk : ''}`}
-              aria-pressed={price === b.key}
-              onClick={() => setPrice(b.key)}
-            >
-              {t(`catalog.price.${b.key}`)}
-            </button>
-          ))}
-        </div>
         {isFiltered && (
           <p className={styles.resultLine} aria-live="polite">
             <span data-testid="result-count">

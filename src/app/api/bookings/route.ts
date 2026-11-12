@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getTour, getTourBase } from '@/data/tours';
+import { getTour } from '@/lib/server/tours';
 import { quote } from '@/lib/pricing';
 import { weekdayNames } from '@/i18n/format';
 import { getT } from '@/i18n/messages';
@@ -21,9 +21,8 @@ export async function POST(req: Request) {
   if (!parsed.success) return jsonError(400, err('checkFields'), zodFieldErrors(parsed.error, lang));
   const input = parsed.data;
 
-  const tour = getTourBase(input.tourSlug);
-  const tourEn = getTour(input.tourSlug, 'en');
-  if (!tour || !tourEn) return jsonError(404, err('tourGone'));
+  const tour = await getTour(input.tourSlug);
+  if (!tour) return jsonError(404, err('tourGone'));
 
   const issues = bookingIssues(tour, input);
   if (issues.length) {
@@ -35,13 +34,13 @@ export async function POST(req: Request) {
   }
 
   const q = quote(tour, input.qty);
-  const labels = new Map(tourEn.options.map((o) => [o.key, o.label]));
+  const labels = new Map(tour.options.map((o) => [o.key, o.label]));
   const booking: Booking = {
     id: newReference(),
     createdAt: new Date().toISOString(),
     status: 'pending',
     tourSlug: tour.slug,
-    tourName: tourEn.name,
+    tourName: tour.name,
     date: input.date,
     time: input.time,
     hotel: input.hotel,

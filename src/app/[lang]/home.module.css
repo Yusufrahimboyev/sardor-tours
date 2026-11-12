@@ -116,6 +116,18 @@
   object-fit: cover;
   animation: slowzoom 18s ease-in-out infinite alternate;
 }
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.heroVideo[data-ready] {
+  opacity: 1;
+}
 @keyframes slowzoom {
   from {
     transform: scale(1);

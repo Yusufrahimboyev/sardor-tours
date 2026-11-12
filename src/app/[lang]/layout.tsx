@@ -25,7 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   };
 }
 
-export const dynamicParams = false;
+// No `dynamicParams = false` here: after the admin panel revalidates the site, Next refuses to
+// regenerate prerendered pages under a closed param set. `langFrom` 404s on unknown locales instead.
 
 export function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));

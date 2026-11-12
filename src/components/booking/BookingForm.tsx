@@ -27,7 +27,7 @@ interface Values {
 
 const STEPS = ['date', 'guests', 'details'] as const;
 
-export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }) {
+export function BookingForm({ tour, compact, single }: { tour: Tour; compact?: boolean; single?: boolean }) {
   const t = useT();
   const lang = useLang();
   const router = useRouter();
@@ -136,6 +136,128 @@ export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }
 
   const fid = (n: string) => `${uid}-${n}`;
 
+  if (single) {
+    const fieldErr = (k: keyof Values) => (errors[k] ? <p className={styles.err}>{errors[k]?.message}</p> : null);
+    return (
+      <form className={`${styles.form} ${styles.single}`} onSubmit={handleSubmit(onSubmit)} noValidate>
+        <input type="text" tabIndex={-1} autoComplete="off" className={styles.hp} aria-hidden {...register('company')} />
+        <div className={styles.singleBody}>
+          <label className={styles.label} htmlFor={fid('hotel')}>
+            {t('booking.hotelName')}
+          </label>
+          <input
+            id={fid('hotel')}
+            type="text"
+            placeholder={t('booking.hotelPlaceholder')}
+            autoComplete="off"
+            className={`${styles.input} ${styles.inputSm} ${errors.hotel ? styles.invalid : ''}`}
+            aria-invalid={!!errors.hotel}
+            {...register('hotel', { validate: (v) => v.trim().length >= 2 || err('hotelRequired') })}
+          />
+          {fieldErr('hotel')}
+
+          <label className={styles.label} htmlFor={fid('date')}>
+            {t('booking.selectDate')}
+          </label>
+          <input
+            id={fid('date')}
+            type="date"
+            min={tomorrowISO()}
+            className={`${styles.input} ${errors.date ? styles.invalid : ''}`}
+            aria-invalid={!!errors.date}
+            {...register('date', { validate: () => issueFor('date') })}
+          />
+          {errors.date ? (
+            fieldErr('date')
+          ) : tour.scheduleDays ? (
+            <p className={styles.hint}>{t('booking.runsOn', { days: weekdayNames(tour.scheduleDays, lang) })}</p>
+          ) : null}
+
+          {tour.timeSlots.length > 0 && (
+            <fieldset className={styles.fieldset}>
+              <legend className={styles.label}>{t('booking.departureTime')}</legend>
+              <input type="hidden" {...register('time', { validate: () => issueFor('time') })} />
+              <div className={styles.slots}>
+                {tour.timeSlots.map((t) => (
+                  <button
+                    key={t}
+                    type="button"
+                    className={`${styles.slot} ${time === t ? styles.slotOn : ''}`}
+                    aria-pressed={time === t}
+                    onClick={() => setValue('time', t, { shouldValidate: true })}
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
+              {fieldErr('time')}
+            </fieldset>
+          )}
+
+          <div className={styles.label}>{t('booking.guests')}</div>
+          <div className={styles.rows}>
+            {guests.map((o) => (
+              <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o, t, lang)} free={!!o.free || o.price === 0} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
+            ))}
+          </div>
+          {extras.length > 0 && <div className={styles.label}>{t('booking.extras')}</div>}
+          <div className={styles.rows}>
+            {extras.map((o) => (
+              <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o, t, lang)} free={!!o.free || o.price === 0} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
+            ))}
+          </div>
+          {qtyError && (
+            <p className={styles.err} role="alert">
+              {qtyError}
+            </p>
+          )}
+          <div className={styles.total}>
+            <span>{t('booking.total')}</span>
+            <b data-testid="booking-total">{formatPrice(q.total, lang)}</b>
+          </div>
+
+          <div className={styles.label}>{t('booking.yourDetails')}</div>
+          <div className={styles.pair}>
+            <div>
+              <input
+                id={fid('name')}
+                placeholder={t('booking.fullName')}
+                aria-label={t('booking.fullName')}
+                className={`${styles.input} ${styles.inputSm} ${errors.name ? styles.invalid : ''}`}
+                autoComplete="name"
+                aria-invalid={!!errors.name}
+                {...register('name', { validate: zField('name') })}
+              />
+              {fieldErr('name')}
+            </div>
+            <div>
+              <input
+                id={fid('phone')}
+                type="tel"
+                placeholder={t('booking.whatsappNumber')}
+                aria-label={t('booking.phone')}
+                className={`${styles.input} ${styles.inputSm} ${errors.phone ? styles.invalid : ''}`}
+                autoComplete="tel"
+                aria-invalid={!!errors.phone}
+                {...register('phone', { validate: zField('phone') })}
+              />
+              {fieldErr('phone')}
+            </div>
+          </div>
+          {tour.requiresDeposit && (
+            <p className={styles.deposit}>{t('booking.deposit')}</p>
+          )}
+        </div>
+        <div className={styles.singleFoot}>
+          <button type="submit" className={styles.primary} disabled={submitting} aria-busy={submitting}>
+            {submitting ? t('booking.sending') : t('booking.bookNow')}
+          </button>
+          <p className={styles.note}>{t('booking.noPrepayNote')}</p>
+        </div>
+      </form>
+    );
+  }
+
   return (
     <form className={`${styles.form} ${compact ? styles.compact : ''}`} onSubmit={handleSubmit(onSubmit)} noValidate>
       <ol className={styles.steps} aria-label={t('booking.stepsAria')}>
@@ -228,11 +350,11 @@ export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }
         </div>
         <div className={styles.label}>{t('booking.guests')}</div>
         {guests.map((o) => (
-          <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o, t, lang)} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
+          <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o, t, lang)} free={!!o.free || o.price === 0} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
         ))}
         {extras.length > 0 && <div className={styles.extras}>{t('booking.extras')}</div>}
         {extras.map((o) => (
-          <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o, t, lang)} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
+          <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o, t, lang)} free={!!o.free || o.price === 0} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
         ))}
         {qtyError && (
           <p className={styles.err} role="alert">
@@ -327,18 +449,19 @@ export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }
 function OptionRow(props: {
   label: string;
   sub: string;
+  free: boolean;
   kind: 'counter' | 'toggle';
   value: number;
   max: number;
   onChange: (delta: number) => void;
 }) {
-  const { label, sub, kind, value, max, onChange } = props;
+  const { label, sub, free, kind, value, max, onChange } = props;
   const t = useT();
   return (
     <div className={styles.row}>
       <div>
         <div className={styles.rowLabel}>{label}</div>
-        <div className={styles.rowSub}>{sub}</div>
+        <div className={`${styles.rowSub} ${free ? styles.rowFree : ''}`}>{sub}</div>
       </div>
       {kind === 'toggle' ? (
         <button

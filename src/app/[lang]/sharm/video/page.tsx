@@ -8,7 +8,8 @@ import { SiteHeader } from '@/components/SiteHeader';
 import { site, whatsappLink } from '@/data/site';
 import { categoryList } from '@/data/categories';
 import { tourHref } from '@/data/categories';
-import { allTours, toSummary } from '@/data/tours';
+import { toSummary } from '@/data/tours';
+import { listTours } from '@/lib/server/tours';
 import { imageSrc } from '@/lib/images';
 import { formatPrice } from '@/i18n/format';
 import { pageAlternates, pageOpenGraph } from '@/i18n/metadata';
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function VideoPage({ params }: { params: Promise<{ lang: string }> }) {
   const lang = await langFrom(params);
   const t = getT(lang);
-  const tours = allTours(lang);
+  const tours = await listTours({ lang });
   return (
     <div className={styles.page}>
       <SiteHeader />
