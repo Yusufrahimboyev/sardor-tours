@@ -3,7 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useId, useMemo, useState } from 'react';
-import { tourHref, type TourSummary } from '@/data/tours';
+import { tourHref } from '@/data/categories';
+import type { TourSummary } from '@/data/tours';
 import { matchesQuery } from '@/lib/catalog';
 import { imageSrc } from '@/lib/images';
 import styles from './TourSearch.module.css';

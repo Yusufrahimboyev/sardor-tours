@@ -7,7 +7,7 @@ export function trackErrors(page: Page) {
   page.on('console', (m) => {
     if (m.type() !== 'error') return;
     const text = m.text();
-    if (/picsum\.photos|Failed to load resource/.test(text)) return;
+    if (/images\.unsplash\.com|Failed to load resource/.test(text)) return;
     errors.push(`console: ${text}`);
   });
   return errors;

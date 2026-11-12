@@ -1,8 +1,10 @@
 import type { MetadataRoute } from 'next';
 import { site } from '@/data/site';
-import { tourHref, tours } from '@/data/tours';
+import { tourHref } from '@/data/tours';
+import { listTours } from '@/lib/server/tours';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const tours = await listTours();
   const now = new Date();
   const pages = ['/', '/en/sharm/', '/en/about-us/', '/en/contact/', '/en/sharm/video/', '/en/terms-and-conditions/'];
   return [

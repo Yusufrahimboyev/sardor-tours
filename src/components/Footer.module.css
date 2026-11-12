@@ -6,6 +6,9 @@
   color: #fff;
   padding: 64px 0 30px;
 }
+.navy {
+  background: #0d2347;
+}
 .light {
   --f-mid: #5a6a85;
   --f-dim: #8a97ad;
@@ -28,7 +31,7 @@
 }
 .soc {
   display: flex;
-  gap: 16px;
+  gap: 10px;
   margin-top: 18px;
 }
 .soc a {
@@ -69,38 +72,44 @@
   transition: color 0.2s;
 }
 .col a:hover {
+  color: #fff;
+}
+.light .col a:hover {
   color: var(--orange);
 }
-.col .dim {
-  color: var(--f-dim);
-}
-.stats {
-  margin-top: 44px;
+.statsWrap {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: clamp(20px, 6vw, 64px);
-  padding: 22px 0;
-  border-top: 1px solid var(--f-line);
+  margin-top: 44px;
+}
+.stats {
+  display: flex;
+  gap: 24px;
+  padding: 16px 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
   text-align: center;
 }
 .stats b {
   display: block;
-  font-size: 26px;
+  font-family: var(--font-display);
+  font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
 .stats span {
-  font-size: 12px;
-  color: var(--f-dim);
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.4);
 }
 .stats i {
   width: 1px;
-  height: 34px;
-  background: var(--f-line);
+  background: rgba(255, 255, 255, 0.1);
 }
 .bot {
   margin-top: 48px;
@@ -109,13 +118,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   color: var(--f-dim);
   font-size: 13px;
 }
-.stats + .bot {
-  margin-top: 0;
-}
+
 .terms {
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -123,8 +131,12 @@
 @media (max-width: 880px) {
   .top {
     grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
   }
   .brandCol {
+    grid-column: 1 / -1;
+  }
+  .top .col:last-child {
     grid-column: 1 / -1;
   }
 }

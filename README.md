@@ -36,7 +36,7 @@ Copy `.env.example` to `.env.local`. All variables are optional — see
 [ARCHITECTURE.md](ARCHITECTURE.md#configuration-env). Important ones:
 
 * `NEXT_PUBLIC_IMAGE_BASE` — the reference photos are **not** included (copyright). By default
-  licensed placeholder photos are used. If you own/are licensed to use the original photos, point
+  themed Unsplash placeholder photos are used (src/lib/images.ts). If you own/are licensed to use the original photos, point
   this at where they are hosted and every image switches over.
 * `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_PHONE_DISPLAY`, `NEXT_PUBLIC_CONTACT_EMAIL` — contact details.
 * `ADMIN_TOKEN` — enables `GET /api/bookings/` and `GET /api/contact/` (send `Authorization: Bearer <token>`).

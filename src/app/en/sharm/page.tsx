@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BottomNav } from '@/components/BottomNav';
 import { Brand } from '@/components/Brand';
@@ -7,11 +6,14 @@ import { CountUp } from '@/components/CountUp';
 import { CtaBand } from '@/components/CtaBand';
 import { FaqList } from '@/components/FaqList';
 import { Footer } from '@/components/Footer';
+import { BackgroundVideo } from '@/components/BackgroundVideo';
 import { WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
+import { ReviewsSection } from '@/components/reviews/ReviewsSection';
 import { SupportWidget } from '@/components/SupportWidget';
 import { BOOK_TOUR_MSG, generalFaq, site, whatsappLink } from '@/data/site';
-import { BESTSELLERS, getTour, MIN_PRICE, toSummary, tourHref, tours } from '@/data/tours';
+import { BESTSELLERS, minPrice, toSummary, tourHref } from '@/data/tours';
+import { listTours } from '@/lib/server/tours';
 import { imageSrc } from '@/lib/images';
 import { Bestsellers } from './Bestsellers';
 import { HeroSearch } from './HeroSearch';
@@ -19,24 +21,39 @@ import { ToursCatalog } from './ToursCatalog';
 import { WorldMap } from './WorldMap';
 import styles from './sharm.module.css';
 
-const count = tours.length;
+/** Hero background clip. Defaults to the home video; override with NEXT_PUBLIC_SHARM_VIDEO (or drop a file at public/videos/sharm.mp4 and point the var at it). */
+const YEARS = parseInt(site.stats.years, 10) || 0;
+const TRAVELLERS_K = Math.round((parseInt(site.stats.travellers.replace(/\D/g, ''), 10) || 0) / 1000);
 
-export const metadata: Metadata = {
-  title: `${count}+ Best Sharm El Sheikh Excursions & Tours (Pay on Arrival)`,
-  description: `Tours in Sharm El Sheikh from £${MIN_PRICE}. No prepayment. Book in 3 minutes. Hotel transfer included. English-speaking guides. Insurance included.`,
-  alternates: { canonical: '/en/sharm/' },
-  openGraph: {
-    url: '/en/sharm/',
-    title: 'Sharm El Sheikh Excursions & Day Trips',
-    description: 'Boat trips, desert safaris, Cairo & Petra day trips. No prepayment, hotel transfer included.',
-    images: [{ url: imageSrc('/images/hero1.webp', 1200, 630), width: 1200, height: 630 }],
-  },
-};
+const HERO_FACES = [
+  { i: 'A', bg: 'linear-gradient(135deg,#ff8a3d,#e85d04)' },
+  { i: 'M', bg: 'linear-gradient(135deg,#38bdf8,#0369a1)' },
+  { i: 'S', bg: 'linear-gradient(135deg,#f472b6,#be185d)' },
+  { i: 'L', bg: 'linear-gradient(135deg,#34d399,#047857)' },
+  { i: 'D', bg: 'linear-gradient(135deg,#a78bfa,#6d28d9)' },
+];
 
-const BENEFITS = [
+const HERO_VIDEO = process.env.NEXT_PUBLIC_SHARM_VIDEO || process.env.NEXT_PUBLIC_HERO_VIDEO || '/videos/hero.mp4';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const tours = await listTours();
+  return {
+    title: `${tours.length}+ Best Sharm El Sheikh Excursions & Tours (Pay on Arrival)`,
+    description: `Tours in Sharm El Sheikh from £${minPrice(tours)}. No prepayment. Book in 3 minutes. Hotel transfer included. English-speaking guides. Insurance included.`,
+    alternates: { canonical: '/en/sharm/' },
+    openGraph: {
+      url: '/en/sharm/',
+      title: 'Sharm El Sheikh Excursions & Day Trips',
+      description: 'Boat trips, desert safaris, Cairo & Petra day trips. No prepayment, hotel transfer included.',
+      images: [{ url: imageSrc('/images/hero1.webp', 1200, 630), width: 1200, height: 630 }],
+    },
+  };
+}
+
+const benefits = (MIN_PRICE: number) => [
   { icon: '💰', title: 'Affordable Prices', text: `Amazing experiences from £${MIN_PRICE} per person with no hidden fees.` },
   { icon: '🤝', title: 'No Prepayment', text: 'Reserve today and pay on the day in GBP, USD, EUR or EGP.' },
-  { icon: '⚡', title: 'Instant Booking', text: 'Book online in 3 minutes and get a booking reference straight away.' },
+  { icon: '⚡', title: 'Instant Booking', text: 'Fast WhatsApp confirmation in just a few minutes.' },
   { icon: '🚌', title: 'Free Hotel Transfer', text: 'Comfortable transfers included with every tour.' },
   { icon: '🗣️', title: 'Expert Guides', text: 'Every tour is led by an experienced English-speaking guide.' },
   { icon: '🛡️', title: 'Insurance Included', text: 'Every traveller is insured for the entire duration of the tour.' },
@@ -46,22 +63,32 @@ const PROMISE = [
   ['No prepayment', 'Pay on the day of your tour — in cash, in any currency'],
   ['No hidden fees', 'The final price includes everything — no surprises'],
   ['Hotel transfer', 'Free pickup and drop-off from any hotel'],
-  ['Fast replies', 'A real person on WhatsApp, in English'],
+  ['24/7 support', 'A real person on WhatsApp, in English'],
   ['English-speaking guides', 'Professionals who love every route they lead'],
-  ['Free cancellation', 'Cancel free of charge up to 24 hours before the tour'],
+  [
+    `${site.stats.years} years of experience`,
+    `${site.since ? `Since ${site.since}. ` : ''}Over ${site.stats.travellers.replace(/\+$/, '')} happy travellers.`,
+  ],
+  ['Real offices', 'In Sharm El Sheikh — real people'],
 ];
 
-const STEPS = [
+const steps = (count: number, MIN_PRICE: number) => [
   ['Choose a tour', `${count}+ routes — sea, desert, history. Prices from £${MIN_PRICE}.`],
   ['Send a booking request', 'Pick a date and guests — we confirm on WhatsApp in minutes. No prepayment.'],
   ['We pick you up from your hotel', 'Guide, transfer and an unforgettable day — all included.'],
 ];
 
-export default function SharmPage() {
+export default async function SharmPage() {
+  const tours = await listTours();
+  const count = tours.length;
+  const MIN_PRICE = minPrice(tours);
+  const BENEFITS = benefits(MIN_PRICE);
+  const STEPS = steps(count, MIN_PRICE);
   const summaries = tours.map(toSummary);
-  const bestsellers = BESTSELLERS.map((b) => ({
+  const bySlug = new Map(tours.map((t) => [t.slug, t]));
+  const bestsellers = BESTSELLERS.filter((b) => bySlug.has(b.slug)).map((b) => ({
     href: tourHref(b.slug),
-    name: getTour(b.slug)!.name,
+    name: bySlug.get(b.slug)!.name,
     tag: b.tag,
     image: b.image,
   }));
@@ -91,13 +118,12 @@ export default function SharmPage() {
       <section className={styles.hero}>
         <div className={styles.heroMedia}>
           <Image src={imageSrc('/images/hero1.webp', 1920, 1080)} alt="" fill priority sizes="100vw" />
+          <BackgroundVideo src={HERO_VIDEO} className={styles.heroVideo} />
         </div>
         <div className={styles.heroScrim} />
         <nav className={styles.heroNav} aria-label="Main">
           <Brand />
           <div className={styles.heroNavLinks}>
-            <Link href="/">Destinations</Link>
-            <Link href="/en/about-us/">About</Link>
             <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={styles.heroNavWa}>
               <WhatsAppIcon size={16} />
               <span>WhatsApp</span>
@@ -116,9 +142,19 @@ export default function SharmPage() {
           <HeroSearch tours={summaries} />
           <div className={styles.heroStats}>
             <div className={styles.heroStat}>
+              <div className={styles.heroAvs} aria-hidden>
+                {HERO_FACES.map((f) => (
+                  <span key={f.i} style={{ background: f.bg }}>
+                    {f.i}
+                  </span>
+                ))}
+              </div>
               <div>
-                <div className={styles.heroStatNum}>{count}+ excursions</div>
-                <div className={styles.heroStatLbl}>sea · desert · history</div>
+                <div className={styles.heroStatNum}>
+                  <span className={styles.star}>★</span>
+                  {site.stats.rating}/5
+                </div>
+                <div className={styles.heroStatLbl}>{site.stats.travellers} happy travellers</div>
               </div>
             </div>
             <div className={styles.heroStat}>
@@ -129,12 +165,13 @@ export default function SharmPage() {
             </div>
             <div className={styles.heroStat}>
               <div>
-                <div className={styles.heroStatNum}>£0 upfront</div>
-                <div className={styles.heroStatLbl}>pay on the day</div>
+                <div className={styles.heroStatNum}>{site.stats.years} years</div>
+                <div className={styles.heroStatLbl}>of experience</div>
               </div>
             </div>
           </div>
         </div>
+        <span className={styles.heroScroll} aria-hidden />
       </section>
 
       <div className={styles.layout}>
@@ -150,6 +187,8 @@ export default function SharmPage() {
               </div>
             ))}
           </section>
+
+          <ReviewsSection />
 
           <section className={styles.bsSec} aria-labelledby="bs-h">
             <div className={styles.bsHead}>
@@ -176,6 +215,41 @@ export default function SharmPage() {
             <ToursCatalog tours={summaries} />
           </section>
 
+          <section className={styles.rtSec} aria-label="Ratings">
+            <div className={styles.rtBrand}>
+              <div className={styles.rtBrandName}>{site.name}</div>
+              <div className={styles.rtBrandDiv}>
+                <span />
+                {site.since ? `Since ${site.since}` : site.tagline}
+                <span />
+              </div>
+            </div>
+            <div className={styles.rtCard}>
+              <div className={styles.rtScore}>
+                <div className={styles.rtScoreNum}>{site.stats.rating}</div>
+                <div>
+                  <div className={styles.rtTag}>Excellent</div>
+                  <div className={styles.rtStars} aria-label={`Rated ${site.stats.rating} out of 5`}>
+                    ★★★★★
+                  </div>
+                  <div className={styles.rtSub}>
+                    Trusted by <b>{site.stats.travellers}</b> travellers
+                  </div>
+                </div>
+              </div>
+              <div className={styles.rtPlatforms}>
+                {site.reviewPlatforms.map((name) => (
+                  <div key={name} className={styles.rtPlat}>
+                    <div className={styles.rtPlatName}>{name}</div>
+                    <div className={styles.rtStars} aria-hidden>
+                      ★★★★★
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           <section className={styles.bmSec} id="faq" aria-labelledby="faq-h">
             <span className={styles.bmEyebrow}>FAQ</span>
             <h2 id="faq-h" className={styles.faqH}>
@@ -194,13 +268,13 @@ export default function SharmPage() {
                   <span>compromises</span>
                 </h2>
               </div>
-              <div className={`${styles.ghostText} ${styles.ghostFaint}`} aria-hidden>
-                Promise
+              <div className={`${styles.ghostText} ${styles.ghostFaint} ${styles.ghostCenter}`} aria-hidden>
+                {site.since ? `Since ${site.since}` : 'Promise'}
               </div>
             </div>
             <ol className={styles.whyList}>
               {PROMISE.map(([t, d], i) => (
-                <li key={t} className={`${styles.whyRow} reveal`} style={{ transitionDelay: `${i * 60}ms` }}>
+                <li key={t} className={`${styles.whyRow} reveal reveal-left`} style={{ transitionDelay: `${i * 60}ms` }}>
                   <span className={styles.whyN}>{String(i + 1).padStart(2, '0')}</span>
                   <span>
                     <b>{t}</b>
@@ -239,33 +313,47 @@ export default function SharmPage() {
           <section className={styles.statsBanner} aria-label="Key figures">
             <div className={styles.stat}>
               <div className={styles.statN}>
+                <CountUp value={YEARS} suffix="+" />
+              </div>
+              <div className={styles.statL}>years</div>
+            </div>
+            <i />
+            <div className={styles.stat}>
+              <div className={styles.statN}>
+                <CountUp value={TRAVELLERS_K} suffix="k+" />
+              </div>
+              <div className={styles.statL}>travellers</div>
+            </div>
+            <i />
+            <div className={styles.stat}>
+              <div className={styles.statN}>
                 <CountUp value={count} suffix="+" />
               </div>
               <div className={styles.statL}>tours</div>
             </div>
-            <i />
-            <div className={styles.stat}>
-              <div className={styles.statN}>
-                <CountUp value={4} />
-              </div>
-              <div className={styles.statL}>categories</div>
-            </div>
-            <i />
-            <div className={styles.stat}>
-              <div className={styles.statN}>
-                £<CountUp value={MIN_PRICE} />
-              </div>
-              <div className={styles.statL}>from</div>
-            </div>
           </section>
 
           <section className={styles.mapSec} aria-labelledby="map-h">
-            <span className={styles.bmEyebrow}>geography</span>
+            <span className={styles.mapEyebrow}>geography</span>
             <h2 id="map-h" className={`${styles.bmH} ${styles.onDark}`}>
               The world
               <br />
               flies to <span>us</span>
             </h2>
+            <div className={styles.faces}>
+              <div className={styles.heroAvs} aria-hidden>
+                {HERO_FACES.map((f) => (
+                  <span key={f.i} style={{ background: f.bg }}>
+                    {f.i}
+                  </span>
+                ))}
+              </div>
+              <div className={styles.facesText}>
+                +{site.stats.travellers.replace(/\+$/, '')}
+                <br />
+                <span>travellers with us</span>
+              </div>
+            </div>
             <WorldMap />
           </section>
         </main>
@@ -286,13 +374,10 @@ export default function SharmPage() {
                 ),
               )}
             </ul>
-            <a href="#tours" className={styles.bookPanelCta}>
-              Choose your tour
-            </a>
-            <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={styles.bookPanelWa}>
+            <a href={whatsappLink(BOOK_TOUR_MSG)} target="_blank" rel="noopener noreferrer" className={styles.bookPanelCta}>
               <WhatsAppIcon /> Message us on WhatsApp
             </a>
-            <div className={styles.bookPanelNote}>Instant booking reference. We reply fast.</div>
+            <div className={styles.bookPanelNote}>Instant confirmation. We reply fast.</div>
           </div>
         </aside>
       </div>

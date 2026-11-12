@@ -54,13 +54,11 @@ test('tour gallery navigates and opens fullscreen', async ({ page }) => {
   await expect(viewer).toBeHidden();
 });
 
-test('included / not included tabs switch', async ({ page }) => {
+test('included / not included / what to bring panels', async ({ page }) => {
   await page.goto('/en/sharm/quad-safari-sharm/');
-  await expect(page.getByRole('tabpanel')).toContainText('English-speaking guide');
-  await page.getByRole('tab', { name: 'Not Included' }).click();
-  await expect(page.getByRole('tabpanel')).toContainText('Shisha');
-  await page.getByRole('tab', { name: 'What to Bring' }).click();
-  await expect(page.getByRole('tabpanel')).toContainText('Sunglasses');
+  await expect(page.getByRole('region', { name: 'Included in the Price' })).toContainText('English-speaking guide');
+  await expect(page.getByRole('region', { name: 'Not Included' })).toContainText('Shisha');
+  await expect(page.getByRole('region', { name: 'What to Bring' })).toContainText('Sunglasses');
 });
 
 test('quick nav search and contact panels', async ({ page }) => {

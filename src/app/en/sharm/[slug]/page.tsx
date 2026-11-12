@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -7,26 +6,38 @@ import { BookingForm } from '@/components/booking/BookingForm';
 import { BookButton, BookingLauncher } from '@/components/booking/BookingLauncher';
 import { FaqList } from '@/components/FaqList';
 import { Footer } from '@/components/Footer';
-import { CalendarIcon, CheckIcon, ClockIcon, ShieldIcon, WhatsAppIcon } from '@/components/icons';
+import { CalendarIcon, CheckIcon, ClockIcon, ShieldIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
+import { ReviewsSection } from '@/components/reviews/ReviewsSection';
 import { SupportWidget } from '@/components/SupportWidget';
 import { site, whatsappLink } from '@/data/site';
-import { getTour, toSummary, tourHref, tours } from '@/data/tours';
+import { toSummary, tourHref, type Tour } from '@/data/tours';
+import { getTour, listTours } from '@/lib/server/tours';
 import { imageSrc, usingPlaceholders } from '@/lib/images';
+import { Bestsellers } from '../Bestsellers';
 import { Gallery } from './Gallery';
-import { IncludedTabs } from './IncludedTabs';
+import { IncludedBoxes } from './IncludedBoxes';
+import { TravellerReviews } from './TravellerReviews';
 import styles from './tour.module.css';
 
-export const dynamicParams = false;
+/** Tours added in the admin panel after the build render on first request. */
+export const dynamicParams = true;
 
-export function generateStaticParams() {
-  return tours.map((t) => ({ slug: t.slug }));
+/** Initials shown as the "team online" avatars in the booking panel. */
+const TEAM = [
+  { i: 'S', bg: 'linear-gradient(135deg,#ff8a3d,#e85d04)' },
+  { i: 'Y', bg: 'linear-gradient(135deg,#38bdf8,#0369a1)' },
+  { i: 'M', bg: 'linear-gradient(135deg,#f472b6,#be185d)' },
+];
+
+export async function generateStaticParams() {
+  return (await listTours()).map((t) => ({ slug: t.slug }));
 }
 
 type Params = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const tour = getTour((await params).slug);
+  const tour = await getTour((await params).slug);
   if (!tour) return {};
   const title = tour.metaTitle.replace(/\s*\|\s*Sardor Tours$/, '');
   return {
@@ -44,13 +55,18 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 
 export default async function TourPage({ params }: Params) {
-  const tour = getTour((await params).slug);
+  const tour = await getTour((await params).slug);
   if (!tour) notFound();
+  const tours = await listTours();
+  const bySlug = new Map(tours.map((t) => [t.slug, t]));
 
   const gallery = usingPlaceholders ? tour.gallery.slice(0, 8) : tour.gallery;
   const oldPrice = tour.heroPrices[0]?.oldPrice ?? tour.bento.oldPrice;
-  const discount = tour.heroPrices[0]?.discount ?? null;
-  const related = tour.related.map((r) => ({ ...r, tour: getTour(r.slug)! }));
+  const discount = tour.heroPrices[0]?.discount ?? tour.bento.badge ?? null;
+  const related = tour.related
+    .filter((r) => bySlug.has(r.slug))
+    .map((r) => ({ ...r, tour: bySlug.get(r.slug) as Tour }));
+  const programNum = (tour.bento.programNum ?? '').split(' ');
   const meta = [tour.schedule, tour.detailDuration, tour.timeText].filter(Boolean) as string[];
 
   return (
@@ -95,7 +111,7 @@ export default async function TourPage({ params }: Params) {
 
       <div className={styles.shell}>
         <main id="main-content" tabIndex={-1} className={styles.main}>
-          <nav aria-label="Breadcrumb" className={styles.crumbs}>
+          <nav aria-label="Breadcrumb" className={`${styles.crumbs} sr-only`}>
             <Link href="/">Home</Link> <span aria-hidden>/</span> <Link href="/en/sharm/">Sharm El Sheikh</Link>{' '}
             <span aria-hidden>/</span> <span aria-current="page">{tour.name}</span>
           </nav>
@@ -113,21 +129,26 @@ export default async function TourPage({ params }: Params) {
               ))}
             </div>
             <div className={styles.prices}>
-              {tour.heroPrices.map((p) => (
-                <div key={p.label} className={styles.priceRow}>
-                  <div className={styles.priceVal}>£{p.price}</div>
-                  <div className={styles.priceLbl}>
-                    <b>{p.label}</b>
-                    {p.unit && <small>{p.unit}</small>}
-                  </div>
-                  {p.oldPrice && (
-                    <div className={styles.priceOld}>
-                      <s>£{p.oldPrice}</s>
-                      {p.discount && <span>{p.discount}</span>}
+              {tour.heroPrices.map((p, i) => {
+                const child = /^Children\s+(.+)$/.exec(p.label);
+                const old = p.oldPrice ?? (i === 0 ? oldPrice : null);
+                const off = p.discount ?? (i === 0 ? discount : null);
+                return (
+                  <div key={p.label} className={styles.priceRow}>
+                    <div className={styles.priceVal}>£{p.price}</div>
+                    <div className={styles.priceLbl}>
+                      <b>{child ? 'Child' : i === 0 && p.label === 'Adults' ? 'Adult' : p.label}</b>
+                      {(child || p.unit) && <small>{[child?.[1], p.unit].filter(Boolean).join(' · ')}</small>}
                     </div>
-                  )}
-                </div>
-              ))}
+                    {old && (
+                      <div className={styles.priceOld}>
+                        <s>£{old}</s>
+                        {off && <span>{off}</span>}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
               <div className={styles.payNote}>
                 <ShieldIcon size={16} /> Book now, pay on the day of the tour
               </div>
@@ -139,6 +160,8 @@ export default async function TourPage({ params }: Params) {
               <li key={h}>{h}</li>
             ))}
           </ul>
+
+          <TravellerReviews />
 
           <section className={styles.block} aria-labelledby="itin-h">
             <div className={styles.kicker}>What you get</div>
@@ -154,19 +177,22 @@ export default async function TourPage({ params }: Params) {
                   </li>
                 ))}
               </ol>
-              <IncludedTabs included={tour.included} notIncluded={tour.notIncluded} bring={tour.bring} />
+              <IncludedBoxes included={tour.included} notIncluded={tour.notIncluded} bring={tour.bring} />
             </div>
           </section>
+
+          <ReviewsSection className={styles.reviewsSec} />
 
           {tour.faq.length > 0 && (
             <section className={styles.block} aria-labelledby="faq-h">
               <h2 id="faq-h" className={styles.h2}>
                 Frequently asked <span className={styles.accent}>questions</span>
               </h2>
-              <FaqList items={tour.faq} />
+              <FaqList items={tour.faq} variant="soft" />
             </section>
           )}
 
+          {(tour.destinationCards.length > 0 || tour.goodToKnow.length > 0) && (
           <section className={styles.info} aria-labelledby="info-h">
             <div className={styles.infoEyebrow}>Additional information</div>
             <h2 id="info-h" className={styles.h2}>
@@ -175,7 +201,7 @@ export default async function TourPage({ params }: Params) {
             <div className={styles.dirGrid}>
               {tour.destinationCards.map((c) => (
                 <div key={c.title} className={styles.dirCard}>
-                  <span className={`${styles.chip} ${styles[`tone_${c.tone ?? 'blue'}`]}`}>{c.tag}</span>
+                  <span className={`${styles.chip} ${styles.tone_blue}`}>{c.tag}</span>
                   <h3>{c.title}</h3>
                   <p>{c.text}</p>
                 </div>
@@ -184,7 +210,7 @@ export default async function TourPage({ params }: Params) {
             {tour.goodToKnow.length > 0 && (
               <>
                 <div className={`${styles.infoEyebrow} ${styles.green}`}>Good to know</div>
-                <div className={styles.dirGrid}>
+                <div className={styles.knowGrid}>
                   {tour.goodToKnow.map((c) => (
                     <div key={c.title} className={styles.knowCard}>
                       <h3>{c.title}</h3>
@@ -195,6 +221,7 @@ export default async function TourPage({ params }: Params) {
               </>
             )}
           </section>
+          )}
 
           <section className={styles.wcu} aria-labelledby="wcu-h">
             <div className={styles.wcuTop}>
@@ -216,29 +243,63 @@ export default async function TourPage({ params }: Params) {
                   </div>
                 )}
                 <p className={styles.bcDesc}>{tour.bento.priceText}</p>
+                {tour.bento.oldPrice && tour.bento.oldPrice > tour.priceFrom && (
+                  <div className={styles.bcBar}>
+                    <div className={styles.bcBarHead}>
+                      <span>Your discount</span>
+                      <b>
+                        {tour.bento.badge ? `${tour.bento.badge} · ` : ''}save £{tour.bento.oldPrice - tour.priceFrom}
+                      </b>
+                    </div>
+                    <div className={styles.bcBarTrack}>
+                      <i style={{ width: `${Math.round((tour.priceFrom / tour.bento.oldPrice) * 100)}%` }} />
+                    </div>
+                    <div className={styles.bcBarEnds}>
+                      <span>£0</span>
+                      <span>£{tour.bento.oldPrice}</span>
+                    </div>
+                  </div>
+                )}
               </div>
+              {tour.bento.programText && (
               <div className={`${styles.bc} ${styles.bcB}`}>
                 <div>
                   <div className={`${styles.bcKicker} ${styles.teal}`}>{tour.bento.programKicker}</div>
-                  <div className={styles.bcNum}>{tour.bento.programNum}</div>
+                  <div className={styles.bcNum}>
+                    {programNum[0]} <span>{programNum.slice(1).join(' ')}</span>
+                  </div>
                   <p className={styles.bcDesc}>{tour.bento.programText}</p>
                 </div>
                 {tour.bento.ring && (
                   <div className={styles.ring} aria-hidden>
-                    <b>{tour.bento.ring}</b>
-                    <small>{tour.bento.ringLabel}</small>
+                    <svg viewBox="0 0 100 100">
+                      <circle cx="50" cy="50" r="45" className={styles.ringTrack} />
+                      <circle cx="50" cy="50" r="45" className={styles.ringFill} />
+                    </svg>
+                    <span>
+                      <b>{tour.bento.ring}</b>
+                      <small>{tour.bento.ringLabel}</small>
+                    </span>
                   </div>
                 )}
               </div>
+              )}
               <div className={`${styles.bc} ${styles.bcC}`}>
-                <div className={styles.bcKicker}>Pay on the day</div>
+                <div className={styles.bcKicker}>Reliability</div>
                 <div className={styles.bcBig}>
-                  £0
+                  {site.stats.years}
                   <br />
-                  upfront
+                  years
                 </div>
                 <p className={styles.bcDesc}>
-                  Reserve online in 3 minutes. <b>Hotel transfer included</b>, free cancellation up to 24 hours before.
+                  {site.since && (
+                    <>
+                      In business since <b>{site.since}</b>.<br />
+                    </>
+                  )}
+                  More than <b>{site.stats.travellers} travellers</b>
+                  <br />
+                  in Egypt.
                 </p>
               </div>
             </div>
@@ -264,52 +325,77 @@ export default async function TourPage({ params }: Params) {
           </section>
 
           <section className={styles.related} aria-labelledby="rel-h">
-            <div className={styles.kicker}>Other tours</div>
-            <h2 id="rel-h" className={styles.h2}>
+            <div className={styles.relKicker}>Other tours</div>
+            <h2 id="rel-h" className={styles.relH}>
               You might also like
             </h2>
-            <div className={styles.relTrack}>
-              {related.map((r) => (
-                <Link key={r.slug} href={tourHref(r.slug)} className={styles.relCard}>
-                  <Image src={imageSrc(r.tour.cardImage, 700, 900)} alt="" fill sizes="(max-width: 700px) 70vw, 260px" />
-                  <span className={styles.relGrad} />
-                  <span className={styles.relBody}>
-                    <span className={styles.relTag}>{r.tag}</span>
-                    <span className={styles.relName}>{r.name}</span>
-                    <span className={styles.relBtn}>Details · from £{r.tour.priceFrom}</span>
-                  </span>
-                </Link>
-              ))}
-            </div>
+            <Bestsellers
+              variant="related"
+              items={related.map((r) => ({ href: tourHref(r.slug), name: r.name, tag: r.tag, image: r.tour.cardImage }))}
+            />
           </section>
         </main>
 
         <aside className={styles.sidebar} aria-label="Book this tour">
           <div className={styles.sideCard}>
             <div className={styles.sideHead}>
-              <div className={styles.sideTitle}>Book your spot</div>
-              <div className={styles.sidePrice}>
-                from <b>£{tour.priceFrom}</b>
-                {oldPrice && <s>£{oldPrice}</s>}
-                {discount && <span>{discount}</span>}
+              <div className={styles.sideHeadRow}>
+                <div className={styles.sideTitle}>Book your spot</div>
+                <a
+                  className={styles.sideTeam}
+                  href={whatsappLink(`Hello! I have a question about: ${tour.name}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ask our team on WhatsApp"
+                >
+                  <span className={styles.sideAvs} aria-hidden>
+                    {TEAM.map((t) => (
+                      <span key={t.i} style={{ background: t.bg }}>
+                        {t.i}
+                      </span>
+                    ))}
+                  </span>
+                  <span>
+                    <b>Team online</b>
+                    <small>
+                      <i aria-hidden /> Fast replies
+                    </small>
+                  </span>
+                </a>
               </div>
-              <a
-                className={styles.sideWa}
-                href={whatsappLink(`Hello! I have a question about: ${tour.name}`)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <WhatsAppIcon size={14} /> Questions? Ask us on WhatsApp
-              </a>
+              <div className={styles.sidePills}>
+                <span className={styles.pillGreen}>
+                  <i aria-hidden /> No prepayment
+                </span>
+                <span className={styles.pillOrange}>⚡ Free cancellation 24h</span>
+              </div>
+            </div>
+            <div className={styles.sidePrices}>
+              <span className={styles.sidePricesBar} aria-hidden />
+              {tour.heroPrices.slice(0, 2).map((p, i) => (
+                <div key={p.label} className={styles.sidePriceCol}>
+                  {i > 0 && <span className={styles.sidePriceDiv} aria-hidden />}
+                  <div>
+                    <small>{i === 0 ? 'Adult' : p.label.replace(/^Children/, 'Child')}</small>
+                    <b>£{p.price}</b>
+                  </div>
+                </div>
+              ))}
+              {oldPrice && (
+                <div className={styles.sidePriceOld}>
+                  <s>£{oldPrice}</s>
+                  {discount && <span>{discount}</span>}
+                </div>
+              )}
             </div>
             <div className={styles.sideBody}>
-              <BookingForm tour={tour} />
+              <BookingForm tour={tour} single />
             </div>
           </div>
         </aside>
       </div>
 
-      <Footer tone="light" />
+      <Footer stats />
       <BookingLauncher tour={tour} oldPrice={oldPrice} />
       <SupportWidget />
     </div>

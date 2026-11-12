@@ -3,7 +3,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { TourCard } from '@/components/TourCard';
 import { XIcon } from '@/components/icons';
-import { CATEGORIES, type Category, type TourSummary } from '@/data/tours';
+import { CATEGORIES, type Category } from '@/data/categories';
+import type { TourSummary } from '@/data/tours';
 import { filterTours, PRICE_BANDS, type PriceBand } from '@/lib/catalog';
 import styles from './sharm.module.css';
 
@@ -71,19 +72,6 @@ export function ToursCatalog({ tours }: { tours: TourSummary[] }) {
               onClick={() => setCat(c.key)}
             >
               {c.label}
-            </button>
-          ))}
-        </div>
-        <div className={styles.filterRow} role="group" aria-label="Filter by price">
-          {PRICE_BANDS.map((b) => (
-            <button
-              key={b.key}
-              type="button"
-              className={`${styles.pill} ${styles.pillSm} ${price === b.key ? styles.onInk : ''}`}
-              aria-pressed={price === b.key}
-              onClick={() => setPrice(b.key)}
-            >
-              {b.label}
             </button>
           ))}
         </div>

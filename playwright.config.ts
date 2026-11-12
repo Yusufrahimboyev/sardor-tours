@@ -24,6 +24,6 @@ export default defineConfig({
     url: `http://localhost:${PORT}/`,
     reuseExistingServer: !process.env.CI,
     timeout: 240_000,
-    env: { DATA_DIR: '.data-test', RATE_LIMIT: 'off', ADMIN_TOKEN: 'test-admin-token', NEXT_PUBLIC_SITE_URL: `http://localhost:${PORT}` },
+    env: { DATA_DIR: '.data-test', RATE_LIMIT: 'off', ADMIN_TOKEN: 'test-admin-token', ADMIN_PASSWORD: 'test-admin-password', NEXT_PUBLIC_SITE_URL: `http://localhost:${PORT}` },
   },
 });

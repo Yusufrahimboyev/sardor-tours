@@ -1,6 +1,7 @@
 import raw from './tours.json';
 
-export type Category = 'sea' | 'safari' | 'historical' | 'family';
+import type { Category } from './categories';
+export { CATEGORIES, tourHref, type Category } from './categories';
 
 export interface TourOption {
   key: string;
@@ -73,26 +74,18 @@ export interface Tour {
   gallery: { src: string; w: number; h: number }[];
   options: TourOption[];
   requiresDeposit: boolean;
+  /** Hidden tours 404 publicly and can't be booked. Missing = visible. */
+  active?: boolean;
 }
 
-export const CATEGORIES: { key: Category; label: string; tag: string }[] = [
-  { key: 'sea', label: 'Sea & Diving', tag: 'Discover the Red Sea' },
-  { key: 'safari', label: 'Safari', tag: 'Breathe in the desert' },
-  { key: 'historical', label: 'Historical', tag: 'Where history began' },
-  { key: 'family', label: 'Entertainment', tag: 'Dive into the adventure' },
-];
 
-export const tours: Tour[] = raw as Tour[];
+/**
+ * The original catalogue. Used to seed the tour store the first time the site runs;
+ * after that the store (editable in /admin/tours) is the source of truth — read tours
+ * on the server with `listTours()` / `getTour()` from `@/lib/server/tours`.
+ */
+export const seedTours: Tour[] = raw as Tour[];
 
-const bySlug = new Map(tours.map((t) => [t.slug, t]));
-
-export function getTour(slug: string): Tour | undefined {
-  return bySlug.get(slug);
-}
-
-export function tourHref(slug: string): string {
-  return `/en/sharm/${slug}/`;
-}
 
 export const BESTSELLERS: { slug: string; tag: string; image: string }[] = [
   { slug: 'white-island-ras-mohamed', tag: 'Sea', image: '/images/white-island02.webp' },
@@ -133,5 +126,7 @@ export function toSummary(t: Tour): TourSummary {
   };
 }
 
-export const MIN_PRICE = Math.min(...tours.map((t) => t.priceFrom));
+export function minPrice(list: Pick<Tour, 'priceFrom'>[]): number {
+  return list.length ? Math.min(...list.map((t) => t.priceFrom)) : 0;
+}
 

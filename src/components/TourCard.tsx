@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { tourHref, type TourSummary } from '@/data/tours';
+import { site } from '@/data/site';
+import { tourHref } from '@/data/categories';
+import type { TourSummary } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
 import { ArrowRight, CalendarIcon, ClockIcon } from './icons';
 import styles from './TourCard.module.css';
@@ -28,6 +30,9 @@ export function TourCard({ tour, priority }: { tour: TourSummary; priority?: boo
           <span>
             <CalendarIcon />
             {tour.schedule}
+          </span>
+          <span className={styles.rating}>
+            <b aria-hidden>★</b> {site.stats.rating}
           </span>
         </div>
         <div className={styles.foot}>

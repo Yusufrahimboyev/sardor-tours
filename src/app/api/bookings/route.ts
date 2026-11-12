@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getTour } from '@/data/tours';
+import { getTour } from '@/lib/server/tours';
 import { quote } from '@/lib/pricing';
 import { bookingBaseSchema, bookingIssues } from '@/lib/validation';
 import { bookings, newReference, type Booking } from '@/lib/server/store';
@@ -12,7 +12,7 @@ export async function POST(req: Request) {
   if (!parsed.success) return jsonError(400, 'Please check the highlighted fields.', zodFieldErrors(parsed.error));
   const input = parsed.data;
 
-  const tour = getTour(input.tourSlug);
+  const tour = await getTour(input.tourSlug);
   if (!tour) return jsonError(404, 'This tour no longer exists.');
 
   const issues = bookingIssues(tour, input);

@@ -7,7 +7,8 @@ import { CheckIcon, ClockIcon, InfoIcon, InstagramIcon, PinIcon, TelegramIcon, W
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { SiteHeader } from '@/components/SiteHeader';
 import { BOOK_TOUR_MSG, generalFaq, site, whatsappLink } from '@/data/site';
-import { CATEGORIES, MIN_PRICE, tours } from '@/data/tours';
+import { CATEGORIES, minPrice } from '@/data/tours';
+import { listTours } from '@/lib/server/tours';
 import { imageSrc } from '@/lib/images';
 import styles from './about.module.css';
 
@@ -27,7 +28,9 @@ const REASONS = [
   ['Real people', 'Questions before or during your trip? Message us on WhatsApp and a real person answers.'],
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const tours = await listTours();
+  const MIN_PRICE = minPrice(tours);
   return (
     <div className={styles.page}>
       <JsonLd data={faqJsonLd(generalFaq)} />

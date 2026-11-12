@@ -6,9 +6,14 @@ import { Footer } from '@/components/Footer';
 import { ArrowDown, ArrowRight, WhatsAppIcon } from '@/components/icons';
 import { JsonLd, faqJsonLd } from '@/components/JsonLd';
 import { destinations, generalFaq, PLAN_TRIP_MSG, site, whatsappLink } from '@/data/site';
-import { MIN_PRICE, tours } from '@/data/tours';
+import { minPrice } from '@/data/tours';
+import { listTours } from '@/lib/server/tours';
 import { imageSrc } from '@/lib/images';
+import { BackgroundVideo } from '@/components/BackgroundVideo';
 import { HomeHeader } from './HomeHeader';
+
+/** Put your own clip at public/videos/hero.mp4, or point NEXT_PUBLIC_HERO_VIDEO at a hosted file. */
+const HERO_VIDEO = process.env.NEXT_PUBLIC_HERO_VIDEO || '/videos/hero.mp4';
 import styles from './home.module.css';
 
 export const metadata: Metadata = {
@@ -58,7 +63,9 @@ const WHY = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const tours = await listTours();
+  const MIN_PRICE = minPrice(tours);
   const wa = whatsappLink(PLAN_TRIP_MSG);
   const liveCount = tours.length;
 
@@ -85,6 +92,7 @@ export default function HomePage() {
         <section className={styles.hero}>
           <div className={styles.heroBg}>
             <Image src={imageSrc('/images/hero1.webp', 1920, 1080)} alt="" fill priority sizes="100vw" />
+            <BackgroundVideo src={HERO_VIDEO} className={styles.heroVideo} />
           </div>
           <div className={`wrap ${styles.heroIn}`}>
             <div className={styles.heroTag}>

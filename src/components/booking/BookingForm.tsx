@@ -32,7 +32,13 @@ function zField<K extends keyof typeof contactDetailsSchema.shape>(key: K) {
   };
 }
 
-export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }) {
+/**
+ * Booking request form.
+ * - default: three steps (date → guests → details), used in the mobile booking dialog.
+ * - `single`: everything on one screen with the submit button pinned to the bottom
+ *   (desktop sidebar, matching the reference "Book your spot" panel).
+ */
+export function BookingForm({ tour, compact, single }: { tour: Tour; compact?: boolean; single?: boolean }) {
   const router = useRouter();
   const toast = useToast();
   const uid = useId();
@@ -129,6 +135,128 @@ export function BookingForm({ tour, compact }: { tour: Tour; compact?: boolean }
   };
 
   const fid = (n: string) => `${uid}-${n}`;
+
+  if (single) {
+    const fieldErr = (k: keyof Values) => (errors[k] ? <p className={styles.err}>{errors[k]?.message}</p> : null);
+    return (
+      <form className={`${styles.form} ${styles.single}`} onSubmit={handleSubmit(onSubmit)} noValidate>
+        <input type="text" tabIndex={-1} autoComplete="off" className={styles.hp} aria-hidden {...register('company')} />
+        <div className={styles.singleBody}>
+          <label className={styles.label} htmlFor={fid('hotel')}>
+            Hotel name
+          </label>
+          <input
+            id={fid('hotel')}
+            type="text"
+            placeholder="Your hotel name"
+            autoComplete="off"
+            className={`${styles.input} ${styles.inputSm} ${errors.hotel ? styles.invalid : ''}`}
+            aria-invalid={!!errors.hotel}
+            {...register('hotel', { validate: (v) => v.trim().length >= 2 || 'Please enter your hotel name' })}
+          />
+          {fieldErr('hotel')}
+
+          <label className={styles.label} htmlFor={fid('date')}>
+            Select a date
+          </label>
+          <input
+            id={fid('date')}
+            type="date"
+            min={tomorrowISO()}
+            className={`${styles.input} ${errors.date ? styles.invalid : ''}`}
+            aria-invalid={!!errors.date}
+            {...register('date', { validate: () => issueFor('date') })}
+          />
+          {errors.date ? (
+            fieldErr('date')
+          ) : tour.scheduleDays ? (
+            <p className={styles.hint}>Runs on {weekdayNames(tour.scheduleDays)}</p>
+          ) : null}
+
+          {tour.timeSlots.length > 0 && (
+            <fieldset className={styles.fieldset}>
+              <legend className={styles.label}>Departure time</legend>
+              <input type="hidden" {...register('time', { validate: () => issueFor('time') })} />
+              <div className={styles.slots}>
+                {tour.timeSlots.map((t) => (
+                  <button
+                    key={t}
+                    type="button"
+                    className={`${styles.slot} ${time === t ? styles.slotOn : ''}`}
+                    aria-pressed={time === t}
+                    onClick={() => setValue('time', t, { shouldValidate: true })}
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
+              {fieldErr('time')}
+            </fieldset>
+          )}
+
+          <div className={styles.label}>Guests</div>
+          <div className={styles.rows}>
+            {guests.map((o) => (
+              <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o, true)} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
+            ))}
+          </div>
+          {extras.length > 0 && <div className={styles.label}>Extras</div>}
+          <div className={styles.rows}>
+            {extras.map((o) => (
+              <OptionRow key={o.key} label={o.label} sub={optionPriceLabel(o, true)} kind={o.kind} value={qty[o.key] ?? 0} max={optionMax(o)} onChange={(d) => change(o.key, d)} />
+            ))}
+          </div>
+          {qtyError && (
+            <p className={styles.err} role="alert">
+              {qtyError}
+            </p>
+          )}
+          <div className={styles.total}>
+            <span>Total</span>
+            <b data-testid="booking-total">{formatGBP(q.total)}</b>
+          </div>
+
+          <div className={styles.label}>Your details</div>
+          <div className={styles.pair}>
+            <div>
+              <input
+                id={fid('name')}
+                placeholder="Full name"
+                aria-label="Full name"
+                className={`${styles.input} ${styles.inputSm} ${errors.name ? styles.invalid : ''}`}
+                autoComplete="name"
+                aria-invalid={!!errors.name}
+                {...register('name', { validate: zField('name') })}
+              />
+              {fieldErr('name')}
+            </div>
+            <div>
+              <input
+                id={fid('phone')}
+                type="tel"
+                placeholder="WhatsApp number"
+                aria-label="Phone / WhatsApp"
+                className={`${styles.input} ${styles.inputSm} ${errors.phone ? styles.invalid : ''}`}
+                autoComplete="tel"
+                aria-invalid={!!errors.phone}
+                {...register('phone', { validate: zField('phone') })}
+              />
+              {fieldErr('phone')}
+            </div>
+          </div>
+          {tour.requiresDeposit && (
+            <p className={styles.deposit}>This experience requires a deposit — our team will send you the payment details.</p>
+          )}
+        </div>
+        <div className={styles.singleFoot}>
+          <button type="submit" className={styles.primary} disabled={submitting} aria-busy={submitting}>
+            {submitting ? 'Sending…' : 'Book now'}
+          </button>
+          <p className={styles.note}>Book now — no prepayment</p>
+        </div>
+      </form>
+    );
+  }
 
   return (
     <form className={`${styles.form} ${compact ? styles.compact : ''}`} onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -328,7 +456,7 @@ function OptionRow(props: {
     <div className={styles.row}>
       <div>
         <div className={styles.rowLabel}>{label}</div>
-        <div className={styles.rowSub}>{sub}</div>
+        <div className={`${styles.rowSub} ${sub === 'Free' || sub === 'Included' ? styles.rowFree : ''}`}>{sub}</div>
       </div>
       {kind === 'toggle' ? (
         <button

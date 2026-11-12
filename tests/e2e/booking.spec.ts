@@ -11,7 +11,45 @@ async function openForm(page: Page, isMobile: boolean): Promise<Locator> {
 }
 
 test.describe('booking flow', () => {
-  test('validates each step and creates a booking', async ({ page, request, isMobile }) => {
+  test('desktop sidebar: single-screen form validates and creates a booking', async ({ page, request, isMobile }) => {
+    test.skip(isMobile, 'the sidebar is desktop-only');
+    const errors = trackErrors(page);
+    await page.goto('/en/sharm/quad-safari-sharm/');
+    const form = await openForm(page, false);
+
+    await form.getByRole('button', { name: 'Book now' }).click();
+    await expect(form.getByText('Select a date to continue')).toBeVisible();
+    await expect(form.getByText('Please choose a departure time')).toBeVisible();
+    await expect(form.getByText('Please enter your hotel name')).toBeVisible();
+    await expect(form.getByText('Please enter your full name')).toBeVisible();
+
+    await form.getByLabel('Hotel name').fill('Rixos Premium Seagate');
+    await form.getByLabel('Select a date').fill(futureDate());
+    await form.getByRole('button', { name: '10:00 AM' }).click();
+    await form.getByLabel('Full name').fill('Ada Lovelace');
+    await form.getByLabel('Phone / WhatsApp').fill('+44 7700 900123');
+    await form.getByRole('button', { name: 'Book now' }).click();
+    await expect(form.getByRole('alert')).toHaveText('Please add at least one guest');
+
+    await form.getByRole('button', { name: 'Increase Single quad' }).click();
+    await form.getByRole('button', { name: 'Increase Single quad' }).click();
+    await form.getByRole('button', { name: 'Increase Camel ride' }).click();
+    await form.getByRole('button', { name: 'Add Private ride' }).click();
+    await expect(form.getByTestId('booking-total')).toHaveText('£55');
+    await form.getByRole('button', { name: 'Decrease Single quad' }).click();
+    await expect(form.getByTestId('booking-total')).toHaveText('£40');
+    await form.getByRole('button', { name: 'Book now' }).click();
+
+    await expect(page).toHaveURL(/\/booking\/ST-[A-Z0-9]{6}\/$/);
+    const ref = (await page.getByTestId('booking-ref').textContent())!;
+    const res = await request.get('/api/bookings/', { headers: { Authorization: 'Bearer test-admin-token' } });
+    const { items } = await res.json();
+    expect(items.find((b: { id: string }) => b.id === ref)).toMatchObject({ tourSlug: 'quad-safari-sharm', total: 40 });
+    expect(errors).toEqual([]);
+  });
+
+  test('mobile dialog: validates each step and creates a booking', async ({ page, request, isMobile }) => {
+    test.skip(!isMobile, 'the stepped dialog is the mobile booking UI');
     const errors = trackErrors(page);
     await page.goto('/en/sharm/quad-safari-sharm/');
     const form = await openForm(page, isMobile);
@@ -71,13 +109,14 @@ test.describe('booking flow', () => {
   test('rejects dates outside the tour schedule', async ({ page, isMobile }) => {
     await page.goto('/en/sharm/mount-moses-sinai/');
     const form = await openForm(page, isMobile);
+    const submit = form.getByRole('button', { name: isMobile ? 'Next' : 'Book now' }).first();
     await form.getByLabel('Select a date').fill(futureDate([1])); // Monday — tour runs Sun, Wed, Fri
     await form.getByLabel('Hotel name').fill('Hilton');
-    await form.getByRole('button', { name: 'Next' }).first().click();
+    await submit.click();
     await expect(form.getByText('This tour runs on Sunday, Wednesday, Friday only')).toBeVisible();
     await form.getByLabel('Select a date').fill(futureDate([3]));
-    await form.getByRole('button', { name: 'Next' }).first().click();
-    await expect(form.getByText('Guests', { exact: true })).toBeVisible();
+    await submit.click();
+    await expect(form.getByText('This tour runs on Sunday, Wednesday, Friday only')).toBeHidden();
   });
 
   test('"Book this tour" CTA opens the booking dialog', async ({ page }) => {

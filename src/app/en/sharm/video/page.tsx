@@ -6,7 +6,8 @@ import { Footer } from '@/components/Footer';
 import { InstagramIcon, TelegramIcon, WhatsAppIcon } from '@/components/icons';
 import { SiteHeader } from '@/components/SiteHeader';
 import { BOOK_TOUR_MSG, site, whatsappLink } from '@/data/site';
-import { CATEGORIES, toSummary, tourHref, tours } from '@/data/tours';
+import { CATEGORIES, toSummary, tourHref } from '@/data/tours';
+import { listTours } from '@/lib/server/tours';
 import { imageSrc } from '@/lib/images';
 import styles from './video.module.css';
 
@@ -21,7 +22,8 @@ export const metadata: Metadata = {
  * available to this project. Until real video files are provided this page is an
  * honest "coming soon" state that still routes visitors to every tour.
  */
-export default function VideoPage() {
+export default async function VideoPage() {
+  const tours = await listTours();
   return (
     <div className={styles.page}>
       <SiteHeader />

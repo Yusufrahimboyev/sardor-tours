@@ -43,7 +43,9 @@ export function formatGBP(n: number): string {
   return `£${n.toLocaleString('en-GB')}`;
 }
 
-export function optionPriceLabel(o: TourOption): string {
+/** "£30 / person" (or "£30 / pp" when `short`), "Free", "Included". */
+export function optionPriceLabel(o: TourOption, short = false): string {
   if (o.free || o.price === 0) return o.unit === 'included' ? 'Included' : 'Free';
-  return `£${o.price}${o.unit ? ` / ${o.unit}` : ''}`;
+  const unit = short && o.unit === 'person' ? 'pp' : o.unit;
+  return `£${o.price}${unit ? ` / ${unit}` : ''}`;
 }
