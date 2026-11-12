@@ -3542,1153 +3542,1153 @@
     }
   },
   "petra-jordan-trip": {
-    "name": "Petra, Jordan Day Trip by Ferry",
-    "title": "Petra, Jordan Day Trip from Sharm El Sheikh by Ferry",
-    "categoryLabel": "Historical",
-    "duration": "24 hours",
-    "detailDuration": "24 hours",
-    "schedule": "Mon, Wed & Sat",
-    "timeText": "1:30 AM – 1:30 AM",
+    "name": "Петра, Иордания: однодневная поездка на пароме",
+    "title": "Однодневная поездка в Петру, Иордания, из Шарм-эль-Шейха на пароме",
+    "categoryLabel": "Исторические",
+    "duration": "24 часа",
+    "detailDuration": "24 часа",
+    "schedule": "Понедельник, среда и суббота",
+    "timeText": "С 1:30 AM до 1:30 AM",
     "priceUnit": null,
-    "badge": "Once in a Lifetime",
-    "excerpt": "A packed full-day trip to Jordan and the city of Petra — one of the greatest works of human hands, carved into nature's own masterpieces…",
-    "metaTitle": "Petra Day Trip from Sharm El Sheikh by Ferry | Sardor Tours",
-    "metaDescription": "Petra by ferry: the Siq canyon, the Treasury, amphitheatre, Colonnades and lunch. Ferry, transfer and guide included. From £220. No prepayment.",
+    "badge": "Раз в жизни",
+    "excerpt": "Насыщенная однодневная поездка в Иорданию и город Петра — одно из величайших творений человеческих рук, высеченное в шедеврах самой природы…",
+    "metaTitle": "Петра из Шарм-эль-Шейха на пароме за один день | Sardor Tours",
+    "metaDescription": "Петра на пароме: каньон Сик, Сокровищница, амфитеатр, колоннады и обед. Паром, трансфер и гид включены. От £220. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "In the evening, we'll pick you up from your hotel and travel in a comfortable air-conditioned coach to the port of Taba."
+        "title": "Заберём из отеля",
+        "text": "Вечером мы заберём вас из отеля и отправимся в порт Табы на комфортабельном автобусе с кондиционером."
       },
       {
-        "title": "Ferry to Jordan",
-        "text": "Cross the Gulf of Aqaba by ferry and enjoy views of Egypt, Jordan and Saudi Arabia during the one-hour journey."
+        "title": "На пароме в Иорданию",
+        "text": "Пересеките залив Акаба на пароме и полюбуйтесь видами Египта, Иордании и Саудовской Аравии во время часового перехода."
       },
       {
-        "title": "Drive to Petra",
-        "text": "Continue through the spectacular desert landscapes of Wadi Rum before arriving at the ancient city of Petra."
+        "title": "Дорога в Петру",
+        "text": "Путь к древнему городу Петра пройдёт через впечатляющие пустынные пейзажи Вади-Рам."
       },
       {
-        "title": "Walk Through the Siq",
-        "text": "Follow Petra's famous narrow canyon, surrounded by towering rose-coloured cliffs, before reaching the city's most iconic monument."
+        "title": "Прогулка по каньону Сик",
+        "text": "Пройдите по знаменитому узкому каньону Петры среди высоких розовых скал, чтобы выйти к самому узнаваемому памятнику города."
       },
       {
-        "title": "Explore Petra",
-        "text": "Discover Al-Khazneh (The Treasury), the Roman Theatre, the Colonnaded Street, Byzantine ruins and other remarkable monuments with your professional guide."
+        "title": "Знакомство с Петрой",
+        "text": "Вместе с профессиональным гидом откройте для себя Эль-Хазне (Сокровищницу), Римский театр, улицу Колоннад, византийские руины и другие выдающиеся памятники."
       },
       {
-        "title": "Buffet Lunch",
-        "text": "Enjoy a buffet lunch featuring a selection of traditional Arabic dishes."
+        "title": "Обед «шведский стол»",
+        "text": "Насладитесь обедом «шведский стол» с выбором традиционных арабских блюд."
       },
       {
-        "title": "Return to Sharm El Sheikh",
-        "text": "After a full day exploring Petra, return by coach and ferry, arriving back at your hotel after midnight."
+        "title": "Возвращение в Шарм-эль-Шейх",
+        "text": "После насыщенного дня в Петре вы отправитесь обратно на автобусе и пароме и вернётесь в отель после полуночи."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "Professional English-speaking guide",
-      "Ferry tickets",
-      "Petra entrance ticket",
-      "Buffet lunch"
+      "Трансфер из отеля и обратно",
+      "Профессиональный англоговорящий гид",
+      "Билеты на паром",
+      "Входной билет в Петру",
+      "Обед «шведский стол»"
     ],
     "notIncluded": [
-      "Camel, donkey or horse carriage rides",
-      "Drinks during lunch",
-      "Personal expenses"
+      "Прогулки на верблюде, осле или в конной повозке",
+      "Напитки во время обеда",
+      "Личные расходы"
     ],
     "bring": [
-      "Passport",
-      "Breakfast box from your hotel",
-      "Drinking water",
-      "Comfortable walking shoes",
-      "Comfortable clothing"
+      "Паспорт",
+      "Завтрак с собой из отеля",
+      "Питьевая вода",
+      "Удобная обувь для ходьбы",
+      "Удобная одежда"
     ],
     "faq": [
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "No. You can join this tour using your passport without purchasing an Egyptian visa."
+        "q": "Нужна ли египетская виза?",
+        "a": "Нет. Вы можете отправиться на эту экскурсию с паспортом, не приобретая египетскую визу."
       },
       {
-        "q": "How long is the journey?",
-        "a": "The coach transfer to Taba takes approximately 3 hours, followed by a one-hour ferry crossing and a 1.5-hour drive to Petra."
+        "q": "Сколько времени занимает дорога?",
+        "a": "Трансфер на автобусе до Табы занимает около 3 часов, затем следуют часовой переход на пароме и 1.5 часа пути до Петры."
       },
       {
-        "q": "How much walking is involved?",
-        "a": "Petra is explored on foot. Comfortable shoes are essential, and the route includes several kilometres of walking on uneven ground."
+        "q": "Сколько придётся ходить пешком?",
+        "a": "Петру осматривают пешком. Обязательно наденьте удобную обувь: маршрут включает несколько километров по неровной местности."
       },
       {
-        "q": "Is lunch included?",
-        "a": "Yes. A buffet lunch at a local restaurant is included in the tour price."
+        "q": "Обед включён?",
+        "a": "Да. Обед «шведский стол» в местном ресторане включён в стоимость экскурсии."
       },
       {
-        "q": "Can I book a private tour?",
-        "a": "Yes. Private transport and a dedicated English-speaking guide can be arranged. Contact us for a personalised itinerary and quotation."
+        "q": "Можно ли забронировать индивидуальную экскурсию?",
+        "a": "Да. Можно организовать индивидуальный транспорт и отдельного англоговорящего гида. Свяжитесь с нами, чтобы составить программу по вашим пожеланиям и узнать стоимость."
       },
       {
-        "q": "What should I bring?",
-        "a": "Bring your passport, breakfast box, drinking water, comfortable shoes and cash for optional activities or souvenirs."
+        "q": "Что взять с собой?",
+        "a": "Возьмите паспорт, завтрак с собой, питьевую воду, удобную обувь и наличные для дополнительных развлечений или сувениров."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "Petra · Jordan",
-        "title": "Al-Khazneh (The Treasury)",
-        "text": "Petra's most famous monument, carved directly into the rose-coloured rock more than 2,000 years ago and recognised as one of the New Seven Wonders of the World.",
+        "tag": "Петра · Иордания",
+        "title": "Эль-Хазне (Сокровищница)",
+        "text": "Самый известный памятник Петры, высеченный прямо в розовой скале более 2,000 лет назад и признанный одним из новых семи чудес света.",
         "tone": "sand"
       },
       {
-        "tag": "Petra",
-        "title": "The Siq Canyon",
-        "text": "Walk through Petra's dramatic natural entrance, a narrow canyon with towering cliffs leading to the heart of the ancient city.",
+        "tag": "Петра",
+        "title": "Каньон Сик",
+        "text": "Пройдите через впечатляющий природный вход в Петру — узкий каньон с высокими скалами, ведущий в самое сердце древнего города.",
         "tone": "blue"
       },
       {
-        "tag": "Jordan",
-        "title": "A Journey Through History",
-        "text": "Explore one of the world's greatest archaeological sites and discover the remarkable legacy of the Nabataean civilisation.",
+        "tag": "Иордания",
+        "title": "Путешествие сквозь историю",
+        "text": "Посетите один из величайших археологических памятников мира и познакомьтесь с удивительным наследием набатейской цивилизации.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "No Egyptian Visa Required",
-        "text": "Travel to Petra using your passport without purchasing an Egyptian visa.",
+        "title": "Египетская виза не нужна",
+        "text": "Отправляйтесь в Петру с паспортом, не приобретая египетскую визу.",
         "tone": "green"
       },
       {
-        "title": "Comfortable Walking Shoes Recommended",
-        "text": "Petra is a walking tour with uneven paths and several kilometres of exploration.",
+        "title": "Рекомендуем удобную обувь для ходьбы",
+        "text": "Экскурсия по Петре проходит пешком по неровным дорожкам и включает несколько километров прогулки.",
         "tone": "orange"
       },
       {
-        "title": "Buffet Lunch Included",
-        "text": "Enjoy a traditional Arabic buffet before continuing your visit.",
+        "title": "Обед «шведский стол» включён",
+        "text": "Попробуйте традиционные арабские блюда за «шведским столом», прежде чем продолжить осмотр.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "The Siq canyon · The Treasury · Ferry · Amphitheatre",
-      "line2": "Ferry, guide and lunch included — from £220",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Каньон Сик · Сокровищница · Паром · Амфитеатр",
+      "line2": "Паром, гид и обед включены — от £220",
       "chips": [
-        "Fast replies"
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children 2–9 years",
-        "unit": "per person",
+        "label": "Ребёнок 2–9 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Luxor",
-        "name": "Luxor — Day Trip"
+        "tag": "Луксор",
+        "name": "Луксор — однодневная экскурсия"
       },
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Каир",
+        "name": "Каир и пирамиды на автобусе"
       },
       {
-        "tag": "Museum",
-        "name": "Grand Egyptian Museum"
+        "tag": "Музей",
+        "name": "Большой Египетский музей"
       },
       {
-        "tag": "Private Yacht",
-        "name": "Private Yacht in Sharm El Sheikh"
+        "tag": "Частная яхта",
+        "name": "Частная яхта в Шарм-эль-Шейхе"
       },
       {
-        "tag": "Quad Bikes",
-        "name": "Quad Bike Safari"
+        "tag": "Квадроциклы",
+        "name": "Сафари на квадроциклах"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children 2–9 years",
-        "unit": "person"
+        "label": "Ребёнок 2–9 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants under 2 years",
-        "unit": "person"
+        "label": "Младенцы до 2 лет",
+        "unit": "чел."
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−20%",
-      "priceText": "Transfer, lunch and entrance tickets already included.",
-      "programKicker": "The day's programme",
-      "programNum": "4 stops",
-      "programText": "The Siq canyon, the Treasury, the amphitheatre, a ferry across the Red Sea. Ancient Petra in a single day.",
+      "priceText": "Трансфер, обед и входные билеты уже включены.",
+      "programKicker": "Программа дня",
+      "programNum": "4 остановки",
+      "programText": "Каньон Сик, Сокровищница, амфитеатр и паром через Красное море. Древняя Петра за один день.",
       "ring": "4/4",
-      "ringLabel": "stops"
+      "ringLabel": "остановки"
     }
   },
   "mount-moses-sinai": {
-    "name": "Mount Moses & St. Catherine Monastery",
-    "title": "Mount Moses & St. Catherine Monastery from Sharm El Sheikh",
-    "categoryLabel": "Historical",
-    "duration": "17 hours",
-    "detailDuration": "17 hours",
-    "schedule": "Sun, Wed, Fri",
-    "timeText": "8:00 PM – 1:00 PM next day",
+    "name": "Гора Моисея и монастырь Святой Екатерины",
+    "title": "Гора Моисея и монастырь Святой Екатерины из Шарм-эль-Шейха",
+    "categoryLabel": "Исторические",
+    "duration": "17 часов",
+    "detailDuration": "17 часов",
+    "schedule": "Воскресенье, среда, пятница",
+    "timeText": "С 8:00 PM до 1:00 PM следующего дня",
     "priceUnit": null,
-    "badge": "Legendary",
-    "excerpt": "Mount Moses, also known as Mount Sinai. According to the Bible, this is where God appeared to Moses and gave him the Ten Commandments…",
-    "metaTitle": "Mount Moses & St. Catherine Monastery | Sardor Tours",
-    "metaDescription": "Mount Moses: night climb, sunrise at the summit, St. Catherine Monastery. Transfer and guide included. From £30. No prepayment.",
+    "badge": "Легендарный маршрут",
+    "excerpt": "Гора Моисея, также известная как гора Синай. Согласно Библии, именно здесь Бог явился Моисею и передал ему Десять заповедей…",
+    "metaTitle": "Гора Моисея и монастырь Святой Екатерины | Sardor Tours",
+    "metaDescription": "Гора Моисея: ночной подъём, рассвет на вершине, монастырь Святой Екатерины. Трансфер и гид включены. От £30. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "In the evening, we'll pick you up from your hotel in a comfortable air-conditioned coach and begin the journey to St. Catherine."
+        "title": "Заберём из отеля",
+        "text": "Вечером мы заберём вас из отеля на комфортабельном автобусе с кондиционером и отправимся к монастырю Святой Екатерины."
       },
       {
-        "title": "Night Hike to Mount Moses",
-        "text": "Accompanied by an experienced local guide, you'll hike to the summit of Mount Moses to watch the sunrise over the Sinai Mountains. The route is approximately 7 km and takes 3–4 hours, following a gentle trail and the final 750 Steps of Repentance. Rest stops along the way offer drinks and snacks."
+        "title": "Ночной подъём на гору Моисея",
+        "text": "В сопровождении опытного местного гида вы подниметесь на вершину горы Моисея, чтобы встретить рассвет над Синайскими горами. Маршрут длиной около 7 км занимает 3–4 часа: сначала по пологой тропе, затем по последним 750 ступеням Лестницы покаяния. На остановках по пути есть напитки и перекус."
       },
       {
-        "title": "Descent from the Summit",
-        "text": "After sunrise, you'll make your way back down the mountain at a comfortable pace."
+        "title": "Спуск с вершины",
+        "text": "После рассвета вы спуститесь с горы в комфортном темпе."
       },
       {
-        "title": "Visit St. Catherine Monastery",
-        "text": "Explore one of the world's oldest working monasteries, located at the foot of Mount Moses. The monastery is a UNESCO World Heritage Site and one of the most important Christian pilgrimage destinations."
+        "title": "Посещение монастыря Святой Екатерины",
+        "text": "Посетите один из старейших действующих монастырей мира у подножия горы Моисея. Монастырь входит в список Всемирного наследия ЮНЕСКО и относится к важнейшим местам христианского паломничества."
       },
       {
-        "title": "Return to Sharm El Sheikh",
-        "text": "Relax on the journey back in a comfortable air-conditioned coach with scheduled rest stops along the way."
+        "title": "Возвращение в Шарм-эль-Шейх",
+        "text": "Отдохните на обратном пути в комфортабельном автобусе с кондиционером. По дороге предусмотрены остановки для отдыха."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "English-speaking guide",
-      "Visit to St. Catherine Monastery"
+      "Трансфер из отеля и обратно",
+      "Англоговорящий гид",
+      "Посещение монастыря Святой Екатерины"
     ],
     "notIncluded": [
-      "Camel ride (optional)",
-      "Food and drinks",
-      "Personal expenses"
+      "Прогулка на верблюде по желанию",
+      "Еда и напитки",
+      "Личные расходы"
     ],
     "bring": [
-      "Passport",
-      "Comfortable walking shoes",
-      "Warm clothing",
-      "Water and light snacks",
-      "Money for personal expenses"
+      "Паспорт",
+      "Удобная обувь для ходьбы",
+      "Тёплая одежда",
+      "Вода и лёгкий перекус",
+      "Деньги на личные расходы"
     ],
     "faq": [
       {
-        "q": "How far is Mount Moses from Sharm El Sheikh?",
-        "a": "The journey is approximately 210–230 km and takes around 2.5–3.5 hours, depending on road conditions and checkpoints."
+        "q": "Как далеко гора Моисея от Шарм-эль-Шейха?",
+        "a": "Расстояние составляет около 210–230 км, дорога занимает примерно 2.5–3.5 часа в зависимости от дорожных условий и прохождения контрольно-пропускных пунктов."
       },
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "No. If you are staying in South Sinai with the free Sinai entry stamp, you can join this tour without purchasing an Egyptian visa."
+        "q": "Нужна ли египетская виза?",
+        "a": "Нет. Если вы отдыхаете в Южном Синае с бесплатным синайским въездным штампом, вы можете отправиться на экскурсию, не приобретая египетскую визу."
       },
       {
-        "q": "Is the hike difficult?",
-        "a": "The hike is moderate and suitable for reasonably fit travellers. It covers around 7 km and takes approximately 3–4 hours, including rest stops."
+        "q": "Сложно ли подниматься?",
+        "a": "Маршрут средней сложности подходит путешественникам с достаточной физической подготовкой. Он составляет около 7 км и занимает примерно 3–4 часа с остановками для отдыха."
       },
       {
-        "q": "What should I wear?",
-        "a": "Temperatures at the summit can be cold, especially between November and March. We recommend warm layers, a windproof jacket and comfortable walking shoes."
+        "q": "Как одеться?",
+        "a": "На вершине бывает холодно, особенно с ноября по март. Рекомендуем несколько слоёв тёплой одежды, непродуваемую куртку и удобную обувь для ходьбы."
       },
       {
-        "q": "Can I ride a camel?",
-        "a": "Yes. Camels are available for hire on part of the route for an additional fee, paid directly on site."
+        "q": "Можно ли подняться на верблюде?",
+        "a": "Да. На части маршрута можно нанять верблюда за дополнительную плату. Оплата производится непосредственно на месте."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "We recommend this tour for children aged 10 and over who are comfortable walking long distances."
+        "q": "Подходит ли экскурсия для детей?",
+        "a": "Мы рекомендуем эту экскурсию детям от 10 лет, которые легко переносят длительные пешие прогулки."
       },
       {
-        "q": "Can I book a private tour?",
-        "a": "Yes. Private transport and a dedicated guide can be arranged. Contact us on WhatsApp for pricing and availability."
+        "q": "Можно ли забронировать индивидуальную экскурсию?",
+        "a": "Да. Можно организовать индивидуальный транспорт и отдельного гида. Напишите нам в WhatsApp, чтобы узнать цены и наличие мест."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "Sinai Mountains",
-        "title": "Mount Moses",
-        "text": "Watch the sunrise from one of the most famous peaks in the Sinai Peninsula after a memorable night hike through the mountains.",
+        "tag": "Синайские горы",
+        "title": "Гора Моисея",
+        "text": "После незабываемого ночного похода встретьте рассвет на одной из самых известных вершин Синайского полуострова.",
         "tone": "sand"
       },
       {
-        "tag": "St. Catherine",
-        "title": "UNESCO World Heritage Site",
-        "text": "Visit one of the oldest continuously operating monasteries in the world, an important place of history and pilgrimage.",
+        "tag": "Святая Екатерина",
+        "title": "Объект Всемирного наследия ЮНЕСКО",
+        "text": "Посетите один из старейших непрерывно действующих монастырей мира — важное место истории и паломничества.",
         "tone": "blue"
       },
       {
-        "tag": "Night Adventure",
-        "title": "Sunrise Hike",
-        "text": "Experience the peaceful atmosphere of the Sinai Mountains and enjoy spectacular sunrise views from the summit.",
+        "tag": "Ночное приключение",
+        "title": "Поход навстречу рассвету",
+        "text": "Почувствуйте умиротворённую атмосферу Синайских гор и полюбуйтесь впечатляющим рассветом с вершины.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "No Egyptian Visa Required",
-        "text": "Travellers entering South Sinai with the free Sinai stamp can join this tour without purchasing an Egyptian visa.",
+        "title": "Египетская виза не нужна",
+        "text": "Путешественники, въехавшие в Южный Синай с бесплатным синайским штампом, могут отправиться на эту экскурсию без приобретения египетской визы.",
         "tone": "green"
       },
       {
-        "title": "Dress for Cool Weather",
-        "text": "Temperatures at the summit can be low, so warm clothing and comfortable walking shoes are essential.",
+        "title": "Оденьтесь для прохладной погоды",
+        "text": "На вершине бывает холодно, поэтому тёплая одежда и удобная обувь для ходьбы обязательны.",
         "tone": "orange"
       },
       {
-        "title": "Camel Ride Available",
-        "text": "If you prefer, you can hire a camel for part of the climb and continue the final section on foot.",
+        "title": "Можно подняться на верблюде",
+        "text": "По желанию вы можете нанять верблюда на часть подъёма, а заключительный участок пройти пешком.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Climb · Sunrise · Monastery · Sinai",
-      "line2": "Guide and hotel transfer included — from £30",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Подъём · Рассвет · Монастырь · Синай",
+      "line2": "Гид и трансфер из отеля включены — от £30",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children ages 5–9",
-        "unit": "per person",
+        "label": "Ребёнок 5–9 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Каир",
+        "name": "Каир и пирамиды на автобусе"
       },
       {
-        "tag": "Petra",
-        "name": "Petra — Jordan"
+        "tag": "Петра",
+        "name": "Петра — Иордания"
       },
       {
-        "tag": "Museum",
-        "name": "Grand Egyptian Museum"
+        "tag": "Музей",
+        "name": "Большой Египетский музей"
       },
       {
-        "tag": "Diving",
-        "name": "Blue Hole Dahab"
+        "tag": "Дайвинг",
+        "name": "Голубая дыра в Дахабе"
       },
       {
-        "tag": "Safari",
-        "name": "Super Safari"
+        "tag": "Сафари",
+        "name": "Супер-сафари"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children ages 5–9",
-        "unit": "person"
+        "label": "Ребёнок 5–9 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants ages 0–4",
+        "label": "Младенцы 0–4 лет",
         "unit": ""
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−33%",
-      "priceText": "Transfer, lunch and entrance tickets are already included. No prepayment.",
-      "programKicker": "Day's programme",
-      "programNum": "3 parts",
-      "programText": "A night climb, sunrise at the summit and St. Catherine Monastery. A spiritual experience for life.",
+      "priceText": "Трансфер, обед и входные билеты уже включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "3 части",
+      "programText": "Ночной подъём, рассвет на вершине и монастырь Святой Екатерины. Духовное путешествие, которое запомнится на всю жизнь.",
       "ring": "3/3",
-      "ringLabel": "parts"
+      "ringLabel": "части"
     }
   },
   "dolphin-show-sharm": {
-    "name": "Dolphin Show & Swimming with Dolphins",
-    "title": "Dolphin Show & Swimming with Dolphins in Sharm El Sheikh",
-    "categoryLabel": "Entertainment",
-    "duration": "3 hours",
-    "detailDuration": "3 hours",
-    "schedule": "Daily",
-    "timeText": "2:00 PM to 5:00 PM",
+    "name": "Шоу дельфинов и плавание с дельфинами",
+    "title": "Шоу дельфинов и плавание с дельфинами в Шарм-эль-Шейхе",
+    "categoryLabel": "Развлечения",
+    "duration": "3 часа",
+    "detailDuration": "3 часа",
+    "schedule": "Ежедневно",
+    "timeText": "С 2:00 PM до 5:00 PM",
     "priceUnit": null,
-    "badge": "Family Favourite",
-    "excerpt": "A dazzling dolphin show that sweeps you into a festive mood: acrobatic routines, pirouettes and incredible tricks…",
-    "metaTitle": "Dolphin Show & Swimming with Dolphins in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Dolphin show in Sharm El Sheikh: dolphin acrobatics and 15–30 minutes swimming with them. Hotel transfer included. From £23. No prepayment.",
+    "badge": "Выбор семей",
+    "excerpt": "Яркое шоу дельфинов подарит праздничное настроение: акробатические номера, пируэты и невероятные трюки…",
+    "metaTitle": "Шоу дельфинов и плавание с ними в Шарм-эль-Шейхе | Sardor Tours",
+    "metaDescription": "Шоу дельфинов в Шарм-эль-Шейхе: акробатика и 15–30 минут плавания с ними. Трансфер из отеля включён. От £23. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка действует",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We pick you up from your hotel in a comfortable air-conditioned vehicle. The journey to the dolphin park takes approximately 30 minutes, depending on your hotel location."
+        "title": "Заберём из отеля",
+        "text": "Мы заберём вас из отеля на комфортабельном автомобиле с кондиционером. Дорога до парка дельфинов занимает около 30 минут в зависимости от расположения вашего отеля."
       },
       {
-        "title": "Dolphin Show 3:00 PM – 4:00 PM",
-        "text": "Enjoy a one-hour dolphin show featuring impressive jumps, acrobatics, dances, and other entertaining performances. After the show, you can take an optional souvenir photo with a dolphin for an additional fee, paid on site."
+        "title": "Шоу дельфинов 3:00 PM – 4:00 PM",
+        "text": "Насладитесь часовым шоу дельфинов с впечатляющими прыжками, акробатикой, танцами и другими увлекательными номерами. После шоу по желанию можно сделать фото на память с дельфином за дополнительную плату на месте."
       },
       {
-        "title": "Swimming with Dolphins",
-        "text": "A unique opportunity to interact with dolphins in the water — you can swim, play, and enjoy close interaction with these remarkable marine animals."
+        "title": "Плавание с дельфинами",
+        "text": "Уникальная возможность пообщаться с дельфинами в воде: плавайте, играйте и наслаждайтесь близким знакомством с этими удивительными морскими животными."
       },
       {
-        "title": "Return Transfer",
-        "text": "After the experience, we transfer you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Обратный трансфер",
+        "text": "После программы мы отвезём вас обратно в отель на комфортабельном автомобиле с кондиционером."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and drop-off"
+      "Англоговорящий гид",
+      "Трансфер из отеля и обратно"
     ],
     "notIncluded": [
-      "Professional photos and videos"
+      "Профессиональные фото и видео"
     ],
     "bring": [
-      "Swimwear and a towel (for guests swimming with dolphins)"
+      "Купальник или плавки и полотенце (для гостей, которые будут плавать с дельфинами)"
     ],
     "faq": [
       {
-        "q": "Do I need to know how to swim?",
-        "a": "No swimming skills are required to attend the dolphin show. For swimming with dolphins, basic swimming ability is recommended for the best experience."
+        "q": "Нужно ли уметь плавать?",
+        "a": "Для посещения шоу дельфинов умение плавать не требуется. Чтобы получить больше удовольствия от плавания с дельфинами, рекомендуем владеть базовыми навыками плавания."
       },
       {
-        "q": "Can children join?",
-        "a": "Yes, the dolphin show is open to all ages. For swimming with dolphins, we recommend that children under 10 are accompanied by an adult in the water."
+        "q": "Можно ли прийти с детьми?",
+        "a": "Да, шоу дельфинов открыто для гостей любого возраста. Во время плавания с дельфинами рекомендуем, чтобы детей младше 10 лет в воде сопровождал взрослый."
       },
       {
-        "q": "Can I take photos?",
-        "a": "Yes, photography is allowed during the dolphin show. During the swimming session, personal phones and cameras are not allowed. Professional photos and videos can be purchased on site."
+        "q": "Можно ли фотографировать?",
+        "a": "Да, во время шоу дельфинов разрешено фотографировать. Во время плавания личные телефоны и камеры запрещены. Профессиональные фото и видео можно приобрести на месте."
       },
       {
-        "q": "Can I book only the show or only the swim?",
-        "a": "Yes, you can book the dolphin show, the dolphin swim, or both together. Contact us on WhatsApp and we'll help you choose the best option."
+        "q": "Можно ли забронировать только шоу или только плавание?",
+        "a": "Да, вы можете забронировать шоу дельфинов, плавание с дельфинами или обе программы вместе. Напишите нам в WhatsApp, и мы поможем выбрать подходящий вариант."
       },
       {
-        "q": "How many people swim with the dolphins at the same time?",
-        "a": "Swimming sessions usually include up to 8 participants. Private sessions may also be available upon request."
+        "q": "Сколько человек плавают с дельфинами одновременно?",
+        "a": "Обычно в сеансе плавания участвуют до 8 человек. По запросу также могут быть доступны индивидуальные сеансы."
       },
       {
-        "q": "How long does the experience last?",
-        "a": "The full experience takes approximately 3 hours, including hotel transfers, a 1-hour dolphin show, and a 15- or 30-minute dolphin swim (depending on the option booked)."
+        "q": "Сколько длится программа?",
+        "a": "Вся программа занимает около 3 часов, включая трансфер из отеля и обратно, 1-часовое шоу дельфинов и 15 или 30 минут плавания с дельфинами в зависимости от выбранного варианта."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "1-Hour Live Performance",
-        "title": "Dolphin Show",
-        "text": "Watch dolphins and sea lions perform acrobatics, tricks, and interactive routines in a fun show for all ages.",
+        "tag": "Живое представление на 1 час",
+        "title": "Шоу дельфинов",
+        "text": "Посмотрите, как дельфины и морские львы выполняют акробатические номера, трюки и выступают с участием зрителей в увлекательном шоу для всех возрастов.",
         "tone": "blue"
       },
       {
-        "tag": "15 or 30 Minutes",
-        "title": "Swimming with Dolphins",
-        "text": "Enjoy a unique in-water experience with dolphins. Swim, play, and create unforgettable memories. Swim time: upon request.",
+        "tag": "15 или 30 минут",
+        "title": "Плавание с дельфинами",
+        "text": "Подарите себе уникальное знакомство с дельфинами в воде. Плавайте, играйте и создавайте незабываемые воспоминания. Время плавания — по запросу.",
         "tone": "coral"
       },
       {
-        "tag": "Suitable for All Ages",
-        "title": "Family-Friendly Experience",
-        "text": "Guests of all ages are welcome. Hotel pick-up and drop-off are included, with daily sessions from 2:00 PM to 5:00 PM.",
+        "tag": "Подходит для всех возрастов",
+        "title": "Отдых для всей семьи",
+        "text": "Мы рады гостям любого возраста. Трансфер из отеля и обратно включён, сеансы проходят ежедневно с 2:00 PM до 5:00 PM.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "All Ages Welcome",
-        "text": "The show is open to all ages. For swimming sessions, we recommend adult supervision for children under 10.",
+        "title": "Гости любого возраста",
+        "text": "Шоу открыто для всех возрастов. Во время плавания рекомендуем присмотр взрослых за детьми младше 10 лет.",
         "tone": "green"
       },
       {
-        "title": "Professional Photos",
-        "text": "Personal phones and cameras are not permitted during the swim. Professional photos and videos are available to purchase on site.",
+        "title": "Профессиональные фотографии",
+        "text": "Во время плавания личные телефоны и камеры запрещены. Профессиональные фото и видео можно приобрести на месте.",
         "tone": "orange"
       },
       {
-        "title": "Flexible Booking",
-        "text": "Choose the dolphin show, the dolphin swim, or both together. Simply select your preferred option when booking.",
+        "title": "Гибкий выбор программы",
+        "text": "Выберите шоу дельфинов, плавание с дельфинами или обе программы вместе. Просто укажите подходящий вариант при бронировании.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Show · Swim · Tricks · Emotions · All ages",
-      "line2": "Guide and transfer included — from £23",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Шоу · Плавание · Трюки · Эмоции · Для всех возрастов",
+      "line2": "Гид и трансфер включены — от £23",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adult",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": "−33%"
       },
       {
-        "label": "15 min / pp",
+        "label": "15 мин / за человека",
         "unit": null,
         "discount": "−24%"
       }
     ],
     "related": [
       {
-        "tag": "Evening yacht",
-        "name": "Evening Yacht Cruise"
+        "tag": "Вечерняя яхта",
+        "name": "Вечерняя прогулка на яхте"
       },
       {
-        "tag": "Glass bottom",
-        "name": "Glass-Bottom Boat Trip"
+        "tag": "Прозрачное дно",
+        "name": "Прогулка на лодке с прозрачным дном"
       },
       {
-        "tag": "Underwater world",
-        "name": "Semi-Submarine (Sea Scope)"
+        "tag": "Подводный мир",
+        "name": "Полуподводная лодка (Sea Scope)"
       },
       {
-        "tag": "Buggy",
-        "name": "Buggy Safari & Camel Ride"
+        "tag": "Багги",
+        "name": "Сафари на багги и прогулка на верблюде"
       },
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Каир",
+        "name": "Каир и пирамиды на автобусе"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children 3–8 years",
-        "unit": "person"
+        "label": "Ребёнок 3–8 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants 0–2 years",
+        "label": "Младенцы 0–2 лет",
         "unit": ""
       },
       {
-        "label": "15 minutes",
-        "unit": "person"
+        "label": "15 минут",
+        "unit": "чел."
       },
       {
-        "label": "30 minutes",
-        "unit": "person"
+        "label": "30 минут",
+        "unit": "чел."
       },
       {
-        "label": "Spectator (no swimming)",
-        "unit": "person"
+        "label": "Зритель (без плавания)",
+        "unit": "чел."
       }
     ],
     "bento": {
-      "priceKicker": "Saving · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−33%",
-      "priceText": "Transfer and guide included. All ages welcome. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "3 activities",
-      "programText": "Show, tricks, swimming with dolphins. For all ages. Transfer included. Emotions you'll never forget.",
+      "priceText": "Трансфер и гид включены. Гости любого возраста. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "3 активности",
+      "programText": "Шоу, трюки и плавание с дельфинами. Для всех возрастов. Трансфер включён. Эмоции, которые вы никогда не забудете.",
       "ring": "3/3",
-      "ringLabel": "activities"
+      "ringLabel": "активности"
     }
   },
   "parasailing-sharm": {
-    "name": "Parasailing",
-    "title": "Parasailing Flight over the Red Sea in Sharm El Sheikh",
-    "categoryLabel": "Entertainment",
-    "duration": "1.5 hours",
-    "detailDuration": "1.5 hours",
-    "schedule": "Daily",
-    "timeText": "from 10:00 AM",
+    "name": "Парасейлинг",
+    "title": "Парасейлинг над Красным морем в Шарм-эль-Шейхе",
+    "categoryLabel": "Развлечения",
+    "duration": "1.5 часа",
+    "detailDuration": "1.5 часа",
+    "schedule": "Ежедневно",
+    "timeText": "С 10:00 AM",
     "priceUnit": null,
     "badge": null,
-    "excerpt": "Soar by parachute behind a speedboat over the open water for an incredible sense of floating and freedom…",
-    "metaTitle": "Parasailing Adventure in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Parasailing in Sharm: harbour departure, a parasail flight over the Red Sea behind a speedboat. Transfer included. Daily from 10:00 AM. From £30. No prepayment.",
+    "excerpt": "Взлетите на парашюте за скоростным катером над открытым морем и почувствуйте невероятную лёгкость парения и свободу…",
+    "metaTitle": "Парасейлинг в Шарм-эль-Шейхе | Sardor Tours",
+    "metaDescription": "Парасейлинг в Шарме: отправление из порта, полёт над Красным морем за скоростным катером. Трансфер включён. Ежедневно с 10:00 AM. От £30. Без предоплаты.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка включена",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We'll collect you from your hotel in a comfortable air-conditioned vehicle and transfer you to the marina in Sharm El Sheikh Old Market."
+        "title": "Заберём из отеля",
+        "text": "Мы заберём вас из отеля на комфортабельном автомобиле с кондиционером и отвезём к пристани в районе Старого рынка Шарм-эль-Шейха."
       },
       {
-        "title": "Safety Briefing",
-        "text": "Before your flight, your instructor will explain the equipment and safety procedures. You'll be fitted with a certified harness and life jacket before boarding the speedboat."
+        "title": "Инструктаж по безопасности",
+        "text": "Перед полётом инструктор расскажет об оборудовании и правилах безопасности. До посадки на скоростной катер на вас наденут сертифицированную страховочную систему и спасательный жилет."
       },
       {
-        "title": "Parasailing Flight",
-        "text": "Soar high above the Red Sea and enjoy panoramic views of Sharm El Sheikh's coastline. Each flight lasts approximately 4–6 minutes. If you like, the captain can gently lower you so your feet touch the water before lifting you back into the air."
+        "title": "Полёт на парашюте",
+        "text": "Поднимитесь высоко над Красным морем и полюбуйтесь панорамой побережья Шарм-эль-Шейха. Каждый полёт длится около 4–6 минут. По желанию капитан может плавно опустить вас, чтобы ноги коснулись воды, а затем снова поднять в воздух."
       },
       {
-        "title": "Return Transfer",
-        "text": "After your flight, we'll take you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Обратный трансфер",
+        "text": "После полёта мы отвезём вас обратно в отель на комфортабельном автомобиле с кондиционером."
       }
     ],
     "included": [
-      "English-speaking instructor",
-      "Hotel pick-up and drop-off"
+      "Англоговорящий инструктор",
+      "Трансфер из отеля и обратно"
     ],
     "notIncluded": [
-      "Professional photos"
+      "Профессиональные фотографии"
     ],
     "bring": [
-      "Swimwear",
-      "Towel",
-      "Sunglasses"
+      "Купальник или плавки",
+      "Полотенце",
+      "Солнцезащитные очки"
     ],
     "faq": [
       {
-        "q": "Is parasailing safe?",
-        "a": "Yes. All equipment is regularly inspected and maintained. Before take-off, you'll receive a full safety briefing and be fitted with a certified harness and life jacket."
+        "q": "Безопасен ли парасейлинг?",
+        "a": "Да. Всё оборудование регулярно проверяют и обслуживают. Перед взлётом вы пройдёте полный инструктаж по безопасности, на вас наденут сертифицированную страховочную систему и спасательный жилет."
       },
       {
-        "q": "Are there age or weight limits?",
-        "a": "The minimum age is 7 years. Children under 14 must fly with an adult. The maximum combined weight is 140 kg, depending on weather conditions."
+        "q": "Есть ли ограничения по возрасту или весу?",
+        "a": "Минимальный возраст — 7 лет. Дети младше 14 лет должны лететь со взрослым. Максимальный общий вес — 140 кг в зависимости от погодных условий."
       },
       {
-        "q": "What's the difference between single and tandem flights?",
-        "a": "A single flight is for one person, while a tandem flight allows two people to fly together, making it perfect for couples, friends or a parent and child."
+        "q": "Чем отличаются одиночный и парный полёты?",
+        "a": "Одиночный полёт рассчитан на одного человека, а парный позволяет лететь вдвоём. Это отличный вариант для пар, друзей или родителя с ребёнком."
       },
       {
-        "q": "Will I get wet?",
-        "a": "Not unless you want to. If conditions allow, the captain can gently dip your feet into the water before lifting you back into the air."
+        "q": "Я промокну?",
+        "a": "Только если вы сами захотите. При подходящих условиях капитан может плавно опустить ваши ноги в воду, а затем снова поднять вас в воздух."
       },
       {
-        "q": "Can I bring my phone or camera?",
-        "a": "For safety reasons, we recommend leaving your phone on the boat. Professional photos are available to purchase, and action cameras such as GoPro may be used at your own responsibility."
+        "q": "Можно ли взять телефон или камеру?",
+        "a": "Для безопасности рекомендуем оставить телефон на катере. Профессиональные фотографии можно приобрести отдельно, а экшн-камеры, например GoPro, разрешено использовать под вашу ответственность."
       },
       {
-        "q": "What happens if the weather is bad?",
-        "a": "If weather conditions are unsuitable, your flight will be rescheduled or fully refunded."
+        "q": "Что будет при плохой погоде?",
+        "a": "Если погодные условия не подходят для полёта, его перенесут или полностью вернут вам деньги."
       },
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes. Hotel pick-up and drop-off from any hotel in Sharm El Sheikh are included."
+        "q": "Трансфер из отеля включён?",
+        "a": "Да. Трансфер из любого отеля Шарм-эль-Шейха и обратно включён."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "Red Sea",
-        "title": "Parasailing Adventure",
-        "text": "Enjoy spectacular aerial views of the Red Sea while flying safely behind a speedboat.",
+        "tag": "Красное море",
+        "title": "Приключение с парасейлингом",
+        "text": "Насладитесь впечатляющими видами Красного моря с высоты во время безопасного полёта за скоростным катером.",
         "tone": "coral"
       },
       {
-        "tag": "Sharm El Sheikh",
-        "title": "Single or Tandem Flight",
-        "text": "Fly solo or share the experience with a friend or family member for an unforgettable adventure.",
+        "tag": "Шарм-эль-Шейх",
+        "title": "Одиночный или парный полёт",
+        "text": "Летите самостоятельно или разделите впечатления с другом либо членом семьи — вас ждёт незабываемое приключение.",
         "tone": "blue"
       },
       {
-        "tag": "Safety First",
-        "title": "Professional Equipment",
-        "text": "Certified harnesses, life jackets and experienced instructors ensure a safe and enjoyable flight for every guest.",
+        "tag": "Безопасность прежде всего",
+        "title": "Профессиональное оборудование",
+        "text": "Сертифицированные страховочные системы, спасательные жилеты и опытные инструкторы обеспечивают каждому гостю безопасный и приятный полёт.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Suitable from Age 7",
-        "text": "Children under 14 fly together with an adult.",
+        "title": "Подходит с 7 лет",
+        "text": "Дети младше 14 лет летают вместе со взрослым.",
         "tone": "green"
       },
       {
-        "title": "Optional Water Dip",
-        "text": "Ask the captain if you'd like your feet to touch the water during the flight.",
+        "title": "По желанию можно коснуться воды",
+        "text": "Скажите капитану, если хотите коснуться ногами воды во время полёта.",
         "tone": "orange"
       },
       {
-        "title": "Hotel Transfer Included",
-        "text": "Pick-up and drop-off from any hotel in Sharm El Sheikh are included.",
+        "title": "Трансфер из отеля включён",
+        "text": "Трансфер из любого отеля Шарм-эль-Шейха и обратно включён.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Parasailing · Flight · Sea · Adrenaline",
-      "line2": "Guide and hotel transfer included — from £30",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Парасейлинг · Полёт · Море · Адреналин",
+      "line2": "Гид и трансфер из отеля включены — от £30",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Single",
-        "unit": "per person",
+        "label": "Одиночный полёт",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Tandem",
-        "unit": "per 2 people",
+        "label": "Парный полёт",
+        "unit": "за 2 человек",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Speed boat",
-        "name": "Private Speed Boat"
+        "tag": "Скоростной катер",
+        "name": "Частный скоростной катер"
       },
       {
-        "tag": "Evening yacht",
-        "name": "Evening Yacht Cruise"
+        "tag": "Вечерняя яхта",
+        "name": "Вечерняя прогулка на яхте"
       },
       {
-        "tag": "Private yacht",
-        "name": "Private Yacht in Sharm El Sheikh"
+        "tag": "Частная яхта",
+        "name": "Частная яхта в Шарм-эль-Шейхе"
       },
       {
-        "tag": "Safari",
-        "name": "Salama Red Canyon"
+        "tag": "Сафари",
+        "name": "Красный каньон Салама"
       },
       {
-        "tag": "Museum",
-        "name": "Grand Egyptian Museum & Pyramids"
+        "tag": "Музей",
+        "name": "Большой Египетский музей и пирамиды"
       }
     ],
     "options": [
       {
-        "label": "Single",
-        "unit": "person"
+        "label": "Одиночный полёт",
+        "unit": "чел."
       },
       {
-        "label": "Tandem",
-        "unit": "2 people"
+        "label": "Парный полёт",
+        "unit": "2 чел."
       },
       {
-        "label": "Passenger on board, no flight",
-        "unit": "person"
+        "label": "Пассажир на борту, без полёта",
+        "unit": "чел."
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−14%",
-      "priceText": "Transfer, lunch and entrance tickets already included. No prepayment.",
-      "programKicker": "Day programme",
-      "programNum": "3 steps",
-      "programText": "A parasail flight over the Red Sea, adrenaline and unforgettable views. 1.5 hours of pure delight.",
+      "priceText": "Трансфер, обед и входные билеты уже включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "3 этапа",
+      "programText": "Полёт на парашюте над Красным морем, адреналин и незабываемые виды. 1.5 часа чистого восторга.",
       "ring": "3/3",
-      "ringLabel": "steps"
+      "ringLabel": "этапа"
     }
   },
   "evening-yacht-cruise": {
-    "name": "Evening Yacht Cruise with Dinner & Show",
-    "title": "Evening Yacht Cruise with Dinner & Live Show",
-    "categoryLabel": "Entertainment",
-    "duration": "4 hours",
-    "detailDuration": "4 hours",
-    "schedule": "Evenings",
-    "timeText": "6:00 – 10:00 PM",
+    "name": "Вечерняя прогулка на яхте с ужином и шоу",
+    "title": "Вечерняя прогулка на яхте с ужином и живым шоу",
+    "categoryLabel": "Развлечения",
+    "duration": "4 часа",
+    "detailDuration": "4 часа",
+    "schedule": "По вечерам",
+    "timeText": "С 6:00 до 10:00 PM",
     "priceUnit": null,
-    "badge": "Top Rated",
-    "excerpt": "An evening cruise at sea, a delicious seafood dinner and a spectacular show that every guest can take part in…",
-    "metaTitle": "Evening Yacht Cruise with Dinner in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Evening yacht in Sharm: oriental show, belly dance, Tanoura, seafood dinner. Transfer included. From £30. An unforgettable evening.",
+    "badge": "Высокий рейтинг",
+    "excerpt": "Вечерняя морская прогулка, вкусный ужин из морепродуктов и яркое шоу, в котором может принять участие каждый гость…",
+    "metaTitle": "Вечерняя яхта с ужином в Шарм-эль-Шейхе | Sardor Tours",
+    "metaDescription": "Вечерняя яхта в Шарме: восточное шоу, танец живота, танура, ужин из морепродуктов. Трансфер включён. От £30. Незабываемый вечер.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка действует",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We pick you up from your hotel in a comfortable air-conditioned vehicle and transfer you to the marina in Sharm El Sheikh Old Market. The journey takes approximately 30 minutes, depending on your hotel location."
+        "title": "Заберём из отеля",
+        "text": "Мы заберём вас из отеля на комфортабельном автомобиле с кондиционером и отвезём к пристани в районе Старого рынка Шарм-эль-Шейха. Дорога занимает около 30 минут в зависимости от расположения вашего отеля."
       },
       {
-        "title": "Evening Cruise & Live Entertainment",
-        "text": "Relax aboard a luxury yacht and enjoy an evening of live entertainment. The programme includes a DJ, live music, a Tanoura performance, belly dancing, magic acts, and interactive entertainment for guests of all ages."
+        "title": "Вечерняя прогулка и живая развлекательная программа",
+        "text": "Отдохните на роскошной яхте и насладитесь вечером с живыми выступлениями. В программе — диджей, живая музыка, танура, танец живота, фокусы и развлечения с участием гостей всех возрастов."
       },
       {
-        "title": "Seafood Dinner",
-        "text": "Enjoy a freshly prepared seafood dinner served on board, accompanied by soft drinks included in the tour price."
+        "title": "Ужин из морепродуктов",
+        "text": "Насладитесь свежеприготовленным ужином из морепродуктов на борту и безалкогольными напитками, включёнными в стоимость экскурсии."
       },
       {
-        "title": "Return Transfer",
-        "text": "After the cruise, we transfer you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Обратный трансфер",
+        "text": "После прогулки мы отвезём вас обратно в отель на комфортабельном автомобиле с кондиционером."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and drop-off",
-      "Seafood dinner",
-      "Soft drinks"
+      "Англоговорящий гид",
+      "Трансфер из отеля и обратно",
+      "Ужин из морепродуктов",
+      "Безалкогольные напитки"
     ],
     "notIncluded": [
-      "Professional photos and videos"
+      "Профессиональные фото и видео"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Comfortable clothing"
+      "Фото паспорта в телефоне",
+      "Удобная одежда"
     ],
     "faq": [
       {
-        "q": "Can I celebrate a birthday or special occasion?",
-        "a": "Yes! The yacht is a perfect venue for birthdays, anniversaries, and other celebrations. Contact us on WhatsApp and we'll help you arrange a memorable evening."
+        "q": "Можно ли отметить день рождения или особое событие?",
+        "a": "Да! Яхта прекрасно подходит для дней рождения, годовщин и других праздников. Напишите нам в WhatsApp, и мы поможем организовать незабываемый вечер."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "Yes, this experience is family-friendly. Children under 4 join free of charge, and children aged 5–9 benefit from a reduced price."
+        "q": "Подходит ли экскурсия для детей?",
+        "a": "Да, это отдых для всей семьи. Дети младше 4 лет участвуют бесплатно, а для детей 5–9 лет действует сниженная цена."
       },
       {
-        "q": "Are alcoholic drinks available?",
-        "a": "No. In accordance with Egyptian regulations, alcoholic beverages are not served or permitted on board."
+        "q": "Есть ли алкогольные напитки?",
+        "a": "Нет. В соответствии с египетскими правилами алкогольные напитки на борту не подают, проносить их также запрещено."
       },
       {
-        "q": "Can I take photos?",
-        "a": "Yes, you're welcome to take your own photos throughout the cruise. Professional photography services may also be available."
+        "q": "Можно ли фотографировать?",
+        "a": "Да, вы можете делать собственные фотографии на протяжении всей прогулки. Также могут быть доступны услуги профессионального фотографа."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "О месте",
     "destinationCards": [
       {
-        "tag": "Red Sea · Sharm El Sheikh",
-        "title": "Red Sea Evening Cruise",
-        "text": "Spend a relaxing evening sailing across the Red Sea with live entertainment, a delicious seafood dinner, and beautiful views of Sharm El Sheikh.",
+        "tag": "Красное море · Шарм-эль-Шейх",
+        "title": "Вечерняя прогулка по Красному морю",
+        "text": "Проведите спокойный вечер на Красном море с живыми выступлениями, вкусным ужином из морепродуктов и красивыми видами Шарм-эль-Шейха.",
         "tone": "blue"
       },
       {
-        "tag": "Show on board",
-        "title": "Live Entertainment",
-        "text": "Enjoy an exciting programme featuring Tanoura dancers, belly dancing, live music, a DJ, magic performances, and interactive entertainment.",
+        "tag": "Шоу на борту",
+        "title": "Живая развлекательная программа",
+        "text": "Насладитесь яркой программой: танцоры тануры, танец живота, живая музыка, диджей, фокусы и развлечения с участием гостей.",
         "tone": "coral"
       },
       {
-        "tag": "Old Town · Port",
-        "title": "Sharm El Sheikh Marina",
-        "text": "Depart from the marina in the Old Market area. Hotel pick-up and drop-off are included for a smooth and comfortable experience.",
+        "tag": "Старый город · Порт",
+        "title": "Пристань Шарм-эль-Шейха",
+        "text": "Прогулка начинается у пристани в районе Старого рынка. Для вашего удобства трансфер из отеля и обратно включён в стоимость.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Seafood Dinner & Soft Drinks",
-        "text": "A seafood dinner and soft drinks are included in the tour price.",
+        "title": "Ужин из морепродуктов и безалкогольные напитки",
+        "text": "Ужин из морепродуктов и безалкогольные напитки включены в стоимость экскурсии.",
         "tone": "green"
       },
       {
-        "title": "Perfect for Celebrations",
-        "text": "Planning a birthday or special occasion? Let us know when booking and we'll help make your evening extra special.",
+        "title": "Отлично подходит для праздников",
+        "text": "Планируете день рождения или особое событие? Сообщите нам при бронировании, и мы поможем сделать ваш вечер особенным.",
         "tone": "orange"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Oriental show · Dinner · Live music · Belly dancing",
-      "line2": "Transfer included — from £30",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Восточное шоу · Ужин · Живая музыка · Танец живота",
+      "line2": "Трансфер включён — от £30",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "per person",
+        "label": "Ребёнок 5–9 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Private yacht",
-        "name": "Private Yacht in Sharm El Sheikh"
+        "tag": "Частная яхта",
+        "name": "Частная яхта в Шарм-эль-Шейхе"
       },
       {
-        "tag": "Yacht",
-        "name": "Tiran Island Boat Trip"
+        "tag": "Яхта",
+        "name": "Морская прогулка на остров Тиран"
       },
       {
-        "tag": "Dolphinarium",
-        "name": "Dolphin Show & Swimming with Dolphins"
+        "tag": "Дельфинарий",
+        "name": "Шоу дельфинов и плавание с дельфинами"
       },
       {
-        "tag": "Quad bikes",
-        "name": "Quad Bike Safari & Camel Ride"
+        "tag": "Квадроциклы",
+        "name": "Сафари на квадроциклах и прогулка на верблюде"
       },
       {
-        "tag": "Luxor",
-        "name": "Luxor by Plane"
+        "tag": "Луксор",
+        "name": "Луксор на самолёте"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "person"
+        "label": "Ребёнок 5–9 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants 0–4 years",
+        "label": "Младенцы 0–4 лет",
         "unit": ""
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−33%",
-      "priceText": "Transfer, dinner and entry tickets already included. No prepayment.",
-      "programKicker": "Day programme",
-      "programNum": "4 activities",
-      "programText": "Show, seafood dinner, live music and belly dancing. An unforgettable evening on the Red Sea.",
+      "priceText": "Трансфер, ужин и входные билеты уже включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "4 активности",
+      "programText": "Шоу, ужин из морепродуктов, живая музыка и танец живота. Незабываемый вечер на Красном море.",
       "ring": "4/4",
-      "ringLabel": "activities"
+      "ringLabel": "активности"
     }
   },
   "ras-mohamed-national-park": {
-    "name": "Ras Mohamed National Park by Bus",
-    "title": "Ras Mohamed National Park Tour by Bus from Sharm El Sheikh",
-    "categoryLabel": "Safari",
-    "duration": "5 hours",
-    "detailDuration": "5 hours",
-    "schedule": "Daily",
-    "timeText": "8:30 AM – 1:30 PM",
+    "name": "Национальный парк Рас-Мохаммед на автобусе",
+    "title": "Экскурсия в национальный парк Рас-Мохаммед на автобусе из Шарм-эль-Шейха",
+    "categoryLabel": "Сафари",
+    "duration": "5 часов",
+    "detailDuration": "5 часов",
+    "schedule": "Ежедневно",
+    "timeText": "С 8:30 AM до 1:30 PM",
     "priceUnit": null,
-    "badge": "New",
-    "excerpt": "A short but rewarding and active trip to the National Park: the Gates of Allah, unique coral reefs, lovely mangrove groves and Barracuda Bay…",
-    "metaTitle": "Ras Mohamed National Park Tour by Bus from Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Ras Mohamed: Gate of Allah, mangrove groves, the water-filled Rift, Wishing Lake, Barracuda Bay and panoramic views. Transfer included. From £20.",
+    "badge": "Новинка",
+    "excerpt": "Короткая, но насыщенная и активная поездка в национальный парк: Врата Аллаха, уникальные коралловые рифы, живописные мангровые рощи и бухта Барракуд…",
+    "metaTitle": "Рас-Мохаммед на автобусе из Шарм-эль-Шейха | Sardor Tours",
+    "metaDescription": "Рас-Мохаммед: Врата Аллаха, мангровые рощи, разлом с водой, Озеро желаний, бухта Барракуд и панорамные виды. Трансфер включён. От £20.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Англоговорящие гиды",
+      "Страховка действует",
+      "Трансфер из отеля и обратно",
+      "Бронирование за 3 минуты"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We'll pick you up from your hotel in a comfortable air-conditioned vehicle and drive approximately 25 km to Ras Mohamed National Park."
+        "title": "Заберём из отеля",
+        "text": "Мы заберём вас из отеля на комфортабельном автомобиле с кондиционером и проедем около 25 км до национального парка Рас-Мохаммед."
       },
       {
-        "title": "Gate of Allah",
-        "text": "Stop at the park's famous entrance monument, one of the most photographed landmarks in South Sinai."
+        "title": "Врата Аллаха",
+        "text": "Остановитесь у знаменитого монумента на входе в парк — одной из самых фотографируемых достопримечательностей Южного Синая."
       },
       {
-        "title": "Mangrove Forest",
-        "text": "Visit the unique mangrove trees that thrive in salt water and play an important role in the park's ecosystem."
+        "title": "Мангровый лес",
+        "text": "Посмотрите на уникальные мангровые деревья, которые растут в солёной воде и играют важную роль в экосистеме парка."
       },
       {
-        "title": "Earthquake Rift",
-        "text": "Discover a natural fissure created by ancient tectonic activity. Filled with crystal-clear water, the rift reaches a depth of around 40 metres."
+        "title": "Разлом землетрясения",
+        "text": "Откройте для себя природную трещину, образовавшуюся в результате древней тектонической активности. Разлом с кристально чистой водой достигает глубины около 40 метров."
       },
       {
-        "title": "Magic Lake",
-        "text": "Enjoy swimming at one of Ras Mohamed's most famous natural attractions, renowned for its crystal-clear waters, peaceful atmosphere, and stunning desert scenery."
+        "title": "Магическое озеро",
+        "text": "Искупайтесь в одном из самых известных природных мест Рас-Мохаммеда, которое славится кристально чистой водой, спокойной атмосферой и впечатляющими пейзажами пустыни."
       },
       {
-        "title": "Barracuda Bay Snorkelling",
-        "text": "Spend around 45 minutes snorkelling above colourful coral reefs and tropical fish in one of the park's best snorkelling spots."
+        "title": "Снорклинг в бухте Барракуд",
+        "text": "Проведите около 45 минут за снорклингом над яркими коралловыми рифами и тропическими рыбами в одном из лучших мест парка для снорклинга."
       },
       {
-        "title": "Panorama Viewpoint",
-        "text": "Finish your visit with panoramic views across the coastline, desert and Red Sea."
+        "title": "Панорамная смотровая площадка",
+        "text": "Завершите посещение панорамными видами побережья, пустыни и Красного моря."
       },
       {
-        "title": "Return to Your Hotel",
-        "text": "After exploring the national park, we'll transfer you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Возвращение в отель",
+        "text": "После знакомства с национальным парком мы отвезём вас обратно в отель на комфортабельном автомобиле с кондиционером."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and drop-off",
-      "National Park entry fee"
+      "Англоговорящий гид",
+      "Трансфер из отеля и обратно",
+      "Входной билет в национальный парк"
     ],
     "notIncluded": [
-      "Mask, snorkel, fins and life jacket (available to rent)",
-      "Professional photos",
-      "Personal expenses"
+      "Маска, трубка, ласты и спасательный жилет (можно взять напрокат)",
+      "Профессиональные фотографии",
+      "Личные расходы"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Swimwear",
-      "Towel",
-      "Reef shoes (recommended)",
-      "Sunscreen",
-      "Snorkelling equipment (or rent on site)"
+      "Фото паспорта в телефоне",
+      "Купальник или плавки",
+      "Полотенце",
+      "Коралловые тапочки (рекомендуем)",
+      "Солнцезащитный крем",
+      "Снаряжение для снорклинга (или возьмите напрокат на месте)"
     ],
     "faq": [
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes. Hotel pick-up and drop-off from any hotel in Sharm El Sheikh are included."
+        "q": "Трансфер из отеля включён?",
+        "a": "Да. Трансфер из любого отеля Шарм-эль-Шейха и обратно включён."
       },
       {
-        "q": "Do I need to know how to swim?",
-        "a": "Basic swimming skills are recommended for snorkelling, but you can also enjoy the park's natural attractions without entering the water."
+        "q": "Нужно ли уметь плавать?",
+        "a": "Для снорклинга рекомендуем базовые навыки плавания, но вы также можете любоваться природными достопримечательностями парка, не заходя в воду."
       },
       {
-        "q": "Is snorkelling equipment included?",
-        "a": "No. Masks, snorkels, fins and life jackets are available to rent at the park."
+        "q": "Снаряжение для снорклинга включено?",
+        "a": "Нет. Маски, трубки, ласты и спасательные жилеты можно взять напрокат в парке."
       },
       {
-        "q": "What should I bring?",
-        "a": "Bring swimwear, a towel, reef shoes, sunscreen, a photo of your passport on your phone and cash for equipment rental or personal expenses."
+        "q": "Что взять с собой?",
+        "a": "Возьмите купальник или плавки, полотенце, коралловые тапочки, солнцезащитный крем, фото паспорта в телефоне и наличные для аренды снаряжения или личных расходов."
       },
       {
-        "q": "Is the National Park entry fee included?",
-        "a": "Yes. The National Park entry fee is already included in the tour price."
+        "q": "Входной билет в национальный парк включён?",
+        "a": "Да. Входной билет в национальный парк уже включён в стоимость экскурсии."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "Yes. Families with children are welcome, and there are plenty of places to explore both in and out of the water."
+        "q": "Подходит ли экскурсия для детей?",
+        "a": "Да. Мы рады семьям с детьми: здесь много интересных мест как в воде, так и на суше."
       },
       {
-        "q": "Can I book a private tour?",
-        "a": "Yes. Private transport and a dedicated guide can be arranged with a customised itinerary. Contact us on WhatsApp for details."
+        "q": "Можно ли забронировать индивидуальную экскурсию?",
+        "a": "Да. Можно организовать индивидуальный транспорт и отдельного гида с программой по вашим пожеланиям. Напишите нам в WhatsApp, чтобы узнать подробности."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Об экскурсии",
     "destinationCards": [
       {
-        "tag": "Ras Mohamed National Park",
-        "title": "Coral Reefs & Marine Life",
-        "text": "Explore one of Egypt's most famous protected areas, known for colourful coral reefs, tropical fish and crystal-clear water.",
+        "tag": "Национальный парк Рас-Мохаммед",
+        "title": "Коралловые рифы и морская жизнь",
+        "text": "Откройте для себя одну из самых известных охраняемых территорий Египта, знаменитую яркими коралловыми рифами, тропическими рыбами и кристально чистой водой.",
         "tone": "blue"
       },
       {
-        "tag": "South Sinai",
-        "title": "Mangroves & Magic Lake",
-        "text": "Discover unique mangrove forests, natural salt lakes and geological formations found only in a few places around the world.",
+        "tag": "Южный Синай",
+        "title": "Мангровые леса и Магическое озеро",
+        "text": "Откройте для себя уникальные мангровые леса, природные солёные озёра и геологические образования, которые встречаются лишь в немногих местах мира.",
         "tone": "coral"
       },
       {
-        "tag": "25 km from Sharm El Sheikh",
-        "title": "Easy Half-Day Adventure",
-        "text": "Enjoy a relaxed half-day trip combining nature, snorkelling and some of the best coastal scenery in South Sinai.",
+        "tag": "25 км от Шарм-эль-Шейха",
+        "title": "Лёгкое приключение на полдня",
+        "text": "Насладитесь спокойной поездкой на полдня, которая объединяет природу, снорклинг и одни из лучших прибрежных пейзажей Южного Синая.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "National Park Entry Included",
-        "text": "No additional entrance fees are required.",
+        "title": "Вход в национальный парк включён",
+        "text": "Дополнительная плата за вход не требуется.",
         "tone": "green"
       },
       {
-        "title": "Snorkelling Equipment Available",
-        "text": "You can bring your own equipment or rent everything you need on site.",
+        "title": "Снаряжение для снорклинга доступно",
+        "text": "Вы можете взять своё снаряжение или арендовать всё необходимое на месте.",
         "tone": "orange"
       },
       {
-        "title": "Family-Friendly Experience",
-        "text": "Suitable for beginners, families and anyone who wants to discover the natural beauty of Ras Mohamed.",
+        "title": "Отдых для всей семьи",
+        "text": "Подходит новичкам, семьям и всем, кто хочет познакомиться с природной красотой Рас-Мохаммеда.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Mangroves · Snorkelling · Wishing Lake · Gate of Allah",
-      "line2": "Transfer and guide included — from £20",
+      "heading": "Готовы к незабываемому приключению?",
+      "line1": "Мангровые леса · Снорклинг · Озеро желаний · Врата Аллаха",
+      "line2": "Трансфер и гид включены — от £20",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 предоплаты",
+        "Бесплатная отмена",
+        "Быстро отвечаем"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Взрослый",
+        "unit": "за человека",
         "discount": null
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "per person",
+        "label": "Ребёнок 5–10 лет",
+        "unit": "за человека",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Snorkelling",
-        "name": "White Island & Ras Mohamed"
+        "tag": "Снорклинг",
+        "name": "Белый остров и Рас-Мохаммед"
       },
       {
-        "tag": "Yacht",
-        "name": "Tiran Island Boat Trip"
+        "tag": "Яхта",
+        "name": "Морская прогулка на остров Тиран"
       },
       {
-        "tag": "Diving",
-        "name": "Blue Hole Dahab"
+        "tag": "Дайвинг",
+        "name": "Голубая дыра в Дахабе"
       },
       {
-        "tag": "Buggy",
-        "name": "Buggy Safari & Camel Ride"
+        "tag": "Багги",
+        "name": "Сафари на багги и прогулка на верблюде"
       },
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Каир",
+        "name": "Каир и пирамиды на автобусе"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Взрослый",
+        "unit": "чел."
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "person"
+        "label": "Ребёнок 5–10 лет",
+        "unit": "чел."
       },
       {
-        "label": "Infants 0–4 years",
+        "label": "Младенцы 0–4 лет",
         "unit": ""
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Экономия · Цена тура",
       "badge": "−33%",
-      "priceText": "Transfer, lunch and entrance tickets already included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "4 stops",
-      "programText": "Gate of Allah, mangroves, Wishing Lake, snorkelling by the reefs. All in one unforgettable morning.",
+      "priceText": "Трансфер, обед и входные билеты уже включены. Без предоплаты.",
+      "programKicker": "Программа дня",
+      "programNum": "4 остановки",
+      "programText": "Врата Аллаха, мангровые леса, Озеро желаний и снорклинг у рифов. Всё за одно незабываемое утро.",
       "ring": "4/4",
-      "ringLabel": "stops"
+      "ringLabel": "остановки"
     }
   }
 }

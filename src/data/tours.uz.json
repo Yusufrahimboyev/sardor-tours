@@ -3542,1153 +3542,1153 @@
     }
   },
   "petra-jordan-trip": {
-    "name": "Petra, Jordan Day Trip by Ferry",
-    "title": "Petra, Jordan Day Trip from Sharm El Sheikh by Ferry",
-    "categoryLabel": "Historical",
-    "duration": "24 hours",
-    "detailDuration": "24 hours",
-    "schedule": "Mon, Wed & Sat",
-    "timeText": "1:30 AM – 1:30 AM",
+    "name": "Iordaniyadagi Petraga paromda bir kunlik sayohat",
+    "title": "Sharm-ash-Shayxdan Iordaniyadagi Petraga paromda bir kunlik sayohat",
+    "categoryLabel": "Tarixiy",
+    "duration": "24 soat",
+    "detailDuration": "24 soat",
+    "schedule": "Dushanba, chorshanba va shanba",
+    "timeText": "Soat 1:30 AM – 1:30 AM",
     "priceUnit": null,
-    "badge": "Once in a Lifetime",
-    "excerpt": "A packed full-day trip to Jordan and the city of Petra — one of the greatest works of human hands, carved into nature's own masterpieces…",
-    "metaTitle": "Petra Day Trip from Sharm El Sheikh by Ferry | Sardor Tours",
-    "metaDescription": "Petra by ferry: the Siq canyon, the Treasury, amphitheatre, Colonnades and lunch. Ferry, transfer and guide included. From £220. No prepayment.",
+    "badge": "Umrda bir bor",
+    "excerpt": "Iordaniya va Petra shahriga mazmunli bir kunlik sayohat — tabiat yaratgan betakror qoyalar bagʻriga oʻyilgan inson qoʻli moʻjizalaridan biri…",
+    "metaTitle": "Sharm-ash-Shayxdan Petraga paromda bir kunlik tur | Sardor Tours",
+    "metaDescription": "Petraga paromda: Siq kanyoni, Xazina, amfiteatr, ustunli koʻcha va tushlik. Parom, transfer va gid kiritilgan. £220 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta kiritilgan",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "In the evening, we'll pick you up from your hotel and travel in a comfortable air-conditioned coach to the port of Taba."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Kechqurun sizni mehmonxonangizdan olib ketamiz va konditsionerli qulay avtobusda Taba portiga yoʻl olamiz."
       },
       {
-        "title": "Ferry to Jordan",
-        "text": "Cross the Gulf of Aqaba by ferry and enjoy views of Egypt, Jordan and Saudi Arabia during the one-hour journey."
+        "title": "Iordaniyaga paromda",
+        "text": "Aqaba qoʻltigʻini paromda kesib oʻting va bir soatlik sayohat davomida Misr, Iordaniya hamda Saudiya Arabistoni manzaralarini tomosha qiling."
       },
       {
-        "title": "Drive to Petra",
-        "text": "Continue through the spectacular desert landscapes of Wadi Rum before arriving at the ancient city of Petra."
+        "title": "Petraga yoʻl",
+        "text": "Qadimiy Petra shahriga yetib borguncha Vadi-Ram choʻlining ajoyib manzaralari orasidan oʻtasiz."
       },
       {
-        "title": "Walk Through the Siq",
-        "text": "Follow Petra's famous narrow canyon, surrounded by towering rose-coloured cliffs, before reaching the city's most iconic monument."
+        "title": "Siq kanyoni boʻylab sayr",
+        "text": "Baland pushti qoyalar bilan oʻralgan mashhur tor kanyon boʻylab yurib, Petraning eng taniqli yodgorligi qarshisidan chiqasiz."
       },
       {
-        "title": "Explore Petra",
-        "text": "Discover Al-Khazneh (The Treasury), the Roman Theatre, the Colonnaded Street, Byzantine ruins and other remarkable monuments with your professional guide."
+        "title": "Petrani kashf eting",
+        "text": "Professional gidingiz bilan Al-Xazna (Xazina), Rim teatri, Ustunli koʻcha, Vizantiya xarobalari va boshqa ajoyib yodgorliklarni kashf eting."
       },
       {
-        "title": "Buffet Lunch",
-        "text": "Enjoy a buffet lunch featuring a selection of traditional Arabic dishes."
+        "title": "Shved stoli tushligi",
+        "text": "Anʼanaviy arab taomlaridan iborat shved stoli tushligidan bahramand boʻling."
       },
       {
-        "title": "Return to Sharm El Sheikh",
-        "text": "After a full day exploring Petra, return by coach and ferry, arriving back at your hotel after midnight."
+        "title": "Sharm-ash-Shayxga qaytish",
+        "text": "Petradagi mazmunli kundan soʻng avtobus va paromda qaytib, yarim tundan keyin mehmonxonangizga yetib kelasiz."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "Professional English-speaking guide",
-      "Ferry tickets",
-      "Petra entrance ticket",
-      "Buffet lunch"
+      "Mehmonxonadan olib ketish va qaytarib kelish",
+      "Ingliz tilida soʻzlashuvchi professional gid",
+      "Parom chiptalari",
+      "Petraga kirish chiptasi",
+      "Shved stoli tushligi"
     ],
     "notIncluded": [
-      "Camel, donkey or horse carriage rides",
-      "Drinks during lunch",
-      "Personal expenses"
+      "Tuya, eshak yoki ot aravasida sayr",
+      "Tushlik paytidagi ichimliklar",
+      "Shaxsiy xarajatlar"
     ],
     "bring": [
-      "Passport",
-      "Breakfast box from your hotel",
-      "Drinking water",
-      "Comfortable walking shoes",
-      "Comfortable clothing"
+      "Pasport",
+      "Mehmonxonangizdan olingan nonushta toʻplami",
+      "Ichimlik suvi",
+      "Piyoda yurish uchun qulay poyabzal",
+      "Qulay kiyim"
     ],
     "faq": [
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "No. You can join this tour using your passport without purchasing an Egyptian visa."
+        "q": "Misr vizasi kerakmi?",
+        "a": "Yoʻq. Misr vizasini sotib olmasdan, pasportingiz bilan bu turda qatnashishingiz mumkin."
       },
       {
-        "q": "How long is the journey?",
-        "a": "The coach transfer to Taba takes approximately 3 hours, followed by a one-hour ferry crossing and a 1.5-hour drive to Petra."
+        "q": "Yoʻl qancha vaqt oladi?",
+        "a": "Tabagacha avtobus transferi taxminan 3 soat, paromda oʻtish bir soat, undan keyin Petragacha yoʻl 1.5 soat davom etadi."
       },
       {
-        "q": "How much walking is involved?",
-        "a": "Petra is explored on foot. Comfortable shoes are essential, and the route includes several kilometres of walking on uneven ground."
+        "q": "Qancha piyoda yurish kerak?",
+        "a": "Petra piyoda tomosha qilinadi. Qulay poyabzal zarur: yoʻnalish notekis yerda bir necha kilometr yurishni oʻz ichiga oladi."
       },
       {
-        "q": "Is lunch included?",
-        "a": "Yes. A buffet lunch at a local restaurant is included in the tour price."
+        "q": "Tushlik kiritilganmi?",
+        "a": "Ha. Mahalliy restorandagi shved stoli tushligi tur narxiga kiritilgan."
       },
       {
-        "q": "Can I book a private tour?",
-        "a": "Yes. Private transport and a dedicated English-speaking guide can be arranged. Contact us for a personalised itinerary and quotation."
+        "q": "Shaxsiy tur bron qilsam boʻladimi?",
+        "a": "Ha. Shaxsiy transport va faqat sizga hamrohlik qiladigan ingliz tilida soʻzlashuvchi gidni tashkil qilish mumkin. Sizga mos dastur va narx uchun biz bilan bogʻlaning."
       },
       {
-        "q": "What should I bring?",
-        "a": "Bring your passport, breakfast box, drinking water, comfortable shoes and cash for optional activities or souvenirs."
+        "q": "Oʻzim bilan nima olishim kerak?",
+        "a": "Pasport, nonushta toʻplami, ichimlik suvi, qulay poyabzal hamda ixtiyoriy mashgʻulotlar yoki suvenirlar uchun naqd pul oling."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Sayohat haqida",
     "destinationCards": [
       {
-        "tag": "Petra · Jordan",
-        "title": "Al-Khazneh (The Treasury)",
-        "text": "Petra's most famous monument, carved directly into the rose-coloured rock more than 2,000 years ago and recognised as one of the New Seven Wonders of the World.",
+        "tag": "Petra · Iordaniya",
+        "title": "Al-Xazna (Xazina)",
+        "text": "2,000 yildan koʻproq vaqt oldin bevosita pushti qoyaga oʻyilgan Petraning eng mashhur yodgorligi — dunyoning yangi yetti moʻjizasidan biri sifatida tan olingan obida.",
         "tone": "sand"
       },
       {
         "tag": "Petra",
-        "title": "The Siq Canyon",
-        "text": "Walk through Petra's dramatic natural entrance, a narrow canyon with towering cliffs leading to the heart of the ancient city.",
+        "title": "Siq kanyoni",
+        "text": "Qadimiy shahar markaziga olib boradigan baland qoyali tor kanyon — Petraning hayratlanarli tabiiy kirish yoʻli boʻylab yuring.",
         "tone": "blue"
       },
       {
-        "tag": "Jordan",
-        "title": "A Journey Through History",
-        "text": "Explore one of the world's greatest archaeological sites and discover the remarkable legacy of the Nabataean civilisation.",
+        "tag": "Iordaniya",
+        "title": "Tarix boʻylab sayohat",
+        "text": "Dunyodagi eng buyuk arxeologik yodgorliklardan birini tomosha qiling va nabatiylar tamaddunining ajoyib merosini kashf eting.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "No Egyptian Visa Required",
-        "text": "Travel to Petra using your passport without purchasing an Egyptian visa.",
+        "title": "Misr vizasi talab qilinmaydi",
+        "text": "Misr vizasini sotib olmasdan, pasportingiz bilan Petraga sayohat qiling.",
         "tone": "green"
       },
       {
-        "title": "Comfortable Walking Shoes Recommended",
-        "text": "Petra is a walking tour with uneven paths and several kilometres of exploration.",
+        "title": "Piyoda yurish uchun qulay poyabzal tavsiya etiladi",
+        "text": "Petra boʻylab piyoda ekskursiya notekis yoʻllarda bir necha kilometr yurishni oʻz ichiga oladi.",
         "tone": "orange"
       },
       {
-        "title": "Buffet Lunch Included",
-        "text": "Enjoy a traditional Arabic buffet before continuing your visit.",
+        "title": "Shved stoli tushligi kiritilgan",
+        "text": "Tashrifni davom ettirishdan oldin anʼanaviy arab taomlaridan iborat shved stolidan bahramand boʻling.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "The Siq canyon · The Treasury · Ferry · Amphitheatre",
-      "line2": "Ferry, guide and lunch included — from £220",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Siq kanyoni · Xazina · Parom · Amfiteatr",
+      "line2": "Parom, gid va tushlik kiritilgan — £220 dan",
       "chips": [
-        "Fast replies"
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Kattalar",
+        "unit": "bir kishi uchun",
         "discount": null
       },
       {
-        "label": "Children 2–9 years",
-        "unit": "per person",
+        "label": "Bola 2–9 yosh",
+        "unit": "bir kishi uchun",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Luxor",
-        "name": "Luxor — Day Trip"
+        "tag": "Luksor",
+        "name": "Luksor — bir kunlik sayohat"
       },
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Qohira",
+        "name": "Avtobusda Qohira va piramidalar"
       },
       {
-        "tag": "Museum",
-        "name": "Grand Egyptian Museum"
+        "tag": "Muzey",
+        "name": "Buyuk Misr muzeyi"
       },
       {
-        "tag": "Private Yacht",
-        "name": "Private Yacht in Sharm El Sheikh"
+        "tag": "Shaxsiy yaxta",
+        "name": "Sharm-ash-Shayxda shaxsiy yaxta"
       },
       {
-        "tag": "Quad Bikes",
-        "name": "Quad Bike Safari"
+        "tag": "Kvadrotsikllar",
+        "name": "Kvadrotsiklda safari"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Kattalar",
+        "unit": "kishi"
       },
       {
-        "label": "Children 2–9 years",
-        "unit": "person"
+        "label": "Bola 2–9 yosh",
+        "unit": "kishi"
       },
       {
-        "label": "Infants under 2 years",
-        "unit": "person"
+        "label": "2 yoshgacha chaqaloqlar",
+        "unit": "kishi"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−20%",
-      "priceText": "Transfer, lunch and entrance tickets already included.",
-      "programKicker": "The day's programme",
-      "programNum": "4 stops",
-      "programText": "The Siq canyon, the Treasury, the amphitheatre, a ferry across the Red Sea. Ancient Petra in a single day.",
+      "priceText": "Transfer, tushlik va kirish chiptalari narxga kiritilgan.",
+      "programKicker": "Kun dasturi",
+      "programNum": "4 ta toʻxtash",
+      "programText": "Siq kanyoni, Xazina, amfiteatr va Qizil dengiz boʻylab parom sayohati. Qadimiy Petra bilan bir kunda tanishing.",
       "ring": "4/4",
-      "ringLabel": "stops"
+      "ringLabel": "toʻxtash"
     }
   },
   "mount-moses-sinai": {
-    "name": "Mount Moses & St. Catherine Monastery",
-    "title": "Mount Moses & St. Catherine Monastery from Sharm El Sheikh",
-    "categoryLabel": "Historical",
-    "duration": "17 hours",
-    "detailDuration": "17 hours",
-    "schedule": "Sun, Wed, Fri",
-    "timeText": "8:00 PM – 1:00 PM next day",
+    "name": "Muso togʻi va Avliyo Yekaterina monastiri",
+    "title": "Sharm-ash-Shayxdan Muso togʻi va Avliyo Yekaterina monastiriga sayohat",
+    "categoryLabel": "Tarixiy",
+    "duration": "17 soat",
+    "detailDuration": "17 soat",
+    "schedule": "Yakshanba, chorshanba, juma",
+    "timeText": "Soat 8:00 PM – ertasi kuni 1:00 PM",
     "priceUnit": null,
-    "badge": "Legendary",
-    "excerpt": "Mount Moses, also known as Mount Sinai. According to the Bible, this is where God appeared to Moses and gave him the Ten Commandments…",
-    "metaTitle": "Mount Moses & St. Catherine Monastery | Sardor Tours",
-    "metaDescription": "Mount Moses: night climb, sunrise at the summit, St. Catherine Monastery. Transfer and guide included. From £30. No prepayment.",
+    "badge": "Afsonaviy",
+    "excerpt": "Muso togʻi Sinay togʻi deb ham ataladi. Muqaddas Kitobga koʻra, Xudo shu yerda Musoga zohir boʻlib, unga Oʻn amrni bergan…",
+    "metaTitle": "Muso togʻi va Avliyo Yekaterina monastiri | Sardor Tours",
+    "metaDescription": "Muso togʻi: tunda koʻtarilish, choʻqqida quyosh chiqishi, Avliyo Yekaterina monastiri. Transfer va gid kiritilgan. £30 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta kiritilgan",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "In the evening, we'll pick you up from your hotel in a comfortable air-conditioned coach and begin the journey to St. Catherine."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Kechqurun sizni mehmonxonangizdan konditsionerli qulay avtobusda olib ketamiz va Avliyo Yekaterina monastiri tomon yoʻl olamiz."
       },
       {
-        "title": "Night Hike to Mount Moses",
-        "text": "Accompanied by an experienced local guide, you'll hike to the summit of Mount Moses to watch the sunrise over the Sinai Mountains. The route is approximately 7 km and takes 3–4 hours, following a gentle trail and the final 750 Steps of Repentance. Rest stops along the way offer drinks and snacks."
+        "title": "Tunda Muso togʻiga koʻtarilish",
+        "text": "Tajribali mahalliy gid hamrohligida Sinay togʻlari uzra quyosh chiqishini tomosha qilish uchun Muso togʻi choʻqqisiga koʻtarilasiz. Taxminan 7 km yoʻl 3–4 soat davom etadi: avval yotiq soʻqmoqdan, soʻng Tavba zinapoyasining oxirgi 750 pogʻonasidan oʻtasiz. Yoʻldagi dam olish joylarida ichimlik va yeguliklar bor."
       },
       {
-        "title": "Descent from the Summit",
-        "text": "After sunrise, you'll make your way back down the mountain at a comfortable pace."
+        "title": "Choʻqqidan tushish",
+        "text": "Quyosh chiqqach, shoshilmasdan togʻdan pastga tushasiz."
       },
       {
-        "title": "Visit St. Catherine Monastery",
-        "text": "Explore one of the world's oldest working monasteries, located at the foot of Mount Moses. The monastery is a UNESCO World Heritage Site and one of the most important Christian pilgrimage destinations."
+        "title": "Avliyo Yekaterina monastiriga tashrif",
+        "text": "Muso togʻi etagida joylashgan, dunyodagi eng qadimiy faol monastirlardan birini tomosha qiling. Monastir YuNESKOning Jahon merosi roʻyxatiga kiritilgan boʻlib, nasroniylarning eng muhim ziyoratgohlaridan biridir."
       },
       {
-        "title": "Return to Sharm El Sheikh",
-        "text": "Relax on the journey back in a comfortable air-conditioned coach with scheduled rest stops along the way."
+        "title": "Sharm-ash-Shayxga qaytish",
+        "text": "Konditsionerli qulay avtobusda qaytayotib dam oling. Yoʻl davomida rejalashtirilgan dam olish toʻxtashlari bor."
       }
     ],
     "included": [
-      "Hotel pick-up and drop-off",
-      "English-speaking guide",
-      "Visit to St. Catherine Monastery"
+      "Mehmonxonadan olib ketish va qaytarib kelish",
+      "Ingliz tilida soʻzlashuvchi gid",
+      "Avliyo Yekaterina monastiriga tashrif"
     ],
     "notIncluded": [
-      "Camel ride (optional)",
-      "Food and drinks",
-      "Personal expenses"
+      "Tuya sayri (ixtiyoriy)",
+      "Ovqat va ichimliklar",
+      "Shaxsiy xarajatlar"
     ],
     "bring": [
-      "Passport",
-      "Comfortable walking shoes",
-      "Warm clothing",
-      "Water and light snacks",
-      "Money for personal expenses"
+      "Pasport",
+      "Piyoda yurish uchun qulay poyabzal",
+      "Issiq kiyim",
+      "Suv va yengil yeguliklar",
+      "Shaxsiy xarajatlar uchun pul"
     ],
     "faq": [
       {
-        "q": "How far is Mount Moses from Sharm El Sheikh?",
-        "a": "The journey is approximately 210–230 km and takes around 2.5–3.5 hours, depending on road conditions and checkpoints."
+        "q": "Muso togʻi Sharm-ash-Shayxdan qancha uzoqlikda?",
+        "a": "Yoʻl taxminan 210–230 km boʻlib, yoʻl sharoiti va nazorat punktlariga qarab 2.5–3.5 soat davom etadi."
       },
       {
-        "q": "Do I need an Egyptian visa?",
-        "a": "No. If you are staying in South Sinai with the free Sinai entry stamp, you can join this tour without purchasing an Egyptian visa."
+        "q": "Misr vizasi kerakmi?",
+        "a": "Yoʻq. Janubiy Sinayda bepul Sinay kirish shtampi bilan dam olayotgan boʻlsangiz, Misr vizasini sotib olmasdan bu turda qatnashishingiz mumkin."
       },
       {
-        "q": "Is the hike difficult?",
-        "a": "The hike is moderate and suitable for reasonably fit travellers. It covers around 7 km and takes approximately 3–4 hours, including rest stops."
+        "q": "Togʻga chiqish qiyinmi?",
+        "a": "Koʻtarilish oʻrtacha qiyinlikda boʻlib, jismoniy tayyorgarligi yetarli sayohatchilar uchun mos. Taxminan 7 km yoʻl dam olish toʻxtashlari bilan 3–4 soat davom etadi."
       },
       {
-        "q": "What should I wear?",
-        "a": "Temperatures at the summit can be cold, especially between November and March. We recommend warm layers, a windproof jacket and comfortable walking shoes."
+        "q": "Qanday kiyinish kerak?",
+        "a": "Choʻqqida, ayniqsa noyabrdan martgacha, sovuq boʻlishi mumkin. Bir necha qatlam issiq kiyim, shamol oʻtkazmaydigan kurtka va piyoda yurish uchun qulay poyabzal tavsiya qilamiz."
       },
       {
-        "q": "Can I ride a camel?",
-        "a": "Yes. Camels are available for hire on part of the route for an additional fee, paid directly on site."
+        "q": "Tuyada borish mumkinmi?",
+        "a": "Ha. Yoʻlning bir qismida tuyani qoʻshimcha haq evaziga ijaraga olish mumkin. Toʻlov bevosita joyida amalga oshiriladi."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "We recommend this tour for children aged 10 and over who are comfortable walking long distances."
+        "q": "Tur bolalar uchun mosmi?",
+        "a": "Bu turni uzoq masofalarga bemalol piyoda yura oladigan 10 yosh va undan katta bolalar uchun tavsiya qilamiz."
       },
       {
-        "q": "Can I book a private tour?",
-        "a": "Yes. Private transport and a dedicated guide can be arranged. Contact us on WhatsApp for pricing and availability."
+        "q": "Shaxsiy tur bron qilsam boʻladimi?",
+        "a": "Ha. Shaxsiy transport va faqat sizga hamrohlik qiladigan gidni tashkil qilish mumkin. Narxlar va boʻsh joylar haqida WhatsApp orqali biz bilan bogʻlaning."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Sayohat haqida",
     "destinationCards": [
       {
-        "tag": "Sinai Mountains",
-        "title": "Mount Moses",
-        "text": "Watch the sunrise from one of the most famous peaks in the Sinai Peninsula after a memorable night hike through the mountains.",
+        "tag": "Sinay togʻlari",
+        "title": "Muso togʻi",
+        "text": "Togʻlar orasidagi unutilmas tungi yurishdan soʻng Sinay yarimorolining eng mashhur choʻqqilaridan birida quyosh chiqishini tomosha qiling.",
         "tone": "sand"
       },
       {
-        "tag": "St. Catherine",
-        "title": "UNESCO World Heritage Site",
-        "text": "Visit one of the oldest continuously operating monasteries in the world, an important place of history and pilgrimage.",
+        "tag": "Avliyo Yekaterina",
+        "title": "YuNESKOning Jahon merosi obyekti",
+        "text": "Dunyodagi eng qadimiy, uzluksiz faoliyat yuritib kelayotgan monastirlardan biriga — muhim tarixiy obida va ziyoratgohga tashrif buyuring.",
         "tone": "blue"
       },
       {
-        "tag": "Night Adventure",
-        "title": "Sunrise Hike",
-        "text": "Experience the peaceful atmosphere of the Sinai Mountains and enjoy spectacular sunrise views from the summit.",
+        "tag": "Tungi sarguzasht",
+        "title": "Quyosh chiqishini qarshi olish uchun yurish",
+        "text": "Sinay togʻlarining osoyishtaligini his eting va choʻqqidan quyosh chiqishining ajoyib manzaralarini tomosha qiling.",
         "tone": "coral"
       }
     ],
     "goodToKnow": [
       {
-        "title": "No Egyptian Visa Required",
-        "text": "Travellers entering South Sinai with the free Sinai stamp can join this tour without purchasing an Egyptian visa.",
+        "title": "Misr vizasi talab qilinmaydi",
+        "text": "Janubiy Sinayga bepul Sinay shtampi bilan kirgan sayohatchilar Misr vizasini sotib olmasdan bu turda qatnashishi mumkin.",
         "tone": "green"
       },
       {
-        "title": "Dress for Cool Weather",
-        "text": "Temperatures at the summit can be low, so warm clothing and comfortable walking shoes are essential.",
+        "title": "Salqin havoga mos kiyining",
+        "text": "Choʻqqida havo sovuq boʻlishi mumkin, shuning uchun issiq kiyim va piyoda yurish uchun qulay poyabzal zarur.",
         "tone": "orange"
       },
       {
-        "title": "Camel Ride Available",
-        "text": "If you prefer, you can hire a camel for part of the climb and continue the final section on foot.",
+        "title": "Tuya sayri mumkin",
+        "text": "Xohlasangiz, koʻtarilishning bir qismi uchun tuya ijaraga olib, oxirgi qismini piyoda davom ettirishingiz mumkin.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Climb · Sunrise · Monastery · Sinai",
-      "line2": "Guide and hotel transfer included — from £30",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Koʻtarilish · Quyosh chiqishi · Monastir · Sinay",
+      "line2": "Gid va mehmonxonadan transfer kiritilgan — £30 dan",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Kattalar",
+        "unit": "bir kishi uchun",
         "discount": null
       },
       {
-        "label": "Children ages 5–9",
-        "unit": "per person",
+        "label": "Bola 5–9 yosh",
+        "unit": "bir kishi uchun",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Qohira",
+        "name": "Avtobusda Qohira va piramidalar"
       },
       {
         "tag": "Petra",
-        "name": "Petra — Jordan"
+        "name": "Petra — Iordaniya"
       },
       {
-        "tag": "Museum",
-        "name": "Grand Egyptian Museum"
+        "tag": "Muzey",
+        "name": "Buyuk Misr muzeyi"
       },
       {
-        "tag": "Diving",
-        "name": "Blue Hole Dahab"
+        "tag": "Dayving",
+        "name": "Dahabdagi Moviy tuynuk (Blue Hole)"
       },
       {
         "tag": "Safari",
-        "name": "Super Safari"
+        "name": "Super safari"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Kattalar",
+        "unit": "kishi"
       },
       {
-        "label": "Children ages 5–9",
-        "unit": "person"
+        "label": "Bola 5–9 yosh",
+        "unit": "kishi"
       },
       {
-        "label": "Infants ages 0–4",
+        "label": "Chaqaloqlar 0–4 yosh",
         "unit": ""
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−33%",
-      "priceText": "Transfer, lunch and entrance tickets are already included. No prepayment.",
-      "programKicker": "Day's programme",
-      "programNum": "3 parts",
-      "programText": "A night climb, sunrise at the summit and St. Catherine Monastery. A spiritual experience for life.",
+      "priceText": "Transfer, tushlik va kirish chiptalari narxga kiritilgan. Oldindan toʻlovsiz.",
+      "programKicker": "Kun dasturi",
+      "programNum": "3 ta qism",
+      "programText": "Tunda togʻga koʻtarilish, choʻqqida quyosh chiqishi va Avliyo Yekaterina monastiri. Bir umr yodda qoladigan maʼnaviy taassurotlar.",
       "ring": "3/3",
-      "ringLabel": "parts"
+      "ringLabel": "qism"
     }
   },
   "dolphin-show-sharm": {
-    "name": "Dolphin Show & Swimming with Dolphins",
-    "title": "Dolphin Show & Swimming with Dolphins in Sharm El Sheikh",
-    "categoryLabel": "Entertainment",
-    "duration": "3 hours",
-    "detailDuration": "3 hours",
-    "schedule": "Daily",
-    "timeText": "2:00 PM to 5:00 PM",
+    "name": "Delfinlar shousi va delfinlar bilan suzish",
+    "title": "Sharm-ash-Shayxda delfinlar shousi va delfinlar bilan suzish",
+    "categoryLabel": "Koʻngilochar",
+    "duration": "3 soat",
+    "detailDuration": "3 soat",
+    "schedule": "Har kuni",
+    "timeText": "Soat 2:00 PM dan 5:00 PM gacha",
     "priceUnit": null,
-    "badge": "Family Favourite",
-    "excerpt": "A dazzling dolphin show that sweeps you into a festive mood: acrobatic routines, pirouettes and incredible tricks…",
-    "metaTitle": "Dolphin Show & Swimming with Dolphins in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Dolphin show in Sharm El Sheikh: dolphin acrobatics and 15–30 minutes swimming with them. Hotel transfer included. From £23. No prepayment.",
+    "badge": "Oilalar tanlovi",
+    "excerpt": "Bayramona kayfiyat ulashadigan yorqin delfinlar shousi: akrobatik chiqishlar, aylanma harakatlar va aql bovar qilmas tryuklar…",
+    "metaTitle": "Sharm-ash-Shayxda delfinlar shousi va ular bilan suzish | Sardor Tours",
+    "metaDescription": "Sharm-ash-Shayxda delfinlar shousi: akrobatik chiqishlar va ular bilan 15–30 daqiqa suzish. Mehmonxonadan transfer kiritilgan. £23 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta amal qiladi",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We pick you up from your hotel in a comfortable air-conditioned vehicle. The journey to the dolphin park takes approximately 30 minutes, depending on your hotel location."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Sizni mehmonxonangizdan konditsionerli qulay avtomobilda olib ketamiz. Delfinlar bogʻigacha yoʻl mehmonxonangiz joylashuviga qarab taxminan 30 daqiqa davom etadi."
       },
       {
-        "title": "Dolphin Show 3:00 PM – 4:00 PM",
-        "text": "Enjoy a one-hour dolphin show featuring impressive jumps, acrobatics, dances, and other entertaining performances. After the show, you can take an optional souvenir photo with a dolphin for an additional fee, paid on site."
+        "title": "Delfinlar shousi 3:00 PM – 4:00 PM",
+        "text": "Delfinlarning ajoyib sakrashlari, akrobatik harakatlari, raqslari va boshqa qiziqarli chiqishlaridan iborat bir soatlik shouni tomosha qiling. Shoudan keyin xohlasangiz, delfin bilan esdalik suratga tushishingiz mumkin. Buning uchun qoʻshimcha haq joyida toʻlanadi."
       },
       {
-        "title": "Swimming with Dolphins",
-        "text": "A unique opportunity to interact with dolphins in the water — you can swim, play, and enjoy close interaction with these remarkable marine animals."
+        "title": "Delfinlar bilan suzish",
+        "text": "Suvda delfinlar bilan yaqindan tanishish uchun noyob imkoniyat: bu ajoyib dengiz jonivorlari bilan suzing, oʻynang va ular bilan yaqin muloqotdan zavqlaning."
       },
       {
-        "title": "Return Transfer",
-        "text": "After the experience, we transfer you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Mehmonxonaga transfer",
+        "text": "Sayohatdan keyin sizni konditsionerli qulay avtomobilda mehmonxonangizga qaytarib olib boramiz."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and drop-off"
+      "Ingliz tilida soʻzlashuvchi gid",
+      "Mehmonxonadan olib ketish va qaytarib kelish"
     ],
     "notIncluded": [
-      "Professional photos and videos"
+      "Professional foto va videolar"
     ],
     "bring": [
-      "Swimwear and a towel (for guests swimming with dolphins)"
+      "Suzish kiyimi va sochiq (delfinlar bilan suzadigan mehmonlar uchun)"
     ],
     "faq": [
       {
-        "q": "Do I need to know how to swim?",
-        "a": "No swimming skills are required to attend the dolphin show. For swimming with dolphins, basic swimming ability is recommended for the best experience."
+        "q": "Suzishni bilish kerakmi?",
+        "a": "Delfinlar shousini tomosha qilish uchun suzishni bilish shart emas. Delfinlar bilan suzishdan toʻliq zavqlanish uchun esa asosiy suzish koʻnikmalari tavsiya etiladi."
       },
       {
-        "q": "Can children join?",
-        "a": "Yes, the dolphin show is open to all ages. For swimming with dolphins, we recommend that children under 10 are accompanied by an adult in the water."
+        "q": "Bolalar qatnasha oladimi?",
+        "a": "Ha, delfinlar shousi barcha yoshdagilar uchun ochiq. Delfinlar bilan suzishda 10 yoshgacha bolalarga suvda kattalar hamroh boʻlishini tavsiya qilamiz."
       },
       {
-        "q": "Can I take photos?",
-        "a": "Yes, photography is allowed during the dolphin show. During the swimming session, personal phones and cameras are not allowed. Professional photos and videos can be purchased on site."
+        "q": "Suratga olish mumkinmi?",
+        "a": "Ha, delfinlar shousi davomida suratga olish mumkin. Suzish vaqtida shaxsiy telefon va kameralardan foydalanish mumkin emas. Professional foto va videolarni joyida sotib olish mumkin."
       },
       {
-        "q": "Can I book only the show or only the swim?",
-        "a": "Yes, you can book the dolphin show, the dolphin swim, or both together. Contact us on WhatsApp and we'll help you choose the best option."
+        "q": "Faqat shouni yoki faqat suzishni bron qilsam boʻladimi?",
+        "a": "Ha, delfinlar shousini, delfinlar bilan suzishni yoki ikkalasini birga bron qilishingiz mumkin. WhatsApp orqali yozing, sizga eng mos variantni tanlashda yordam beramiz."
       },
       {
-        "q": "How many people swim with the dolphins at the same time?",
-        "a": "Swimming sessions usually include up to 8 participants. Private sessions may also be available upon request."
+        "q": "Delfinlar bilan bir vaqtda necha kishi suzadi?",
+        "a": "Suzish seanslarida odatda 8 kishigacha qatnashadi. Soʻrov boʻyicha shaxsiy seanslar ham tashkil qilinishi mumkin."
       },
       {
-        "q": "How long does the experience last?",
-        "a": "The full experience takes approximately 3 hours, including hotel transfers, a 1-hour dolphin show, and a 15- or 30-minute dolphin swim (depending on the option booked)."
+        "q": "Sayohat qancha davom etadi?",
+        "a": "Mehmonxonadan transferlar, 1 soatlik delfinlar shousi va 15 yoki 30 daqiqalik delfinlar bilan suzish (bron qilingan variantga qarab) bilan jami taxminan 3 soat davom etadi."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Sayohat haqida",
     "destinationCards": [
       {
-        "tag": "1-Hour Live Performance",
-        "title": "Dolphin Show",
-        "text": "Watch dolphins and sea lions perform acrobatics, tricks, and interactive routines in a fun show for all ages.",
+        "tag": "1 soatlik jonli tomosha",
+        "title": "Delfinlar shousi",
+        "text": "Delfinlar va dengiz sherlarining akrobatik harakatlari, tryuklari hamda tomoshabinlar ishtirokidagi chiqishlarini tomosha qiling. Shou barcha yoshdagilar uchun qiziqarli.",
         "tone": "blue"
       },
       {
-        "tag": "15 or 30 Minutes",
-        "title": "Swimming with Dolphins",
-        "text": "Enjoy a unique in-water experience with dolphins. Swim, play, and create unforgettable memories. Swim time: upon request.",
+        "tag": "15 yoki 30 daqiqa",
+        "title": "Delfinlar bilan suzish",
+        "text": "Suvda delfinlar bilan birga boʻlishning betakror zavqini his eting. Suzing, oʻynang va unutilmas xotiralar yarating. Suzish vaqti: soʻrov boʻyicha.",
         "tone": "coral"
       },
       {
-        "tag": "Suitable for All Ages",
-        "title": "Family-Friendly Experience",
-        "text": "Guests of all ages are welcome. Hotel pick-up and drop-off are included, with daily sessions from 2:00 PM to 5:00 PM.",
+        "tag": "Barcha yoshdagilar uchun mos",
+        "title": "Butun oila uchun sayohat",
+        "text": "Barcha yoshdagi mehmonlarni kutamiz. Mehmonxonadan olib ketish va qaytarib kelish kiritilgan. Seanslar har kuni soat 2:00 PM dan 5:00 PM gacha boʻladi.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "All Ages Welcome",
-        "text": "The show is open to all ages. For swimming sessions, we recommend adult supervision for children under 10.",
+        "title": "Barcha yoshdagilarni kutamiz",
+        "text": "Shou barcha yoshdagilar uchun ochiq. Suzish seanslarida 10 yoshgacha bolalar kattalar nazoratida boʻlishini tavsiya qilamiz.",
         "tone": "green"
       },
       {
-        "title": "Professional Photos",
-        "text": "Personal phones and cameras are not permitted during the swim. Professional photos and videos are available to purchase on site.",
+        "title": "Professional suratlar",
+        "text": "Suzish paytida shaxsiy telefon va kameralardan foydalanish mumkin emas. Professional foto va videolarni joyida sotib olish mumkin.",
         "tone": "orange"
       },
       {
-        "title": "Flexible Booking",
-        "text": "Choose the dolphin show, the dolphin swim, or both together. Simply select your preferred option when booking.",
+        "title": "Qulay bron tanlovi",
+        "text": "Delfinlar shousini, delfinlar bilan suzishni yoki ikkalasini birga tanlang. Bron qilishda oʻzingizga maʼqul variantni belgilang.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Show · Swim · Tricks · Emotions · All ages",
-      "line2": "Guide and transfer included — from £23",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Shou · Suzish · Tryuklar · Taassurotlar · Barcha yoshdagilar uchun",
+      "line2": "Gid va transfer kiritilgan — £23 dan",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adult",
-        "unit": "per person",
+        "label": "Kattalar",
+        "unit": "bir kishi uchun",
         "discount": "−33%"
       },
       {
-        "label": "15 min / pp",
+        "label": "15 daqiqa / bir kishi uchun",
         "unit": null,
         "discount": "−24%"
       }
     ],
     "related": [
       {
-        "tag": "Evening yacht",
-        "name": "Evening Yacht Cruise"
+        "tag": "Kechki yaxta",
+        "name": "Kechki yaxta sayohati"
       },
       {
-        "tag": "Glass bottom",
-        "name": "Glass-Bottom Boat Trip"
+        "tag": "Shisha tubli qayiq",
+        "name": "Shisha tubli qayiqda sayohat"
       },
       {
-        "tag": "Underwater world",
-        "name": "Semi-Submarine (Sea Scope)"
+        "tag": "Suvosti dunyosi",
+        "name": "Yarim suvosti kemasi (Sea Scope)"
       },
       {
-        "tag": "Buggy",
-        "name": "Buggy Safari & Camel Ride"
+        "tag": "Bagi",
+        "name": "Bagida safari va tuya sayri"
       },
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Qohira",
+        "name": "Avtobusda Qohira va piramidalar"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Kattalar",
+        "unit": "kishi"
       },
       {
-        "label": "Children 3–8 years",
-        "unit": "person"
+        "label": "Bola 3–8 yosh",
+        "unit": "kishi"
       },
       {
-        "label": "Infants 0–2 years",
+        "label": "Chaqaloqlar 0–2 yosh",
         "unit": ""
       },
       {
-        "label": "15 minutes",
-        "unit": "person"
+        "label": "15 daqiqa",
+        "unit": "kishi"
       },
       {
-        "label": "30 minutes",
-        "unit": "person"
+        "label": "30 daqiqa",
+        "unit": "kishi"
       },
       {
-        "label": "Spectator (no swimming)",
-        "unit": "person"
+        "label": "Tomoshabin (suzishsiz)",
+        "unit": "kishi"
       }
     ],
     "bento": {
-      "priceKicker": "Saving · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−33%",
-      "priceText": "Transfer and guide included. All ages welcome. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "3 activities",
-      "programText": "Show, tricks, swimming with dolphins. For all ages. Transfer included. Emotions you'll never forget.",
+      "priceText": "Transfer va gid kiritilgan. Barcha yoshdagilarni kutamiz. Oldindan toʻlovsiz.",
+      "programKicker": "Kun dasturi",
+      "programNum": "3 ta mashgʻulot",
+      "programText": "Shou, tryuklar va delfinlar bilan suzish. Barcha yoshdagilar uchun. Transfer kiritilgan. Hech qachon unutilmaydigan taassurotlar.",
       "ring": "3/3",
-      "ringLabel": "activities"
+      "ringLabel": "mashgʻulot"
     }
   },
   "parasailing-sharm": {
-    "name": "Parasailing",
-    "title": "Parasailing Flight over the Red Sea in Sharm El Sheikh",
-    "categoryLabel": "Entertainment",
-    "duration": "1.5 hours",
-    "detailDuration": "1.5 hours",
-    "schedule": "Daily",
-    "timeText": "from 10:00 AM",
+    "name": "Parashyutda uchish (parasailing)",
+    "title": "Sharm-ash-Shayxda Qizil dengiz uzra parashyutda uchish (parasailing)",
+    "categoryLabel": "Koʻngilochar",
+    "duration": "1.5 soat",
+    "detailDuration": "1.5 soat",
+    "schedule": "Har kuni",
+    "timeText": "Soat 10:00 AM dan",
     "priceUnit": null,
     "badge": null,
-    "excerpt": "Soar by parachute behind a speedboat over the open water for an incredible sense of floating and freedom…",
-    "metaTitle": "Parasailing Adventure in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Parasailing in Sharm: harbour departure, a parasail flight over the Red Sea behind a speedboat. Transfer included. Daily from 10:00 AM. From £30. No prepayment.",
+    "excerpt": "Tezyurar qayiq ortidan parashyutda ochiq dengiz uzra koʻtariling va havoda parvoz qilishning betakror yengilligi hamda erkinligini his eting…",
+    "metaTitle": "Sharm-ash-Shayxda parashyutda uchish (parasailing) | Sardor Tours",
+    "metaDescription": "Sharmda parashyutda uchish: portdan joʻnash, tezyurar qayiq ortidan Qizil dengiz uzra parvoz. Transfer kiritilgan. Har kuni 10:00 AM dan. £30 dan. Oldindan toʻlovsiz.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance included",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta kiritilgan",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We'll collect you from your hotel in a comfortable air-conditioned vehicle and transfer you to the marina in Sharm El Sheikh Old Market."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Sizni mehmonxonangizdan konditsionerli qulay avtomobilda olib ketamiz va Sharm-ash-Shayxning Eski bozor hududidagi qayiqlar bandargohiga olib boramiz."
       },
       {
-        "title": "Safety Briefing",
-        "text": "Before your flight, your instructor will explain the equipment and safety procedures. You'll be fitted with a certified harness and life jacket before boarding the speedboat."
+        "title": "Xavfsizlik boʻyicha yoʻriqnoma",
+        "text": "Parvozdan oldin instruktor jihozlar va xavfsizlik qoidalarini tushuntiradi. Tezyurar qayiqqa chiqishingizdan oldin sizga sertifikatlangan xavfsizlik kamari va qutqaruv jileti taqiladi."
       },
       {
-        "title": "Parasailing Flight",
-        "text": "Soar high above the Red Sea and enjoy panoramic views of Sharm El Sheikh's coastline. Each flight lasts approximately 4–6 minutes. If you like, the captain can gently lower you so your feet touch the water before lifting you back into the air."
+        "title": "Parashyutda uchish (parasailing)",
+        "text": "Qizil dengiz uzra baland koʻtarilib, Sharm-ash-Shayx sohilining keng manzaralaridan zavqlaning. Har bir parvoz taxminan 4–6 daqiqa davom etadi. Xohlasangiz, kapitan oyoqlaringiz suvga tegadigan qilib sizni asta tushirishi, soʻng yana havoga koʻtarishi mumkin."
       },
       {
-        "title": "Return Transfer",
-        "text": "After your flight, we'll take you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Mehmonxonaga transfer",
+        "text": "Parvozdan soʻng sizni konditsionerli qulay avtomobilda mehmonxonangizga qaytarib olib boramiz."
       }
     ],
     "included": [
-      "English-speaking instructor",
-      "Hotel pick-up and drop-off"
+      "Ingliz tilida soʻzlashuvchi instruktor",
+      "Mehmonxonadan olib ketish va qaytarib kelish"
     ],
     "notIncluded": [
-      "Professional photos"
+      "Professional suratlar"
     ],
     "bring": [
-      "Swimwear",
-      "Towel",
-      "Sunglasses"
+      "Suzish kiyimi",
+      "Sochiq",
+      "Quyoshdan himoya koʻzoynagi"
     ],
     "faq": [
       {
-        "q": "Is parasailing safe?",
-        "a": "Yes. All equipment is regularly inspected and maintained. Before take-off, you'll receive a full safety briefing and be fitted with a certified harness and life jacket."
+        "q": "Parashyutda uchish (parasailing) xavfsizmi?",
+        "a": "Ha. Barcha jihozlar muntazam tekshiriladi va ularga texnik xizmat koʻrsatiladi. Parvozdan oldin xavfsizlik qoidalari toʻliq tushuntiriladi, sizga sertifikatlangan xavfsizlik kamari va qutqaruv jileti taqiladi."
       },
       {
-        "q": "Are there age or weight limits?",
-        "a": "The minimum age is 7 years. Children under 14 must fly with an adult. The maximum combined weight is 140 kg, depending on weather conditions."
+        "q": "Yosh yoki vazn boʻyicha cheklovlar bormi?",
+        "a": "Eng kichik yosh — 7 yosh. 14 yoshgacha bolalar kattalar bilan birga uchishi kerak. Ob-havo sharoitiga qarab eng yuqori umumiy vazn 140 kg."
       },
       {
-        "q": "What's the difference between single and tandem flights?",
-        "a": "A single flight is for one person, while a tandem flight allows two people to fly together, making it perfect for couples, friends or a parent and child."
+        "q": "Yakka va juftlik parvozlarining farqi nimada?",
+        "a": "Yakka parvoz bir kishiga moʻljallangan, juftlik parvozida esa ikki kishi birga uchadi. Bu juftliklar, doʻstlar yoki ota-ona va bola uchun juda mos."
       },
       {
-        "q": "Will I get wet?",
-        "a": "Not unless you want to. If conditions allow, the captain can gently dip your feet into the water before lifting you back into the air."
+        "q": "Kiyimim hoʻl boʻladimi?",
+        "a": "Faqat oʻzingiz xohlasangiz. Sharoit imkon bersa, kapitan oyoqlaringizni suvga asta tekkizib, soʻng sizni yana havoga koʻtarishi mumkin."
       },
       {
-        "q": "Can I bring my phone or camera?",
-        "a": "For safety reasons, we recommend leaving your phone on the boat. Professional photos are available to purchase, and action cameras such as GoPro may be used at your own responsibility."
+        "q": "Telefon yoki kameramni olib chiqsam boʻladimi?",
+        "a": "Xavfsizlik uchun telefoningizni qayiqda qoldirishni tavsiya qilamiz. Professional suratlarni sotib olish mumkin. GoPro kabi ekshn-kameralardan oʻz masʼuliyatingiz bilan foydalanishingiz mumkin."
       },
       {
-        "q": "What happens if the weather is bad?",
-        "a": "If weather conditions are unsuitable, your flight will be rescheduled or fully refunded."
+        "q": "Ob-havo yomon boʻlsa nima boʻladi?",
+        "a": "Ob-havo sharoiti mos kelmasa, parvozingiz boshqa vaqtga koʻchiriladi yoki toʻlov toʻliq qaytariladi."
       },
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes. Hotel pick-up and drop-off from any hotel in Sharm El Sheikh are included."
+        "q": "Mehmonxonadan transfer kiritilganmi?",
+        "a": "Ha. Sharm-ash-Shayxdagi istalgan mehmonxonadan olib ketish va qaytarib kelish kiritilgan."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Sayohat haqida",
     "destinationCards": [
       {
-        "tag": "Red Sea",
-        "title": "Parasailing Adventure",
-        "text": "Enjoy spectacular aerial views of the Red Sea while flying safely behind a speedboat.",
+        "tag": "Qizil dengiz",
+        "title": "Parashyutda uchish (parasailing) sarguzashti",
+        "text": "Tezyurar qayiq ortidan xavfsiz parvoz qilib, Qizil dengizning tepadan koʻrinadigan ajoyib manzaralaridan zavqlaning.",
         "tone": "coral"
       },
       {
-        "tag": "Sharm El Sheikh",
-        "title": "Single or Tandem Flight",
-        "text": "Fly solo or share the experience with a friend or family member for an unforgettable adventure.",
+        "tag": "Sharm-ash-Shayx",
+        "title": "Yakka yoki juftlik parvozi",
+        "text": "Yakka uching yoki doʻstingiz yoxud oila aʼzongiz bilan bu taassurotlarni baham koʻrib, unutilmas sarguzashtni boshdan kechiring.",
         "tone": "blue"
       },
       {
-        "tag": "Safety First",
-        "title": "Professional Equipment",
-        "text": "Certified harnesses, life jackets and experienced instructors ensure a safe and enjoyable flight for every guest.",
+        "tag": "Xavfsizlik birinchi oʻrinda",
+        "title": "Professional jihozlar",
+        "text": "Sertifikatlangan xavfsizlik kamarlari, qutqaruv jiletlari va tajribali instruktorlar har bir mehmonning xavfsiz hamda maroqli parvozini taʼminlaydi.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Suitable from Age 7",
-        "text": "Children under 14 fly together with an adult.",
+        "title": "7 yoshdan boshlab mos",
+        "text": "14 yoshgacha bolalar kattalar bilan birga uchadi.",
         "tone": "green"
       },
       {
-        "title": "Optional Water Dip",
-        "text": "Ask the captain if you'd like your feet to touch the water during the flight.",
+        "title": "Xohlasangiz, oyoqlaringizni suvga tekkizing",
+        "text": "Parvoz paytida oyoqlaringiz suvga tegishini xohlasangiz, kapitanga ayting.",
         "tone": "orange"
       },
       {
-        "title": "Hotel Transfer Included",
-        "text": "Pick-up and drop-off from any hotel in Sharm El Sheikh are included.",
+        "title": "Mehmonxonadan transfer narxga kiritilgan",
+        "text": "Sharm-ash-Shayxdagi istalgan mehmonxonadan olib ketish va qaytarib kelish kiritilgan.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Parasailing · Flight · Sea · Adrenaline",
-      "line2": "Guide and hotel transfer included — from £30",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Parashyutda uchish (parasailing) · Parvoz · Dengiz · Adrenalin",
+      "line2": "Gid va mehmonxonadan transfer kiritilgan — £30 dan",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Single",
-        "unit": "per person",
+        "label": "Yakka parvoz",
+        "unit": "bir kishi uchun",
         "discount": null
       },
       {
-        "label": "Tandem",
-        "unit": "per 2 people",
+        "label": "Juftlik parvozi",
+        "unit": "2 kishi uchun",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Speed boat",
-        "name": "Private Speed Boat"
+        "tag": "Tezyurar qayiq",
+        "name": "Shaxsiy tezyurar qayiq"
       },
       {
-        "tag": "Evening yacht",
-        "name": "Evening Yacht Cruise"
+        "tag": "Kechki yaxta",
+        "name": "Kechki yaxta sayohati"
       },
       {
-        "tag": "Private yacht",
-        "name": "Private Yacht in Sharm El Sheikh"
+        "tag": "Shaxsiy yaxta",
+        "name": "Sharm-ash-Shayxda shaxsiy yaxta"
       },
       {
         "tag": "Safari",
-        "name": "Salama Red Canyon"
+        "name": "Salama Qizil kanyoni"
       },
       {
-        "tag": "Museum",
-        "name": "Grand Egyptian Museum & Pyramids"
+        "tag": "Muzey",
+        "name": "Buyuk Misr muzeyi va piramidalar"
       }
     ],
     "options": [
       {
-        "label": "Single",
-        "unit": "person"
+        "label": "Yakka parvoz",
+        "unit": "kishi"
       },
       {
-        "label": "Tandem",
-        "unit": "2 people"
+        "label": "Juftlik parvozi",
+        "unit": "2 kishi"
       },
       {
-        "label": "Passenger on board, no flight",
-        "unit": "person"
+        "label": "Qayiqdagi yoʻlovchi, parvozsiz",
+        "unit": "kishi"
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−14%",
-      "priceText": "Transfer, lunch and entrance tickets already included. No prepayment.",
-      "programKicker": "Day programme",
-      "programNum": "3 steps",
-      "programText": "A parasail flight over the Red Sea, adrenaline and unforgettable views. 1.5 hours of pure delight.",
+      "priceText": "Transfer, tushlik va kirish chiptalari narxga kiritilgan. Oldindan toʻlovsiz.",
+      "programKicker": "Kun dasturi",
+      "programNum": "3 ta bosqich",
+      "programText": "Qizil dengiz uzra parashyutda parvoz, adrenalin va unutilmas manzaralar. 1.5 soat sof zavq.",
       "ring": "3/3",
-      "ringLabel": "steps"
+      "ringLabel": "bosqich"
     }
   },
   "evening-yacht-cruise": {
-    "name": "Evening Yacht Cruise with Dinner & Show",
-    "title": "Evening Yacht Cruise with Dinner & Live Show",
-    "categoryLabel": "Entertainment",
-    "duration": "4 hours",
-    "detailDuration": "4 hours",
-    "schedule": "Evenings",
-    "timeText": "6:00 – 10:00 PM",
+    "name": "Kechki ovqat va shou bilan kechki yaxta sayohati",
+    "title": "Kechki ovqat va jonli shou bilan kechki yaxta sayohati",
+    "categoryLabel": "Koʻngilochar",
+    "duration": "4 soat",
+    "detailDuration": "4 soat",
+    "schedule": "Kechqurun",
+    "timeText": "Soat 6:00 – 10:00 PM",
     "priceUnit": null,
-    "badge": "Top Rated",
-    "excerpt": "An evening cruise at sea, a delicious seafood dinner and a spectacular show that every guest can take part in…",
-    "metaTitle": "Evening Yacht Cruise with Dinner in Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Evening yacht in Sharm: oriental show, belly dance, Tanoura, seafood dinner. Transfer included. From £30. An unforgettable evening.",
+    "badge": "Yuqori baholangan",
+    "excerpt": "Dengizdagi kechki sayohat, mazali dengiz mahsulotlaridan kechki ovqat va har bir mehmon ishtirok etishi mumkin boʻlgan ajoyib shou…",
+    "metaTitle": "Sharm-ash-Shayxda kechki ovqat bilan yaxta sayohati | Sardor Tours",
+    "metaDescription": "Sharmda kechki yaxta: sharqona shou, qorin raqsi, tanura, dengiz mahsulotlaridan kechki ovqat. Transfer kiritilgan. £30 dan. Unutilmas oqshom.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta amal qiladi",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We pick you up from your hotel in a comfortable air-conditioned vehicle and transfer you to the marina in Sharm El Sheikh Old Market. The journey takes approximately 30 minutes, depending on your hotel location."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Sizni mehmonxonangizdan konditsionerli qulay avtomobilda olib ketamiz va Sharm-ash-Shayxning Eski bozor hududidagi qayiqlar bandargohiga olib boramiz. Yoʻl mehmonxonangiz joylashuviga qarab taxminan 30 daqiqa davom etadi."
       },
       {
-        "title": "Evening Cruise & Live Entertainment",
-        "text": "Relax aboard a luxury yacht and enjoy an evening of live entertainment. The programme includes a DJ, live music, a Tanoura performance, belly dancing, magic acts, and interactive entertainment for guests of all ages."
+        "title": "Kechki sayohat va jonli tomoshalar",
+        "text": "Hashamatli yaxta bortida dam olib, jonli tomoshalarga boy oqshomdan zavqlaning. Dasturga didjey, jonli musiqa, tanura tomoshasi, qorin raqsi, koʻzboylogʻichlik chiqishlari va barcha yoshdagi mehmonlar ishtirokidagi oʻyin-kulgilar kiradi."
       },
       {
-        "title": "Seafood Dinner",
-        "text": "Enjoy a freshly prepared seafood dinner served on board, accompanied by soft drinks included in the tour price."
+        "title": "Dengiz mahsulotlaridan kechki ovqat",
+        "text": "Bortda yangi tayyorlangan dengiz mahsulotlaridan kechki ovqat va tur narxiga kiritilgan alkogolsiz ichimliklardan bahramand boʻling."
       },
       {
-        "title": "Return Transfer",
-        "text": "After the cruise, we transfer you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Mehmonxonaga transfer",
+        "text": "Sayohatdan soʻng sizni konditsionerli qulay avtomobilda mehmonxonangizga qaytarib olib boramiz."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and drop-off",
-      "Seafood dinner",
-      "Soft drinks"
+      "Ingliz tilida soʻzlashuvchi gid",
+      "Mehmonxonadan olib ketish va qaytarib kelish",
+      "Dengiz mahsulotlaridan kechki ovqat",
+      "Alkogolsiz ichimliklar"
     ],
     "notIncluded": [
-      "Professional photos and videos"
+      "Professional foto va videolar"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Comfortable clothing"
+      "Telefoningizda pasportingiz surati",
+      "Qulay kiyim"
     ],
     "faq": [
       {
-        "q": "Can I celebrate a birthday or special occasion?",
-        "a": "Yes! The yacht is a perfect venue for birthdays, anniversaries, and other celebrations. Contact us on WhatsApp and we'll help you arrange a memorable evening."
+        "q": "Tugʻilgan kun yoki alohida sanani nishonlash mumkinmi?",
+        "a": "Ha! Yaxta tugʻilgan kunlar, yubileylar va boshqa bayramlar uchun ajoyib joy. WhatsApp orqali biz bilan bogʻlaning, unutilmas oqshom tashkil qilishga yordam beramiz."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "Yes, this experience is family-friendly. Children under 4 join free of charge, and children aged 5–9 benefit from a reduced price."
+        "q": "Tur bolalar uchun mosmi?",
+        "a": "Ha, bu sayohat butun oila uchun mos. 4 yoshgacha bolalar bepul qatnashadi, 5–9 yoshdagi bolalar uchun esa chegirmali narx amal qiladi."
       },
       {
-        "q": "Are alcoholic drinks available?",
-        "a": "No. In accordance with Egyptian regulations, alcoholic beverages are not served or permitted on board."
+        "q": "Alkogolli ichimliklar bormi?",
+        "a": "Yoʻq. Misr qoidalariga muvofiq, bortda alkogolli ichimliklar berilmaydi va ularni olib chiqishga ruxsat etilmaydi."
       },
       {
-        "q": "Can I take photos?",
-        "a": "Yes, you're welcome to take your own photos throughout the cruise. Professional photography services may also be available."
+        "q": "Suratga olish mumkinmi?",
+        "a": "Ha, sayohat davomida oʻzingiz suratga olishingiz mumkin. Professional fotograf xizmatlari ham mavjud boʻlishi mumkin."
       }
     ],
-    "infoHeading": "About the Destination",
+    "infoHeading": "Manzil haqida",
     "destinationCards": [
       {
-        "tag": "Red Sea · Sharm El Sheikh",
-        "title": "Red Sea Evening Cruise",
-        "text": "Spend a relaxing evening sailing across the Red Sea with live entertainment, a delicious seafood dinner, and beautiful views of Sharm El Sheikh.",
+        "tag": "Qizil dengiz · Sharm-ash-Shayx",
+        "title": "Qizil dengizda kechki sayohat",
+        "text": "Jonli tomoshalar, mazali dengiz mahsulotlaridan kechki ovqat va Sharm-ash-Shayxning goʻzal manzaralari bilan Qizil dengizda osoyishta oqshom oʻtkazing.",
         "tone": "blue"
       },
       {
-        "tag": "Show on board",
-        "title": "Live Entertainment",
-        "text": "Enjoy an exciting programme featuring Tanoura dancers, belly dancing, live music, a DJ, magic performances, and interactive entertainment.",
+        "tag": "Bortdagi shou",
+        "title": "Jonli tomoshalar",
+        "text": "Tanura raqqoslari, qorin raqsi, jonli musiqa, didjey, koʻzboylogʻichlik chiqishlari va mehmonlar ishtirokidagi oʻyin-kulgilarga boy qiziqarli dasturdan zavqlaning.",
         "tone": "coral"
       },
       {
-        "tag": "Old Town · Port",
-        "title": "Sharm El Sheikh Marina",
-        "text": "Depart from the marina in the Old Market area. Hotel pick-up and drop-off are included for a smooth and comfortable experience.",
+        "tag": "Eski shahar (Old Town) · Port",
+        "title": "Sharm-ash-Shayx bandargohi",
+        "text": "Sayohat Eski bozor hududidagi bandargohdan boshlanadi. Qulay sayohat uchun mehmonxonadan olib ketish va qaytarib kelish kiritilgan.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "Seafood Dinner & Soft Drinks",
-        "text": "A seafood dinner and soft drinks are included in the tour price.",
+        "title": "Dengiz mahsulotlaridan kechki ovqat va alkogolsiz ichimliklar",
+        "text": "Dengiz mahsulotlaridan kechki ovqat va alkogolsiz ichimliklar tur narxiga kiritilgan.",
         "tone": "green"
       },
       {
-        "title": "Perfect for Celebrations",
-        "text": "Planning a birthday or special occasion? Let us know when booking and we'll help make your evening extra special.",
+        "title": "Bayramlar uchun ajoyib tanlov",
+        "text": "Tugʻilgan kun yoki alohida sanani nishonlamoqchimisiz? Bron qilishda bizga ayting, oqshomingizni yanada oʻzgacha qilishga yordam beramiz.",
         "tone": "orange"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Oriental show · Dinner · Live music · Belly dancing",
-      "line2": "Transfer included — from £30",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Sharqona shou · Kechki ovqat · Jonli musiqa · Qorin raqsi",
+      "line2": "Transfer kiritilgan — £30 dan",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "Fast replies"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Kattalar",
+        "unit": "bir kishi uchun",
         "discount": null
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "per person",
+        "label": "Bola 5–9 yosh",
+        "unit": "bir kishi uchun",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Private yacht",
-        "name": "Private Yacht in Sharm El Sheikh"
+        "tag": "Shaxsiy yaxta",
+        "name": "Sharm-ash-Shayxda shaxsiy yaxta"
       },
       {
-        "tag": "Yacht",
-        "name": "Tiran Island Boat Trip"
+        "tag": "Yaxta",
+        "name": "Tiran oroliga qayiq sayohati"
       },
       {
-        "tag": "Dolphinarium",
-        "name": "Dolphin Show & Swimming with Dolphins"
+        "tag": "Delfinariy",
+        "name": "Delfinlar shousi va delfinlar bilan suzish"
       },
       {
-        "tag": "Quad bikes",
-        "name": "Quad Bike Safari & Camel Ride"
+        "tag": "Kvadrotsikllar",
+        "name": "Kvadrotsiklda safari va tuya sayri"
       },
       {
-        "tag": "Luxor",
-        "name": "Luxor by Plane"
+        "tag": "Luksor",
+        "name": "Samolyotda Luksorga"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Kattalar",
+        "unit": "kishi"
       },
       {
-        "label": "Children 5–9 years",
-        "unit": "person"
+        "label": "Bola 5–9 yosh",
+        "unit": "kishi"
       },
       {
-        "label": "Infants 0–4 years",
+        "label": "Chaqaloqlar 0–4 yosh",
         "unit": ""
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−33%",
-      "priceText": "Transfer, dinner and entry tickets already included. No prepayment.",
-      "programKicker": "Day programme",
-      "programNum": "4 activities",
-      "programText": "Show, seafood dinner, live music and belly dancing. An unforgettable evening on the Red Sea.",
+      "priceText": "Transfer, kechki ovqat va kirish chiptalari narxga kiritilgan. Oldindan toʻlovsiz.",
+      "programKicker": "Kun dasturi",
+      "programNum": "4 ta mashgʻulot",
+      "programText": "Shou, dengiz mahsulotlaridan kechki ovqat, jonli musiqa va qorin raqsi. Qizil dengizdagi unutilmas oqshom.",
       "ring": "4/4",
-      "ringLabel": "activities"
+      "ringLabel": "mashgʻulot"
     }
   },
   "ras-mohamed-national-park": {
-    "name": "Ras Mohamed National Park by Bus",
-    "title": "Ras Mohamed National Park Tour by Bus from Sharm El Sheikh",
+    "name": "Avtobusda Ras-Muhammad milliy bogʻiga sayohat",
+    "title": "Sharm-ash-Shayxdan avtobusda Ras-Muhammad milliy bogʻiga ekskursiya",
     "categoryLabel": "Safari",
-    "duration": "5 hours",
-    "detailDuration": "5 hours",
-    "schedule": "Daily",
-    "timeText": "8:30 AM – 1:30 PM",
+    "duration": "5 soat",
+    "detailDuration": "5 soat",
+    "schedule": "Har kuni",
+    "timeText": "Soat 8:30 AM – 1:30 PM",
     "priceUnit": null,
-    "badge": "New",
-    "excerpt": "A short but rewarding and active trip to the National Park: the Gates of Allah, unique coral reefs, lovely mangrove groves and Barracuda Bay…",
-    "metaTitle": "Ras Mohamed National Park Tour by Bus from Sharm El Sheikh | Sardor Tours",
-    "metaDescription": "Ras Mohamed: Gate of Allah, mangrove groves, the water-filled Rift, Wishing Lake, Barracuda Bay and panoramic views. Transfer included. From £20.",
+    "badge": "Yangi",
+    "excerpt": "Milliy bogʻga qisqa, ammo mazmunli va faol sayohat: Alloh darvozasi, noyob marjon riflari, goʻzal mangrovzorlar va Barrakuda qoʻltigʻi…",
+    "metaTitle": "Sharm-ash-Shayxdan Ras-Muhammadga avtobusda ekskursiya | Sardor Tours",
+    "metaDescription": "Ras-Muhammad: Alloh darvozasi, mangrovzorlar, suvli yoriq, Tilaklar koʻli, Barrakuda qoʻltigʻi va keng manzaralar. Transfer kiritilgan. £20 dan.",
     "highlights": [
-      "English-speaking guides",
-      "Insurance valid",
-      "Hotel transfer both ways",
-      "Book in 3 minutes"
+      "Ingliz tilida soʻzlashuvchi gidlar",
+      "Sugʻurta amal qiladi",
+      "Mehmonxonadan borish-qaytish transferi",
+      "3 daqiqada bron qiling"
     ],
     "itinerary": [
       {
-        "title": "Hotel Pick-up",
-        "text": "We'll pick you up from your hotel in a comfortable air-conditioned vehicle and drive approximately 25 km to Ras Mohamed National Park."
+        "title": "Mehmonxonadan olib ketamiz",
+        "text": "Sizni mehmonxonangizdan konditsionerli qulay avtomobilda olib ketamiz va taxminan 25 km yoʻl bosib, Ras-Muhammad milliy bogʻiga boramiz."
       },
       {
-        "title": "Gate of Allah",
-        "text": "Stop at the park's famous entrance monument, one of the most photographed landmarks in South Sinai."
+        "title": "Alloh darvozasi",
+        "text": "Janubiy Sinayda eng koʻp suratga olinadigan diqqatga sazovor joylardan biri — bogʻning mashhur kirish yodgorligi yonida toʻxtang."
       },
       {
-        "title": "Mangrove Forest",
-        "text": "Visit the unique mangrove trees that thrive in salt water and play an important role in the park's ecosystem."
+        "title": "Mangrovzor",
+        "text": "Shoʻr suvda oʻsadigan va bogʻ ekotizimida muhim oʻrin tutadigan noyob mangrov daraxtlarini tomosha qiling."
       },
       {
-        "title": "Earthquake Rift",
-        "text": "Discover a natural fissure created by ancient tectonic activity. Filled with crystal-clear water, the rift reaches a depth of around 40 metres."
+        "title": "Zilzila yorigʻi",
+        "text": "Qadimiy tektonik harakatlar natijasida hosil boʻlgan tabiiy yoriqni kashf eting. Billurdek tiniq suv bilan toʻlgan yoriqning chuqurligi taxminan 40 metrga yetadi."
       },
       {
-        "title": "Magic Lake",
-        "text": "Enjoy swimming at one of Ras Mohamed's most famous natural attractions, renowned for its crystal-clear waters, peaceful atmosphere, and stunning desert scenery."
+        "title": "Sehrli koʻl",
+        "text": "Billurdek tiniq suvi, osoyishtaligi va ajoyib choʻl manzaralari bilan tanilgan, Ras-Muhammadning eng mashhur tabiiy maskanlaridan birida suzishdan zavqlaning."
       },
       {
-        "title": "Barracuda Bay Snorkelling",
-        "text": "Spend around 45 minutes snorkelling above colourful coral reefs and tropical fish in one of the park's best snorkelling spots."
+        "title": "Barrakuda qoʻltigʻida snorkeling",
+        "text": "Bogʻning snorkeling uchun eng yaxshi joylaridan birida rang-barang marjon riflari va tropik baliqlar tepasida taxminan 45 daqiqa snorkeling qiling."
       },
       {
-        "title": "Panorama Viewpoint",
-        "text": "Finish your visit with panoramic views across the coastline, desert and Red Sea."
+        "title": "Manzarali kuzatuv nuqtasi",
+        "text": "Tashrifni sohil, choʻl va Qizil dengizning keng manzaralarini tomosha qilish bilan yakunlang."
       },
       {
-        "title": "Return to Your Hotel",
-        "text": "After exploring the national park, we'll transfer you back to your hotel in a comfortable air-conditioned vehicle."
+        "title": "Mehmonxonangizga qaytish",
+        "text": "Milliy bogʻni tomosha qilgach, sizni konditsionerli qulay avtomobilda mehmonxonangizga qaytarib olib boramiz."
       }
     ],
     "included": [
-      "English-speaking guide",
-      "Hotel pick-up and drop-off",
-      "National Park entry fee"
+      "Ingliz tilida soʻzlashuvchi gid",
+      "Mehmonxonadan olib ketish va qaytarib kelish",
+      "Milliy bogʻga kirish chiptasi"
     ],
     "notIncluded": [
-      "Mask, snorkel, fins and life jacket (available to rent)",
-      "Professional photos",
-      "Personal expenses"
+      "Niqob, trubka, lastlar va qutqaruv jileti (ijaraga olish mumkin)",
+      "Professional suratlar",
+      "Shaxsiy xarajatlar"
     ],
     "bring": [
-      "A photo of your passport on your phone",
-      "Swimwear",
-      "Towel",
-      "Reef shoes (recommended)",
-      "Sunscreen",
-      "Snorkelling equipment (or rent on site)"
+      "Telefoningizda pasportingiz surati",
+      "Suzish kiyimi",
+      "Sochiq",
+      "Rif poyabzali (tavsiya etiladi)",
+      "Quyoshdan himoya kremi",
+      "Snorkeling jihozlari (yoki joyida ijaraga oling)"
     ],
     "faq": [
       {
-        "q": "Is hotel transfer included?",
-        "a": "Yes. Hotel pick-up and drop-off from any hotel in Sharm El Sheikh are included."
+        "q": "Mehmonxonadan transfer kiritilganmi?",
+        "a": "Ha. Sharm-ash-Shayxdagi istalgan mehmonxonadan olib ketish va qaytarib kelish kiritilgan."
       },
       {
-        "q": "Do I need to know how to swim?",
-        "a": "Basic swimming skills are recommended for snorkelling, but you can also enjoy the park's natural attractions without entering the water."
+        "q": "Suzishni bilish kerakmi?",
+        "a": "Snorkeling uchun asosiy suzish koʻnikmalari tavsiya etiladi. Suvga tushmasdan ham bogʻning tabiiy goʻzalliklaridan bahramand boʻlishingiz mumkin."
       },
       {
-        "q": "Is snorkelling equipment included?",
-        "a": "No. Masks, snorkels, fins and life jackets are available to rent at the park."
+        "q": "Snorkeling jihozlari kiritilganmi?",
+        "a": "Yoʻq. Niqob, trubka, lastlar va qutqaruv jiletlarini bogʻda ijaraga olish mumkin."
       },
       {
-        "q": "What should I bring?",
-        "a": "Bring swimwear, a towel, reef shoes, sunscreen, a photo of your passport on your phone and cash for equipment rental or personal expenses."
+        "q": "Oʻzim bilan nima olishim kerak?",
+        "a": "Suzish kiyimi, sochiq, rif poyabzali, quyoshdan himoya kremi, telefoningizda pasportingiz surati hamda jihozlar ijarasi yoki shaxsiy xarajatlar uchun naqd pul oling."
       },
       {
-        "q": "Is the National Park entry fee included?",
-        "a": "Yes. The National Park entry fee is already included in the tour price."
+        "q": "Milliy bogʻga kirish chiptasi kiritilganmi?",
+        "a": "Ha. Milliy bogʻga kirish chiptasi tur narxiga kiritilgan."
       },
       {
-        "q": "Is the tour suitable for children?",
-        "a": "Yes. Families with children are welcome, and there are plenty of places to explore both in and out of the water."
+        "q": "Tur bolalar uchun mosmi?",
+        "a": "Ha. Bolali oilalarni kutamiz: suvda ham, quruqlikda ham tomosha qilish uchun koʻplab joylar bor."
       },
       {
-        "q": "Can I book a private tour?",
-        "a": "Yes. Private transport and a dedicated guide can be arranged with a customised itinerary. Contact us on WhatsApp for details."
+        "q": "Shaxsiy tur bron qilsam boʻladimi?",
+        "a": "Ha. Sizga mos dastur bilan shaxsiy transport va faqat sizga hamrohlik qiladigan gidni tashkil qilish mumkin. Tafsilotlar uchun WhatsApp orqali biz bilan bogʻlaning."
       }
     ],
-    "infoHeading": "About This Experience",
+    "infoHeading": "Sayohat haqida",
     "destinationCards": [
       {
-        "tag": "Ras Mohamed National Park",
-        "title": "Coral Reefs & Marine Life",
-        "text": "Explore one of Egypt's most famous protected areas, known for colourful coral reefs, tropical fish and crystal-clear water.",
+        "tag": "Ras-Muhammad milliy bogʻi",
+        "title": "Marjon riflari va dengiz hayoti",
+        "text": "Rang-barang marjon riflari, tropik baliqlari va billurdek tiniq suvi bilan mashhur Misrning eng taniqli muhofaza etiladigan hududlaridan birini kashf eting.",
         "tone": "blue"
       },
       {
-        "tag": "South Sinai",
-        "title": "Mangroves & Magic Lake",
-        "text": "Discover unique mangrove forests, natural salt lakes and geological formations found only in a few places around the world.",
+        "tag": "Janubiy Sinay",
+        "title": "Mangrovzorlar va Sehrli koʻl",
+        "text": "Dunyoda sanoqli joylardagina uchraydigan noyob mangrovzorlar, tabiiy shoʻr koʻllar va geologik tuzilmalarni kashf eting.",
         "tone": "coral"
       },
       {
-        "tag": "25 km from Sharm El Sheikh",
-        "title": "Easy Half-Day Adventure",
-        "text": "Enjoy a relaxed half-day trip combining nature, snorkelling and some of the best coastal scenery in South Sinai.",
+        "tag": "Sharm-ash-Shayxdan 25 km",
+        "title": "Yarim kunlik yengil sarguzasht",
+        "text": "Tabiat, snorkeling va Janubiy Sinayning eng goʻzal sohil manzaralarini birlashtirgan yarim kunlik sokin sayohatdan zavqlaning.",
         "tone": "sand"
       }
     ],
     "goodToKnow": [
       {
-        "title": "National Park Entry Included",
-        "text": "No additional entrance fees are required.",
+        "title": "Milliy bogʻga kirish chiptasi kiritilgan",
+        "text": "Kirish uchun qoʻshimcha toʻlov talab qilinmaydi.",
         "tone": "green"
       },
       {
-        "title": "Snorkelling Equipment Available",
-        "text": "You can bring your own equipment or rent everything you need on site.",
+        "title": "Snorkeling jihozlarini olish mumkin",
+        "text": "Oʻz jihozlaringizni olib kelishingiz yoki kerakli hamma narsani joyida ijaraga olishingiz mumkin.",
         "tone": "orange"
       },
       {
-        "title": "Family-Friendly Experience",
-        "text": "Suitable for beginners, families and anyone who wants to discover the natural beauty of Ras Mohamed.",
+        "title": "Butun oila uchun sayohat",
+        "text": "Yangi boshlovchilar, oilalar va Ras-Muhammadning tabiiy goʻzalligini kashf etishni istagan barcha uchun mos.",
         "tone": "blue"
       }
     ],
     "cta": {
-      "heading": "Ready for an unforgettable adventure?",
-      "line1": "Mangroves · Snorkelling · Wishing Lake · Gate of Allah",
-      "line2": "Transfer and guide included — from £20",
+      "heading": "Unutilmas sarguzashtga tayyormisiz?",
+      "line1": "Mangrovzorlar · Snorkeling · Tilaklar koʻli · Alloh darvozasi",
+      "line2": "Transfer va gid kiritilgan — £20 dan",
       "chips": [
-        "£0 prepayment",
-        "Free cancellation",
-        "We reply fast"
+        "£0 oldindan toʻlov",
+        "Bepul bekor qilish",
+        "Tez javob beramiz"
       ]
     },
     "heroPrices": [
       {
-        "label": "Adults",
-        "unit": "per person",
+        "label": "Kattalar",
+        "unit": "bir kishi uchun",
         "discount": null
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "per person",
+        "label": "Bola 5–10 yosh",
+        "unit": "bir kishi uchun",
         "discount": null
       }
     ],
     "related": [
       {
-        "tag": "Snorkelling",
-        "name": "White Island & Ras Mohamed"
+        "tag": "Snorkeling",
+        "name": "Oq orol va Ras-Muhammad"
       },
       {
-        "tag": "Yacht",
-        "name": "Tiran Island Boat Trip"
+        "tag": "Yaxta",
+        "name": "Tiran oroliga qayiq sayohati"
       },
       {
-        "tag": "Diving",
-        "name": "Blue Hole Dahab"
+        "tag": "Dayving",
+        "name": "Dahabdagi Moviy tuynuk (Blue Hole)"
       },
       {
-        "tag": "Buggy",
-        "name": "Buggy Safari & Camel Ride"
+        "tag": "Bagi",
+        "name": "Bagida safari va tuya sayri"
       },
       {
-        "tag": "Cairo",
-        "name": "Cairo & Pyramids by Bus"
+        "tag": "Qohira",
+        "name": "Avtobusda Qohira va piramidalar"
       }
     ],
     "options": [
       {
-        "label": "Adults",
-        "unit": "person"
+        "label": "Kattalar",
+        "unit": "kishi"
       },
       {
-        "label": "Children 5–10 years",
-        "unit": "person"
+        "label": "Bola 5–10 yosh",
+        "unit": "kishi"
       },
       {
-        "label": "Infants 0–4 years",
+        "label": "Chaqaloqlar 0–4 yosh",
         "unit": ""
       }
     ],
     "bento": {
-      "priceKicker": "Savings · Tour price",
+      "priceKicker": "Tejash · Tur narxi",
       "badge": "−33%",
-      "priceText": "Transfer, lunch and entrance tickets already included. No prepayment.",
-      "programKicker": "The day's programme",
-      "programNum": "4 stops",
-      "programText": "Gate of Allah, mangroves, Wishing Lake, snorkelling by the reefs. All in one unforgettable morning.",
+      "priceText": "Transfer, tushlik va kirish chiptalari narxga kiritilgan. Oldindan toʻlovsiz.",
+      "programKicker": "Kun dasturi",
+      "programNum": "4 ta toʻxtash",
+      "programText": "Alloh darvozasi, mangrovzorlar, Tilaklar koʻli va riflar yonida snorkeling. Barchasi bir unutilmas tongda.",
       "ring": "4/4",
-      "ringLabel": "stops"
+      "ringLabel": "toʻxtash"
     }
   }
 }
