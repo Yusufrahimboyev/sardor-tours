@@ -26,13 +26,27 @@ export function mimeFor(name: string): string {
 }
 
 /** Validates by content (not by the client-supplied type) and returns the public path. */
-export async function saveUpload(file: File): Promise<{ path: string } | { error: string }> {
-  if (file.size === 0) return { error: `${file.name}: empty file` };
-  if (file.size > MAX_VIDEO_BYTES) return { error: `${file.name}: 60 MB dan katta` };
+export interface UploadMessages {
+  empty: string;
+  videoTooBig: string;
+  badType: string;
+  imageTooBig: string;
+}
+
+const DEFAULT_MESSAGES: UploadMessages = {
+  empty: 'empty file',
+  videoTooBig: 'larger than 60 MB',
+  badType: 'only JPG, PNG, WebP images or MP4 video',
+  imageTooBig: 'image larger than 8 MB',
+};
+
+export async function saveUpload(file: File, msg: UploadMessages = DEFAULT_MESSAGES): Promise<{ path: string } | { error: string }> {
+  if (file.size === 0) return { error: `${file.name}: ${msg.empty}` };
+  if (file.size > MAX_VIDEO_BYTES) return { error: `${file.name}: ${msg.videoTooBig}` };
   const buf = Buffer.from(await file.arrayBuffer());
   const type = TYPES.find((t) => t.test(buf));
-  if (!type) return { error: `${file.name}: faqat JPG, PNG, WebP rasm yoki MP4 video` };
-  if (type.ext !== 'mp4' && file.size > MAX_UPLOAD_BYTES) return { error: `${file.name}: rasm 8 MB dan katta` };
+  if (!type) return { error: `${file.name}: ${msg.badType}` };
+  if (type.ext !== 'mp4' && file.size > MAX_UPLOAD_BYTES) return { error: `${file.name}: ${msg.imageTooBig}` };
   const name = `${randomBytes(8).toString('hex')}.${type.ext}`;
   await fs.mkdir(UPLOAD_DIR, { recursive: true });
   await fs.writeFile(path.join(UPLOAD_DIR, name), buf);

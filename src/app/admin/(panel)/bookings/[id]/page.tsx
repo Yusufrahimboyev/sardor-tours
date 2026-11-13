@@ -7,10 +7,14 @@ import { formatLongDate } from '@/lib/dates';
 import { formatGBP } from '@/lib/pricing';
 import { bookings, type Booking } from '@/lib/server/store';
 import { saveBookingNote, setBookingStatus } from '../../../actions';
+import { formatDateTime, formatTourDate } from '../../../i18n/config';
+import { getAdminDict, getAdminLang } from '../../../i18n/server';
 import { StatusBadge } from '../../StatusBadge';
 import styles from '../../../admin.module.css';
 
-export const metadata = { title: 'Bron' };
+export async function generateMetadata() {
+  return { title: (await getAdminDict()).booking.title };
+}
 
 /** wa.me link to the *customer* (not the business), with a ready-made confirmation message. */
 function customerWhatsApp(b: Booking): string | null {
@@ -29,11 +33,13 @@ export default async function AdminBookingPage({ params }: { params: Promise<{ i
   const b = await bookings.get(id);
   if (!b) notFound();
   const wa = customerWhatsApp(b);
+  const [lang, t] = await Promise.all([getAdminLang(), getAdminDict()]);
+  const T = t.booking;
 
   return (
     <>
       <Link href="/admin/" className={styles.back}>
-        ← Barcha bronlar
+        {T.back}
       </Link>
       <div className={styles.detailHead}>
         <h1 className={styles.h1}>
@@ -43,27 +49,27 @@ export default async function AdminBookingPage({ params }: { params: Promise<{ i
           {b.status !== 'confirmed' && (
             <form action={setBookingStatus.bind(null, b.id, 'confirmed')}>
               <button type="submit" className={styles.btnGreen}>
-                ✓ Tasdiqlash
+                {T.confirm}
               </button>
             </form>
           )}
           {b.status !== 'cancelled' && (
             <form action={setBookingStatus.bind(null, b.id, 'cancelled')}>
               <button type="submit" className={styles.btnRed}>
-                Bekor qilish
+                {T.cancel}
               </button>
             </form>
           )}
           {b.status !== 'pending' && (
             <form action={setBookingStatus.bind(null, b.id, 'pending')}>
               <button type="submit" className={styles.btnGhost}>
-                Kutilmoqda holatiga qaytarish
+                {T.toPending}
               </button>
             </form>
           )}
           {wa && (
             <a href={wa} target="_blank" rel="noopener noreferrer" className={styles.btnWa}>
-              Mijozga WhatsApp yozish
+              {T.whatsapp}
             </a>
           )}
         </div>
@@ -71,20 +77,20 @@ export default async function AdminBookingPage({ params }: { params: Promise<{ i
 
       <div className={styles.grid2}>
         <section className={styles.card}>
-          <h2>Tur</h2>
+          <h2>{T.tourSection}</h2>
           <dl className={styles.dl}>
-            <dt>Tur</dt>
+            <dt>{T.tour}</dt>
             <dd>
               <Link href={tourHref(b.tourSlug)} target="_blank">
                 {b.tourName} ↗
               </Link>
             </dd>
-            <dt>Sana</dt>
+            <dt>{T.date}</dt>
             <dd>
-              {formatLongDate(b.date)}
+              {formatTourDate(lang, b.date)}
               {b.time && ` · ${b.time}`}
             </dd>
-            <dt>Mehmonxona</dt>
+            <dt>{T.hotel}</dt>
             <dd>{b.hotel}</dd>
             {b.lines.map((l) => (
               <Fragment key={l.key}>
@@ -94,29 +100,29 @@ export default async function AdminBookingPage({ params }: { params: Promise<{ i
                 <dd>{formatGBP(l.subtotal)}</dd>
               </Fragment>
             ))}
-            <dt>Jami (tur kuni to‘lanadi)</dt>
+            <dt>{T.total}</dt>
             <dd className={styles.total}>{formatGBP(b.total)}</dd>
             {b.requiresDeposit && (
               <>
-                <dt>Depozit</dt>
-                <dd>Kerak — to‘lov ma’lumotini yuboring</dd>
+                <dt>{T.deposit}</dt>
+                <dd>{T.depositText}</dd>
               </>
             )}
           </dl>
         </section>
 
         <section className={styles.card}>
-          <h2>Mijoz</h2>
+          <h2>{T.clientSection}</h2>
           <dl className={styles.dl}>
-            <dt>Ism</dt>
+            <dt>{T.name}</dt>
             <dd>{b.name}</dd>
-            <dt>Telefon / WhatsApp</dt>
+            <dt>{T.phone}</dt>
             <dd>
               <a href={`tel:${b.phone.replace(/[^\d+]/g, '')}`}>{b.phone}</a>
             </dd>
             {b.email && (
               <>
-                <dt>Email</dt>
+                <dt>{T.email}</dt>
                 <dd>
                   <a href={`mailto:${b.email}`}>{b.email}</a>
                 </dd>
@@ -124,25 +130,25 @@ export default async function AdminBookingPage({ params }: { params: Promise<{ i
             )}
             {b.notes && (
               <>
-                <dt>Mijoz izohi</dt>
+                <dt>{T.clientNote}</dt>
                 <dd className={styles.pre}>{b.notes}</dd>
               </>
             )}
-            <dt>Qabul qilindi</dt>
-            <dd>{new Date(b.createdAt).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}</dd>
+            <dt>{T.received}</dt>
+            <dd>{formatDateTime(lang, b.createdAt)}</dd>
             {b.updatedAt && (
               <>
-                <dt>Oxirgi o‘zgarish</dt>
-                <dd>{new Date(b.updatedAt).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}</dd>
+                <dt>{T.updated}</dt>
+                <dd>{formatDateTime(lang, b.updatedAt)}</dd>
               </>
             )}
           </dl>
 
           <form action={saveBookingNote.bind(null, b.id)} className={styles.noteForm}>
-            <label htmlFor="note">Ichki izoh (faqat adminlar ko‘radi)</label>
-            <textarea id="note" name="note" rows={3} defaultValue={b.adminNote ?? ''} placeholder="Haydovchi, olib ketish vaqti, to‘lov…" />
+            <label htmlFor="note">{T.noteLabel}</label>
+            <textarea id="note" name="note" rows={3} defaultValue={b.adminNote ?? ''} placeholder={T.notePh} />
             <button type="submit" className={styles.btnPrimary}>
-              Izohni saqlash
+              {T.noteSave}
             </button>
           </form>
         </section>

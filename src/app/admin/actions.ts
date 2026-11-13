@@ -5,6 +5,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { checkPassword, endSession, requireAdmin, startSession } from '@/lib/server/auth';
 import { rateLimited } from '@/lib/server/http';
+import { getAdminDict } from './i18n/server';
 import { BOOKING_STATUSES, bookings, messages, type BookingStatus } from '@/lib/server/store';
 
 export interface LoginState {
@@ -13,8 +14,9 @@ export interface LoginState {
 
 export async function login(_prev: LoginState, form: FormData): Promise<LoginState> {
   const req = new Request('http://admin.local/login', { headers: await headers() });
-  if (rateLimited(req, 'admin-login', 5)) return { error: 'Juda ko‘p urinish. Bir daqiqa kutib, qayta urinib ko‘ring.' };
-  if (!checkPassword(String(form.get('password') ?? ''))) return { error: 'Parol noto‘g‘ri.' };
+  const t = await getAdminDict();
+  if (rateLimited(req, 'admin-login', 5)) return { error: t.login.tooMany };
+  if (!checkPassword(String(form.get('password') ?? ''))) return { error: t.login.wrong };
   await startSession();
   redirect('/admin/');
 }
