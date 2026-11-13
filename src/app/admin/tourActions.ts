@@ -6,6 +6,8 @@ import { z } from 'zod';
 import { CATEGORIES, seedTours, type Tour, type TourOption } from '@/data/tours';
 import { requireAdmin } from '@/lib/server/auth';
 import { deleteTour, getTour, listTours, nextTourId, saveTour } from '@/lib/server/tours';
+import type { AdminDict } from './i18n/dict';
+import { getAdminDict } from './i18n/server';
 
 export interface TourFormState {
   error?: string;
@@ -30,17 +32,17 @@ const trSchema = z.object({
 });
 
 /** What the tour editor sends (one JSON field). Validated here — the client is never trusted. */
-const editorSchema = z.object({
+const editorSchema = (t: AdminDict) => z.object({
   i18n: z.object({ ru: trSchema, uz: trSchema }),
   active: z.boolean(),
-  name: z.string().trim().min(3, 'Tur nomini yozing (kamida 3 harf).').max(120),
+  name: z.string().trim().min(3, t.tours.errName).max(120),
   slug: z
     .string()
     .trim()
     .toLowerCase()
-    .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Sahifa manzili faqat lotin harflari, raqamlar va "-" dan iborat bo‘lsin.'),
+    .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, t.tours.errSlug),
   title: z.string().trim().max(160),
-  category: z.enum(['sea', 'safari', 'historical', 'family'], { message: 'Kategoriyani tanlang.' }),
+  category: z.enum(['sea', 'safari', 'historical', 'family'], { message: t.tours.errCategory }),
   badge: z.string().trim().max(30),
   excerpt: z.string().trim().max(400),
   photos: z.array(z.string().trim().min(1)).max(60),
@@ -48,7 +50,7 @@ const editorSchema = z.object({
     .array(
       z.object({
         key: z.string().regex(/^[a-z0-9_]+$/i),
-        label: z.string().trim().min(1, 'Har bir narx uchun nom yozing (masalan, "Kattalar").').max(80),
+        label: z.string().trim().min(1, t.tours.errPriceLabel).max(80),
         price: z.number().min(0).max(100000),
         unit: z.string().trim().max(30),
         kind: z.enum(['counter', 'toggle']),
@@ -56,7 +58,7 @@ const editorSchema = z.object({
         max: z.number().int().min(1).max(99).optional(),
       }),
     )
-    .min(1, 'Kamida bitta narx qo‘shing.'),
+    .min(1, t.tours.errPriceMin),
   oldPrice: z.number().min(0).nullable(),
   priceUnit: z.string().trim().max(30),
   requiresDeposit: z.boolean(),
@@ -73,7 +75,7 @@ const editorSchema = z.object({
   metaTitle: z.string().trim().max(160),
   metaDescription: z.string().trim().max(320),
 });
-export type TourEditorData = z.infer<typeof editorSchema>;
+export type TourEditorData = z.infer<ReturnType<typeof editorSchema>>;
 
 const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -186,23 +188,24 @@ function buildTour(d: TourEditorData, base: Tour, id: number): Tour {
 
 export async function saveTourAction(previousSlug: string, _prev: TourFormState, f: FormData): Promise<TourFormState> {
   await requireAdmin();
+  const t = await getAdminDict();
   let data: TourEditorData;
   try {
-    data = editorSchema.parse(JSON.parse(String(f.get('data') ?? '{}')));
+    data = editorSchema(t).parse(JSON.parse(String(f.get('data') ?? '{}')));
   } catch (e) {
-    return { error: e instanceof z.ZodError ? e.issues[0].message : 'Ma’lumotlarni o‘qib bo‘lmadi, sahifani yangilang.' };
+    return { error: e instanceof z.ZodError ? e.issues[0].message : t.tours.errRead };
   }
   const all = await listTours({ all: true });
   const base = all.find((t) => t.slug === previousSlug);
-  if (!base) return { error: 'Bu tur o‘chirilgan.' };
+  if (!base) return { error: t.tours.errDeleted };
   if (data.slug !== previousSlug && all.some((t) => t.slug === data.slug)) {
-    return { error: `"${data.slug}" manzili boshqa turda band. Boshqa manzil yozing.` };
+    return { error: t.tours.errSlugTaken(data.slug) };
   }
   if (data.active && !data.prices.some((p) => p.group === 'guests' && p.price > 0)) {
-    return { error: 'Turni saytda ko‘rsatish uchun kamida bitta pullik narx kerak (masalan, Kattalar — £25).' };
+    return { error: t.tours.errNeedPrice };
   }
   if (data.active && !data.photos.length) {
-    return { error: 'Turni saytda ko‘rsatish uchun kamida bitta rasm yuklang.' };
+    return { error: t.tours.errNeedPhoto };
   }
 
   await saveTour(buildTour(data, base, base.id), previousSlug);

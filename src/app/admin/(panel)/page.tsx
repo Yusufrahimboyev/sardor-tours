@@ -1,11 +1,14 @@
 import Link from 'next/link';
-import { formatLongDate } from '@/lib/dates';
 import { formatGBP } from '@/lib/pricing';
 import { BOOKING_STATUSES, bookings, type Booking } from '@/lib/server/store';
-import { STATUS_UZ, StatusBadge } from './StatusBadge';
+import { formatDateTime, formatTourDate } from '../i18n/config';
+import { getAdminDict, getAdminLang } from '../i18n/server';
+import { StatusBadge } from './StatusBadge';
 import styles from '../admin.module.css';
 
-export const metadata = { title: 'Bronlar' };
+export async function generateMetadata() {
+  return { title: (await getAdminDict()).bookings.title };
+}
 
 type Search = Promise<{ status?: string; q?: string; when?: string }>;
 
@@ -15,6 +18,7 @@ function guests(b: Booking) {
 
 export default async function AdminBookingsPage({ searchParams }: { searchParams: Search }) {
   const { status = 'all', q = '', when = 'upcoming' } = await searchParams;
+  const [lang, t] = await Promise.all([getAdminLang(), getAdminDict()]);
   const all = (await bookings.list()).slice().reverse();
   const today = new Date().toISOString().slice(0, 10);
   const weekAgo = new Date(Date.now() - 7 * 86_400_000).toISOString();
@@ -38,60 +42,60 @@ export default async function AdminBookingsPage({ searchParams }: { searchParams
 
   return (
     <>
-      <h1 className={styles.h1}>Bronlar</h1>
+      <h1 className={styles.h1}>{t.bookings.title}</h1>
       <div className={styles.stats}>
         <div className={styles.stat}>
           <b>{stats.pending}</b>
-          <span>Tasdiq kutmoqda</span>
+          <span>{t.bookings.statPending}</span>
         </div>
         <div className={styles.stat}>
           <b>{stats.week}</b>
-          <span>So‘nggi 7 kunda yangi</span>
+          <span>{t.bookings.statWeek}</span>
         </div>
         <div className={styles.stat}>
           <b>{stats.upcoming}</b>
-          <span>Tasdiqlangan, oldinda</span>
+          <span>{t.bookings.statUpcoming}</span>
         </div>
         <div className={styles.stat}>
           <b>{formatGBP(stats.revenue)}</b>
-          <span>Oldindagi tasdiqlangan summa</span>
+          <span>{t.bookings.statRevenue}</span>
         </div>
       </div>
 
       <form className={styles.filters} role="search">
-        <input name="q" defaultValue={q} placeholder="Ism, telefon, mehmonxona yoki bron raqami…" aria-label="Bronlarni qidirish" />
-        <select name="status" defaultValue={status} aria-label="Holat">
-          <option value="all">Barcha holatlar</option>
+        <input name="q" defaultValue={q} placeholder={t.bookings.searchPh} aria-label={t.bookings.searchAria} />
+        <select name="status" defaultValue={status} aria-label={t.bookings.statusAria}>
+          <option value="all">{t.bookings.allStatuses}</option>
           {BOOKING_STATUSES.map((s) => (
             <option key={s} value={s}>
-              {STATUS_UZ[s]}
+              {t.status[s]}
             </option>
           ))}
         </select>
-        <select name="when" defaultValue={when} aria-label="Tur sanasi">
-          <option value="upcoming">Oldindagi turlar</option>
-          <option value="past">O‘tgan turlar</option>
-          <option value="all">Barcha sanalar</option>
+        <select name="when" defaultValue={when} aria-label={t.bookings.dateAria}>
+          <option value="upcoming">{t.bookings.upcoming}</option>
+          <option value="past">{t.bookings.past}</option>
+          <option value="all">{t.bookings.allDates}</option>
         </select>
         <button type="submit" className={styles.btnPrimary}>
-          Qidirish
+          {t.common.search}
         </button>
       </form>
 
       {rows.length === 0 ? (
-        <p className={styles.empty}>Bunday bron topilmadi.</p>
+        <p className={styles.empty}>{t.bookings.none}</p>
       ) : (
         <div className={styles.tableWrap}>
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Bron raqami</th>
-                <th>Tur sanasi</th>
-                <th>Tur</th>
-                <th>Mijoz</th>
-                <th>Mehmonlar</th>
-                <th>Summa</th>
-                <th>Holat</th>
+                <th>{t.bookings.colRef}</th>
+                <th>{t.bookings.colDate}</th>
+                <th>{t.bookings.colTour}</th>
+                <th>{t.bookings.colClient}</th>
+                <th>{t.bookings.colGuests}</th>
+                <th>{t.bookings.colTotal}</th>
+                <th>{t.bookings.colStatus}</th>
               </tr>
             </thead>
             <tbody>
@@ -101,10 +105,10 @@ export default async function AdminBookingsPage({ searchParams }: { searchParams
                     <Link href={`/admin/bookings/${b.id}/`} className={styles.ref}>
                       {b.id}
                     </Link>
-                    <small>{new Date(b.createdAt).toLocaleString('en-GB', { dateStyle: 'short', timeStyle: 'short' })}</small>
+                    <small>{formatDateTime(lang, b.createdAt, 'short')}</small>
                   </td>
                   <td>
-                    {formatLongDate(b.date)}
+                    {formatTourDate(lang, b.date)}
                     {b.time && <small>{b.time}</small>}
                   </td>
                   <td>

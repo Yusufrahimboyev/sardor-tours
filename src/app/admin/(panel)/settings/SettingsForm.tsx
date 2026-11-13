@@ -3,24 +3,23 @@
 import { useActionState, useRef, useState } from 'react';
 import type { Settings } from '@/lib/server/settings';
 import { saveSettingsAction, type FormState } from '../../contentActions';
+import { useAdminDict } from '../../i18n/client';
 import styles from '../../admin.module.css';
 
-const LANGS = [
-  ['en', 'EN · Inglizcha versiya'],
-  ['ru', 'RU · Ruscha versiya'],
-  ['uz', 'UZ · O‘zbekcha versiya'],
-] as const;
+const LANGS = ['en', 'ru', 'uz'] as const;
 
 const FIELDS = [
-  ['phoneDisplay', 'Telefon (saytda shunday ko‘rinadi)', '+20 122 710 0446'],
-  ['whatsapp', 'WhatsApp raqami (mamlakat kodi bilan)', '201227100446'],
-  ['email', 'Email', 'info@example.com'],
-  ['telegram', 'Telegram havolasi', 'https://t.me/username'],
-  ['instagram', 'Instagram havolasi', 'https://instagram.com/username'],
-  ['address', 'Ofis manzili (ixtiyoriy)', 'Old Market, Sharm El Sheikh'],
+  ['phoneDisplay', '+20 122 710 0446'],
+  ['whatsapp', '201227100446'],
+  ['email', 'info@example.com'],
+  ['telegram', 'https://t.me/username'],
+  ['instagram', 'https://instagram.com/username'],
+  ['address', 'Old Market, Sharm El Sheikh'],
 ] as const;
 
 export function SettingsForm({ settings }: { settings: Settings }) {
+  const t = useAdminDict();
+  const S = t.settings;
   const [state, action, pending] = useActionState<FormState, FormData>(saveSettingsAction, {});
   const [video, setVideo] = useState(settings.video);
   const [uploading, setUploading] = useState(false);
@@ -45,9 +44,9 @@ export function SettingsForm({ settings }: { settings: Settings }) {
       const res = await fetch('/api/admin/upload/', { method: 'POST', body: fd });
       const data = (await res.json()) as { paths?: string[]; errors?: string[] };
       if (data.paths?.[0]) setVideo(data.paths[0]);
-      else setErr(data.errors?.[0] ?? 'Yuklab bo‘lmadi');
+      else setErr(data.errors?.[0] ?? t.common.uploadFailed);
     } catch {
-      setErr('Yuklab bo‘lmadi');
+      setErr(t.common.uploadFailed);
     } finally {
       setUploading(false);
     }
@@ -56,22 +55,22 @@ export function SettingsForm({ settings }: { settings: Settings }) {
   return (
     <form action={action} className={styles.tourForm}>
       {state.error && <p className={styles.alertErr}>{state.error}</p>}
-      {state.saved && !state.error && <p className={styles.alertOk}>✓ Saqlandi — saytda yangilandi.</p>}
+      {state.saved && !state.error && <p className={styles.alertOk}>{t.common.savedSite}</p>}
 
-      {LANGS.map(([l, title]) => (
+      {LANGS.map((l) => (
         <section key={l} className={styles.card}>
           <div className={styles.detailHead} style={{ marginBottom: 6 }}>
-            <h2 style={{ marginBottom: 0 }}>{title}</h2>
+            <h2 style={{ marginBottom: 0 }}>{t.common.langVersion[l]}</h2>
             {l !== 'en' && (
               <button type="button" className={styles.btnGhost} onClick={(e) => copyFromEn(e.currentTarget.form, l)}>
-                EN’dan nusxa olish
+                {S.copyEn}
               </button>
             )}
           </div>
           <div className={styles.fields}>
-            {FIELDS.map(([k, label, ph]) => (
+            {FIELDS.map(([k, ph]) => (
               <div key={k} className={styles.field}>
-                <label htmlFor={`${l}-${k}`}>{label}</label>
+                <label htmlFor={`${l}-${k}`}>{S.fields[k]}</label>
                 <input id={`${l}-${k}`} name={`${l}.${k}`} defaultValue={settings.contacts[l][k]} placeholder={ph} />
               </div>
             ))}
@@ -80,20 +79,20 @@ export function SettingsForm({ settings }: { settings: Settings }) {
       ))}
 
       <section className={styles.card}>
-        <h2>Bosh sahifadagi video taqdimot</h2>
+        <h2>{S.videoTitle}</h2>
         <input type="hidden" name="video" value={video} />
         {video ? (
           <video src={video} controls preload="metadata" style={{ width: '100%', maxWidth: 520, borderRadius: 12, background: '#000' }} />
         ) : (
-          <p className={styles.muted}>Video yo‘q — bosh sahifada video bloki ko‘rinmaydi.</p>
+          <p className={styles.muted}>{S.noVideo}</p>
         )}
         <div className={styles.actions} style={{ marginTop: 10 }}>
           <button type="button" className={styles.btnGhost} onClick={() => fileRef.current?.click()} disabled={uploading}>
-            {uploading ? 'Yuklanmoqda…' : video ? 'Boshqa video yuklash' : 'Video yuklash (MP4, 60 MB gacha)'}
+            {uploading ? t.common.uploading : video ? S.uploadOther : S.upload}
           </button>
           {video && (
             <button type="button" className={styles.btnRed} onClick={() => setVideo('')}>
-              Videoni olib tashlash
+              {S.removeVideo}
             </button>
           )}
         </div>
@@ -110,13 +109,13 @@ export function SettingsForm({ settings }: { settings: Settings }) {
         />
         {err && <p className={styles.err}>{err}</p>}
         <p className={styles.muted} style={{ marginTop: 8 }}>
-          O‘zgarish “Saqlash” bosilgandan keyin saytga chiqadi.
+          {S.afterSave}
         </p>
       </section>
 
       <div className={styles.saveBar}>
         <button type="submit" className={styles.btnPrimary} disabled={pending}>
-          {pending ? 'Saqlanmoqda…' : 'Saqlash'}
+          {pending ? t.common.saving : t.common.save}
         </button>
       </div>
     </form>
