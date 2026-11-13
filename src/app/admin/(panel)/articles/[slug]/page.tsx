@@ -5,9 +5,12 @@ import { listTours } from '@/lib/server/tours';
 import { deleteArticleAction } from '../../../contentActions';
 import { DeleteButton } from '../../DeleteButton';
 import { ArticleEditor } from './ArticleEditor';
+import { getAdminDict } from '../../../i18n/server';
 import styles from '../../../admin.module.css';
 
-export const metadata = { title: 'Maqolani tahrirlash' };
+export async function generateMetadata() {
+  return { title: (await getAdminDict()).articles.editTitle };
+}
 
 export default async function AdminArticleEditPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ saved?: string }> }) {
   const { slug } = await params;
@@ -15,14 +18,15 @@ export default async function AdminArticleEditPage({ params, searchParams }: { p
   if (!a) notFound();
   const tours = (await listTours({ all: true })).map((t) => ({ slug: t.slug, name: t.name }));
   const { saved } = await searchParams;
+  const t = await getAdminDict();
   return (
     <>
       <Link href="/admin/articles/" className={styles.back}>
-        ← Barcha maqolalar
+        {t.articles.back}
       </Link>
       <div className={styles.detailHead}>
-        <h1 className={styles.h1}>{a.i18n.en?.title || a.i18n.ru?.title || a.i18n.uz?.title || 'Yangi maqola'}</h1>
-        <DeleteButton action={deleteArticleAction.bind(null, a.slug)} confirmText="Maqola butunlay o‘chirilsinmi?" />
+        <h1 className={styles.h1}>{a.i18n.en?.title || a.i18n.ru?.title || a.i18n.uz?.title || t.articles.newArticle}</h1>
+        <DeleteButton action={deleteArticleAction.bind(null, a.slug)} confirmText={t.articles.deleteConfirm} />
       </div>
       <ArticleEditor key={a.slug} article={a} tours={tours} justSaved={saved === '1'} />
     </>

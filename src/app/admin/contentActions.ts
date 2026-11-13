@@ -8,6 +8,8 @@ import { requireAdmin } from '@/lib/server/auth';
 import { deleteArticle, getArticle, listArticles, saveArticle, type Article } from '@/lib/server/articles';
 import { getSettings, saveSettings } from '@/lib/server/settings';
 import { newReference, reviews, type Review } from '@/lib/server/store';
+import type { AdminDict } from './i18n/dict';
+import { getAdminDict } from './i18n/server';
 
 export interface FormState {
   error?: string;
@@ -24,33 +26,31 @@ const textSchema = z.object({
   body: z.string().max(30000),
 });
 
-const articleSchema = z.object({
-  active: z.boolean(),
-  slug: z
-    .string()
-    .trim()
-    .toLowerCase()
-    .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Manzil faqat lotin harflari, raqamlar va "-" dan iborat bo‘lsin.'),
-  cover: z.string().trim().max(500),
-  relatedTours: z.array(z.string()).max(12),
-  i18n: z.object({ en: textSchema, ru: textSchema, uz: textSchema }),
-});
-export type ArticleEditorData = z.infer<typeof articleSchema>;
+const articleSchema = (t: AdminDict) =>
+  z.object({
+    active: z.boolean(),
+    slug: z.string().trim().toLowerCase().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, t.articles.errSlug),
+    cover: z.string().trim().max(500),
+    relatedTours: z.array(z.string()).max(12),
+    i18n: z.object({ en: textSchema, ru: textSchema, uz: textSchema }),
+  });
+export type ArticleEditorData = z.infer<ReturnType<typeof articleSchema>>;
 
 export async function saveArticleAction(previousSlug: string, _p: FormState, f: FormData): Promise<FormState> {
   await requireAdmin();
+  const t = await getAdminDict();
   let d: ArticleEditorData;
   try {
-    d = articleSchema.parse(JSON.parse(String(f.get('data') ?? '{}')));
+    d = articleSchema(t).parse(JSON.parse(String(f.get('data') ?? '{}')));
   } catch (e) {
-    return { error: e instanceof z.ZodError ? e.issues[0].message : 'Ma’lumotni o‘qib bo‘lmadi.' };
+    return { error: e instanceof z.ZodError ? e.issues[0].message : t.articles.errRead };
   }
   const base = await getArticle(previousSlug, { all: true });
-  if (!base) return { error: 'Maqola o‘chirilgan.' };
+  if (!base) return { error: t.articles.errDeleted };
   const all = await listArticles({ all: true });
-  if (d.slug !== previousSlug && all.some((a) => a.slug === d.slug)) return { error: `"${d.slug}" manzili band.` };
+  if (d.slug !== previousSlug && all.some((a) => a.slug === d.slug)) return { error: t.articles.errSlugTaken(d.slug) };
   if (d.active && !LOCALES.some((l) => d.i18n[l].title && d.i18n[l].body.trim().length > 50)) {
-    return { error: 'Chop etish uchun kamida bitta tilda sarlavha va matn yozing.' };
+    return { error: t.articles.errPublish };
   }
   const i18n: Article['i18n'] = {};
   for (const l of LOCALES) if (d.i18n[l].title.trim()) i18n[l] = d.i18n[l];
@@ -97,17 +97,18 @@ export async function deleteArticleAction(slug: string): Promise<void> {
 
 /* ───────────── reviews ───────────── */
 
-const reviewSchema = z.object({
-  name: z.string().trim().min(2, 'Ismni yozing.').max(80),
-  meta: z.string().trim().max(120),
-  text: z.string().trim().min(10, 'Sharh matni juda qisqa.').max(2000),
-  rating: z.coerce.number().int().min(1).max(5),
-  lang: z.enum(['all', 'en', 'ru', 'uz']),
-});
+const reviewSchema = (t: AdminDict) =>
+  z.object({
+    name: z.string().trim().min(2, t.reviews.errName).max(80),
+    meta: z.string().trim().max(120),
+    text: z.string().trim().min(10, t.reviews.errText).max(2000),
+    rating: z.coerce.number().int().min(1).max(5),
+    lang: z.enum(['all', 'en', 'ru', 'uz']),
+  });
 
 export async function addReviewAction(_p: FormState, f: FormData): Promise<FormState> {
   await requireAdmin();
-  const r = reviewSchema.safeParse(Object.fromEntries(f));
+  const r = reviewSchema(await getAdminDict()).safeParse(Object.fromEntries(f));
   if (!r.success) return { error: r.error.issues[0].message };
   const review: Review = { id: newReference('REV'), createdAt: new Date().toISOString(), active: true, ...r.data, rating: r.data.rating as Review['rating'] };
   await reviews.insert(review);
@@ -129,25 +130,27 @@ export async function deleteReviewAction(id: string): Promise<void> {
 
 /* ───────────── settings ───────────── */
 
-const contactsSchema = z.object({
-  phoneDisplay: z.string().trim().max(40),
-  whatsapp: z
-    .string()
-    .trim()
-    .transform((v) => v.replace(/\D/g, ''))
-    .refine((v) => !v || (v.length >= 8 && v.length <= 15), 'WhatsApp raqami 8–15 ta raqamdan iborat bo‘lsin (mamlakat kodi bilan).'),
-  email: z.union([z.literal(''), z.string().trim().email('Email noto‘g‘ri.')]),
-  telegram: z.union([z.literal(''), z.string().trim().url('Telegram havolasi https://t.me/… ko‘rinishida bo‘lsin.')]),
-  instagram: z.union([z.literal(''), z.string().trim().url('Instagram havolasi https://… ko‘rinishida bo‘lsin.')]),
-  address: z.string().trim().max(200),
-});
+const contactsSchema = (t: AdminDict) =>
+  z.object({
+    phoneDisplay: z.string().trim().max(40),
+    whatsapp: z
+      .string()
+      .trim()
+      .transform((v) => v.replace(/\D/g, ''))
+      .refine((v) => !v || (v.length >= 8 && v.length <= 15), t.settings.errWhatsapp),
+    email: z.union([z.literal(''), z.string().trim().email(t.settings.errEmail)]),
+    telegram: z.union([z.literal(''), z.string().trim().url(t.settings.errTelegram)]),
+    instagram: z.union([z.literal(''), z.string().trim().url(t.settings.errInstagram)]),
+    address: z.string().trim().max(200),
+  });
 
 export async function saveSettingsAction(_p: FormState, f: FormData): Promise<FormState> {
   await requireAdmin();
-  const current = await getSettings();
+  const [current, t] = await Promise.all([getSettings(), getAdminDict()]);
+  const schema = contactsSchema(t);
   const contacts = { ...current.contacts };
   for (const l of LOCALES) {
-    const r = contactsSchema.safeParse({
+    const r = schema.safeParse({
       phoneDisplay: f.get(`${l}.phoneDisplay`) ?? '',
       whatsapp: f.get(`${l}.whatsapp`) ?? '',
       email: f.get(`${l}.email`) ?? '',
@@ -159,7 +162,7 @@ export async function saveSettingsAction(_p: FormState, f: FormData): Promise<Fo
     contacts[l] = r.data;
   }
   const video = String(f.get('video') ?? '').trim();
-  if (video && !/^(\/(media|videos)\/[\w.-]+|https:\/\/\S+)$/.test(video)) return { error: 'Video manzili noto‘g‘ri.' };
+  if (video && !/^(\/(media|videos)\/[\w.-]+|https:\/\/\S+)$/.test(video)) return { error: t.settings.errVideo };
   await saveSettings({ contacts, video });
   revalidateSite();
   return { saved: true };

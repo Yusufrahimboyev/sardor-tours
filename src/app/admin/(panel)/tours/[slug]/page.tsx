@@ -5,9 +5,12 @@ import { getTour } from '@/lib/server/tours';
 import { deleteTourAction, duplicateTourAction } from '../../../tourActions';
 import { DeleteTourButton } from './DeleteTourButton';
 import { TourEditor } from './TourEditor';
+import { getAdminDict } from '../../../i18n/server';
 import styles from '../../../admin.module.css';
 
-export const metadata = { title: 'Turni tahrirlash' };
+export async function generateMetadata() {
+  return { title: (await getAdminDict()).tours.editTitle };
+}
 
 export default async function AdminTourEditPage({
   params,
@@ -20,23 +23,24 @@ export default async function AdminTourEditPage({
   const tour = await getTour(slug, { all: true });
   if (!tour) notFound();
   const { saved } = await searchParams;
+  const t = await getAdminDict();
 
   return (
     <>
       <Link href="/admin/tours/" className={styles.back}>
-        ← Barcha turlar
+        {t.tours.back}
       </Link>
       <div className={styles.detailHead}>
         <h1 className={styles.h1}>{tour.name}</h1>
         <div className={styles.actions}>
           {tour.active !== false && (
             <Link href={tourHref(tour.slug)} target="_blank" className={styles.btnGhost}>
-              Saytda ko‘rish ↗
+              {t.common.viewOnSite}
             </Link>
           )}
           <form action={duplicateTourAction.bind(null, tour.slug)}>
             <button type="submit" className={styles.btnGhost}>
-              Nusxa olish
+              {t.tours.duplicate}
             </button>
           </form>
           <DeleteTourButton action={deleteTourAction.bind(null, tour.slug)} name={tour.name} />
