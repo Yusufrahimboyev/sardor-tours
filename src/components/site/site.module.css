@@ -203,6 +203,52 @@
   opacity: 0.6;
 }
 
+/* ── home hero with a muted background video ── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #0b1220;
+  padding: clamp(72px, 12vw, 150px) 0;
+}
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+.heroVideo[data-ready] {
+  opacity: 1;
+}
+/* Scrim keeps the text readable over any footage. */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 10, 26, 0.55), rgba(5, 10, 26, 0.72));
+}
+.hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+.hero .h1 {
+  color: #fff;
+}
+.hero .lead {
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 720px;
+}
+.hero .btnLine {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+.hero .btnLine:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
 /* ── advantages ── */
 .adv {
   display: grid;
@@ -235,20 +281,6 @@
 .advItem span {
   font-size: 15px;
 }
-.video {
-  margin-top: 32px;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #0b1220;
-  aspect-ratio: 16 / 9;
-}
-.video video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
 /* ── tour rows ── */
 .tourList {
   display: flex;

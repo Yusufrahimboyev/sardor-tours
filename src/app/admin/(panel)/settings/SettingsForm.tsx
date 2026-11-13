@@ -80,12 +80,12 @@ export function SettingsForm({ settings }: { settings: Settings }) {
       ))}
 
       <section className={styles.card}>
-        <h2>Bosh sahifadagi video taqdimot</h2>
+        <h2>Bosh sahifadagi orqa fon videosi</h2>
         <input type="hidden" name="video" value={video} />
         {video ? (
           <video src={video} controls preload="metadata" style={{ width: '100%', maxWidth: 520, borderRadius: 12, background: '#000' }} />
         ) : (
-          <p className={styles.muted}>Video yo‘q — bosh sahifada video bloki ko‘rinmaydi.</p>
+          <p className={styles.muted}>Video yo‘q — bosh sahifa tepasi oddiy oq fonda ko‘rinadi.</p>
         )}
         <div className={styles.actions} style={{ marginTop: 10 }}>
           <button type="button" className={styles.btnGhost} onClick={() => fileRef.current?.click()} disabled={uploading}>

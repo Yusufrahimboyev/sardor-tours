@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { BackgroundVideo } from '@/components/site/BackgroundVideo';
 import { ContactForm } from '@/components/site/ContactForm';
 import { ReviewList } from '@/components/site/ReviewList';
 import { TourRow } from '@/components/site/TourRow';
@@ -35,7 +36,8 @@ export default async function HomePage({ params }: Props) {
   return (
     <HydrationBoundary>
       <>
-        <section className={s.section}>
+        <section className={`${s.section} ${settings.video ? s.hero : ''}`}>
+          {settings.video && <BackgroundVideo src={settings.video} className={s.heroVideo} />}
           <div className={s.wrap}>
             <h1 className={s.h1}>{t.home.title}</h1>
             <p className={s.lead}>{t.home.intro}</p>
@@ -68,11 +70,6 @@ export default async function HomePage({ params }: Props) {
                 </div>
               ))}
             </div>
-            {settings.video && (
-              <div className={s.video}>
-                <video src={settings.video} controls preload="metadata" playsInline aria-label={t.home.videoTitle} />
-              </div>
-            )}
           </div>
         </section>
 
