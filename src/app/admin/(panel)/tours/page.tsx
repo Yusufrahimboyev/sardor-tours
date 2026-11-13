@@ -91,7 +91,7 @@ export default async function AdminToursPage({ searchParams }: { searchParams: S
                       </button>
                     </form>
                     {!hiddenTour && (
-                      <Link href={tourHref('en', t.slug)} target="_blank" className={styles.linkSmall}>
+                      <Link href={tourHref(t.slug)} target="_blank" className={styles.linkSmall}>
                         Ko‘rish ↗
                       </Link>
                     )}

@@ -1,62 +1,65 @@
-# Sharm Tours — clone
+# Sardor Tours
 
-A full re-implementation of [sharmtours.org](https://www.sharmtours.org/) (English version) in
-Next.js 15 + TypeScript: home page, Sharm El Sheikh destination page with a searchable / filterable
-catalogue, 23 tour pages, about, terms, contact and video pages — plus a **real booking backend**
-(the reference only opens WhatsApp).
+Excursion website for Sharm El Sheikh in **English, Russian and Uzbek**, with online booking
+requests and an admin panel (Uzbek UI). Next.js 15 (App Router) + TypeScript.
 
 ## Quick start
 
 ```bash
 npm install
-npm run dev            # http://localhost:3000
+cp .env.example .env.local     # set ADMIN_PASSWORD to enable /admin
+npm run dev                    # http://localhost:3000
 ```
 
-Production:
+Production: `npm run build && npm start`.
 
-```bash
-npm run build && npm start
-```
+## Site structure
 
-## Scripts
-
-| Command | What it does |
+| URL | Page |
 |---|---|
-| `npm run dev` | Dev server (Turbopack) |
-| `npm run build` / `npm start` | Production build / server |
-| `npm run lint` · `npm run typecheck` | ESLint · TypeScript |
-| `npm run test:unit` | Unit tests |
-| `npm run i18n:check` | Translation consistency checks (`--strict`, `--only=messages\|tours`) |
-| `npm test` | Typecheck, lint, unit tests and strict translation checks |
-| `npm run test:e2e` | Playwright (desktop + mobile); start the production server manually first |
+| `/` | redirects to `/en/`, `/ru/` or `/uz/` (remembered choice → browser language → English) |
+| `/{lang}/` | Home: intro, advantages + video, excursions, how it works, reviews, feedback form |
+| `/{lang}/tours/` · `/{lang}/tours/{slug}/` | Catalogue (category + search) · tour page with booking form |
+| `/{lang}/about/` · `/{lang}/contacts/` · `/{lang}/terms/` | Company, contacts (per language), terms |
+| `/{lang}/guide/` · `/{lang}/guide/{slug}/` | Travel guide articles |
+| `/{lang}/booking/{ref}/` | Booking confirmation |
+| `/admin/` | Admin panel |
 
-Playwright uses the locally installed Google Chrome. Without Chrome run `npx playwright install chromium`
-and `PW_CHANNEL= npm run test:e2e`.
+Old URLs from the first version (`/en/sharm/…`, `/en/about-us/`, …) redirect permanently (308).
 
-## Languages
+## Where things live
 
-The site supports Uzbek (Latin), English and Russian. See
-[Languages in ARCHITECTURE.md](ARCHITECTURE.md#languages) for URLs, routing, translation files,
-adding text or a language, checks and the manual production-server setup for E2E tests.
+| What | Where |
+|---|---|
+| UI texts (menus, buttons, home/about/terms copy) | `src/i18n/dictionaries/{en,ru,uz}.ts` |
+| Tours, articles, reviews, contacts, video | edited in **/admin**; stored in `DATA_DIR` (default `.data/`) |
+| Initial tour data and translations | `src/data/tours.json`, `src/data/tours.i18n.json` |
+| Initial guide articles | `src/data/articles.json` |
+| Uploaded photos / videos | `DATA_DIR/uploads`, served from `/media/…` |
 
-## Configuration
+## Admin panel (`/admin`, password = `ADMIN_PASSWORD`)
 
-Copy `.env.example` to `.env.local`. All variables are optional — see
-[ARCHITECTURE.md](ARCHITECTURE.md#configuration-env). Important ones:
+Bookings (confirm / cancel, notes, WhatsApp the guest) · Tours (add, edit in EN/RU/UZ, photos,
+prices, schedule, show/hide, delete) · Articles · Reviews · Messages · Settings (contacts per
+language, home video).
 
-* `NEXT_PUBLIC_IMAGE_BASE` — the reference photos are **not** included (copyright). By default
-  themed Unsplash placeholder photos are used (src/lib/images.ts). If you own/are licensed to use the original photos, point
-  this at where they are hosted and every image switches over.
-* `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_PHONE_DISPLAY`, `NEXT_PUBLIC_CONTACT_EMAIL` — contact details.
-* `ADMIN_TOKEN` — enables `GET /api/bookings/` and `GET /api/contact/` (send `Authorization: Bearer <token>`).
+## Environment
 
-Bookings and contact messages are stored as JSON in `.data/` (configurable with `DATA_DIR`).
+See `.env.example`. Required in production: `NEXT_PUBLIC_SITE_URL`, `ADMIN_PASSWORD`.
 
-## Documentation
+## Data storage — read before deploying
 
-* [AUDIT.md](AUDIT.md) — reference site analysis
-* [ARCHITECTURE.md](ARCHITECTURE.md) — stack, structure, decisions
-* [FEATURES.md](FEATURES.md) — feature list and status
-* [IMPLEMENTATION.md](IMPLEMENTATION.md) — what was built, phase by phase
-* [TESTING.md](TESTING.md) — test results
-* [TODO.md](TODO.md) — remaining work
+Data is kept in JSON files under `DATA_DIR` with a process-wide write lock. This is reliable on
+**one Node.js server with a persistent disk** (VPS). It is **not** suitable for serverless hosting
+(e.g. Vercel), where the disk is temporary — move bookings/tours/settings to a database and
+uploads to object storage first. Back up `DATA_DIR` regularly.
+
+## Tests
+
+`npm run lint` · `npm run typecheck` · `npm run test:e2e` (builds, starts on :3200, runs Playwright
+on desktop + mobile using the installed Google Chrome).
+
+## Content to check
+
+`CONTENT-ISSUES.md` lists inconsistencies in the original tour texts (prices, durations, payment
+wording) found during translation.

@@ -1,47 +1,24 @@
 import { z } from 'zod';
-import type { TourBase } from '@/data/tours';
-import { LOCALES } from '@/i18n/config';
-import type { Messages } from '@/i18n/messages';
-import { parseISODate, tomorrowISO, weekdayOf } from './dates';
+import type { Tour } from '@/data/tours';
+import { parseISODate, tomorrowISO, weekdayNames, weekdayOf } from './dates';
 import { quote } from './pricing';
-
-/** Keys under `client.errors` in the message dictionaries. */
-export type ErrorKey = keyof Messages['client']['errors'];
-
-/** Every `ErrorKey`; the type check below fails if one is missing, a unit test checks it against en.json. */
-export const ERROR_KEYS = [
-  'nameMin', 'contactNameMin', 'phoneInvalid', 'emailInvalid', 'dateRequired', 'dateTooEarly', 'tourRunsOn',
-  'timeRequired', 'hotelRequired', 'unknownOption', 'guestsRequired', 'messageMin', 'checkFields',
-  'tooManyRequests', 'tourGone', 'saveFailed', 'sendFailed', 'network', 'generic',
-] as const satisfies readonly ErrorKey[];
-type _AllKeysListed = ErrorKey extends (typeof ERROR_KEYS)[number] ? true : never;
-export const _allKeysListed: _AllKeysListed = true;
-
-/** True when `k` is a key of `client.errors` (as opposed to an already-translated message). */
-export function isErrorKey(k: unknown): k is ErrorKey {
-  return typeof k === 'string' && (ERROR_KEYS as readonly string[]).includes(k);
-}
 
 const phoneRe = /^\+?[0-9 ()-]{7,20}$/;
 
-/** Unknown or missing languages fall back to English. */
-export const langSchema = z.enum(LOCALES).catch('en');
-
 export const contactDetailsSchema = z.object({
-  name: z.string().trim().min(2, 'nameMin' satisfies ErrorKey).max(80),
-  phone: z.string().trim().regex(phoneRe, 'phoneInvalid' satisfies ErrorKey),
-  email: z.union([z.literal(''), z.string().trim().email('emailInvalid' satisfies ErrorKey)]),
+  name: z.string().trim().min(2, 'Please enter your full name').max(80),
+  phone: z.string().trim().regex(phoneRe, 'Please enter a valid phone / WhatsApp number'),
+  email: z.union([z.literal(''), z.string().trim().email('Please enter a valid email address')]),
 });
 
 export const bookingBaseSchema = z
   .object({
     tourSlug: z.string().min(1).max(80),
-    date: z.string().min(1, 'dateRequired' satisfies ErrorKey),
+    date: z.string().min(1, 'Select a date to continue'),
     time: z.string().max(20).default(''),
-    hotel: z.string().trim().min(2, 'hotelRequired' satisfies ErrorKey).max(120),
+    hotel: z.string().trim().min(2, 'Please enter your hotel name').max(120),
     qty: z.record(z.string(), z.number().int().min(0).max(30)),
     notes: z.string().trim().max(1000).default(''),
-    lang: langSchema.optional().transform((l) => l ?? 'en'),
     /** Honeypot: must stay empty. */
     company: z.string().max(0).optional(),
   })
@@ -50,34 +27,33 @@ export const bookingBaseSchema = z
 export type BookingInput = z.infer<typeof bookingBaseSchema>;
 
 /** Tour-specific rules shared by the client form and the API. */
-export function bookingIssues(tour: TourBase, v: Pick<BookingInput, 'date' | 'time' | 'qty'>, today = new Date()) {
-  const issues: { path: string; key: ErrorKey; params?: { days: number[] } }[] = [];
+export function bookingIssues(tour: Tour, v: Pick<BookingInput, 'date' | 'time' | 'qty'>, today = new Date()) {
+  const issues: { path: string; message: string }[] = [];
   const d = parseISODate(v.date);
   if (!d) {
-    issues.push({ path: 'date', key: 'dateRequired' });
+    issues.push({ path: 'date', message: 'Select a date to continue' });
   } else if (v.date < tomorrowISO(today)) {
-    issues.push({ path: 'date', key: 'dateTooEarly' });
+    issues.push({ path: 'date', message: 'Please choose a date from tomorrow onwards' });
   } else if (tour.scheduleDays && !tour.scheduleDays.includes(weekdayOf(v.date)!)) {
-    issues.push({ path: 'date', key: 'tourRunsOn', params: { days: tour.scheduleDays } });
+    issues.push({ path: 'date', message: `This tour runs on ${weekdayNames(tour.scheduleDays)} only` });
   }
   if (tour.timeSlots.length > 0 && !tour.timeSlots.includes(v.time)) {
-    issues.push({ path: 'time', key: 'timeRequired' });
+    issues.push({ path: 'time', message: 'Please choose a departure time' });
   }
   const unknown = Object.keys(v.qty).filter((k) => !tour.options.some((o) => o.key === k));
-  if (unknown.length) issues.push({ path: 'qty', key: 'unknownOption' });
+  if (unknown.length) issues.push({ path: 'qty', message: 'Unknown booking option' });
   if (quote(tour, v.qty).guestUnits === 0) {
-    issues.push({ path: 'qty', key: 'guestsRequired' });
+    issues.push({ path: 'qty', message: 'Please add at least one guest' });
   }
   return issues;
 }
 
 export const contactSchema = z.object({
-  name: z.string().trim().min(2, 'contactNameMin' satisfies ErrorKey).max(80),
-  email: z.string().trim().email('emailInvalid' satisfies ErrorKey),
-  phone: z.union([z.literal(''), z.string().trim().regex(phoneRe, 'phoneInvalid' satisfies ErrorKey)]),
+  name: z.string().trim().min(2, 'Please enter your name').max(80),
+  email: z.string().trim().email('Please enter a valid email address'),
+  phone: z.union([z.literal(''), z.string().trim().regex(phoneRe, 'Please enter a valid phone number')]),
   topic: z.enum(['booking', 'private', 'group', 'other']),
-  message: z.string().trim().min(10, 'messageMin' satisfies ErrorKey).max(2000),
-  lang: langSchema.optional().transform((l) => l ?? 'en'),
+  message: z.string().trim().min(10, 'Please write at least 10 characters').max(2000),
   company: z.string().max(0).optional(),
 });
 

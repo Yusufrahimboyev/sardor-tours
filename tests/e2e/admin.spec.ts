@@ -16,7 +16,7 @@ test.describe('admin panel', () => {
     await expect(page).toHaveURL(/\/admin\/login\/$/);
     await page.getByLabel('Parol').fill('nope');
     await page.getByRole('button', { name: 'Kirish' }).click();
-    await expect(page.getByRole('alert').filter({ hasText: /./ })).toHaveText('Parol noto‘g‘ri.');
+    await expect(page.getByText('Parol noto‘g‘ri.')).toBeVisible();
   });
 
   test('lists a new booking and confirms it', async ({ page, request }) => {
@@ -46,7 +46,10 @@ test.describe('admin panel', () => {
     await expect(page.locator('h1')).toContainText('Tasdiqlangan');
 
     await page.getByLabel(/Ichki izoh/).fill('Haydovchi: Ahmed, 7:30');
-    await page.getByRole('button', { name: 'Izohni saqlash' }).click();
+    await Promise.all([
+      page.waitForResponse((r) => r.request().method() === 'POST' && r.url().includes('/admin/bookings/')),
+      page.getByRole('button', { name: 'Izohni saqlash' }).click(),
+    ]);
     await page.reload();
     await expect(page.getByLabel(/Ichki izoh/)).toHaveValue('Haydovchi: Ahmed, 7:30');
 
@@ -72,22 +75,22 @@ test.describe('admin panel', () => {
       'base64',
     );
     await page.locator('input[type=file]').setInputFiles({ name: 'pic.png', mimeType: 'image/png', buffer: png });
-    await expect(page.getByText('Muqova')).toBeVisible();
+    await expect(page.getByText('Muqova', { exact: true })).toBeVisible();
 
     await page.getByRole('spinbutton', { name: 'Narx' }).first().fill('77');
     await page.getByRole('checkbox', { name: /Yashirin|Saytda ko‘rinadi/ }).check();
     await page.getByRole('button', { name: 'Saqlash' }).click();
-    await expect(page.getByRole('status')).toContainText('Saqlandi');
+    await expect(page.getByText(/Saqlandi — saytda yangilandi/)).toBeVisible();
     const slug = new URL(page.url()).pathname.split('/').filter(Boolean).pop()!;
 
-    await page.goto(`/en/sharm/${slug}/`);
+    await page.goto(`/en/tours/${slug}/`);
     await expect(page.getByRole('heading', { level: 1, name })).toBeVisible();
     await expect(page.getByText('£77').first()).toBeVisible();
 
     await page.goto(`/admin/tours/?q=${encodeURIComponent(name)}`);
     await page.getByRole('button', { name: 'Yashirish' }).click();
     await expect(page.getByRole('button', { name: 'Saytga chiqarish' })).toBeVisible();
-    expect((await page.request.get(`/en/sharm/${slug}/`)).status()).toBe(404);
+    expect((await page.request.get(`/en/tours/${slug}/`)).status()).toBe(404);
 
     await page.getByRole('link', { name: 'Tahrirlash' }).click();
     await page.getByRole('button', { name: 'O‘chirish' }).first().click();

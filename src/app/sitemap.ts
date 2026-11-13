@@ -1,33 +1,29 @@
 import type { MetadataRoute } from 'next';
 import { site } from '@/data/site';
-import { tourHref } from '@/data/categories';
+import { LOCALES, LOCALE_TAG } from '@/i18n/config';
 import { listTours } from '@/lib/server/tours';
-import { LOCALES } from '@/i18n/config';
-import { alternatesFor, localeHref } from '@/i18n/routing';
+import { listArticles } from '@/lib/server/articles';
 
-function languages(path: string) {
-  const langs = alternatesFor(path).languages ?? {};
-  return Object.fromEntries(Object.entries(langs).map(([k, v]) => [k, `${site.url}${v}`]));
-}
-
+/** Every page in every language, with hreflang alternates. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const tours = await listTours();
   const now = new Date();
-  const pages = ['/', '/sharm/', '/about-us/', '/contact/', '/sharm/video/', '/terms-and-conditions/'];
-  return LOCALES.flatMap((lang) => [
-    ...pages.map((p) => ({
-      url: `${site.url}${localeHref(lang, p)}`,
+  const [tours, articles] = await Promise.all([listTours(), listArticles()]);
+  const paths: [string, number][] = [
+    ['/', 1],
+    ['/tours/', 0.9],
+    ['/about/', 0.5],
+    ['/guide/', 0.6],
+    ['/contacts/', 0.5],
+    ['/terms/', 0.3],
+    ...tours.map((t) => [`/tours/${t.slug}/`, 0.8] as [string, number]),
+    ...articles.map((a) => [`/guide/${a.slug}/`, 0.6] as [string, number]),
+  ];
+  return paths.flatMap(([p, priority]) =>
+    LOCALES.map((l) => ({
+      url: `${site.url}/${l}${p}`,
       lastModified: now,
-      changeFrequency: 'weekly' as const,
-      alternates: { languages: languages(p) },
-      priority: p === '/' ? 1 : p === '/sharm/' ? 0.9 : 0.5,
+      priority,
+      alternates: { languages: Object.fromEntries(LOCALES.map((x) => [LOCALE_TAG[x], `${site.url}/${x}${p}`])) },
     })),
-    ...tours.map(({ slug }) => ({
-      url: `${site.url}${tourHref(lang, slug)}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      alternates: { languages: languages(`/sharm/${slug}/`) },
-      priority: 0.8,
-    })),
-  ]);
+  );
 }

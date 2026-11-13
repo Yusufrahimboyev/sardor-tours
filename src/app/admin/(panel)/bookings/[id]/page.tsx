@@ -75,7 +75,7 @@ export default async function AdminBookingPage({ params }: { params: Promise<{ i
           <dl className={styles.dl}>
             <dt>Tur</dt>
             <dd>
-              <Link href={tourHref('en', b.tourSlug)} target="_blank">
+              <Link href={tourHref(b.tourSlug)} target="_blank">
                 {b.tourName} ↗
               </Link>
             </dd>

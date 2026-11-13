@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState } from 'react';
 import { CATEGORIES } from '@/data/categories';
-import type { Tour } from '@/data/tours';
+import type { Tour, TourTranslation } from '@/data/tours';
 import { imageSrc } from '@/lib/images';
 import { saveTourAction, type TourEditorData, type TourFormState } from '../../../tourActions';
 import s from './editor.module.css';
@@ -39,8 +39,36 @@ function slugify(v: string) {
     .slice(0, 60);
 }
 
+type Lang = 'en' | 'ru' | 'uz';
+type Tr = TourEditorData['i18n']['ru'];
+const LANG_TABS: [Lang, string][] = [
+  ['en', 'EN · Inglizcha'],
+  ['ru', 'RU · Ruscha'],
+  ['uz', 'UZ · O‘zbekcha'],
+];
+
+function pickTr(x: TourTranslation | undefined): Tr {
+  return {
+    name: x?.name ?? '',
+    title: x?.title ?? '',
+    excerpt: x?.excerpt ?? '',
+    duration: x?.duration ?? '',
+    timeText: x?.timeText ?? '',
+    highlights: x?.highlights ?? [],
+    included: x?.included ?? [],
+    notIncluded: x?.notIncluded ?? [],
+    bring: x?.bring ?? [],
+    itinerary: x?.itinerary ?? [],
+    faq: x?.faq ?? [],
+    options: x?.options ?? {},
+    metaTitle: x?.metaTitle ?? '',
+    metaDescription: x?.metaDescription ?? '',
+  };
+}
+
 function fromTour(t: Tour): TourEditorData {
   return {
+    i18n: { ru: pickTr(t.i18n?.ru), uz: pickTr(t.i18n?.uz) },
     active: t.active !== false,
     name: t.name,
     slug: t.slug,
@@ -77,6 +105,28 @@ export function TourEditor({ tour, justSaved }: { tour: Tour; justSaved: boolean
   const set = <K extends keyof TourEditorData>(k: K, v: TourEditorData[K]) => {
     setD((prev) => ({ ...prev, [k]: v }));
     setDirty(true);
+  };
+
+  // Text fields are edited per language; photos, prices and schedule are shared.
+  const [lang, setLang] = useState<Lang>('en');
+  type TxtKey = 'name' | 'title' | 'excerpt' | 'duration' | 'timeText' | 'metaTitle' | 'metaDescription';
+  type ListKey = 'highlights' | 'included' | 'notIncluded' | 'bring';
+  const setTr = (patch: Partial<Tr>) => {
+    if (lang === 'en') return;
+    setD((prev) => ({ ...prev, i18n: { ...prev.i18n, [lang]: { ...prev.i18n[lang], ...patch } } }));
+    setDirty(true);
+  };
+  const txt = (k: TxtKey) => (lang === 'en' ? d[k] : d.i18n[lang][k]);
+  const setTxt = (k: TxtKey, v: string) => (lang === 'en' ? set(k, v) : setTr({ [k]: v }));
+  /** In RU/UZ the English text is shown as the placeholder so the translator sees the original. */
+  const ph = (k: TxtKey, fallback: string) => (lang === 'en' ? fallback : d[k] || fallback);
+  const list = (k: ListKey) => (lang === 'en' ? d[k] : d.i18n[lang][k]);
+  const setList = (k: ListKey, v: string[]) => (lang === 'en' ? set(k, v) : setTr({ [k]: v }));
+  const itin = lang === 'en' ? d.itinerary : d.i18n[lang].itinerary;
+  const faq = lang === 'en' ? d.faq : d.i18n[lang].faq;
+  const trCount = (l: 'ru' | 'uz') => {
+    const x = d.i18n[l];
+    return [x.name, x.excerpt, x.duration].filter(Boolean).length + (x.included.length ? 1 : 0) + (x.itinerary.length ? 1 : 0);
   };
 
   useEffect(() => {
@@ -126,16 +176,34 @@ export function TourEditor({ tour, justSaved }: { tour: Tour; justSaved: boolean
           </p>
         )}
 
+        <div className={s.langBar}>
+          <span>Matn tili:</span>
+          <div className={s.langTabs} role="tablist" aria-label="Matn tili">
+            {LANG_TABS.map(([l, label]) => (
+              <button key={l} type="button" role="tab" aria-selected={lang === l} className={lang === l ? s.langOn : s.lang} onClick={() => setLang(l)}>
+                {label}
+                {l !== 'en' && trCount(l) < 5 && <i className={s.langWarn} title="Tarjima to‘liq emas">!</i>}
+              </button>
+            ))}
+          </div>
+          <small>
+            {lang === 'en'
+              ? 'Asosiy til. Rasmlar, narxlar va jadval barcha tillar uchun umumiy.'
+              : 'Tarjima. Bo‘sh qolgan maydonlarda saytda inglizcha matn ko‘rinadi. Kulrang yozuv — inglizcha asl matn.'}
+          </small>
+        </div>
+
         <Section id="basics" title="1. Asosiy ma’lumot" hint="Saytdagi matnlarni ingliz tilida yozing — mijozlar inglizcha o‘qiydi.">
           <Field label="Tur nomi" hint="Masalan: Sunset Boat Trip with Snorkeling">
             <input
-              value={d.name}
+              value={txt('name')}
               onChange={(e) => {
+                if (lang !== 'en') return setTxt('name', e.target.value);
                 set('name', e.target.value);
                 if (!slugTouched.current) setD((p) => ({ ...p, name: e.target.value, slug: slugify(e.target.value) || p.slug }));
               }}
-              placeholder="Sunset Boat Trip"
-              required
+              placeholder={ph('name', 'Sunset Boat Trip')}
+              required={lang === 'en'}
             />
           </Field>
           <Field label="Kategoriya">
@@ -154,7 +222,7 @@ export function TourEditor({ tour, justSaved }: { tour: Tour; justSaved: boolean
             </div>
           </Field>
           <Field label="Qisqa tavsif" hint="1–2 gap. Tur kartasida va qidiruvda ko‘rinadi.">
-            <textarea value={d.excerpt} onChange={(e) => set('excerpt', e.target.value)} rows={3} placeholder="Relax on a yacht, snorkel two coral reefs and enjoy lunch on board." />
+            <textarea value={txt('excerpt')} onChange={(e) => setTxt('excerpt', e.target.value)} rows={3} placeholder={ph('excerpt', 'Relax on a yacht, snorkel two coral reefs and enjoy lunch on board.')} />
           </Field>
           <Field label="Belgi (ixtiyoriy)" hint="Kartaning burchagida chiqadi.">
             <div className={s.chips}>
@@ -177,6 +245,13 @@ export function TourEditor({ tour, justSaved }: { tour: Tour; justSaved: boolean
               <PriceRow
                 key={i}
                 p={p}
+                label={lang === 'en' ? p.label : (d.i18n[lang].options[p.key] ?? '')}
+                labelPlaceholder={lang === 'en' ? 'Adults' : p.label}
+                onLabel={(v) =>
+                  lang === 'en'
+                    ? set('prices', d.prices.map((x, j) => (j === i ? { ...x, label: v } : x)))
+                    : setTr({ options: { ...d.i18n[lang].options, [p.key]: v } })
+                }
                 onChange={(np) => set('prices', d.prices.map((x, j) => (j === i ? np : x)))}
                 onRemove={() => set('prices', d.prices.filter((_, j) => j !== i))}
               />
@@ -219,10 +294,10 @@ export function TourEditor({ tour, justSaved }: { tour: Tour; justSaved: boolean
         <Section id="schedule" title="4. Vaqt va jadval">
           <div className={s.row2}>
             <Field label="Davomiyligi" hint="Masalan: 9 hours, 4 hours">
-              <input value={d.duration} onChange={(e) => set('duration', e.target.value)} placeholder="9 hours" />
+              <input value={txt('duration')} onChange={(e) => setTxt('duration', e.target.value)} placeholder={ph('duration', '9 hours')} />
             </Field>
             <Field label="Vaqti (matn)" hint="Masalan: 8:00 AM – 6:00 PM">
-              <input value={d.timeText} onChange={(e) => set('timeText', e.target.value)} placeholder="8:00 AM – 6:00 PM" />
+              <input value={txt('timeText')} onChange={(e) => setTxt('timeText', e.target.value)} placeholder={ph('timeText', '8:00 AM – 6:00 PM')} />
             </Field>
           </div>
           <Field label="Qaysi kunlari?">
@@ -253,14 +328,19 @@ export function TourEditor({ tour, justSaved }: { tour: Tour; justSaved: boolean
         </Section>
 
         <Section id="details" title="5. Tur sahifasidagi tafsilotlar">
-          <ListEditor label="Narxga kiradi ✓" values={d.included} onChange={(v) => set('included', v)} placeholder="Hotel pick-up and drop-off" tone="green" />
-          <ListEditor label="Narxga kirmaydi ✕" values={d.notIncluded} onChange={(v) => set('notIncluded', v)} placeholder="Snorkel equipment rental" tone="red" />
-          <ListEditor label="O‘zingiz bilan oling" values={d.bring} onChange={(v) => set('bring', v)} placeholder="Swimwear and a towel" tone="blue" />
-          <ListEditor label="Afzalliklar qatori (narx ostida, 4 ta)" values={d.highlights} onChange={(v) => set('highlights', v)} placeholder="English-speaking guide" />
+          <ListEditor label="Narxga kiradi ✓" values={list('included')} refs={lang === 'en' ? undefined : d.included} onChange={(v) => setList('included', v)} placeholder="Hotel pick-up and drop-off" tone="green" />
+          <ListEditor label="Narxga kirmaydi ✕" values={list('notIncluded')} refs={lang === 'en' ? undefined : d.notIncluded} onChange={(v) => setList('notIncluded', v)} placeholder="Snorkel equipment rental" tone="red" />
+          <ListEditor label="O‘zingiz bilan oling" values={list('bring')} refs={lang === 'en' ? undefined : d.bring} onChange={(v) => setList('bring', v)} placeholder="Swimwear and a towel" tone="blue" />
+          <ListEditor label="Afzalliklar qatori (narx ostida, 4 ta)" values={list('highlights')} refs={lang === 'en' ? undefined : d.highlights} onChange={(v) => setList('highlights', v)} placeholder="English-speaking guide" />
           <PairEditor
             label="Marshrut (bosqichma-bosqich)"
-            items={d.itinerary.map((x) => ({ a: x.title, b: x.text }))}
-            onChange={(v) => set('itinerary', v.map((x) => ({ title: x.a, text: x.b })))}
+            items={itin.map((x) => ({ a: x.title, b: x.text }))}
+            refs={lang === 'en' ? undefined : d.itinerary.map((x) => ({ a: x.title, b: x.text }))}
+            onChange={(v) => {
+              const next = v.map((x) => ({ title: x.a, text: x.b }));
+              if (lang === 'en') set('itinerary', next);
+              else setTr({ itinerary: next });
+            }}
             aLabel="Bosqich nomi"
             bLabel="Tavsifi"
             aPlaceholder="Hotel pick-up"
@@ -269,8 +349,13 @@ export function TourEditor({ tour, justSaved }: { tour: Tour; justSaved: boolean
           />
           <PairEditor
             label="Savol-javob (FAQ)"
-            items={d.faq.map((x) => ({ a: x.q, b: x.a }))}
-            onChange={(v) => set('faq', v.map((x) => ({ q: x.a, a: x.b })))}
+            items={faq.map((x) => ({ a: x.q, b: x.a }))}
+            refs={lang === 'en' ? undefined : d.faq.map((x) => ({ a: x.q, b: x.a }))}
+            onChange={(v) => {
+              const next = v.map((x) => ({ q: x.a, a: x.b }));
+              if (lang === 'en') set('faq', next);
+              else setTr({ faq: next });
+            }}
             aLabel="Savol"
             bLabel="Javob"
             aPlaceholder="Is the tour suitable for children?"
@@ -282,7 +367,7 @@ export function TourEditor({ tour, justSaved }: { tour: Tour; justSaved: boolean
         <Section id="advanced" title="6. Qo‘shimcha sozlamalar" hint="Odatda o‘zgartirish shart emas — avtomatik to‘ldiriladi.">
           <details className={s.more}>
             <summary>Ochish</summary>
-            <Field label="Sahifa manzili (URL)" hint={`Sayt manzili: /en/sharm/${d.slug}/`}>
+            <Field label="Sahifa manzili (URL)" hint={`Sayt manzili: /en/tours/${d.slug}/ (va /ru/…, /uz/…)`}>
               <input
                 value={d.slug}
                 onChange={(e) => {
@@ -292,16 +377,16 @@ export function TourEditor({ tour, justSaved }: { tour: Tour; justSaved: boolean
               />
             </Field>
             <Field label="Sahifadagi sarlavha (bo‘sh = tur nomi)">
-              <input value={d.title} onChange={(e) => set('title', e.target.value)} placeholder={d.name} />
+              <input value={txt('title')} onChange={(e) => setTxt('title', e.target.value)} placeholder={txt('name') || d.name} />
             </Field>
             <Field label="Kartadagi narx izohi" hint='Masalan: "per boat". Bo‘sh = kishi boshiga'>
               <input value={d.priceUnit} onChange={(e) => set('priceUnit', e.target.value)} placeholder="per boat" />
             </Field>
             <Field label="Google uchun sarlavha (SEO)">
-              <input value={d.metaTitle} onChange={(e) => set('metaTitle', e.target.value)} placeholder={d.title || d.name} />
+              <input value={txt('metaTitle')} onChange={(e) => setTxt('metaTitle', e.target.value)} placeholder={txt('title') || txt('name') || d.name} />
             </Field>
             <Field label="Google uchun tavsif (SEO)">
-              <textarea value={d.metaDescription} onChange={(e) => set('metaDescription', e.target.value)} rows={2} placeholder={d.excerpt} />
+              <textarea value={txt('metaDescription')} onChange={(e) => setTxt('metaDescription', e.target.value)} rows={2} placeholder={txt('excerpt') || d.excerpt} />
             </Field>
           </details>
         </Section>
@@ -321,7 +406,7 @@ export function TourEditor({ tour, justSaved }: { tour: Tour; justSaved: boolean
               {d.badge && <b>{d.badge}</b>}
             </div>
             <div className={s.previewBody}>
-              <div className={s.previewName}>{d.name || 'Tur nomi'}</div>
+              <div className={s.previewName}>{txt('name') || d.name || 'Tur nomi'}</div>
               <div className={s.previewMeta}>
                 {d.duration || '— hours'} · {d.days.length && d.days.length < 7 ? d.days.map((x) => DAYS[x]).join(', ') : 'Daily'}
               </div>
@@ -375,13 +460,27 @@ function Field({ label, hint, children }: { label: string; hint?: string; childr
   );
 }
 
-function PriceRow({ p, onChange, onRemove }: { p: Price; onChange: (p: Price) => void; onRemove: () => void }) {
+function PriceRow({
+  p,
+  label,
+  labelPlaceholder,
+  onLabel,
+  onChange,
+  onRemove,
+}: {
+  p: Price;
+  label: string;
+  labelPlaceholder: string;
+  onLabel: (v: string) => void;
+  onChange: (p: Price) => void;
+  onRemove: () => void;
+}) {
   const [open, setOpen] = useState(false);
   return (
     <div className={s.priceRow}>
       <div className={s.priceMain}>
         <span className={p.group === 'guests' ? s.tagGuest : s.tagExtra}>{p.group === 'guests' ? 'Mehmon' : 'Qo‘shimcha'}</span>
-        <input className={s.priceLabel} value={p.label} onChange={(e) => onChange({ ...p, label: e.target.value })} placeholder="Adults" aria-label="Narx nomi" />
+        <input className={s.priceLabel} value={label} onChange={(e) => onLabel(e.target.value)} placeholder={labelPlaceholder} aria-label="Narx nomi" />
         <div className={s.money}>
           <span>£</span>
           <input type="number" min={0} step="0.5" value={p.price} onChange={(e) => onChange({ ...p, price: Number(e.target.value) })} aria-label="Narx" />
@@ -441,12 +540,15 @@ function PriceRow({ p, onChange, onRemove }: { p: Price; onChange: (p: Price) =>
 function ListEditor({
   label,
   values,
+  refs,
   onChange,
   placeholder,
   tone,
 }: {
   label: string;
   values: string[];
+  /** English originals shown as placeholders while translating. */
+  refs?: string[];
   onChange: (v: string[]) => void;
   placeholder: string;
   tone?: 'green' | 'red' | 'blue';
@@ -456,15 +558,22 @@ function ListEditor({
       <div className={s.label}>{label}</div>
       {values.map((v, i) => (
         <div key={i} className={s.listRow}>
-          <input value={v} onChange={(e) => onChange(values.map((x, j) => (j === i ? e.target.value : x)))} placeholder={placeholder} />
+          <input value={v} onChange={(e) => onChange(values.map((x, j) => (j === i ? e.target.value : x)))} placeholder={refs?.[i] ?? placeholder} />
           <button type="button" className={`${s.iconBtn} ${s.danger}`} onClick={() => onChange(values.filter((_, j) => j !== i))} aria-label="O‘chirish">
             ✕
           </button>
         </div>
       ))}
-      <button type="button" className={s.addLink} onClick={() => onChange([...values, ''])}>
-        + Qo‘shish
-      </button>
+      <div className={s.listBtns}>
+        <button type="button" className={s.addLink} onClick={() => onChange([...values, ''])}>
+          + Qo‘shish
+        </button>
+        {refs && refs.length > 0 && values.length < refs.length && (
+          <button type="button" className={s.addLink} onClick={() => onChange([...values, ...Array(refs.length - values.length).fill('')])}>
+            Inglizcha bo‘yicha {refs.length - values.length} ta qator qo‘shish
+          </button>
+        )}
+      </div>
     </div>
   );
 }
@@ -472,6 +581,7 @@ function ListEditor({
 function PairEditor(props: {
   label: string;
   items: { a: string; b: string }[];
+  refs?: { a: string; b: string }[];
   onChange: (v: { a: string; b: string }[]) => void;
   aLabel: string;
   bLabel: string;
@@ -495,8 +605,8 @@ function PairEditor(props: {
         <div key={i} className={s.pair}>
           <span className={s.pairNum}>{i + 1}</span>
           <div className={s.pairFields}>
-            <input value={it.a} onChange={(e) => upd(i, { a: e.target.value })} placeholder={props.aPlaceholder} aria-label={props.aLabel} />
-            <textarea value={it.b} onChange={(e) => upd(i, { b: e.target.value })} placeholder={props.bPlaceholder} rows={2} aria-label={props.bLabel} />
+            <input value={it.a} onChange={(e) => upd(i, { a: e.target.value })} placeholder={props.refs?.[i]?.a ?? props.aPlaceholder} aria-label={props.aLabel} />
+            <textarea value={it.b} onChange={(e) => upd(i, { b: e.target.value })} placeholder={props.refs?.[i]?.b ?? props.bPlaceholder} rows={2} aria-label={props.bLabel} />
           </div>
           <div className={s.pairBtns}>
             <button type="button" className={s.iconBtn} onClick={() => move(i, -1)} aria-label="Yuqoriga">
@@ -511,9 +621,20 @@ function PairEditor(props: {
           </div>
         </div>
       ))}
-      <button type="button" className={s.addLink} onClick={() => onChange([...items, { a: '', b: '' }])}>
-        {props.addLabel}
-      </button>
+      <div className={s.listBtns}>
+        <button type="button" className={s.addLink} onClick={() => onChange([...items, { a: '', b: '' }])}>
+          {props.addLabel}
+        </button>
+        {props.refs && props.refs.length > items.length && (
+          <button
+            type="button"
+            className={s.addLink}
+            onClick={() => onChange([...items, ...Array.from({ length: props.refs!.length - items.length }, () => ({ a: '', b: '' }))])}
+          >
+            Inglizcha bo‘yicha {props.refs.length - items.length} ta qator qo‘shish
+          </button>
+        )}
+      </div>
     </div>
   );
 }

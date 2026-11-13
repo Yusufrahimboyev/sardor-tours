@@ -1,5 +1,3 @@
-import type { Locale } from '@/i18n/config';
-
 /** Renders a schema.org JSON-LD block. `<` is escaped so content can't break out of the script tag. */
 export function JsonLd({ data }: { data: unknown }) {
   return (
@@ -7,11 +5,11 @@ export function JsonLd({ data }: { data: unknown }) {
   );
 }
 
-export function faqJsonLd(items: { q: string; a: string }[], lang: Locale) {
+export function faqJsonLd(items: { q: string; a: string }[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    inLanguage: lang,
+    inLanguage: 'en',
     mainEntity: items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
   };
 }

@@ -1,9 +1,8 @@
 import 'server-only';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { seedTours, localizeTour, type Tour } from '@/data/tours';
-
-import type { Locale } from '@/i18n/config';
+import { seedTours, type Tour } from '@/data/tours';
+import { atomicWrite, withFileLock } from './fileStore';
 
 /**
  * Tour repository. Tours live in DATA_DIR/tours.json; until an admin saves the
@@ -15,7 +14,6 @@ const DATA_DIR = process.env.DATA_DIR ?? path.join(process.cwd(), '.data');
 const FILE = path.join(DATA_DIR, 'tours.json');
 
 let cache: { mtimeMs: number; tours: Tour[] } | null = null;
-let queue: Promise<unknown> = Promise.resolve();
 
 async function readAll(): Promise<Tour[]> {
   let stat;
@@ -26,40 +24,39 @@ async function readAll(): Promise<Tour[]> {
     throw e;
   }
   if (cache && cache.mtimeMs === stat.mtimeMs) return cache.tours;
-  const tours = JSON.parse(await fs.readFile(FILE, 'utf8')) as Tour[];
+  const seedI18n = new Map(seedTours.map((t) => [t.slug, t.i18n]));
+  // Tours saved before translations existed pick up the bundled ones.
+  const tours = (JSON.parse(await fs.readFile(FILE, 'utf8')) as Tour[]).map((t) =>
+    t.i18n || !seedI18n.get(t.slug) ? t : { ...t, i18n: seedI18n.get(t.slug) },
+  );
   cache = { mtimeMs: stat.mtimeMs, tours };
   return tours;
 }
 
 async function writeAll(tours: Tour[]): Promise<void> {
-  await fs.mkdir(DATA_DIR, { recursive: true });
-  const tmp = `${FILE}.${process.pid}.tmp`;
-  await fs.writeFile(tmp, JSON.stringify(tours, null, 1));
-  await fs.rename(tmp, FILE);
+  await atomicWrite(FILE, JSON.stringify(tours, null, 1));
   cache = null;
 }
 
 function mutate<R>(fn: (tours: Tour[]) => { tours: Tour[]; result: R }): Promise<R> {
-  const run = queue.then(async () => {
+  return withFileLock(FILE, async () => {
     const { tours, result } = fn(structuredClone(await readAll()));
     await writeAll(tours);
     return result;
   });
-  queue = run.catch(() => undefined);
-  return run;
 }
 
 const isActive = (t: Tour) => t.active !== false;
 
 /** Public catalogue (visible tours only) unless `all` is set. */
-export async function listTours(opts: { lang?: Locale; all?: boolean } = {}): Promise<Tour[]> {
+export async function listTours(opts: { all?: boolean } = {}): Promise<Tour[]> {
   const tours = await readAll();
-  return (opts.all ? tours : tours.filter(isActive)).map((tour) => opts.lang && opts.lang !== 'en' ? localizeTour(tour, opts.lang) : tour);
+  return opts.all ? tours : tours.filter(isActive);
 }
 
-export async function getTour(slug: string, opts: { lang?: Locale; all?: boolean } = {}): Promise<Tour | undefined> {
+export async function getTour(slug: string, opts: { all?: boolean } = {}): Promise<Tour | undefined> {
   const t = (await readAll()).find((x) => x.slug === slug);
-  return t && (opts.all || isActive(t)) ? (opts.lang && opts.lang !== 'en' ? localizeTour(t, opts.lang) : t) : undefined;
+  return t && (opts.all || isActive(t)) ? t : undefined;
 }
 
 /** Insert or replace by slug. `previousSlug` lets an admin rename a tour's URL. */

@@ -1,137 +1,93 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import type { Metadata } from 'next';
-import { Footer } from '@/components/Footer';
-import { CheckIcon, WhatsAppIcon } from '@/components/icons';
-import { SiteHeader } from '@/components/SiteHeader';
-import { whatsappLink } from '@/data/site';
-import { tourHref } from '@/data/categories';
-import { getTour } from '@/lib/server/tours';
-import type { Locale } from '@/i18n/config';
-import { formatDate, formatPrice } from '@/i18n/format';
-import { getT } from '@/i18n/messages';
-import type { T } from '@/i18n/translate';
-import { langFrom } from '@/i18n/params';
-import { localeHref } from '@/i18n/routing';
-import { bookings, type Booking } from '@/lib/server/store';
-import styles from './booking.module.css';
+import { fill, formatDate, getDict, href, isLocale, PATHS, tourPath } from '@/i18n';
+import { formatGBP } from '@/lib/pricing';
+import { getContacts, waLink } from '@/lib/server/settings';
+import { bookings } from '@/lib/server/store';
+import s from '@/components/site/site.module.css';
 
 export const dynamic = 'force-dynamic';
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const lang = await langFrom(params);
-  return { title: getT(lang)('booking.confirm.metaTitle'), robots: { index: false, follow: false } };
-}
+type Props = { params: Promise<{ lang: string; ref: string }> };
 
-async function whatsappBookingMessage(b: Booking, lang: Locale, t: T): Promise<string> {
-  const tour = await getTour(b.tourSlug, { lang });
-  const labels = new Map((tour?.options ?? []).map((o) => [o.key, o.label]));
-  const lines = [
-    t('client.whatsapp.bookingIntro', { ref: b.id }),
-    '',
-    // The English name in brackets lets the team recognise the tour whatever the customer's language.
-    t('client.whatsapp.bookingTour', { name: tour?.name ?? b.tourName, en: b.tourName }),
-    b.time
-      ? t('client.whatsapp.bookingDateTime', { date: formatDate(b.date, lang), time: b.time })
-      : t('client.whatsapp.bookingDate', { date: formatDate(b.date, lang) }),
-    t('client.whatsapp.bookingHotel', { hotel: b.hotel }),
-    ...b.lines.map((l) =>
-      t('client.whatsapp.bookingLine', {
-        label: labels.get(l.key) ?? l.label,
-        qty: l.qty,
-        unit: formatPrice(l.unitPrice, lang),
-        subtotal: formatPrice(l.subtotal, lang),
-      }),
-    ),
-    t('client.whatsapp.bookingTotal', { total: formatPrice(b.total, lang) }),
-    t('client.whatsapp.bookingName', { name: b.name }),
-    '',
-    t('client.whatsapp.bookingConfirm'),
-  ];
-  return lines.join('\n');
-}
-
-export default async function BookingPage({ params }: { params: Promise<{ lang: string; ref: string }> }) {
-  const lang = await langFrom(params);
-  const { ref } = await params;
-  if (!/^ST-[A-Z0-9]{6}$/.test(ref)) notFound();
+export default async function BookingConfirmPage({ params }: Props) {
+  const { lang, ref } = await params;
+  if (!isLocale(lang) || !/^ST-[A-Z0-9]{6}$/.test(ref)) notFound();
   const b = await bookings.get(ref);
   if (!b) notFound();
-
-  const t = getT(lang);
-  const tour = await getTour(b.tourSlug, { lang });
-  const tourName = tour?.name ?? b.tourName;
-  const labels = new Map((tour?.options ?? []).map((o) => [o.key, o.label]));
-  const lineLabel = (l: Booking['lines'][number]) => labels.get(l.key) ?? l.label;
-  // Split the template around {ref} first, so the guest's name is never parsed as a placeholder.
-  const firstName = b.name.split(' ')[0];
-  const [thanksBefore, thanksAfter = ''] = t('booking.confirm.thanks')
-    .split('{ref}')
-    .map((part) => part.replace('{name}', () => firstName));
+  const t = getDict(lang);
+  const c = await getContacts(lang);
+  const [before, after = ''] = fill(t.confirm.thanks, {
+    name: b.name.split(' ')[0],
+    ref: '\u0000',
+  }).split('\u0000');
+  const msg = [`${ref}`, b.tourName, `${b.date}${b.time ? ` ${b.time}` : ''}`, b.hotel, `${formatGBP(b.total)}`, b.name].join('\n');
 
   return (
-    <div className={styles.page}>
-      <SiteHeader />
-      <main id="main-content" tabIndex={-1} className={styles.main}>
-        <div className={styles.card}>
-          <span className={styles.ic}>
-            <CheckIcon size={30} />
-          </span>
-          <h1>{t('booking.confirm.title')}</h1>
-          <p className={styles.lead}>
-            {thanksBefore}
-            <b data-testid="booking-ref">{b.id}</b>
-            {thanksAfter}{' '}
-            {t(b.requiresDeposit ? 'booking.confirm.leadDeposit' : 'booking.confirm.lead', { phone: b.phone })}
-          </p>
+    <section className={s.section}>
+      <div className={s.wrap}>
+        <p className={s.ok} style={{ display: 'inline-block' }}>
+          ✓
+        </p>
+        <h1 className={s.h1} style={{ marginTop: 12 }}>
+          {t.confirm.title}
+        </h1>
+        <p className={s.lead}>
+          {before}
+          <b data-testid="booking-ref">{b.id}</b>
+          {after}
+        </p>
+        <p>{fill(t.confirm.next, { phone: b.phone })}</p>
+        {b.requiresDeposit && <p>{t.confirm.deposit}</p>}
 
-          <dl className={styles.details}>
-            <div>
-              <dt>{t('booking.confirm.tour')}</dt>
-              <dd>
-                <Link href={tourHref(lang, b.tourSlug)}>{tourName}</Link>
-              </dd>
-            </div>
-            <div>
-              <dt>{t('booking.confirm.date')}</dt>
-              <dd>
-                {formatDate(b.date, lang)}
-                {b.time ? ` · ${b.time}` : ''}
-              </dd>
-            </div>
-            <div>
-              <dt>{t('booking.confirm.hotel')}</dt>
-              <dd>{b.hotel}</dd>
-            </div>
-            {b.lines.map((l) => (
-              <div key={l.key}>
-                <dt>
-                  {lineLabel(l)} × {l.qty}
-                </dt>
-                <dd>{formatPrice(l.subtotal, lang)}</dd>
-              </div>
-            ))}
-            <div className={styles.total}>
-              <dt>{t('booking.confirm.totalPayDay')}</dt>
-              <dd>{formatPrice(b.total, lang)}</dd>
-            </div>
-          </dl>
-
-          <div className={styles.actions}>
-            <a href={whatsappLink(await whatsappBookingMessage(b, lang, t))} target="_blank" rel="noopener noreferrer" className="btn-wa">
-              <WhatsAppIcon /> {t('booking.confirm.whatsappCta')}
-            </a>
-            <Link href={localeHref(lang, '/sharm/')} className={styles.secondary}>
-              {t('booking.confirm.browse')}
+        <div className={s.priceTable}>
+          <div>
+            <span>{b.tourName}</span>
+            <Link href={tourPath(lang, b.tourSlug)} className={s.more}>
+              →
             </Link>
           </div>
-          <p className={styles.small}>
-            {t('booking.confirm.changeNote')}{' '}
-            <Link href={localeHref(lang, '/terms-and-conditions/')}>{t('booking.confirm.terms')}</Link>.
-          </p>
+          <div>
+            <span>{t.booking.date}</span>
+            <b>
+              {formatDate(lang, b.date)}
+              {b.time && ` · ${b.time}`}
+            </b>
+          </div>
+          <div>
+            <span>{t.booking.hotel}</span>
+            <b>{b.hotel}</b>
+          </div>
+          {b.lines.map((l) => (
+            <div key={l.key}>
+              <span>
+                {l.label} × {l.qty}
+              </span>
+              <b>{formatGBP(l.subtotal)}</b>
+            </div>
+          ))}
+          <div>
+            <span>{t.booking.totalOnDay}</span>
+            <b>{formatGBP(b.total)}</b>
+          </div>
         </div>
-      </main>
-      <Footer lang={lang} tone="light" />
-    </div>
+
+        <div className={s.btns}>
+          {c.whatsapp && (
+            <a href={waLink(c, msg)} target="_blank" rel="noopener noreferrer" className={s.btn}>
+              {t.confirm.whatsapp}
+            </a>
+          )}
+          <Link href={href(lang, PATHS.tours)} className={s.btnLine}>
+            {t.confirm.more}
+          </Link>
+        </div>
+        <p className={s.hint} style={{ marginTop: 16 }}>
+          {t.confirm.change}
+        </p>
+      </div>
+    </section>
   );
 }

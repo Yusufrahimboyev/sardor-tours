@@ -1,68 +1,42 @@
-import type { Metadata, Viewport } from 'next';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { SiteFooter } from '@/components/site/SiteFooter';
+import { SiteHeader } from '@/components/site/SiteHeader';
 import { site } from '@/data/site';
-import { RevealObserver } from '@/components/RevealObserver';
-import { ToastProvider } from '@/components/Toast';
-import { I18nProvider } from '@/i18n/client';
-import { LOCALES, OG_LOCALE } from '@/i18n/config';
-import { getMessages, getT } from '@/i18n/messages';
-import { langFrom } from '@/i18n/params';
-import { fontVariables } from '../fonts';
-import '../globals.css';
-
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const lang = await langFrom(params);
-  const t = getT(lang);
-  return {
-    metadataBase: new URL(site.url),
-    title: {
-      default: t('meta.default.title', { name: site.name }),
-      template: `%s | ${site.name}`,
-    },
-    description: t('meta.default.description'),
-    applicationName: site.name,
-    openGraph: { type: 'website', siteName: site.name, locale: OG_LOCALE[lang] },
-    twitter: { card: 'summary_large_image' },
-  };
-}
-
-// No `dynamicParams = false` here: after the admin panel revalidates the site, Next refuses to
-// regenerate prerendered pages under a closed param set. `langFrom` 404s on unknown locales instead.
+import { getDict, isLocale, LOCALES, LOCALE_TAG } from '@/i18n';
+import { getContacts } from '@/lib/server/settings';
+import s from '@/components/site/site.module.css';
 
 export function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
 }
+export const dynamicParams = false;
 
-export const viewport: Viewport = {
-  themeColor: '#050a1a',
-  width: 'device-width',
-  initialScale: 1,
-  viewportFit: 'cover',
-};
+type Props = { children: React.ReactNode; params: Promise<{ lang: string }> };
 
-export default async function RootLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ lang: string }>;
-}) {
-  const lang = await langFrom(params);
-  const t = getT(lang);
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLocale(lang)) return {};
+  const t = getDict(lang);
+  return {
+    title: { default: `${t.meta.siteTitle} | ${site.name}`, template: `%s | ${site.name}` },
+    description: t.meta.siteDescription,
+    openGraph: { siteName: site.name, locale: LOCALE_TAG[lang].replace('-', '_'), type: 'website' },
+  };
+}
 
+export default async function LocaleLayout({ children, params }: Props) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+  const t = getDict(lang);
+  const contacts = await getContacts(lang);
   return (
-    <html lang={lang} className={fontVariables}>
-      <body>
-        <a href="#main-content" className="skip-link">
-          {t('common.skipToContent')}
-        </a>
-        <noscript>
-          <style>{'.reveal{opacity:1!important;transform:none!important}'}</style>
-        </noscript>
-        <I18nProvider lang={lang} messages={getMessages(lang).client}>
-          <ToastProvider>{children}</ToastProvider>
-        </I18nProvider>
-        <RevealObserver />
-      </body>
-    </html>
+    <div className={s.page}>
+      <SiteHeader locale={lang} t={t.nav} />
+      <main id="main-content" tabIndex={-1} className={s.main}>
+        {children}
+      </main>
+      <SiteFooter locale={lang} t={t} contacts={contacts} />
+    </div>
   );
 }

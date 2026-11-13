@@ -30,7 +30,7 @@ export default async function AdminTourEditPage({
         <h1 className={styles.h1}>{tour.name}</h1>
         <div className={styles.actions}>
           {tour.active !== false && (
-            <Link href={tourHref('en', tour.slug)} target="_blank" className={styles.btnGhost}>
+            <Link href={tourHref(tour.slug)} target="_blank" className={styles.btnGhost}>
               Saytda ko‘rish ↗
             </Link>
           )}

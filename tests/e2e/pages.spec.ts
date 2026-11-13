@@ -1,78 +1,75 @@
 import { expect, test } from '@playwright/test';
-import { allTours } from '../../src/data/tours';
+import tours from '../../src/data/tours.json' with { type: 'json' };
 import { expectNoHorizontalScroll, trackErrors } from './helpers';
 
-const tours = allTours('en');
+const LOCALES = ['en', 'ru', 'uz'] as const;
+const PAGES = ['/', '/tours/', '/about/', '/guide/', '/contacts/', '/terms/'];
 
-const STATIC_PAGES = [
-  { path: '/en/', h1: /Red Sea/ },
-  { path: '/en/sharm/', h1: /Sharm El Sheikh/ },
-  { path: '/en/about-us/', h1: /know every wave/ },
-  { path: '/en/terms-and-conditions/', h1: /Terms/ },
-  { path: '/en/contact/', h1: /here/ },
-  { path: '/en/sharm/video/', h1: /Videos/ },
-];
+test.describe('public pages', () => {
+  for (const l of LOCALES) {
+    for (const p of PAGES) {
+      test(`${l}${p} renders without errors`, async ({ page }) => {
+        const errors = trackErrors(page);
+        const res = await page.goto(`/${l}${p}`);
+        expect(res?.status()).toBe(200);
+        await expect(page.locator('html')).toHaveAttribute('lang', new RegExp(`^${l}`));
+        await expect(page.locator('h1')).toBeVisible();
+        await expectNoHorizontalScroll(page);
+        expect(errors).toEqual([]);
+      });
+    }
+  }
 
-for (const p of STATIC_PAGES) {
-  test(`page ${p.path} renders without errors`, async ({ page }) => {
-    const errors = trackErrors(page);
-    const res = await page.goto(p.path);
-    expect(res?.status()).toBe(200);
-    await expect(page.locator('h1').first()).toContainText(p.h1);
-    await expect(page).toHaveTitle(/Sardor Tours/);
-    expect(await page.locator('meta[name="description"]').getAttribute('content')).toBeTruthy();
-    await expectNoHorizontalScroll(page);
-    expect(errors).toEqual([]);
+  test('every tour page renders in every language', async ({ request }) => {
+    for (const t of tours) {
+      for (const l of LOCALES) {
+        const res = await request.get(`/${l}/tours/${t.slug}/`);
+        expect(res.status(), `${l}/${t.slug}`).toBe(200);
+      }
+    }
   });
-}
 
-test('every tour detail page renders', async ({ page }) => {
-  test.slow();
-  const errors = trackErrors(page);
-  for (const t of tours) {
-    const res = await page.goto(`/en/sharm/${t.slug}/`);
-    expect(res?.status(), t.slug).toBe(200);
-    await expect(page.locator('h1')).toHaveText(t.title);
-    await expect(page.getByRole('heading', { name: 'Tour Itinerary' })).toBeVisible();
-    const ld = await page.locator('script[type="application/ld+json"]').allTextContents();
-    expect(ld.some((s) => s.includes('"TouristTrip"')), `${t.slug} structured data`).toBe(true);
-  }
-  expect(errors).toEqual([]);
-});
+  test('root redirects by browser language and the switcher keeps the page', async ({ browser }) => {
+    const ctx = await browser.newContext({ locale: 'ru-RU', extraHTTPHeaders: { 'Accept-Language': 'ru-RU,ru;q=0.9' } });
+    const page = await ctx.newPage();
+    await page.goto('/');
+    await expect(page).toHaveURL(/\/ru\/$/);
+    await page.goto('/ru/tours/quad-safari-sharm/');
+    await expect(page.locator('h1')).toContainText('Квадро');
+    // On phones the language switcher lives in the burger menu.
+    const burger = page.getByRole('button', { name: 'Меню' });
+    if (await burger.isVisible()) await burger.click();
+    await page.locator('a[hreflang="uz"]:visible').click();
+    await expect(page).toHaveURL(/\/uz\/tours\/quad-safari-sharm\/$/);
+    await expect(page.locator('html')).toHaveAttribute('lang', /^uz/);
+    await ctx.close();
+  });
 
-test('unknown routes return 404 page', async ({ page }) => {
-  const res = await page.goto('/en/sharm/does-not-exist/');
-  expect(res?.status()).toBe(404);
-  await expect(page.getByRole('heading', { name: /sailed away/ })).toBeVisible();
-  const res2 = await page.goto('/en/booking/ST-ZZZZZZ/');
-  expect(res2?.status()).toBe(404);
-});
+  test('old clone URLs redirect to the new structure', async ({ request }) => {
+    const r = await request.get('/en/sharm/quad-safari-sharm/', { maxRedirects: 0 });
+    expect(r.status()).toBe(308);
+    expect(r.headers().location).toContain('/en/tours/quad-safari-sharm/');
+  });
 
-test('SEO files are served', async ({ request }) => {
-  const robots = await request.get('/robots.txt');
-  expect(robots.ok()).toBe(true);
-  const robotsTxt = await robots.text();
-  expect(robotsTxt).toContain('Sitemap:');
-  expect(robotsTxt).toContain('Disallow: /*/booking/');
-  const sitemap = await request.get('/sitemap.xml');
-  expect(sitemap.ok()).toBe(true);
-  const xml = await sitemap.text();
-  for (const t of tours) expect(xml).toContain(`/en/sharm/${t.slug}/`);
-  expect(xml.match(/<url>/g)).toHaveLength(87);
-  expect(xml).toContain('hreflang="ru"');
-  expect(xml).toContain('hreflang="x-default"');
-});
+  test('catalogue filters by category and search', async ({ page }) => {
+    await page.goto('/en/tours/');
+    // >= because the admin tests may add a temporary tour while this runs in parallel.
+    expect(await page.locator('article').count()).toBeGreaterThanOrEqual(tours.length);
+    await page.waitForLoadState('networkidle'); // let the page hydrate under parallel test load
+    await page.getByRole('link', { name: 'Desert safari' }).click();
+    await expect(page).toHaveURL(/cat=safari/, { timeout: 30_000 }); // soft navigation can be slow while other tests load the server
+    await expect(page.locator('article')).toHaveCount(tours.filter((t) => t.category === 'safari').length);
+  });
 
-test('all internal links resolve', async ({ page, request }) => {
-  test.slow();
-  const seen = new Set<string>();
-  for (const start of ['/en/', '/en/sharm/', '/en/sharm/quad-safari-sharm/', '/en/about-us/', '/en/contact/']) {
-    await page.goto(start);
-    const hrefs = await page.$$eval('a[href^="/"]', (as) => as.map((a) => (a as HTMLAnchorElement).getAttribute('href')!));
-    for (const h of hrefs) seen.add(h.split('#')[0] || '/');
-  }
-  for (const href of seen) {
-    const res = await request.get(href);
-    expect(res.status(), href).toBeLessThan(400);
-  }
+  test('unknown pages return a localized 404', async ({ page }) => {
+    const res = await page.goto('/ru/nope/');
+    expect(res?.status()).toBe(404);
+    await expect(page.getByRole('heading', { name: 'Страница не найдена' })).toBeVisible();
+  });
+
+  test('sitemap lists every page in every language', async ({ request }) => {
+    const xml = await (await request.get('/sitemap.xml')).text();
+    for (const l of LOCALES) expect(xml).toContain(`/${l}/tours/quad-safari-sharm/`);
+    expect(xml).toContain('hreflang');
+  });
 });

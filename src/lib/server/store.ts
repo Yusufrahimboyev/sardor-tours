@@ -1,8 +1,7 @@
 import 'server-only';
-import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { randomBytes } from 'node:crypto';
-import type { Locale } from '@/i18n/config';
+import { atomicWrite, readJsonFile, withFileLock } from './fileStore';
 import type { PriceLine } from '@/lib/pricing';
 
 /**
@@ -20,34 +19,15 @@ interface Collection<T extends { id: string }> {
   get(id: string): Promise<T | undefined>;
   /** Shallow-merges `patch` into the item; resolves to the updated item, or undefined if not found. */
   update(id: string, patch: Partial<Omit<T, 'id'>>): Promise<T | undefined>;
+  remove(id: string): Promise<boolean>;
 }
 
-function createJsonCollection<T extends { id: string }>(name: string): Collection<T> {
+export function createJsonCollection<T extends { id: string }>(name: string): Collection<T> {
   const file = path.join(DATA_DIR, `${name}.json`);
-  let queue: Promise<unknown> = Promise.resolve();
-
-  async function read(): Promise<T[]> {
-    try {
-      return JSON.parse(await fs.readFile(file, 'utf8')) as T[];
-    } catch (e) {
-      if ((e as NodeJS.ErrnoException).code === 'ENOENT') return [];
-      throw e;
-    }
-  }
-
-  async function write(items: T[]) {
-    await fs.mkdir(DATA_DIR, { recursive: true });
-    const tmp = `${file}.${process.pid}.tmp`;
-    await fs.writeFile(tmp, JSON.stringify(items, null, 2));
-    await fs.rename(tmp, file);
-  }
-
-  /** Serialize read-modify-write cycles so concurrent requests can't clobber each other. */
-  function serial<R>(fn: () => Promise<R>): Promise<R> {
-    const run = queue.then(fn);
-    queue = run.catch(() => undefined);
-    return run;
-  }
+  const read = () => readJsonFile<T[]>(file, []);
+  const write = (items: T[]) => atomicWrite(file, JSON.stringify(items, null, 2));
+  /** Serialize read-modify-write cycles (process-wide) so concurrent requests can't clobber each other. */
+  const serial = <R,>(fn: () => Promise<R>) => withFileLock(file, fn);
 
   return {
     insert(item) {
@@ -66,6 +46,15 @@ function createJsonCollection<T extends { id: string }>(name: string): Collectio
         items[i] = { ...items[i], ...patch, id };
         await write(items);
         return items[i];
+      });
+    },
+    remove(id) {
+      return serial(async () => {
+        const items = await read();
+        const next = items.filter((x) => x.id !== id);
+        if (next.length === items.length) return false;
+        await write(next);
+        return true;
       });
     },
     list: read,
@@ -99,8 +88,6 @@ export interface Booking {
   email: string;
   notes: string;
   requiresDeposit: boolean;
-  /** Customer's language; records written before localisation have none (treat as 'en'). */
-  lang?: Locale;
 }
 
 export interface ContactMessage {
@@ -111,11 +98,26 @@ export interface ContactMessage {
   phone: string;
   topic: string;
   message: string;
-  lang?: Locale;
+  /** Marked read in the admin panel. */
   read?: boolean;
 }
 
+/** Guest review shown on the site; added and approved in the admin panel. */
+export interface Review {
+  id: string;
+  createdAt: string;
+  name: string;
+  /** Free text, e.g. "London, UK" or the tour name. */
+  meta: string;
+  text: string;
+  rating: 1 | 2 | 3 | 4 | 5;
+  /** Which language versions show it ('all' = every language). */
+  lang: 'all' | 'en' | 'ru' | 'uz';
+  active: boolean;
+}
+
 export const bookings = createJsonCollection<Booking>('bookings');
+export const reviews = createJsonCollection<Review>('reviews');
 export const messages = createJsonCollection<ContactMessage>('messages');
 
 /** Human-friendly reference, e.g. ST-7K4Q9P. No ambiguous characters. */

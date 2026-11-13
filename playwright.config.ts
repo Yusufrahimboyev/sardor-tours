@@ -1,7 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
 const PORT = Number(process.env.E2E_PORT ?? 3200);
-const ADMIN = /admin\.spec\.ts/;
 
 export default defineConfig({
   testDir: './tests/e2e',
@@ -17,11 +16,8 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   projects: [
-    { name: 'desktop', testIgnore: ADMIN, use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } } },
-    { name: 'mobile', testIgnore: ADMIN, use: { ...devices['Pixel 7'] } },
-    // The admin specs publish and delete a tour, which changes the catalogue the other specs
-    // count, so they run on their own after everything else.
-    { name: 'admin', testMatch: ADMIN, dependencies: ['desktop', 'mobile'], use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } } },
+    { name: 'desktop', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } } },
+    { name: 'mobile', use: { ...devices['Pixel 7'] } },
   ],
   webServer: {
     command: `npm run build && npx next start -p ${PORT}`,

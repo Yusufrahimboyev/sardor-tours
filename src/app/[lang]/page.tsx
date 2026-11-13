@@ -1,254 +1,136 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import type { Metadata } from 'next';
-import { CtaBand } from '@/components/CtaBand';
-import { Footer } from '@/components/Footer';
-import { ArrowDown, ArrowRight, WhatsAppIcon } from '@/components/icons';
-import { JsonLd, faqJsonLd } from '@/components/JsonLd';
-import { destinations, site, whatsappLink } from '@/data/site';
-import { minPrice } from '@/data/tours';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { ContactForm } from '@/components/site/ContactForm';
+import { ReviewList } from '@/components/site/ReviewList';
+import { TourRow } from '@/components/site/TourRow';
+import { localizeTour } from '@/data/tours';
+import { getDict, href, isLocale, PATHS } from '@/i18n';
+import { alternates } from '@/i18n/seo';
+import { getSettings } from '@/lib/server/settings';
 import { listTours } from '@/lib/server/tours';
-import { pageAlternates, pageOpenGraph } from '@/i18n/metadata';
-import { getGeneralFaq, getT } from '@/i18n/messages';
-import { langFrom } from '@/i18n/params';
-import { localeHref } from '@/i18n/routing';
-import { formatPrice } from '@/i18n/format';
-import { imageSrc } from '@/lib/images';
-import { BackgroundVideo } from '@/components/BackgroundVideo';
-import { HomeHeader } from './HomeHeader';
+import { HydrationBoundary } from '@/components/site/HydrationBoundary';
+import s from '@/components/site/site.module.css';
 
-/** Put your own clip at public/videos/hero.mp4, or point NEXT_PUBLIC_HERO_VIDEO at a hosted file. */
-const HERO_VIDEO = process.env.NEXT_PUBLIC_HERO_VIDEO || '/videos/hero.mp4';
-import styles from './home.module.css';
+type Props = { params: Promise<{ lang: string }> };
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const lang = await langFrom(params);
-  const t = getT(lang);
-  const p = { name: site.name };
-  return {
-    title: { absolute: t('meta.default.title', p) },
-    description: t('meta.home.description', p),
-    alternates: pageAlternates(lang, '/'),
-    openGraph: pageOpenGraph(lang, '/', {
-      title: t('meta.home.ogTitle', p),
-      description: t('meta.home.ogDescription'),
-      images: [{ url: imageSrc('/images/hero1.webp', 1200, 630), width: 1200, height: 630 }],
-    }),
-  };
+const HOME_TOURS = 6;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLocale(lang)) return {};
+  return { alternates: alternates(lang, '/') };
 }
 
-const WHY = [
-  {
-    key: 'noPrepay',
-    icon: <path d="M20 6 9 17l-5-5" />,
-  },
-  {
-    key: 'transfer',
-    icon: (
-      <>
-        <path d="M5 11l2-7h10l2 7M5 11h14M5 11v6h14v-6M7 17v2M17 17v2" />
-        <circle cx="8" cy="14" r="1.4" />
-        <circle cx="16" cy="14" r="1.4" />
-      </>
-    ),
-  },
-  {
-    key: 'cancel',
-    icon: (
-      <>
-        <path d="M12 2 4 5v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z" />
-        <path d="M9 12l2 2 4-4" />
-      </>
-    ),
-  },
-  {
-    key: 'support',
-    icon: <path d="M21 11.5a8.38 8.38 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 20l1.3-3.8A8.38 8.38 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z" />,
-  },
-];
-
-export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
-  const lang = await langFrom(params);
-  const t = getT(lang);
-  const faq = getGeneralFaq(lang);
-  const wa = whatsappLink(t('client.whatsapp.planTrip'));
-  const tours = await listTours({ lang });
-  const liveCount = tours.length;
-  const MIN_PRICE = minPrice(tours);
+export default async function HomePage({ params }: Props) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+  const t = getDict(lang);
+  const [all, settings] = await Promise.all([listTours(), getSettings()]);
+  // Featured tours first, then the rest in catalogue order.
+  const tours = [...all.filter((x) => x.featured), ...all.filter((x) => !x.featured)]
+    .slice(0, HOME_TOURS)
+    .map((x) => localizeTour(x, lang));
 
   return (
-    <div className={styles.page}>
-      <JsonLd
-        data={{
-          '@context': 'https://schema.org',
-          '@type': 'TravelAgency',
-          name: site.name,
-          url: site.url,
-          description: t('meta.default.description'),
-          ...(site.whatsappNumber && { telephone: `+${site.whatsappNumber}` }),
-          ...(site.email && { email: site.email }),
-          priceRange: '£',
-          areaServed: ['Sharm El Sheikh'],
-          sameAs: [site.instagram, site.telegram].filter(Boolean),
-        }}
-      />
-      <JsonLd data={faqJsonLd(faq, lang)} />
-      <HomeHeader />
-
-      <main id="main-content" tabIndex={-1}>
-        <section className={styles.hero}>
-          <div className={styles.heroBg}>
-            <Image src={imageSrc('/images/hero1.webp', 1920, 1080)} alt="" fill priority sizes="100vw" />
-            <BackgroundVideo src={HERO_VIDEO} className={styles.heroVideo} />
-          </div>
-          <div className={`wrap ${styles.heroIn}`}>
-            <div className={styles.heroTag}>
-              <span className={styles.dot} /> {t('home.heroTag')}
-            </div>
-            <h1>
-              {t('home.h1.before')}
-              <em>{t('home.h1.em')}</em>
-              {t('home.h1.after')}
-            </h1>
-            <p className={styles.sub}>
-              {t('home.sub')}
-            </p>
-            <div className={styles.heroActions}>
-              <a href="#destinations" className={styles.btnGhost}>
-                {t('home.explore')} <ArrowDown />
-              </a>
-              <a href={wa} target="_blank" rel="noopener noreferrer" className="btn-wa">
-                <WhatsAppIcon /> {t('home.plan')}
-              </a>
-            </div>
-            <div className={styles.heroTrust}>
-              <div className={styles.ht}>
-                <b>{liveCount}+</b>
-                <span>{t('home.trust.excursions')}</span>
-              </div>
-              <div className={styles.ht}>
-                <b>{formatPrice(MIN_PRICE, lang)}</b>
-                <span>{t('home.trust.pricesFrom')}</span>
-              </div>
-              <div className={styles.ht}>
-                <b>{formatPrice(0, lang)}</b>
-                <span>{t('home.trust.prepayment')}</span>
-              </div>
-              <div className={styles.ht}>
-                <b>4</b>
-                <span>{t('home.trust.destinations')}</span>
-              </div>
-              <div className={styles.scrollCue} aria-hidden>
-                {t('home.trust.scroll')}
-              </div>
+    <HydrationBoundary>
+      <>
+        <section className={s.section}>
+          <div className={s.wrap}>
+            <h1 className={s.h1}>{t.home.title}</h1>
+            <p className={s.lead}>{t.home.intro}</p>
+            <div className={s.btns}>
+              <Link href={href(lang, PATHS.tours)} className={s.btn}>
+                {t.home.ctaTours}
+              </Link>
+              <Link href={href(lang, PATHS.contacts)} className={s.btnLine}>
+                {t.home.ctaContact}
+              </Link>
             </div>
           </div>
         </section>
 
-        <section id="destinations" className={`${styles.sec} ${styles.destSec}`} aria-labelledby="dest-title">
-          <div className="wrap">
-            <div className={`${styles.secHead} reveal`}>
-              <div className="eyebrow">{t('home.destSection.eyebrow')}</div>
-              <h2 id="dest-title">{t('home.destSection.title')}</h2>
-              <p>{t('home.destSection.text')}</p>
-            </div>
-            <div className={styles.destGrid}>
-              {destinations.map((d) => {
-                const name = t(`home.destinations.${d.num}.name`);
-                const body = (
-                  <>
-                    <Image
-                      src={imageSrc(d.image, 1000, 750)}
-                      alt={name}
-                      fill
-                      sizes="(max-width: 880px) 100vw, 50vw"
-                      className={styles.destImg}
-                    />
-                    <div className={styles.destNum}>{d.num}</div>
-                    <div className={`${styles.destBadge} ${d.live ? styles.badgeLive : styles.badgeSoon}`}>
-                      {d.live ? t('home.destSection.live', { n: liveCount }) : t('home.destSection.soon')}
-                    </div>
-                    <div className={styles.destBody}>
-                      <h3>{name}</h3>
-                      <p className={styles.dSub}>{t(`home.destinations.${d.num}.text`)}</p>
-                      <div className={styles.dFoot}>
-                        <span className={styles.dMeta}>{t(`home.destinations.${d.num}.meta`)}</span>
-                        {d.live ? (
-                          <span className={styles.dGo}>
-                            {t('home.destSection.explore')} <ArrowRight />
-                          </span>
-                        ) : (
-                          <span className={`${styles.dGo} ${styles.soon}`}>{t('home.destSection.soon')}</span>
-                        )}
-                      </div>
-                    </div>
-                  </>
-                );
-                return 'path' in d ? (
-                  <Link key={d.num} href={localeHref(lang, d.path)} className={`${styles.dest} ${styles.isLive} reveal`}>
-                    {body}
-                  </Link>
-                ) : (
-                  <div key={d.num} className={`${styles.dest} reveal`} aria-label={t('home.destSection.soonAria', { name })}>
-                    {body}
+        <section className={s.section} aria-labelledby="adv-h">
+          <div className={s.wrap}>
+            <h2 id="adv-h" className={s.h2}>
+              {t.home.advantagesTitle}
+            </h2>
+            <div className={s.adv}>
+              {t.home.advantages.map((a) => (
+                <div key={a.title} className={s.advItem}>
+                  <span className={s.advDot} aria-hidden>
+                    ✓
+                  </span>
+                  <div>
+                    <b>{a.title}</b>
+                    <span>{a.text}</span>
                   </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        <section id="why" className={styles.sec} aria-labelledby="why-title">
-          <div className="wrap">
-            <div className={`${styles.secHead} reveal`}>
-              <div className="eyebrow">{t('home.why.eyebrow', { name: site.name })}</div>
-              <h2 id="why-title">{t('home.why.title')}</h2>
-              <p>{t('home.why.text')}</p>
-            </div>
-            <div className={styles.whyGrid}>
-              {WHY.map((w) => (
-                <div key={w.key} className={`${styles.whyCard} reveal`}>
-                  <div className={styles.whyIc}>
-                    <svg viewBox="0 0 24 24" aria-hidden>
-                      {w.icon}
-                    </svg>
-                  </div>
-                  <h3>{t(`home.why.${w.key}.title`)}</h3>
-                  <p>{t(`home.why.${w.key}.text`)}</p>
                 </div>
               ))}
             </div>
+            {settings.video && (
+              <div className={s.video}>
+                <video src={settings.video} controls preload="metadata" playsInline aria-label={t.home.videoTitle} />
+              </div>
+            )}
           </div>
         </section>
 
-        <section id="faq" className={styles.sec} aria-labelledby="faq-title">
-          <div className="wrap">
-            <div className={`${styles.secHead} reveal`}>
-              <div className="eyebrow">{t('home.faq.eyebrow')}</div>
-              <h2 id="faq-title">{t('home.faq.title')}</h2>
-            </div>
-            <div className={`${styles.faq} reveal`}>
-              {faq.map((f) => (
-                <details key={f.q} className={styles.hfItem}>
-                  <summary>
-                    {f.q}
-                    <span className={styles.hfIc} aria-hidden />
-                  </summary>
-                  <div className={styles.hfA}>{f.a}</div>
-                </details>
+        <section className={s.section} aria-labelledby="tours-h">
+          <div className={s.wrap}>
+            <h2 id="tours-h" className={s.h2}>
+              {t.home.toursTitle}
+            </h2>
+            <p className={s.sub}>{t.home.toursText}</p>
+            <div className={s.tourList}>
+              {tours.map((tour, i) => (
+                <TourRow key={tour.slug} tour={tour} locale={lang} t={t.common} priority={i === 0} />
               ))}
             </div>
+            <div className={s.btns}>
+              <Link href={href(lang, PATHS.tours)} className={s.btnLine}>
+                {t.common.allTours} ({all.length}) →
+              </Link>
+            </div>
           </div>
         </section>
 
-        <CtaBand lang={lang} />
-      </main>
+        <section className={s.section} aria-labelledby="how-h">
+          <div className={s.wrap}>
+            <h2 id="how-h" className={s.h2}>
+              {t.home.howTitle}
+            </h2>
+            <ol className={s.steps}>
+              {t.home.how.map((step) => (
+                <li key={step.title}>
+                  <b>{step.title}</b>
+                  {step.text}
+                </li>
+              ))}
+            </ol>
+            <div className={s.bringBox}>
+              <h3 className={s.h3}>{t.home.bringTitle}</h3>
+              <ul className={`${s.checks} ${s.dots}`}>
+                {t.home.bring.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
 
-      <Footer lang={lang} variant="home" />
+        <ReviewList locale={lang} t={t.home} />
 
-      <a href={wa} target="_blank" rel="noopener noreferrer" className={styles.floatChat} aria-label={t('client.support.chatAria')}>
-        <WhatsAppIcon size={28} />
-      </a>
-    </div>
+        <section className={s.section} aria-labelledby="fb-h">
+          <div className={s.wrap}>
+            <h2 id="fb-h" className={s.h2}>
+              {t.home.feedbackTitle}
+            </h2>
+            <p className={s.sub}>{t.home.feedbackText}</p>
+            <ContactForm t={t.contact} />
+          </div>
+        </section>
+      </>
+    </HydrationBoundary>
   );
 }
