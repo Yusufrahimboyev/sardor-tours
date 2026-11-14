@@ -5,7 +5,8 @@ import { requireAdmin } from '@/lib/server/auth';
 import { bookings, messages } from '@/lib/server/store';
 import { logout } from '../actions';
 import { AdminLangSwitcher } from '../i18n/LangSwitcher';
-import { getAdminDict, getAdminLang } from '../i18n/server';
+import { getAdminDict, getAdminLang, getAdminTheme } from '../i18n/server';
+import { AdminThemeToggle } from '../i18n/ThemeToggle';
 import styles from '../admin.module.css';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -19,7 +20,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   await requireAdmin();
-  const [b, m, lang, t] = await Promise.all([bookings.list(), messages.list(), getAdminLang(), getAdminDict()]);
+  const [b, m, lang, t, theme] = await Promise.all([bookings.list(), messages.list(), getAdminLang(), getAdminDict(), getAdminTheme()]);
   const pending = b.filter((x) => x.status === 'pending').length;
   const unread = m.filter((x) => !x.read).length;
 
@@ -45,6 +46,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           </Link>
         </nav>
         <AdminLangSwitcher lang={lang} label={t.langName} />
+        <AdminThemeToggle theme={theme} labels={t.theme} />
         <form action={logout}>
           <button type="submit" className={styles.btnGhost}>
             {t.nav.logout}

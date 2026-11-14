@@ -23,3 +23,12 @@ export function formatTourDate(lang: AdminLang, ymd: string): string {
   if (Number.isNaN(d.getTime())) return ymd;
   return d.toLocaleDateString(ADMIN_LANG_TAG[lang], { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 }
+
+export const ADMIN_THEMES = ['light', 'dark'] as const;
+export type AdminTheme = (typeof ADMIN_THEMES)[number];
+/** Remembers the admin colour theme; without it the panel is light. */
+export const ADMIN_THEME_COOKIE = 'admin_theme';
+
+export function isAdminTheme(v: unknown): v is AdminTheme {
+  return typeof v === 'string' && (ADMIN_THEMES as readonly string[]).includes(v);
+}

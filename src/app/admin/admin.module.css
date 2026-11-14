@@ -1,16 +1,70 @@
 /* Admin panel — plain, dense, readable. Independent of the public site's look. */
+/* Colours are tokens so the panel can switch between a light and a dark theme (data-admin-theme
+   on the wrapper in admin/layout.tsx). The tour editor's stylesheet uses the same tokens. */
 .shell,
 .loginWrap {
-  --a-ink: #0f172a;
-  --a-mid: #64748b;
-  --a-line: #e2e8f0;
+  --a-bg: #f1f5f9;
+  --a-surface: #fff;
   --a-soft: #f8fafc;
+  --a-ink: #0f172a;
+  --a-text2: #475569;
+  --a-mid: #64748b;
+  --a-faint: #94a3b8;
+  --a-line: #e2e8f0;
+  --a-line2: #cbd5e1;
   --a-accent: #ff6b00;
+  --a-bar: #0f172a;
+  /* Filled neutral controls (primary button, selected tab, tags) and the text on them. */
+  --a-solid: #0f172a;
+  --a-on-solid: #fff;
+  --a-tint-accent: #fff7ed;
+  --a-accent-ink: #c2410c;
+  --a-accent-line: #fdba74;
+  --a-tint-ok: #dcfce7;
+  --a-ok-ink: #15803d;
+  --a-ok-line: #bbf7d0;
+  --a-tint-err: #fef2f2;
+  --a-err-ink: #b91c1c;
+  --a-err-line: #fecaca;
+  --a-tint-info: #e0f2fe;
+  --a-info-ink: #0369a1;
+  --a-tint-violet: #f3e8ff;
+  --a-violet-ink: #7e22ce;
   min-height: 100vh;
-  background: #f1f5f9;
+  background: var(--a-bg);
   color: var(--a-ink);
+  color-scheme: light;
   font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 14px;
+}
+:global([data-admin-theme='dark']) .shell,
+:global([data-admin-theme='dark']) .loginWrap {
+  --a-bg: #0b1120;
+  --a-surface: #141d30;
+  --a-soft: #1b2640;
+  --a-ink: #e8edf7;
+  --a-text2: #c3cde0;
+  --a-mid: #94a3b8;
+  --a-faint: #6b7a93;
+  --a-line: #26334d;
+  --a-line2: #36466a;
+  --a-bar: #070c18;
+  --a-solid: #e2e8f0;
+  --a-on-solid: #0f172a;
+  --a-tint-accent: rgba(255, 107, 0, 0.16);
+  --a-accent-ink: #fdba74;
+  --a-accent-line: rgba(255, 107, 0, 0.5);
+  --a-tint-ok: rgba(34, 197, 94, 0.16);
+  --a-ok-ink: #86efac;
+  --a-ok-line: rgba(34, 197, 94, 0.4);
+  --a-tint-err: rgba(239, 68, 68, 0.16);
+  --a-err-ink: #fca5a5;
+  --a-err-line: rgba(239, 68, 68, 0.45);
+  --a-tint-info: rgba(56, 189, 248, 0.16);
+  --a-info-ink: #7dd3fc;
+  --a-tint-violet: rgba(168, 85, 247, 0.2);
+  --a-violet-ink: #d8b4fe;
+  color-scheme: dark;
 }
 
 /* ── top bar ── */
@@ -22,8 +76,12 @@
   align-items: center;
   gap: 24px;
   padding: 12px 24px;
-  background: #0f172a;
+  background: var(--a-bar);
   color: #fff;
+  border-bottom: 1px solid transparent;
+}
+:global([data-admin-theme='dark']) .top {
+  border-bottom-color: var(--a-line);
 }
 .brand {
   font-weight: 800;
@@ -101,6 +159,65 @@
 .loginTop .langSwitch .langOn {
   color: #fff;
 }
+.loginTools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── light / dark switch ── */
+.themeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
+.themeBtn:hover {
+  color: #fff;
+}
+.loginTop .themeBtn {
+  border-color: var(--a-line);
+  color: var(--a-mid);
+}
+.loginTop .themeBtn:hover {
+  color: var(--a-ink);
+}
+
+/* ── password field with a show / hide button ── */
+.pwField {
+  position: relative;
+  display: flex;
+}
+.loginForm .pwField input {
+  flex: 1;
+  min-width: 0;
+  padding-right: 44px;
+}
+.pwToggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: var(--a-mid);
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+}
+.pwToggle:hover {
+  color: var(--a-ink);
+}
+
 .main {
   max-width: 1280px;
   margin: 0 auto;
@@ -134,8 +251,8 @@
   white-space: nowrap;
 }
 .btnPrimary {
-  background: var(--a-ink);
-  color: #fff;
+  background: var(--a-solid);
+  color: var(--a-on-solid);
 }
 .btnPrimary:disabled {
   opacity: 0.6;
@@ -150,9 +267,9 @@
   color: #fff;
 }
 .btnRed {
-  background: #fff;
-  color: #dc2626;
-  border-color: #fecaca;
+  background: var(--a-surface);
+  color: var(--a-err-ink);
+  border-color: var(--a-err-line);
 }
 .btnWa {
   background: #25d366;
@@ -167,7 +284,7 @@
   margin-bottom: 16px;
 }
 .stat {
-  background: #fff;
+  background: var(--a-surface);
   border: 1px solid var(--a-line);
   border-radius: 14px;
   padding: 14px 16px;
@@ -197,7 +314,7 @@
   border-radius: 10px;
   padding: 9px 12px;
   font: inherit;
-  background: #fff;
+  background: var(--a-surface);
   color: var(--a-ink);
 }
 .filters input {
@@ -208,7 +325,7 @@
 /* ── table ── */
 .tableWrap {
   overflow-x: auto;
-  background: #fff;
+  background: var(--a-surface);
   border: 1px solid var(--a-line);
   border-radius: 14px;
 }
@@ -237,7 +354,7 @@
   border-bottom: none;
 }
 .table tbody tr:hover {
-  background: #fffaf5;
+  background: var(--a-tint-accent);
 }
 .table small {
   display: block;
@@ -251,7 +368,7 @@
   color: var(--a-accent);
 }
 .empty {
-  background: #fff;
+  background: var(--a-surface);
   border: 1px dashed var(--a-line);
   border-radius: 14px;
   padding: 32px;
@@ -269,16 +386,16 @@
   border-radius: 99px;
 }
 .st_pending {
-  background: #fff7ed;
-  color: #c2410c;
+  background: var(--a-tint-accent);
+  color: var(--a-accent-ink);
 }
 .st_confirmed {
-  background: #dcfce7;
-  color: #15803d;
+  background: var(--a-tint-ok);
+  color: var(--a-ok-ink);
 }
 .st_cancelled {
-  background: #f1f5f9;
-  color: #64748b;
+  background: var(--a-bg);
+  color: var(--a-mid);
 }
 
 /* ── detail ── */
@@ -310,7 +427,7 @@
   gap: 16px;
 }
 .card {
-  background: #fff;
+  background: var(--a-surface);
   border: 1px solid var(--a-line);
   border-radius: 14px;
   padding: 18px 20px;
@@ -405,7 +522,7 @@
 .loginCard {
   width: 100%;
   max-width: 360px;
-  background: #fff;
+  background: var(--a-surface);
   border: 1px solid var(--a-line);
   border-radius: 18px;
   padding: 28px;
@@ -437,13 +554,13 @@
   padding: 11px;
 }
 .err {
-  color: #dc2626;
+  color: var(--a-err-ink);
   font-weight: 600;
   font-size: 13px;
 }
 .warn {
-  background: #fff7ed;
-  color: #9a3412;
+  background: var(--a-tint-accent);
+  color: var(--a-accent-ink);
   border-radius: 10px;
   padding: 12px 14px;
   line-height: 1.5;
@@ -467,7 +584,7 @@
   gap: 16px;
 }
 .tourCard {
-  background: #fff;
+  background: var(--a-surface);
   border: 1px solid var(--a-line);
   border-radius: 16px;
   overflow: hidden;
@@ -480,7 +597,7 @@
 .tourImg {
   position: relative;
   aspect-ratio: 16 / 9;
-  background: #e2e8f0;
+  background: var(--a-line);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -505,8 +622,8 @@
   border-radius: 99px;
 }
 .pillLive {
-  background: #dcfce7;
-  color: #15803d;
+  background: var(--a-tint-ok);
+  color: var(--a-ok-ink);
 }
 .pillHidden {
   background: #0f172a;
@@ -565,7 +682,7 @@
   border-radius: 9px;
   padding: 8px 10px;
   font: inherit;
-  background: #fff;
+  background: var(--a-surface);
   color: var(--a-ink);
 }
 .inline select {
@@ -600,7 +717,7 @@
   font: inherit;
 }
 .rowActions .danger {
-  color: #dc2626;
+  color: var(--a-err-ink);
 }
 .tourForm {
   display: flex;
@@ -615,12 +732,12 @@
   font-weight: 600;
 }
 .alertErr {
-  background: #fef2f2;
-  color: #b91c1c;
+  background: var(--a-tint-err);
+  color: var(--a-err-ink);
 }
 .alertOk {
-  background: #f0fdf4;
-  color: #15803d;
+  background: var(--a-tint-ok);
+  color: var(--a-ok-ink);
 }
 .fields {
   display: grid;
@@ -698,12 +815,13 @@
   display: flex;
   justify-content: flex-end;
   padding: 12px 0;
-  background: linear-gradient(transparent, #f1f5f9 35%);
+  background: linear-gradient(transparent, var(--a-bg) 35%);
 }
 .saveBar .btnPrimary {
   padding: 12px 28px;
   font-size: 15px;
   background: var(--a-accent);
+  color: #fff;
 }
 
 @media (max-width: 860px) {

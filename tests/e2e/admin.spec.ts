@@ -3,7 +3,7 @@ import { futureDate } from './helpers';
 
 async function signIn(page: Page) {
   await page.goto('/admin/login/');
-  await page.getByLabel('Parol').fill('test-admin-password');
+  await page.getByLabel('Parol', { exact: true }).fill('test-admin-password');
   await page.getByRole('button', { name: 'Kirish' }).click();
   await expect(page.getByRole('heading', { name: 'Bronlar' })).toBeVisible();
 }
@@ -14,7 +14,7 @@ test.describe('admin panel', () => {
   test('is protected and rejects a wrong password', async ({ page }) => {
     await page.goto('/admin/');
     await expect(page).toHaveURL(/\/admin\/login\/$/);
-    await page.getByLabel('Parol').fill('nope');
+    await page.getByLabel('Parol', { exact: true }).fill('nope');
     await page.getByRole('button', { name: 'Kirish' }).click();
     await expect(page.getByText('Parol noto‘g‘ri.')).toBeVisible();
   });

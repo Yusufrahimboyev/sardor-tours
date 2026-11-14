@@ -8,6 +8,7 @@ import type { AdminLang } from './config';
 const uz = {
   meta: { admin: 'Admin', login: 'Admin panelga kirish' },
   langName: 'Interfeys tili',
+  theme: { toDark: 'Qorong‘i rejimga o‘tish', toLight: 'Yorug‘ rejimga o‘tish' },
   common: {
     save: 'Saqlash',
     saving: 'Saqlanmoqda…',
@@ -47,6 +48,8 @@ const uz = {
   login: {
     title: 'Admin panelga kirish',
     password: 'Parol',
+    showPassword: 'Parolni ko‘rsatish',
+    hidePassword: 'Parolni yashirish',
     submit: 'Kirish',
     submitting: 'Kirilmoqda…',
     disabledA: 'Admin panel o‘chirilgan.',
@@ -330,6 +333,7 @@ export type AdminDict = typeof uz;
 const ru: AdminDict = {
   meta: { admin: 'Админ', login: 'Вход в админ-панель' },
   langName: 'Язык интерфейса',
+  theme: { toDark: 'Включить тёмную тему', toLight: 'Включить светлую тему' },
   common: {
     save: 'Сохранить',
     saving: 'Сохранение…',
@@ -369,6 +373,8 @@ const ru: AdminDict = {
   login: {
     title: 'Вход в админ-панель',
     password: 'Пароль',
+    showPassword: 'Показать пароль',
+    hidePassword: 'Скрыть пароль',
     submit: 'Войти',
     submitting: 'Вход…',
     disabledA: 'Админ-панель отключена. В файле',
@@ -650,6 +656,7 @@ const ru: AdminDict = {
 const en: AdminDict = {
   meta: { admin: 'Admin', login: 'Admin sign in' },
   langName: 'Interface language',
+  theme: { toDark: 'Switch to dark mode', toLight: 'Switch to light mode' },
   common: {
     save: 'Save',
     saving: 'Saving…',
@@ -689,6 +696,8 @@ const en: AdminDict = {
   login: {
     title: 'Admin sign in',
     password: 'Password',
+    showPassword: 'Show password',
+    hidePassword: 'Hide password',
     submit: 'Sign in',
     submitting: 'Signing in…',
     disabledA: 'The admin panel is disabled. In',
