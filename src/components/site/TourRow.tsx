@@ -3,13 +3,14 @@ import Link from 'next/link';
 import type { Tour } from '@/data/tours';
 import { fill, weekdayList, type Dict } from '@/i18n';
 import { tourPath, type Locale } from '@/i18n/config';
+import { perUnitLabel } from '@/i18n/units';
 import { imageSrc } from '@/lib/images';
 import s from './site.module.css';
 
 /** One excursion in the single-column list: photo, name, facts, short text, price. */
 export function TourRow({ tour, locale, t, priority }: { tour: Tour; locale: Locale; t: Dict['common']; priority?: boolean }) {
   const link = tourPath(locale, tour.slug);
-  const unit = tour.priceUnit ?? t.perPerson;
+  const unit = tour.priceUnit ? perUnitLabel(locale, tour.priceUnit) : t.perPerson;
   return (
     <article className={s.tourRow}>
       <Link href={link} className={s.tourImg} tabIndex={-1} aria-hidden>

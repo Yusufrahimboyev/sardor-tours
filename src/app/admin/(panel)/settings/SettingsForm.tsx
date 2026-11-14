@@ -82,7 +82,7 @@ export function SettingsForm({ settings }: { settings: Settings }) {
         <h2>{S.videoTitle}</h2>
         <input type="hidden" name="video" value={video} />
         {video ? (
-          <video src={video} controls preload="metadata" style={{ width: '100%', maxWidth: 520, borderRadius: 12, background: '#000' }} />
+          <video src={video} controls preload="metadata" className={styles.videoPreview} />
         ) : (
           <p className={styles.muted}>{S.noVideo}</p>
         )}

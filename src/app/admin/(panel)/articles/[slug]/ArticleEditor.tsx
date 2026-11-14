@@ -76,7 +76,7 @@ export function ArticleEditor({ article, tours, justSaved }: { article: Article;
   };
 
   return (
-    <form action={action} className={s.layout} style={{ gridTemplateColumns: 'minmax(0,1fr) 300px' }}>
+    <form action={action} className={`${s.layout} ${s.layout2}`}>
       <input type="hidden" name="data" value={JSON.stringify(d)} />
       <div className={s.main}>
         {state.error && (

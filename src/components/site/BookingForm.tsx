@@ -1,5 +1,6 @@
 'use client';
 
+import { unitLabel as unitText } from '@/i18n/units';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -62,7 +63,7 @@ export function BookingForm({ tour, locale, t, c }: { tour: Tour; locale: Locale
 
   const unitLabel = (o: TourOption) => {
     if (o.free || o.price === 0) return o.unit === 'included' ? c.included : c.free;
-    return o.unit === 'person' ? `${formatGBP(o.price)} · ${c.perPerson}` : `${formatGBP(o.price)}${o.unit ? ` / ${o.unit}` : ''}`;
+    return o.unit === 'person' ? `${formatGBP(o.price)} · ${c.perPerson}` : `${formatGBP(o.price)}${o.unit ? ` / ${unitText(locale, o.unit)}` : ''}`;
   };
 
   const onSubmit = async (v: Values) => {

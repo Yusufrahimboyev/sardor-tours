@@ -396,6 +396,9 @@
   border: none;
   color: var(--a-faint);
   cursor: pointer;
+  /* Bigger hit area without growing the pill. */
+  padding: 6px;
+  margin: -6px -6px -6px -2px;
 }
 .section .tags input {
   width: 130px;
@@ -475,8 +478,8 @@
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
 }
 .thumb figcaption button {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   border-radius: 6px;
   border: none;
   background: rgba(255, 255, 255, 0.92);
@@ -639,6 +642,11 @@
   font-weight: 600;
 }
 
+/* Two-column variant without the section nav (article editor). */
+.layout2 {
+  grid-template-columns: minmax(0, 1fr) 300px;
+}
+
 @media (max-width: 1150px) {
   .layout {
     grid-template-columns: minmax(0, 1fr) 280px;
@@ -681,5 +689,25 @@
   }
   .priceMain {
     flex-wrap: wrap;
+  }
+  /* The article editor's side panel holds the cover upload, so it stays a normal block. */
+  .layout2 .aside {
+    position: static;
+    order: 0;
+  }
+  .layout2 .asideInner {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 16px;
+    box-shadow: none;
+  }
+  .layout2 .previewLabel {
+    display: block;
+  }
+  .layout2 .save {
+    width: 100%;
+  }
+  .langBar {
+    position: static;
   }
 }

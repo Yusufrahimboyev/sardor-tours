@@ -1,3 +1,4 @@
+import { unitLabel } from '@/i18n/units';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -122,7 +123,7 @@ export default async function TourPage({ params }: Props) {
                 <b>
                   {i === 0 && old && <s>{formatGBP(old)}</s>}
                   {o.price ? formatGBP(o.price) : o.unit === 'included' ? t.common.included : t.common.free}
-                  {o.price > 0 && o.unit && o.unit !== 'person' && <small style={{ fontWeight: 500 }}> / {o.unit}</small>}
+                  {o.price > 0 && o.unit && o.unit !== 'person' && <small style={{ fontWeight: 500 }}> / {unitLabel(lang, o.unit)}</small>}
                 </b>
               </div>
             ))}

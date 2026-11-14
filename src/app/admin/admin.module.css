@@ -64,6 +64,7 @@
   --a-info-ink: #7dd3fc;
   --a-tint-violet: rgba(168, 85, 247, 0.2);
   --a-violet-ink: #d8b4fe;
+  --select-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%2394a3b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5 6 6.5l5-5'/%3E%3C/svg%3E");
   color-scheme: dark;
 }
 
@@ -97,8 +98,10 @@
 }
 .nav {
   display: flex;
-  gap: 18px;
+  flex-wrap: wrap;
+  gap: 6px 18px;
   flex: 1;
+  min-width: 0;
 }
 .nav a {
   display: inline-flex;
@@ -120,6 +123,9 @@
 .top .btnGhost {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.25);
+  padding: 5px 14px;
+  border-width: 1px;
+  border-radius: 8px;
 }
 /* ── interface language switch (UZ / RU / EN) ── */
 .langSwitch {
@@ -331,6 +337,8 @@
 }
 .table {
   width: 100%;
+  /* Narrow screens scroll the table sideways instead of squeezing every column. */
+  min-width: 760px;
   border-collapse: collapse;
 }
 .table th {
@@ -366,6 +374,11 @@
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-weight: 700;
   color: var(--a-accent);
+}
+.card + .empty,
+.card + .tableWrap,
+.card + .msgList {
+  margin-top: 16px;
 }
 .empty {
   background: var(--a-surface);
@@ -836,7 +849,40 @@
   }
   .top {
     flex-wrap: wrap;
-    gap: 10px 18px;
+    gap: 10px 8px;
+    padding: 12px 16px;
+  }
+  .brand span {
+    display: none;
+  }
+  /* Brand and controls on the first row, the menu on its own row below. */
+  .brand {
+    margin-right: auto;
+  }
+  .nav {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .filters input,
+  .filters select {
+    flex: 1 1 150px;
+    min-width: 0;
+  }
+  .filters input {
+    flex-basis: 100%;
+  }
+  .filters button {
+    flex: 1 1 100%;
+  }
+  .detailHead .actions {
+    width: 100%;
+  }
+  .detailHead .actions > * {
+    flex: 1 1 auto;
+    display: flex;
+  }
+  .detailHead .actions > form > button {
+    flex: 1;
   }
   .main {
     padding: 16px;
@@ -848,4 +894,13 @@
   .dl dd {
     margin-bottom: 8px;
   }
+}
+
+/* Uploaded video preview in Settings: portrait clips would otherwise fill the page. */
+.videoPreview {
+  display: block;
+  max-width: min(100%, 520px);
+  max-height: 320px;
+  border-radius: 12px;
+  background: #000;
 }
