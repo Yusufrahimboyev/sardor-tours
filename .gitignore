@@ -46,3 +46,12 @@ next-env.d.ts
 /playwright-report
 /.data-test
 !.env.example
+
+# local tooling and internal notes (not part of the code)
+/.claude/
+/promt.md
+/AUDIT.md
+/CONTENT-ISSUES.md
+/TODO.md
+/scripts/research/
+/IMPLEMENTATION.md

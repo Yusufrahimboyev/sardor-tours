@@ -37,7 +37,6 @@ src/
     server/store.ts         JSON-file collections (server-only)
     server/http.ts          Rate limit, JSON errors, admin auth (server-only)
 tests/e2e/                  Playwright specs
-scripts/research/           Scraper + converter used to build tours.json
 ```
 
 ## Data flow

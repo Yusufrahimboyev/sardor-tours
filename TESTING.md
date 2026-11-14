@@ -37,6 +37,6 @@ The server log prints `Error: Internal: NoFallbackError` twice; it comes from th
 | Test-side selector issues (hidden step panes, ambiguous labels/links) | Selectors fixed |
 
 ## Manual / visual checks
-Desktop and 390px screenshots of home, destination and a tour page compared with the reference
-(see IMPLEMENTATION.md, phase 8). Not yet done: a Lighthouse run with real photos (placeholders are served from a
+Desktop and 390px screenshots of home, destination and a tour page compared with the reference.
+Not yet done: a Lighthouse run with real photos (placeholders are served from a
 third-party CDN, so image scores would not be representative).

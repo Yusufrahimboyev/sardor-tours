@@ -1,4 +1,5 @@
 import 'server-only';
+import { timingSafeEqual } from 'node:crypto';
 import { NextResponse } from 'next/server';
 import type { ZodError } from 'zod';
 
@@ -44,5 +45,7 @@ export async function readJson(req: Request): Promise<unknown> {
 export function isAdmin(req: Request): boolean {
   const token = process.env.ADMIN_TOKEN;
   if (!token) return false;
-  return req.headers.get('authorization') === `Bearer ${token}`;
+  const got = Buffer.from(req.headers.get('authorization') ?? '');
+  const want = Buffer.from(`Bearer ${token}`);
+  return got.length === want.length && timingSafeEqual(got, want);
 }

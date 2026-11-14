@@ -59,7 +59,3 @@ uploads to object storage first. Back up `DATA_DIR` regularly.
 `npm run lint` · `npm run typecheck` · `npm run test:e2e` (builds, starts on :3200, runs Playwright
 on desktop + mobile using the installed Google Chrome).
 
-## Content to check
-
-`CONTENT-ISSUES.md` lists inconsistencies in the original tour texts (prices, durations, payment
-wording) found during translation.
