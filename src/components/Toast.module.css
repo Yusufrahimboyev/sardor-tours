@@ -34,3 +34,8 @@
     transform: translateY(-8px) scale(0.97);
   }
 }
+
+:global(html[data-theme='dark']) .toast {
+  background: #1b2640;
+  color: #eef2f9;
+}

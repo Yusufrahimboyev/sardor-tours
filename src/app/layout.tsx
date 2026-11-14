@@ -28,6 +28,12 @@ export const metadata: Metadata = {
   
 };
 
+/**
+ * Public-site theme: the visitor's saved choice, else their system setting. The admin panel has
+ * its own theme switch (cookie), so it is skipped here.
+ */
+const THEME_SCRIPT = `(function(){try{if(location.pathname.indexOf('/admin')===0)return;var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t}catch(e){}})()`;
+
 export const viewport: Viewport = {
   themeColor: '#ffffff',
   width: 'device-width',
@@ -41,7 +47,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const loc = h.get('x-locale');
   const lang = isLocale(loc) ? LOCALE_TAG[loc] : 'en';
   return (
-    <html lang={lang} className={`${jakarta.variable} ${inter.variable} ${poppins.variable}`}>
+    <html lang={lang} className={`${jakarta.variable} ${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Runs before first paint so the page never flashes the wrong theme. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body>
         <ToastProvider>{children}</ToastProvider>
       </body>

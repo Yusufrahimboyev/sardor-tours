@@ -7,6 +7,7 @@ import { LogoMark } from '@/components/Brand';
 import { site } from '@/data/site';
 import { href, LOCALE_COOKIE, LOCALE_NAMES, LOCALE_SHORT, LOCALES, PATHS, type Locale } from '@/i18n/config';
 import type { Dict } from '@/i18n';
+import { ThemeToggle } from './ThemeToggle';
 import s from './site.module.css';
 
 /** Same page in another language: swap the first path segment. */
@@ -73,6 +74,7 @@ export function SiteHeader({ locale, t }: { locale: Locale; t: Dict['nav'] }) {
           ))}
         </nav>
         {langSwitch(s.desktopOnly)}
+        <ThemeToggle label={t.theme} />
         <button type="button" className={s.burger} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen((o) => !o)}>
           <span className="sr-only">{open ? t.close : t.menu}</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>

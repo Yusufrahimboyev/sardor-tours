@@ -18,6 +18,7 @@ const en = {
     menu: 'Menu',
     close: 'Close',
     language: 'Language',
+    theme: 'Switch between light and dark mode',
     skip: 'Skip to content',
   },
   common: {

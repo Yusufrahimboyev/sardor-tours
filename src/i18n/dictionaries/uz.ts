@@ -15,6 +15,7 @@ const uz: Dict = {
     menu: 'Menyu',
     close: 'Yopish',
     language: 'Til',
+    theme: 'Yorug‘ va qorong‘i rejimni almashtirish',
     skip: 'Asosiy qismga o‘tish',
   },
   common: {
